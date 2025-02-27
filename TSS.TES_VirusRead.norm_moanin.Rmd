@@ -1,0 +1,1118 @@
+---
+title: "PRV - 3 cell line: GENE dynamics (TSS+TES)"
+author: Balázs Kakuk
+output: 
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_float:
+      collapsed: false
+---
+
+```{css, echo=FALSE}
+    body .main-container {
+      max-width: 90% !important;
+      width: 90% !important;
+    }
+    body {
+      max-width: 90% !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+```
+
+
+```{r include=FALSE}
+## hrbrthemes::ipsum:
+
+knitr::opts_chunk$set(fig.retina=2, echo = FALSE, fig.align = 'center', message = F, warning = F)
+```
+
+```{r ipsum_setup, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE}
+library(prettydoc)
+library(hrbrthemes, quietly = T)
+#library(GenomicFeatures, quietly = T)
+library(DESeq2, quietly = T)
+library(ggpubr, quietly = T)
+#library(misc, quietly = T)
+library(dplyr, quietly = T)
+#library(tidyverse, quietly = T)
+library(ggsci, quietly = T)
+#library(Gviz, quietly = T)
+library(dplyr, quietly = T)
+library(tidyr)
+library(scales)
+#library(plyr)
+library(moanin, quietly = T)
+library(grid, quietly = T)
+library(gridExtra, quietly = T) 
+library(ggpubr, quietly = T)
+library(data.table)
+library(ggh4x)
+library(knitr)
+library(formattable)
+
+
+### Project name and output directory
+outdir  <- 'PRV-MDBIO-4cell'; try({ dir.create(outdir) })
+
+#### Load configuration file
+config <- readRDS(paste0(outdir, '_config.rds'))
+
+####
+source('_WF.part0.R')
+
+#### Settings ####
+
+## Main
+#save.data <- 'PRV.rebase.RData'
+EndType <- 'TSS.TES'
+
+#project_config  <- fread('project_config.txt')
+#outdir  <- project_config$outdir
+res.dir <- outdir; try({ dir.create(res.dir) })
+fig.dir <- paste0(res.dir, '/', EndType, '_abund'); # try({ dir.create(fig.dir) })## save plots to this directory
+
+## Miscallenaous
+palette <- pal_npg()(10)
+
+writetables <- T
+
+
+## Filter metadata for those samples that had at least 1 viral read
+readcounts <- fread(paste0(outdir, '/readcounts.tsv'), header = T)
+metafilt   <- metafilt[metafilt$sample %in% readcounts$sample, ]
+
+
+```
+
+
+# Project info
+Samples: dcDNA Seq  
+pychopper: no  
+mapping version: v6  
+LoRTIA: yes (stranded only output)  
+
+Filtering samples: C6_2h_3 & PC-12_8h_3    
+
+Normalization: Viral read count
+
+Count multiplier for DEG analysis: 10000x  
+*This is to counter zeros*
+
+*De novo* clustering: based on PK-15  
+
+## Only those reads were counted, where LoRTIA   
+found *both* the *5-prime* AND *3-prime* adapters!
+
+```{r, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE, eval=T}
+#### Import TES counts
+
+gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
+
+
+#### !!! Consider adapters!
+adapters <- 'both'
+
+source('Gene.counts.R')
+
+#gene.sample_count    <- TR.ref.sum[,.(count=sum(read_count)), by=.(seqnames, strand, gene_cluster, gene, Kinetic_class, sample)]
+#gene.sample_count.sp <- dcast(gene.sample_count, seqnames + strand + gene_cluster + gene + Kinetic_class ~ sample)
+####
+
+orf.sum <- gene.sample_count.sp
+
+## Filter out multi-copied genes
+orf.sum <- orf.sum[!gene %in% c('IE180_2', 'US1_2', 'NOIR2', 'NOIR2-2'),]
+orf.sum <- orf.sum[!gene_cluster %in% c('IE180_2', 'US1_2', 'NOIR2', 'NOIR2-2'),]
+
+## Format columns
+#orf.sum <- orf.sum[,!c("seqnames", "gene_cluster"), with = FALSE]
+#setnames(orf.sum, old=c('Kinetic_class'), new=c('ID'))
+orf.sum[,ID := gene]
+
+# Reordering columns to make new_column the first column
+setcolorder(orf.sum, c("ID", setdiff(names(orf.sum), "ID")))
+
+## Factorize
+orf.sum$gene          <- factor(orf.sum$gene,  levels=ORFs)
+orf.sum$ID            <- factor(orf.sum$ID,    levels=ORFs)
+orf.sum$Kinetic_class <- factor(orf.sum$Kinetic_class, levels=c('IE', 'E', 'L'))
+
+## Order
+orf.sum        <- orf.sum[order(Kinetic_class, gene),]
+
+##
+orf.counts     <- as.data.frame(orf.sum)
+
+orf.sum        <- merge(gather(orf.sum, sample, read_count, -c(1:6)), metafilt[,metacols], by='sample')
+setDT(orf.sum)
+
+
+
+#### Normalization method
+norm.method <- 'viral_read.count'
+multip      <- 10000
+
+ if (norm.method == 'average_genome') {
+  
+  ## Average genome norm method
+  norm_cov_summary <- fread('norm.cov.summary.tsv')
+  normBase <- norm_cov_summary[,.(sample, average_coverage)]
+  colnames(normBase)[2] <- 'norm_base'
+  
+  fig.dir <- paste0(fig.dir, '.norm_genome')
+
+} else if (norm.method == 'viral_read.count') {
+    
+  ## Viral read count method
+  # sum up all the ORF counts
+
+  normBase <- melt(gene.sample_count.sp, variable.name = 'sample', value.name = 'count')
+  normBase <- normBase[,.(norm_base = sum(count)), by=sample]
+  
+  fig.dir <- paste0(fig.dir, '.norm_LoRTIA')
+  
+} else if (norm.method == 'total_read.count') {
+  ## For total read count method
+
+  # This is not the LoRTIA-processed read counts, so each read is counted twice because they are from dcDNA that contains both orientations. 
+  # But since this is true for both the virus and the host, this will cause each ORF to be estimated down approx 2-fold but in an unbiased way.
+
+  normBase <- fread('../rebasecall/read_count.fastq.txt')
+  normBase[ , sample := gsub('.fastq', '', file)]
+  normBase[ , norm_base := read_count]
+  normBase <- normBase[,.(sample, norm_base)]
+  
+  fig.dir <- paste0(fig.dir, '.norm_total')
+  
+} else if (norm.method == 'host_read.count') {
+  ## For total HOST read count method
+
+  # This is not the LoRTIA-processed read counts, so each read is counted twice because they are from dcDNA that contains both orientations. 
+  # But since this is true for both the virus and the host, this will cause each ORF to be estimated down approx 2-fold but in an unbiased way.
+  # Currently this is the unmapped read count!
+
+  normBase <- fread('../rebasecall/read_count.txt')
+  #normBase[ , sample := gsub('.fastq', '', file)]
+  #normBase <- normBase[,.(sample, unmapped)]
+  normBase[ , norm_base := unmapped]
+  normBase <- normBase[,.(sample, norm_base)]
+  
+  fig.dir <- paste0(fig.dir, '.norm_host')
+  
+} else if (norm.method == 'WO') {
+  
+  ## NO normalization of counts
+
+  normBase <- fread('../read_count.txt')
+  normBase[ , norm_base := 1]
+  normBase <- normBase[,.(sample, norm_base)]
+  
+  fig.dir <- paste0(fig.dir, '.norm_Without')
+  
+}
+
+try({ dir.create(fig.dir) })
+
+##
+normBase <- normBase[order(normBase$sample, colnames(orf.counts[-c(1:6)])), ]
+stopifnot(all(normBase$sample == colnames(orf.counts[-c(1:6)]) ))
+
+orf.perc <- merge(normBase, orf.sum, by='sample')
+orf.perc[,read_count := read_count / norm_base]
+
+
+#### TO-DO: 
+
+## 1.) find which replicate is the farthest from the mean in each gene for each group -> done
+## 2.) Carry out the moanin analyis using the current normalization 
+## 3.) Check the overlap of Literature-based kinetic classes and de-novo clusters
+```
+
+
+```{r}
+### Filtering of very-low coverage samples
+samples_to_filt <- c('C6_2h_3', 'PC-12_8h_3')
+
+orf.perc <- orf.perc[!orf.perc$sample %in% samples_to_filt, ]
+metafilt <- metafilt[!metafilt$sample %in% samples_to_filt, ]
+
+message(paste(samples_to_filt, ' was filtered out!', collapse = '\n') )
+
+```
+
+
+# 3.  Counts based on TSS *and* TES (both the 3- and 5-ends of reads have to match)
+
+## Statistics of counts {.tabset}
+```{r, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE}
+
+#### Keep those where only the TES or the TSS was correct
+orf.sum.perc <- orf.perc
+orf.sum.perc <- orf.sum.perc[!is.na(gene) & !is.na(gene_cluster), ]
+
+orf.sum.perc[,gene_cluster   := gene]
+
+gene_kin.class <- na.omit(unique(orf.sum.perc[,.(gene, Kinetic_class)]))
+gene_kin.class[,Kinetic_class := paste(Kinetic_class, collapse = '/'), by=.(gene)]
+gene_kin.class <- unique(gene_kin.class[,.(gene, Kinetic_class)])
+
+orf.sum.perc[,Kinetic_class := NULL]
+
+#### Summarize the counts
+
+## summarise counts on gene cluster
+orf.sum.perc <- orf.sum.perc[,.(read_count=sum(read_count)), by=.(seqnames, strand, gene, norm_base, sample, group, hpi, Time, cell_line)]
+orf.sum.perc <- merge(orf.sum.perc, gene_kin.class, by='gene', allow.cartesian=T, all=T)
+
+## normalized counts
+orf.perc.mean <- 
+  orf.sum.perc %>% group_by(gene, Kinetic_class, hpi, Time, cell_line) %>%
+  dplyr::summarise(mean=mean(read_count), sd=sd(read_count), varcoeff=sd(read_count) / mean(read_count), se=mean_se(read_count))
+orf.perc.mean <- data.table(orf.perc.mean[,1:8], orf.perc.mean$se[])
+
+orf.perc.mean[is.na(Kinetic_class), Kinetic_class := 'unknown']
+orf.perc.mean[,Kinetic_class := factor(Kinetic_class, levels = c('IE', 'IE/E', 'E', 'IE/E/L', 'E/L', 'L', 'unknown'))]
+
+## non-normalized counts
+#orf.mean <- 
+#  orf.sum %>% group_by(gene, hpi, Time, cell_line) %>%
+#  dplyr::summarise(mean=mean(read_count), sd=sd(read_count), varcoeff=sd(read_count) / mean(read_count), se=mean_se(read_count))
+#orf.mean <- data.table(orf.mean[,1:7], orf.mean$se[])
+
+
+
+#### merge back summary with counts
+orf.sum.perc <- merge(orf.sum.perc, orf.perc.mean, by=c('gene', 'Kinetic_class', 'hpi', 'Time', 'cell_line'))
+
+
+
+```
+
+### Difference from mean
+```{r, fig.width = 9, fig.height = 6, eval=F}
+
+#### Find which replicate is the farthest from the mean in each gene for each group
+
+# find distance from mean
+orf.sum.perc[,dist_from_mean := abs(mean - read_count)]
+
+#
+#orf.sum <- merge(orf.sum, orf.mean, by=c('gene', 'hpi', 'Time', 'cell_line'))
+# find distance from mean
+#orf.sum[,dist_from_mean := abs(mean - read_count)]
+
+
+##
+orf.sum.perc[ , farthest_from_mean := ifelse(dist_from_mean == max(dist_from_mean), T, F), by=.(group, gene)]
+# NA, if all is true in each group beacuse then the distance is the same which means probably that the gene has zero counts in that group
+orf.sum.perc[ , farthest_from_mean := if(sum(dist_from_mean) == 0) NA, by=.(group, gene)]
+orf.sum.perc.tes[ , farthest_rep := ifelse(farthest_from_mean, gsub('.*_', '', sample), NA), by=.(sample, gene)]
+
+plot.data  <- orf.sum.perc[!is.na(farthest_rep), .N, by=.(farthest_rep, hpi, Time, cell_line, group)][order(group)]
+
+ggplot(
+  plot.data,
+  aes(x=hpi, y=N, fill=farthest_rep)) +
+  geom_col(position = 'dodge2') +
+  scale_fill_d3() +
+  theme_bw() +
+  facet_grid(rows=vars(cell_line))
+
+```
+
+
+### Varcoeff
+```{r, fig.width = 20, fig.height = 8}
+
+ggplot(
+  orf.sum.perc[],
+  aes(x=gene, y=varcoeff, fill=hpi)) +
+  geom_col(position = 'dodge2') +
+  scale_fill_d3() +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  facet_grid(rows=vars(cell_line))
+
+
+```
+
+## Moanin - Differential timecourse expression analysis {.tabset}
+
+```{r}
+
+## metadata
+sampdat <- metafilt
+
+sampdat$sample     <- gsub('-', '_', metafilt$sample    )
+sampdat$group      <- paste(metafilt$cell_line, metafilt$hpi, sep='_')
+sampdat$cell_line  <- gsub('-', '_', metafilt$cell_line)
+sampdat <- data.frame(sampdat [,     ],  row.names = sampdat$sample)
+sampdat <- sampdat[order(sampdat$cell_line, sampdat$Time),]
+
+## count data
+countData <- as.data.frame(dcast(orf.sum.perc, gene ~ sample, value.var = 'read_count'))
+colnames(countData) <- gsub('-', '_', colnames(countData))
+countData <- countData[,c('gene', sampdat$sample)]
+countData <- as.matrix(data.frame(countData[,-1], row.names = countData$gene))
+
+## multiplication -->> need to test whether this gives difference!!
+
+countData <- countData * multip
+
+countData <- apply(countData, 2, round)
+
+## colors
+group_colors = c(
+     "PK_15"=colordf$npg[1],
+     "C6"=colordf$npg[2],
+     "PC_12"=colordf$npg[3]
+     )
+
+time_colors <- viridisLite::magma(6) # 
+names(time_colors) <- unique(sampdat$Time)
+
+# Combine all color schemes into one named lists.
+ann_colors = list(
+     Time=time_colors,
+     cell_line=group_colors
+     )
+
+
+# Prepare Data
+dds <- DESeqDataSetFromMatrix(countData = countData, 
+                              colData   = sampdat[,c('cell_line', 'Time')], 
+                              design    = ~ cell_line + Time)
+
+# Differential Expression Analysis
+moanin_model <- create_moanin_model(data=dds, 
+                                    #data=otutab, #), 
+                                    #meta=sampdat, # metam, #
+                                    group_variable_name = "cell_line",
+                                    time_variable_name  = "Time",
+                                    log_transform = F
+                                    #degrees_of_freedom=6
+                                    )
+moanin_model@NAMES <- rownames(countData)
+
+#contrasts <- create_timepoints_contrasts(moanin_model, "C6", "PK_15")
+
+# Differential Time-course expression analysis
+timecourse_contrasts <- c("PK_15-C6", "PK_15-PC_12", "PC_12-C6")
+
+DE_results <- DE_timecourse(moanin_model, timecourse_contrasts, center=F)
+
+pvalues <- DE_results[, grepl("pval", colnames(DE_results))]
+qvalues <- DE_results[, grepl("qval", colnames(DE_results))]
+
+
+## Gather results
+DE_results <- data.frame(ORF=rownames(DE_results), DE_results) %>%
+  gather(contrast, value, -1 )
+DE_results$stat <- gsub('.*_', '', DE_results$contrast)
+
+DE_results <- DE_results %>%
+  rowwise() %>%
+  mutate(contrast = str_replace(contrast, paste0('_', stat), ''))
+
+
+## DEGs
+DE_results$sig <- F
+DE_results$sig[DE_results$stat == 'pval' & DE_results$value <= 0.05] <- T
+
+
+DEGs <- unique(DE_results$ORF[DE_results$sig == T])
+
+
+
+```
+
+### Statistics for every gene
+```{r, fig.width=14, fig.height=13}
+
+ggplot(DE_results, #[DE_results$ORF %in% DEGs, ], 
+       aes(ORF, value, fill=contrast)) +
+  geom_col(position = 'dodge2') +
+  coord_flip() +
+  theme_ipsum_rc() +
+  facet_nested(cols=vars(stat))
+```
+
+### DEGs
+```{r, fig.width=14, fig.height=13}
+try({
+ggplot(DE_results[DE_results$ORF %in% DEGs, ], 
+       aes(ORF, value, fill=contrast)) +
+  geom_col(position = 'dodge2') +
+  coord_flip() +
+  theme_ipsum_rc() +
+  facet_nested(cols=vars(stat))
+})
+
+```
+
+
+### (log2) Fold-Changes of every gene
+```{r, fig.width=10, fig.height=13}
+log_fold_change_timepoints <- 
+  estimate_log_fold_change(moanin_model, 
+                           timecourse_contrasts,
+                           method="timely")
+
+log_fold_change_timecourse <- 
+  estimate_log_fold_change(moanin_model,
+                           timecourse_contrasts, 
+                           method="timecourse")
+
+plot_data <- data.frame(
+  ORF=rownames(log_fold_change_timecourse), 
+  log_fold_change_timecourse) %>% 
+  gather(contrast, l2FC, -1)
+
+
+ggplot(plot_data, 
+       aes(ORF, l2FC, fill=contrast)) +
+  geom_col(position = 'dodge2') +
+  coord_flip() +
+  theme_ipsum_rc() # + facet_nested(cols=vars(stat))
+```
+
+### (log2) Fold-Changes of DEGs
+```{r, fig.width=10, fig.height=13}
+try({
+ggplot(plot_data[plot_data$ORF %in% DEGs, ], 
+       aes(ORF, l2FC, fill=contrast)) +
+  geom_col(position = 'dodge2') +
+  coord_flip() +
+  theme_ipsum_rc() # + facet_nested(cols=vars(stat))
+})
+```
+
+### Splines of each gene
+```{r, fig.width=24, fig.height=30}
+
+#top_DE_genes_pval = names(sort(pvalue)[1:10])
+plot_splines_data(moanin_model, #subset_data=top_DE_genes_pval, 
+    colors=ann_colors$cell_line, smooth=TRUE,
+    mar=c(1.5,2.5,2,0.1))
+
+```
+
+### Splines of DEGs
+```{r, fig.width=16, fig.height=20}
+try({
+#top_DE_genes_pval = names(sort(pvalue)[1:10])
+plot_splines_data(moanin_model, subset_data=DEGs, 
+    colors=ann_colors$cell_line, 
+    simpleY = F, yaxis=T,
+    smooth=TRUE,
+    mar=c(1.5,2.5,2,0.1))
+})
+```
+
+## Moanin - Clustering of genes into de novo kinetic classes {.tabset}
+```{r}
+log_fold_change_max <- estimate_log_fold_change(moanin_model, timecourse_contrasts, method="max")
+log_fold_change_min <- estimate_log_fold_change(moanin_model, timecourse_contrasts, method="min")
+
+# Then rank by fisher's p-value and take max the number of genes of interest
+# Filter out q-values for the pvalues table
+fishers_pval <- pvalues_fisher_method(pvalues)
+qvalues      <- apply(pvalues, 2, p.adjust)
+fishers_qval <- p.adjust(fishers_pval)
+
+genes_to_keep = row.names(
+  log_fold_change_max[
+    (rowSums(log_fold_change_max > 2) >= 0 | rowSums(log_fold_change_min <= -2) > 0) #&
+    #(fishers_qval < 0.05 & !is.na(fishers_qval))
+    ,])
+
+# Keep the data corresponding to the genes of interest in another variable.
+# by subsetting the `moanin_model`, which contains the data.
+de_moanin_model <- moanin_model[genes_to_keep, ]
+
+genes_to_keep
+```
+### Filter the model to PK-15 only
+```{r}
+
+PK15_moanin_model <- moanin_model[,moanin_model$cell_line == 'PK_15']
+
+```
+
+
+### Number of clusters
+```{r, fig.width=9, fig.height=7}
+all_possible_n_clusters = c(2:15)
+all_clustering = list()
+wss_values = list()
+
+i = 1
+for(n_cluster in all_possible_n_clusters){
+    clustering_results = splines_kmeans(PK15_moanin_model,
+    n_clusters=n_cluster, random_seed=42,
+    n_init=10)
+    wss_values[i] = sum(clustering_results$WCSS_per_cluster)
+    all_clustering[[i]] = clustering_results$clusters
+    i = i + 1
+}
+
+plot(all_possible_n_clusters, wss_values, 
+      type="b", pch=19, frame=FALSE,
+      xlab="Number of clusters K",
+      ylab="Total within-clusters sum of squares")
+```
+ Plot of within cluster sum of squares (WCSS) as a function of k.
+
+*Here 5 clusters were chosen*
+
+
+### Clustering
+```{r}
+kmeans_clusters <- splines_kmeans(PK15_moanin_model, n_clusters=5,
+     random_seed=42,
+     n_init=20)
+```
+
+
+```{r, fig.width=12, fig.height=9}
+try({
+plot_splines_data(PK15_moanin_model,
+    data=kmeans_clusters$centroids, 
+    colors=ann_colors$cell_line,
+    smooth=TRUE)
+})
+```
+
+### Genes in the clusters
+```{r}
+cluster_of_interest = 3
+cluster2Genes = names(
+     kmeans_clusters$clusters[kmeans_clusters$clusters==cluster_of_interest])
+```
+
+
+```{r, fig.width=12, fig.height=9}
+try({
+plot_splines_data(PK15_moanin_model,  
+    centroid=kmeans_clusters$centroids[cluster_of_interest,], 
+    colors=ann_colors$cell_line, smooth=TRUE, simpleY =TRUE,
+    subset_data=cluster2Genes[],
+    mar=c(1.5,2.5,2,0.1))
+})
+```
+
+### Assigning genes to clusters
+```{r}
+scores_and_labels <- splines_kmeans_score_and_label(
+     PK15_moanin_model, kmeans_clusters)
+
+labels <- scores_and_labels$labels
+
+# Let's keep only the list of genes that have a label.
+labels <- unlist(labels[!is.na(labels)])
+
+# Get the best score and best label for all of the genes
+# This time without filtering labels
+# We can give the previous calculated scores to `previous_scores` to save time
+unfiltered_scores <- splines_kmeans_score_and_label(
+     PK15_moanin_model, kmeans_clusters,
+     proportion_genes_to_label=1,
+     #rescale_separately=T,
+     previous_scores=scores_and_labels$scores)
+
+scores.dt  <- melt(unfiltered_scores$scores)
+colnames(scores.dt) <- c('ORF', 'label', 'score')
+
+best_label <- unfiltered_scores$labels
+cluster_labels <- merge(as.data.frame(labels), as.data.frame(best_label), by=0, all=T) 
+colnames(cluster_labels)[1] <- 'ORF'
+
+all.scores.dt      <- merge(cluster_labels, scores.dt, by.x=c('ORF', 'best_label'), by.y=c('ORF', 'label'), all=T)
+cluster_labels     <- merge(cluster_labels, scores.dt, by.x=c('ORF', 'best_label'), by.y=c('ORF', 'label'))
+
+### WRITE OUT DEG analyis and clustering RESULTS
+
+DE_cluster_results <- merge(DE_results, cluster_labels, by='ORF')
+stopifnot(nrow(DE_cluster_results) == nrow(DE_results))
+
+
+```
+
+
+```{r, eval=FALSE}
+par(mfrow=c(3, 3))
+n_clusters <- dim(kmeans_clusters$centroids)[1]
+for(cluster_id in 1:n_clusters){
+    hist(cluster_labels[best_label==cluster_id, 'score'],
+     #breaks=(1:50/50), 
+     xlim=c(0, 1),
+     col="black", main=paste("C", cluster_id, sep=""),
+     xlab="score", ylab="Num. genes")
+    abline(v=scores_and_labels$score_cutoff, col="red", lwd=3, lty=2)
+}
+
+
+```
+
+
+
+## ORF kinetics, according to literature-based kinetic classes {.tabset}
+Time-dependent normalized ORF counts (based on TSSs and TES clusters)
+
+```{r}
+### ORFs in samples calculated from TRS-B transcripts with and without leaders
+
+max_ncol <- 10
+row_multip <- 6
+col_multip <- 4
+
+plotfun <- function(DT, 
+                    geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, colour = cell_line)),
+                    geom2 = geom_smooth(aes(x=Time, y=mean, color=cell_line)),
+                    ncol = 10, title = NULL, #"Normalized ORF counts", 
+                    strip.backgr = pal_d3()(10)[2]) {
+  
+  if (nrow(DT) == 0) { 
+    ggp <- NULL } else {   # try({ 
+      
+    # 
+    gene_N <- length(unique(DT[,gene]))
+    # class_freq <- DT[best_label == 5][,.N,by=class_col]
+    
+    #colid <- c('gene', class_col)
+    #class_freq <- unique(DT[best_label == 5, ..colid])
+    
+    
+    #  min(class_freq)
+     # =='adaptive') {}
+        
+    ggp <- 
+      ggplot(DT[
+                                #  orf.perc.mean$hpi    != 'dRNA' 
+                                #& orf.perc.mean$strand == '+'
+                                , ], 
+                     aes(Time, mean, color = 'cell_line')
+                     #, add = 'loess'
+                     ) + 
+      geom1 +
+      geom2 + 
+      scale_color_manual(values = palette) +
+      #scale_y_continuous(labels = scales::percent_format()) +
+      theme_ipsum() +
+      theme(plot.margin = unit(c(1,1,1,1), 'mm')) +
+      facet_wrap(~ Kinetic_class + gene, scales = 'free_y', ncol = ncol) +
+      theme(strip.background = element_rect(fill = alpha(strip.backgr, 0.4)))
+      # + ggtitle(title)
+  
+  if (gene_N < ncol) { 
+    ggp <- cowplot::plot_grid(ggp, NULL, rel_widths = c(gene_N, ncol - gene_N ), nrow=1)
+  }
+  
+  }   # })
+  
+  return(ggp)
+
+}
+```
+
+
+```{r}
+# Kinetic class frequency
+
+kin_classes      <- unique(orf.perc.mean[,.(gene, Kinetic_class)])
+all.class.freq   <- data.table(kin_classes)[,.N, by=.(Kinetic_class) ][order(Kinetic_class)]
+
+my_pal <- pal_d3()(10)
+
+mapfun <- function(i, DT, all.class.freq, palette = my_pal, ...) {
+  kin_class <- all.class.freq[i, Kinetic_class]
+  strip.background <- palette[i]
+  plotfun(DT[Kinetic_class == kin_class],  strip.backgr = strip.background, ...)
+}
+
+
+ncol     <- ifelse(max(all.class.freq$N) < max_ncol, max(all.class.freq$N), max_ncol)
+relh     <- ceiling(all.class.freq$N / ncol)  #c(6,1,1,1,2)
+figw     <- ncol * col_multip
+figh     <- nrow(all.class.freq) * row_multip
+
+```
+
+
+### Mean and SD with loess function
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, all.class.freq, ncol=ncol)
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method,  '_Literature.Clusters', '_mean.sd.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+ggp
+```
+
+### Mean and SD with linear connection
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, all.class.freq, ncol=ncol, 
+                  geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, colour = cell_line)),
+                  geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)))
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Literature.Clusters', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+ggp
+```
+
+### Each replicate with loess
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.sum.perc, all.class.freq, ncol=ncol, 
+                  geom1 = geom_point( aes(x=Time, y=read_count, color=cell_line)),
+                  geom2 = geom_smooth(aes(x=Time, y=read_count, color=cell_line)) )
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Literature.Clusters', '_replicates.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+ggp
+```
+
+
+## ORF kinetics, according to de-novo kinetic classes {.tabset}
+
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+my_pal <- pal_jco()(10)[c(2,3,4,5,7)]
+
+#DE_cluster_results <- fread(paste0(outdir, '/', 'moanin_DE_results.tsv'))
+setDT(DE_cluster_results)
+DEGs               <- unique(DE_cluster_results$ORF[DE_cluster_results$sig == T])
+
+## Add cluster info
+orf.perc.mean <- merge(orf.perc.mean, unique(DE_cluster_results[,.(ORF, best_label, labels)]), by.x='gene', by.y='ORF', all.x=T)
+orf.sum.perc  <- merge(orf.sum.perc,  unique(DE_cluster_results[,.(ORF, best_label, labels)]), by.x='gene', by.y='ORF', all.x=T)
+
+# LAbels frequency
+all.label.freq    <- data.table(cluster_labels)[,.N, by=.(best_label) ][order(best_label)]
+sig.label.freq    <- na.omit(data.table(cluster_labels)[,.N, by=.(labels) ][order(labels)])
+
+
+```
+
+### All ORFs - Mean and SD with linear connection
+
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+#
+#IE.ratio <- 0.43
+ncol     <- ifelse(max(all.label.freq$N) < max_ncol, max(all.label.freq$N), max_ncol)
+relh     <- ceiling(all.label.freq$N / ncol)  #c(6,1,1,1,2)
+figw     <- ncol * col_multip
+figh     <- nrow(all.label.freq) * row_multip
+
+
+mapfun <- function(i, DT, label.freq, palette = my_pal, ...) {
+  label <- label.freq[i, best_label]
+  strip.background <- palette[i]
+  plotfun(DT[best_label == label],  strip.backgr = strip.background, ...)
+}
+
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, all.label.freq, ncol=ncol, 
+                  geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, colour = cell_line)),
+                  geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)))
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+
+
+ggsave(paste0(fig.dir, '/',  EndType, '_', norm.method, '_DeNovo.All.Clusters', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+ggp
+```
+
+
+### Clustered ORFs only - Mean and SD with linear connection
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+#
+#IE.ratio <- 0.43
+ncol     <- ifelse(max(sig.label.freq$N) < max_ncol, max(sig.label.freq$N), max_ncol)
+relh     <- ceiling(sig.label.freq$N / ncol)  #c(6,1,1,1,2)
+figw     <- ncol * col_multip
+figh     <- nrow(sig.label.freq) * row_multip
+
+
+mapfun <- function(i, DT, label.freq, palette = my_pal, ...) {
+  label <- label.freq[i, labels]
+  strip.background <- palette[i]
+  plotfun(DT[best_label == label & !is.na(labels)],  strip.backgr = strip.background, ...)
+}
+
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, sig.label.freq, ncol=ncol, 
+                  geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, colour = cell_line)),
+                  geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)))
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+
+
+ggsave(paste0(fig.dir, '/',  EndType, '_', norm.method, '_DeNovo.Sig.Clusters', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
+```
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+ggp
+```
+
+
+
+### DEGs only - Mean and SD with linear connection
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+## Select for DEGs
+deg.perc.mean <- orf.perc.mean[gene %in% DEGs]
+
+# LAbels frequency
+# LAbels frequency
+all.label.freq    <- data.table(cluster_labels)[ORF %in% DEGs,.N, by=.(best_label) ][order(best_label)]
+sig.label.freq    <- na.omit(data.table(cluster_labels)[ORF %in% DEGs,.N, by=.(labels) ][order(labels)])
+
+```
+
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+# IE.ratio <- 0.2
+ncol     <- ifelse(max(all.label.freq$N) < max_ncol, max(all.label.freq$N), max_ncol)
+relh     <- ceiling(all.label.freq$N / ncol)  #c(6,1,1,1,2)
+figw     <- ncol * col_multip
+figh     <- nrow(all.label.freq) * row_multip
+
+
+mapfun <- function(i, DT, label.freq, palette = my_pal, ...) {
+  label <- label.freq[i, best_label]
+  strip.background <- palette[i]
+  plotfun(DT[best_label == label],  strip.backgr = strip.background, ...)
+}
+
+
+ggp <- purrr::map(seq_along(relh), mapfun, deg.perc.mean, all.label.freq, ncol=ncol, 
+                  geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, colour = cell_line)),
+                  geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)))
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+
+ggsave(paste0(fig.dir, '/',  EndType, '_', norm.method, '_DeNovo.All.Clusters.DEGs', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+ggp
+```
+
+
+### Clustered DEGs only - Mean and SD with linear connection
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+# IE.ratio <- 0.2
+ncol     <- ifelse(max(sig.label.freq$N) < max_ncol, max(sig.label.freq$N), max_ncol)
+relh     <- ceiling(sig.label.freq$N / ncol)  #c(6,1,1,1,2)
+figw     <- ncol * col_multip
+figh     <- nrow(sig.label.freq) * row_multip
+
+
+mapfun <- function(i, DT, label.freq, palette = my_pal, ...) {
+  label <- label.freq[i, labels]
+  strip.background <- palette[i]
+  plotfun(DT[best_label == label & !is.na(labels)],  strip.backgr = strip.background, ...)
+}
+
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, sig.label.freq, ncol=ncol, 
+                  geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, colour = cell_line)),
+                  geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)))
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+ggsave(paste0(fig.dir, '/',  EndType, '_', norm.method, '_DeNovo.Sig.Clusters.DEGs', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+ggp
+```
+
+## Compare literature and de novo kinetic classes
+
+*NA shows the number of genes where the clustering did not yield an unambiguous result.*
+  
+```{r, fig.show='hold',  fig.width = 15, fig.height = 6, eval=T}
+setDT(orf.perc.mean)
+class.dt <- unique(orf.perc.mean[, .(gene, Kinetic_class, best_label, labels)])
+class.dt <- class.dt[, .N, by=.(Kinetic_class, best_label, labels)]
+
+#cluster_labels
+
+ggplot(class.dt,
+       aes(x=Kinetic_class, y=N, fill=as.factor(best_label))) +
+  geom_col(position = 'dodge') +
+  scale_color_manual(values = palette) +
+  #scale_y_continuous(labels = scales::percent_format()) +
+  theme_ipsum() +
+  facet_wrap(~labels, nrow = 1)
+
+
+ggplot(class.dt,
+       aes(x=as.factor(best_label), y=N, fill=Kinetic_class)) +
+  geom_col(position = 'stack') +
+  scale_color_manual(values = palette) +
+  #scale_y_continuous(labels = scales::percent_format()) +
+  theme_ipsum() +
+  facet_nested_wrap(~labels, nrow = 1)
+
+
+```
+
+
+## Combine Kinetic classes
+
+```{r}
+### Summarise based on literature kinetic class
+kin.class.sum  <- orf.sum.perc[,.(sum_read_count=sum(read_count), mean_read_count=mean(read_count), sd_read_count=sd(read_count)), 
+                              by=.(Kinetic_class, hpi, Time, cell_line, seqnames, norm_base, sample, group)]
+
+
+### Summarise based on SIGNIFICANT de-novo kinetic cluster
+sig.cluster.sum <- orf.sum.perc[,.(sum_read_count=sum(read_count), mean_read_count=mean(read_count), sd_read_count=sd(read_count)), 
+                              by=.(labels, hpi, Time, cell_line, seqnames, norm_base, sample, group)]
+
+
+### Summarise based on all de-novo kinetic cluster
+all.cluster.sum <- orf.sum.perc[,.(sum_read_count=sum(read_count), mean_read_count=mean(read_count), sd_read_count=sd(read_count)), 
+                              by=.(best_label, hpi, Time, cell_line, seqnames, norm_base, sample, group)]
+
+
+```
+
+```{r}
+figw <- 13
+figh <- 6
+ncol <- 10
+```
+
+
+
+### De Novo - Significant
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- 
+      ggplot(sig.cluster.sum,
+             aes(Time, mean_read_count, color = cell_line)
+                     #, add = 'loess'
+                     ) + 
+      geom_point() +
+      geom_smooth() + 
+      scale_color_manual(values = palette[]) +
+      #scale_y_continuous(labels = scales::percent_format()) +
+      theme_ipsum() +
+      theme(plot.margin = unit(c(10,1,1,1), 'mm')) +
+      #theme(strip.background.y = element_rect(fill = alpha(strip.backgr, 0.4))) +
+      # theme(strip.text.y = element_blank()) +
+      #ggtitle(title) +
+      # facet_nested(rows=vars(norm.method), cols=vars(labels), scales = "free_y") ## cols=vars(norm.method)
+      facet_wrap(~ labels, scales = 'free_y', ncol = ncol)
+
+
+ggp
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.DeNovo.Sig.Clusters.', '_points.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+
+### De Novo - All clusters
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- 
+      ggplot(all.cluster.sum,
+             aes(Time, mean_read_count, color = cell_line)
+                     #, add = 'loess'
+                     ) + 
+      geom_point() +
+      geom_smooth() + 
+      scale_color_manual(values = palette[]) +
+      #scale_y_continuous(labels = scales::percent_format()) +
+      theme_ipsum() +
+      theme(plot.margin = unit(c(10,1,1,1), 'mm')) +
+      #theme(strip.background.y = element_rect(fill = alpha(strip.backgr, 0.4))) +
+      # theme(strip.text.y = element_blank()) +
+      #ggtitle(title) +
+      # facet_nested(rows=vars(norm.method), cols=vars(labels), scales = "free_y") ## cols=vars(norm.method)
+      facet_wrap(~ best_label, scales = 'free_y', ncol = ncol)
+
+
+ggp
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.DeNovo.All.Clusters.', '_points.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+
+### Literature clusters
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- 
+      ggplot(kin.class.sum,
+             aes(Time, mean_read_count, color = cell_line)
+                     #, add = 'loess'
+                     ) + 
+      geom_point() +
+      geom_smooth() + 
+      scale_color_manual(values = palette[]) +
+      #scale_y_continuous(labels = scales::percent_format()) +
+      theme_ipsum() +
+      theme(plot.margin = unit(c(10,1,1,1), 'mm')) +
+      #theme(strip.background.y = element_rect(fill = alpha(strip.backgr, 0.4))) +
+      # theme(strip.text.y = element_blank()) +
+      #ggtitle(title) +
+      # facet_nested(rows=vars(norm.method), cols=vars(labels), scales = "free_y") ## cols=vars(norm.method)
+      facet_wrap(~ Kinetic_class, scales = 'free_y', ncol = ncol)
+
+
+ggp
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.Literature.Clusters.', '_points.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+
+```{r}
+## Export data
+if (writetables) {
+  fwrite(orf.sum.perc,       paste0(fig.dir, '/', norm.method, '_', EndType, '_counts.norm.tsv'))
+  fwrite(orf.perc.mean,      paste0(fig.dir, '/', norm.method, '_', EndType, '_abund.mean.tsv'))
+  fwrite(DE_results,         paste0(fig.dir, '/', norm.method, '_', EndType, '_DE_results.tsv'), row.names=T, sep = '\t')
+  fwrite(DE_cluster_results, paste0(fig.dir, '/', norm.method, '_', EndType, '_moanin_DE_results.tsv'))
+
+}
+```
+
+
+```{r bib, include=FALSE}
+# KEEP THIS AT THE END OF THE DOCUMENT TO GENERATE A LOCAL bib FILE FOR PKGS USED
+knitr::write_bib(sub("^package:", "", grep("package", search(), value=TRUE)), file='skeleton.bib')
+```

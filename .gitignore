@@ -1,0 +1,29 @@
+# Ignore fastq files, rmats outputs and bams
+**/fastq
+
+**/gffcompare_iterative
+
+## Other large files
+**/bam.all.tsv
+**/bam.filt.tsv
+**/all.merged.result_gff.compare.tsv
+**/merged_cov.tsv
+**/mapped.cov.tsv
+**/all.merged.result_gff.compare.list.rds
+**/aln.uni.tsv
+**/TR.gff.compare.merged.TR.counts.gt.tsv
+**/TR.gene.ov.counts.tsv
+**/TR.reads.gff2
+**/TR.data.tsv
+
+
+# Ignore RStudio project files at any level
+**/.Rproj.user/
+**/.Rhistory
+**/.RData
+**/*.Rproj
+**/.Renviron
+
+# R environment
+.Renviron
+.Rproj.user

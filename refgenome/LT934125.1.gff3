@@ -1,0 +1,552 @@
+##sequence-region LT934125.1 1 142922
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=10345
+LT934125.1	EMBL	region	1	142922	.	+	.	ID=LT934125.1:1..142922;Dbxref=taxon:10345;gbkey=Src;isolate=PRV-MdBio;mol_type=genomic DNA;note=monopartite;strain=PRV-MdBio
+LT934125.1	EMBL	gene	982	2280	.	+	.	ID=gene-ORF-1M2;Name=ORF-1M2;gbkey=Gene;gene=ORF-1M2;gene_biotype=other
+LT934125.1	EMBL	mRNA	982	2280	.	+	.	ID=rna-ORF-1M2;Parent=gene-ORF-1M2;gbkey=mRNA;gene=ORF-1M2
+LT934125.1	EMBL	exon	982	2280	.	+	.	ID=exon-ORF-1M2-1;Parent=rna-ORF-1M2;gbkey=mRNA;gene=ORF-1M2
+LT934125.1	EMBL	gene	1326	2280	.	+	.	ID=gene-ORF-1M1;Name=ORF-1M1;gbkey=Gene;gene=ORF-1M1;gene_biotype=other
+LT934125.1	EMBL	mRNA	1326	2280	.	+	.	ID=rna-ORF-1M1;Parent=gene-ORF-1M1;gbkey=mRNA;gene=ORF-1M1
+LT934125.1	EMBL	exon	1326	2280	.	+	.	ID=exon-ORF-1M1-1;Parent=rna-ORF-1M1;gbkey=mRNA;gene=ORF-1M1
+LT934125.1	EMBL	gene	1572	2280	.	+	.	ID=gene-ORF-1;Name=ORF-1;gbkey=Gene;gene=ORF-1;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	1595	2280	.	+	.	ID=rna-ORF-1;Parent=gene-ORF-1;gbkey=mRNA;gene=ORF-1
+LT934125.1	EMBL	exon	1595	2280	.	+	.	ID=exon-ORF-1-1;Parent=rna-ORF-1;gbkey=mRNA;gene=ORF-1
+LT934125.1	EMBL	CDS	1623	2243	.	+	0	ID=cds-SOF05915.1;Parent=rna-ORF-1;Dbxref=GOA:A0A2C9C2P9,UniProtKB/TrEMBL:A0A2C9C2P9,NCBI_GP:SOF05915.1;Name=SOF05915.1;Note=membrane protein UL56;gbkey=CDS;gene=ORF-1;product=ORF-1;protein_id=SOF05915.1
+LT934125.1	EMBL	gene	2771	7766	.	-	.	ID=gene-UL52-53-54;Name=UL52-53-54;gbkey=Gene;gene=UL52-53-54;gene_biotype=other
+LT934125.1	EMBL	mRNA	2771	7766	.	-	.	ID=rna-UL52-53-54;Parent=gene-UL52-53-54;gbkey=mRNA;gene=UL52-53-54
+LT934125.1	EMBL	exon	2771	7766	.	-	.	ID=exon-UL52-53-54-1;Parent=rna-UL52-53-54;gbkey=mRNA;gene=UL52-53-54
+LT934125.1	EMBL	gene	2771	4928	.	-	.	ID=gene-UL53-54;Name=UL53-54;gbkey=Gene;gene=UL53-54;gene_biotype=other
+LT934125.1	EMBL	mRNA	2771	4928	.	-	.	ID=rna-UL53-54;Parent=gene-UL53-54;gbkey=mRNA;gene=UL53-54
+LT934125.1	EMBL	exon	2771	4928	.	-	.	ID=exon-UL53-54-1;Parent=rna-UL53-54;gbkey=mRNA;gene=UL53-54
+LT934125.1	EMBL	gene	2771	3940	.	-	.	ID=gene-UL54;Name=UL54;gbkey=Gene;gene=UL54;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	2771	3917	.	-	.	ID=rna-UL54;Parent=gene-UL54;gbkey=mRNA;gene=UL54
+LT934125.1	EMBL	exon	2771	3917	.	-	.	ID=exon-UL54-1;Parent=rna-UL54;gbkey=mRNA;gene=UL54
+LT934125.1	EMBL	CDS	2797	3882	.	-	0	ID=cds-SOF05916.1;Parent=rna-UL54;Dbxref=GOA:G3G941,InterPro:IPR008648,UniProtKB/TrEMBL:G3G941,NCBI_GP:SOF05916.1;Name=SOF05916.1;Note=UL54 protein;gbkey=CDS;gene=UL54;product=UL54;protein_id=SOF05916.1
+LT934125.1	EMBL	gene	2777	7788	.	-	.	ID=gene-UL52;Name=UL52;gbkey=Gene;gene=UL52;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	4854	7742	.	-	0	ID=cds-SOF05918.1;Parent=gene-UL52;Dbxref=GOA:A0A0S2MM26,InterPro:IPR033685,UniProtKB/TrEMBL:A0A0S2MM26,NCBI_GP:SOF05918.1;Name=SOF05918.1;Note=helicase primase subunit;gbkey=CDS;gene=UL52;product=UL52;protein_id=SOF05918.1
+LT934125.1	EMBL	gene	2777	4956	.	-	.	ID=gene-UL53;Name=UL53;gbkey=Gene;gene=UL53;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	3961	4899	.	-	0	ID=cds-SOF05917.1;Parent=gene-UL53;Dbxref=GOA:G3G8P7,InterPro:IPR002567,UniProtKB/TrEMBL:G3G8P7,NCBI_GP:SOF05917.1;Name=SOF05917.1;Note=glycoprotein gK;gbkey=CDS;gene=UL53;product=UL53;protein_id=SOF05917.1
+LT934125.1	EMBL	gene	7558	8532	.	+	.	ID=gene-UL51;Name=UL51;gbkey=Gene;gene=UL51;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	7583	8532	.	+	.	ID=rna-UL51;Parent=gene-UL51;gbkey=mRNA;gene=UL51
+LT934125.1	EMBL	exon	7583	8532	.	+	.	ID=exon-UL51-1;Parent=rna-UL51;gbkey=mRNA;gene=UL51
+LT934125.1	EMBL	CDS	7729	8439	.	+	0	ID=cds-SOF05919.1;Parent=rna-UL51;Dbxref=InterPro:IPR007625,UniProtKB/TrEMBL:G3G8W4,NCBI_GP:SOF05919.1;Name=SOF05919.1;Note=tegument protein UL51;gbkey=CDS;gene=UL51;product=UL51;protein_id=SOF05919.1
+LT934125.1	EMBL	gene	7583	10433	.	+	.	ID=gene-UL51-50-49.5-49;Name=UL51-50-49.5-49;gbkey=Gene;gene=UL51-50-49.5-49;gene_biotype=other
+LT934125.1	EMBL	mRNA	7583	10433	.	+	.	ID=rna-UL51-50-49.5-49;Parent=gene-UL51-50-49.5-49;gbkey=mRNA;gene=UL51-50-49.5-49
+LT934125.1	EMBL	exon	7583	10433	.	+	.	ID=exon-UL51-50-49.5-49-1;Parent=rna-UL51-50-49.5-49;gbkey=mRNA;gene=UL51-50-49.5-49
+LT934125.1	EMBL	gene	8480	9596	.	-	.	ID=gene-UL50L;Name=UL50L;gbkey=Gene;gene=UL50L;gene_biotype=other
+LT934125.1	EMBL	mRNA	8480	9596	.	-	.	ID=rna-UL50L;Parent=gene-UL50L;gbkey=mRNA;gene=UL50L
+LT934125.1	EMBL	exon	8480	9596	.	-	.	ID=exon-UL50L-1;Parent=rna-UL50L;gbkey=mRNA;gene=UL50L
+LT934125.1	EMBL	gene	8480	9524	.	-	.	ID=gene-UL50;Name=UL50;gbkey=Gene;gene=UL50;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	8480	9500	.	-	.	ID=rna-UL50;Parent=gene-UL50;gbkey=mRNA;gene=UL50
+LT934125.1	EMBL	exon	8480	9500	.	-	.	ID=exon-UL50-1;Parent=rna-UL50;gbkey=mRNA;gene=UL50
+LT934125.1	EMBL	CDS	8593	9399	.	-	0	ID=cds-SOF05920.1;Parent=rna-UL50;Dbxref=GOA:Q6LCQ9,InterPro:IPR029054,InterPro:IPR033704,InterPro:IPR034745,InterPro:IPR036157,UniProtKB/TrEMBL:Q6LCQ9,NCBI_GP:SOF05920.1;Name=SOF05920.1;Note=dUTPase;gbkey=CDS;gene=UL50;product=UL50;protein_id=SOF05920.1
+LT934125.1	EMBL	gene	8480	9221	.	-	.	ID=gene-UL50S;Name=UL50S;gbkey=Gene;gene=UL50S;gene_biotype=other
+LT934125.1	EMBL	mRNA	8480	9221	.	-	.	ID=rna-UL50S;Parent=gene-UL50S;gbkey=mRNA;gene=UL50S
+LT934125.1	EMBL	exon	8480	9221	.	-	.	ID=exon-UL50S-1;Parent=rna-UL50S;gbkey=mRNA;gene=UL50S
+LT934125.1	EMBL	gene	8590	10433	.	+	.	ID=gene-UL50-49.5-49;Name=UL50-49.5-49;gbkey=Gene;gene=UL50-49.5-49;gene_biotype=other
+LT934125.1	EMBL	mRNA	8590	10433	.	+	.	ID=rna-UL50-49.5-49;Parent=gene-UL50-49.5-49;gbkey=mRNA;gene=UL50-49.5-49
+LT934125.1	EMBL	exon	8590	10433	.	+	.	ID=exon-UL50-49.5-49-1;Parent=rna-UL50-49.5-49;gbkey=mRNA;gene=UL50-49.5-49
+LT934125.1	EMBL	gene	9081	10410	.	+	.	ID=gene-UL49.5;Name=UL49.5;gbkey=Gene;gene=UL49.5;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	9323	9619	.	+	0	ID=cds-SOF05921.1;Parent=gene-UL49.5;Dbxref=GOA:G3G8W6,InterPro:IPR008647,InterPro:IPR034707,UniProtKB/TrEMBL:G3G8W6,NCBI_GP:SOF05921.1;Name=SOF05921.1;Note=envelope glycoprotein gN;gbkey=CDS;gene=UL49.5;product=UL49.5;protein_id=SOF05921.1
+LT934125.1	EMBL	gene	9105	10433	.	+	.	ID=gene-UL49.5-49;Name=UL49.5-49;gbkey=Gene;gene=UL49.5-49;gene_biotype=other
+LT934125.1	EMBL	mRNA	9105	10433	.	+	.	ID=rna-UL49.5-49;Parent=gene-UL49.5-49;gbkey=mRNA;gene=UL49.5-49
+LT934125.1	EMBL	exon	9105	10433	.	+	.	ID=exon-UL49.5-49-1;Parent=rna-UL49.5-49;gbkey=mRNA;gene=UL49.5-49
+LT934125.1	EMBL	gene	9263	10433	.	+	.	ID=gene-UL49.5-S-49;Name=UL49.5-S-49;gbkey=Gene;gene=UL49.5-S-49;gene_biotype=other
+LT934125.1	EMBL	mRNA	9263	10433	.	+	.	ID=rna-UL49.5-S-49;Parent=gene-UL49.5-S-49;gbkey=mRNA;gene=UL49.5-S-49
+LT934125.1	EMBL	exon	9263	10433	.	+	.	ID=exon-UL49.5-S-49-1;Parent=rna-UL49.5-S-49;gbkey=mRNA;gene=UL49.5-S-49
+LT934125.1	EMBL	gene	9615	10433	.	+	.	ID=gene-UL49;Name=UL49;gbkey=Gene;gene=UL49;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	9637	10433	.	+	.	ID=rna-UL49;Parent=gene-UL49;gbkey=mRNA;gene=UL49
+LT934125.1	EMBL	exon	9637	10433	.	+	.	ID=exon-UL49-1;Parent=rna-UL49;gbkey=mRNA;gene=UL49
+LT934125.1	EMBL	CDS	9657	10409	.	+	0	ID=cds-SOF05922.1;Parent=rna-UL49;Dbxref=InterPro:IPR006908,UniProtKB/TrEMBL:A0A2C9C2Y1,NCBI_GP:SOF05922.1;Name=SOF05922.1;Note=tegument protein UL49;gbkey=CDS;gene=UL49;product=UL49;protein_id=SOF05922.1
+LT934125.1	EMBL	gene	10401	16226	.	+	.	ID=gene-UL48;Name=UL48;gbkey=Gene;gene=UL48;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	10460	11919	.	+	.	ID=rna-UL48;Parent=gene-UL48;gbkey=mRNA;gene=UL48
+LT934125.1	EMBL	exon	10460	11919	.	+	.	ID=exon-UL48-1;Parent=rna-UL48;gbkey=mRNA;gene=UL48
+LT934125.1	EMBL	CDS	10473	11714	.	+	0	ID=cds-SOF05923.1;Parent=rna-UL48;Dbxref=GOA:G3G8W8,InterPro:IPR003174,InterPro:IPR036538,UniProtKB/TrEMBL:G3G8W8,NCBI_GP:SOF05923.1;Name=SOF05923.1;Note=involved in gene regulation%3B tegument protein UL48%3Btransactivator;gbkey=CDS;gene=UL48;product=UL48;protein_id=SOF05923.1
+LT934125.1	EMBL	gene	10424	16232	.	+	.	ID=gene-UL48-47-46;Name=UL48-47-46;gbkey=Gene;gene=UL48-47-46;gene_biotype=other
+LT934125.1	EMBL	mRNA	10424	16232	.	+	.	ID=rna-UL48-47-46;Parent=gene-UL48-47-46;gbkey=mRNA;gene=UL48-47-46
+LT934125.1	EMBL	exon	10424	16232	.	+	.	ID=exon-UL48-47-46-1;Parent=rna-UL48-47-46;gbkey=mRNA;gene=UL48-47-46
+LT934125.1	EMBL	gene	11764	16226	.	+	.	ID=gene-UL47;Name=UL47;gbkey=Gene;gene=UL47;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	11815	14052	.	+	0	ID=cds-SOF05924.1;Parent=gene-UL47;Dbxref=GOA:A0A2C9C2X8,InterPro:IPR005029,UniProtKB/TrEMBL:A0A2C9C2X8,NCBI_GP:SOF05924.1;Name=SOF05924.1;Note=tegument protein UL47;gbkey=CDS;gene=UL47;product=UL47;protein_id=SOF05924.1
+LT934125.1	EMBL	gene	11787	16231	.	+	.	ID=gene-UL47-46;Name=UL47-46;gbkey=Gene;gene=UL47-46;gene_biotype=other
+LT934125.1	EMBL	mRNA	11787	16231	.	+	.	ID=rna-UL47-46;Parent=gene-UL47-46;gbkey=mRNA;gene=UL47-46
+LT934125.1	EMBL	exon	11787	16231	.	+	.	ID=exon-UL47-46-1;Parent=rna-UL47-46;gbkey=mRNA;gene=UL47-46
+LT934125.1	EMBL	gene	14017	16231	.	+	.	ID=gene-UL46;Name=UL46;gbkey=Gene;gene=UL46;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	14040	16231	.	+	.	ID=rna-UL46;Parent=gene-UL46;gbkey=mRNA;gene=UL46
+LT934125.1	EMBL	exon	14040	16231	.	+	.	ID=exon-UL46-1;Parent=rna-UL46;gbkey=mRNA;gene=UL46
+LT934125.1	EMBL	CDS	14071	16146	.	+	0	ID=cds-SOF05925.1;Parent=rna-UL46;Dbxref=GOA:A0A2C9C2Q7,InterPro:IPR005051,UniProtKB/TrEMBL:A0A2C9C2Q7,NCBI_GP:SOF05925.1;Name=SOF05925.1;Note=tegument protein UL46;gbkey=CDS;gene=UL46;product=UL46;protein_id=SOF05925.1
+LT934125.1	EMBL	gene	16625	19375	.	-	.	ID=gene-UL27;Name=UL27;gbkey=Gene;gene=UL27;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	16625	19375	.	-	0	ID=cds-SOF05926.1;Parent=gene-UL27;Dbxref=GOA:A0A2C9C371,InterPro:IPR000234,InterPro:IPR035377,InterPro:IPR035381,InterPro:IPR038631,UniProtKB/TrEMBL:A0A2C9C371,NCBI_GP:SOF05926.1;Name=SOF05926.1;Note=envelope glycoprotein gB;gbkey=CDS;gene=UL27;product=UL27;protein_id=SOF05926.1
+LT934125.1	EMBL	gene	19246	21402	.	-	.	ID=gene-UL28;Name=UL28;gbkey=Gene;gene=UL28;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	19246	21402	.	-	0	ID=cds-SOF05927.1;Parent=gene-UL28;Dbxref=GOA:G3G8X2,InterPro:IPR000501,UniProtKB/TrEMBL:G3G8X2,NCBI_GP:SOF05927.1;Name=SOF05927.1;Note=DNA packaging terminase subunit;gbkey=CDS;gene=UL28;product=UL28;protein_id=SOF05927.1
+LT934125.1	EMBL	gene	21470	25319	.	-	.	ID=gene-UL29;Name=UL29;gbkey=Gene;gene=UL29;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	21470	25295	.	-	.	ID=rna-UL29;Parent=gene-UL29;gbkey=mRNA;gene=UL29
+LT934125.1	EMBL	exon	21470	25295	.	-	.	ID=exon-UL29-1;Parent=rna-UL29;gbkey=mRNA;gene=UL29
+LT934125.1	EMBL	CDS	21554	25087	.	-	0	ID=cds-SOF05928.1;Parent=rna-UL29;Dbxref=GOA:A0A2C9C298,InterPro:IPR000635,InterPro:IPR035989,UniProtKB/TrEMBL:A0A2C9C298,NCBI_GP:SOF05928.1;Name=SOF05928.1;Note=single stranded DNA binding protein;gbkey=CDS;gene=UL29;product=UL29;protein_id=SOF05928.1
+LT934125.1	EMBL	gene	25338	28639	.	+	.	ID=gene-UL30;Name=UL30;gbkey=Gene;gene=UL30;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	25421	28639	.	+	.	ID=rna-UL30;Parent=gene-UL30;gbkey=mRNA;gene=UL30
+LT934125.1	EMBL	exon	25421	28639	.	+	.	ID=exon-UL30-1;Parent=rna-UL30;gbkey=mRNA;gene=UL30
+LT934125.1	EMBL	CDS	25434	28580	.	+	0	ID=cds-SOF05929.1;Parent=rna-UL30;Dbxref=GOA:A0A2C9C2F6,InterPro:IPR006133,InterPro:IPR006134,InterPro:IPR006172,InterPro:IPR012337,InterPro:IPR017964,InterPro:IPR023211,InterPro:IPR036397,UniProtKB/TrEMBL:A0A2C9C2F6,NCBI_GP:SOF05929.1;Name=SOF05929.1;Note=DNA polymerase catalytic subunit;gbkey=CDS;gene=UL30;product=UL30;protein_id=SOF05929.1
+LT934125.1	EMBL	gene	28420	30884	.	-	.	ID=gene-UL32-S-31;Name=UL32-S-31;gbkey=Gene;gene=UL32-S-31;gene_biotype=other
+LT934125.1	EMBL	mRNA	28420	30884	.	-	.	ID=rna-UL32-S-31;Parent=gene-UL32-S-31;gbkey=mRNA;gene=UL32-S-31
+LT934125.1	EMBL	exon	28420	30884	.	-	.	ID=exon-UL32-S-31-1;Parent=rna-UL32-S-31;gbkey=mRNA;gene=UL32-S-31
+LT934125.1	EMBL	gene	28422	31050	.	-	.	ID=gene-UL32-31;Name=UL32-31;gbkey=Gene;gene=UL32-31;gene_biotype=other
+LT934125.1	EMBL	mRNA	28422	31050	.	-	.	ID=rna-UL32-31;Parent=gene-UL32-31;gbkey=mRNA;gene=UL32-31
+LT934125.1	EMBL	exon	28422	31050	.	-	.	ID=exon-UL32-31-1;Parent=rna-UL32-31;gbkey=mRNA;gene=UL32-31
+LT934125.1	EMBL	gene	28422	29442	.	-	.	ID=gene-UL31;Name=UL31;gbkey=Gene;gene=UL31;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	28422	29416	.	-	.	ID=rna-UL31;Parent=gene-UL31;gbkey=mRNA;gene=UL31
+LT934125.1	EMBL	exon	28422	29416	.	-	.	ID=exon-UL31-1;Parent=rna-UL31;gbkey=mRNA;gene=UL31
+LT934125.1	EMBL	CDS	28501	29316	.	-	0	ID=cds-SOF05930.1;Parent=rna-UL31;Dbxref=GOA:G3G955,InterPro:IPR021152,PDB:4Z3U,PDB:5E8C,PDB:5FKI,UniProtKB/TrEMBL:G3G955,NCBI_GP:SOF05930.1;Name=SOF05930.1;Note=nuclear egress complex component%3B primary tegument protein;gbkey=CDS;gene=UL31;product=UL31;protein_id=SOF05930.1
+LT934125.1	EMBL	gene	28697	31071	.	-	.	ID=gene-UL32;Name=UL32;gbkey=Gene;gene=UL32;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	29309	30721	.	-	0	ID=cds-SOF05931.1;Parent=gene-UL32;Dbxref=GOA:G3G8X6,InterPro:IPR002597,UniProtKB/TrEMBL:G3G8X6,NCBI_GP:SOF05931.1;Name=SOF05931.1;Note=DNA packging protein UL32;gbkey=CDS;gene=UL32;product=UL32;protein_id=SOF05931.1
+LT934125.1	EMBL	gene	30121	32422	.	+	.	ID=gene-UL33-L-34-35;Name=UL33-L-34-35;gbkey=Gene;gene=UL33-L-34-35;gene_biotype=other
+LT934125.1	EMBL	mRNA	30121	32422	.	+	.	ID=rna-UL33-L-34-35;Parent=gene-UL33-L-34-35;gbkey=mRNA;gene=UL33-L-34-35
+LT934125.1	EMBL	exon	30121	32422	.	+	.	ID=exon-UL33-L-34-35-1;Parent=rna-UL33-L-34-35;gbkey=mRNA;gene=UL33-L-34-35
+LT934125.1	EMBL	gene	30232	32422	.	+	.	ID=gene-UL33-34-35;Name=UL33-34-35;gbkey=Gene;gene=UL33-34-35;gene_biotype=other
+LT934125.1	EMBL	mRNA	30232	32422	.	+	.	ID=rna-UL33-34-35;Parent=gene-UL33-34-35;gbkey=mRNA;gene=UL33-34-35
+LT934125.1	EMBL	exon	30232	32422	.	+	.	ID=exon-UL33-34-35-1;Parent=rna-UL33-34-35;gbkey=mRNA;gene=UL33-34-35
+LT934125.1	EMBL	gene	30233	32396	.	+	.	ID=gene-UL33;Name=UL33;gbkey=Gene;gene=UL33;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	30233	31205	.	+	.	ID=rna-UL33;Parent=gene-UL33;gbkey=mRNA;gene=UL33
+LT934125.1	EMBL	exon	30233	31205	.	+	.	ID=exon-UL33-1;Parent=rna-UL33;gbkey=mRNA;gene=UL33
+LT934125.1	EMBL	CDS	30720	31070	.	+	0	ID=cds-SOF05932.1;Parent=rna-UL33;Dbxref=GOA:G3G8R2,InterPro:IPR005208,UniProtKB/TrEMBL:G3G8R2,NCBI_GP:SOF05932.1;Name=SOF05932.1;Note=DNA encapsidation;gbkey=CDS;gene=UL33;product=UL33;protein_id=SOF05932.1
+LT934125.1	EMBL	gene	31066	32416	.	+	.	ID=gene-UL34;Name=UL34;gbkey=Gene;gene=UL34;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	31226	32011	.	+	0	ID=cds-SOF05933.1;Parent=gene-UL34;Dbxref=GOA:A0A2C9C2M7,InterPro:IPR007626,UniProtKB/TrEMBL:A0A2C9C2M7,NCBI_GP:SOF05933.1;Name=SOF05933.1;Note=nuclear egress complex component%3B type II membrane protein;gbkey=CDS;gene=UL34;product=UL34;protein_id=SOF05933.1
+LT934125.1	EMBL	gene	31090	32422	.	+	.	ID=gene-UL34-35;Name=UL34-35;gbkey=Gene;gene=UL34-35;gene_biotype=other
+LT934125.1	EMBL	mRNA	31090	32422	.	+	.	ID=rna-UL34-35;Parent=gene-UL34-35;gbkey=mRNA;gene=UL34-35
+LT934125.1	EMBL	exon	31090	32422	.	+	.	ID=exon-UL34-35-1;Parent=rna-UL34-35;gbkey=mRNA;gene=UL34-35
+LT934125.1	EMBL	gene	32007	32422	.	+	.	ID=gene-UL35;Name=UL35;gbkey=Gene;gene=UL35;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	32030	32422	.	+	.	ID=rna-UL35;Parent=gene-UL35;gbkey=mRNA;gene=UL35
+LT934125.1	EMBL	exon	32030	32422	.	+	.	ID=exon-UL35-1;Parent=rna-UL35;gbkey=mRNA;gene=UL35
+LT934125.1	EMBL	CDS	32066	32377	.	+	0	ID=cds-SOF05934.1;Parent=rna-UL35;Dbxref=GOA:Q77KA6,InterPro:IPR007584,UniProtKB/TrEMBL:Q77KA6,NCBI_GP:SOF05934.1;Name=SOF05934.1;Note=small capsid protein;gbkey=CDS;gene=UL35;product=UL35;protein_id=SOF05934.1
+LT934125.1	EMBL	gene	32679	34485	.	-	.	ID=gene-UL36.5;Name=UL36.5;gbkey=Gene;gene=UL36.5;gene_biotype=other
+LT934125.1	EMBL	mRNA	32679	34485	.	-	.	ID=rna-UL36.5;Parent=gene-UL36.5;gbkey=mRNA;gene=UL36.5
+LT934125.1	EMBL	exon	32679	34485	.	-	.	ID=exon-UL36.5-1;Parent=rna-UL36.5;gbkey=mRNA;gene=UL36.5
+LT934125.1	EMBL	gene	32705	41983	.	-	.	ID=gene-UL36;Name=UL36;gbkey=Gene;gene=UL36;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	32705	41983	.	-	0	ID=cds-SOF05935.1;Parent=gene-UL36;Dbxref=GOA:A0A2C9C2R6,InterPro:IPR005210,InterPro:IPR006928,UniProtKB/TrEMBL:A0A2C9C2R6,NCBI_GP:SOF05935.1;Name=SOF05935.1;Note=involved in virion morphogenesis%3B large tegument protein;gbkey=CDS;gene=UL36;product=UL36;protein_id=SOF05935.1
+LT934125.1	EMBL	gene	41998	44920	.	-	.	ID=gene-UL37;Name=UL37;gbkey=Gene;gene=UL37;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	41998	44900	.	-	.	ID=rna-UL37;Parent=gene-UL37;gbkey=mRNA;gene=UL37
+LT934125.1	EMBL	exon	41998	44900	.	-	.	ID=exon-UL37-1;Parent=rna-UL37;gbkey=mRNA;gene=UL37
+LT934125.1	EMBL	CDS	42021	44780	.	-	0	ID=cds-SOF05936.1;Parent=rna-UL37;Dbxref=GOA:Q911W0,InterPro:IPR005655,PDB:4K70,PDB:5J2Z,UniProtKB/TrEMBL:Q911W0,NCBI_GP:SOF05936.1;Name=SOF05936.1;Note=tegument protein UL37;gbkey=CDS;gene=UL37;product=UL37;protein_id=SOF05936.1
+LT934125.1	EMBL	gene	44781	46045	.	+	.	ID=gene-UL38;Name=UL38;gbkey=Gene;gene=UL38;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	44804	46045	.	+	.	ID=rna-UL38;Parent=gene-UL38;gbkey=mRNA;gene=UL38
+LT934125.1	EMBL	exon	44804	46045	.	+	.	ID=exon-UL38-1;Parent=rna-UL38;gbkey=mRNA;gene=UL38
+LT934125.1	EMBL	CDS	44837	45943	.	+	0	ID=cds-SOF05937.1;Parent=rna-UL38;Dbxref=GOA:Q85211,InterPro:IPR004999,UniProtKB/TrEMBL:Q85211,NCBI_GP:SOF05937.1;Name=SOF05937.1;Note=capsid protein%3B triplex subunit;gbkey=CDS;gene=UL38;product=UL38;protein_id=SOF05937.1
+LT934125.1	EMBL	gene	44804	49654	.	+	.	ID=gene-UL38-39-40;Name=UL38-39-40;gbkey=Gene;gene=UL38-39-40;gene_biotype=other
+LT934125.1	EMBL	mRNA	44804	49654	.	+	.	ID=rna-UL38-39-40;Parent=gene-UL38-39-40;gbkey=mRNA;gene=UL38-39-40
+LT934125.1	EMBL	exon	44804	49654	.	+	.	ID=exon-UL38-39-40-1;Parent=rna-UL38-39-40;gbkey=mRNA;gene=UL38-39-40
+LT934125.1	EMBL	gene	46207	49649	.	+	.	ID=gene-UL39;Name=UL39;gbkey=Gene;gene=UL39;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	46274	48646	.	+	0	ID=cds-SOF05938.1;Parent=gene-UL39;Dbxref=GOA:A0A2C9C2A5,InterPro:IPR000788,InterPro:IPR013346,InterPro:IPR013509,InterPro:IPR034717,UniProtKB/TrEMBL:A0A2C9C2A5,NCBI_GP:SOF05938.1;Name=SOF05938.1;Note=involved in nucleotide metabolism%3B ribonucleotide reductase subunit;gbkey=CDS;gene=UL39;product=UL39;protein_id=SOF05938.1
+LT934125.1	EMBL	gene	46228	49654	.	+	.	ID=gene-UL39-40;Name=UL39-40;gbkey=Gene;gene=UL39-40;gene_biotype=other
+LT934125.1	EMBL	mRNA	46228	49654	.	+	.	ID=rna-UL39-40;Parent=gene-UL39-40;gbkey=mRNA;gene=UL39-40
+LT934125.1	EMBL	exon	46228	49654	.	+	.	ID=exon-UL39-40-1;Parent=rna-UL39-40;gbkey=mRNA;gene=UL39-40
+LT934125.1	EMBL	gene	46232	48579	.	+	.	ID=gene-NCL39;Name=NCL39;gbkey=Gene;gene=NCL39;gene_biotype=other
+LT934125.1	EMBL	mRNA	46232	48579	.	+	.	ID=rna-NCL39;Parent=gene-NCL39;gbkey=mRNA;gene=NCL39
+LT934125.1	EMBL	exon	46232	48579	.	+	.	ID=exon-NCL39-1;Parent=rna-NCL39;gbkey=mRNA;gene=NCL39
+LT934125.1	EMBL	gene	46251	49654	.	+	.	ID=gene-UL39-S-40;Name=UL39-S-40;gbkey=Gene;gene=UL39-S-40;gene_biotype=other
+LT934125.1	EMBL	mRNA	46251	49654	.	+	.	ID=rna-UL39-S-40;Parent=gene-UL39-S-40;gbkey=mRNA;gene=UL39-S-40
+LT934125.1	EMBL	exon	46251	49654	.	+	.	ID=exon-UL39-S-40-1;Parent=rna-UL39-S-40;gbkey=mRNA;gene=UL39-S-40
+LT934125.1	EMBL	gene	48537	49654	.	+	.	ID=gene-UL40;Name=UL40;gbkey=Gene;gene=UL40;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	48559	49654	.	+	.	ID=rna-UL40;Parent=gene-UL40;gbkey=mRNA;gene=UL40
+LT934125.1	EMBL	exon	48559	49654	.	+	.	ID=exon-UL40-1;Parent=rna-UL40;gbkey=mRNA;gene=UL40
+LT934125.1	EMBL	CDS	48656	49567	.	+	0	ID=cds-SOF05939.1;Parent=rna-UL40;Dbxref=GOA:G3G8Y4,InterPro:IPR000358,InterPro:IPR009078,InterPro:IPR012348,InterPro:IPR030475,InterPro:IPR033909,InterPro:IPR034715,UniProtKB/TrEMBL:G3G8Y4,NCBI_GP:SOF05939.1;Name=SOF05939.1;Note=ribonucleotide reductase subunit;gbkey=CDS;gene=UL40;product=UL40;protein_id=SOF05939.1
+LT934125.1	EMBL	gene	50020	51153	.	-	.	ID=gene-U41;Name=U41;gbkey=Gene;gene=U41;gene_biotype=other
+LT934125.1	EMBL	mRNA	50020	51153	.	-	.	ID=rna-U41;Parent=gene-U41;gbkey=mRNA;gene=U41
+LT934125.1	EMBL	exon	50020	51153	.	-	.	ID=exon-U41-1;Parent=rna-U41;gbkey=mRNA;gene=U41
+LT934125.1	EMBL	gene	50033	51213	.	-	.	ID=gene-UL41;Name=UL41;gbkey=Gene;gene=UL41;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	50044	51141	.	-	0	ID=cds-SOF05940.1;Parent=gene-UL41;Dbxref=InterPro:IPR029060,UniProtKB/TrEMBL:A0A2C9C2R0,NCBI_GP:SOF05940.1;Name=SOF05940.1;Note=virion host cell shut off protein UL41;gbkey=CDS;gene=UL41;product=UL41;protein_id=SOF05940.1
+LT934125.1	EMBL	gene	51169	52442	.	+	.	ID=gene-UL42;Name=UL42;gbkey=Gene;gene=UL42;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	51228	52442	.	+	.	ID=rna-UL42;Parent=gene-UL42;gbkey=mRNA;gene=UL42
+LT934125.1	EMBL	exon	51228	52442	.	+	.	ID=exon-UL42-1;Parent=rna-UL42;gbkey=mRNA;gene=UL42
+LT934125.1	EMBL	CDS	51270	52415	.	+	0	ID=cds-SOF05941.1;Parent=rna-UL42;Dbxref=GOA:A0A2C9C2R5,InterPro:IPR003202,UniProtKB/TrEMBL:A0A2C9C2R5,NCBI_GP:SOF05941.1;Name=SOF05941.1;Note=DNA polymerase subunit UL42;gbkey=CDS;gene=UL42;product=UL42;protein_id=SOF05941.1
+LT934125.1	EMBL	gene	51228	55168	.	+	.	ID=gene-UL42-43-44;Name=UL42-43-44;gbkey=Gene;gene=UL42-43-44;gene_biotype=other
+LT934125.1	EMBL	mRNA	51228	55168	.	+	.	ID=rna-UL42-43-44;Parent=gene-UL42-43-44;gbkey=mRNA;gene=UL42-43-44
+LT934125.1	EMBL	exon	51228	55168	.	+	.	ID=exon-UL42-43-44-1;Parent=rna-UL42-43-44;gbkey=mRNA;gene=UL42-43-44
+LT934125.1	EMBL	gene	51228	53601	.	+	.	ID=gene-UL42-43;Name=UL42-43;gbkey=Gene;gene=UL42-43;gene_biotype=other
+LT934125.1	EMBL	mRNA	51228	53601	.	+	.	ID=rna-UL42-43;Parent=gene-UL42-43;gbkey=mRNA;gene=UL42-43
+LT934125.1	EMBL	exon	51228	53601	.	+	.	ID=exon-UL42-43-1;Parent=rna-UL42-43;gbkey=mRNA;gene=UL42-43
+LT934125.1	EMBL	gene	52429	53602	.	+	.	ID=gene-UL43;Name=UL43;gbkey=Gene;gene=UL43;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	52438	53601	.	+	.	ID=rna-UL43;Parent=gene-UL43;gbkey=mRNA;gene=UL43
+LT934125.1	EMBL	exon	52438	53601	.	+	.	ID=exon-UL43-1;Parent=rna-UL43;gbkey=mRNA;gene=UL43
+LT934125.1	EMBL	CDS	52473	53594	.	+	0	ID=cds-SOF05942.1;Parent=rna-UL43;Dbxref=GOA:G3G8S2,UniProtKB/TrEMBL:G3G8S2,NCBI_GP:SOF05942.1;Name=SOF05942.1;Note=type III membrane protein;gbkey=CDS;gene=UL43;product=UL43;protein_id=SOF05942.1
+LT934125.1	EMBL	gene	52438	55168	.	+	.	ID=gene-UL43-44;Name=UL43-44;gbkey=Gene;gene=UL43-44;gene_biotype=other
+LT934125.1	EMBL	mRNA	52438	55168	.	+	.	ID=rna-UL43-44;Parent=gene-UL43-44;gbkey=mRNA;gene=UL43-44
+LT934125.1	EMBL	exon	52438	55168	.	+	.	ID=exon-UL43-44-1;Parent=rna-UL43-44;gbkey=mRNA;gene=UL43-44
+LT934125.1	EMBL	gene	52452	53601	.	+	.	ID=gene-UL43S;Name=UL43S;gbkey=Gene;gene=UL43S;gene_biotype=other
+LT934125.1	EMBL	mRNA	52452	53601	.	+	.	ID=rna-UL43S;Parent=gene-UL43S;gbkey=mRNA;gene=UL43S
+LT934125.1	EMBL	exon	52452	53601	.	+	.	ID=exon-UL43S-1;Parent=rna-UL43S;gbkey=mRNA;gene=UL43S
+LT934125.1	EMBL	gene	53599	55168	.	+	.	ID=gene-UL44-L;Name=UL44-L;gbkey=Gene;gene=UL44-L;gene_biotype=other
+LT934125.1	EMBL	mRNA	53599	55168	.	+	.	ID=rna-UL44-L;Parent=gene-UL44-L;gbkey=mRNA;gene=UL44-L
+LT934125.1	EMBL	exon	53599	55168	.	+	.	ID=exon-UL44-L-1;Parent=rna-UL44-L;gbkey=mRNA;gene=UL44-L
+LT934125.1	EMBL	gene	53618	55168	.	+	.	ID=gene-UL44;Name=UL44;gbkey=Gene;gene=UL44;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	53641	55168	.	+	.	ID=rna-UL44;Parent=gene-UL44;gbkey=mRNA;gene=UL44
+LT934125.1	EMBL	exon	53641	55168	.	+	.	ID=exon-UL44-1;Parent=rna-UL44;gbkey=mRNA;gene=UL44
+LT934125.1	EMBL	CDS	53661	55103	.	+	0	ID=cds-SOF05943.1;Parent=rna-UL44;Dbxref=GOA:A0A2C9C2N7,InterPro:IPR001038,InterPro:IPR036179,UniProtKB/TrEMBL:A0A2C9C2N7,NCBI_GP:SOF05943.1;Name=SOF05943.1;gbkey=CDS;gene=UL44;product=envelope glycoprotein gC;protein_id=SOF05943.1
+LT934125.1	EMBL	gene	53641	55275	.	+	.	ID=gene-UL44-AT;Name=UL44-AT;gbkey=Gene;gene=UL44-AT;gene_biotype=other
+LT934125.1	EMBL	mRNA	53641	55275	.	+	.	ID=rna-UL44-AT;Parent=gene-UL44-AT;gbkey=mRNA;gene=UL44-AT
+LT934125.1	EMBL	exon	53641	55275	.	+	.	ID=exon-UL44-AT-1;Parent=rna-UL44-AT;gbkey=mRNA;gene=UL44-AT
+LT934125.1	EMBL	gene	55263	59284	.	-	.	ID=gene-UL24-25-26-26.5;Name=UL24-25-26-26.5;gbkey=Gene;gene=UL24-25-26-26.5;gene_biotype=other
+LT934125.1	EMBL	mRNA	55263	59284	.	-	.	ID=rna-UL24-25-26-26.5;Parent=gene-UL24-25-26-26.5;gbkey=mRNA;gene=UL24-25-26-26.5
+LT934125.1	EMBL	exon	55263	59284	.	-	.	ID=exon-UL24-25-26-26.5-1;Parent=rna-UL24-25-26-26.5;gbkey=mRNA;gene=UL24-25-26-26.5
+LT934125.1	EMBL	gene	55263	58563	.	-	.	ID=gene-UL25-26-26.5;Name=UL25-26-26.5;gbkey=Gene;gene=UL25-26-26.5;gene_biotype=other
+LT934125.1	EMBL	mRNA	55263	58563	.	-	.	ID=rna-UL25-26-26.5;Parent=gene-UL25-26-26.5;gbkey=mRNA;gene=UL25-26-26.5
+LT934125.1	EMBL	exon	55263	58563	.	-	.	ID=exon-UL25-26-26.5-1;Parent=rna-UL25-26-26.5;gbkey=mRNA;gene=UL25-26-26.5
+LT934125.1	EMBL	gene	55263	56953	.	-	.	ID=gene-UL26-26.5;Name=UL26-26.5;gbkey=Gene;gene=UL26-26.5;gene_biotype=other
+LT934125.1	EMBL	mRNA	55263	56953	.	-	.	ID=rna-UL26-26.5;Parent=gene-UL26-26.5;gbkey=mRNA;gene=UL26-26.5
+LT934125.1	EMBL	exon	55263	56953	.	-	.	ID=exon-UL26-26.5-1;Parent=rna-UL26-26.5;gbkey=mRNA;gene=UL26-26.5
+LT934125.1	EMBL	gene	55263	56221	.	-	.	ID=gene-UL26.5;Name=UL26.5;gbkey=Gene;gene=UL26.5;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	55263	56195	.	-	.	ID=rna-UL26.5;Parent=gene-UL26.5;gbkey=mRNA;gene=UL26.5
+LT934125.1	EMBL	exon	55263	56195	.	-	.	ID=exon-UL26.5-1;Parent=rna-UL26.5;gbkey=mRNA;gene=UL26.5
+LT934125.1	EMBL	CDS	55343	56179	.	-	0	ID=cds-SOF05945.1;Parent=rna-UL26.5;Dbxref=UniProtKB/TrEMBL:A0A2C9C2S4,NCBI_GP:SOF05945.1;Name=SOF05945.1;Note=capsid scaffold protein;gbkey=CDS;gene=UL26.5;product=UL26.5;protein_id=SOF05945.1
+LT934125.1	EMBL	gene	55271	59309	.	-	.	ID=gene-UL24;Name=UL24;gbkey=Gene;gene=UL24;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	58648	59163	.	-	0	ID=cds-SOF05947.1;Parent=gene-UL24;Dbxref=InterPro:IPR002580,UniProtKB/TrEMBL:Q83420,NCBI_GP:SOF05947.1;Name=SOF05947.1;Note=protein UL24;gbkey=CDS;gene=UL24;product=UL24;protein_id=SOF05947.1
+LT934125.1	EMBL	gene	55271	58600	.	-	.	ID=gene-UL25;Name=UL25;gbkey=Gene;gene=UL25;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	55697	58563	.	-	.	ID=rna-UL25;Parent=gene-UL25;gbkey=mRNA;gene=UL25
+LT934125.1	EMBL	exon	55697	58563	.	-	.	ID=exon-UL25-1;Parent=rna-UL25;gbkey=mRNA;gene=UL25
+LT934125.1	EMBL	CDS	56951	58555	.	-	0	ID=cds-SOF05946.1;Parent=rna-UL25;Dbxref=GOA:G3G971,InterPro:IPR002493,UniProtKB/TrEMBL:G3G971,NCBI_GP:SOF05946.1;Name=SOF05946.1;Note=C capsid-specific component%3B capsid protein UL25;gbkey=CDS;gene=UL25;product=UL25;protein_id=SOF05946.1
+LT934125.1	EMBL	gene	55271	56977	.	-	.	ID=gene-UL26;Name=UL26;gbkey=Gene;gene=UL26;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	55343	56917	.	-	0	ID=cds-SOF05944.1;Parent=gene-UL26;Dbxref=GOA:A0A2C9C2Z3,InterPro:IPR001847,InterPro:IPR035443,UniProtKB/TrEMBL:A0A2C9C2Z3,NCBI_GP:SOF05944.1;Name=SOF05944.1;Note=capsid maturation protease;gbkey=CDS;gene=UL26;product=UL26;protein_id=SOF05944.1
+LT934125.1	EMBL	gene	58459	60258	.	+	.	ID=gene-UL23-L3;Name=UL23-L3;gbkey=Gene;gene=UL23-L3;gene_biotype=other
+LT934125.1	EMBL	mRNA	58459	60258	.	+	.	ID=rna-UL23-L3;Parent=gene-UL23-L3;gbkey=mRNA;gene=UL23-L3
+LT934125.1	EMBL	exon	58459	60258	.	+	.	ID=exon-UL23-L3-1;Parent=rna-UL23-L3;gbkey=mRNA;gene=UL23-L3
+LT934125.1	EMBL	gene	58618	60258	.	+	.	ID=gene-UL23-L2;Name=UL23-L2;gbkey=Gene;gene=UL23-L2;gene_biotype=other
+LT934125.1	EMBL	mRNA	58618	60258	.	+	.	ID=rna-UL23-L2;Parent=gene-UL23-L2;gbkey=mRNA;gene=UL23-L2
+LT934125.1	EMBL	exon	58618	60258	.	+	.	ID=exon-UL23-L2-1;Parent=rna-UL23-L2;gbkey=mRNA;gene=UL23-L2
+LT934125.1	EMBL	gene	59036	60258	.	+	.	ID=gene-UL23-L1;Name=UL23-L1;gbkey=Gene;gene=UL23-L1;gene_biotype=other
+LT934125.1	EMBL	mRNA	59036	60258	.	+	.	ID=rna-UL23-L1;Parent=gene-UL23-L1;gbkey=mRNA;gene=UL23-L1
+LT934125.1	EMBL	exon	59036	60258	.	+	.	ID=exon-UL23-L1-1;Parent=rna-UL23-L1;gbkey=mRNA;gene=UL23-L1
+LT934125.1	EMBL	gene	59062	62347	.	+	.	ID=gene-UL23-22;Name=UL23-22;gbkey=Gene;gene=UL23-22;gene_biotype=other
+LT934125.1	EMBL	mRNA	59062	62347	.	+	.	ID=rna-UL23-22;Parent=gene-UL23-22;gbkey=mRNA;gene=UL23-22
+LT934125.1	EMBL	exon	59062	62347	.	+	.	ID=exon-UL23-22-1;Parent=rna-UL23-22;gbkey=mRNA;gene=UL23-22
+LT934125.1	EMBL	gene	59062	60738	.	+	.	ID=gene-UL23-AT2;Name=UL23-AT2;gbkey=Gene;gene=UL23-AT2;gene_biotype=other
+LT934125.1	EMBL	mRNA	59062	60738	.	+	.	ID=rna-UL23-AT2;Parent=gene-UL23-AT2;gbkey=mRNA;gene=UL23-AT2
+LT934125.1	EMBL	exon	59062	60738	.	+	.	ID=exon-UL23-AT2-1;Parent=rna-UL23-AT2;gbkey=mRNA;gene=UL23-AT2
+LT934125.1	EMBL	gene	59062	60361	.	+	.	ID=gene-UL23-AT;Name=UL23-AT;gbkey=Gene;gene=UL23-AT;gene_biotype=other
+LT934125.1	EMBL	mRNA	59062	60361	.	+	.	ID=rna-UL23-AT;Parent=gene-UL23-AT;gbkey=mRNA;gene=UL23-AT
+LT934125.1	EMBL	exon	59062	60361	.	+	.	ID=exon-UL23-AT-1;Parent=rna-UL23-AT;gbkey=mRNA;gene=UL23-AT
+LT934125.1	EMBL	gene	59062	60258	.	+	.	ID=gene-UL23;Name=UL23;gbkey=Gene;gene=UL23;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	59062	60258	.	+	.	ID=rna-UL23;Parent=gene-UL23;gbkey=mRNA;gene=UL23
+LT934125.1	EMBL	exon	59062	60258	.	+	.	ID=exon-UL23-1;Parent=rna-UL23;gbkey=mRNA;gene=UL23
+LT934125.1	EMBL	CDS	59156	60118	.	+	0	ID=cds-SOF05948.1;Parent=rna-UL23;Dbxref=GOA:A0A2C9C2B2,InterPro:IPR001889,InterPro:IPR027417,UniProtKB/TrEMBL:A0A2C9C2B2,NCBI_GP:SOF05948.1;Name=SOF05948.1;Note=involved in nucleotide metabolism%3B thymidine kinase;gbkey=CDS;gene=UL23;product=UL23;protein_id=SOF05948.1
+LT934125.1	EMBL	gene	60204	62347	.	+	.	ID=gene-UL22;Name=UL22;gbkey=Gene;gene=UL22;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	60228	62347	.	+	.	ID=rna-UL22;Parent=gene-UL22;gbkey=mRNA;gene=UL22
+LT934125.1	EMBL	exon	60228	62347	.	+	.	ID=exon-UL22-1;Parent=rna-UL22;gbkey=mRNA;gene=UL22
+LT934125.1	EMBL	CDS	60254	62314	.	+	0	ID=cds-SOF05949.1;Parent=rna-UL22;Dbxref=GOA:A0A2C9C2H2,InterPro:IPR003493,InterPro:IPR035305,InterPro:IPR038172,UniProtKB/TrEMBL:A0A2C9C2H2,NCBI_GP:SOF05949.1;Name=SOF05949.1;Note=envelope glycoprotein gH;gbkey=CDS;gene=UL22;product=UL22;protein_id=SOF05949.1
+LT934125.1	EMBL	gene	60228	63133	.	+	.	ID=gene-UL22-AT;Name=UL22-AT;gbkey=Gene;gene=UL22-AT;gene_biotype=other
+LT934125.1	EMBL	mRNA	60228	63133	.	+	.	ID=rna-UL22-AT;Parent=gene-UL22-AT;gbkey=mRNA;gene=UL22-AT
+LT934125.1	EMBL	exon	60228	63133	.	+	.	ID=exon-UL22-AT-1;Parent=rna-UL22-AT;gbkey=mRNA;gene=UL22-AT
+LT934125.1	EMBL	gene	63154	65759	.	-	.	ID=gene-CTO-L;Name=CTO-L;gbkey=Gene;gene=CTO-L;gene_biotype=other
+LT934125.1	EMBL	mRNA	63154	65759	.	-	.	ID=rna-CTO-L;Parent=gene-CTO-L;gbkey=mRNA;gene=CTO-L
+LT934125.1	EMBL	exon	63154	65759	.	-	.	ID=exon-CTO-L-1;Parent=rna-CTO-L;gbkey=mRNA;gene=CTO-L
+LT934125.1	EMBL	gene	63154	64130	.	-	.	ID=gene-CTO-M;Name=CTO-M;gbkey=Gene;gene=CTO-M;gene_biotype=other
+LT934125.1	EMBL	mRNA	63154	64130	.	-	.	ID=rna-CTO-M;Parent=gene-CTO-M;gbkey=mRNA;gene=CTO-M
+LT934125.1	EMBL	exon	63154	64130	.	-	.	ID=exon-CTO-M-1;Parent=rna-CTO-M;gbkey=mRNA;gene=CTO-M
+LT934125.1	EMBL	gene	63154	63427	.	-	.	ID=gene-CTO-S;Name=CTO-S;gbkey=Gene;gene=CTO-S;gene_biotype=other
+LT934125.1	EMBL	mRNA	63154	63427	.	-	.	ID=rna-CTO-S;Parent=gene-CTO-S;gbkey=mRNA;gene=CTO-S
+LT934125.1	EMBL	exon	63154	63427	.	-	.	ID=exon-CTO-S-1;Parent=rna-CTO-S;gbkey=mRNA;gene=CTO-S
+LT934125.1	EMBL	gene	63164	63422	.	-	.	ID=gene-CTO;Name=CTO;gbkey=Gene;gene=CTO;gene_biotype=lncRNA
+LT934125.1	EMBL	lnc_RNA	63164	63422	.	-	.	ID=rna-CTO;Parent=gene-CTO;Note=close To OriL;gbkey=ncRNA;gene=CTO;product=CTO
+LT934125.1	EMBL	exon	63164	63422	.	-	.	ID=exon-CTO-1;Parent=rna-CTO;Note=close To OriL;gbkey=ncRNA;gene=CTO;product=CTO
+LT934125.1	EMBL	gene	64131	65890	.	-	.	ID=gene-UL21-L;Name=UL21-L;gbkey=Gene;gene=UL21-L;gene_biotype=other
+LT934125.1	EMBL	mRNA	64131	65890	.	-	.	ID=rna-UL21-L;Parent=gene-UL21-L;gbkey=mRNA;gene=UL21-L
+LT934125.1	EMBL	exon	64131	65890	.	-	.	ID=exon-UL21-L-1;Parent=rna-UL21-L;gbkey=mRNA;gene=UL21-L
+LT934125.1	EMBL	gene	64131	65781	.	-	.	ID=gene-UL21;Name=UL21;gbkey=Gene;gene=UL21;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	64131	65759	.	-	.	ID=rna-UL21;Parent=gene-UL21;gbkey=mRNA;gene=UL21
+LT934125.1	EMBL	exon	64131	65759	.	-	.	ID=exon-UL21-1;Parent=rna-UL21;gbkey=mRNA;gene=UL21
+LT934125.1	EMBL	CDS	64143	65720	.	-	0	ID=cds-SOF05950.1;Parent=rna-UL21;Dbxref=InterPro:IPR004936,UniProtKB/TrEMBL:A0A2C9C2S0,NCBI_GP:SOF05950.1;Name=SOF05950.1;Note=UL21 protein;gbkey=CDS;gene=UL21;product=UL21;protein_id=SOF05950.1
+LT934125.1	EMBL	gene	65776	66399	.	+	.	ID=gene-UL20;Name=UL20;gbkey=Gene;gene=UL20;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	65799	66399	.	+	.	ID=rna-UL20;Parent=gene-UL20;gbkey=mRNA;gene=UL20
+LT934125.1	EMBL	exon	65799	66399	.	+	.	ID=exon-UL20-1;Parent=rna-UL20;gbkey=mRNA;gene=UL20
+LT934125.1	EMBL	CDS	65827	66312	.	+	0	ID=cds-SOF05951.1;Parent=rna-UL20;Dbxref=GOA:Q04531,InterPro:IPR007629,UniProtKB/TrEMBL:Q04531,NCBI_GP:SOF05951.1;Name=SOF05951.1;Note=type III membrane protein UL20;gbkey=CDS;gene=UL20;product=UL20;protein_id=SOF05951.1
+LT934125.1	EMBL	gene	65800	70528	.	+	.	ID=gene-UL20-19;Name=UL20-19;gbkey=Gene;gene=UL20-19;gene_biotype=other
+LT934125.1	EMBL	mRNA	65800	70528	.	+	.	ID=rna-UL20-19;Parent=gene-UL20-19;gbkey=mRNA;gene=UL20-19
+LT934125.1	EMBL	exon	65800	70528	.	+	.	ID=exon-UL20-19-1;Parent=rna-UL20-19;gbkey=mRNA;gene=UL20-19
+LT934125.1	EMBL	gene	66307	70528	.	+	.	ID=gene-UL19;Name=UL19;gbkey=Gene;gene=UL19;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	66331	70528	.	+	.	ID=rna-UL19;Parent=gene-UL19;gbkey=mRNA;gene=UL19
+LT934125.1	EMBL	exon	66331	70528	.	+	.	ID=exon-UL19-1;Parent=rna-UL19;gbkey=mRNA;gene=UL19
+LT934125.1	EMBL	CDS	66399	70391	.	+	0	ID=cds-SOF05952.1;Parent=rna-UL19;Dbxref=GOA:Q04534,InterPro:IPR000912,InterPro:IPR023233,UniProtKB/TrEMBL:Q04534,NCBI_GP:SOF05952.1;Name=SOF05952.1;Note=major capsid protein%3B type III membrane protein UL20;gbkey=CDS;gene=UL19;product=UL19;protein_id=SOF05952.1
+LT934125.1	EMBL	gene	66331	71548	.	+	.	ID=gene-UL19-18;Name=UL19-18;gbkey=Gene;gene=UL19-18;gene_biotype=other
+LT934125.1	EMBL	mRNA	66331	71548	.	+	.	ID=rna-UL19-18;Parent=gene-UL19-18;gbkey=mRNA;gene=UL19-18
+LT934125.1	EMBL	exon	66331	71548	.	+	.	ID=exon-UL19-18-1;Parent=rna-UL19-18;gbkey=mRNA;gene=UL19-18
+LT934125.1	EMBL	gene	70500	71548	.	+	.	ID=gene-UL18;Name=UL18;gbkey=Gene;gene=UL18;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	70522	71548	.	+	.	ID=rna-UL18;Parent=gene-UL18;gbkey=mRNA;gene=UL18
+LT934125.1	EMBL	exon	70522	71548	.	+	.	ID=exon-UL18-1;Parent=rna-UL18;gbkey=mRNA;gene=UL18
+LT934125.1	EMBL	CDS	70559	71449	.	+	0	ID=cds-SOF05953.1;Parent=rna-UL18;Dbxref=GOA:G3G8T3,InterPro:IPR002690,UniProtKB/TrEMBL:G3G8T3,NCBI_GP:SOF05953.1;Name=SOF05953.1;Note=capsid protein%3B triplex protein;gbkey=CDS;gene=UL18;product=UL18;protein_id=SOF05953.1
+LT934125.1	EMBL	gene	71647	76754	.	-	.	ID=gene-UL15;Name=UL15;gbkey=Gene;gene=UL15;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	75663	76754	.	-	0	ID=cds-SOF05954.1;Parent=gene-UL15;Dbxref=GOA:A0A2C9C302,InterPro:IPR003498,InterPro:IPR003499,InterPro:IPR027417,InterPro:IPR033663,InterPro:IPR038435,UniProtKB/TrEMBL:A0A2C9C302,NCBI_GP:SOF05954.1;Name=SOF05954.1;Note=involved in DNA packaging%3B terminase subunit UL15;gbkey=CDS;gene=UL15;part=1;product=UL15;protein_id=SOF05954.1
+LT934125.1	EMBL	CDS	71647	72783	.	-	0	ID=cds-SOF05954.1;Parent=gene-UL15;Dbxref=GOA:A0A2C9C302,InterPro:IPR003498,InterPro:IPR003499,InterPro:IPR027417,InterPro:IPR033663,InterPro:IPR038435,UniProtKB/TrEMBL:A0A2C9C302,NCBI_GP:SOF05954.1;Name=SOF05954.1;Note=involved in DNA packaging%3B terminase subunit UL15;gbkey=CDS;gene=UL15;part=2;product=UL15;protein_id=SOF05954.1
+LT934125.1	EMBL	gene	72730	75644	.	+	.	ID=gene-UL17;Name=UL17;gbkey=Gene;gene=UL17;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	72834	74627	.	+	0	ID=cds-SOF05955.1;Parent=gene-UL17;Dbxref=GOA:A0A2C9C2T2,InterPro:IPR007640,UniProtKB/TrEMBL:A0A2C9C2T2,NCBI_GP:SOF05955.1;Name=SOF05955.1;Note=C capsid-specific component%3B involved in DNA encapsidation;gbkey=CDS;gene=UL17;product=UL17;protein_id=SOF05955.1
+LT934125.1	EMBL	gene	72752	75658	.	+	.	ID=gene-UL17-16;Name=UL17-16;gbkey=Gene;gene=UL17-16;gene_biotype=other
+LT934125.1	EMBL	mRNA	72752	75658	.	+	.	ID=rna-UL17-16;Parent=gene-UL17-16;gbkey=mRNA;gene=UL17-16
+LT934125.1	EMBL	exon	72752	75658	.	+	.	ID=exon-UL17-16-1;Parent=rna-UL17-16;gbkey=mRNA;gene=UL17-16
+LT934125.1	EMBL	gene	74372	75658	.	+	.	ID=gene-UL16;Name=UL16;gbkey=Gene;gene=UL16;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	74392	75658	.	+	.	ID=rna-UL16;Parent=gene-UL16;gbkey=mRNA;gene=UL16
+LT934125.1	EMBL	exon	74392	75658	.	+	.	ID=exon-UL16-1;Parent=rna-UL16;gbkey=mRNA;gene=UL16
+LT934125.1	EMBL	CDS	74654	75640	.	+	0	ID=cds-SOF05956.1;Parent=rna-UL16;Dbxref=GOA:A0A2C9C386,InterPro:IPR004286,UniProtKB/TrEMBL:A0A2C9C386,NCBI_GP:SOF05956.1;Name=SOF05956.1;Note=complex with pUL21%3B tegument protein;gbkey=CDS;gene=UL16;product=UL16;protein_id=SOF05956.1
+LT934125.1	EMBL	gene	76654	79995	.	+	.	ID=gene-UL14;Name=UL14;gbkey=Gene;gene=UL14;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	76753	77232	.	+	0	ID=cds-SOF05957.1;Parent=gene-UL14;Dbxref=InterPro:IPR005207,UniProtKB/TrEMBL:G3G902,NCBI_GP:SOF05957.1;Name=SOF05957.1;Note=UL14 protein;gbkey=CDS;gene=UL14;product=UL14;protein_id=SOF05957.1
+LT934125.1	EMBL	gene	76662	77108	.	+	.	ID=gene-NCL14;Name=NCL14;gbkey=Gene;gene=NCL14;gene_biotype=other
+LT934125.1	EMBL	mRNA	76662	77108	.	+	.	ID=rna-NCL14;Parent=gene-NCL14;gbkey=mRNA;gene=NCL14
+LT934125.1	EMBL	exon	76662	77108	.	+	.	ID=exon-NCL14-1;Parent=rna-NCL14;gbkey=mRNA;gene=NCL14
+LT934125.1	EMBL	gene	76676	80003	.	+	.	ID=gene-UL14-13-12-11;Name=UL14-13-12-11;gbkey=Gene;gene=UL14-13-12-11;gene_biotype=other
+LT934125.1	EMBL	mRNA	76676	80003	.	+	.	ID=rna-UL14-13-12-11;Parent=gene-UL14-13-12-11;gbkey=mRNA;gene=UL14-13-12-11
+LT934125.1	EMBL	exon	76676	80003	.	+	.	ID=exon-UL14-13-12-11-1;Parent=rna-UL14-13-12-11;gbkey=mRNA;gene=UL14-13-12-11
+LT934125.1	EMBL	gene	76961	79995	.	+	.	ID=gene-UL13;Name=UL13;gbkey=Gene;gene=UL13;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	77202	78398	.	+	0	ID=cds-SOF05958.1;Parent=gene-UL13;Dbxref=GOA:G3G8T8,InterPro:IPR000719,InterPro:IPR008271,InterPro:IPR011009,UniProtKB/TrEMBL:G3G8T8,NCBI_GP:SOF05958.1;Name=SOF05958.1;Note=serine/threonine protein kinase;gbkey=CDS;gene=UL13;product=UL13;protein_id=SOF05958.1
+LT934125.1	EMBL	gene	76990	80002	.	+	.	ID=gene-UL13-12-11;Name=UL13-12-11;gbkey=Gene;gene=UL13-12-11;gene_biotype=other
+LT934125.1	EMBL	mRNA	76990	80002	.	+	.	ID=rna-UL13-12-11;Parent=gene-UL13-12-11;gbkey=mRNA;gene=UL13-12-11
+LT934125.1	EMBL	exon	76990	80002	.	+	.	ID=exon-UL13-12-11-1;Parent=rna-UL13-12-11;gbkey=mRNA;gene=UL13-12-11
+LT934125.1	EMBL	gene	78011	79995	.	+	.	ID=gene-UL12;Name=UL12;gbkey=Gene;gene=UL12;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	78364	79821	.	+	0	ID=cds-SOF05959.1;Parent=gene-UL12;Dbxref=GOA:A0A2C9C2I0,InterPro:IPR001616,InterPro:IPR011335,InterPro:IPR034720,UniProtKB/TrEMBL:A0A2C9C2I0,NCBI_GP:SOF05959.1;Name=SOF05959.1;Note=involved in DNA processing;gbkey=CDS;gene=UL12;product=UL12;protein_id=SOF05959.1
+LT934125.1	EMBL	gene	78039	80003	.	+	.	ID=gene-UL12-11;Name=UL12-11;gbkey=Gene;gene=UL12-11;gene_biotype=other
+LT934125.1	EMBL	mRNA	78039	80003	.	+	.	ID=rna-UL12-11;Parent=gene-UL12-11;gbkey=mRNA;gene=UL12-11
+LT934125.1	EMBL	exon	78039	80003	.	+	.	ID=exon-UL12-11-1;Parent=rna-UL12-11;gbkey=mRNA;gene=UL12-11
+LT934125.1	EMBL	gene	79437	80002	.	+	.	ID=gene-UL11;Name=UL11;gbkey=Gene;gene=UL11;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	79437	80002	.	+	.	ID=rna-UL11;Parent=gene-UL11;gbkey=mRNA;gene=UL11
+LT934125.1	EMBL	exon	79437	80002	.	+	.	ID=exon-UL11-1;Parent=rna-UL11;gbkey=mRNA;gene=UL11
+LT934125.1	EMBL	CDS	79779	79970	.	+	0	ID=cds-SOF05960.1;Parent=rna-UL11;Dbxref=GOA:A0A2C9C2S7,InterPro:IPR024351,UniProtKB/TrEMBL:A0A2C9C2S7,NCBI_GP:SOF05960.1;Name=SOF05960.1;Note=membrane associated tegument protein%3B myristilated;gbkey=CDS;gene=UL11;product=UL11;protein_id=SOF05960.1
+LT934125.1	EMBL	gene	80345	82100	.	-	.	ID=gene-UL10-L5;Name=UL10-L5;gbkey=Gene;gene=UL10-L5;gene_biotype=other
+LT934125.1	EMBL	mRNA	80345	82100	.	-	.	ID=rna-UL10-L5;Parent=gene-UL10-L5;gbkey=mRNA;gene=UL10-L5
+LT934125.1	EMBL	exon	80345	82100	.	-	.	ID=exon-UL10-L5-1;Parent=rna-UL10-L5;gbkey=mRNA;gene=UL10-L5
+LT934125.1	EMBL	gene	80345	82031	.	-	.	ID=gene-UL10-L4;Name=UL10-L4;gbkey=Gene;gene=UL10-L4;gene_biotype=other
+LT934125.1	EMBL	mRNA	80345	82031	.	-	.	ID=rna-UL10-L4;Parent=gene-UL10-L4;gbkey=mRNA;gene=UL10-L4
+LT934125.1	EMBL	exon	80345	82031	.	-	.	ID=exon-UL10-L4-1;Parent=rna-UL10-L4;gbkey=mRNA;gene=UL10-L4
+LT934125.1	EMBL	gene	80345	81895	.	-	.	ID=gene-UL10-L3;Name=UL10-L3;gbkey=Gene;gene=UL10-L3;gene_biotype=other
+LT934125.1	EMBL	mRNA	80345	81895	.	-	.	ID=rna-UL10-L3;Parent=gene-UL10-L3;gbkey=mRNA;gene=UL10-L3
+LT934125.1	EMBL	exon	80345	81895	.	-	.	ID=exon-UL10-L3-1;Parent=rna-UL10-L3;gbkey=mRNA;gene=UL10-L3
+LT934125.1	EMBL	gene	80345	81878	.	-	.	ID=gene-UL10-L2;Name=UL10-L2;gbkey=Gene;gene=UL10-L2;gene_biotype=other
+LT934125.1	EMBL	mRNA	80345	81878	.	-	.	ID=rna-UL10-L2;Parent=gene-UL10-L2;gbkey=mRNA;gene=UL10-L2
+LT934125.1	EMBL	exon	80345	81878	.	-	.	ID=exon-UL10-L2-1;Parent=rna-UL10-L2;gbkey=mRNA;gene=UL10-L2
+LT934125.1	EMBL	gene	80345	81847	.	-	.	ID=gene-UL10 -L1;Name=UL10 -L1;gbkey=Gene;gene=UL10 -L1;gene_biotype=other
+LT934125.1	EMBL	mRNA	80345	81847	.	-	.	ID=rna-UL10 -L1;Parent=gene-UL10 -L1;gbkey=mRNA;gene=UL10 -L1
+LT934125.1	EMBL	exon	80345	81847	.	-	.	ID=exon-UL10 -L1-1;Parent=rna-UL10 -L1;gbkey=mRNA;gene=UL10 -L1
+LT934125.1	EMBL	gene	80345	81835	.	-	.	ID=gene-UL10;Name=UL10;gbkey=Gene;gene=UL10;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	80345	81812	.	-	.	ID=rna-UL10;Parent=gene-UL10;gbkey=mRNA;gene=UL10
+LT934125.1	EMBL	exon	80345	81812	.	-	.	ID=exon-UL10-1;Parent=rna-UL10;gbkey=mRNA;gene=UL10
+LT934125.1	EMBL	CDS	80370	81551	.	-	0	ID=cds-SOF05961.1;Parent=rna-UL10;Dbxref=GOA:G3G906,InterPro:IPR000785,UniProtKB/TrEMBL:G3G906,NCBI_GP:SOF05961.1;Name=SOF05961.1;Note=complex with gN%3B envelope glycoprotein gM;gbkey=CDS;gene=UL10;product=UL10;protein_id=SOF05961.1
+LT934125.1	EMBL	gene	81368	86174	.	+	.	ID=gene-UL9-8-L;Name=UL9-8-L;gbkey=Gene;gene=UL9-8-L;gene_biotype=other
+LT934125.1	EMBL	mRNA	81368	86174	.	+	.	ID=rna-UL9-8-L;Parent=gene-UL9-8-L;gbkey=mRNA;gene=UL9-8-L
+LT934125.1	EMBL	exon	81368	86174	.	+	.	ID=exon-UL9-8-L-1;Parent=rna-UL9-8-L;gbkey=mRNA;gene=UL9-8-L
+LT934125.1	EMBL	gene	81483	86174	.	+	.	ID=gene-UL9-8;Name=UL9-8;gbkey=Gene;gene=UL9-8;gene_biotype=other
+LT934125.1	EMBL	mRNA	81483	86174	.	+	.	ID=rna-UL9-8;Parent=gene-UL9-8;gbkey=mRNA;gene=UL9-8
+LT934125.1	EMBL	exon	81483	86174	.	+	.	ID=exon-UL9-8-1;Parent=rna-UL9-8;gbkey=mRNA;gene=UL9-8
+LT934125.1	EMBL	gene	81499	86146	.	+	.	ID=gene-UL9;Name=UL9;gbkey=Gene;gene=UL9;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	81550	84090	.	+	0	ID=cds-SOF05962.1;Parent=gene-UL9;Dbxref=GOA:A0A2C9C310,InterPro:IPR003450,InterPro:IPR014001,InterPro:IPR027417,UniProtKB/TrEMBL:A0A2C9C310,NCBI_GP:SOF05962.1;Name=SOF05962.1;Note=origin binding protein;gbkey=CDS;gene=UL9;product=UL9;protein_id=SOF05962.1
+LT934125.1	EMBL	gene	83947	86174	.	+	.	ID=gene-UL8;Name=UL8;gbkey=Gene;gene=UL8;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	83980	86174	.	+	.	ID=rna-UL8;Parent=gene-UL8;gbkey=mRNA;gene=UL8
+LT934125.1	EMBL	exon	83980	86174	.	+	.	ID=exon-UL8-1;Parent=rna-UL8;gbkey=mRNA;gene=UL8
+LT934125.1	EMBL	CDS	84087	86138	.	+	0	ID=cds-SOF05963.1;Parent=rna-UL8;Dbxref=GOA:A0A2C9C2Q4,InterPro:IPR004996,UniProtKB/TrEMBL:A0A2C9C2Q4,NCBI_GP:SOF05963.1;Name=SOF05963.1;Note=helicase primase subunit;gbkey=CDS;gene=UL8;product=UL8;protein_id=SOF05963.1
+LT934125.1	EMBL	gene	86123	89086	.	-	.	ID=gene-UL6-7;Name=UL6-7;gbkey=Gene;gene=UL6-7;gene_biotype=other
+LT934125.1	EMBL	mRNA	86123	89086	.	-	.	ID=rna-UL6-7;Parent=gene-UL6-7;gbkey=mRNA;gene=UL6-7
+LT934125.1	EMBL	exon	86123	89086	.	-	.	ID=exon-UL6-7-1;Parent=rna-UL6-7;gbkey=mRNA;gene=UL6-7
+LT934125.1	EMBL	gene	86123	87190	.	-	.	ID=gene-UL7;Name=UL7;gbkey=Gene;gene=UL7;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	86123	87167	.	-	.	ID=rna-UL7;Parent=gene-UL7;gbkey=mRNA;gene=UL7
+LT934125.1	EMBL	exon	86123	87167	.	-	.	ID=exon-UL7-1;Parent=rna-UL7;gbkey=mRNA;gene=UL7
+LT934125.1	EMBL	CDS	86302	87102	.	-	0	ID=cds-SOF05964.1;Parent=rna-UL7;Dbxref=GOA:G3G909,InterPro:IPR002600,UniProtKB/TrEMBL:G3G909,NCBI_GP:SOF05964.1;Name=SOF05964.1;Note=helicase primase subunit;gbkey=CDS;gene=UL7;product=UL7;protein_id=SOF05964.1
+LT934125.1	EMBL	gene	86152	88924	.	-	.	ID=gene-UL6;Name=UL6;gbkey=Gene;gene=UL6;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	86993	88924	.	-	0	ID=cds-SOF05965.1;Parent=gene-UL6;Dbxref=GOA:A0A2C9C2T9,InterPro:IPR002660,UniProtKB/TrEMBL:A0A2C9C2T9,NCBI_GP:SOF05965.1;Name=SOF05965.1;Note=capsid portal protein;gbkey=CDS;gene=UL6;product=UL6;protein_id=SOF05965.1
+LT934125.1	EMBL	gene	88821	92065	.	+	.	ID=gene-UL5-4-L;Name=UL5-4-L;gbkey=Gene;gene=UL5-4-L;gene_biotype=other
+LT934125.1	EMBL	mRNA	88821	92065	.	+	.	ID=rna-UL5-4-L;Parent=gene-UL5-4-L;gbkey=mRNA;gene=UL5-4-L
+LT934125.1	EMBL	exon	88821	92065	.	+	.	ID=exon-UL5-4-L-1;Parent=rna-UL5-4-L;gbkey=mRNA;gene=UL5-4-L
+LT934125.1	EMBL	gene	88858	91566	.	+	.	ID=gene-UL5;Name=UL5;gbkey=Gene;gene=UL5;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	88878	91566	.	+	.	ID=rna-UL5;Parent=gene-UL5;gbkey=mRNA;gene=UL5
+LT934125.1	EMBL	exon	88878	91566	.	+	.	ID=exon-UL5-1;Parent=rna-UL5;gbkey=mRNA;gene=UL5
+LT934125.1	EMBL	CDS	88923	91427	.	+	0	ID=cds-SOF05966.1;Parent=rna-UL5;Dbxref=GOA:A0A0S2MM77,InterPro:IPR003840,InterPro:IPR027417,InterPro:IPR034711,UniProtKB/TrEMBL:A0A0S2MM77,NCBI_GP:SOF05966.1;Name=SOF05966.1;Note=helicase primase subunit;gbkey=CDS;gene=UL5;product=UL5;protein_id=SOF05966.1
+LT934125.1	EMBL	gene	88878	92065	.	+	.	ID=gene-UL5-4;Name=UL5-4;gbkey=Gene;gene=UL5-4;gene_biotype=other
+LT934125.1	EMBL	mRNA	88878	92065	.	+	.	ID=rna-UL5-4;Parent=gene-UL5-4;gbkey=mRNA;gene=UL5-4
+LT934125.1	EMBL	exon	88878	92065	.	+	.	ID=exon-UL5-4-1;Parent=rna-UL5-4;gbkey=mRNA;gene=UL5-4
+LT934125.1	EMBL	gene	89126	92065	.	+	.	ID=gene-UL5-4-M;Name=UL5-4-M;gbkey=Gene;gene=UL5-4-M;gene_biotype=other
+LT934125.1	EMBL	mRNA	89126	92065	.	+	.	ID=rna-UL5-4-M;Parent=gene-UL5-4-M;gbkey=mRNA;gene=UL5-4-M
+LT934125.1	EMBL	exon	89126	92065	.	+	.	ID=exon-UL5-4-M-1;Parent=rna-UL5-4-M;gbkey=mRNA;gene=UL5-4-M
+LT934125.1	EMBL	gene	90374	92062	.	+	.	ID=gene-UL-5-4-S;Name=UL-5-4-S;gbkey=Gene;gene=UL-5-4-S;gene_biotype=other
+LT934125.1	EMBL	mRNA	90374	92062	.	+	.	ID=rna-UL-5-4-S;Parent=gene-UL-5-4-S;gbkey=mRNA;gene=UL-5-4-S
+LT934125.1	EMBL	exon	90374	92062	.	+	.	ID=exon-UL-5-4-S-1;Parent=rna-UL-5-4-S;gbkey=mRNA;gene=UL-5-4-S
+LT934125.1	EMBL	gene	91380	92066	.	+	.	ID=gene-UL4;Name=UL4;gbkey=Gene;gene=UL4;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	91402	92066	.	+	.	ID=rna-UL4;Parent=gene-UL4;gbkey=mRNA;gene=UL4
+LT934125.1	EMBL	exon	91402	92066	.	+	.	ID=exon-UL4-1;Parent=rna-UL4;gbkey=mRNA;gene=UL4
+LT934125.1	EMBL	CDS	91486	91923	.	+	0	ID=cds-SOF05967.1;Parent=rna-UL4;Dbxref=InterPro:IPR004958,UniProtKB/TrEMBL:G3G912,NCBI_GP:SOF05967.1;Name=SOF05967.1;Note=nuclear protein UL4;gbkey=CDS;gene=UL4;product=UL4;protein_id=SOF05967.1
+LT934125.1	EMBL	gene	92099	92752	.	-	.	ID=gene-UL3.5;Name=UL3.5;gbkey=Gene;gene=UL3.5;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	92099	92752	.	-	0	ID=cds-SOF05968.1;Parent=gene-UL3.5;Dbxref=UniProtKB/TrEMBL:A0A2C9C2D3,NCBI_GP:SOF05968.1;Name=SOF05968.1;Note=complex with pUL48%3B involved in virion morphogenesis;gbkey=CDS;gene=UL3.5;product=UL3.5;protein_id=SOF05968.1
+LT934125.1	EMBL	gene	92428	93661	.	-	.	ID=gene-UL3;Name=UL3;gbkey=Gene;gene=UL3;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	92428	93661	.	-	.	ID=rna-UL3;Parent=gene-UL3;gbkey=mRNA;gene=UL3
+LT934125.1	EMBL	exon	92428	93661	.	-	.	ID=exon-UL3-1;Parent=rna-UL3;gbkey=mRNA;gene=UL3
+LT934125.1	EMBL	CDS	92749	93465	.	-	0	ID=cds-SOF05969.1;Parent=rna-UL3;Dbxref=InterPro:IPR005035,UniProtKB/TrEMBL:A0A2C9C2J0,NCBI_GP:SOF05969.1;Name=SOF05969.1;Note=nuclear protein UL3;gbkey=CDS;gene=UL3;product=UL3;protein_id=SOF05969.1
+LT934125.1	EMBL	gene	93223	94524	.	-	.	ID=gene-UL2;Name=UL2;gbkey=Gene;gene=UL2;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	93223	94524	.	-	.	ID=rna-UL2;Parent=gene-UL2;gbkey=mRNA;gene=UL2
+LT934125.1	EMBL	exon	93223	94524	.	-	.	ID=exon-UL2-1;Parent=rna-UL2;gbkey=mRNA;gene=UL2
+LT934125.1	EMBL	CDS	93521	94483	.	-	0	ID=cds-SOF05970.1;Parent=rna-UL2;Dbxref=GOA:A0A2C9C2T6,InterPro:IPR002043,InterPro:IPR005122,InterPro:IPR018085,InterPro:IPR036895,UniProtKB/TrEMBL:A0A2C9C2T6,NCBI_GP:SOF05970.1;Name=SOF05970.1;Note=uracil-DNA glycosylase;gbkey=CDS;gene=UL2;product=UL2;protein_id=SOF05970.1
+LT934125.1	EMBL	gene	94461	94931	.	-	.	ID=gene-UL1;Name=UL1;gbkey=Gene;gene=UL1;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	94461	94931	.	-	0	ID=cds-SOF05971.1;Parent=gene-UL1;Dbxref=GOA:A0A2C9C2T8,InterPro:IPR007923,InterPro:IPR034708,InterPro:IPR038311,UniProtKB/TrEMBL:A0A2C9C2T8,NCBI_GP:SOF05971.1;Name=SOF05971.1;Note=complex with gH%3B glycoprotein gL;gbkey=CDS;gene=UL1;product=UL1;protein_id=SOF05971.1
+LT934125.1	EMBL	gene	95882	97369	.	-	.	ID=gene-Ep0;Name=Ep0;gbkey=Gene;gene=Ep0;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	95882	97368	.	-	.	ID=rna-Ep0;Parent=gene-Ep0;gbkey=mRNA;gene=Ep0
+LT934125.1	EMBL	exon	95882	97368	.	-	.	ID=exon-Ep0-1;Parent=rna-Ep0;gbkey=mRNA;gene=Ep0
+LT934125.1	EMBL	mRNA	95891	97369	.	-	.	ID=rna-Ep0-2;Parent=gene-Ep0;gbkey=mRNA;gene=Ep0;product=EP0
+LT934125.1	EMBL	exon	96990	97369	.	-	.	ID=exon-Ep0-2-1;Parent=rna-Ep0-2;gbkey=mRNA;gene=Ep0;part=1;product=EP0
+LT934125.1	EMBL	exon	95891	96851	.	-	.	ID=exon-Ep0-2-2;Parent=rna-Ep0-2;gbkey=mRNA;gene=Ep0;part=2;product=EP0
+LT934125.1	EMBL	CDS	96990	97346	.	-	0	ID=cds-SOF05972.1;Parent=rna-Ep0-2;Dbxref=GOA:A0A2C9C317,InterPro:IPR001841,InterPro:IPR013083,InterPro:IPR017907,InterPro:IPR018957,UniProtKB/TrEMBL:A0A2C9C317,NCBI_GP:SOF05972.1;Name=SOF05972.1;Note=early protein 0%3B involved in gene regulation;gbkey=CDS;gene=Ep0;part=1;product=EP0;protein_id=SOF05972.1
+LT934125.1	EMBL	CDS	96114	96851	.	-	0	ID=cds-SOF05972.1;Parent=rna-Ep0-2;Dbxref=GOA:A0A2C9C317,InterPro:IPR001841,InterPro:IPR013083,InterPro:IPR017907,InterPro:IPR018957,UniProtKB/TrEMBL:A0A2C9C317,NCBI_GP:SOF05972.1;Name=SOF05972.1;Note=early protein 0%3B involved in gene regulation;gbkey=CDS;gene=Ep0;part=2;product=EP0;protein_id=SOF05972.1
+LT934125.1	EMBL	gene	97510	100092	.	+	.	ID=gene-LLT;Name=LLT;gbkey=Gene;gene=LLT;gene_biotype=miRNA
+LT934125.1	EMBL	primary_transcript	97510	97591	.	+	.	ID=rna-LLT;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-1
+LT934125.1	EMBL	exon	97510	97591	.	+	.	ID=exon-LLT-1;Parent=rna-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-1
+LT934125.1	EMBL	miRNA	97562	97582	.	+	.	ID=rna-LLT-2;Parent=rna-LLT;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-1-3'
+LT934125.1	EMBL	exon	97562	97582	.	+	.	ID=exon-LLT-2-1;Parent=rna-LLT-2;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-1-3'
+LT934125.1	EMBL	primary_transcript	98012	98092	.	+	.	ID=rna-LLT-3;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-2
+LT934125.1	EMBL	exon	98012	98092	.	+	.	ID=exon-LLT-3-1;Parent=rna-LLT-3;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-2
+LT934125.1	EMBL	miRNA	98023	98042	.	+	.	ID=rna-LLT-4;Parent=rna-LLT-3;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-2-5'
+LT934125.1	EMBL	exon	98023	98042	.	+	.	ID=exon-LLT-4-1;Parent=rna-LLT-4;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-2-5'
+LT934125.1	EMBL	primary_transcript	98077	98158	.	+	.	ID=rna-LLT-5;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-3
+LT934125.1	EMBL	exon	98077	98158	.	+	.	ID=exon-LLT-5-1;Parent=rna-LLT-5;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-3
+LT934125.1	EMBL	miRNA	98128	98149	.	+	.	ID=rna-LLT-6;Parent=rna-LLT-5;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-3-3'
+LT934125.1	EMBL	exon	98128	98149	.	+	.	ID=exon-LLT-6-1;Parent=rna-LLT-6;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-3-3'
+LT934125.1	EMBL	primary_transcript	98394	98472	.	+	.	ID=rna-LLT-7;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-4
+LT934125.1	EMBL	exon	98394	98472	.	+	.	ID=exon-LLT-7-1;Parent=rna-LLT-7;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-4
+LT934125.1	EMBL	miRNA	98405	98426	.	+	.	ID=rna-LLT-8;Parent=rna-LLT-7;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-4-5'
+LT934125.1	EMBL	exon	98405	98426	.	+	.	ID=exon-LLT-8-1;Parent=rna-LLT-8;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-4-5'
+LT934125.1	EMBL	primary_transcript	98920	99026	.	+	.	ID=rna-LLT-9;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-7
+LT934125.1	EMBL	exon	98920	99026	.	+	.	ID=exon-LLT-9-1;Parent=rna-LLT-9;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-7
+LT934125.1	EMBL	miRNA	98930	98948	.	+	.	ID=rna-LLT-10;Parent=rna-LLT-9;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-7-5'
+LT934125.1	EMBL	exon	98930	98948	.	+	.	ID=exon-LLT-10-1;Parent=rna-LLT-10;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-7-5'
+LT934125.1	EMBL	primary_transcript	99179	99263	.	+	.	ID=rna-LLT-11;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-6
+LT934125.1	EMBL	exon	99179	99263	.	+	.	ID=exon-LLT-11-1;Parent=rna-LLT-11;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-6
+LT934125.1	EMBL	miRNA	99190	99210	.	+	.	ID=rna-LLT-12;Parent=rna-LLT-11;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-6-5'
+LT934125.1	EMBL	exon	99190	99210	.	+	.	ID=exon-LLT-12-1;Parent=rna-LLT-12;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-6-5'
+LT934125.1	EMBL	primary_transcript	99505	99584	.	+	.	ID=rna-LLT-13;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-5
+LT934125.1	EMBL	exon	99505	99584	.	+	.	ID=exon-LLT-13-1;Parent=rna-LLT-13;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-5
+LT934125.1	EMBL	miRNA	99555	99576	.	+	.	ID=rna-LLT-14;Parent=rna-LLT-13;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-5-5'
+LT934125.1	EMBL	exon	99555	99576	.	+	.	ID=exon-LLT-14-1;Parent=rna-LLT-14;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-5-5'
+LT934125.1	EMBL	primary_transcript	99859	99945	.	+	.	ID=rna-LLT-15;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-8
+LT934125.1	EMBL	exon	99859	99945	.	+	.	ID=exon-LLT-15-1;Parent=rna-LLT-15;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-8
+LT934125.1	EMBL	miRNA	99870	99889	.	+	.	ID=rna-LLT-16;Parent=rna-LLT-15;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-8-5'
+LT934125.1	EMBL	exon	99870	99889	.	+	.	ID=exon-LLT-16-1;Parent=rna-LLT-16;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-8-5'
+LT934125.1	EMBL	primary_transcript	100013	100092	.	+	.	ID=rna-LLT-17;Parent=gene-LLT;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-9
+LT934125.1	EMBL	exon	100013	100092	.	+	.	ID=exon-LLT-17-1;Parent=rna-LLT-17;Note=derived from strain Ea;gbkey=precursor_RNA;gene=LLT;product=precursor microRNA pre-prv-miR-9
+LT934125.1	EMBL	miRNA	100024	100043	.	+	.	ID=rna-LLT-18;Parent=rna-LLT-17;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-9-5'
+LT934125.1	EMBL	exon	100024	100043	.	+	.	ID=exon-LLT-18-1;Parent=rna-LLT-18;Note=derived from strain Ea;gbkey=ncRNA;gene=LLT;product=prv-miR-9-5'
+LT934125.1	EMBL	gene	101482	101741	.	+	.	ID=gene-AST;Name=AST;gbkey=Gene;gene=AST;gene_biotype=miRNA
+LT934125.1	EMBL	primary_transcript	101482	101563	.	+	.	ID=rna-AST;Parent=gene-AST;Note=derived from strain Ea;gbkey=precursor_RNA;gene=AST;product=precursor microRNA pre-prv-miR-10-1
+LT934125.1	EMBL	exon	101482	101563	.	+	.	ID=exon-AST-1;Parent=rna-AST;Note=derived from strain Ea;gbkey=precursor_RNA;gene=AST;product=precursor microRNA pre-prv-miR-10-1
+LT934125.1	EMBL	miRNA	101532	101554	.	+	.	ID=rna-AST-2;Parent=rna-AST;Note=derived from strain Ea;gbkey=ncRNA;gene=AST;product=prv-miR-10-1
+LT934125.1	EMBL	exon	101532	101554	.	+	.	ID=exon-AST-2-1;Parent=rna-AST-2;Note=derived from strain Ea;gbkey=ncRNA;gene=AST;product=prv-miR-10-1
+LT934125.1	EMBL	primary_transcript	101653	101741	.	+	.	ID=rna-AST-3;Parent=gene-AST;Note=derived from strain Ea;gbkey=precursor_RNA;gene=AST;product=precursor microRNA pre-prv-miR-11-1
+LT934125.1	EMBL	exon	101653	101741	.	+	.	ID=exon-AST-3-1;Parent=rna-AST-3;Note=derived from strain Ea;gbkey=precursor_RNA;gene=AST;product=precursor microRNA pre-prv-miR-11-1
+LT934125.1	EMBL	miRNA	101668	101690	.	+	.	ID=rna-AST-4;Parent=rna-AST-3;Note=derived from strain Ea;gbkey=ncRNA;gene=AST;product=prv-miR-11-1
+LT934125.1	EMBL	exon	101668	101690	.	+	.	ID=exon-AST-4-1;Parent=rna-AST-4;Note=derived from strain Ea;gbkey=ncRNA;gene=AST;product=prv-miR-11-1
+LT934125.1	EMBL	gene	102454	107590	.	-	.	ID=gene-IE180;Name=IE180;gbkey=Gene;gene=IE180;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	102454	107566	.	-	.	ID=rna-IE180;Parent=gene-IE180;gbkey=mRNA;gene=IE180
+LT934125.1	EMBL	exon	102454	107566	.	-	.	ID=exon-IE180-1;Parent=rna-IE180;gbkey=mRNA;gene=IE180
+LT934125.1	EMBL	CDS	102945	107297	.	-	0	ID=cds-SOF05973.1;Parent=rna-IE180;Dbxref=GOA:A0A2C9C2R2,InterPro:IPR005205,InterPro:IPR005206,UniProtKB/TrEMBL:A0A2C9C2R2,NCBI_GP:SOF05973.1;Name=SOF05973.1;Note=involved in gene regulation%3B major immediate early protein 180kDa;gbkey=CDS;gene=IE180;product=IE180;protein_id=SOF05973.1
+LT934125.1	EMBL	gene	110199	111111	.	-	.	ID=gene-NOIR-2;Name=NOIR-2;gbkey=Gene;gene=NOIR-2;gene_biotype=other
+LT934125.1	EMBL	mRNA	110199	111110	.	-	.	ID=rna-NOIR-2;Parent=gene-NOIR-2;gbkey=mRNA;gene=NOIR-2
+LT934125.1	EMBL	exon	110199	111110	.	-	.	ID=exon-NOIR-2-1;Parent=rna-NOIR-2;gbkey=mRNA;gene=NOIR-2
+LT934125.1	EMBL	mRNA	110200	111111	.	-	.	ID=rna-NOIR-2-2;Parent=gene-NOIR-2;gbkey=mRNA;gene=NOIR-2
+LT934125.1	EMBL	exon	110200	111111	.	-	.	ID=exon-NOIR-2-2-1;Parent=rna-NOIR-2-2;gbkey=mRNA;gene=NOIR-2
+LT934125.1	EMBL	gene	112877	116969	.	+	.	ID=gene-PTO-US1;Name=PTO-US1;gbkey=Gene;gene=PTO-US1;gene_biotype=other
+LT934125.1	EMBL	mRNA	112877	116969	.	+	.	ID=rna-PTO-US1;Parent=gene-PTO-US1;gbkey=mRNA;gene=PTO-US1
+LT934125.1	EMBL	exon	112877	116969	.	+	.	ID=exon-PTO-US1-1;Parent=rna-PTO-US1;gbkey=mRNA;gene=PTO-US1
+LT934125.1	EMBL	mRNA	112879	116969	.	+	.	ID=rna-PTO-US1-2;Parent=gene-PTO-US1;gbkey=mRNA;gene=PTO-US1
+LT934125.1	EMBL	exon	112879	116969	.	+	.	ID=exon-PTO-US1-2-1;Parent=rna-PTO-US1-2;gbkey=mRNA;gene=PTO-US1
+LT934125.1	EMBL	gene	114955	116969	.	+	.	ID=gene-US1;Name=US1;gbkey=Gene;gene=US1;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	114955	116960	.	+	.	ID=rna-US1;Parent=gene-US1;gbkey=mRNA;gene=US1;product=US1
+LT934125.1	EMBL	exon	114955	115140	.	+	.	ID=exon-US1-1;Parent=rna-US1;gbkey=mRNA;gene=US1;part=1;product=US1
+LT934125.1	EMBL	exon	115257	115310	.	+	.	ID=exon-US1-2;Parent=rna-US1;gbkey=mRNA;gene=US1;part=2;product=US1
+LT934125.1	EMBL	exon	115464	116960	.	+	.	ID=exon-US1-3;Parent=rna-US1;gbkey=mRNA;gene=US1;part=3;product=US1
+LT934125.1	EMBL	CDS	115740	116831	.	+	0	ID=cds-SOF05974.1;Parent=rna-US1;Dbxref=InterPro:IPR003403,UniProtKB/TrEMBL:A0A2C9C316,NCBI_GP:SOF05974.1;Name=SOF05974.1;Note=Rsp40%3B involved in gene regulation;gbkey=CDS;gene=US1;product=US1;protein_id=SOF05974.1
+LT934125.1	EMBL	mRNA	114955	116960	.	+	.	ID=rna-US1-2;Parent=gene-US1;gbkey=mRNA;gene=US1;product=US1
+LT934125.1	EMBL	exon	114955	115127	.	+	.	ID=exon-US1-2-1;Parent=rna-US1-2;gbkey=mRNA;gene=US1;part=1;product=US1
+LT934125.1	EMBL	exon	115244	115297	.	+	.	ID=exon-US1-2-2;Parent=rna-US1-2;gbkey=mRNA;gene=US1;part=2;product=US1
+LT934125.1	EMBL	exon	115451	116960	.	+	.	ID=exon-US1-2-3;Parent=rna-US1-2;gbkey=mRNA;gene=US1;part=3;product=US1
+LT934125.1	EMBL	mRNA	114978	116969	.	+	.	ID=rna-US1-3;Parent=gene-US1;gbkey=mRNA;gene=US1
+LT934125.1	EMBL	exon	114978	116969	.	+	.	ID=exon-US1-3-1;Parent=rna-US1-3;gbkey=mRNA;gene=US1
+LT934125.1	EMBL	mRNA	126746	128739	.	-	.	ID=rna-US1-4;Parent=gene-US1;gbkey=mRNA;gene=US1
+LT934125.1	EMBL	exon	126746	128739	.	-	.	ID=exon-US1-4-1;Parent=rna-US1-4;gbkey=mRNA;gene=US1
+LT934125.1	EMBL	mRNA	126755	128762	.	-	.	ID=rna-US1-5;Parent=gene-US1;gbkey=mRNA;gene=US1;product=US1
+LT934125.1	EMBL	exon	128590	128762	.	-	.	ID=exon-US1-5-1;Parent=rna-US1-5;gbkey=mRNA;gene=US1;part=1;product=US1
+LT934125.1	EMBL	exon	128420	128473	.	-	.	ID=exon-US1-5-2;Parent=rna-US1-5;gbkey=mRNA;gene=US1;part=2;product=US1
+LT934125.1	EMBL	exon	126755	128266	.	-	.	ID=exon-US1-5-3;Parent=rna-US1-5;gbkey=mRNA;gene=US1;part=3;product=US1
+LT934125.1	EMBL	CDS	126886	127977	.	-	0	ID=cds-SOF05982.1;Parent=rna-US1-5;Dbxref=InterPro:IPR003403,UniProtKB/TrEMBL:A0A2C9C316,NCBI_GP:SOF05982.1;Name=SOF05982.1;Note=Rsp40%3B involved in gene regulation;gbkey=CDS;gene=US1;product=US1;protein_id=SOF05982.1
+LT934125.1	EMBL	mRNA	126755	128762	.	-	.	ID=rna-US1-6;Parent=gene-US1;gbkey=mRNA;gene=US1;product=US1
+LT934125.1	EMBL	exon	128577	128762	.	-	.	ID=exon-US1-6-1;Parent=rna-US1-6;gbkey=mRNA;gene=US1;part=1;product=US1
+LT934125.1	EMBL	exon	128407	128460	.	-	.	ID=exon-US1-6-2;Parent=rna-US1-6;gbkey=mRNA;gene=US1;part=2;product=US1
+LT934125.1	EMBL	exon	126755	128253	.	-	.	ID=exon-US1-6-3;Parent=rna-US1-6;gbkey=mRNA;gene=US1;part=3;product=US1
+LT934125.1	EMBL	gene	117600	120484	.	+	.	ID=gene-US3-L-4;Name=US3-L-4;gbkey=Gene;gene=US3-L-4;gene_biotype=other
+LT934125.1	EMBL	mRNA	117600	120484	.	+	.	ID=rna-US3-L-4;Parent=gene-US3-L-4;gbkey=mRNA;gene=US3-L-4
+LT934125.1	EMBL	exon	117600	120484	.	+	.	ID=exon-US3-L-4-1;Parent=rna-US3-L-4;gbkey=mRNA;gene=US3-L-4
+LT934125.1	EMBL	gene	117740	120477	.	+	.	ID=gene-US3;Name=US3;gbkey=Gene;gene=US3;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	117833	118837	.	+	0	ID=cds-SOF05975.1;Parent=gene-US3;Dbxref=GOA:A0A2C9C2V0,InterPro:IPR000719,InterPro:IPR008271,InterPro:IPR011009,UniProtKB/TrEMBL:A0A2C9C2V0,NCBI_GP:SOF05975.1;Name=SOF05975.1;Note=alphaherpesvirus-specific serine/threonine kinase;gbkey=CDS;gene=US3;product=US3;protein_id=SOF05975.1
+LT934125.1	EMBL	gene	117762	120484	.	+	.	ID=gene-US3-4;Name=US3-4;gbkey=Gene;gene=US3-4;gene_biotype=other
+LT934125.1	EMBL	mRNA	117762	120484	.	+	.	ID=rna-US3-4;Parent=gene-US3-4;gbkey=mRNA;gene=US3-4
+LT934125.1	EMBL	exon	117762	120484	.	+	.	ID=exon-US3-4-1;Parent=rna-US3-4;gbkey=mRNA;gene=US3-4
+LT934125.1	EMBL	gene	118833	120484	.	+	.	ID=gene-US4;Name=US4;gbkey=Gene;gene=US4;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	118857	120484	.	+	.	ID=rna-US4;Parent=gene-US4;gbkey=mRNA;gene=US4
+LT934125.1	EMBL	exon	118857	120484	.	+	.	ID=exon-US4-1;Parent=rna-US4;gbkey=mRNA;gene=US4
+LT934125.1	EMBL	CDS	118897	120396	.	+	0	ID=cds-SOF05976.1;Parent=rna-US4;Dbxref=GOA:A0A2C9C398,InterPro:IPR002896,InterPro:IPR036179,UniProtKB/TrEMBL:A0A2C9C398,NCBI_GP:SOF05976.1;Name=SOF05976.1;Note=glycoprotein gG;gbkey=CDS;gene=US4;product=US4;protein_id=SOF05976.1
+LT934125.1	EMBL	gene	118857	122922	.	+	.	ID=gene-US4-6-7;Name=US4-6-7;gbkey=Gene;gene=US4-6-7;gene_biotype=other
+LT934125.1	EMBL	mRNA	118857	122922	.	+	.	ID=rna-US4-6-7;Parent=gene-US4-6-7;gbkey=mRNA;gene=US4-6-7
+LT934125.1	EMBL	exon	118857	122922	.	+	.	ID=exon-US4-6-7-1;Parent=rna-US4-6-7;gbkey=mRNA;gene=US4-6-7
+LT934125.1	EMBL	gene	120525	122911	.	+	.	ID=gene-US6;Name=US6;gbkey=Gene;gene=US6;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	120548	121849	.	+	.	ID=rna-US6;Parent=gene-US6;gbkey=mRNA;gene=US6
+LT934125.1	EMBL	exon	120548	121849	.	+	.	ID=exon-US6-1;Parent=rna-US6;gbkey=mRNA;gene=US6
+LT934125.1	EMBL	CDS	120576	121778	.	+	0	ID=cds-SOF05977.1;Parent=rna-US6;Dbxref=GOA:G3G922,InterPro:IPR002896,InterPro:IPR036179,UniProtKB/TrEMBL:G3G922,NCBI_GP:SOF05977.1;Name=SOF05977.1;Note=envelope glycoprotein gD%3B receptor binding protein;gbkey=CDS;gene=US6;product=US6;protein_id=SOF05977.1
+LT934125.1	EMBL	gene	120548	122922	.	+	.	ID=gene-US6-7;Name=US6-7;gbkey=Gene;gene=US6-7;gene_biotype=other
+LT934125.1	EMBL	mRNA	120548	122922	.	+	.	ID=rna-US6-7;Parent=gene-US6-7;gbkey=mRNA;gene=US6-7
+LT934125.1	EMBL	exon	120548	122922	.	+	.	ID=exon-US6-7-1;Parent=rna-US6-7;gbkey=mRNA;gene=US6-7
+LT934125.1	EMBL	gene	121754	122922	.	+	.	ID=gene-US7;Name=US7;gbkey=Gene;gene=US7;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	121776	122922	.	+	.	ID=rna-US7;Parent=gene-US7;gbkey=mRNA;gene=US7
+LT934125.1	EMBL	exon	121776	122922	.	+	.	ID=exon-US7-1;Parent=rna-US7;gbkey=mRNA;gene=US7
+LT934125.1	EMBL	CDS	121799	122896	.	+	0	ID=cds-SOF05978.1;Parent=rna-US7;Dbxref=GOA:A0A2C9C2E1,InterPro:IPR002874,UniProtKB/TrEMBL:A0A2C9C2E1,NCBI_GP:SOF05978.1;Name=SOF05978.1;Note=complex with gE%3B envelope glycoprotein gI;gbkey=CDS;gene=US7;product=US7;protein_id=SOF05978.1
+LT934125.1	EMBL	gene	121776	126158	.	+	.	ID=gene-US7-8-9-2;Name=US7-8-9-2;gbkey=Gene;gene=US7-8-9-2;gene_biotype=other
+LT934125.1	EMBL	mRNA	121776	126158	.	+	.	ID=rna-US7-8-9-2;Parent=gene-US7-8-9-2;gbkey=mRNA;gene=US7-8-9-2
+LT934125.1	EMBL	exon	121776	126158	.	+	.	ID=exon-US7-8-9-2-1;Parent=rna-US7-8-9-2;gbkey=mRNA;gene=US7-8-9-2
+LT934125.1	EMBL	gene	121776	125237	.	+	.	ID=gene-US7-8-9;Name=US7-8-9;gbkey=Gene;gene=US7-8-9;gene_biotype=other
+LT934125.1	EMBL	mRNA	121776	125237	.	+	.	ID=rna-US7-8-9;Parent=gene-US7-8-9;gbkey=mRNA;gene=US7-8-9
+LT934125.1	EMBL	exon	121776	125237	.	+	.	ID=exon-US7-8-9-1;Parent=rna-US7-8-9;gbkey=mRNA;gene=US7-8-9
+LT934125.1	EMBL	gene	122916	125237	.	+	.	ID=gene-US8-L-9;Name=US8-L-9;gbkey=Gene;gene=US8-L-9;gene_biotype=other
+LT934125.1	EMBL	mRNA	122916	125237	.	+	.	ID=rna-US8-L-9;Parent=gene-US8-L-9;gbkey=mRNA;gene=US8-L-9
+LT934125.1	EMBL	exon	122916	125237	.	+	.	ID=exon-US8-L-9-1;Parent=rna-US8-L-9;gbkey=mRNA;gene=US8-L-9
+LT934125.1	EMBL	gene	122950	125230	.	+	.	ID=gene-US8;Name=US8;gbkey=Gene;gene=US8;gene_biotype=protein_coding
+LT934125.1	EMBL	CDS	123000	124730	.	+	0	ID=cds-SOF05979.1;Parent=gene-US8;Dbxref=GOA:A0A2C9C2K3,InterPro:IPR003404,InterPro:IPR013783,InterPro:IPR036179,UniProtKB/TrEMBL:A0A2C9C2K3,NCBI_GP:SOF05979.1;Name=SOF05979.1;Note=complex with gI%3B envelope glycoprotein gE;gbkey=CDS;gene=US8;product=US8;protein_id=SOF05979.1
+LT934125.1	EMBL	gene	122972	126158	.	+	.	ID=gene-US8-9-2;Name=US8-9-2;gbkey=Gene;gene=US8-9-2;gene_biotype=other
+LT934125.1	EMBL	mRNA	122972	126158	.	+	.	ID=rna-US8-9-2;Parent=gene-US8-9-2;gbkey=mRNA;gene=US8-9-2
+LT934125.1	EMBL	exon	122972	126158	.	+	.	ID=exon-US8-9-2-1;Parent=rna-US8-9-2;gbkey=mRNA;gene=US8-9-2
+LT934125.1	EMBL	gene	122972	125237	.	+	.	ID=gene-US8-9;Name=US8-9;gbkey=Gene;gene=US8-9;gene_biotype=other
+LT934125.1	EMBL	mRNA	122972	125237	.	+	.	ID=rna-US8-9;Parent=gene-US8-9;gbkey=mRNA;gene=US8-9
+LT934125.1	EMBL	exon	122972	125237	.	+	.	ID=exon-US8-9-1;Parent=rna-US8-9;gbkey=mRNA;gene=US8-9
+LT934125.1	EMBL	gene	122972	124516	.	+	.	ID=gene-NCS-8;Name=NCS-8;gbkey=Gene;gene=NCS-8;gene_biotype=other
+LT934125.1	EMBL	mRNA	122972	124516	.	+	.	ID=rna-NCS-8;Parent=gene-NCS-8;gbkey=mRNA;gene=NCS-8
+LT934125.1	EMBL	exon	122972	124516	.	+	.	ID=exon-NCS-8-1;Parent=rna-NCS-8;gbkey=mRNA;gene=NCS-8
+LT934125.1	EMBL	gene	124726	125237	.	+	.	ID=gene-US9;Name=US9;gbkey=Gene;gene=US9;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	124749	125237	.	+	.	ID=rna-US9;Parent=gene-US9;gbkey=mRNA;gene=US9
+LT934125.1	EMBL	exon	124749	125237	.	+	.	ID=exon-US9-1;Parent=rna-US9;gbkey=mRNA;gene=US9
+LT934125.1	EMBL	CDS	124788	125084	.	+	0	ID=cds-SOF05980.1;Parent=rna-US9;Dbxref=GOA:G3G925,InterPro:IPR009278,UniProtKB/TrEMBL:G3G925,NCBI_GP:SOF05980.1;Name=SOF05980.1;Note=type II membrane protein US9;gbkey=CDS;gene=US9;product=US9;protein_id=SOF05980.1
+LT934125.1	EMBL	gene	124749	126158	.	+	.	ID=gene-US9-2;Name=US9-2;gbkey=Gene;gene=US9-2;gene_biotype=other
+LT934125.1	EMBL	mRNA	124749	126158	.	+	.	ID=rna-US9-2;Parent=gene-US9-2;gbkey=mRNA;gene=US9-2
+LT934125.1	EMBL	exon	124749	126158	.	+	.	ID=exon-US9-2-1;Parent=rna-US9-2;gbkey=mRNA;gene=US9-2
+LT934125.1	EMBL	gene	125194	126158	.	+	.	ID=gene-US2;Name=US2;gbkey=Gene;gene=US2;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	125218	126158	.	+	.	ID=rna-US2;Parent=gene-US2;gbkey=mRNA;gene=US2
+LT934125.1	EMBL	exon	125218	126158	.	+	.	ID=exon-US2-1;Parent=rna-US2;gbkey=mRNA;gene=US2
+LT934125.1	EMBL	CDS	125308	126078	.	+	0	ID=cds-SOF05981.1;Parent=rna-US2;Dbxref=GOA:G3G926,InterPro:IPR003485,UniProtKB/TrEMBL:G3G926,NCBI_GP:SOF05981.1;Name=SOF05981.1;Note=farnesylated tegument protein US2;gbkey=CDS;gene=US2;product=US2;protein_id=SOF05981.1
+LT934125.1	EMBL	gene	126746	130840	.	-	.	ID=gene-PTO-US1-2;Name=PTO-US1;gbkey=Gene;gene=PTO-US1;gene_biotype=other
+LT934125.1	EMBL	mRNA	126746	130840	.	-	.	ID=rna-PTO-US1-3;Parent=gene-PTO-US1-2;gbkey=mRNA;gene=PTO-US1
+LT934125.1	EMBL	exon	126746	130840	.	-	.	ID=exon-PTO-US1-3-1;Parent=rna-PTO-US1-3;gbkey=mRNA;gene=PTO-US1
+LT934125.1	EMBL	mRNA	126746	130838	.	-	.	ID=rna-PTO-US1-4;Parent=gene-PTO-US1-2;gbkey=mRNA;gene=PTO-US1
+LT934125.1	EMBL	exon	126746	130838	.	-	.	ID=exon-PTO-US1-4-1;Parent=rna-PTO-US1-4;gbkey=mRNA;gene=PTO-US1
+LT934125.1	EMBL	gene	126746	128762	.	-	.	ID=gene-US1-2;Name=US1;gbkey=Gene;gene=US1;gene_biotype=other
+LT934125.1	EMBL	gene	132606	133518	.	+	.	ID=gene-NOIR-2-2;Name=NOIR-2;gbkey=Gene;gene=NOIR-2;gene_biotype=other
+LT934125.1	EMBL	mRNA	132606	133517	.	+	.	ID=rna-NOIR-2-3;Parent=gene-NOIR-2-2;gbkey=mRNA;gene=NOIR-2
+LT934125.1	EMBL	exon	132606	133517	.	+	.	ID=exon-NOIR-2-3-1;Parent=rna-NOIR-2-3;gbkey=mRNA;gene=NOIR-2
+LT934125.1	EMBL	mRNA	132607	133518	.	+	.	ID=rna-NOIR-2-4;Parent=gene-NOIR-2-2;gbkey=mRNA;gene=NOIR-2
+LT934125.1	EMBL	exon	132607	133518	.	+	.	ID=exon-NOIR-2-4-1;Parent=rna-NOIR-2-4;gbkey=mRNA;gene=NOIR-2
+LT934125.1	EMBL	gene	136127	141263	.	+	.	ID=gene-IE180-2;Name=IE180;gbkey=Gene;gene=IE180;gene_biotype=protein_coding
+LT934125.1	EMBL	mRNA	136151	141263	.	+	.	ID=rna-IE180-2;Parent=gene-IE180-2;gbkey=mRNA;gene=IE180
+LT934125.1	EMBL	exon	136151	141263	.	+	.	ID=exon-IE180-2-1;Parent=rna-IE180-2;gbkey=mRNA;gene=IE180
+LT934125.1	EMBL	CDS	136420	140772	.	+	0	ID=cds-SOF05983.1;Parent=rna-IE180-2;Dbxref=GOA:A0A2C9C2R2,InterPro:IPR005205,InterPro:IPR005206,UniProtKB/TrEMBL:A0A2C9C2R2,NCBI_GP:SOF05983.1;Name=SOF05983.1;Note=involved in gene regulation%3B major immediate early protein 180kDa;gbkey=CDS;gene=IE180;product=IE180;protein_id=SOF05983.1
+LT934125.1	EMBL	gene	141976	142235	.	-	.	ID=gene-AST-2;Name=AST;gbkey=Gene;gene=AST;gene_biotype=miRNA
+LT934125.1	EMBL	primary_transcript	141976	142064	.	-	.	ID=rna-AST-5;Parent=gene-AST-2;Note=derived from strain Ea;gbkey=precursor_RNA;gene=AST;product=precursor microRNA pre-prv-miR-11-1
+LT934125.1	EMBL	exon	141976	142064	.	-	.	ID=exon-AST-5-1;Parent=rna-AST-5;Note=derived from strain Ea;gbkey=precursor_RNA;gene=AST;product=precursor microRNA pre-prv-miR-11-1
+LT934125.1	EMBL	miRNA	142027	142049	.	-	.	ID=rna-AST-6;Parent=rna-AST-5;Note=derived from strain Ea;gbkey=ncRNA;gene=AST;product=prv-miR-11-1
+LT934125.1	EMBL	exon	142027	142049	.	-	.	ID=exon-AST-6-1;Parent=rna-AST-6;Note=derived from strain Ea;gbkey=ncRNA;gene=AST;product=prv-miR-11-1
+LT934125.1	EMBL	primary_transcript	142154	142235	.	-	.	ID=rna-AST-7;Parent=gene-AST-2;Note=derived from strain Ea;gbkey=precursor_RNA;gene=AST;product=precursor microRNA pre-prv-miR-10-1
+LT934125.1	EMBL	exon	142154	142235	.	-	.	ID=exon-AST-7-1;Parent=rna-AST-7;Note=derived from strain Ea;gbkey=precursor_RNA;gene=AST;product=precursor microRNA pre-prv-miR-10-1
+LT934125.1	EMBL	miRNA	142163	142185	.	-	.	ID=rna-AST-8;Parent=rna-AST-7;Note=derived from strain Ea;gbkey=ncRNA;gene=AST;product=prv-miR-10-1
+LT934125.1	EMBL	exon	142163	142185	.	-	.	ID=exon-AST-8-1;Parent=rna-AST-8;Note=derived from strain Ea;gbkey=ncRNA;gene=AST;product=prv-miR-10-1
+LT934125.1	EMBL	stem_loop	63500	63560	.	+	.	ID=OriL
+LT934125.1	EMBL	stem_loop	114523	114573	.	+	.	ID=OriS
+LT934125.1	EMBL	stem_loop	129242	129301	.	+	.	ID=OriS

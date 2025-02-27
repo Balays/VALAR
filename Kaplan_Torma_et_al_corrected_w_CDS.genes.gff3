@@ -1,0 +1,1295 @@
+##gff-version 3												
+##source-version rtracklayer 1.62.0												508
+##date 2024-10-03									START	STOP	CAGE	
+KJ717942.1	Liftoff	exon	117718	119756	.	-	.	"transcript_id=AZURE-L;Name=AZURE-L;ID=AZURE-L;gene_id=AZURE;ORF_id=AZURE;"				
+KJ717942.1	Liftoff	transcript	117718	119756	.	-	.	"transcript_id=AZURE-L;Name=AZURE-L;ID=AZURE-L;gene_id=AZURE;ORF_id=AZURE;"	119756	117718	0	
+KJ717942.1	Liftoff	exon	117718	120177	.	-	.	"transcript_id=AZURE-L2;Name=AZURE-L2;ID=AZURE-L2;gene_id=AZURE;ORF_id=AZURE;"				
+KJ717942.1	Liftoff	transcript	117718	120177	.	-	.	"transcript_id=AZURE-L2;Name=AZURE-L2;ID=AZURE-L2;gene_id=AZURE;ORF_id=AZURE;"	120177	117718	0	
+KJ717942.1	Liftoff	exon	117718	119305	.	-	.	"transcript_id=AZURE-M;Name=AZURE-M;ID=AZURE-M;gene_id=AZURE;ORF_id=AZURE;"				
+KJ717942.1	Liftoff	transcript	117718	119305	.	-	.	"transcript_id=AZURE-M;Name=AZURE-M;ID=AZURE-M;gene_id=AZURE;ORF_id=AZURE;"	119305	117718	1	
+KJ717942.1	Liftoff	exon	117718	118915	.	-	.	"transcript_id=AZURE-S;Name=AZURE-S;ID=AZURE-S;gene_id=AZURE;ORF_id=AZURE;"				
+KJ717942.1	Liftoff	transcript	117718	118915	.	-	.	"transcript_id=AZURE-S;Name=AZURE-S;ID=AZURE-S;gene_id=AZURE;ORF_id=AZURE;"	118915	117718	2	
+KJ717942.1	Liftoff	exon	117716	118967	.	-	.	"transcript_id=AZURE-S-L;Name=AZURE-S-L;ID=AZURE-S-L;gene_id=AZURE;ORF_id=AZURE;"				
+KJ717942.1	Liftoff	transcript	117716	118967	.	-	.	"transcript_id=AZURE-S-L;Name=AZURE-S-L;ID=AZURE-S-L;gene_id=AZURE;ORF_id=AZURE;"	118967	117716	1	
+KJ717942.1	Liftoff	exon	117716	117917	.	-	.	"transcript_id=AZURE-S-L-splice;Name=AZURE-S-L-splice;ID=AZURE-S-L-splice;gene_id=AZURE;ORF_id=AZURE;"				
+KJ717942.1	Liftoff	exon	118340	118967	.	-	.	"transcript_id=AZURE-S-L-splice;Name=AZURE-S-L-splice;ID=AZURE-S-L-splice;gene_id=AZURE;ORF_id=AZURE;"				
+KJ717942.1	Liftoff	transcript	117716	118967	.	-	.	"transcript_id=AZURE-S-L-splice;Name=AZURE-S-L-splice;ID=AZURE-S-L-splice;gene_id=AZURE;ORF_id=AZURE;"	118967	117716	1	
+KJ717942.1	Liftoff	exon	63143	63929	.	-	.	"transcript_id=CTO-AT;Name=CTO-AT;ID=CTO-AT;gene_id=CTO;ORF_id=CTO;"				
+KJ717942.1	Liftoff	transcript	63143	63929	.	-	.	"transcript_id=CTO-AT;Name=CTO-AT;ID=CTO-AT;gene_id=CTO;ORF_id=CTO;"	63929	63143	4	
+KJ717942.1	Liftoff	exon	62860	63929	.	-	.	"transcript_id=CTO-AT2;Name=CTO-AT2;ID=CTO-AT2;gene_id=CTO;ORF_id=CTO;"				
+KJ717942.1	Liftoff	transcript	62860	63929	.	-	.	"transcript_id=CTO-AT2;Name=CTO-AT2;ID=CTO-AT2;gene_id=CTO;ORF_id=CTO;"	63929	62860	4	
+KJ717942.1	Liftoff	exon	63673	66258	.	-	.	"transcript_id=CTO-L;Name=CTO-L;ID=CTO-L;gene_id=CTO;ORF_id=CTO-L;"				
+KJ717942.1	Liftoff	transcript	63673	66258	.	-	.	"transcript_id=CTO-L;Name=CTO-L;ID=CTO-L;gene_id=CTO;ORF_id=CTO-L;"	66258	63673	0	
+KJ717942.1	Liftoff	exon	63670	66327	.	-	.	"transcript_id=CTO-L2;Name=CTO-L2;ID=CTO-L2;gene_id=CTO;ORF_id=CTO-L;"				
+KJ717942.1	Liftoff	transcript	63670	66327	.	-	.	"transcript_id=CTO-L2;Name=CTO-L2;ID=CTO-L2;gene_id=CTO;ORF_id=CTO-L;"	66327	63670	2	
+KJ717942.1	Liftoff	exon	63673	64633	.	-	.	"transcript_id=CTO-M;Name=CTO-M;ID=CTO-M;gene_id=CTO;ORF_id=CTO-M;"				
+KJ717942.1	Liftoff	transcript	63673	64633	.	-	.	"transcript_id=CTO-M;Name=CTO-M;ID=CTO-M;gene_id=CTO;ORF_id=CTO-M;"	64633	63673	6	
+KJ717942.1	Liftoff	exon	63673	65130	.	-	.	"transcript_id=CTO-M-L;Name=CTO-M-L;ID=CTO-M-L;gene_id=CTO;ORF_id=CTO-L;"				
+KJ717942.1	Liftoff	transcript	63673	65130	.	-	.	"transcript_id=CTO-M-L;Name=CTO-M-L;ID=CTO-M-L;gene_id=CTO;ORF_id=CTO-L;"	65130	63673	5	
+KJ717942.1	Liftoff	exon	63673	63929	.	-	.	"transcript_id=CTO-S;Name=CTO-S;ID=CTO-S;gene_id=CTO;ORF_id=CTO-S;"				
+KJ717942.1	Liftoff	transcript	63673	63929	.	-	.	"transcript_id=CTO-S;Name=CTO-S;ID=CTO-S;gene_id=CTO;ORF_id=CTO-S;"	63929	63673	4	
+KJ717942.1	Liftoff	exon	55794	63929	.	-	.	"transcript_id=CTO-UL22-UL23-UL24-UL25-26;Name=CTO-UL22-UL23-UL24-UL25-26;ID=CTO-UL22-UL23-UL24-UL25-26;gene_id=CTO;ORF_id=UL24;"				
+KJ717942.1	Liftoff	transcript	55794	63929	.	-	.	"transcript_id=CTO-UL22-UL23-UL24-UL25-26;Name=CTO-UL22-UL23-UL24-UL25-26;ID=CTO-UL22-UL23-UL24-UL25-26;gene_id=CTO;ORF_id=UL24;"	63929	55794	4	
+KJ717942.1	Liftoff	exon	101069	102896	.	+	.	"transcript_id=ELIE-1;Name=ELIE-1;ID=ELIE-1;gene_id=ELIE;ORF_id=ELIE;"				
+KJ717942.1	Liftoff	transcript	101069	102896	.	+	.	"transcript_id=ELIE-1;Name=ELIE-1;ID=ELIE-1;gene_id=ELIE;ORF_id=ELIE;"	101069	102896	0	
+KJ717942.1	Liftoff	exon	102143	102896	.	+	.	"transcript_id=ELIE-2;Name=ELIE-2;ID=ELIE-2;gene_id=ELIE;ORF_id=ELIE;"				
+KJ717942.1	Liftoff	transcript	102143	102896	.	+	.	"transcript_id=ELIE-2;Name=ELIE-2;ID=ELIE-2;gene_id=ELIE;ORF_id=ELIE;"	102143	102896	0	
+KJ717942.1	Liftoff	exon	101708	102886	.	+	.	"transcript_id=ELIE-2-L;Name=ELIE-2-L;ID=ELIE-2-L;gene_id=ELIE;ORF_id=ELIE;"				
+KJ717942.1	Liftoff	transcript	101708	102886	.	+	.	"transcript_id=ELIE-2-L;Name=ELIE-2-L;ID=ELIE-2-L;gene_id=ELIE;ORF_id=ELIE;"	101708	102886	11	
+KJ717942.1	Liftoff	exon	96421	97899	.	-	.	"transcript_id=EP0;Name=EP0;ID=EP0;gene_id=EP0;ORF_id=EP0;"				
+KJ717942.1	Liftoff	transcript	96421	97899	.	-	.	"transcript_id=EP0;Name=EP0;ID=EP0;gene_id=EP0;ORF_id=EP0;"	97899	96421	1	
+KJ717942.1	Liftoff	exon	96421	97166	.	-	.	"transcript_id=EP0.10;Name=EP0.10;ID=EP0.10;gene_id=EP0;ORF_id=EP0.10;"				
+KJ717942.1	Liftoff	transcript	96421	97166	.	-	.	"transcript_id=EP0.10;Name=EP0.10;ID=EP0.10;gene_id=EP0;ORF_id=EP0.10;"	97166	96421	19	
+KJ717942.1	Liftoff	exon	96421	97403	.	-	.	"transcript_id=EP0.4;Name=EP0.4;ID=EP0.4;gene_id=EP0;ORF_id=EP0.4;"				
+KJ717942.1	Liftoff	transcript	96421	97403	.	-	.	"transcript_id=EP0.4;Name=EP0.4;ID=EP0.4;gene_id=EP0;ORF_id=EP0.4;"	97403	96421	2	
+KJ717942.1	Liftoff	exon	96421	97875	.	-	.	"transcript_id=EP0.5;Name=EP0.5;ID=EP0.5;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	transcript	96421	97875	.	-	.	"transcript_id=EP0.5;Name=EP0.5;ID=EP0.5;gene_id=EP0;ORF_id=EP0.5;"	97875	96421	0	
+KJ717942.1	Liftoff	exon	96421	97712	.	-	.	"transcript_id=EP0.5-S;Name=EP0.5-S;ID=EP0.5-S;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	transcript	96421	97712	.	-	.	"transcript_id=EP0.5-S;Name=EP0.5-S;ID=EP0.5-S;gene_id=EP0;ORF_id=EP0.5;"	97712	96421	3	
+KJ717942.1	Liftoff	exon	96420	97388	.	-	.	"transcript_id=EP0.5-S2-sp1;Name=EP0.5-S2-sp1;ID=EP0.5-S2-sp1;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	exon	97527	97663	.	-	.	"transcript_id=EP0.5-S2-sp1;Name=EP0.5-S2-sp1;ID=EP0.5-S2-sp1;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	transcript	97527	97388	.	-	.	"transcript_id=EP0.5-S2-sp1;Name=EP0.5-S2-sp1;ID=EP0.5-S2-sp1;gene_id=EP0;ORF_id=EP0.5;"	97388	97527	36	
+KJ717942.1	Liftoff	exon	96420	97388	.	-	.	"transcript_id=EP0.5-sp1;Name=EP0.5-sp1;ID=EP0.5-sp1;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	exon	97527	97874	.	-	.	"transcript_id=EP0.5-sp1;Name=EP0.5-sp1;ID=EP0.5-sp1;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	transcript	96420	97874	.	-	.	"transcript_id=EP0.5-sp1;Name=EP0.5-sp1;ID=EP0.5-sp1;gene_id=EP0;ORF_id=EP0.5;"	97874	96420	0	
+KJ717942.1	Liftoff	exon	96420	97388	.	-	.	"transcript_id=EP0.5-sp2;Name=EP0.5-sp2;ID=EP0.5-sp2;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	exon	97479	97874	.	-	.	"transcript_id=EP0.5-sp2;Name=EP0.5-sp2;ID=EP0.5-sp2;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	transcript	96420	97875	.	-	.	"transcript_id=EP0.5-sp2;Name=EP0.5-sp2;ID=EP0.5-sp2;gene_id=EP0;ORF_id=EP0.5;"	97875	96420	0	
+KJ717942.1	Liftoff	exon	96420	97388	.	-	.	"transcript_id=EP0.5-S-sp1;Name=EP0.5-S-sp1;ID=EP0.5-S-sp1;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	exon	97527	97711	.	-	.	"transcript_id=EP0.5-S-sp1;Name=EP0.5-S-sp1;ID=EP0.5-S-sp1;gene_id=EP0;ORF_id=EP0.5;"				
+KJ717942.1	Liftoff	transcript	96420	97711	.	-	.	"transcript_id=EP0.5-S-sp1;Name=EP0.5-S-sp1;ID=EP0.5-S-sp1;gene_id=EP0;ORF_id=EP0.5;"	97711	96420	3	
+KJ717942.1	Liftoff	exon	96421	98074	.	-	.	"transcript_id=EP0-L2;Name=EP0-L2;ID=EP0-L2;gene_id=EP0;ORF_id=EP0;"				
+KJ717942.1	Liftoff	transcript	96421	98074	.	-	.	"transcript_id=EP0-L2;Name=EP0-L2;ID=EP0-L2;gene_id=EP0;ORF_id=EP0;"	98074	96421	0	
+KJ717942.1	Liftoff	exon	96420	97388	.	-	.	"transcript_id=EP0-sp1;Name=EP0-sp1;ID=EP0-sp1;gene_id=EP0;ORF_id=EP0;"				
+KJ717942.1	Liftoff	exon	97527	97898	.	-	.	"transcript_id=EP0-sp1;Name=EP0-sp1;ID=EP0-sp1;gene_id=EP0;ORF_id=EP0;"				
+KJ717942.1	Liftoff	transcript	96420	97898	.	-	.	"transcript_id=EP0-sp1;Name=EP0-sp1;ID=EP0-sp1;gene_id=EP0;ORF_id=EP0;"	97898	96420	1	
+KJ717942.1	Liftoff	exon	96420	97388	.	-	.	"transcript_id=EP0-sp2;Name=EP0-sp2;ID=EP0-sp2;gene_id=EP0;ORF_id=EP0;"				
+KJ717942.1	Liftoff	exon	97479	97898	.	-	.	"transcript_id=EP0-sp2;Name=EP0-sp2;ID=EP0-sp2;gene_id=EP0;ORF_id=EP0;"				
+KJ717942.1	Liftoff	transcript	96420	97898	.	-	.	"transcript_id=EP0-sp2;Name=EP0-sp2;ID=EP0-sp2;gene_id=EP0;ORF_id=EP0;"	97898	96420	1	
+KJ717942.1	Liftoff	exon	72049	73610	.	-	.	"transcript_id=FORF15;Name=FORF15;ID=FORF15;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72049	73610	.	-	.	"transcript_id=FORF15;Name=FORF15;ID=FORF15;gene_id=UL15;ORF_id=UL15;"	73610	72049	0	
+KJ717942.1	Liftoff	exon	72049	74847	.	-	.	"transcript_id=FORF15-L;Name=FORF15-L;ID=FORF15-L;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72049	74847	.	-	.	"transcript_id=FORF15-L;Name=FORF15-L;ID=FORF15-L;gene_id=UL15;ORF_id=UL15;"	74847	72049	0	
+KJ717942.1	Liftoff	exon	72049	73641	.	-	.	"transcript_id=FORF15-L2;Name=FORF15-L2;ID=FORF15-L2;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72049	73641	.	-	.	"transcript_id=FORF15-L2;Name=FORF15-L2;ID=FORF15-L2;gene_id=UL15;ORF_id=UL15;"	73641	72049	0	
+KJ717942.1	Liftoff	exon	72049	73215	.	-	.	"transcript_id=FORF15-S;Name=FORF15-S;ID=FORF15-S;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72049	73215	.	-	.	"transcript_id=FORF15-S;Name=FORF15-S;ID=FORF15-S;gene_id=UL15;ORF_id=UL15;"	73215	72049	3	
+KJ717942.1	Liftoff	exon	72049	72384	.	-	.	"transcript_id=FORF15-S2;Name=FORF15-S2;ID=FORF15-S2;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72049	72384	.	-	.	"transcript_id=FORF15-S2;Name=FORF15-S2;ID=FORF15-S2;gene_id=UL15;ORF_id=UL15;"	72384	72049	2	
+KJ717942.1	Liftoff	exon	102865	107957	.	-	.	"transcript_id=IE180;Name=IE180;ID=IE180;gene_id=IE180;ORF_id=IE180;"				
+KJ717942.1	Liftoff	transcript	102865	107957	.	-	.	"transcript_id=IE180;Name=IE180;ID=IE180;gene_id=IE180;ORF_id=IE180;"	107957	102865	5	
+KJ717942.1	Liftoff	exon	136780	141872	.	+	.	"transcript_id=IE180_2;Name=IE180_2;ID=IE180_2;gene_id=IE180_2;ORF_id=IE180_2;"				
+KJ717942.1	Liftoff	transcript	136780	141872	.	+	.	"transcript_id=IE180_2;Name=IE180_2;ID=IE180_2;gene_id=IE180_2;ORF_id=IE180_2;"	136780	141872	2	
+KJ717942.1	Liftoff	exon	136970	141872	.	+	.	"transcript_id=IE180_2-S;Name=IE180_2-S;ID=IE180_2-S;gene_id=IE180_2;ORF_id=IE180_2;"				
+KJ717942.1	Liftoff	transcript	136970	141872	.	+	.	"transcript_id=IE180_2-S;Name=IE180_2-S;ID=IE180_2-S;gene_id=IE180_2;ORF_id=IE180_2;"	136970	141872	1	
+KJ717942.1	Liftoff	exon	102865	107767	.	-	.	"transcript_id=IE180-S;Name=IE180-S;ID=IE180-S;gene_id=IE180;ORF_id=IE180;"				
+KJ717942.1	Liftoff	transcript	102865	107767	.	-	.	"transcript_id=IE180-S;Name=IE180-S;ID=IE180-S;gene_id=IE180;ORF_id=IE180;"	107767	102865	2	
+KJ717942.1	Liftoff	exon	63684	63929	.	+	.	"transcript_id=nc-CTO-S;Name=nc-CTO-S;ID=nc-CTO-S;gene_id=CTO;ORF_id=CTO-S;"				
+KJ717942.1	Liftoff	transcript	63684	63929	.	+	.	"transcript_id=nc-CTO-S;Name=nc-CTO-S;ID=nc-CTO-S;gene_id=CTO;ORF_id=CTO-S;"	63684	63929	4	
+KJ717942.1	Liftoff	exon	96421	96627	.	-	.	"transcript_id=nc-EP0;Name=nc-EP0;ID=nc-EP0;gene_id=EP0;ORF_id=EP0;"				
+KJ717942.1	Liftoff	transcript	96421	96627	.	-	.	"transcript_id=nc-EP0;Name=nc-EP0;ID=nc-EP0;gene_id=EP0;ORF_id=EP0;"	96627	96421	7	
+KJ717942.1	Liftoff	exon	80906	81045	.	-	.	"transcript_id=nc-UL10;Name=nc-UL10;ID=nc-UL10;gene_id=UL10;ORF_id=UL10;"				
+KJ717942.1	Liftoff	transcript	80906	81045	.	-	.	"transcript_id=nc-UL10;Name=nc-UL10;ID=nc-UL10;gene_id=UL10;ORF_id=UL10;"	81045	80906	4	
+KJ717942.1	Liftoff	exon	70638	71025	.	+	.	"transcript_id=nc-UL19;Name=nc-UL19;ID=nc-UL19;gene_id=UL19;ORF_id=UL19;"				
+KJ717942.1	Liftoff	transcript	70638	71025	.	+	.	"transcript_id=nc-UL19;Name=nc-UL19;ID=nc-UL19;gene_id=UL19;ORF_id=UL19;"	70638	71025	5	
+KJ717942.1	Liftoff	exon	70817	71025	.	+	.	"transcript_id=nc-UL19-S;Name=nc-UL19-S;ID=nc-UL19-S;gene_id=UL19;ORF_id=UL19;"				
+KJ717942.1	Liftoff	transcript	70817	71025	.	+	.	"transcript_id=nc-UL19-S;Name=nc-UL19-S;ID=nc-UL19-S;gene_id=UL19;ORF_id=UL19;"	70817	71025	6	
+KJ717942.1	Liftoff	exon	56833	57462	.	-	.	"transcript_id=nc-UL26;Name=nc-UL26;ID=nc-UL26;gene_id=UL26;ORF_id=UL26;"				
+KJ717942.1	Liftoff	transcript	56833	57462	.	-	.	"transcript_id=nc-UL26;Name=nc-UL26;ID=nc-UL26;gene_id=UL26;ORF_id=UL26;"	57462	56833	3	
+KJ717942.1	Liftoff	exon	92616	93190	.	-	.	"transcript_id=nc-UL3.5;Name=nc-UL3.5;ID=nc-UL3.5;gene_id=UL3.5;ORF_id=UL3.5;"				
+KJ717942.1	Liftoff	transcript	92616	93190	.	-	.	"transcript_id=nc-UL3.5;Name=nc-UL3.5;ID=nc-UL3.5;gene_id=UL3.5;ORF_id=UL3.5;"	93190	92616	10	
+KJ717942.1	Liftoff	exon	33127	33283	.	-	.	"transcript_id=nc-UL36;Name=nc-UL36;ID=nc-UL36;gene_id=UL36;ORF_id=UL36;"				
+KJ717942.1	Liftoff	transcript	33127	33283	.	-	.	"transcript_id=nc-UL36;Name=nc-UL36;ID=nc-UL36;gene_id=UL36;ORF_id=UL36;"	33283	33127	3	
+KJ717942.1	Liftoff	exon	15892	16234	.	+	.	"transcript_id=nc-UL46;Name=nc-UL46;ID=nc-UL46;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	15892	16234	.	+	.	"transcript_id=nc-UL46;Name=nc-UL46;ID=nc-UL46;gene_id=UL46;ORF_id=UL46;"	15892	16234	7	
+KJ717942.1	Liftoff	exon	16023	16234	.	+	.	"transcript_id=nc-UL46-S;Name=nc-UL46-S;ID=nc-UL46-S;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	16023	16234	.	+	.	"transcript_id=nc-UL46-S;Name=nc-UL46-S;ID=nc-UL46-S;gene_id=UL46;ORF_id=UL46;"	16023	16234	4	
+KJ717942.1	Liftoff	exon	11781	12072	.	+	.	"transcript_id=nc-UL47;Name=nc-UL47;ID=nc-UL47;gene_id=UL47;ORF_id=UL47;"				
+KJ717942.1	Liftoff	transcript	11781	12072	.	+	.	"transcript_id=nc-UL47;Name=nc-UL47;ID=nc-UL47;gene_id=UL47;ORF_id=UL47;"	11781	12072	25844	
+KJ717942.1	Liftoff	exon	115922	117091	.	+	.	"transcript_id=nc-US1;Name=nc-US1;ID=nc-US1;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115922	117091	.	+	.	"transcript_id=nc-US1;Name=nc-US1;ID=nc-US1;gene_id=US1;ORF_id=US1;"	115922	117091	12	
+KJ717942.1	Liftoff	exon	127649	129299	.	-	.	"transcript_id=nc-US1_2;Name=nc-US1_2;ID=nc-US1_2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127649	129299	.	-	.	"transcript_id=nc-US1_2;Name=nc-US1_2;ID=nc-US1_2;gene_id=US1_2;ORF_id=US1_2;"	129299	127649	0	
+KJ717942.1	Liftoff	exon	135433	136907	.	-	.	"transcript_id=NOIR_2-1L-2;Name=NOIR_2-1L-2;ID=NOIR_2-1L-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	135433	136907	.	-	.	"transcript_id=NOIR_2-1L-2;Name=NOIR_2-1L-2;ID=NOIR_2-1L-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	136907	135433	0	
+KJ717942.1	Liftoff	exon	135433	137031	.	-	.	"transcript_id=NOIR_2-1L3-2;Name=NOIR_2-1L3-2;ID=NOIR_2-1L3-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	135433	137031	.	-	.	"transcript_id=NOIR_2-1L3-2;Name=NOIR_2-1L3-2;ID=NOIR_2-1L3-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	137031	135433	0	
+KJ717942.1	Liftoff	exon	135433	136857	.	-	.	"transcript_id=NOIR_2-1M-2;Name=NOIR_2-1M-2;ID=NOIR_2-1M-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	135433	136857	.	-	.	"transcript_id=NOIR_2-1M-2;Name=NOIR_2-1M-2;ID=NOIR_2-1M-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	136857	135433	1	
+KJ717942.1	Liftoff	exon	135439	135804	.	-	.	"transcript_id=NOIR_2-1M-splice-2;Name=NOIR_2-1M-splice-2;ID=NOIR_2-1M-splice-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	exon	136375	136870	.	-	.	"transcript_id=NOIR_2-1M-splice-2;Name=NOIR_2-1M-splice-2;ID=NOIR_2-1M-splice-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	135439	136870	.	-	.	"transcript_id=NOIR_2-1M-splice-2;Name=NOIR_2-1M-splice-2;ID=NOIR_2-1M-splice-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	136870	135439	2	
+KJ717942.1	Liftoff	exon	135433	136753	.	-	.	"transcript_id=NOIR_2-1S-2;Name=NOIR_2-1S-2;ID=NOIR_2-1S-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	135433	136753	.	-	.	"transcript_id=NOIR_2-1S-2;Name=NOIR_2-1S-2;ID=NOIR_2-1S-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	136753	135433	1	
+KJ717942.1	Liftoff	exon	135433	136725	.	-	.	"transcript_id=NOIR_2-1S2-2;Name=NOIR_2-1S2-2;ID=NOIR_2-1S2-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	135433	136725	.	-	.	"transcript_id=NOIR_2-1S2-2;Name=NOIR_2-1S2-2;ID=NOIR_2-1S2-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	136725	135433	0	
+KJ717942.1	Liftoff	exon	135433	136521	.	-	.	"transcript_id=NOIR_2-1S3-2;Name=NOIR_2-1S3-2;ID=NOIR_2-1S3-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	135433	136521	.	-	.	"transcript_id=NOIR_2-1S3-2;Name=NOIR_2-1S3-2;ID=NOIR_2-1S3-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	136521	135433	1	
+KJ717942.1	Liftoff	exon	135433	136242	.	-	.	"transcript_id=NOIR_2-1S4-2;Name=NOIR_2-1S4-2;ID=NOIR_2-1S4-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	135433	136242	.	-	.	"transcript_id=NOIR_2-1S4-2;Name=NOIR_2-1S4-2;ID=NOIR_2-1S4-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	136242	135433	4004	
+KJ717942.1	Liftoff	exon	133157	134060	.	+	.	"transcript_id=NOIR_2-2;Name=NOIR_2-2;ID=NOIR_2-2;gene_id=NOIR_2;ORF_id=NOIR_2;"				
+KJ717942.1	Liftoff	transcript	133157	134060	.	+	.	"transcript_id=NOIR_2-2;Name=NOIR_2-2;ID=NOIR_2-2;gene_id=NOIR_2;ORF_id=NOIR_2;"	133157	134060	0	
+KJ717942.1	Liftoff	exon	107880	109304	.	+	.	"transcript_id=NOIR-1M;Name=NOIR-1M;ID=NOIR-1M;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	transcript	107880	109304	.	+	.	"transcript_id=NOIR-1M;Name=NOIR-1M;ID=NOIR-1M;gene_id=NOIR;ORF_id=NOIR;"	107880	109304	1	
+KJ717942.1	Liftoff	exon	107879	108012	.	+	.	"transcript_id=NOIR-1M-splice;Name=NOIR-1M-splice;ID=NOIR-1M-splice;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	exon	108931	109303	.	+	.	"transcript_id=NOIR-1M-splice;Name=NOIR-1M-splice;ID=NOIR-1M-splice;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	transcript	107879	109303	.	+	.	"transcript_id=NOIR-1M-splice;Name=NOIR-1M-splice;ID=NOIR-1M-splice;gene_id=NOIR;ORF_id=NOIR;"	107879	109303	1	
+KJ717942.1	Liftoff	exon	108012	109304	.	+	.	"transcript_id=NOIR-1S;Name=NOIR-1S;ID=NOIR-1S;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	transcript	108012	109304	.	+	.	"transcript_id=NOIR-1S;Name=NOIR-1S;ID=NOIR-1S;gene_id=NOIR;ORF_id=NOIR;"	108012	109304	13	
+KJ717942.1	Liftoff	exon	108216	109304	.	+	.	"transcript_id=NOIR-1S2;Name=NOIR-1S2;ID=NOIR-1S2;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	transcript	108216	109304	.	+	.	"transcript_id=NOIR-1S2;Name=NOIR-1S2;ID=NOIR-1S2;gene_id=NOIR;ORF_id=NOIR;"	108216	109304	12	
+KJ717942.1	Liftoff	exon	108426	109304	.	+	.	"transcript_id=NOIR-1S3;Name=NOIR-1S3;ID=NOIR-1S3;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	transcript	108426	109304	.	+	.	"transcript_id=NOIR-1S3;Name=NOIR-1S3;ID=NOIR-1S3;gene_id=NOIR;ORF_id=NOIR;"	108426	109304	15	
+KJ717942.1	Liftoff	exon	108624	109304	.	+	.	"transcript_id=NOIR-1S4;Name=NOIR-1S4;ID=NOIR-1S4;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	transcript	108624	109304	.	+	.	"transcript_id=NOIR-1S4;Name=NOIR-1S4;ID=NOIR-1S4;gene_id=NOIR;ORF_id=NOIR;"	108624	109304	5	
+KJ717942.1	Liftoff	exon	110676	111580	.	-	.	"transcript_id=NOIR-2;Name=NOIR-2;ID=NOIR-2;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	transcript	110676	111580	.	-	.	"transcript_id=NOIR-2;Name=NOIR-2;ID=NOIR-2;gene_id=NOIR;ORF_id=NOIR;"	111580	110676	0	
+KJ717942.1	Liftoff	exon	107706	109304	.	+	.	"transcript_id=NOIR-L3;Name=NOIR-L3;ID=NOIR-L3;gene_id=NOIR;ORF_id=NOIR;"				
+KJ717942.1	Liftoff	transcript	107706	109304	.	+	.	"transcript_id=NOIR-L3;Name=NOIR-L3;ID=NOIR-L3;gene_id=NOIR;ORF_id=NOIR;"	107706	109304	1	
+KJ717942.1	Liftoff	exon	1608	2284	.	+	.	"transcript_id=ORF-1;Name=ORF-1;ID=ORF-1;gene_id=ORF-1;ORF_id=ORF-1;"				
+KJ717942.1	Liftoff	transcript	1608	2284	.	+	.	"transcript_id=ORF-1;Name=ORF-1;ID=ORF-1;gene_id=ORF-1;ORF_id=ORF-1;"	1608	2284	320	
+KJ717942.1	Liftoff	exon	1736	2284	.	+	.	"transcript_id=ORF-1.5;Name=ORF-1.5;ID=ORF-1.5;gene_id=ORF-1;ORF_id=ORF1.5;"				
+KJ717942.1	Liftoff	transcript	1736	2284	.	+	.	"transcript_id=ORF-1.5;Name=ORF-1.5;ID=ORF-1.5;gene_id=ORF-1;ORF_id=ORF1.5;"	1736	2284	11	
+KJ717942.1	Liftoff	exon	1817	2284	.	+	.	"transcript_id=ORF-1.5-S;Name=ORF-1.5-S;ID=ORF-1.5-S;gene_id=ORF-1;ORF_id=ORF1.5;"				
+KJ717942.1	Liftoff	transcript	1817	2284	.	+	.	"transcript_id=ORF-1.5-S;Name=ORF-1.5-S;ID=ORF-1.5-S;gene_id=ORF-1;ORF_id=ORF1.5;"	1817	2284	8	
+KJ717942.1	Liftoff	exon	323	2284	.	+	.	"transcript_id=ORF-1L1;Name=ORF-1L1;ID=ORF-1L1;gene_id=ORF-1;ORF_id=ORF-1;"				
+KJ717942.1	Liftoff	transcript	323	2284	.	+	.	"transcript_id=ORF-1L1;Name=ORF-1L1;ID=ORF-1L1;gene_id=ORF-1;ORF_id=ORF-1;"	323	2284	1	
+KJ717942.1	Liftoff	exon	687	2284	.	+	.	"transcript_id=ORF-1L1-S;Name=ORF-1L1-S;ID=ORF-1L1-S;gene_id=ORF-1;ORF_id=ORF-1;"				
+KJ717942.1	Liftoff	transcript	687	2284	.	+	.	"transcript_id=ORF-1L1-S;Name=ORF-1L1-S;ID=ORF-1L1-S;gene_id=ORF-1;ORF_id=ORF-1;"	687	2284	0	
+KJ717942.1	Liftoff	exon	161	2284	.	+	.	"transcript_id=ORF-1L2;Name=ORF-1L2;ID=ORF-1L2;gene_id=ORF-1;ORF_id=ORF-1;"				
+KJ717942.1	Liftoff	transcript	161	2284	.	+	.	"transcript_id=ORF-1L2;Name=ORF-1L2;ID=ORF-1L2;gene_id=ORF-1;ORF_id=ORF-1;"	161	2284	0	
+KJ717942.1	Liftoff	exon	1338	2284	.	+	.	"transcript_id=ORF-1M1;Name=ORF-1M1;ID=ORF-1M1;gene_id=ORF-1;ORF_id=ORF-1;"				
+KJ717942.1	Liftoff	transcript	1338	2284	.	+	.	"transcript_id=ORF-1M1;Name=ORF-1M1;ID=ORF-1M1;gene_id=ORF-1;ORF_id=ORF-1;"	1338	2284	164	
+KJ717942.1	Liftoff	exon	1500	2284	.	+	.	"transcript_id=ORF-1M1-S;Name=ORF-1M1-S;ID=ORF-1M1-S;gene_id=ORF-1;ORF_id=ORF-1;"				
+KJ717942.1	Liftoff	transcript	1500	2284	.	+	.	"transcript_id=ORF-1M1-S;Name=ORF-1M1-S;ID=ORF-1M1-S;gene_id=ORF-1;ORF_id=ORF-1;"	1500	2284	6	
+KJ717942.1	Liftoff	exon	990	2284	.	+	.	"transcript_id=ORF-1M2;Name=ORF-1M2;ID=ORF-1M2;gene_id=ORF-1;ORF_id=ORF-1;"				
+KJ717942.1	Liftoff	transcript	990	2284	.	+	.	"transcript_id=ORF-1M2;Name=ORF-1M2;ID=ORF-1M2;gene_id=ORF-1;ORF_id=ORF-1;"	990	2284	851	
+KJ717942.1	Liftoff	exon	127330	131414	.	-	.	"transcript_id=PTO-US1_2-nonsp;Name=PTO-US1_2-nonsp;ID=PTO-US1_2-nonsp;gene_id=US1_2;ORF_id=PTO;"				
+KJ717942.1	Liftoff	transcript	127330	131414	.	-	.	"transcript_id=PTO-US1_2-nonsp;Name=PTO-US1_2-nonsp;ID=PTO-US1_2-nonsp;gene_id=US1_2;ORF_id=PTO;"	131414	127330	6	
+KJ717942.1	Liftoff	exon	127329	128552	.	-	.	"transcript_id=PTO-US1_2-sp;Name=PTO-US1_2-sp;ID=PTO-US1_2-sp;gene_id=US1_2;ORF_id=PTO;"				
+KJ717942.1	Liftoff	exon	128709	128761	.	-	.	"transcript_id=PTO-US1_2-sp;Name=PTO-US1_2-sp;ID=PTO-US1_2-sp;gene_id=US1_2;ORF_id=PTO;"				
+KJ717942.1	Liftoff	exon	128883	131413	.	-	.	"transcript_id=PTO-US1_2-sp;Name=PTO-US1_2-sp;ID=PTO-US1_2-sp;gene_id=US1_2;ORF_id=PTO;"				
+KJ717942.1	Liftoff	transcript	127329	131413	.	-	.	"transcript_id=PTO-US1_2-sp;Name=PTO-US1_2-sp;ID=PTO-US1_2-sp;gene_id=US1_2;ORF_id=PTO;"	131413	127329	6	
+KJ717942.1	Liftoff	exon	113321	117407	.	+	.	"transcript_id=PTO-US1-nonsp;Name=PTO-US1-nonsp;ID=PTO-US1-nonsp;gene_id=US1;ORF_id=PTO;"				
+KJ717942.1	Liftoff	transcript	113321	117407	.	+	.	"transcript_id=PTO-US1-nonsp;Name=PTO-US1-nonsp;ID=PTO-US1-nonsp;gene_id=US1;ORF_id=PTO;"	113321	117407	1	
+KJ717942.1	Liftoff	exon	113320	115590	.	+	.	"transcript_id=PTO-US1-sp;Name=PTO-US1-sp;ID=PTO-US1-sp;gene_id=US1;ORF_id=PTO;"				
+KJ717942.1	Liftoff	exon	115712	115764	.	+	.	"transcript_id=PTO-US1-sp;Name=PTO-US1-sp;ID=PTO-US1-sp;gene_id=US1;ORF_id=PTO;"				
+KJ717942.1	Liftoff	exon	115921	117406	.	+	.	"transcript_id=PTO-US1-sp;Name=PTO-US1-sp;ID=PTO-US1-sp;gene_id=US1;ORF_id=PTO;"				
+KJ717942.1	Liftoff	transcript	113320	117406	.	+	.	"transcript_id=PTO-US1-sp;Name=PTO-US1-sp;ID=PTO-US1-sp;gene_id=US1;ORF_id=PTO;"	113320	117406	1	
+KJ717942.1	Liftoff	exon	21775	22237	.	-	.	"transcript_id=TRL29.2;Name=TRL29.2;ID=TRL29.2;gene_id=UL29;ORF_id=UL29.2;"				
+KJ717942.1	Liftoff	transcript	21775	22237	.	-	.	"transcript_id=TRL29.2;Name=TRL29.2;ID=TRL29.2;gene_id=UL29;ORF_id=UL29.2;"	22237	21775	4	
+KJ717942.1	Liftoff	exon	92618	92969	.	-	.	"transcript_id=TRL3.5;Name=TRL3.5;ID=TRL3.5;gene_id=UL3.5;ORF_id=UL3.5;"				
+KJ717942.1	Liftoff	transcript	92618	92969	.	-	.	"transcript_id=TRL3.5;Name=TRL3.5;ID=TRL3.5;gene_id=UL3.5;ORF_id=UL3.5;"	92969	92618	4	
+KJ717942.1	Liftoff	exon	32431	32683	.	+	.	"transcript_id=TRL35;Name=TRL35;ID=TRL35;gene_id=UL35;ORF_id=UL35.2;"				
+KJ717942.1	Liftoff	transcript	32431	32683	.	+	.	"transcript_id=TRL35;Name=TRL35;ID=TRL35;gene_id=UL35;ORF_id=UL35.2;"	32431	32683	1	
+KJ717942.1	Liftoff	exon	49604	50136	.	+	.	"transcript_id=TRL40;Name=TRL40;ID=TRL40;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	49604	50136	.	+	.	"transcript_id=TRL40;Name=TRL40;ID=TRL40;gene_id=UL40;ORF_id=UL40;"	49604	50136	8	
+KJ717942.1	Liftoff	transcript	117071	117407	.	+	.	"transcript_id=TRS1;Name=TRS1;ID=TRS1;gene_id=US1;ORF_id=US1;"	117071	117407	0	
+KJ717942.1	Liftoff	exon	117071	117407	.	+	.	"transcript_id=TRS1;Name=TRS1;ID=TRS1;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	127330	127666	.	-	.	"transcript_id=TRS1_2;Name=TRS1_2;ID=TRS1_2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127330	127666	.	-	.	"transcript_id=TRS1_2;Name=TRS1_2;ID=TRS1_2;gene_id=US1_2;ORF_id=US1_2;"	127666	127330	133	
+KJ717942.1	Liftoff	transcript	127330	127694	.	-	.	"transcript_id=TRS1_2-L;Name=TRS1_2-L;ID=TRS1_2-L;gene_id=US1_2;ORF_id=US1_2;"	127694	127330	103	
+KJ717942.1	Liftoff	exon	127330	127694	.	-	.	"transcript_id=TRS1_2-L;Name=TRS1_2-L;ID=TRS1_2-L;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	127330	127742	.	-	.	"transcript_id=TRS1_2-L2;Name=TRS1_2-L2;ID=TRS1_2-L2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127330	127742	.	-	.	"transcript_id=TRS1_2-L2;Name=TRS1-L2;ID=TRS1-L2;gene_id=US1_2;ORF_id=US1_2;"	127742	127330	41	
+KJ717942.1	Liftoff	transcript	127330	127753	.	-	.	"transcript_id=TRS1_2-L3;Name=TRS1_2-L3;ID=TRS1_2-L3;gene_id=US1_2;ORF_id=US1_2;"	127753	127330	47	
+KJ717942.1	Liftoff	exon	127330	127753	.	-	.	"transcript_id=TRS1_2-L3;Name=TRS1_2-L3;ID=TRS1_2-L3;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127330	127585	.	-	.	"transcript_id=TRS1_2-S;Name=TRS1_2-S;ID=TRS1_2-S;gene_id=US1_2;ORF_id=US1_2;"	127585	127330	122	
+KJ717942.1	Liftoff	exon	127330	127585	.	-	.	"transcript_id=TRS1_2-S;Name=TRS1_2-S;ID=TRS1_2-S;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	117043	117407	.	+	.	"transcript_id=TRS1-L;Name=TRS1-L;ID=TRS1-L;gene_id=US1;ORF_id=US1;"	117043	117407	0	
+KJ717942.1	Liftoff	exon	117043	117407	.	+	.	"transcript_id=TRS1-L;Name=TRS1-L;ID=TRS1-L;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	116995	117407	.	+	.	"transcript_id=TRS1-L2;Name=TRS1-L2;ID=TRS1-L2;gene_id=US1;ORF_id=US1;"	116995	117407	3	
+KJ717942.1	Liftoff	exon	116995	117407	.	+	.	"transcript_id=TRS1-L2;Name=TRS1-L2;ID=TRS1-L2;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	116984	117407	.	+	.	"transcript_id=TRS1-L3;Name=TRS1-L3;ID=TRS1-L3;gene_id=US1;ORF_id=US1;"	116984	117407	3	
+KJ717942.1	Liftoff	exon	116984	117407	.	+	.	"transcript_id=TRS1-L3;Name=TRS1-L3;ID=TRS1-L3;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	117152	117407	.	+	.	"transcript_id=TRS1-S;Name=TRS1-S;ID=TRS1-S;gene_id=US1;ORF_id=US1;"	117152	117407	0	
+KJ717942.1	Liftoff	exon	117152	117407	.	+	.	"transcript_id=TRS1-S;Name=TRS1-S;ID=TRS1-S;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	80906	82358	.	-	.	"transcript_id=UL10;Name=UL10;ID=UL10;gene_id=UL10;ORF_id=UL10;"				
+KJ717942.1	Liftoff	transcript	80906	82358	.	-	.	"transcript_id=UL10;Name=UL10;ID=UL10;gene_id=UL10;ORF_id=UL10;"	82358	80906	0	
+KJ717942.1	Liftoff	exon	80906	81389	.	-	.	"transcript_id=UL10.4;Name=UL10.4;ID=UL10.4;gene_id=UL10;ORF_id=UL10.4;"				
+KJ717942.1	Liftoff	transcript	80906	81389	.	-	.	"transcript_id=UL10.4;Name=UL10.4;ID=UL10.4;gene_id=UL10;ORF_id=UL10.4;"	81389	80906	11	
+KJ717942.1	Liftoff	exon	80906	81605	.	-	.	"transcript_id=UL10.5;Name=UL10.5;ID=UL10.5;gene_id=UL10;ORF_id=UL10.5;"				
+KJ717942.1	Liftoff	transcript	80906	81605	.	-	.	"transcript_id=UL10.5;Name=UL10.5;ID=UL10.5;gene_id=UL10;ORF_id=UL10.5;"	81605	80906	17	
+KJ717942.1	Liftoff	exon	80906	81868	.	-	.	"transcript_id=UL10.6;Name=UL10.6;ID=UL10.6;gene_id=UL10;ORF_id=UL10.6;"				
+KJ717942.1	Liftoff	transcript	80906	81868	.	-	.	"transcript_id=UL10.6;Name=UL10.6;ID=UL10.6;gene_id=UL10;ORF_id=UL10.6;"	81868	80906	16	
+KJ717942.1	Liftoff	exon	80906	81983	.	-	.	"transcript_id=UL10.7;Name=UL10.7;ID=UL10.7;gene_id=UL10;ORF_id=UL10.7;"				
+KJ717942.1	Liftoff	transcript	80906	81983	.	-	.	"transcript_id=UL10.7;Name=UL10.7;ID=UL10.7;gene_id=UL10;ORF_id=UL10.7;"	81983	80906	4	
+KJ717942.1	Liftoff	exon	80906	82394	.	-	.	"transcript_id=UL10-L1;Name=UL10-L1;ID=UL10-L1;gene_id=UL10;ORF_id=UL10;"				
+KJ717942.1	Liftoff	transcript	80906	82394	.	-	.	"transcript_id=UL10-L1;Name=UL10-L1;ID=UL10-L1;gene_id=UL10;ORF_id=UL10;"	82394	80906	0	
+KJ717942.1	Liftoff	exon	80906	82451	.	-	.	"transcript_id=UL10-L3;Name=UL10-L3;ID=UL10-L3;gene_id=UL10;ORF_id=UL10;"				
+KJ717942.1	Liftoff	transcript	80906	82451	.	-	.	"transcript_id=UL10-L3;Name=UL10-L3;ID=UL10-L3;gene_id=UL10;ORF_id=UL10;"	82451	80906	1	
+KJ717942.1	Liftoff	exon	80906	82580	.	-	.	"transcript_id=UL10-L4;Name=UL10-L4;ID=UL10-L4;gene_id=UL10;ORF_id=UL10;"				
+KJ717942.1	Liftoff	transcript	80906	82580	.	-	.	"transcript_id=UL10-L4;Name=UL10-L4;ID=UL10-L4;gene_id=UL10;ORF_id=UL10;"	82580	80906	0	
+KJ717942.1	Liftoff	exon	80906	84325	.	-	.	"transcript_id=UL10-L7;Name=UL10-L7;ID=UL10-L7;gene_id=UL10;ORF_id=UL10;"				
+KJ717942.1	Liftoff	transcript	80906	84325	.	-	.	"transcript_id=UL10-L7;Name=UL10-L7;ID=UL10-L7;gene_id=UL10;ORF_id=UL10;"	84325	80906	0	
+KJ717942.1	Liftoff	exon	80906	83750	.	-	.	"transcript_id=UL10-L8;Name=UL10-L8;ID=UL10-L8;gene_id=UL10;ORF_id=UL10;"				
+KJ717942.1	Liftoff	transcript	80906	83750	.	-	.	"transcript_id=UL10-L8;Name=UL10-L8;ID=UL10-L8;gene_id=UL10;ORF_id=UL10;"	83750	80906	1	
+KJ717942.1	Liftoff	exon	80906	82105	.	-	.	"transcript_id=UL10-S;Name=UL10-S;ID=UL10-S;gene_id=UL10;ORF_id=UL10;"				
+KJ717942.1	Liftoff	transcript	80906	82105	.	-	.	"transcript_id=UL10-S;Name=UL10-S;ID=UL10-S;gene_id=UL10;ORF_id=UL10;"	82105	80906	0	
+KJ717942.1	Liftoff	exon	79992	80471	.	+	.	"transcript_id=UL11;Name=UL11;ID=UL11;gene_id=UL11;ORF_id=UL11;"				
+KJ717942.1	Liftoff	transcript	79992	80471	.	+	.	"transcript_id=UL11;Name=UL11;ID=UL11;gene_id=UL11;ORF_id=UL11;"	79992	80471	6	
+KJ717942.1	Liftoff	exon	80264	80471	.	+	.	"transcript_id=UL11.5;Name=UL11.5;ID=UL11.5;gene_id=UL11;ORF_id=UL11.5;"				
+KJ717942.1	Liftoff	transcript	80264	80471	.	+	.	"transcript_id=UL11.5;Name=UL11.5;ID=UL11.5;gene_id=UL11;ORF_id=UL11.5;"	80264	80471	1	
+KJ717942.1	Liftoff	exon	79919	80471	.	+	.	"transcript_id=UL-11-L2;Name=UL-11-L2;ID=UL-11-L2;gene_id=UL11;ORF_id=UL11;"				
+KJ717942.1	Liftoff	transcript	79919	80471	.	+	.	"transcript_id=UL-11-L2;Name=UL-11-L2;ID=UL-11-L2;gene_id=UL11;ORF_id=UL11;"	79919	80471	12	
+KJ717942.1	Liftoff	exon	79537	80471	.	+	.	"transcript_id=UL-11-L3;Name=UL-11-L3;ID=UL-11-L3;gene_id=UL11;ORF_id=UL11;"				
+KJ717942.1	Liftoff	transcript	79537	80471	.	+	.	"transcript_id=UL-11-L3;Name=UL-11-L3;ID=UL-11-L3;gene_id=UL11;ORF_id=UL11;"	79537	80471	57	
+KJ717942.1	Liftoff	exon	79499	80471	.	+	.	"transcript_id=UL-11-L4;Name=UL-11-L4;ID=UL-11-L4;gene_id=UL11;ORF_id=UL11;"				
+KJ717942.1	Liftoff	transcript	79499	80471	.	+	.	"transcript_id=UL-11-L4;Name=UL-11-L4;ID=UL-11-L4;gene_id=UL11;ORF_id=UL11;"	79499	80471	17	
+KJ717942.1	Liftoff	exon	79444	80471	.	+	.	"transcript_id=UL-11-L5;Name=UL-11-L5;ID=UL-11-L5;gene_id=UL11;ORF_id=UL11;"				
+KJ717942.1	Liftoff	transcript	79444	80471	.	+	.	"transcript_id=UL-11-L5;Name=UL-11-L5;ID=UL-11-L5;gene_id=UL11;ORF_id=UL11;"	79444	80471	5111	
+KJ717942.1	Liftoff	exon	79306	80471	.	+	.	"transcript_id=UL-11-L6;Name=UL-11-L6;ID=UL-11-L6;gene_id=UL11;ORF_id=UL11;"				
+KJ717942.1	Liftoff	transcript	79306	80471	.	+	.	"transcript_id=UL-11-L6;Name=UL-11-L6;ID=UL-11-L6;gene_id=UL11;ORF_id=UL11;"	79306	80471	2	
+KJ717942.1	Liftoff	exon	79618	80471	.	+	.	"transcript_id=UL-11-L7;Name=UL-11-L7;ID=UL-11-L7;gene_id=UL11;ORF_id=UL11;"				
+KJ717942.1	Liftoff	transcript	79618	80471	.	+	.	"transcript_id=UL-11-L7;Name=UL-11-L7;ID=UL-11-L7;gene_id=UL11;ORF_id=UL11;"	79618	80471	12	
+KJ717942.1	Liftoff	exon	80187	80471	.	+	.	"transcript_id=UL-11-S;Name=UL-11-S;ID=UL-11-S;gene_id=UL11;ORF_id=UL11;"				
+KJ717942.1	Liftoff	transcript	80187	80471	.	+	.	"transcript_id=UL-11-S;Name=UL-11-S;ID=UL-11-S;gene_id=UL11;ORF_id=UL11;"	80187	80471	16	
+KJ717942.1	Liftoff	exon	78516	80471	.	+	.	"transcript_id=UL12-11;Name=UL12-11;ID=UL12-11;gene_id=UL12;ORF_id=UL12;"				
+KJ717942.1	Liftoff	transcript	78516	80471	.	+	.	"transcript_id=UL12-11;Name=UL12-11;ID=UL12-11;gene_id=UL12;ORF_id=UL12;"	78516	80471	1	
+KJ717942.1	Liftoff	exon	92616	95500	.	-	.	"transcript_id=UL1-2-3-3.5;Name=UL1-2-3-3.5;ID=UL1-2-3-3.5;gene_id=UL1;ORF_id=UL1;"				
+KJ717942.1	Liftoff	transcript	92616	95500	.	-	.	"transcript_id=UL1-2-3-3.5;Name=UL1-2-3-3.5;ID=UL1-2-3-3.5;gene_id=UL1;ORF_id=UL1;"	95500	92616	3	
+KJ717942.1	Liftoff	exon	78759	80471	.	+	.	"transcript_id=UL12S-11;Name=UL12S-11;ID=UL12S-11;gene_id=UL12;ORF_id=UL12;"				
+KJ717942.1	Liftoff	transcript	78759	80471	.	+	.	"transcript_id=UL12S-11;Name=UL12S-11;ID=UL12S-11;gene_id=UL12;ORF_id=UL12;"	78759	80471	0	
+KJ717942.1	Liftoff	exon	78810	80471	.	+	.	"transcript_id=UL12S2-11;Name=UL12S2-11;ID=UL12S2-11;gene_id=UL12;ORF_id=UL12;"				
+KJ717942.1	Liftoff	transcript	78810	80471	.	+	.	"transcript_id=UL12S2-11;Name=UL12S2-11;ID=UL12S2-11;gene_id=UL12;ORF_id=UL12;"	78810	80471	5	
+KJ717942.1	Liftoff	exon	77471	80471	.	+	.	"transcript_id=UL13-12-11;Name=UL13-12-11;ID=UL13-12-11;gene_id=UL13;ORF_id=UL13;"				
+KJ717942.1	Liftoff	transcript	77471	80471	.	+	.	"transcript_id=UL13-12-11;Name=UL13-12-11;ID=UL13-12-11;gene_id=UL13;ORF_id=UL13;"	77471	80471	0	
+KJ717942.1	Liftoff	exon	77164	80471	.	+	.	"transcript_id=UL14-13-12-11;Name=UL14-13-12-11;ID=UL14-13-12-11;gene_id=UL14;ORF_id=UL14;"				
+KJ717942.1	Liftoff	transcript	77164	80471	.	+	.	"transcript_id=UL14-13-12-11;Name=UL14-13-12-11;ID=UL14-13-12-11;gene_id=UL14;ORF_id=UL14;"	77164	80471	1	
+KJ717942.1	Liftoff	exon	76177	80430	.	+	.	"transcript_id=UL14L-13-12;Name=UL14L-13-12;ID=UL14L-13-12;gene_id=UL14;ORF_id=UL14;"				
+KJ717942.1	Liftoff	transcript	76177	80430	.	+	.	"transcript_id=UL14L-13-12;Name=UL14L-13-12;ID=UL14L-13-12;gene_id=UL14;ORF_id=UL14;"	76177	80430	2	
+KJ717942.1	Liftoff	exon	72049	77341	.	-	.	"transcript_id=UL15;Name=UL15;ID=UL15;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72049	77341	.	-	.	"transcript_id=UL15;Name=UL15;ID=UL15;gene_id=UL15;ORF_id=UL15;"	77341	72049	0	
+KJ717942.1	Liftoff	exon	72049	78466	.	-	.	"transcript_id=UL15-16-17;Name=UL15-16-17;ID=UL15-16-17;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72049	78466	.	-	.	"transcript_id=UL15-16-17;Name=UL15-16-17;ID=UL15-16-17;gene_id=UL15;ORF_id=UL15;"	78466	72049	0	
+KJ717942.1	Liftoff	exon	72048	73284	.	-	.	"transcript_id=UL15-splice;Name=UL15-splice;ID=UL15-splice;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	exon	76164	77340	.	-	.	"transcript_id=UL15-splice;Name=UL15-splice;ID=UL15-splice;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72048	77340	.	-	.	"transcript_id=UL15-splice;Name=UL15-splice;ID=UL15-splice;gene_id=UL15;ORF_id=UL15;"	77340	72048	0	
+KJ717942.1	Liftoff	exon	72048	73284	.	-	.	"transcript_id=UL15-splice-L;Name=UL15-splice-L;ID=UL15-splice-L;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	exon	76160	78465	.	-	.	"transcript_id=UL15-splice-L;Name=UL15-splice-L;ID=UL15-splice-L;gene_id=UL15;ORF_id=UL15;"				
+KJ717942.1	Liftoff	transcript	72048	78465	.	-	.	"transcript_id=UL15-splice-L;Name=UL15-splice-L;ID=UL15-splice-L;gene_id=UL15;ORF_id=UL15;"	78465	72048	0	
+KJ717942.1	Liftoff	exon	74902	76147	.	+	.	"transcript_id=UL16;Name=UL16;ID=UL16;gene_id=UL16;ORF_id=UL16;"				
+KJ717942.1	Liftoff	transcript	74902	76147	.	+	.	"transcript_id=UL16;Name=UL16;ID=UL16;gene_id=UL16;ORF_id=UL16;"	74902	76147	4	
+KJ717942.1	Liftoff	exon	75641	76147	.	+	.	"transcript_id=UL16.2;Name=UL16.2;ID=UL16.2;gene_id=UL16;ORF_id=UL16.2;"				
+KJ717942.1	Liftoff	transcript	75641	76147	.	+	.	"transcript_id=UL16.2;Name=UL16.2;ID=UL16.2;gene_id=UL16;ORF_id=UL16.2;"	75641	76147	55	
+KJ717942.1	Liftoff	exon	75656	76147	.	+	.	"transcript_id=UL16.2-S;Name=UL16.2-S;ID=UL16.2-S;gene_id=UL16;ORF_id=UL16.2;"				
+KJ717942.1	Liftoff	transcript	75656	76147	.	+	.	"transcript_id=UL16.2-S;Name=UL16.2-S;ID=UL16.2-S;gene_id=UL16;ORF_id=UL16.2;"	75656	76147	60	
+KJ717942.1	Liftoff	exon	75813	76147	.	+	.	"transcript_id=UL16.2-S2;Name=UL16.2-S2;ID=UL16.2-S2;gene_id=UL16;ORF_id=UL16.2;"				
+KJ717942.1	Liftoff	transcript	75813	76147	.	+	.	"transcript_id=UL16.2-S2;Name=UL16.2-S2;ID=UL16.2-S2;gene_id=UL16;ORF_id=UL16.2;"	75813	76147	2	
+KJ717942.1	Liftoff	exon	74915	75826	.	-	.	"transcript_id=UL16-AS;Name=UL16-AS;ID=UL16-AS;gene_id=UL16;ORF_id=UL16;"				
+KJ717942.1	Liftoff	transcript	74915	75826	.	-	.	"transcript_id=UL16-AS;Name=UL16-AS;ID=UL16-AS;gene_id=UL16;ORF_id=UL16;"	75826	74915	1	
+KJ717942.1	Liftoff	exon	74829	76147	.	+	.	"transcript_id=UL16-L;Name=UL16-L;ID=UL16-L;gene_id=UL16;ORF_id=UL16;"				
+KJ717942.1	Liftoff	transcript	74829	76147	.	+	.	"transcript_id=UL16-L;Name=UL16-L;ID=UL16-L;gene_id=UL16;ORF_id=UL16;"	74829	76147	5	
+KJ717942.1	Liftoff	exon	73261	76147	.	+	.	"transcript_id=UL17-16;Name=UL17-16;ID=UL17-16;gene_id=UL17;ORF_id=UL17;"				
+KJ717942.1	Liftoff	transcript	73261	76147	.	+	.	"transcript_id=UL17-16;Name=UL17-16;ID=UL17-16;gene_id=UL17;ORF_id=UL17;"	73261	76147	1	
+KJ717942.1	Liftoff	exon	73154	76147	.	+	.	"transcript_id=UL17L-16;Name=UL17L-16;ID=UL17L-16;gene_id=UL17;ORF_id=UL17;"				
+KJ717942.1	Liftoff	transcript	73154	76147	.	+	.	"transcript_id=UL17L-16;Name=UL17L-16;ID=UL17L-16;gene_id=UL17;ORF_id=UL17;"	73154	76147	2	
+KJ717942.1	Liftoff	exon	71033	72044	.	+	.	"transcript_id=UL18;Name=UL18;ID=UL18;gene_id=UL18;ORF_id=UL18;"				
+KJ717942.1	Liftoff	transcript	71033	72044	.	+	.	"transcript_id=UL18;Name=UL18;ID=UL18;gene_id=UL18;ORF_id=UL18;"	71033	72044	7	
+KJ717942.1	Liftoff	exon	71539	72044	.	+	.	"transcript_id=UL18.5;Name=UL18.5;ID=UL18.5;gene_id=UL18;ORF_id=UL18.5;"				
+KJ717942.1	Liftoff	transcript	71539	72044	.	+	.	"transcript_id=UL18.5;Name=UL18.5;ID=UL18.5;gene_id=UL18;ORF_id=UL18.5;"	71539	72044	8	
+KJ717942.1	Liftoff	exon	71033	76147	.	+	.	"transcript_id=UL18-17-16;Name=UL18-17-16;ID=UL18-17-16;gene_id=UL18;ORF_id=UL18;"				
+KJ717942.1	Liftoff	transcript	71033	76147	.	+	.	"transcript_id=UL18-17-16;Name=UL18-17-16;ID=UL18-17-16;gene_id=UL18;ORF_id=UL18;"	71033	76147	7	
+KJ717942.1	Liftoff	exon	71033	72019	.	+	.	"transcript_id=UL18-AT;Name=UL18-AT;ID=UL18-AT;gene_id=UL18;ORF_id=UL18;"				
+KJ717942.1	Liftoff	transcript	71033	72019	.	+	.	"transcript_id=UL18-AT;Name=UL18-AT;ID=UL18-AT;gene_id=UL18;ORF_id=UL18;"	71033	72019	7	
+KJ717942.1	Liftoff	exon	70817	72044	.	+	.	"transcript_id=UL18-L;Name=UL18-L;ID=UL18-L;gene_id=UL18;ORF_id=UL18;"				
+KJ717942.1	Liftoff	transcript	70817	72044	.	+	.	"transcript_id=UL18-L;Name=UL18-L;ID=UL18-L;gene_id=UL18;ORF_id=UL18;"	70817	72044	6	
+KJ717942.1	Liftoff	exon	70061	72044	.	+	.	"transcript_id=UL18-L10;Name=UL18-L10;ID=UL18-L10;gene_id=UL19;ORF_id=UL19.35;"				
+KJ717942.1	Liftoff	transcript	70061	72044	.	+	.	"transcript_id=UL18-L10;Name=UL18-L10;ID=UL18-L10;gene_id=UL19;ORF_id=UL19.35;"	70061	72044	3	
+KJ717942.1	Liftoff	exon	70036	72044	.	+	.	"transcript_id=UL18-L11;Name=UL18-L11;ID=UL18-L11;gene_id=UL19;ORF_id=UL19.35;"				
+KJ717942.1	Liftoff	transcript	70036	72044	.	+	.	"transcript_id=UL18-L11;Name=UL18-L11;ID=UL18-L11;gene_id=UL19;ORF_id=UL19.35;"	70036	72044	3	
+KJ717942.1	Liftoff	exon	69994	72044	.	+	.	"transcript_id=UL18-L12;Name=UL18-L12;ID=UL18-L12;gene_id=UL19;ORF_id=UL19.35;"				
+KJ717942.1	Liftoff	transcript	69994	72044	.	+	.	"transcript_id=UL18-L12;Name=UL18-L12;ID=UL18-L12;gene_id=UL19;ORF_id=UL19.35;"	69994	72044	2	
+KJ717942.1	Liftoff	exon	69750	72044	.	+	.	"transcript_id=UL18-L13;Name=UL18-L13;ID=UL18-L13;gene_id=UL19;ORF_id=UL19.31;"				
+KJ717942.1	Liftoff	transcript	69750	72044	.	+	.	"transcript_id=UL18-L13;Name=UL18-L13;ID=UL18-L13;gene_id=UL19;ORF_id=UL19.31;"	69750	72044	20	
+KJ717942.1	Liftoff	exon	69379	72044	.	+	.	"transcript_id=UL18-L14;Name=UL18-L14;ID=UL18-L14;gene_id=UL19;ORF_id=UL19.27;"				
+KJ717942.1	Liftoff	transcript	69379	72044	.	+	.	"transcript_id=UL18-L14;Name=UL18-L14;ID=UL18-L14;gene_id=UL19;ORF_id=UL19.27;"	69379	72044	5	
+KJ717942.1	Liftoff	exon	69173	72044	.	+	.	"transcript_id=UL18-L15;Name=UL18-L15;ID=UL18-L15;gene_id=UL19;ORF_id=UL19.25;"				
+KJ717942.1	Liftoff	transcript	69173	72044	.	+	.	"transcript_id=UL18-L15;Name=UL18-L15;ID=UL18-L15;gene_id=UL19;ORF_id=UL19.25;"	69173	72044	17	
+KJ717942.1	Liftoff	exon	69132	72044	.	+	.	"transcript_id=UL18-L16;Name=UL18-L16;ID=UL18-L16;gene_id=UL19;ORF_id=UL19.25;"				
+KJ717942.1	Liftoff	transcript	69132	72044	.	+	.	"transcript_id=UL18-L16;Name=UL18-L16;ID=UL18-L16;gene_id=UL19;ORF_id=UL19.25;"	69132	72044	2	
+KJ717942.1	Liftoff	exon	67259	72044	.	+	.	"transcript_id=UL18-L17;Name=UL18-L17;ID=UL18-L17;gene_id=UL19;ORF_id=UL19.9;"				
+KJ717942.1	Liftoff	transcript	67259	72044	.	+	.	"transcript_id=UL18-L17;Name=UL18-L17;ID=UL18-L17;gene_id=UL19;ORF_id=UL19.9;"	67259	72044	3	
+KJ717942.1	Liftoff	exon	70638	72044	.	+	.	"transcript_id=UL18-L2;Name=UL18-L2;ID=UL18-L2;gene_id=UL18;ORF_id=UL18;"				
+KJ717942.1	Liftoff	transcript	70638	72044	.	+	.	"transcript_id=UL18-L2;Name=UL18-L2;ID=UL18-L2;gene_id=UL18;ORF_id=UL18;"	70638	72044	5	
+KJ717942.1	Liftoff	exon	70596	72044	.	+	.	"transcript_id=UL18-L3;Name=UL18-L3;ID=UL18-L3;gene_id=UL18;ORF_id=UL18;"				
+KJ717942.1	Liftoff	transcript	70596	72044	.	+	.	"transcript_id=UL18-L3;Name=UL18-L3;ID=UL18-L3;gene_id=UL18;ORF_id=UL18;"	70596	72044	4	
+KJ717942.1	Liftoff	exon	70518	72044	.	+	.	"transcript_id=UL18-L4;Name=UL18-L4;ID=UL18-L4;gene_id=UL18;ORF_id=UL18;"				
+KJ717942.1	Liftoff	transcript	70518	72044	.	+	.	"transcript_id=UL18-L4;Name=UL18-L4;ID=UL18-L4;gene_id=UL18;ORF_id=UL18;"	70518	72044	5538	
+KJ717942.1	Liftoff	exon	70453	72044	.	+	.	"transcript_id=UL18-L5;Name=UL18-L5;ID=UL18-L5;gene_id=UL19;ORF_id=UL19.38;"				
+KJ717942.1	Liftoff	transcript	70453	72044	.	+	.	"transcript_id=UL18-L5;Name=UL18-L5;ID=UL18-L5;gene_id=UL19;ORF_id=UL19.38;"	70453	72044	1	
+KJ717942.1	Liftoff	exon	70271	72044	.	+	.	"transcript_id=UL18-L6;Name=UL18-L6;ID=UL18-L6;gene_id=UL19;ORF_id=UL19.38;"				
+KJ717942.1	Liftoff	transcript	70271	72044	.	+	.	"transcript_id=UL18-L6;Name=UL18-L6;ID=UL18-L6;gene_id=UL19;ORF_id=UL19.38;"	70271	72044	5	
+KJ717942.1	Liftoff	exon	70219	72044	.	+	.	"transcript_id=UL18-L7;Name=UL18-L7;ID=UL18-L7;gene_id=UL19;ORF_id=UL19.37;"				
+KJ717942.1	Liftoff	transcript	70219	72044	.	+	.	"transcript_id=UL18-L7;Name=UL18-L7;ID=UL18-L7;gene_id=UL19;ORF_id=UL19.37;"	70219	72044	2	
+KJ717942.1	Liftoff	exon	70177	72044	.	+	.	"transcript_id=UL18-L8;Name=UL18-L8;ID=UL18-L8;gene_id=UL19;ORF_id=UL19.37;"				
+KJ717942.1	Liftoff	transcript	70177	72044	.	+	.	"transcript_id=UL18-L8;Name=UL18-L8;ID=UL18-L8;gene_id=UL19;ORF_id=UL19.37;"	70177	72044	10	
+KJ717942.1	Liftoff	exon	70117	72044	.	+	.	"transcript_id=UL18-L9;Name=UL18-L9;ID=UL18-L9;gene_id=UL19;ORF_id=UL19.35;"				
+KJ717942.1	Liftoff	transcript	70117	72044	.	+	.	"transcript_id=UL18-L9;Name=UL18-L9;ID=UL18-L9;gene_id=UL19;ORF_id=UL19.35;"	70117	72044	23	
+KJ717942.1	Liftoff	exon	66844	71025	.	+	.	"transcript_id=UL19;Name=UL19;ID=UL19;gene_id=UL19;ORF_id=UL19;"				
+KJ717942.1	Liftoff	transcript	66844	71025	.	+	.	"transcript_id=UL19;Name=UL19;ID=UL19;gene_id=UL19;ORF_id=UL19;"	66844	71025	5	
+KJ717942.1	Liftoff	exon	67465	71025	.	+	.	"transcript_id=UL19.11;Name=UL19.11;ID=UL19.11;gene_id=UL19;ORF_id=UL19.11;"				
+KJ717942.1	Liftoff	transcript	67465	71025	.	+	.	"transcript_id=UL19.11;Name=UL19.11;ID=UL19.11;gene_id=UL19;ORF_id=UL19.11;"	67465	71025	6	
+KJ717942.1	Liftoff	exon	67912	71025	.	+	.	"transcript_id=UL19.12;Name=UL19.12;ID=UL19.12;gene_id=UL19;ORF_id=UL19.12;"				
+KJ717942.1	Liftoff	transcript	67912	71025	.	+	.	"transcript_id=UL19.12;Name=UL19.12;ID=UL19.12;gene_id=UL19;ORF_id=UL19.12;"	67912	71025	14	
+KJ717942.1	Liftoff	exon	68011	71025	.	+	.	"transcript_id=UL19.12-S;Name=UL19.12-S;ID=UL19.12-S;gene_id=UL19;ORF_id=UL19.12;"				
+KJ717942.1	Liftoff	transcript	68011	71025	.	+	.	"transcript_id=UL19.12-S;Name=UL19.12-S;ID=UL19.12-S;gene_id=UL19;ORF_id=UL19.12;"	68011	71025	12	
+KJ717942.1	Liftoff	exon	68237	71025	.	+	.	"transcript_id=UL19.16;Name=UL19.16;ID=UL19.16;gene_id=UL19;ORF_id=UL19.16;"				
+KJ717942.1	Liftoff	transcript	68237	71025	.	+	.	"transcript_id=UL19.16;Name=UL19.16;ID=UL19.16;gene_id=UL19;ORF_id=UL19.16;"	68237	71025	7	
+KJ717942.1	Liftoff	exon	68507	71025	.	+	.	"transcript_id=UL19.18;Name=UL19.18;ID=UL19.18;gene_id=UL19;ORF_id=UL19.18;"				
+KJ717942.1	Liftoff	transcript	68507	71025	.	+	.	"transcript_id=UL19.18;Name=UL19.18;ID=UL19.18;gene_id=UL19;ORF_id=UL19.18;"	68507	71025	21	
+KJ717942.1	Liftoff	exon	68564	71025	.	+	.	"transcript_id=UL19.19;Name=UL19.19;ID=UL19.19;gene_id=UL19;ORF_id=UL19.19;"				
+KJ717942.1	Liftoff	transcript	68564	71025	.	+	.	"transcript_id=UL19.19;Name=UL19.19;ID=UL19.19;gene_id=UL19;ORF_id=UL19.19;"	68564	71025	25	
+KJ717942.1	Liftoff	exon	68627	71025	.	+	.	"transcript_id=UL19.19-S;Name=UL19.19-S;ID=UL19.19-S;gene_id=UL19;ORF_id=UL19.19;"				
+KJ717942.1	Liftoff	transcript	68627	71025	.	+	.	"transcript_id=UL19.19-S;Name=UL19.19-S;ID=UL19.19-S;gene_id=UL19;ORF_id=UL19.19;"	68627	71025	3	
+KJ717942.1	Liftoff	exon	68773	71025	.	+	.	"transcript_id=UL19.20;Name=UL19.20;ID=UL19.20;gene_id=UL19;ORF_id=UL19.20;"				
+KJ717942.1	Liftoff	transcript	68773	71025	.	+	.	"transcript_id=UL19.20;Name=UL19.20;ID=UL19.20;gene_id=UL19;ORF_id=UL19.20;"	68773	71025	15	
+KJ717942.1	Liftoff	exon	68863	71025	.	+	.	"transcript_id=UL19.22;Name=UL19.22;ID=UL19.22;gene_id=UL19;ORF_id=UL19.22;"				
+KJ717942.1	Liftoff	transcript	68863	71025	.	+	.	"transcript_id=UL19.22;Name=UL19.22;ID=UL19.22;gene_id=UL19;ORF_id=UL19.22;"	68863	71025	14	
+KJ717942.1	Liftoff	exon	68963	71025	.	+	.	"transcript_id=UL19.24-S;Name=UL19.24-S;ID=UL19.24-S;gene_id=UL19;ORF_id=UL19.24;"				
+KJ717942.1	Liftoff	transcript	68963	71025	.	+	.	"transcript_id=UL19.24-S;Name=UL19.24-S;ID=UL19.24-S;gene_id=UL19;ORF_id=UL19.24;"	68963	71025	3	
+KJ717942.1	Liftoff	exon	69042	71025	.	+	.	"transcript_id=UL19.24-S2;Name=UL19.24-S2;ID=UL19.24-S2;gene_id=UL19;ORF_id=UL19.24;"				
+KJ717942.1	Liftoff	transcript	69042	71025	.	+	.	"transcript_id=UL19.24-S2;Name=UL19.24-S2;ID=UL19.24-S2;gene_id=UL19;ORF_id=UL19.24;"	69042	71025	7	
+KJ717942.1	Liftoff	exon	69173	71025	.	+	.	"transcript_id=UL19.25;Name=UL19.25;ID=UL19.25;gene_id=UL19;ORF_id=UL19.25;"				
+KJ717942.1	Liftoff	transcript	69173	71025	.	+	.	"transcript_id=UL19.25;Name=UL19.25;ID=UL19.25;gene_id=UL19;ORF_id=UL19.25;"	69173	71025	17	
+KJ717942.1	Liftoff	exon	69289	71025	.	+	.	"transcript_id=UL19.25-S;Name=UL19.25-S;ID=UL19.25-S;gene_id=UL19;ORF_id=UL19.25;"				
+KJ717942.1	Liftoff	transcript	69289	71025	.	+	.	"transcript_id=UL19.25-S;Name=UL19.25-S;ID=UL19.25-S;gene_id=UL19;ORF_id=UL19.25;"	69289	71025	8	
+KJ717942.1	Liftoff	exon	69416	71025	.	+	.	"transcript_id=UL19.27;Name=UL19.27;ID=UL19.27;gene_id=UL19;ORF_id=UL19.27;"				
+KJ717942.1	Liftoff	transcript	69416	71025	.	+	.	"transcript_id=UL19.27;Name=UL19.27;ID=UL19.27;gene_id=UL19;ORF_id=UL19.27;"	69416	71025	8	
+KJ717942.1	Liftoff	exon	69538	71025	.	+	.	"transcript_id=UL19.29;Name=UL19.29;ID=UL19.29;gene_id=UL21;ORF_id=UL19.29;"				
+KJ717942.1	Liftoff	transcript	69538	71025	.	+	.	"transcript_id=UL19.29;Name=UL19.29;ID=UL19.29;gene_id=UL21;ORF_id=UL19.29;"	69538	71025	6	
+KJ717942.1	Liftoff	exon	69688	71025	.	+	.	"transcript_id=UL19.30;Name=UL19.30;ID=UL19.30;gene_id=UL19;ORF_id=UL19.30;"				
+KJ717942.1	Liftoff	transcript	69688	71025	.	+	.	"transcript_id=UL19.30;Name=UL19.30;ID=UL19.30;gene_id=UL19;ORF_id=UL19.30;"	69688	71025	3	
+KJ717942.1	Liftoff	exon	69765	71025	.	+	.	"transcript_id=UL19.31;Name=UL19.31;ID=UL19.31;gene_id=UL19;ORF_id=UL19.31;"				
+KJ717942.1	Liftoff	transcript	69765	71025	.	+	.	"transcript_id=UL19.31;Name=UL19.31;ID=UL19.31;gene_id=UL19;ORF_id=UL19.31;"	69765	71025	23	
+KJ717942.1	Liftoff	exon	69817	71025	.	+	.	"transcript_id=UL19.31-S;Name=UL19.31-S;ID=UL19.31-S;gene_id=UL19;ORF_id=UL19.31;"				
+KJ717942.1	Liftoff	transcript	69817	71025	.	+	.	"transcript_id=UL19.31-S;Name=UL19.31-S;ID=UL19.31-S;gene_id=UL19;ORF_id=UL19.31;"	69817	71025	10	
+KJ717942.1	Liftoff	exon	69899	71025	.	+	.	"transcript_id=UL19.32;Name=UL19.32;ID=UL19.32;gene_id=UL19;ORF_id=UL19.32;"				
+KJ717942.1	Liftoff	transcript	69899	71025	.	+	.	"transcript_id=UL19.32;Name=UL19.32;ID=UL19.32;gene_id=UL19;ORF_id=UL19.32;"	69899	71025	1	
+KJ717942.1	Liftoff	exon	69994	71025	.	+	.	"transcript_id=UL19.33;Name=UL19.33;ID=UL19.33;gene_id=UL19;ORF_id=UL19.33;"				
+KJ717942.1	Liftoff	transcript	69994	71025	.	+	.	"transcript_id=UL19.33;Name=UL19.33;ID=UL19.33;gene_id=UL19;ORF_id=UL19.33;"	69994	71025	2	
+KJ717942.1	Liftoff	exon	70061	71025	.	+	.	"transcript_id=UL19.35;Name=UL19.35;ID=UL19.35;gene_id=UL19;ORF_id=UL19.35;"				
+KJ717942.1	Liftoff	transcript	70061	71025	.	+	.	"transcript_id=UL19.35;Name=UL19.35;ID=UL19.35;gene_id=UL19;ORF_id=UL19.35;"	70061	71025	3	
+KJ717942.1	Liftoff	exon	70177	71025	.	+	.	"transcript_id=UL19.35-S;Name=UL19.35-S;ID=UL19.35-S;gene_id=UL19;ORF_id=UL19.35;"				
+KJ717942.1	Liftoff	transcript	70177	71025	.	+	.	"transcript_id=UL19.35-S;Name=UL19.35-S;ID=UL19.35-S;gene_id=UL19;ORF_id=UL19.35;"	70177	71025	10	
+KJ717942.1	Liftoff	exon	70271	71025	.	+	.	"transcript_id=UL19.37;Name=UL19.37;ID=UL19.37;gene_id=UL19;ORF_id=UL19.37;"				
+KJ717942.1	Liftoff	transcript	70271	71025	.	+	.	"transcript_id=UL19.37;Name=UL19.37;ID=UL19.37;gene_id=UL19;ORF_id=UL19.37;"	70271	71025	5	
+KJ717942.1	Liftoff	exon	70327	71025	.	+	.	"transcript_id=UL19.38;Name=UL19.38;ID=UL19.38;gene_id=UL19;ORF_id=UL19.38;"				
+KJ717942.1	Liftoff	transcript	70327	71025	.	+	.	"transcript_id=UL19.38;Name=UL19.38;ID=UL19.38;gene_id=UL19;ORF_id=UL19.38;"	70327	71025	3	
+KJ717942.1	Liftoff	exon	70453	71025	.	+	.	"transcript_id=UL19.38-S;Name=UL19.38-S;ID=UL19.38-S;gene_id=UL19;ORF_id=UL19.38;"				
+KJ717942.1	Liftoff	transcript	70453	71025	.	+	.	"transcript_id=UL19.38-S;Name=UL19.38-S;ID=UL19.38-S;gene_id=UL19;ORF_id=UL19.38;"	70453	71025	1	
+KJ717942.1	Liftoff	exon	67303	71025	.	+	.	"transcript_id=UL19.9;Name=UL19.9;ID=UL19.9;gene_id=UL19;ORF_id=UL19.9;"				
+KJ717942.1	Liftoff	transcript	67303	71025	.	+	.	"transcript_id=UL19.9;Name=UL19.9;ID=UL19.9;gene_id=UL19;ORF_id=UL19.9;"	67303	71025	7	
+KJ717942.1	Liftoff	exon	66844	72044	.	+	.	"transcript_id=UL19-18;Name=UL19-18;ID=UL19-18;gene_id=UL19;ORF_id=UL19;"				
+KJ717942.1	Liftoff	transcript	66844	72044	.	+	.	"transcript_id=UL19-18;Name=UL19-18;ID=UL19-18;gene_id=UL19;ORF_id=UL19;"	66844	72044	5	
+KJ717942.1	Liftoff	exon	92616	96003	.	-	.	"transcript_id=UL1L2-2-3-3.5;Name=UL1L2-2-3-3.5;ID=UL1L2-2-3-3.5;gene_id=UL1;ORF_id=UL1;"				
+KJ717942.1	Liftoff	transcript	92616	96003	.	-	.	"transcript_id=UL1L2-2-3-3.5;Name=UL1L2-2-3-3.5;ID=UL1L2-2-3-3.5;gene_id=UL1;ORF_id=UL1;"	96003	92616	1	
+KJ717942.1	Liftoff	exon	92616	96226	.	+	.	"transcript_id=UL1L-2-3-3.5;Name=UL1L-2-3-3.5;ID=UL1L-2-3-3.5;gene_id=UL1;ORF_id=UL1;"				
+KJ717942.1	Liftoff	transcript	92616	96226	.	+	.	"transcript_id=UL1L-2-3-3.5;Name=UL1L-2-3-3.5;ID=UL1L-2-3-3.5;gene_id=UL1;ORF_id=UL1;"	92616	96226	0	
+KJ717942.1	Liftoff	exon	93794	95079	.	-	.	"transcript_id=UL2;Name=UL2;ID=UL2;gene_id=UL2;ORF_id=UL2;"				
+KJ717942.1	Liftoff	transcript	93794	95079	.	-	.	"transcript_id=UL2;Name=UL2;ID=UL2;gene_id=UL2;ORF_id=UL2;"	95079	93794	2	
+KJ717942.1	Liftoff	exon	66312	66898	.	+	.	"transcript_id=UL20;Name=UL20;ID=UL20;gene_id=UL20;ORF_id=UL20;"				
+KJ717942.1	Liftoff	transcript	66312	66898	.	+	.	"transcript_id=UL20;Name=UL20;ID=UL20;gene_id=UL20;ORF_id=UL20;"	66312	66898	11	
+KJ717942.1	Liftoff	exon	66311	71025	.	+	.	"transcript_id=UL20-19;Name=UL20-19;ID=UL20-19;gene_id=UL20;ORF_id=UL20;"				
+KJ717942.1	Liftoff	transcript	66311	71025	.	+	.	"transcript_id=UL20-19;Name=UL20-19;ID=UL20-19;gene_id=UL20;ORF_id=UL20;"	66311	71025	11	
+KJ717942.1	Liftoff	exon	64679	67430	.	-	.	"transcript_id=UL20-21-C;Name=UL20-21-C;ID=UL20-21-C;gene_id=UL21;ORF_id=UL21;"				
+KJ717942.1	Liftoff	transcript	64679	67430	.	-	.	"transcript_id=UL20-21-C;Name=UL20-21-C;ID=UL20-21-C;gene_id=UL21;ORF_id=UL21;"	67430	64679	0	
+KJ717942.1	Liftoff	exon	64639	66258	.	-	.	"transcript_id=UL21;Name=UL21;ID=UL21;gene_id=UL21;ORF_id=UL21;"				
+KJ717942.1	Liftoff	transcript	64639	66258	.	-	.	"transcript_id=UL21;Name=UL21;ID=UL21;gene_id=UL21;ORF_id=UL21;"	66258	64639	0	
+KJ717942.1	Liftoff	exon	64639	66163	.	-	.	"transcript_id=UL21.2;Name=UL21.2;ID=UL21.2;gene_id=UL21;ORF_id=UL21.2;"				
+KJ717942.1	Liftoff	transcript	64639	66163	.	-	.	"transcript_id=UL21.2;Name=UL21.2;ID=UL21.2;gene_id=UL21;ORF_id=UL21.2;"	66163	64639	0	
+KJ717942.1	Liftoff	exon	64639	66088	.	-	.	"transcript_id=UL21.2-S;Name=UL21.2-S;ID=UL21.2-S;gene_id=UL21;ORF_id=UL21.2;"				
+KJ717942.1	Liftoff	transcript	64639	66088	.	-	.	"transcript_id=UL21.2-S;Name=UL21.2-S;ID=UL21.2-S;gene_id=UL21;ORF_id=UL21.2;"	66088	64639	0	
+KJ717942.1	Liftoff	exon	64639	65130	.	-	.	"transcript_id=UL21.5;Name=UL21.5;ID=UL21.5;gene_id=UL21;ORF_id=UL21.5;"				
+KJ717942.1	Liftoff	transcript	64639	65130	.	-	.	"transcript_id=UL21.5;Name=UL21.5;ID=UL21.5;gene_id=UL21;ORF_id=UL21.5;"	65130	64639	5	
+KJ717942.1	Liftoff	exon	64359	66162	.	+	.	"transcript_id=UL21-as;Name=UL21-as;ID=UL21-as;gene_id=UL21;ORF_id=UL21;"				
+KJ717942.1	Liftoff	transcript	64359	66162	.	+	.	"transcript_id=UL21-as;Name=UL21-as;ID=UL21-as;gene_id=UL21;ORF_id=UL21;"	64359	66162	1	
+KJ717942.1	Liftoff	exon	65038	66258	.	-	.	"transcript_id=UL21-AT2;Name=UL21-AT2;ID=UL21-AT2;gene_id=UL21;ORF_id=UL21;"				
+KJ717942.1	Liftoff	transcript	65038	66258	.	-	.	"transcript_id=UL21-AT2;Name=UL21-AT2;ID=UL21-AT2;gene_id=UL21;ORF_id=UL21;"	66258	65038	0	
+KJ717942.1	Liftoff	exon	64639	66386	.	-	.	"transcript_id=UL21-L;Name=UL21-L;ID=UL21-L;gene_id=UL21;ORF_id=UL21;"				
+KJ717942.1	Liftoff	transcript	64639	66386	.	-	.	"transcript_id=UL21-L;Name=UL21-L;ID=UL21-L;gene_id=UL21;ORF_id=UL21;"	66386	64639	2	
+KJ717942.1	Liftoff	exon	64644	66789	.	-	.	"transcript_id=UL21-L2;Name=UL21-L2;ID=UL21-L2;gene_id=UL21;ORF_id=UL21;"				
+KJ717942.1	Liftoff	transcript	64644	66789	.	-	.	"transcript_id=UL21-L2;Name=UL21-L2;ID=UL21-L2;gene_id=UL21;ORF_id=UL21;"	66789	64644	0	
+KJ717942.1	Liftoff	exon	60750	62856	.	+	.	"transcript_id=UL22;Name=UL22;ID=UL22;gene_id=UL22;ORF_id=UL22;"				
+KJ717942.1	Liftoff	transcript	60750	62856	.	+	.	"transcript_id=UL22;Name=UL22;ID=UL22;gene_id=UL22;ORF_id=UL22;"	60750	62856	9	
+KJ717942.1	Liftoff	exon	62516	62856	.	+	.	"transcript_id=UL22.11;Name=UL22.11;ID=UL22.11;gene_id=UL22;ORF_id=UL22.11;"				
+KJ717942.1	Liftoff	transcript	62516	62856	.	+	.	"transcript_id=UL22.11;Name=UL22.11;ID=UL22.11;gene_id=UL22;ORF_id=UL22.11;"	62516	62856	6	
+KJ717942.1	Liftoff	exon	62660	62856	.	+	.	"transcript_id=UL22.13;Name=UL22.13;ID=UL22.13;gene_id=UL22;ORF_id=UL22.13;"				
+KJ717942.1	Liftoff	transcript	62660	62856	.	+	.	"transcript_id=UL22.13;Name=UL22.13;ID=UL22.13;gene_id=UL22;ORF_id=UL22.13;"	62660	62856	6	
+KJ717942.1	Liftoff	exon	61594	62856	.	+	.	"transcript_id=UL22.5;Name=UL22.5;ID=UL22.5;gene_id=UL22;ORF_id=UL22.5;"				
+KJ717942.1	Liftoff	transcript	61594	62856	.	+	.	"transcript_id=UL22.5;Name=UL22.5;ID=UL22.5;gene_id=UL22;ORF_id=UL22.5;"	61594	62856	1	
+KJ717942.1	Liftoff	exon	62137	62856	.	+	.	"transcript_id=UL22.8;Name=UL22.8;ID=UL22.8;gene_id=UL22;ORF_id=UL22.8;"				
+KJ717942.1	Liftoff	transcript	62137	62856	.	+	.	"transcript_id=UL22.8;Name=UL22.8;ID=UL22.8;gene_id=UL22;ORF_id=UL22.8;"	62137	62856	1	
+KJ717942.1	Liftoff	exon	60751	63635	.	+	.	"transcript_id=UL22-AT;Name=UL22-AT;ID=UL22-AT;gene_id=UL22;ORF_id=UL22;"				
+KJ717942.1	Liftoff	transcript	60751	63635	.	+	.	"transcript_id=UL22-AT;Name=UL22-AT;ID=UL22-AT;gene_id=UL22;ORF_id=UL22;"	60751	63635	9	
+KJ717942.1	Liftoff	exon	60309	62856	.	+	.	"transcript_id=UL22-L;Name=UL22-L;ID=UL22-L;gene_id=UL22;ORF_id=UL22;"				
+KJ717942.1	Liftoff	transcript	60309	62856	.	+	.	"transcript_id=UL22-L;Name=UL22-L;ID=UL22-L;gene_id=UL22;ORF_id=UL22;"	60309	62856	1	
+KJ717942.1	Liftoff	exon	59584	60767	.	+	.	"transcript_id=UL23;Name=UL23;ID=UL23;gene_id=UL23;ORF_id=UL23;"				
+KJ717942.1	Liftoff	transcript	59584	60767	.	+	.	"transcript_id=UL23;Name=UL23;ID=UL23;gene_id=UL23;ORF_id=UL23;"	59584	60767	7	
+KJ717942.1	Liftoff	exon	59803	60767	.	+	.	"transcript_id=UL23.4;Name=UL23.4;ID=UL23.4;gene_id=UL23;ORF_id=UL23.4;"				
+KJ717942.1	Liftoff	transcript	59803	60767	.	+	.	"transcript_id=UL23.4;Name=UL23.4;ID=UL23.4;gene_id=UL23;ORF_id=UL23.4;"	59803	60767	21	
+KJ717942.1	Liftoff	exon	59928	60767	.	+	.	"transcript_id=UL23.4-S;Name=UL23.4-S;ID=UL23.4-S;gene_id=UL23;ORF_id=UL23.4;"				
+KJ717942.1	Liftoff	transcript	59928	60767	.	+	.	"transcript_id=UL23.4-S;Name=UL23.4-S;ID=UL23.4-S;gene_id=UL23;ORF_id=UL23.4;"	59928	60767	2	
+KJ717942.1	Liftoff	exon	60309	60767	.	+	.	"transcript_id=UL23.6;Name=UL23.6;ID=UL23.6;gene_id=UL23;ORF_id=UL23.6;"				
+KJ717942.1	Liftoff	transcript	60309	60767	.	+	.	"transcript_id=UL23.6;Name=UL23.6;ID=UL23.6;gene_id=UL23;ORF_id=UL23.6;"	60309	60767	1	
+KJ717942.1	Liftoff	exon	59584	62856	.	+	.	"transcript_id=UL23-22;Name=UL23-22;ID=UL23-22;gene_id=UL23;ORF_id=UL23;"				
+KJ717942.1	Liftoff	transcript	59584	62856	.	+	.	"transcript_id=UL23-22;Name=UL23-22;ID=UL23-22;gene_id=UL23;ORF_id=UL23;"	59584	62856	7	
+KJ717942.1	Liftoff	exon	92616	95079	.	-	.	"transcript_id=UL2-3-3.5;Name=UL2-3-3.5;ID=UL2-3-3.5;gene_id=UL2;ORF_id=UL2;"				
+KJ717942.1	Liftoff	transcript	92616	95079	.	-	.	"transcript_id=UL2-3-3.5;Name=UL2-3-3.5;ID=UL2-3-3.5;gene_id=UL2;ORF_id=UL2;"	95079	92616	2	
+KJ717942.1	Liftoff	exon	59585	60870	.	+	.	"transcript_id=UL23-AT;Name=UL23-AT;ID=UL23-AT;gene_id=UL23;ORF_id=UL23;"				
+KJ717942.1	Liftoff	transcript	59585	60870	.	+	.	"transcript_id=UL23-AT;Name=UL23-AT;ID=UL23-AT;gene_id=UL23;ORF_id=UL23;"	59585	60870	7	
+KJ717942.1	Liftoff	exon	59560	60767	.	+	.	"transcript_id=UL23-L1;Name=UL23-L1;ID=UL23-L1;gene_id=UL31;ORF_id=UL31;"				
+KJ717942.1	Liftoff	transcript	59560	60767	.	+	.	"transcript_id=UL23-L1;Name=UL23-L1;ID=UL23-L1;gene_id=UL31;ORF_id=UL31;"	59560	60767	10	
+KJ717942.1	Liftoff	exon	59141	60767	.	+	.	"transcript_id=UL23-L2;Name=UL23-L2;ID=UL23-L2;gene_id=UL32;ORF_id=UL32;"				
+KJ717942.1	Liftoff	transcript	59141	60767	.	+	.	"transcript_id=UL23-L2;Name=UL23-L2;ID=UL23-L2;gene_id=UL32;ORF_id=UL32;"	59141	60767	5	
+KJ717942.1	Liftoff	exon	59141	62856	.	+	.	"transcript_id=UL23L-22;Name=UL23L-22;ID=UL23L-22;gene_id=UL23;ORF_id=UL23;"				
+KJ717942.1	Liftoff	transcript	59141	62856	.	+	.	"transcript_id=UL23L-22;Name=UL23L-22;ID=UL23L-22;gene_id=UL23;ORF_id=UL23;"	59141	62856	5	
+KJ717942.1	Liftoff	exon	58994	60767	.	+	.	"transcript_id=UL23-L3;Name=UL23-L3;ID=UL23-L3;gene_id=UL33;ORF_id=UL33;"				
+KJ717942.1	Liftoff	transcript	58994	60767	.	+	.	"transcript_id=UL23-L3;Name=UL23-L3;ID=UL23-L3;gene_id=UL33;ORF_id=UL33;"	58994	60767	3	
+KJ717942.1	Liftoff	exon	58518	60767	.	+	.	"transcript_id=UL23-L4;Name=UL23-L4;ID=UL23-L4;gene_id=UL34;ORF_id=UL34;"				
+KJ717942.1	Liftoff	transcript	58518	60767	.	+	.	"transcript_id=UL23-L4;Name=UL23-L4;ID=UL23-L4;gene_id=UL34;ORF_id=UL34;"	58518	60767	1	
+KJ717942.1	Liftoff	exon	55794	59793	.	-	.	"transcript_id=UL24-25-26-26.5;Name=UL24-25-26-26.5;ID=UL24-25-26-26.5;gene_id=UL24;ORF_id=UL24;"				
+KJ717942.1	Liftoff	transcript	55794	59793	.	-	.	"transcript_id=UL24-25-26-26.5;Name=UL24-25-26-26.5;ID=UL24-25-26-26.5;gene_id=UL24;ORF_id=UL24;"	59793	55794	0	
+KJ717942.1	Liftoff	exon	56220	59072	.	-	.	"transcript_id=UL25;Name=UL25;ID=UL25;gene_id=UL25;ORF_id=UL25;"				
+KJ717942.1	Liftoff	transcript	56220	59072	.	-	.	"transcript_id=UL25;Name=UL25;ID=UL25;gene_id=UL25;ORF_id=UL25;"	59072	56220	6	
+KJ717942.1	Liftoff	exon	56412	60767	.	+	.	"transcript_id=UL25-24-23;Name=UL25-24-23;ID=UL25-24-23;gene_id=UL25;ORF_id=UL25;"				
+KJ717942.1	Liftoff	transcript	56412	60767	.	+	.	"transcript_id=UL25-24-23;Name=UL25-24-23;ID=UL25-24-23;gene_id=UL25;ORF_id=UL25;"	56412	60767	0	
+KJ717942.1	Liftoff	exon	55794	59086	.	-	.	"transcript_id=UL25-26-26.5;Name=UL25-26-26.5;ID=UL25-26-26.5;gene_id=UL25;ORF_id=UL25;"				
+KJ717942.1	Liftoff	transcript	55794	59086	.	-	.	"transcript_id=UL25-26-26.5;Name=UL25-26-26.5;ID=UL25-26-26.5;gene_id=UL25;ORF_id=UL25;"	59086	55794	6	
+KJ717942.1	Liftoff	exon	56833	59086	.	-	.	"transcript_id=UL25-AT;Name=UL25-AT;ID=UL25-AT;gene_id=UL25;ORF_id=UL25;"				
+KJ717942.1	Liftoff	transcript	56833	59086	.	-	.	"transcript_id=UL25-AT;Name=UL25-AT;ID=UL25-AT;gene_id=UL25;ORF_id=UL25;"	59086	56833	6	
+KJ717942.1	Liftoff	exon	55794	59532	.	-	.	"transcript_id=UL25L-26-26.5;Name=UL25L-26-26.5;ID=UL25L-26-26.5;gene_id=UL25;ORF_id=UL25;"				
+KJ717942.1	Liftoff	transcript	55794	59532	.	-	.	"transcript_id=UL25L-26-26.5;Name=UL25L-26-26.5;ID=UL25L-26-26.5;gene_id=UL25;ORF_id=UL25;"	59532	55794	1	
+KJ717942.1	Liftoff	exon	55794	56704	.	-	.	"transcript_id=UL26.6;Name=UL26.6;ID=UL26.6;gene_id=UL26;ORF_id=UL26.6;"				
+KJ717942.1	Liftoff	transcript	55794	56704	.	-	.	"transcript_id=UL26.6;Name=UL26.6;ID=UL26.6;gene_id=UL26;ORF_id=UL26.6;"	56704	55794	4	
+KJ717942.1	Liftoff	exon	55794	56323	.	-	.	"transcript_id=UL26.8;Name=UL26.8;ID=UL26.8;gene_id=UL26;ORF_id=UL26.8;"				
+KJ717942.1	Liftoff	transcript	55794	56323	.	-	.	"transcript_id=UL26.8;Name=UL26.8;ID=UL26.8;gene_id=UL26;ORF_id=UL26.8;"	56323	55794	9	
+KJ717942.1	Liftoff	exon	55794	56249	.	-	.	"transcript_id=UL26.9;Name=UL26.9;ID=UL26.9;gene_id=UL26;ORF_id=UL26.9;"				
+KJ717942.1	Liftoff	transcript	55794	56249	.	-	.	"transcript_id=UL26.9;Name=UL26.9;ID=UL26.9;gene_id=UL26;ORF_id=UL26.9;"	56249	55794	36	
+KJ717942.1	Liftoff	exon	55794	56195	.	-	.	"transcript_id=UL26.9-S;Name=UL26.9-S;ID=UL26.9-S;gene_id=UL26;ORF_id=UL26.9;"				
+KJ717942.1	Liftoff	transcript	55794	56195	.	-	.	"transcript_id=UL26.9-S;Name=UL26.9-S;ID=UL26.9-S;gene_id=UL26;ORF_id=UL26.9;"	56195	55794	11678	
+KJ717942.1	Liftoff	exon	55794	57462	.	-	.	"transcript_id=UL26-26.5;Name=UL26-26.5;ID=UL26-26.5;gene_id=UL26;ORF_id=UL26;"				
+KJ717942.1	Liftoff	transcript	55794	57462	.	-	.	"transcript_id=UL26-26.5;Name=UL26-26.5;ID=UL26-26.5;gene_id=UL26;ORF_id=UL26;"	57462	55794	3	
+KJ717942.1	Liftoff	exon	55833	57462	.	-	.	"transcript_id=UL26-26.5-AT;Name=UL26-26.5-AT;ID=UL26-26.5-AT;gene_id=UL26;ORF_id=UL26;"				
+KJ717942.1	Liftoff	transcript	55833	57462	.	-	.	"transcript_id=UL26-26.5-AT;Name=UL26-26.5-AT;ID=UL26-26.5-AT;gene_id=UL26;ORF_id=UL26;"	57462	55833	3	
+KJ717942.1	Liftoff	exon	55794	58051	.	-	.	"transcript_id=UL26-26.5-L;Name=UL26-26.5-L;ID=UL26-26.5-L;gene_id=UL26;ORF_id=UL26;"				
+KJ717942.1	Liftoff	transcript	55794	58051	.	-	.	"transcript_id=UL26-26.5-L;Name=UL26-26.5-L;ID=UL26-26.5-L;gene_id=UL26;ORF_id=UL26;"	58051	55794	0	
+KJ717942.1	Liftoff	exon	16869	19771	.	-	.	"transcript_id=UL27;Name=UL27;ID=UL27;gene_id=UL27;ORF_id=UL27;"				
+KJ717942.1	Liftoff	transcript	16869	19771	.	-	.	"transcript_id=UL27;Name=UL27;ID=UL27;gene_id=UL27;ORF_id=UL27;"	19771	16869	4	
+KJ717942.1	Liftoff	exon	16869	18009	.	-	.	"transcript_id=UL27.10;Name=UL27.10;ID=UL27.10;gene_id=UL27;ORF_id=UL27.10;"				
+KJ717942.1	Liftoff	transcript	16869	18009	.	-	.	"transcript_id=UL27.10;Name=UL27.10;ID=UL27.10;gene_id=UL27;ORF_id=UL27.10;"	18009	16869	26	
+KJ717942.1	Liftoff	exon	16869	17956	.	-	.	"transcript_id=UL27.10-S;Name=UL27.10-S;ID=UL27.10-S;gene_id=UL27;ORF_id=UL27.10;"				
+KJ717942.1	Liftoff	transcript	16869	17956	.	-	.	"transcript_id=UL27.10-S;Name=UL27.10-S;ID=UL27.10-S;gene_id=UL27;ORF_id=UL27.10;"	17956	16869	6	
+KJ717942.1	Liftoff	exon	16869	18447	.	-	.	"transcript_id=UL27.11;Name=UL27.11;ID=UL27.11;gene_id=UL27;ORF_id=UL27.11;"				
+KJ717942.1	Liftoff	transcript	16869	18447	.	-	.	"transcript_id=UL27.11;Name=UL27.11;ID=UL27.11;gene_id=UL27;ORF_id=UL27.11;"	18447	16869	6	
+KJ717942.1	Liftoff	exon	16869	18393	.	-	.	"transcript_id=UL27.11-S;Name=UL27.11-S;ID=UL27.11-S;gene_id=UL27;ORF_id=UL27.11;"				
+KJ717942.1	Liftoff	transcript	16869	18393	.	-	.	"transcript_id=UL27.11-S;Name=UL27.11-S;ID=UL27.11-S;gene_id=UL27;ORF_id=UL27.11;"	18393	16869	2	
+KJ717942.1	Liftoff	exon	16869	18372	.	-	.	"transcript_id=UL27.11-S2;Name=UL27.11-S2;ID=UL27.11-S2;gene_id=UL27;ORF_id=UL27.11;"				
+KJ717942.1	Liftoff	transcript	16869	18372	.	-	.	"transcript_id=UL27.11-S2;Name=UL27.11-S2;ID=UL27.11-S2;gene_id=UL27;ORF_id=UL27.11;"	18372	16869	0	
+KJ717942.1	Liftoff	exon	16869	18267	.	-	.	"transcript_id=UL27.11-S3;Name=UL27.11-S3;ID=UL27.11-S3;gene_id=UL27;ORF_id=UL27.11;"				
+KJ717942.1	Liftoff	transcript	16869	18267	.	-	.	"transcript_id=UL27.11-S3;Name=UL27.11-S3;ID=UL27.11-S3;gene_id=UL27;ORF_id=UL27.11;"	18267	16869	5	
+KJ717942.1	Liftoff	exon	16869	18186	.	-	.	"transcript_id=UL27.11-S4;Name=UL27.11-S4;ID=UL27.11-S4;gene_id=UL27;ORF_id=UL27.11;"				
+KJ717942.1	Liftoff	transcript	16869	18186	.	-	.	"transcript_id=UL27.11-S4;Name=UL27.11-S4;ID=UL27.11-S4;gene_id=UL27;ORF_id=UL27.11;"	18186	16869	4	
+KJ717942.1	Liftoff	exon	16869	18157	.	-	.	"transcript_id=UL27.11-S5;Name=UL27.11-S5;ID=UL27.11-S5;gene_id=UL27;ORF_id=UL27.11;"				
+KJ717942.1	Liftoff	transcript	16869	18157	.	-	.	"transcript_id=UL27.11-S5;Name=UL27.11-S5;ID=UL27.11-S5;gene_id=UL27;ORF_id=UL27.11;"	18157	16869	0	
+KJ717942.1	Liftoff	exon	16869	18078	.	-	.	"transcript_id=UL27.11-S6;Name=UL27.11-S6;ID=UL27.11-S6;gene_id=UL27;ORF_id=UL27.11;"				
+KJ717942.1	Liftoff	transcript	16869	18078	.	-	.	"transcript_id=UL27.11-S6;Name=UL27.11-S6;ID=UL27.11-S6;gene_id=UL27;ORF_id=UL27.11;"	18078	16869	4	
+KJ717942.1	Liftoff	exon	16869	18037	.	-	.	"transcript_id=UL27.11-S7;Name=UL27.11-S7;ID=UL27.11-S7;gene_id=UL27;ORF_id=UL27.11;"				
+KJ717942.1	Liftoff	transcript	16869	18037	.	-	.	"transcript_id=UL27.11-S7;Name=UL27.11-S7;ID=UL27.11-S7;gene_id=UL27;ORF_id=UL27.11;"	18037	16869	6	
+KJ717942.1	Liftoff	exon	16869	18556	.	-	.	"transcript_id=UL27.13;Name=UL27.13;ID=UL27.13;gene_id=UL27;ORF_id=UL27.13;"				
+KJ717942.1	Liftoff	transcript	16869	18556	.	-	.	"transcript_id=UL27.13;Name=UL27.13;ID=UL27.13;gene_id=UL27;ORF_id=UL27.13;"	18556	16869	6	
+KJ717942.1	Liftoff	exon	16869	18809	.	-	.	"transcript_id=UL27.14;Name=UL27.14;ID=UL27.14;gene_id=UL27;ORF_id=UL27.14;"				
+KJ717942.1	Liftoff	transcript	16869	18809	.	-	.	"transcript_id=UL27.14;Name=UL27.14;ID=UL27.14;gene_id=UL27;ORF_id=UL27.14;"	18809	16869	21	
+KJ717942.1	Liftoff	exon	16869	18750	.	-	.	"transcript_id=UL27.14-S;Name=UL27.14-S;ID=UL27.14-S;gene_id=UL27;ORF_id=UL27.14;"				
+KJ717942.1	Liftoff	transcript	16869	18750	.	-	.	"transcript_id=UL27.14-S;Name=UL27.14-S;ID=UL27.14-S;gene_id=UL27;ORF_id=UL27.14;"	18750	16869	12	
+KJ717942.1	Liftoff	exon	16869	17164	.	-	.	"transcript_id=UL27.2;Name=UL27.2;ID=UL27.2;gene_id=UL27;ORF_id=UL27.2;"				
+KJ717942.1	Liftoff	transcript	16869	17164	.	-	.	"transcript_id=UL27.2;Name=UL27.2;ID=UL27.2;gene_id=UL27;ORF_id=UL27.2;"	17164	16869	19	
+KJ717942.1	Liftoff	exon	16869	17256	.	-	.	"transcript_id=UL27.3;Name=UL27.3;ID=UL27.3;gene_id=UL27;ORF_id=UL27.3;"				
+KJ717942.1	Liftoff	transcript	16869	17256	.	-	.	"transcript_id=UL27.3;Name=UL27.3;ID=UL27.3;gene_id=UL27;ORF_id=UL27.3;"	17256	16869	18	
+KJ717942.1	Liftoff	exon	16869	17214	.	-	.	"transcript_id=UL27.3-L;Name=UL27.3-L;ID=UL27.3-L;gene_id=UL27;ORF_id=UL27.3;"				
+KJ717942.1	Liftoff	transcript	16869	17214	.	-	.	"transcript_id=UL27.3-L;Name=UL27.3-L;ID=UL27.3-L;gene_id=UL27;ORF_id=UL27.3;"	17214	16869	7	
+KJ717942.1	Liftoff	exon	16869	17509	.	-	.	"transcript_id=UL27.4;Name=UL27.4;ID=UL27.4;gene_id=UL27;ORF_id=UL27.4;"				
+KJ717942.1	Liftoff	transcript	16869	17509	.	-	.	"transcript_id=UL27.4;Name=UL27.4;ID=UL27.4;gene_id=UL27;ORF_id=UL27.4;"	17509	16869	34	
+KJ717942.1	Liftoff	exon	16869	17445	.	-	.	"transcript_id=UL27.4-S;Name=UL27.4-S;ID=UL27.4-S;gene_id=UL27;ORF_id=UL27.4;"				
+KJ717942.1	Liftoff	transcript	16869	17445	.	-	.	"transcript_id=UL27.4-S;Name=UL27.4-S;ID=UL27.4-S;gene_id=UL27;ORF_id=UL27.4;"	17445	16869	33	
+KJ717942.1	Liftoff	exon	16869	17418	.	-	.	"transcript_id=UL27.4-S2;Name=UL27.4-S2;ID=UL27.4-S2;gene_id=UL27;ORF_id=UL27.4;"				
+KJ717942.1	Liftoff	transcript	16869	17418	.	-	.	"transcript_id=UL27.4-S2;Name=UL27.4-S2;ID=UL27.4-S2;gene_id=UL27;ORF_id=UL27.4;"	17418	16869	3	
+KJ717942.1	Liftoff	exon	16869	17345	.	-	.	"transcript_id=UL27.4-S3;Name=UL27.4-S3;ID=UL27.4-S3;gene_id=UL27;ORF_id=UL27.4;"				
+KJ717942.1	Liftoff	transcript	16869	17345	.	-	.	"transcript_id=UL27.4-S3;Name=UL27.4-S3;ID=UL27.4-S3;gene_id=UL27;ORF_id=UL27.4;"	17345	16869	163	
+KJ717942.1	Liftoff	exon	16869	17310	.	-	.	"transcript_id=UL27.4-S4;Name=UL27.4-S4;ID=UL27.4-S4;gene_id=UL27;ORF_id=UL27.4;"				
+KJ717942.1	Liftoff	transcript	16869	17310	.	-	.	"transcript_id=UL27.4-S4;Name=UL27.4-S4;ID=UL27.4-S4;gene_id=UL27;ORF_id=UL27.4;"	17310	16869	17	
+KJ717942.1	Liftoff	exon	16869	17783	.	-	.	"transcript_id=UL27.5;Name=UL27.5;ID=UL27.5;gene_id=UL27;ORF_id=UL27.5;"				
+KJ717942.1	Liftoff	transcript	16869	17783	.	-	.	"transcript_id=UL27.5;Name=UL27.5;ID=UL27.5;gene_id=UL27;ORF_id=UL27.5;"	17783	16869	13	
+KJ717942.1	Liftoff	exon	16869	18237	.	-	.	"transcript_id=UL27.5-L;Name=UL27.5-L;ID=UL27.5-L;gene_id=UL27;ORF_id=UL27.5;"				
+KJ717942.1	Liftoff	transcript	16869	18237	.	-	.	"transcript_id=UL27.5-L;Name=UL27.5-L;ID=UL27.5-L;gene_id=UL27;ORF_id=UL27.5;"	18237	16869	5	
+KJ717942.1	Liftoff	exon	16869	17693	.	-	.	"transcript_id=UL27.5-S;Name=UL27.5-S;ID=UL27.5-S;gene_id=UL27;ORF_id=UL27.5;"				
+KJ717942.1	Liftoff	transcript	16869	17693	.	-	.	"transcript_id=UL27.5-S;Name=UL27.5-S;ID=UL27.5-S;gene_id=UL27;ORF_id=UL27.5;"	17693	16869	3	
+KJ717942.1	Liftoff	exon	16869	17649	.	-	.	"transcript_id=UL27.5-S2;Name=UL27.5-S2;ID=UL27.5-S2;gene_id=UL27;ORF_id=UL27.5;"				
+KJ717942.1	Liftoff	transcript	16869	17649	.	-	.	"transcript_id=UL27.5-S2;Name=UL27.5-S2;ID=UL27.5-S2;gene_id=UL27;ORF_id=UL27.5;"	17649	16869	9	
+KJ717942.1	Liftoff	exon	16869	17627	.	-	.	"transcript_id=UL27.5-S3;Name=UL27.5-S3;ID=UL27.5-S3;gene_id=UL27;ORF_id=UL27.5;"				
+KJ717942.1	Liftoff	transcript	16869	17627	.	-	.	"transcript_id=UL27.5-S3;Name=UL27.5-S3;ID=UL27.5-S3;gene_id=UL27;ORF_id=UL27.5;"	17627	16869	4	
+KJ717942.1	Liftoff	exon	16869	17854	.	-	.	"transcript_id=UL27.6;Name=UL27.6;ID=UL27.6;gene_id=UL27;ORF_id=UL27.6;"				
+KJ717942.1	Liftoff	transcript	16869	17854	.	-	.	"transcript_id=UL27.6;Name=UL27.6;ID=UL27.6;gene_id=UL27;ORF_id=UL27.6;"	17854	16869	28	
+KJ717942.1	Liftoff	exon	16869	17816	.	-	.	"transcript_id=UL27.6-S;Name=UL27.6-S;ID=UL27.6-S;gene_id=UL27;ORF_id=UL27.6;"				
+KJ717942.1	Liftoff	transcript	16869	17816	.	-	.	"transcript_id=UL27.6-S;Name=UL27.6-S;ID=UL27.6-S;gene_id=UL27;ORF_id=UL27.6;"	17816	16869	15	
+KJ717942.1	Liftoff	exon	16869	17885	.	-	.	"transcript_id=UL27.8;Name=UL27.8;ID=UL27.8;gene_id=UL27;ORF_id=UL27.8;"				
+KJ717942.1	Liftoff	transcript	16869	17885	.	-	.	"transcript_id=UL27.8;Name=UL27.8;ID=UL27.8;gene_id=UL27;ORF_id=UL27.8;"	17885	16869	8	
+KJ717942.1	Liftoff	exon	16869	17922	.	-	.	"transcript_id=UL27.9;Name=UL27.9;ID=UL27.9;gene_id=UL27;ORF_id=UL27.9;"				
+KJ717942.1	Liftoff	transcript	16869	17922	.	-	.	"transcript_id=UL27.9;Name=UL27.9;ID=UL27.9;gene_id=UL27;ORF_id=UL27.9;"	17922	16869	6	
+KJ717942.1	Liftoff	exon	16230	19771	.	-	.	"transcript_id=UL27-AT1;Name=UL27-AT1;ID=UL27-AT1;gene_id=UL27;ORF_id=UL27;"				
+KJ717942.1	Liftoff	transcript	16230	19771	.	-	.	"transcript_id=UL27-AT1;Name=UL27-AT1;ID=UL27-AT1;gene_id=UL27;ORF_id=UL27;"	19771	16230	4	
+KJ717942.1	Liftoff	exon	18869	21770	.	-	.	"transcript_id=UL28;Name=UL28;ID=UL28;gene_id=UL28;ORF_id=UL28;"				
+KJ717942.1	Liftoff	transcript	18869	21770	.	-	.	"transcript_id=UL28;Name=UL28;ID=UL28;gene_id=UL28;ORF_id=UL28;"	21770	18869	7	
+KJ717942.1	Liftoff	exon	16869	21931	.	-	.	"transcript_id=UL28L-27;Name=UL28L-27;ID=UL28L-27;gene_id=UL28;ORF_id=UL28;"				
+KJ717942.1	Liftoff	transcript	16869	21931	.	-	.	"transcript_id=UL28L-27;Name=UL28L-27;ID=UL28L-27;gene_id=UL28;ORF_id=UL28;"	21931	16869	119	
+KJ717942.1	Liftoff	exon	21775	25578	.	-	.	"transcript_id=UL29;Name=UL29;ID=UL29;gene_id=UL29;ORF_id=UL29;"				
+KJ717942.1	Liftoff	transcript	21775	25578	.	-	.	"transcript_id=UL29;Name=UL29;ID=UL29;gene_id=UL29;ORF_id=UL29;"	25578	21775	9	
+KJ717942.1	Liftoff	exon	21775	23554	.	-	.	"transcript_id=UL29.11;Name=UL29.11;ID=UL29.11;gene_id=UL29;ORF_id=UL29.11;"				
+KJ717942.1	Liftoff	transcript	21775	23554	.	-	.	"transcript_id=UL29.11;Name=UL29.11;ID=UL29.11;gene_id=UL29;ORF_id=UL29.11;"	23554	21775	2	
+KJ717942.1	Liftoff	exon	21775	23956	.	-	.	"transcript_id=UL29.14;Name=UL29.14;ID=UL29.14;gene_id=UL29;ORF_id=UL29.14;"				
+KJ717942.1	Liftoff	transcript	21775	23956	.	-	.	"transcript_id=UL29.14;Name=UL29.14;ID=UL29.14;gene_id=UL29;ORF_id=UL29.14;"	23956	21775	1	
+KJ717942.1	Liftoff	exon	21775	22737	.	-	.	"transcript_id=UL29.2;Name=UL29.2;ID=UL29.2;gene_id=UL29;ORF_id=UL29.2;"				
+KJ717942.1	Liftoff	transcript	21775	22737	.	-	.	"transcript_id=UL29.2;Name=UL29.2;ID=UL29.2;gene_id=UL29;ORF_id=UL29.2;"	22737	21775	4	
+KJ717942.1	Liftoff	exon	16868	25577	.	-	.	"transcript_id=UL29-28-27;Name=UL29-28-27;ID=UL29-28-27;gene_id=UL29;ORF_id=UL29;"				
+KJ717942.1	Liftoff	transcript	16868	25577	.	-	.	"transcript_id=UL29-28-27;Name=UL29-28-27;ID=UL29-28-27;gene_id=UL29;ORF_id=UL29;"	25577	16868	9	
+KJ717942.1	Liftoff	exon	93000	94219	.	-	.	"transcript_id=UL3;Name=UL3;ID=UL3;gene_id=UL3;ORF_id=UL3;"				
+KJ717942.1	Liftoff	transcript	93000	94219	.	-	.	"transcript_id=UL3;Name=UL3;ID=UL3;gene_id=UL3;ORF_id=UL3;"	94219	93000	12	
+KJ717942.1	Liftoff	exon	92616	93501	.	-	.	"transcript_id=UL3.5;Name=UL3.5;ID=UL3.5;gene_id=UL3.5;ORF_id=UL3.5;"				
+KJ717942.1	Liftoff	transcript	92616	93501	.	-	.	"transcript_id=UL3.5;Name=UL3.5;ID=UL3.5;gene_id=UL3.5;ORF_id=UL3.5;"	93501	92616	30	
+KJ717942.1	Liftoff	exon	92616	93830	.	-	.	"transcript_id=UL3.5-L;Name=UL3.5-L;ID=UL3.5-L;gene_id=UL3.5;ORF_id=UL3.5;"				
+KJ717942.1	Liftoff	transcript	92616	93830	.	-	.	"transcript_id=UL3.5-L;Name=UL3.5-L;ID=UL3.5-L;gene_id=UL3.5;ORF_id=UL3.5;"	93830	92616	6	
+KJ717942.1	Liftoff	exon	25685	28897	.	+	.	"transcript_id=UL30;Name=UL30;ID=UL30;gene_id=UL30;ORF_id=UL30;"				
+KJ717942.1	Liftoff	transcript	25685	28897	.	+	.	"transcript_id=UL30;Name=UL30;ID=UL30;gene_id=UL30;ORF_id=UL30;"	25685	28897	0	
+KJ717942.1	Liftoff	exon	28694	29679	.	-	.	"transcript_id=UL31;Name=UL31;ID=UL31;gene_id=UL31;ORF_id=UL31;"				
+KJ717942.1	Liftoff	transcript	28694	29679	.	-	.	"transcript_id=UL31;Name=UL31;ID=UL31;gene_id=UL31;ORF_id=UL31;"	29679	28694	3	
+KJ717942.1	Liftoff	exon	28694	29351	.	-	.	"transcript_id=UL31.2;Name=UL31.2;ID=UL31.2;gene_id=UL31;ORF_id=UL31.2;"				
+KJ717942.1	Liftoff	transcript	28694	29351	.	-	.	"transcript_id=UL31.2;Name=UL31.2;ID=UL31.2;gene_id=UL31;ORF_id=UL31.2;"	29351	28694	27	
+KJ717942.1	Liftoff	exon	28694	29311	.	-	.	"transcript_id=UL31.3;Name=UL31.3;ID=UL31.3;gene_id=UL31;ORF_id=UL31.3;"				
+KJ717942.1	Liftoff	transcript	28694	29311	.	-	.	"transcript_id=UL31.3;Name=UL31.3;ID=UL31.3;gene_id=UL31;ORF_id=UL31.3;"	29311	28694	45	
+KJ717942.1	Liftoff	exon	28694	29059	.	-	.	"transcript_id=UL31.3-S;Name=UL31.3-S;ID=UL31.3-S;gene_id=UL31;ORF_id=UL31.3;"				
+KJ717942.1	Liftoff	transcript	28694	29059	.	-	.	"transcript_id=UL31.3-S;Name=UL31.3-S;ID=UL31.3-S;gene_id=UL31;ORF_id=UL31.3;"	29059	28694	54	
+KJ717942.1	Liftoff	exon	28694	29419	.	-	.	"transcript_id=UL31.5;Name=UL31.5;ID=UL31.5;gene_id=UL31;ORF_id=UL31.5;"				
+KJ717942.1	Liftoff	transcript	28694	29419	.	-	.	"transcript_id=UL31.5;Name=UL31.5;ID=UL31.5;gene_id=UL31;ORF_id=UL31.5;"	29419	28694	5236	
+KJ717942.1	Liftoff	exon	28694	29772	.	-	.	"transcript_id=UL31-L;Name=UL31-L;ID=UL31-L;gene_id=UL31;ORF_id=UL31;"				
+KJ717942.1	Liftoff	transcript	28694	29772	.	-	.	"transcript_id=UL31-L;Name=UL31-L;ID=UL31-L;gene_id=UL31;ORF_id=UL31;"	29772	28694	3	
+KJ717942.1	Liftoff	exon	28694	31305	.	-	.	"transcript_id=UL32-31;Name=UL32-31;ID=UL32-31;gene_id=UL32;ORF_id=UL32;"				
+KJ717942.1	Liftoff	transcript	28694	31305	.	-	.	"transcript_id=UL32-31;Name=UL32-31;ID=UL32-31;gene_id=UL32;ORF_id=UL32;"	31305	28694	4	
+KJ717942.1	Liftoff	exon	28901	32683	.	+	.	"transcript_id=UL32-33-34-35;Name=UL32-33-34-35;ID=UL32-33-34-35;gene_id=UL32;ORF_id=UL32;"				
+KJ717942.1	Liftoff	transcript	28901	32683	.	+	.	"transcript_id=UL32-33-34-35;Name=UL32-33-34-35;ID=UL32-33-34-35;gene_id=UL32;ORF_id=UL32;"	28901	32683	0	
+KJ717942.1	Liftoff	exon	28694	31139	.	-	.	"transcript_id=UL32-S-31;Name=UL32-S-31;ID=UL32-S-31;gene_id=UL32;ORF_id=UL32;"				
+KJ717942.1	Liftoff	transcript	28694	31139	.	-	.	"transcript_id=UL32-S-31;Name=UL32-S-31;ID=UL32-S-31;gene_id=UL32;ORF_id=UL32;"	31139	28694	1	
+KJ717942.1	Liftoff	exon	30505	31460	.	+	.	"transcript_id=UL33;Name=UL33;ID=UL33;gene_id=UL33;ORF_id=UL33;"				
+KJ717942.1	Liftoff	transcript	30505	31460	.	+	.	"transcript_id=UL33;Name=UL33;ID=UL33;gene_id=UL33;ORF_id=UL33;"	30505	31460	2	
+KJ717942.1	Liftoff	exon	92616	94219	.	-	.	"transcript_id=UL3-3.5;Name=UL3-3.5;ID=UL3-3.5;gene_id=UL3;ORF_id=UL3;"				
+KJ717942.1	Liftoff	transcript	92616	94219	.	-	.	"transcript_id=UL3-3.5;Name=UL3-3.5;ID=UL3-3.5;gene_id=UL3;ORF_id=UL3;"	94219	92616	12	
+KJ717942.1	Liftoff	exon	30563	32683	.	+	.	"transcript_id=UL33-34-35;Name=UL33-34-35;ID=UL33-34-35;gene_id=UL33;ORF_id=UL33;"				
+KJ717942.1	Liftoff	transcript	30563	32683	.	+	.	"transcript_id=UL33-34-35;Name=UL33-34-35;ID=UL33-34-35;gene_id=UL33;ORF_id=UL33;"	30563	32683	3	
+KJ717942.1	Liftoff	exon	29733	32683	.	+	.	"transcript_id=UL33-L2-34-35;Name=UL33-L2-34-35;ID=UL33-L2-34-35;gene_id=UL33;ORF_id=UL33;"				
+KJ717942.1	Liftoff	transcript	29733	32683	.	+	.	"transcript_id=UL33-L2-34-35;Name=UL33-L2-34-35;ID=UL33-L2-34-35;gene_id=UL33;ORF_id=UL33;"	29733	32683	2	
+KJ717942.1	Liftoff	exon	29603	32683	.	+	.	"transcript_id=UL33L3-34-35;Name=UL33L3-34-35;ID=UL33L3-34-35;gene_id=UL33;ORF_id=UL33;"				
+KJ717942.1	Liftoff	transcript	29603	32683	.	+	.	"transcript_id=UL33L3-34-35;Name=UL33L3-34-35;ID=UL33L3-34-35;gene_id=UL33;ORF_id=UL33;"	29603	32683	0	
+KJ717942.1	Liftoff	exon	31360	32683	.	+	.	"transcript_id=UL34-35;Name=UL34-35;ID=UL34-35;gene_id=UL34;ORF_id=UL34;"				
+KJ717942.1	Liftoff	transcript	31360	32683	.	+	.	"transcript_id=UL34-35;Name=UL34-35;ID=UL34-35;gene_id=UL34;ORF_id=UL34;"	31360	32683	14	
+KJ717942.1	Liftoff	exon	31194	32683	.	+	.	"transcript_id=UL34L2-35;Name=UL34L2-35;ID=UL34L2-35;gene_id=UL34;ORF_id=UL34;"				
+KJ717942.1	Liftoff	transcript	31194	32683	.	+	.	"transcript_id=UL34L2-35;Name=UL34L2-35;ID=UL34L2-35;gene_id=UL34;ORF_id=UL34;"	31194	32683	7	
+KJ717942.1	Liftoff	exon	31304	32683	.	+	.	"transcript_id=UL34L-35;Name=UL34L-35;ID=UL34L-35;gene_id=UL34;ORF_id=UL34;"				
+KJ717942.1	Liftoff	transcript	31304	32683	.	+	.	"transcript_id=UL34L-35;Name=UL34L-35;ID=UL34L-35;gene_id=UL34;ORF_id=UL34;"	31304	32683	28	
+KJ717942.1	Liftoff	exon	32306	32683	.	+	.	"transcript_id=UL35;Name=UL35;ID=UL35;gene_id=UL35;ORF_id=UL35;"				
+KJ717942.1	Liftoff	transcript	32306	32683	.	+	.	"transcript_id=UL35;Name=UL35;ID=UL35;gene_id=UL35;ORF_id=UL35;"	32306	32683	0	
+KJ717942.1	Liftoff	exon	32360	32683	.	+	.	"transcript_id=UL35.2;Name=UL35.2;ID=UL35.2;gene_id=UL35;ORF_id=UL35.2;"				
+KJ717942.1	Liftoff	transcript	32360	32683	.	+	.	"transcript_id=UL35.2;Name=UL35.2;ID=UL35.2;gene_id=UL35;ORF_id=UL35.2;"	32360	32683	2	
+KJ717942.1	Liftoff	exon	32305	33150	.	+	.	"transcript_id=UL35-AT;Name=UL35-AT;ID=UL35-AT;gene_id=UL35;ORF_id=UL35;"				
+KJ717942.1	Liftoff	transcript	32305	33150	.	+	.	"transcript_id=UL35-AT;Name=UL35-AT;ID=UL35-AT;gene_id=UL35;ORF_id=UL35;"	32305	33150	0	
+KJ717942.1	Liftoff	exon	32198	32683	.	+	.	"transcript_id=UL35-L;Name=UL35-L;ID=UL35-L;gene_id=UL35;ORF_id=UL35;"				
+KJ717942.1	Liftoff	transcript	32198	32683	.	+	.	"transcript_id=UL35-L;Name=UL35-L;ID=UL35-L;gene_id=UL35;ORF_id=UL35;"	32198	32683	15	
+KJ717942.1	Liftoff	exon	32115	32683	.	+	.	"transcript_id=UL35-L2;Name=UL35-L2;ID=UL35-L2;gene_id=UL35;ORF_id=UL35;"				
+KJ717942.1	Liftoff	transcript	32115	32683	.	+	.	"transcript_id=UL35-L2;Name=UL35-L2;ID=UL35-L2;gene_id=UL35;ORF_id=UL35;"	32115	32683	32	
+KJ717942.1	Liftoff	exon	31955	32683	.	+	.	"transcript_id=UL35-L3;Name=UL35-L3;ID=UL35-L3;gene_id=UL35;ORF_id=UL35;"				
+KJ717942.1	Liftoff	transcript	31955	32683	.	+	.	"transcript_id=UL35-L3;Name=UL35-L3;ID=UL35-L3;gene_id=UL35;ORF_id=UL35;"	31955	32683	133	
+KJ717942.1	Liftoff	exon	31739	32683	.	+	.	"transcript_id=UL35-L4;Name=UL35-L4;ID=UL35-L4;gene_id=UL35;ORF_id=UL35;"				
+KJ717942.1	Liftoff	transcript	31739	32683	.	+	.	"transcript_id=UL35-L4;Name=UL35-L4;ID=UL35-L4;gene_id=UL35;ORF_id=UL35;"	31739	32683	7	
+KJ717942.1	Liftoff	exon	31675	32683	.	+	.	"transcript_id=UL35-L5;Name=UL35-L5;ID=UL35-L5;gene_id=UL35;ORF_id=UL35;"				
+KJ717942.1	Liftoff	transcript	31675	32683	.	+	.	"transcript_id=UL35-L5;Name=UL35-L5;ID=UL35-L5;gene_id=UL35;ORF_id=UL35;"	31675	32683	12	
+KJ717942.1	Liftoff	exon	31614	32683	.	+	.	"transcript_id=UL35-L6;Name=UL35-L6;ID=UL35-L6;gene_id=UL35;ORF_id=UL35;"				
+KJ717942.1	Liftoff	transcript	31614	32683	.	+	.	"transcript_id=UL35-L6;Name=UL35-L6;ID=UL35-L6;gene_id=UL35;ORF_id=UL35;"	31614	32683	98	
+KJ717942.1	Liftoff	exon	33127	33809	.	-	.	"transcript_id=UL36.38;Name=UL36.38;ID=UL36.38;gene_id=UL36;ORF_id=UL36.38;"				
+KJ717942.1	Liftoff	transcript	33127	33809	.	-	.	"transcript_id=UL36.38;Name=UL36.38;ID=UL36.38;gene_id=UL36;ORF_id=UL36.38;"	33809	33127	3	
+KJ717942.1	Liftoff	exon	33127	33695	.	-	.	"transcript_id=UL36.38-S;Name=UL36.38-S;ID=UL36.38-S;gene_id=UL36;ORF_id=UL36.38;"				
+KJ717942.1	Liftoff	transcript	33127	33695	.	-	.	"transcript_id=UL36.38-S;Name=UL36.38-S;ID=UL36.38-S;gene_id=UL36;ORF_id=UL36.38;"	33695	33127	1	
+KJ717942.1	Liftoff	exon	33127	33668	.	-	.	"transcript_id=UL36.40;Name=UL36.40;ID=UL36.40;gene_id=UL36;ORF_id=UL36.40;"				
+KJ717942.1	Liftoff	transcript	33127	33668	.	-	.	"transcript_id=UL36.40;Name=UL36.40;ID=UL36.40;gene_id=UL36;ORF_id=UL36.40;"	33668	33127	4	
+KJ717942.1	Liftoff	exon	33127	33488	.	-	.	"transcript_id=UL36.40-S;Name=UL36.40-S;ID=UL36.40-S;gene_id=UL36;ORF_id=UL36.40;"				
+KJ717942.1	Liftoff	transcript	33127	33488	.	-	.	"transcript_id=UL36.40-S;Name=UL36.40-S;ID=UL36.40-S;gene_id=UL36;ORF_id=UL36.40;"	33488	33127	1	
+KJ717942.1	Liftoff	exon	33127	33376	.	-	.	"transcript_id=UL36.40-S2;Name=UL36.40-S2;ID=UL36.40-S2;gene_id=UL36;ORF_id=UL36.40;"				
+KJ717942.1	Liftoff	transcript	33127	33376	.	-	.	"transcript_id=UL36.40-S2;Name=UL36.40-S2;ID=UL36.40-S2;gene_id=UL36;ORF_id=UL36.40;"	33376	33127	6	
+KJ717942.1	Liftoff	exon	33127	34988	.	-	.	"transcript_id=UL36.43;Name=UL36.43;ID=UL36.43;gene_id=UL36;ORF_id=UL36.43;"				
+KJ717942.1	Liftoff	transcript	33127	34988	.	-	.	"transcript_id=UL36.43;Name=UL36.43;ID=UL36.43;gene_id=UL36;ORF_id=UL36.43;"	34988	33127	1	
+KJ717942.1	Liftoff	exon	33127	34786	.	-	.	"transcript_id=UL36.43-S;Name=UL36.43-S;ID=UL36.43-S;gene_id=UL36;ORF_id=UL36.43;"				
+KJ717942.1	Liftoff	transcript	33127	34786	.	-	.	"transcript_id=UL36.43-S;Name=UL36.43-S;ID=UL36.43-S;gene_id=UL36;ORF_id=UL36.43;"	34786	33127	1	
+KJ717942.1	Liftoff	exon	33127	34930	.	-	.	"transcript_id=UL36.5;Name=UL36.5;ID=UL36.5;gene_id=UL36;ORF_id=UL36.5;"				
+KJ717942.1	Liftoff	transcript	33127	34930	.	-	.	"transcript_id=UL36.5;Name=UL36.5;ID=UL36.5;gene_id=UL36;ORF_id=UL36.5;"	34930	33127	3	
+KJ717942.1	Liftoff	exon	33127	42484	.	-	.	"transcript_id=UL36-UL36.5;Name=UL36-UL36.5;ID=UL36-UL36.5;gene_id=UL36;ORF_id=UL36;"				
+KJ717942.1	Liftoff	transcript	33127	42484	.	-	.	"transcript_id=UL36-UL36.5;Name=UL36-UL36.5;ID=UL36-UL36.5;gene_id=UL36;ORF_id=UL36;"	42484	33127	0	
+KJ717942.1	Liftoff	exon	42494	45378	.	-	.	"transcript_id=UL37;Name=UL37;ID=UL37;gene_id=UL37;ORF_id=UL37;"				
+KJ717942.1	Liftoff	transcript	42494	45378	.	-	.	"transcript_id=UL37;Name=UL37;ID=UL37;gene_id=UL37;ORF_id=UL37;"	45378	42494	0	
+KJ717942.1	Liftoff	exon	42494	43840	.	-	.	"transcript_id=UL37.5;Name=UL37.5;ID=UL37.5;gene_id=UL37;ORF_id=UL37.5;"				
+KJ717942.1	Liftoff	transcript	42494	43840	.	-	.	"transcript_id=UL37.5;Name=UL37.5;ID=UL37.5;gene_id=UL37;ORF_id=UL37.5;"	43840	42494	0	
+KJ717942.1	Liftoff	exon	42494	43962	.	-	.	"transcript_id=UL37.5-S2;Name=UL37.5-S2;ID=UL37.5-S2;gene_id=UL37;ORF_id=UL37.5;"				
+KJ717942.1	Liftoff	transcript	42494	43962	.	-	.	"transcript_id=UL37.5-S2;Name=UL37.5-S2;ID=UL37.5-S2;gene_id=UL37;ORF_id=UL37.5;"	43962	42494	1	
+KJ717942.1	Liftoff	exon	42494	44556	.	-	.	"transcript_id=UL37.6;Name=UL37.6;ID=UL37.6;gene_id=UL37;ORF_id=UL37.6;"				
+KJ717942.1	Liftoff	transcript	42494	44556	.	-	.	"transcript_id=UL37.6;Name=UL37.6;ID=UL37.6;gene_id=UL37;ORF_id=UL37.6;"	44556	42494	4	
+KJ717942.1	Liftoff	exon	42494	44117	.	-	.	"transcript_id=UL37.6-S;Name=UL37.6-S;ID=UL37.6-S;gene_id=UL37;ORF_id=UL37.6;"				
+KJ717942.1	Liftoff	transcript	42494	44117	.	-	.	"transcript_id=UL37.6-S;Name=UL37.6-S;ID=UL37.6-S;gene_id=UL37;ORF_id=UL37.6;"	44117	42494	1	
+KJ717942.1	Liftoff	exon	42494	44034	.	-	.	"transcript_id=UL37.6-S2;Name=UL37.6-S2;ID=UL37.6-S2;gene_id=UL37;ORF_id=UL37.6;"				
+KJ717942.1	Liftoff	transcript	42494	44034	.	-	.	"transcript_id=UL37.6-S2;Name=UL37.6-S2;ID=UL37.6-S2;gene_id=UL37;ORF_id=UL37.6;"	44034	42494	2	
+KJ717942.1	Liftoff	exon	33127	45378	.	-	.	"transcript_id=UL37-36;Name=UL37-36;ID=UL37-36;gene_id=UL37;ORF_id=UL37;"				
+KJ717942.1	Liftoff	transcript	33127	45378	.	-	.	"transcript_id=UL37-36;Name=UL37-36;ID=UL37-36;gene_id=UL37;ORF_id=UL37;"	45378	33127	0	
+KJ717942.1	Liftoff	exon	39925	46527	.	+	.	"transcript_id=UL37-38;Name=UL37-38;ID=UL37-38;gene_id=UL38;ORF_id=UL38;"				
+KJ717942.1	Liftoff	transcript	39925	46527	.	+	.	"transcript_id=UL37-38;Name=UL37-38;ID=UL37-38;gene_id=UL38;ORF_id=UL38;"	39925	46527	0	
+KJ717942.1	Liftoff	exon	45301	46527	.	+	.	"transcript_id=UL38;Name=UL38;ID=UL38;gene_id=UL38;ORF_id=UL38;"				
+KJ717942.1	Liftoff	transcript	45301	46527	.	+	.	"transcript_id=UL38;Name=UL38;ID=UL38;gene_id=UL38;ORF_id=UL38;"	45301	46527	19	
+KJ717942.1	Liftoff	exon	45435	46527	.	+	.	"transcript_id=UL38.3;Name=UL38.3;ID=UL38.3;gene_id=UL38;ORF_id=UL38.3;"				
+KJ717942.1	Liftoff	transcript	45435	46527	.	+	.	"transcript_id=UL38.3;Name=UL38.3;ID=UL38.3;gene_id=UL38;ORF_id=UL38.3;"	45435	46527	10	
+KJ717942.1	Liftoff	exon	45791	46527	.	+	.	"transcript_id=UL38.4;Name=UL38.4;ID=UL38.4;gene_id=UL38;ORF_id=UL38.4;"				
+KJ717942.1	Liftoff	transcript	45791	46527	.	+	.	"transcript_id=UL38.4;Name=UL38.4;ID=UL38.4;gene_id=UL38;ORF_id=UL38.4;"	45791	46527	1	
+KJ717942.1	Liftoff	exon	45904	46527	.	+	.	"transcript_id=UL38.5;Name=UL38.5;ID=UL38.5;gene_id=UL38;ORF_id=UL38.5;"				
+KJ717942.1	Liftoff	transcript	45904	46527	.	+	.	"transcript_id=UL38.5;Name=UL38.5;ID=UL38.5;gene_id=UL38;ORF_id=UL38.5;"	45904	46527	9	
+KJ717942.1	Liftoff	exon	45934	46527	.	+	.	"transcript_id=UL38.6;Name=UL38.6;ID=UL38.6;gene_id=UL38;ORF_id=UL38.6;"				
+KJ717942.1	Liftoff	transcript	45934	46527	.	+	.	"transcript_id=UL38.6;Name=UL38.6;ID=UL38.6;gene_id=UL38;ORF_id=UL38.6;"	45934	46527	6	
+KJ717942.1	Liftoff	exon	46014	46527	.	+	.	"transcript_id=UL38.6-S;Name=UL38.6-S;ID=UL38.6-S;gene_id=UL38;ORF_id=UL38.6;"				
+KJ717942.1	Liftoff	transcript	46014	46527	.	+	.	"transcript_id=UL38.6-S;Name=UL38.6-S;ID=UL38.6-S;gene_id=UL38;ORF_id=UL38.6;"	46014	46527	593	
+KJ717942.1	Liftoff	exon	45301	50136	.	+	.	"transcript_id=UL38-39-40;Name=UL38-39-40;ID=UL38-39-40;gene_id=UL38;ORF_id=UL38;"				
+KJ717942.1	Liftoff	transcript	45301	50136	.	+	.	"transcript_id=UL38-39-40;Name=UL38-39-40;ID=UL38-39-40;gene_id=UL38;ORF_id=UL38;"	45301	50136	19	
+KJ717942.1	Liftoff	exon	46722	50136	.	+	.	"transcript_id=UL39-40;Name=UL39-40;ID=UL39-40;gene_id=UL39;ORF_id=UL39;"				
+KJ717942.1	Liftoff	transcript	46722	50136	.	+	.	"transcript_id=UL39-40;Name=UL39-40;ID=UL39-40;gene_id=UL39;ORF_id=UL39;"	46722	50136	6	
+KJ717942.1	Liftoff	exon	46515	50136	.	+	.	"transcript_id=UL39-40-L;Name=UL39-40-L;ID=UL39-40-L;gene_id=UL39;ORF_id=UL39;"				
+KJ717942.1	Liftoff	transcript	46515	50136	.	+	.	"transcript_id=UL39-40-L;Name=UL39-40-L;ID=UL39-40-L;gene_id=UL39;ORF_id=UL39;"	46515	50136	6	
+KJ717942.1	Liftoff	exon	46400	50136	.	+	.	"transcript_id=UL39L-40;Name=UL39L-40;ID=UL39L-40;gene_id=UL39;ORF_id=UL39;"				
+KJ717942.1	Liftoff	transcript	46400	50136	.	+	.	"transcript_id=UL39L-40;Name=UL39L-40;ID=UL39L-40;gene_id=UL39;ORF_id=UL39;"	46400	50136	2	
+KJ717942.1	Liftoff	exon	92616	94673	.	-	.	"transcript_id=UL3L2-3.5;Name=UL3L2-3.5;ID=UL3L2-3.5;gene_id=UL3;ORF_id=UL3;"				
+KJ717942.1	Liftoff	transcript	92616	94673	.	-	.	"transcript_id=UL3L2-3.5;Name=UL3L2-3.5;ID=UL3L2-3.5;gene_id=UL3;ORF_id=UL3;"	94673	92616	8	
+KJ717942.1	Liftoff	exon	92616	94545	.	-	.	"transcript_id=UL3L-3.5;Name=UL3L-3.5;ID=UL3L-3.5;gene_id=UL3;ORF_id=UL3;"				
+KJ717942.1	Liftoff	transcript	92616	94545	.	-	.	"transcript_id=UL3L-3.5;Name=UL3L-3.5;ID=UL3L-3.5;gene_id=UL3;ORF_id=UL3;"	94545	92616	391	
+KJ717942.1	Liftoff	exon	91956	92606	.	+	.	"transcript_id=UL4;Name=UL4;ID=UL4;gene_id=UL4;ORF_id=UL4;"				
+KJ717942.1	Liftoff	transcript	91956	92606	.	+	.	"transcript_id=UL4;Name=UL4;ID=UL4;gene_id=UL4;ORF_id=UL4;"	91956	92606	0	
+KJ717942.1	Liftoff	exon	92095	92606	.	+	.	"transcript_id=UL4.2;Name=UL4.2;ID=UL4.2;gene_id=UL4;ORF_id=UL4.2;"				
+KJ717942.1	Liftoff	transcript	92095	92606	.	+	.	"transcript_id=UL4.2;Name=UL4.2;ID=UL4.2;gene_id=UL4;ORF_id=UL4.2;"	92095	92606	0	
+KJ717942.1	Liftoff	exon	48994	50136	.	+	.	"transcript_id=UL40;Name=UL40;ID=UL40;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48994	50136	.	+	.	"transcript_id=UL40;Name=UL40;ID=UL40;gene_id=UL40;ORF_id=UL40;"	48994	50136	28	
+KJ717942.1	Liftoff	exon	49180	50136	.	+	.	"transcript_id=UL40.2;Name=UL40.2;ID=UL40.2;gene_id=UL40;ORF_id=UL40.2;"				
+KJ717942.1	Liftoff	transcript	49180	50136	.	+	.	"transcript_id=UL40.2;Name=UL40.2;ID=UL40.2;gene_id=UL40;ORF_id=UL40.2;"	49180	50136	38	
+KJ717942.1	Liftoff	exon	49215	50136	.	+	.	"transcript_id=UL40.3;Name=UL40.3;ID=UL40.3;gene_id=UL40;ORF_id=UL40.3;"				
+KJ717942.1	Liftoff	transcript	49215	50136	.	+	.	"transcript_id=UL40.3;Name=UL40.3;ID=UL40.3;gene_id=UL40;ORF_id=UL40.3;"	49215	50136	59	
+KJ717942.1	Liftoff	exon	49292	50136	.	+	.	"transcript_id=UL40.3-S;Name=UL40.3-S;ID=UL40.3-S;gene_id=UL40;ORF_id=UL40.3;"				
+KJ717942.1	Liftoff	transcript	49292	50136	.	+	.	"transcript_id=UL40.3-S;Name=UL40.3-S;ID=UL40.3-S;gene_id=UL40;ORF_id=UL40.3;"	49292	50136	12	
+KJ717942.1	Liftoff	exon	49420	50136	.	+	.	"transcript_id=UL40.3-S2;Name=UL40.3-S2;ID=UL40.3-S2;gene_id=UL40;ORF_id=UL40.3;"				
+KJ717942.1	Liftoff	transcript	49420	50136	.	+	.	"transcript_id=UL40.3-S2;Name=UL40.3-S2;ID=UL40.3-S2;gene_id=UL40;ORF_id=UL40.3;"	49420	50136	17	
+KJ717942.1	Liftoff	exon	49446	50136	.	+	.	"transcript_id=UL40.3-S3;Name=UL40.3-S3;ID=UL40.3-S3;gene_id=UL40;ORF_id=UL40.3;"				
+KJ717942.1	Liftoff	transcript	49446	50136	.	+	.	"transcript_id=UL40.3-S3;Name=UL40.3-S3;ID=UL40.3-S3;gene_id=UL40;ORF_id=UL40.3;"	49446	50136	9	
+KJ717942.1	Liftoff	exon	49685	50136	.	+	.	"transcript_id=UL40.6;Name=UL40.6;ID=UL40.6;gene_id=UL40;ORF_id=UL40.6;"				
+KJ717942.1	Liftoff	transcript	49685	50136	.	+	.	"transcript_id=UL40.6;Name=UL40.6;ID=UL40.6;gene_id=UL40;ORF_id=UL40.6;"	49685	50136	18	
+KJ717942.1	Liftoff	exon	49752	50136	.	+	.	"transcript_id=UL40.6-S;Name=UL40.6-S;ID=UL40.6-S;gene_id=UL40;ORF_id=UL40.6;"				
+KJ717942.1	Liftoff	transcript	49752	50136	.	+	.	"transcript_id=UL40.6-S;Name=UL40.6-S;ID=UL40.6-S;gene_id=UL40;ORF_id=UL40.6;"	49752	50136	22	
+KJ717942.1	Liftoff	exon	48944	50136	.	+	.	"transcript_id=UL40-L1;Name=UL40-L1;ID=UL40-L1;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48944	50136	.	+	.	"transcript_id=UL40-L1;Name=UL40-L1;ID=UL40-L1;gene_id=UL40;ORF_id=UL40;"	48944	50136	26	
+KJ717942.1	Liftoff	exon	48131	50136	.	+	.	"transcript_id=UL40-L10;Name=UL40-L10;ID=UL40-L10;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48131	50136	.	+	.	"transcript_id=UL40-L10;Name=UL40-L10;ID=UL40-L10;gene_id=UL40;ORF_id=UL40;"	48131	50136	3	
+KJ717942.1	Liftoff	exon	48117	50136	.	+	.	"transcript_id=UL40-L11;Name=UL40-L11;ID=UL40-L11;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48117	50136	.	+	.	"transcript_id=UL40-L11;Name=UL40-L11;ID=UL40-L11;gene_id=UL40;ORF_id=UL40;"	48117	50136	8	
+KJ717942.1	Liftoff	exon	48056	50136	.	+	.	"transcript_id=UL40-L12;Name=UL40-L12;ID=UL40-L12;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48056	50136	.	+	.	"transcript_id=UL40-L12;Name=UL40-L12;ID=UL40-L12;gene_id=UL40;ORF_id=UL40;"	48056	50136	9	
+KJ717942.1	Liftoff	exon	48010	50136	.	+	.	"transcript_id=UL40-L13;Name=UL40-L13;ID=UL40-L13;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48010	50136	.	+	.	"transcript_id=UL40-L13;Name=UL40-L13;ID=UL40-L13;gene_id=UL40;ORF_id=UL40;"	48010	50136	8	
+KJ717942.1	Liftoff	exon	47975	50136	.	+	.	"transcript_id=UL40-L14;Name=UL40-L14;ID=UL40-L14;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47975	50136	.	+	.	"transcript_id=UL40-L14;Name=UL40-L14;ID=UL40-L14;gene_id=UL40;ORF_id=UL40;"	47975	50136	4	
+KJ717942.1	Liftoff	exon	47900	50136	.	+	.	"transcript_id=UL40-L15;Name=UL40-L15;ID=UL40-L15;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47900	50136	.	+	.	"transcript_id=UL40-L15;Name=UL40-L15;ID=UL40-L15;gene_id=UL40;ORF_id=UL40;"	47900	50136	8	
+KJ717942.1	Liftoff	exon	47804	50136	.	+	.	"transcript_id=UL40-L16;Name=UL40-L16;ID=UL40-L16;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47804	50136	.	+	.	"transcript_id=UL40-L16;Name=UL40-L16;ID=UL40-L16;gene_id=UL40;ORF_id=UL40;"	47804	50136	7	
+KJ717942.1	Liftoff	exon	47777	50136	.	+	.	"transcript_id=UL40-L17;Name=UL40-L17;ID=UL40-L17;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47777	50136	.	+	.	"transcript_id=UL40-L17;Name=UL40-L17;ID=UL40-L17;gene_id=UL40;ORF_id=UL40;"	47777	50136	6	
+KJ717942.1	Liftoff	exon	47692	50136	.	+	.	"transcript_id=UL40-L18;Name=UL40-L18;ID=UL40-L18;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47692	50136	.	+	.	"transcript_id=UL40-L18;Name=UL40-L18;ID=UL40-L18;gene_id=UL40;ORF_id=UL40;"	47692	50136	12	
+KJ717942.1	Liftoff	exon	47677	50136	.	+	.	"transcript_id=UL40-L19;Name=UL40-L19;ID=UL40-L19;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47677	50136	.	+	.	"transcript_id=UL40-L19;Name=UL40-L19;ID=UL40-L19;gene_id=UL40;ORF_id=UL40;"	47677	50136	10	
+KJ717942.1	Liftoff	exon	48901	50136	.	+	.	"transcript_id=UL40-L2;Name=UL40-L2;ID=UL40-L2;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48901	50136	.	+	.	"transcript_id=UL40-L2;Name=UL40-L2;ID=UL40-L2;gene_id=UL40;ORF_id=UL40;"	48901	50136	24	
+KJ717942.1	Liftoff	exon	47657	50136	.	+	.	"transcript_id=UL40-L20;Name=UL40-L20;ID=UL40-L20;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47657	50136	.	+	.	"transcript_id=UL40-L20;Name=UL40-L20;ID=UL40-L20;gene_id=UL40;ORF_id=UL40;"	47657	50136	16	
+KJ717942.1	Liftoff	exon	47243	50136	.	+	.	"transcript_id=UL40-L21;Name=UL40-L21;ID=UL40-L21;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47243	50136	.	+	.	"transcript_id=UL40-L21;Name=UL40-L21;ID=UL40-L21;gene_id=UL40;ORF_id=UL40;"	47243	50136	1	
+KJ717942.1	Liftoff	exon	47206	50136	.	+	.	"transcript_id=UL40-L22;Name=UL40-L22;ID=UL40-L22;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	47206	50136	.	+	.	"transcript_id=UL40-L22;Name=UL40-L22;ID=UL40-L22;gene_id=UL40;ORF_id=UL40;"	47206	50136	2	
+KJ717942.1	Liftoff	exon	46978	50136	.	+	.	"transcript_id=UL40-L23;Name=UL40-L23;ID=UL40-L23;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	46978	50136	.	+	.	"transcript_id=UL40-L23;Name=UL40-L23;ID=UL40-L23;gene_id=UL40;ORF_id=UL40;"	46978	50136	2	
+KJ717942.1	Liftoff	exon	48783	50136	.	+	.	"transcript_id=UL40-L3;Name=UL40-L3;ID=UL40-L3;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48783	50136	.	+	.	"transcript_id=UL40-L3;Name=UL40-L3;ID=UL40-L3;gene_id=UL40;ORF_id=UL40;"	48783	50136	47	
+KJ717942.1	Liftoff	exon	48558	50136	.	+	.	"transcript_id=UL40-L4;Name=UL40-L4;ID=UL40-L4;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48558	50136	.	+	.	"transcript_id=UL40-L4;Name=UL40-L4;ID=UL40-L4;gene_id=UL40;ORF_id=UL40;"	48558	50136	2725	
+KJ717942.1	Liftoff	exon	48422	50136	.	+	.	"transcript_id=UL40-L5;Name=UL40-L5;ID=UL40-L5;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48422	50136	.	+	.	"transcript_id=UL40-L5;Name=UL40-L5;ID=UL40-L5;gene_id=UL40;ORF_id=UL40;"	48422	50136	10	
+KJ717942.1	Liftoff	exon	48361	50136	.	+	.	"transcript_id=UL40-L6;Name=UL40-L6;ID=UL40-L6;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48361	50136	.	+	.	"transcript_id=UL40-L6;Name=UL40-L6;ID=UL40-L6;gene_id=UL40;ORF_id=UL40;"	48361	50136	29	
+KJ717942.1	Liftoff	exon	48274	50136	.	+	.	"transcript_id=UL40-L7;Name=UL40-L7;ID=UL40-L7;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48274	50136	.	+	.	"transcript_id=UL40-L7;Name=UL40-L7;ID=UL40-L7;gene_id=UL40;ORF_id=UL40;"	48274	50136	32	
+KJ717942.1	Liftoff	exon	48188	50136	.	+	.	"transcript_id=UL40-L8;Name=UL40-L8;ID=UL40-L8;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48188	50136	.	+	.	"transcript_id=UL40-L8;Name=UL40-L8;ID=UL40-L8;gene_id=UL40;ORF_id=UL40;"	48188	50136	8	
+KJ717942.1	Liftoff	exon	48144	50136	.	+	.	"transcript_id=UL40-L9;Name=UL40-L9;ID=UL40-L9;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	48144	50136	.	+	.	"transcript_id=UL40-L9;Name=UL40-L9;ID=UL40-L9;gene_id=UL40;ORF_id=UL40;"	48144	50136	3	
+KJ717942.1	Liftoff	exon	49056	50136	.	+	.	"transcript_id=UL40-S;Name=UL40-S;ID=UL40-S;gene_id=UL40;ORF_id=UL40;"				
+KJ717942.1	Liftoff	transcript	49056	50136	.	+	.	"transcript_id=UL40-S;Name=UL40-S;ID=UL40-S;gene_id=UL40;ORF_id=UL40;"	49056	50136	32	
+KJ717942.1	Liftoff	exon	50555	51661	.	-	.	"transcript_id=UL41;Name=UL41;ID=UL41;gene_id=UL41;ORF_id=UL41;"				
+KJ717942.1	Liftoff	transcript	50555	51661	.	-	.	"transcript_id=UL41;Name=UL41;ID=UL41;gene_id=UL41;ORF_id=UL41;"	51661	50555	1	
+KJ717942.1	Liftoff	exon	50555	51106	.	-	.	"transcript_id=UL41.11;Name=UL41.11;ID=UL41.11;gene_id=UL41;ORF_id=UL41.11;"				
+KJ717942.1	Liftoff	transcript	50555	51106	.	-	.	"transcript_id=UL41.11;Name=UL41.11;ID=UL41.11;gene_id=UL41;ORF_id=UL41.11;"	51106	50555	39	
+KJ717942.1	Liftoff	exon	50555	51608	.	-	.	"transcript_id=UL41.2;Name=UL41.2;ID=UL41.2;gene_id=UL41;ORF_id=UL41.2;"				
+KJ717942.1	Liftoff	transcript	50555	51608	.	-	.	"transcript_id=UL41.2;Name=UL41.2;ID=UL41.2;gene_id=UL41;ORF_id=UL41.2;"	51608	50555	1	
+KJ717942.1	Liftoff	exon	50555	51500	.	-	.	"transcript_id=UL41.4;Name=UL41.4;ID=UL41.4;gene_id=UL41;ORF_id=UL41.4;"				
+KJ717942.1	Liftoff	transcript	50555	51500	.	-	.	"transcript_id=UL41.4;Name=UL41.4;ID=UL41.4;gene_id=UL41;ORF_id=UL41.4;"	51500	50555	6	
+KJ717942.1	Liftoff	exon	50555	51334	.	-	.	"transcript_id=UL41.7;Name=UL41.7;ID=UL41.7;gene_id=UL41;ORF_id=UL41.7;"				
+KJ717942.1	Liftoff	transcript	50555	51334	.	-	.	"transcript_id=UL41.7;Name=UL41.7;ID=UL41.7;gene_id=UL41;ORF_id=UL41.7;"	51334	50555	1	
+KJ717942.1	Liftoff	exon	50555	51155	.	-	.	"transcript_id=UL41.9;Name=UL41.9;ID=UL41.9;gene_id=UL41;ORF_id=UL41.9;"				
+KJ717942.1	Liftoff	transcript	50555	51155	.	-	.	"transcript_id=UL41.9;Name=UL41.9;ID=UL41.9;gene_id=UL41;ORF_id=UL41.9;"	51155	50555	636	
+KJ717942.1	Liftoff	exon	50405	52959	.	+	.	"transcript_id=UL41-42;Name=UL41-42;ID=UL41-42;gene_id=UL42;ORF_id=UL42;"				
+KJ717942.1	Liftoff	transcript	50405	52959	.	+	.	"transcript_id=UL41-42;Name=UL41-42;ID=UL41-42;gene_id=UL42;ORF_id=UL42;"	50405	52959	2	
+KJ717942.1	Liftoff	exon	51749	52962	.	+	.	"transcript_id=UL42;Name=UL42;ID=UL42;gene_id=UL42;ORF_id=UL42;"				
+KJ717942.1	Liftoff	transcript	51749	52962	.	+	.	"transcript_id=UL42;Name=UL42;ID=UL42;gene_id=UL42;ORF_id=UL42;"	51749	52962	33	
+KJ717942.1	Liftoff	exon	52009	52962	.	+	.	"transcript_id=UL42.3;Name=UL42.3;ID=UL42.3;gene_id=UL42;ORF_id=UL42.3;"				
+KJ717942.1	Liftoff	transcript	52009	52962	.	+	.	"transcript_id=UL42.3;Name=UL42.3;ID=UL42.3;gene_id=UL42;ORF_id=UL42.3;"	52009	52962	48	
+KJ717942.1	Liftoff	exon	52635	52962	.	+	.	"transcript_id=UL42.5;Name=UL42.5;ID=UL42.5;gene_id=UL42;ORF_id=UL42.5;"				
+KJ717942.1	Liftoff	transcript	52635	52962	.	+	.	"transcript_id=UL42.5;Name=UL42.5;ID=UL42.5;gene_id=UL42;ORF_id=UL42.5;"	52635	52962	4	
+KJ717942.1	Liftoff	exon	52807	52962	.	+	.	"transcript_id=UL42.5-S;Name=UL42.5-S;ID=UL42.5-S;gene_id=UL42;ORF_id=UL42.5;"				
+KJ717942.1	Liftoff	transcript	52807	52962	.	+	.	"transcript_id=UL42.5-S;Name=UL42.5-S;ID=UL42.5-S;gene_id=UL42;ORF_id=UL42.5;"	52807	52962	4	
+KJ717942.1	Liftoff	exon	51749	55685	.	+	.	"transcript_id=UL42-43-44;Name=UL42-43-44;ID=UL42-43-44;gene_id=UL42;ORF_id=UL42;"				
+KJ717942.1	Liftoff	transcript	51749	55685	.	+	.	"transcript_id=UL42-43-44;Name=UL42-43-44;ID=UL42-43-44;gene_id=UL42;ORF_id=UL42;"	51749	55685	33	
+KJ717942.1	Liftoff	exon	50647	54119	.	+	.	"transcript_id=UL42-43-L;Name=UL42-43-L;ID=UL42-43-L;gene_id=UL42;ORF_id=UL42;"				
+KJ717942.1	Liftoff	transcript	50647	54119	.	+	.	"transcript_id=UL42-43-L;Name=UL42-43-L;ID=UL42-43-L;gene_id=UL42;ORF_id=UL42;"	50647	54119	2	
+KJ717942.1	Liftoff	exon	51662	52962	.	+	.	"transcript_id=UL42-L1;Name=UL42-L1;ID=UL42-L1;gene_id=UL42;ORF_id=UL42;"				
+KJ717942.1	Liftoff	transcript	51662	52962	.	+	.	"transcript_id=UL42-L1;Name=UL42-L1;ID=UL42-L1;gene_id=UL42;ORF_id=UL42;"	51662	52962	13	
+KJ717942.1	Liftoff	exon	51662	54119	.	+	.	"transcript_id=UL42L-43;Name=UL42L-43;ID=UL42L-43;gene_id=UL42;ORF_id=UL42;"				
+KJ717942.1	Liftoff	transcript	51662	54119	.	+	.	"transcript_id=UL42L-43;Name=UL42L-43;ID=UL42L-43;gene_id=UL42;ORF_id=UL42;"	51662	54119	13	
+KJ717942.1	Liftoff	exon	51662	55685	.	+	.	"transcript_id=UL42L-43-44;Name=UL42L-43-44;ID=UL42L-43-44;gene_id=UL42;ORF_id=UL42;"				
+KJ717942.1	Liftoff	transcript	51662	55685	.	+	.	"transcript_id=UL42L-43-44;Name=UL42L-43-44;ID=UL42L-43-44;gene_id=UL42;ORF_id=UL42;"	51662	55685	13	
+KJ717942.1	Liftoff	exon	52969	54119	.	+	.	"transcript_id=UL43;Name=UL43;ID=UL43;gene_id=UL43;ORF_id=UL43;"				
+KJ717942.1	Liftoff	transcript	52969	54119	.	+	.	"transcript_id=UL43;Name=UL43;ID=UL43;gene_id=UL43;ORF_id=UL43;"	52969	54119	7	
+KJ717942.1	Liftoff	exon	53946	54119	.	+	.	"transcript_id=UL43.13;Name=UL43.13;ID=UL43.13;gene_id=UL43;ORF_id=UL43.13;"				
+KJ717942.1	Liftoff	transcript	53946	54119	.	+	.	"transcript_id=UL43.13;Name=UL43.13;ID=UL43.13;gene_id=UL43;ORF_id=UL43.13;"	53946	54119	43	
+KJ717942.1	Liftoff	exon	53174	54119	.	+	.	"transcript_id=UL43.6;Name=UL43.6;ID=UL43.6;gene_id=UL43;ORF_id=UL43.6;"				
+KJ717942.1	Liftoff	transcript	53174	54119	.	+	.	"transcript_id=UL43.6;Name=UL43.6;ID=UL43.6;gene_id=UL43;ORF_id=UL43.6;"	53174	54119	2	
+KJ717942.1	Liftoff	exon	53314	54119	.	+	.	"transcript_id=UL43.9;Name=UL43.9;ID=UL43.9;gene_id=UL43;ORF_id=UL43.9;"				
+KJ717942.1	Liftoff	transcript	53314	54119	.	+	.	"transcript_id=UL43.9;Name=UL43.9;ID=UL43.9;gene_id=UL43;ORF_id=UL43.9;"	53314	54119	6	
+KJ717942.1	Liftoff	exon	53331	54119	.	+	.	"transcript_id=UL43.9-S;Name=UL43.9-S;ID=UL43.9-S;gene_id=UL43;ORF_id=UL43.9;"				
+KJ717942.1	Liftoff	transcript	53331	54119	.	+	.	"transcript_id=UL43.9-S;Name=UL43.9-S;ID=UL43.9-S;gene_id=UL43;ORF_id=UL43.9;"	53331	54119	5	
+KJ717942.1	Liftoff	exon	52985	55685	.	+	.	"transcript_id=UL43-44;Name=UL43-44;ID=UL43-44;gene_id=UL43;ORF_id=UL43;"				
+KJ717942.1	Liftoff	transcript	52985	55685	.	+	.	"transcript_id=UL43-44;Name=UL43-44;ID=UL43-44;gene_id=UL43;ORF_id=UL43;"	52985	55685	6	
+KJ717942.1	Liftoff	exon	52807	54119	.	+	.	"transcript_id=UL43-L;Name=UL43-L;ID=UL43-L;gene_id=UL43;ORF_id=UL43;"				
+KJ717942.1	Liftoff	transcript	52807	54119	.	+	.	"transcript_id=UL43-L;Name=UL43-L;ID=UL43-L;gene_id=UL43;ORF_id=UL43;"	52807	54119	4	
+KJ717942.1	Liftoff	exon	52635	54119	.	+	.	"transcript_id=UL43-L2;Name=UL43-L2;ID=UL43-L2;gene_id=UL43;ORF_id=UL43;"				
+KJ717942.1	Liftoff	transcript	52635	54119	.	+	.	"transcript_id=UL43-L2;Name=UL43-L2;ID=UL43-L2;gene_id=UL43;ORF_id=UL43;"	52635	54119	4	
+KJ717942.1	Liftoff	exon	52009	54119	.	+	.	"transcript_id=UL43-L3;Name=UL43-L3;ID=UL43-L3;gene_id=UL43;ORF_id=UL43;"				
+KJ717942.1	Liftoff	transcript	52009	54119	.	+	.	"transcript_id=UL43-L3;Name=UL43-L3;ID=UL43-L3;gene_id=UL43;ORF_id=UL43;"	52009	54119	48	
+KJ717942.1	Liftoff	exon	52985	54119	.	+	.	"transcript_id=UL43-S;Name=UL43-S;ID=UL43-S;gene_id=UL43;ORF_id=UL43;"				
+KJ717942.1	Liftoff	transcript	52985	54119	.	+	.	"transcript_id=UL43-S;Name=UL43-S;ID=UL43-S;gene_id=UL43;ORF_id=UL43;"	52985	54119	6	
+KJ717942.1	Liftoff	exon	54173	55685	.	+	.	"transcript_id=UL44;Name=UL44;ID=UL44;gene_id=UL44;ORF_id=UL44;"				
+KJ717942.1	Liftoff	transcript	54173	55685	.	+	.	"transcript_id=UL44;Name=UL44;ID=UL44;gene_id=UL44;ORF_id=UL44;"	54173	55685	7	
+KJ717942.1	Liftoff	exon	54261	55685	.	+	.	"transcript_id=UL44.4;Name=UL44.4;ID=UL44.4;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54261	55685	.	+	.	"transcript_id=UL44.4;Name=UL44.4;ID=UL44.4;gene_id=UL44;ORF_id=UL44.4;"	54261	55685	7	
+KJ717942.1	Liftoff	exon	54388	55685	.	+	.	"transcript_id=UL44.4-S;Name=UL44.4-S;ID=UL44.4-S;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54388	55685	.	+	.	"transcript_id=UL44.4-S;Name=UL44.4-S;ID=UL44.4-S;gene_id=UL44;ORF_id=UL44.4;"	54388	55685	6	
+KJ717942.1	Liftoff	exon	54815	55685	.	+	.	"transcript_id=UL44.4-S10;Name=UL44.4-S10;ID=UL44.4-S10;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54815	55685	.	+	.	"transcript_id=UL44.4-S10;Name=UL44.4-S10;ID=UL44.4-S10;gene_id=UL44;ORF_id=UL44.4;"	54815	55685	7	
+KJ717942.1	Liftoff	exon	54831	55685	.	+	.	"transcript_id=UL44.4-S11;Name=UL44.4-S11;ID=UL44.4-S11;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54831	55685	.	+	.	"transcript_id=UL44.4-S11;Name=UL44.4-S11;ID=UL44.4-S11;gene_id=UL44;ORF_id=UL44.4;"	54831	55685	12	
+KJ717942.1	Liftoff	exon	54862	55685	.	+	.	"transcript_id=UL44.4-S12;Name=UL44.4-S12;ID=UL44.4-S12;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54862	55685	.	+	.	"transcript_id=UL44.4-S12;Name=UL44.4-S12;ID=UL44.4-S12;gene_id=UL44;ORF_id=UL44.4;"	54862	55685	10	
+KJ717942.1	Liftoff	exon	54891	55685	.	+	.	"transcript_id=UL44.4-S13;Name=UL44.4-S13;ID=UL44.4-S13;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54891	55685	.	+	.	"transcript_id=UL44.4-S13;Name=UL44.4-S13;ID=UL44.4-S13;gene_id=UL44;ORF_id=UL44.4;"	54891	55685	3	
+KJ717942.1	Liftoff	exon	54946	55685	.	+	.	"transcript_id=UL44.4-S14;Name=UL44.4-S14;ID=UL44.4-S14;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54946	55685	.	+	.	"transcript_id=UL44.4-S14;Name=UL44.4-S14;ID=UL44.4-S14;gene_id=UL44;ORF_id=UL44.4;"	54946	55685	24	
+KJ717942.1	Liftoff	exon	54979	55685	.	+	.	"transcript_id=UL44.4-S15;Name=UL44.4-S15;ID=UL44.4-S15;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54979	55685	.	+	.	"transcript_id=UL44.4-S15;Name=UL44.4-S15;ID=UL44.4-S15;gene_id=UL44;ORF_id=UL44.4;"	54979	55685	2	
+KJ717942.1	Liftoff	exon	55000	55685	.	+	.	"transcript_id=UL44.4-S16;Name=UL44.4-S16;ID=UL44.4-S16;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	55000	55685	.	+	.	"transcript_id=UL44.4-S16;Name=UL44.4-S16;ID=UL44.4-S16;gene_id=UL44;ORF_id=UL44.4;"	55000	55685	2	
+KJ717942.1	Liftoff	exon	55022	55685	.	+	.	"transcript_id=UL44.4-S17;Name=UL44.4-S17;ID=UL44.4-S17;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	55022	55685	.	+	.	"transcript_id=UL44.4-S17;Name=UL44.4-S17;ID=UL44.4-S17;gene_id=UL44;ORF_id=UL44.4;"	55022	55685	2	
+KJ717942.1	Liftoff	exon	55044	55685	.	+	.	"transcript_id=UL44.4-S18;Name=UL44.4-S18;ID=UL44.4-S18;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	55044	55685	.	+	.	"transcript_id=UL44.4-S18;Name=UL44.4-S18;ID=UL44.4-S18;gene_id=UL44;ORF_id=UL44.4;"	55044	55685	2	
+KJ717942.1	Liftoff	exon	55086	55685	.	+	.	"transcript_id=UL44.4-S19;Name=UL44.4-S19;ID=UL44.4-S19;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	55086	55685	.	+	.	"transcript_id=UL44.4-S19;Name=UL44.4-S19;ID=UL44.4-S19;gene_id=UL44;ORF_id=UL44.4;"	55086	55685	1	
+KJ717942.1	Liftoff	exon	54435	55685	.	+	.	"transcript_id=UL44.4-S2;Name=UL44.4-S2;ID=UL44.4-S2;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54435	55685	.	+	.	"transcript_id=UL44.4-S2;Name=UL44.4-S2;ID=UL44.4-S2;gene_id=UL44;ORF_id=UL44.4;"	54435	55685	8	
+KJ717942.1	Liftoff	exon	55248	55685	.	+	.	"transcript_id=UL44.4-S20;Name=UL44.4-S20;ID=UL44.4-S20;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	55248	55685	.	+	.	"transcript_id=UL44.4-S20;Name=UL44.4-S20;ID=UL44.4-S20;gene_id=UL44;ORF_id=UL44.4;"	55248	55685	0	
+KJ717942.1	Liftoff	exon	55359	55685	.	+	.	"transcript_id=UL44.4-S21;Name=UL44.4-S21;ID=UL44.4-S21;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	55359	55685	.	+	.	"transcript_id=UL44.4-S21;Name=UL44.4-S21;ID=UL44.4-S21;gene_id=UL44;ORF_id=UL44.4;"	55359	55685	8	
+KJ717942.1	Liftoff	exon	55426	55685	.	+	.	"transcript_id=UL44.4-S22;Name=UL44.4-S22;ID=UL44.4-S22;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	55426	55685	.	+	.	"transcript_id=UL44.4-S22;Name=UL44.4-S22;ID=UL44.4-S22;gene_id=UL44;ORF_id=UL44.4;"	55426	55685	0	
+KJ717942.1	Liftoff	exon	55485	55685	.	+	.	"transcript_id=UL44.4-S23;Name=UL44.4-S23;ID=UL44.4-S23;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	55485	55685	.	+	.	"transcript_id=UL44.4-S23;Name=UL44.4-S23;ID=UL44.4-S23;gene_id=UL44;ORF_id=UL44.4;"	55485	55685	0	
+KJ717942.1	Liftoff	exon	54435	55795	.	+	.	"transcript_id=UL44.4-S2-AT;Name=UL44.4-S2-AT;ID=UL44.4-S2-AT;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54435	55795	.	+	.	"transcript_id=UL44.4-S2-AT;Name=UL44.4-S2-AT;ID=UL44.4-S2-AT;gene_id=UL44;ORF_id=UL44.4;"	54435	55795	8	
+KJ717942.1	Liftoff	exon	54459	55685	.	+	.	"transcript_id=UL44.4-S3;Name=UL44.4-S3;ID=UL44.4-S3;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54459	55685	.	+	.	"transcript_id=UL44.4-S3;Name=UL44.4-S3;ID=UL44.4-S3;gene_id=UL44;ORF_id=UL44.4;"	54459	55685	24	
+KJ717942.1	Liftoff	exon	54496	55685	.	+	.	"transcript_id=UL44.4-S4;Name=UL44.4-S4;ID=UL44.4-S4;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54496	55685	.	+	.	"transcript_id=UL44.4-S4;Name=UL44.4-S4;ID=UL44.4-S4;gene_id=UL44;ORF_id=UL44.4;"	54496	55685	6	
+KJ717942.1	Liftoff	exon	54521	55685	.	+	.	"transcript_id=UL44.4-S5;Name=UL44.4-S5;ID=UL44.4-S5;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54521	55685	.	+	.	"transcript_id=UL44.4-S5;Name=UL44.4-S5;ID=UL44.4-S5;gene_id=UL44;ORF_id=UL44.4;"	54521	55685	3	
+KJ717942.1	Liftoff	exon	54521	55795	.	+	.	"transcript_id=UL44.4-S5-AT;Name=UL44.4-S5-AT;ID=UL44.4-S5-AT;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54521	55795	.	+	.	"transcript_id=UL44.4-S5-AT;Name=UL44.4-S5-AT;ID=UL44.4-S5-AT;gene_id=UL44;ORF_id=UL44.4;"	54521	55795	3	
+KJ717942.1	Liftoff	exon	54578	55685	.	+	.	"transcript_id=UL44.4-S6;Name=UL44.4-S6;ID=UL44.4-S6;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54578	55685	.	+	.	"transcript_id=UL44.4-S6;Name=UL44.4-S6;ID=UL44.4-S6;gene_id=UL44;ORF_id=UL44.4;"	54578	55685	7	
+KJ717942.1	Liftoff	exon	54690	55685	.	+	.	"transcript_id=UL44.4-S7;Name=UL44.4-S7;ID=UL44.4-S7;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54690	55685	.	+	.	"transcript_id=UL44.4-S7;Name=UL44.4-S7;ID=UL44.4-S7;gene_id=UL44;ORF_id=UL44.4;"	54690	55685	11	
+KJ717942.1	Liftoff	exon	54734	55685	.	+	.	"transcript_id=UL44.4-S8;Name=UL44.4-S8;ID=UL44.4-S8;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54734	55685	.	+	.	"transcript_id=UL44.4-S8;Name=UL44.4-S8;ID=UL44.4-S8;gene_id=UL44;ORF_id=UL44.4;"	54734	55685	35	
+KJ717942.1	Liftoff	exon	54770	55685	.	+	.	"transcript_id=UL44.4-S9;Name=UL44.4-S9;ID=UL44.4-S9;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54770	55685	.	+	.	"transcript_id=UL44.4-S9;Name=UL44.4-S9;ID=UL44.4-S9;gene_id=UL44;ORF_id=UL44.4;"	54770	55685	23	
+KJ717942.1	Liftoff	exon	54770	55795	.	+	.	"transcript_id=UL44.4-S9-AT;Name=UL44.4-S9-AT;ID=UL44.4-S9-AT;gene_id=UL44;ORF_id=UL44.4;"				
+KJ717942.1	Liftoff	transcript	54770	55795	.	+	.	"transcript_id=UL44.4-S9-AT;Name=UL44.4-S9-AT;ID=UL44.4-S9-AT;gene_id=UL44;ORF_id=UL44.4;"	54770	55795	23	
+KJ717942.1	Liftoff	exon	50541	55407	.	-	.	"transcript_id=UL44-43-42-41;Name=UL44-43-42-41;ID=UL44-43-42-41;gene_id=UL41;ORF_id=UL41;"				
+KJ717942.1	Liftoff	transcript	50541	55407	.	-	.	"transcript_id=UL44-43-42-41;Name=UL44-43-42-41;ID=UL44-43-42-41;gene_id=UL41;ORF_id=UL41;"	55407	50541	3	
+KJ717942.1	Liftoff	exon	54173	55795	.	+	.	"transcript_id=UL44-AT;Name=UL44-AT;ID=UL44-AT;gene_id=UL44;ORF_id=UL44;"				
+KJ717942.1	Liftoff	transcript	54173	55795	.	+	.	"transcript_id=UL44-AT;Name=UL44-AT;ID=UL44-AT;gene_id=UL44;ORF_id=UL44;"	54173	55795	7	
+KJ717942.1	Liftoff	exon	53946	55685	.	+	.	"transcript_id=UL44-L3;Name=UL44-L3;ID=UL44-L3;gene_id=UL44;ORF_id=UL44;"				
+KJ717942.1	Liftoff	transcript	53946	55685	.	+	.	"transcript_id=UL44-L3;Name=UL44-L3;ID=UL44-L3;gene_id=UL44;ORF_id=UL44;"	53946	55685	43	
+KJ717942.1	Liftoff	exon	53331	55685	.	+	.	"transcript_id=UL44-L4;Name=UL44-L4;ID=UL44-L4;gene_id=UL44;ORF_id=UL44;"				
+KJ717942.1	Liftoff	transcript	53331	55685	.	+	.	"transcript_id=UL44-L4;Name=UL44-L4;ID=UL44-L4;gene_id=UL44;ORF_id=UL44;"	53331	55685	5	
+KJ717942.1	Liftoff	exon	53314	55685	.	+	.	"transcript_id=UL44-L5;Name=UL44-L5;ID=UL44-L5;gene_id=UL44;ORF_id=UL44;"				
+KJ717942.1	Liftoff	transcript	53314	55685	.	+	.	"transcript_id=UL44-L5;Name=UL44-L5;ID=UL44-L5;gene_id=UL44;ORF_id=UL44;"	53314	55685	6	
+KJ717942.1	Liftoff	exon	53174	55685	.	+	.	"transcript_id=UL44-L6;Name=UL44-L6;ID=UL44-L6;gene_id=UL44;ORF_id=UL44;"				
+KJ717942.1	Liftoff	transcript	53174	55685	.	+	.	"transcript_id=UL44-L6;Name=UL44-L6;ID=UL44-L6;gene_id=UL44;ORF_id=UL44;"	53174	55685	2	
+KJ717942.1	Liftoff	exon	14051	16234	.	+	.	"transcript_id=UL46;Name=UL46;ID=UL46;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	14051	16234	.	+	.	"transcript_id=UL46;Name=UL46;ID=UL46;gene_id=UL46;ORF_id=UL46;"	14051	16234	4892	
+KJ717942.1	Liftoff	exon	15606	16234	.	+	.	"transcript_id=UL46.1;Name=UL46.1;ID=UL46.1;gene_id=UL46;ORF_id=UL46.1;"				
+KJ717942.1	Liftoff	transcript	15606	16234	.	+	.	"transcript_id=UL46.1;Name=UL46.1;ID=UL46.1;gene_id=UL46;ORF_id=UL46.1;"	15606	16234	173	
+KJ717942.1	Liftoff	exon	14310	16234	.	+	.	"transcript_id=UL46.10;Name=UL46.10;ID=UL46.10;gene_id=UL46;ORF_id=UL46.10;"				
+KJ717942.1	Liftoff	transcript	14310	16234	.	+	.	"transcript_id=UL46.10;Name=UL46.10;ID=UL46.10;gene_id=UL46;ORF_id=UL46.10;"	14310	16234	12	
+KJ717942.1	Liftoff	exon	14442	16234	.	+	.	"transcript_id=UL46.10-S;Name=UL46.10-S;ID=UL46.10-S;gene_id=UL46;ORF_id=UL46.10;"				
+KJ717942.1	Liftoff	transcript	14442	16234	.	+	.	"transcript_id=UL46.10-S;Name=UL46.10-S;ID=UL46.10-S;gene_id=UL46;ORF_id=UL46.10;"	14442	16234	12	
+KJ717942.1	Liftoff	exon	15655	16234	.	+	.	"transcript_id=UL46.1-S2;Name=UL46.1-S2;ID=UL46.1-S2;gene_id=UL46;ORF_id=UL46.1;"				
+KJ717942.1	Liftoff	transcript	15655	16234	.	+	.	"transcript_id=UL46.1-S2;Name=UL46.1-S2;ID=UL46.1-S2;gene_id=UL46;ORF_id=UL46.1;"	15655	16234	57	
+KJ717942.1	Liftoff	exon	15759	16234	.	+	.	"transcript_id=UL46.1-S3;Name=UL46.1-S3;ID=UL46.1-S3;gene_id=UL46;ORF_id=UL46.1;"				
+KJ717942.1	Liftoff	transcript	15759	16234	.	+	.	"transcript_id=UL46.1-S3;Name=UL46.1-S3;ID=UL46.1-S3;gene_id=UL46;ORF_id=UL46.1;"	15759	16234	46	
+KJ717942.1	Liftoff	exon	15796	16234	.	+	.	"transcript_id=UL46.1-S4;Name=UL46.1-S4;ID=UL46.1-S4;gene_id=UL46;ORF_id=UL46.1;"				
+KJ717942.1	Liftoff	transcript	15796	16234	.	+	.	"transcript_id=UL46.1-S4;Name=UL46.1-S4;ID=UL46.1-S4;gene_id=UL46;ORF_id=UL46.1;"	15796	16234	11	
+KJ717942.1	Liftoff	exon	15252	16234	.	+	.	"transcript_id=UL46.2;Name=UL46.2;ID=UL46.2;gene_id=UL46;ORF_id=UL46.2;"				
+KJ717942.1	Liftoff	transcript	15252	16234	.	+	.	"transcript_id=UL46.2;Name=UL46.2;ID=UL46.2;gene_id=UL46;ORF_id=UL46.2;"	15252	16234	10	
+KJ717942.1	Liftoff	exon	14821	16234	.	+	.	"transcript_id=UL46.5;Name=UL46.5;ID=UL46.5;gene_id=UL46;ORF_id=UL46.5;"				
+KJ717942.1	Liftoff	transcript	14821	16234	.	+	.	"transcript_id=UL46.5;Name=UL46.5;ID=UL46.5;gene_id=UL46;ORF_id=UL46.5;"	14821	16234	21	
+KJ717942.1	Liftoff	exon	14933	16234	.	+	.	"transcript_id=UL46.5-S2;Name=UL46.5-S2;ID=UL46.5-S2;gene_id=UL46;ORF_id=UL46.5;"				
+KJ717942.1	Liftoff	transcript	14933	16234	.	+	.	"transcript_id=UL46.5-S2;Name=UL46.5-S2;ID=UL46.5-S2;gene_id=UL46;ORF_id=UL46.5;"	14933	16234	14	
+KJ717942.1	Liftoff	exon	15031	16234	.	+	.	"transcript_id=UL46.5-S3;Name=UL46.5-S3;ID=UL46.5-S3;gene_id=UL46;ORF_id=UL46.5;"				
+KJ717942.1	Liftoff	transcript	15031	16234	.	+	.	"transcript_id=UL46.5-S3;Name=UL46.5-S3;ID=UL46.5-S3;gene_id=UL46;ORF_id=UL46.5;"	15031	16234	5	
+KJ717942.1	Liftoff	exon	14727	16234	.	+	.	"transcript_id=UL46.6;Name=UL46.6;ID=UL46.6;gene_id=UL46;ORF_id=UL46.6;"				
+KJ717942.1	Liftoff	transcript	14727	16234	.	+	.	"transcript_id=UL46.6;Name=UL46.6;ID=UL46.6;gene_id=UL46;ORF_id=UL46.6;"	14727	16234	4	
+KJ717942.1	Liftoff	exon	14785	16234	.	+	.	"transcript_id=UL46.6-S;Name=UL46.6-S;ID=UL46.6-S;gene_id=UL46;ORF_id=UL46.6;"				
+KJ717942.1	Liftoff	transcript	14785	16234	.	+	.	"transcript_id=UL46.6-S;Name=UL46.6-S;ID=UL46.6-S;gene_id=UL46;ORF_id=UL46.6;"	14785	16234	7	
+KJ717942.1	Liftoff	exon	14563	16234	.	+	.	"transcript_id=UL46.9;Name=UL46.9;ID=UL46.9;gene_id=UL46;ORF_id=UL46.9;"				
+KJ717942.1	Liftoff	transcript	14563	16234	.	+	.	"transcript_id=UL46.9;Name=UL46.9;ID=UL46.9;gene_id=UL46;ORF_id=UL46.9;"	14563	16234	9	
+KJ717942.1	Liftoff	exon	13947	16234	.	+	.	"transcript_id=UL46-L;Name=UL46-L;ID=UL46-L;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	13947	16234	.	+	.	"transcript_id=UL46-L;Name=UL46-L;ID=UL46-L;gene_id=UL46;ORF_id=UL46;"	13947	16234	1	
+KJ717942.1	Liftoff	exon	13796	16234	.	+	.	"transcript_id=UL46-L2;Name=UL46-L2;ID=UL46-L2;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	13796	16234	.	+	.	"transcript_id=UL46-L2;Name=UL46-L2;ID=UL46-L2;gene_id=UL46;ORF_id=UL46;"	13796	16234	2	
+KJ717942.1	Liftoff	exon	13749	16234	.	+	.	"transcript_id=UL46-L3;Name=UL46-L3;ID=UL46-L3;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	13749	16234	.	+	.	"transcript_id=UL46-L3;Name=UL46-L3;ID=UL46-L3;gene_id=UL46;ORF_id=UL46;"	13749	16234	3	
+KJ717942.1	Liftoff	exon	13572	16234	.	+	.	"transcript_id=UL46-L4;Name=UL46-L4;ID=UL46-L4;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	13572	16234	.	+	.	"transcript_id=UL46-L4;Name=UL46-L4;ID=UL46-L4;gene_id=UL46;ORF_id=UL46;"	13572	16234	2	
+KJ717942.1	Liftoff	exon	13542	16234	.	+	.	"transcript_id=UL46-L5;Name=UL46-L5;ID=UL46-L5;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	13542	16234	.	+	.	"transcript_id=UL46-L5;Name=UL46-L5;ID=UL46-L5;gene_id=UL46;ORF_id=UL46;"	13542	16234	7	
+KJ717942.1	Liftoff	exon	13524	16234	.	+	.	"transcript_id=UL46-L6;Name=UL46-L6;ID=UL46-L6;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	13524	16234	.	+	.	"transcript_id=UL46-L6;Name=UL46-L6;ID=UL46-L6;gene_id=UL46;ORF_id=UL46;"	13524	16234	12	
+KJ717942.1	Liftoff	exon	13180	16234	.	+	.	"transcript_id=UL46-L7;Name=UL46-L7;ID=UL46-L7;gene_id=UL46;ORF_id=UL46;"				
+KJ717942.1	Liftoff	transcript	13180	16234	.	+	.	"transcript_id=UL46-L7;Name=UL46-L7;ID=UL46-L7;gene_id=UL46;ORF_id=UL46;"	13180	16234	2	
+KJ717942.1	Liftoff	exon	12815	16234	.	+	.	"transcript_id=UL46-L8;Name=UL46-L8;ID=UL46-L8;gene_id=UL46;ORF_id=UL47.3;"				
+KJ717942.1	Liftoff	transcript	12815	16234	.	+	.	"transcript_id=UL46-L8;Name=UL46-L8;ID=UL46-L8;gene_id=UL46;ORF_id=UL47.3;"	12815	16234	5	
+KJ717942.1	Liftoff	exon	12397	16234	.	+	.	"transcript_id=UL46-L9;Name=UL46-L9;ID=UL46-L9;gene_id=UL46;ORF_id=UL47.3;"				
+KJ717942.1	Liftoff	transcript	12397	16234	.	+	.	"transcript_id=UL46-L9;Name=UL46-L9;ID=UL46-L9;gene_id=UL46;ORF_id=UL47.3;"	12397	16234	7	
+KJ717942.1	Liftoff	exon	13169	14179	.	+	.	"transcript_id=UL47.3;Name=UL47.3;ID=UL47.3;gene_id=UL47;ORF_id=UL47.3;"				
+KJ717942.1	Liftoff	transcript	13169	14179	.	+	.	"transcript_id=UL47.3;Name=UL47.3;ID=UL47.3;gene_id=UL47;ORF_id=UL47.3;"	13169	14179	2	
+KJ717942.1	Liftoff	exon	11781	16234	.	+	.	"transcript_id=UL47-46;Name=UL47-46;ID=UL47-46;gene_id=UL47;ORF_id=UL47;"				
+KJ717942.1	Liftoff	transcript	11781	16234	.	+	.	"transcript_id=UL47-46;Name=UL47-46;ID=UL47-46;gene_id=UL47;ORF_id=UL47;"	11781	16234	25844	
+KJ717942.1	Liftoff	exon	10455	11900	.	+	.	"transcript_id=UL48;Name=UL48;ID=UL48;gene_id=UL48;ORF_id=UL48;"				
+KJ717942.1	Liftoff	transcript	10455	11900	.	+	.	"transcript_id=UL48;Name=UL48;ID=UL48;gene_id=UL48;ORF_id=UL48;"	10455	11900	117	
+KJ717942.1	Liftoff	exon	10419	16234	.	+	.	"transcript_id=UL48-47-46;Name=UL48-47-46;ID=UL48-47-46;gene_id=UL48;ORF_id=UL48;"				
+KJ717942.1	Liftoff	transcript	10419	16234	.	+	.	"transcript_id=UL48-47-46;Name=UL48-47-46;ID=UL48-47-46;gene_id=UL48;ORF_id=UL48;"	10419	16234	2930	
+KJ717942.1	Liftoff	exon	10419	12072	.	+	.	"transcript_id=UL48-L-AT;Name=UL48-L-AT;ID=UL48-L-AT;gene_id=UL48;ORF_id=UL48;"				
+KJ717942.1	Liftoff	transcript	10419	12072	.	+	.	"transcript_id=UL48-L-AT;Name=UL48-L-AT;ID=UL48-L-AT;gene_id=UL48;ORF_id=UL48;"	10419	12072	2930	
+KJ717942.1	Liftoff	exon	9637	10414	.	+	.	"transcript_id=UL49;Name=UL49;ID=UL49;gene_id=UL49;ORF_id=UL49;"				
+KJ717942.1	Liftoff	transcript	9637	10414	.	+	.	"transcript_id=UL49;Name=UL49;ID=UL49;gene_id=UL49;ORF_id=UL49;"	9637	10414	10470	
+KJ717942.1	Liftoff	exon	9690	10414	.	+	.	"transcript_id=UL49.1;Name=UL49.1;ID=UL49.1;gene_id=UL49;ORF_id=UL49.1;"				
+KJ717942.1	Liftoff	transcript	9690	10414	.	+	.	"transcript_id=UL49.1;Name=UL49.1;ID=UL49.1;gene_id=UL49;ORF_id=UL49.1;"	9690	10414	224	
+KJ717942.1	Liftoff	exon	9921	10414	.	+	.	"transcript_id=UL49.1-S;Name=UL49.1-S;ID=UL49.1-S;gene_id=UL49;ORF_id=UL49.1;"				
+KJ717942.1	Liftoff	transcript	9921	10414	.	+	.	"transcript_id=UL49.1-S;Name=UL49.1-S;ID=UL49.1-S;gene_id=UL49;ORF_id=UL49.1;"	9921	10414	201	
+KJ717942.1	Liftoff	exon	10063	10414	.	+	.	"transcript_id=UL49.1-S2;Name=UL49.1-S2;ID=UL49.1-S2;gene_id=UL49;ORF_id=UL49.1;"				
+KJ717942.1	Liftoff	transcript	10063	10414	.	+	.	"transcript_id=UL49.1-S2;Name=UL49.1-S2;ID=UL49.1-S2;gene_id=UL49;ORF_id=UL49.1;"	10063	10414	22	
+KJ717942.1	Liftoff	exon	10093	10414	.	+	.	"transcript_id=UL49.1-S3;Name=UL49.1-S3;ID=UL49.1-S3;gene_id=UL49;ORF_id=UL49.1;"				
+KJ717942.1	Liftoff	transcript	10093	10414	.	+	.	"transcript_id=UL49.1-S3;Name=UL49.1-S3;ID=UL49.1-S3;gene_id=UL49;ORF_id=UL49.1;"	10093	10414	115	
+KJ717942.1	Liftoff	exon	10123	10414	.	+	.	"transcript_id=UL49.1-S4;Name=UL49.1-S4;ID=UL49.1-S4;gene_id=UL49;ORF_id=UL49.1;"				
+KJ717942.1	Liftoff	transcript	10123	10414	.	+	.	"transcript_id=UL49.1-S4;Name=UL49.1-S4;ID=UL49.1-S4;gene_id=UL49;ORF_id=UL49.1;"	10123	10414	22	
+KJ717942.1	Liftoff	exon	10147	10414	.	+	.	"transcript_id=UL49.1-S5;Name=UL49.1-S5;ID=UL49.1-S5;gene_id=UL49;ORF_id=UL49.1;"				
+KJ717942.1	Liftoff	transcript	10147	10414	.	+	.	"transcript_id=UL49.1-S5;Name=UL49.1-S5;ID=UL49.1-S5;gene_id=UL49;ORF_id=UL49.1;"	10147	10414	43	
+KJ717942.1	Liftoff	exon	10240	10414	.	+	.	"transcript_id=UL49.1-S6;Name=UL49.1-S6;ID=UL49.1-S6;gene_id=UL49;ORF_id=UL49.1;"				
+KJ717942.1	Liftoff	transcript	10240	10414	.	+	.	"transcript_id=UL49.1-S6;Name=UL49.1-S6;ID=UL49.1-S6;gene_id=UL49;ORF_id=UL49.1;"	10240	10414	2	
+KJ717942.1	Liftoff	exon	9199	10414	.	+	.	"transcript_id=UL49.5-49;Name=UL49.5-49;ID=UL49.5-49;gene_id=UL49.5;ORF_id=UL49.5;"				
+KJ717942.1	Liftoff	transcript	9199	10414	.	+	.	"transcript_id=UL49.5-49;Name=UL49.5-49;ID=UL49.5-49;gene_id=UL49.5;ORF_id=UL49.5;"	9199	10414	6	
+KJ717942.1	Liftoff	exon	9104	16234	.	+	.	"transcript_id=UL49.5-49-48-47-46;Name=UL49.5-49-48-47-46;ID=UL49.5-49-48-47-46;gene_id=UL49.5;ORF_id=UL49.5;"				
+KJ717942.1	Liftoff	transcript	9104	16234	.	+	.	"transcript_id=UL49.5-49-48-47-46;Name=UL49.5-49-48-47-46;ID=UL49.5-49-48-47-46;gene_id=UL49.5;ORF_id=UL49.5;"	9104	16234	2869	
+KJ717942.1	Liftoff	exon	8890	10414	.	+	.	"transcript_id=UL49.5L-49;Name=UL49.5L-49;ID=UL49.5L-49;gene_id=UL49.5;ORF_id=UL49.5;"				
+KJ717942.1	Liftoff	transcript	8890	10414	.	+	.	"transcript_id=UL49.5L-49;Name=UL49.5L-49;ID=UL49.5L-49;gene_id=UL49.5;ORF_id=UL49.5;"	8890	10414	12	
+KJ717942.1	Liftoff	exon	9261	10414	.	+	.	"transcript_id=UL49.5-S-49;Name=UL49.5-S-49;ID=UL49.5-S-49;gene_id=UL49.5;ORF_id=UL49.5;"				
+KJ717942.1	Liftoff	transcript	9261	10414	.	+	.	"transcript_id=UL49.5-S-49;Name=UL49.5-S-49;ID=UL49.5-S-49;gene_id=UL49.5;ORF_id=UL49.5;"	9261	10414	5376	
+KJ717942.1	Liftoff	exon	9539	10414	.	+	.	"transcript_id=UL49-L;Name=UL49-L;ID=UL49-L;gene_id=UL49;ORF_id=UL49;"				
+KJ717942.1	Liftoff	transcript	9539	10414	.	+	.	"transcript_id=UL49-L;Name=UL49-L;ID=UL49-L;gene_id=UL49;ORF_id=UL49;"	9539	10414	154	
+KJ717942.1	Liftoff	exon	9403	10414	.	+	.	"transcript_id=UL49-L2;Name=UL49-L2;ID=UL49-L2;gene_id=UL49;ORF_id=UL49;"				
+KJ717942.1	Liftoff	transcript	9403	10414	.	+	.	"transcript_id=UL49-L2;Name=UL49-L2;ID=UL49-L2;gene_id=UL49;ORF_id=UL49;"	9403	10414	290	
+KJ717942.1	Liftoff	exon	9329	10414	.	+	.	"transcript_id=UL49-L3;Name=UL49-L3;ID=UL49-L3;gene_id=UL49;ORF_id=UL49;"				
+KJ717942.1	Liftoff	transcript	9329	10414	.	+	.	"transcript_id=UL49-L3;Name=UL49-L3;ID=UL49-L3;gene_id=UL49;ORF_id=UL49;"	9329	10414	11	
+KJ717942.1	Liftoff	exon	91907	92606	.	+	.	"transcript_id=UL4-L;Name=UL4-L;ID=UL4-L;gene_id=UL4;ORF_id=UL4;"				
+KJ717942.1	Liftoff	transcript	91907	92606	.	+	.	"transcript_id=UL4-L;Name=UL4-L;ID=UL4-L;gene_id=UL4;ORF_id=UL4;"	91907	92606	0	
+KJ717942.1	Liftoff	exon	91701	92606	.	+	.	"transcript_id=UL4-L2;Name=UL4-L2;ID=UL4-L2;gene_id=UL4;ORF_id=UL4;"				
+KJ717942.1	Liftoff	transcript	91701	92606	.	+	.	"transcript_id=UL4-L2;Name=UL4-L2;ID=UL4-L2;gene_id=UL4;ORF_id=UL4;"	91701	92606	2	
+KJ717942.1	Liftoff	exon	91479	92606	.	+	.	"transcript_id=UL4-L3;Name=UL4-L3;ID=UL4-L3;gene_id=UL4;ORF_id=UL4;"				
+KJ717942.1	Liftoff	transcript	91479	92606	.	+	.	"transcript_id=UL4-L3;Name=UL4-L3;ID=UL4-L3;gene_id=UL4;ORF_id=UL4;"	91479	92606	1	
+KJ717942.1	Liftoff	exon	90796	92606	.	+	.	"transcript_id=UL4-L4;Name=UL4-L4;ID=UL4-L4;gene_id=UL5;ORF_id=UL5.6;"				
+KJ717942.1	Liftoff	transcript	90796	92606	.	+	.	"transcript_id=UL4-L4;Name=UL4-L4;ID=UL4-L4;gene_id=UL5;ORF_id=UL5.6;"	90796	92606	1	
+KJ717942.1	Liftoff	exon	90430	92606	.	+	.	"transcript_id=UL4-L5;Name=UL4-L5;ID=UL4-L5;gene_id=UL5;ORF_id=UL5.5;"				
+KJ717942.1	Liftoff	transcript	90430	92606	.	+	.	"transcript_id=UL4-L5;Name=UL4-L5;ID=UL4-L5;gene_id=UL5;ORF_id=UL5.5;"	90430	92606	0	
+KJ717942.1	Liftoff	exon	89430	92106	.	+	.	"transcript_id=UL5;Name=UL5;ID=UL5;gene_id=UL5;ORF_id=UL5;"				
+KJ717942.1	Liftoff	transcript	89430	92106	.	+	.	"transcript_id=UL5;Name=UL5;ID=UL5;gene_id=UL5;ORF_id=UL5;"	89430	92106	0	
+KJ717942.1	Liftoff	exon	89680	92106	.	+	.	"transcript_id=UL5.3;Name=UL5.3;ID=UL5.3;gene_id=UL5;ORF_id=UL5.3;"				
+KJ717942.1	Liftoff	transcript	89680	92106	.	+	.	"transcript_id=UL5.3;Name=UL5.3;ID=UL5.3;gene_id=UL5;ORF_id=UL5.3;"	89680	92106	5	
+KJ717942.1	Liftoff	exon	90430	92106	.	+	.	"transcript_id=UL5.5;Name=UL5.5;ID=UL5.5;gene_id=UL5;ORF_id=UL5.5;"				
+KJ717942.1	Liftoff	transcript	90430	92106	.	+	.	"transcript_id=UL5.5;Name=UL5.5;ID=UL5.5;gene_id=UL5;ORF_id=UL5.5;"	90430	92106	0	
+KJ717942.1	Liftoff	exon	90796	92106	.	+	.	"transcript_id=UL5.6;Name=UL5.6;ID=UL5.6;gene_id=UL5;ORF_id=UL5.6;"				
+KJ717942.1	Liftoff	transcript	90796	92106	.	+	.	"transcript_id=UL5.6;Name=UL5.6;ID=UL5.6;gene_id=UL5;ORF_id=UL5.6;"	90796	92106	1	
+KJ717942.1	Liftoff	exon	8478	9485	.	-	.	"transcript_id=UL50;Name=UL50;ID=UL50;gene_id=UL50;ORF_id=UL50;"				
+KJ717942.1	Liftoff	transcript	8478	9485	.	-	.	"transcript_id=UL50;Name=UL50;ID=UL50;gene_id=UL50;ORF_id=UL50;"	9485	8478	581	
+KJ717942.1	Liftoff	exon	8478	9049	.	-	.	"transcript_id=UL50.1;Name=UL50.1;ID=UL50.1;gene_id=UL50;ORF_id=UL50.1;"				
+KJ717942.1	Liftoff	transcript	8478	9049	.	-	.	"transcript_id=UL50.1;Name=UL50.1;ID=UL50.1;gene_id=UL50;ORF_id=UL50.1;"	9049	8478	41	
+KJ717942.1	Liftoff	exon	8478	8988	.	-	.	"transcript_id=UL50.1-S;Name=UL50.1-S;ID=UL50.1-S;gene_id=UL50;ORF_id=UL50.1;"				
+KJ717942.1	Liftoff	transcript	8478	8988	.	-	.	"transcript_id=UL50.1-S;Name=UL50.1-S;ID=UL50.1-S;gene_id=UL50;ORF_id=UL50.1;"	8988	8478	9	
+KJ717942.1	Liftoff	exon	8588	10414	.	+	.	"transcript_id=UL50-49.5-49;Name=UL50-49.5-49;ID=UL50-49.5-49;gene_id=UL49.5;ORF_id=UL49.5;"				
+KJ717942.1	Liftoff	transcript	8588	10414	.	+	.	"transcript_id=UL50-49.5-49;Name=UL50-49.5-49;ID=UL50-49.5-49;gene_id=UL49.5;ORF_id=UL49.5;"	8588	10414	2	
+KJ717942.1	Liftoff	exon	8343	10414	.	+	.	"transcript_id=UL50-49.5-49-L;Name=UL50-49.5-49-L;ID=UL50-49.5-49-L;gene_id=UL49.5;ORF_id=UL49.5;"				
+KJ717942.1	Liftoff	transcript	8343	10414	.	+	.	"transcript_id=UL50-49.5-49-L;Name=UL50-49.5-49-L;ID=UL50-49.5-49-L;gene_id=UL49.5;ORF_id=UL49.5;"	8343	10414	2	
+KJ717942.1	Liftoff	exon	8478	9581	.	-	.	"transcript_id=UL50L;Name=UL50L;ID=UL50L;gene_id=UL50;ORF_id=UL50;"				
+KJ717942.1	Liftoff	transcript	8478	9581	.	-	.	"transcript_id=UL50L;Name=UL50L;ID=UL50L;gene_id=UL50;ORF_id=UL50;"	9581	8478	28	
+KJ717942.1	Liftoff	exon	8478	9743	.	-	.	"transcript_id=UL50-L3;Name=UL50-L3;ID=UL50-L3;gene_id=UL50;ORF_id=UL50;"				
+KJ717942.1	Liftoff	transcript	8478	9743	.	-	.	"transcript_id=UL50-L3;Name=UL50-L3;ID=UL50-L3;gene_id=UL50;ORF_id=UL50;"	9743	8478	1	
+KJ717942.1	Liftoff	exon	8478	9791	.	-	.	"transcript_id=UL50-L4;Name=UL50-L4;ID=UL50-L4;gene_id=UL50;ORF_id=UL50;"				
+KJ717942.1	Liftoff	transcript	8478	9791	.	-	.	"transcript_id=UL50-L4;Name=UL50-L4;ID=UL50-L4;gene_id=UL50;ORF_id=UL50;"	9791	8478	16	
+KJ717942.1	Liftoff	exon	8478	9205	.	-	.	"transcript_id=UL50S;Name=UL50S;ID=UL50S;gene_id=UL50;ORF_id=UL50;"				
+KJ717942.1	Liftoff	transcript	8478	9205	.	-	.	"transcript_id=UL50S;Name=UL50S;ID=UL50S;gene_id=UL50;ORF_id=UL50;"	9205	8478	64	
+KJ717942.1	Liftoff	exon	7579	8514	.	+	.	"transcript_id=UL51;Name=UL51;ID=UL51;gene_id=UL51;ORF_id=UL51;"				
+KJ717942.1	Liftoff	transcript	7579	8514	.	+	.	"transcript_id=UL51;Name=UL51;ID=UL51;gene_id=UL51;ORF_id=UL51;"	7579	8514	280	
+KJ717942.1	Liftoff	exon	7802	8514	.	+	.	"transcript_id=UL51.5;Name=UL51.5;ID=UL51.5;gene_id=UL51;ORF_id=UL51.5;"				
+KJ717942.1	Liftoff	transcript	7802	8514	.	+	.	"transcript_id=UL51.5;Name=UL51.5;ID=UL51.5;gene_id=UL51;ORF_id=UL51.5;"	7802	8514	30	
+KJ717942.1	Liftoff	exon	7579	10414	.	+	.	"transcript_id=UL51-50-49.5-49;Name=UL51-50-49.5-49;ID=UL51-50-49.5-49;gene_id=UL51;ORF_id=UL51;"				
+KJ717942.1	Liftoff	transcript	7579	10414	.	+	.	"transcript_id=UL51-50-49.5-49;Name=UL51-50-49.5-49;ID=UL51-50-49.5-49;gene_id=UL51;ORF_id=UL51;"	7579	10414	280	
+KJ717942.1	Liftoff	exon	4639	8517	.	-	.	"transcript_id=UL51-52;Name=UL51-52;ID=UL51-52;gene_id=UL52;ORF_id=UL52;"				
+KJ717942.1	Liftoff	transcript	4639	8517	.	-	.	"transcript_id=UL51-52;Name=UL51-52;ID=UL51-52;gene_id=UL52;ORF_id=UL52;"	8517	4639	1	
+KJ717942.1	Liftoff	exon	7466	10414	.	+	.	"transcript_id=UL51L-50-49.5-49;Name=UL51L-50-49.5-49;ID=UL51L-50-49.5-49;gene_id=UL51;ORF_id=UL51;"				
+KJ717942.1	Liftoff	transcript	7466	10414	.	+	.	"transcript_id=UL51L-50-49.5-49;Name=UL51L-50-49.5-49;ID=UL51L-50-49.5-49;gene_id=UL51;ORF_id=UL51;"	7466	10414	4	
+KJ717942.1	Liftoff	exon	2769	7749	.	-	.	"transcript_id=UL52-53-54;Name=UL52-53-54;ID=UL52-53-54;gene_id=UL52;ORF_id=UL52;"				
+KJ717942.1	Liftoff	transcript	2769	7749	.	-	.	"transcript_id=UL52-53-54;Name=UL52-53-54;ID=UL52-53-54;gene_id=UL52;ORF_id=UL52;"	7749	2769	15	
+KJ717942.1	Liftoff	exon	2769	4916	.	-	.	"transcript_id=UL53-54;Name=UL53-54;ID=UL53-54;gene_id=UL53;ORF_id=UL53;"				
+KJ717942.1	Liftoff	transcript	2769	4916	.	-	.	"transcript_id=UL53-54;Name=UL53-54;ID=UL53-54;gene_id=UL53;ORF_id=UL53;"	4916	2769	211	
+KJ717942.1	Liftoff	exon	2769	5960	.	-	.	"transcript_id=UL53L-54;Name=UL53L-54;ID=UL53L-54;gene_id=UL53;ORF_id=UL53;"				
+KJ717942.1	Liftoff	transcript	2769	5960	.	-	.	"transcript_id=UL53L-54;Name=UL53L-54;ID=UL53L-54;gene_id=UL53;ORF_id=UL53;"	5960	2769	0	
+KJ717942.1	Liftoff	exon	2769	3901	.	-	.	"transcript_id=UL54;Name=UL54;ID=UL54;gene_id=UL54;ORF_id=UL54;"				
+KJ717942.1	Liftoff	transcript	2769	3901	.	-	.	"transcript_id=UL54;Name=UL54;ID=UL54;gene_id=UL54;ORF_id=UL54;"	3901	2769	83	
+KJ717942.1	Liftoff	exon	89432	92605	.	+	.	"transcript_id=UL5-4;Name=UL5-4;ID=UL5-4;gene_id=UL5;ORF_id=UL5;"				
+KJ717942.1	Liftoff	transcript	89432	92605	.	+	.	"transcript_id=UL5-4;Name=UL5-4;ID=UL5-4;gene_id=UL5;ORF_id=UL5;"	89432	92605	0	
+KJ717942.1	Liftoff	exon	2769	3272	.	-	.	"transcript_id=UL54.3;Name=UL54.3;ID=UL54.3;gene_id=UL54;ORF_id=UL54.3;"				
+KJ717942.1	Liftoff	transcript	2769	3272	.	-	.	"transcript_id=UL54.3;Name=UL54.3;ID=UL54.3;gene_id=UL54;ORF_id=UL54.3;"	3272	2769	7	
+KJ717942.1	Liftoff	exon	2769	3163	.	-	.	"transcript_id=UL54.3-S;Name=UL54.3-S;ID=UL54.3-S;gene_id=UL54;ORF_id=UL54.3;"				
+KJ717942.1	Liftoff	transcript	2769	3163	.	-	.	"transcript_id=UL54.3-S;Name=UL54.3-S;ID=UL54.3-S;gene_id=UL54;ORF_id=UL54.3;"	3163	2769	6	
+KJ717942.1	Liftoff	exon	2769	3132	.	-	.	"transcript_id=UL54.3-S2;Name=UL54.3-S2;ID=UL54.3-S2;gene_id=UL54;ORF_id=UL54.3;"				
+KJ717942.1	Liftoff	transcript	2769	3132	.	-	.	"transcript_id=UL54.3-S2;Name=UL54.3-S2;ID=UL54.3-S2;gene_id=UL54;ORF_id=UL54.3;"	3132	2769	4	
+KJ717942.1	Liftoff	exon	2769	3342	.	-	.	"transcript_id=UL54.4;Name=UL54.4;ID=UL54.4;gene_id=UL54;ORF_id=UL54.4;"				
+KJ717942.1	Liftoff	transcript	2769	3342	.	-	.	"transcript_id=UL54.4;Name=UL54.4;ID=UL54.4;gene_id=UL54;ORF_id=UL54.4;"	3342	2769	20	
+KJ717942.1	Liftoff	exon	2769	3744	.	-	.	"transcript_id=UL54.5;Name=UL54.5;ID=UL54.5;gene_id=UL54;ORF_id=UL54.5;"				
+KJ717942.1	Liftoff	transcript	2769	3744	.	-	.	"transcript_id=UL54.5;Name=UL54.5;ID=UL54.5;gene_id=UL54;ORF_id=UL54.5;"	3744	2769	2	
+KJ717942.1	Liftoff	exon	2769	3631	.	-	.	"transcript_id=UL54.5-S;Name=UL54.5-S;ID=UL54.5-S;gene_id=UL54;ORF_id=UL54.5;"				
+KJ717942.1	Liftoff	transcript	2769	3631	.	-	.	"transcript_id=UL54.5-S;Name=UL54.5-S;ID=UL54.5-S;gene_id=UL54;ORF_id=UL54.5;"	3631	2769	4	
+KJ717942.1	Liftoff	exon	2769	3420	.	-	.	"transcript_id=UL54.5-S2;Name=UL54.5-S2;ID=UL54.5-S2;gene_id=UL54;ORF_id=UL54.5;"				
+KJ717942.1	Liftoff	transcript	2769	3420	.	-	.	"transcript_id=UL54.5-S2;Name=UL54.5-S2;ID=UL54.5-S2;gene_id=UL54;ORF_id=UL54.5;"	3420	2769	8	
+KJ717942.1	Liftoff	exon	2769	4678	.	-	.	"transcript_id=UL54-L;Name=UL54-L;ID=UL54-L;gene_id=UL54;ORF_id=UL54;"				
+KJ717942.1	Liftoff	transcript	2769	4678	.	-	.	"transcript_id=UL54-L;Name=UL54-L;ID=UL54-L;gene_id=UL54;ORF_id=UL54;"	4678	2769	4	
+KJ717942.1	Liftoff	exon	89680	92606	.	+	.	"transcript_id=UL5-4-M;Name=UL5-4-M;ID=UL5-4-M;gene_id=UL5;ORF_id=UL5.3;"				
+KJ717942.1	Liftoff	transcript	89680	92606	.	+	.	"transcript_id=UL5-4-M;Name=UL5-4-M;ID=UL5-4-M;gene_id=UL5;ORF_id=UL5.3;"	89680	92606	5	
+KJ717942.1	Liftoff	exon	90928	92606	.	+	.	"transcript_id=UL5-4-S;Name=UL5-4-S;ID=UL5-4-S;gene_id=UL5;ORF_id=UL5;"				
+KJ717942.1	Liftoff	transcript	90928	92606	.	+	.	"transcript_id=UL5-4-S;Name=UL5-4-S;ID=UL5-4-S;gene_id=UL5;ORF_id=UL5;"	90928	92606	2	
+KJ717942.1	Liftoff	exon	90928	92602	.	+	.	"transcript_id=UL-5-4-S;Name=UL-5-4-S;ID=UL-5-4-S;gene_id=UL5;ORF_id=UL5;"				
+KJ717942.1	Liftoff	transcript	90928	92602	.	+	.	"transcript_id=UL-5-4-S;Name=UL-5-4-S;ID=UL-5-4-S;gene_id=UL5;ORF_id=UL5;"	90928	92602	2	
+KJ717942.1	Liftoff	exon	88702	92606	.	+	.	"transcript_id=UL5L2-4;Name=UL5L2-4;ID=UL5L2-4;gene_id=UL5;ORF_id=UL5;"				
+KJ717942.1	Liftoff	transcript	88702	92606	.	+	.	"transcript_id=UL5L2-4;Name=UL5L2-4;ID=UL5L2-4;gene_id=UL5;ORF_id=UL5;"	88702	92606	0	
+KJ717942.1	Liftoff	exon	86678	89626	.	-	.	"transcript_id=UL6-7;Name=UL6-7;ID=UL6-7;gene_id=UL6;ORF_id=UL6;"				
+KJ717942.1	Liftoff	transcript	86678	89626	.	-	.	"transcript_id=UL6-7;Name=UL6-7;ID=UL6-7;gene_id=UL6;ORF_id=UL6;"	89626	86678	18	
+KJ717942.1	Liftoff	exon	86678	91422	.	-	.	"transcript_id=UL6L-7;Name=UL6L-7;ID=UL6L-7;gene_id=UL6;ORF_id=UL6;"				
+KJ717942.1	Liftoff	transcript	86678	91422	.	-	.	"transcript_id=UL6L-7;Name=UL6L-7;ID=UL6L-7;gene_id=UL6;ORF_id=UL6;"	91422	86678	4	
+KJ717942.1	Liftoff	exon	86678	87708	.	-	.	"transcript_id=UL7;Name=UL7;ID=UL7;gene_id=UL7;ORF_id=UL7;"				
+KJ717942.1	Liftoff	transcript	86678	87708	.	-	.	"transcript_id=UL7;Name=UL7;ID=UL7;gene_id=UL7;ORF_id=UL7;"	87708	86678	3	
+KJ717942.1	Liftoff	exon	86678	87475	.	-	.	"transcript_id=UL7.5;Name=UL7.5;ID=UL7.5;gene_id=UL7;ORF_id=UL7.5;"				
+KJ717942.1	Liftoff	transcript	86678	87475	.	-	.	"transcript_id=UL7.5;Name=UL7.5;ID=UL7.5;gene_id=UL7;ORF_id=UL7.5;"	87475	86678	1	
+KJ717942.1	Liftoff	exon	86678	87797	.	-	.	"transcript_id=UL7-L2;Name=UL7-L2;ID=UL7-L2;gene_id=UL7;ORF_id=UL7;"				
+KJ717942.1	Liftoff	transcript	86678	87797	.	-	.	"transcript_id=UL7-L2;Name=UL7-L2;ID=UL7-L2;gene_id=UL7;ORF_id=UL7;"	87797	86678	1	
+KJ717942.1	Liftoff	exon	86678	87994	.	-	.	"transcript_id=UL7-L3;Name=UL7-L3;ID=UL7-L3;gene_id=UL7;ORF_id=UL7;"				
+KJ717942.1	Liftoff	transcript	86678	87994	.	-	.	"transcript_id=UL7-L3;Name=UL7-L3;ID=UL7-L3;gene_id=UL7;ORF_id=UL7;"	87994	86678	7	
+KJ717942.1	Liftoff	exon	86678	88411	.	-	.	"transcript_id=UL7-L4;Name=UL7-L4;ID=UL7-L4;gene_id=UL7;ORF_id=UL7;"				
+KJ717942.1	Liftoff	transcript	86678	88411	.	-	.	"transcript_id=UL7-L4;Name=UL7-L4;ID=UL7-L4;gene_id=UL7;ORF_id=UL7;"	88411	86678	2	
+KJ717942.1	Liftoff	exon	84520	86712	.	+	.	"transcript_id=UL8;Name=UL8;ID=UL8;gene_id=UL8;ORF_id=UL8;"				
+KJ717942.1	Liftoff	transcript	84520	86712	.	+	.	"transcript_id=UL8;Name=UL8;ID=UL8;gene_id=UL8;ORF_id=UL8;"	84520	86712	0	
+KJ717942.1	Liftoff	exon	85649	86712	.	+	.	"transcript_id=UL8.5;Name=UL8.5;ID=UL8.5;gene_id=UL8;ORF_id=UL8.5;"				
+KJ717942.1	Liftoff	transcript	85649	86712	.	+	.	"transcript_id=UL8.5;Name=UL8.5;ID=UL8.5;gene_id=UL8;ORF_id=UL8.5;"	85649	86712	0	
+KJ717942.1	Liftoff	exon	86152	86712	.	+	.	"transcript_id=UL8.5-S;Name=UL8.5-S;ID=UL8.5-S;gene_id=UL8;ORF_id=UL8.5;"				
+KJ717942.1	Liftoff	transcript	86152	86712	.	+	.	"transcript_id=UL8.5-S;Name=UL8.5-S;ID=UL8.5-S;gene_id=UL8;ORF_id=UL8.5;"	86152	86712	0	
+KJ717942.1	Liftoff	exon	86221	86712	.	+	.	"transcript_id=UL8.5-S2;Name=UL8.5-S2;ID=UL8.5-S2;gene_id=UL8;ORF_id=UL8.5;"				
+KJ717942.1	Liftoff	transcript	86221	86712	.	+	.	"transcript_id=UL8.5-S2;Name=UL8.5-S2;ID=UL8.5-S2;gene_id=UL8;ORF_id=UL8.5;"	86221	86712	2	
+KJ717942.1	Liftoff	exon	84337	86712	.	+	.	"transcript_id=UL8-L;Name=UL8-L;ID=UL8-L;gene_id=UL8;ORF_id=UL8;"				
+KJ717942.1	Liftoff	transcript	84337	86712	.	+	.	"transcript_id=UL8-L;Name=UL8-L;ID=UL8-L;gene_id=UL8;ORF_id=UL8;"	84337	86712	0	
+KJ717942.1	Liftoff	exon	83054	86712	.	+	.	"transcript_id=UL8-L2;Name=UL8-L2;ID=UL8-L2;gene_id=UL8;ORF_id=UL8;"				
+KJ717942.1	Liftoff	transcript	83054	86712	.	+	.	"transcript_id=UL8-L2;Name=UL8-L2;ID=UL8-L2;gene_id=UL8;ORF_id=UL8;"	83054	86712	1	
+KJ717942.1	Liftoff	exon	81636	86712	.	+	.	"transcript_id=UL9L-8;Name=UL9L-8;ID=UL9L-8;gene_id=UL9;ORF_id=UL9;"				
+KJ717942.1	Liftoff	transcript	81636	86712	.	+	.	"transcript_id=UL9L-8;Name=UL9L-8;ID=UL9L-8;gene_id=UL9;ORF_id=UL9;"	81636	86712	0	
+KJ717942.1	Liftoff	exon	115437	117407	.	+	.	"transcript_id=US1;Name=US1;ID=US1;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115437	117407	.	+	.	"transcript_id=US1;Name=US1;ID=US1;gene_id=US1;ORF_id=US1;"	115437	117407	2	
+KJ717942.1	Liftoff	exon	127330	129300	.	-	.	"transcript_id=US1_2;Name=US1_2;ID=US1_2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127330	129300	.	-	.	"transcript_id=US1_2;Name=US1_2;ID=US1_2;gene_id=US1_2;ORF_id=US1_2;"	129300	127330	0	
+KJ717942.1	Liftoff	exon	127329	128814	.	-	.	"transcript_id=US1_2-splice;Name=US1_2-splice;ID=US1_2-splice;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128971	129023	.	-	.	"transcript_id=US1_2-splice;Name=US1_2-splice;ID=US1_2-splice;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	129145	129299	.	-	.	"transcript_id=US1_2-splice;Name=US1_2-splice;ID=US1_2-splice;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127329	129299	.	-	.	"transcript_id=US1_2-splice;Name=US1_2-splice;ID=US1_2-splice;gene_id=US1_2;ORF_id=US1_2;"	129299	127329	0	
+KJ717942.1	Liftoff	exon	127329	128552	.	-	.	"transcript_id=US1_2-splice-2;Name=US1_2-splice-2;ID=US1_2-splice-2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128709	129037	.	-	.	"transcript_id=US1_2-splice-2;Name=US1_2-splice-2;ID=US1_2-splice-2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127329	129037	.	-	.	"transcript_id=US1_2-splice-2;Name=US1_2-splice-2;ID=US1_2-splice-2;gene_id=US1_2;ORF_id=US1_2;"	129037	127329	0	
+KJ717942.1	Liftoff	exon	127329	128552	.	-	.	"transcript_id=US1_2-splice-3;Name=US1_2-splice-3;ID=US1_2-splice-3;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128842	129037	.	-	.	"transcript_id=US1_2-splice-3;Name=US1_2-splice-3;ID=US1_2-splice-3;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127329	129037	.	-	.	"transcript_id=US1_2-splice-3;Name=US1_2-splice-3;ID=US1_2-splice-3;gene_id=US1_2;ORF_id=US1_2;"	129037	127329	0	
+KJ717942.1	Liftoff	exon	127329	128553	.	-	.	"transcript_id=US1_2-splice-4;Name=US1_2-splice-4;ID=US1_2-splice-4;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128836	129037	.	-	.	"transcript_id=US1_2-splice-4;Name=US1_2-splice-4;ID=US1_2-splice-4;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127329	129037	.	-	.	"transcript_id=US1_2-splice-4;Name=US1_2-splice-4;ID=US1_2-splice-4;gene_id=US1_2;ORF_id=US1_2;"	129037	127329	0	
+KJ717942.1	Liftoff	exon	127329	128761	.	-	.	"transcript_id=US1_2-splice-5;Name=US1_2-splice-5;ID=US1_2-splice-5;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128883	129037	.	-	.	"transcript_id=US1_2-splice-5;Name=US1_2-splice-5;ID=US1_2-splice-5;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127329	129037	.	-	.	"transcript_id=US1_2-splice-5;Name=US1_2-splice-5;ID=US1_2-splice-5;gene_id=US1_2;ORF_id=US1_2;"	129037	127329	0	
+KJ717942.1	Liftoff	exon	127329	128552	.	-	.	"transcript_id=US1_2-splice-6;Name=US1_2-splice-6;ID=US1_2-splice-6;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128853	129037	.	-	.	"transcript_id=US1_2-splice-6;Name=US1_2-splice-6;ID=US1_2-splice-6;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127329	129037	.	-	.	"transcript_id=US1_2-splice-6;Name=US1_2-splice-6;ID=US1_2-splice-6;gene_id=US1_2;ORF_id=US1_2;"	129037	127329	0	
+KJ717942.1	Liftoff	exon	127329	129189	.	-	.	"transcript_id=US1_2-splice-L;Name=US1_2-splice-L;ID=US1_2-splice-L;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	127329	128552	.	-	.	"transcript_id=US1_2-splice-L;Name=US1_2-splice-L;ID=US1_2-splice-L;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128709	128761	.	-	.	"transcript_id=US1_2-splice-L;Name=US1_2-splice-L;ID=US1_2-splice-L;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	128883	129189	.	-	.	"transcript_id=US1_2-splice-L;Name=US1_2-splice-L;ID=US1_2-splice-L;gene_id=US1_2;ORF_id=US1_2;"	129189	128883	0	
+KJ717942.1	Liftoff	exon	127329	128552	.	-	.	"transcript_id=US1_2-splice-L2;Name=US1_2-splice-L2;ID=US1_2-splice-L2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128709	128761	.	-	.	"transcript_id=US1_2-splice-L2;Name=US1_2-splice-L2;ID=US1_2-splice-L2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	exon	128883	130280	.	-	.	"transcript_id=US1_2-splice-L2;Name=US1_2-splice-L2;ID=US1_2-splice-L2;gene_id=US1_2;ORF_id=US1_2;"				
+KJ717942.1	Liftoff	transcript	127329	130280	.	-	.	"transcript_id=US1_2-splice-L2;Name=US1_2-splice-L2;ID=US1_2-splice-L2;gene_id=US1_2;ORF_id=US1_2;"	130280	127329	19	
+KJ717942.1	Liftoff	exon	115436	115590	.	+	.	"transcript_id=US1-splice;Name=US1-splice;ID=US1-splice;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115712	115764	.	+	.	"transcript_id=US1-splice;Name=US1-splice;ID=US1-splice;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115921	117406	.	+	.	"transcript_id=US1-splice;Name=US1-splice;ID=US1-splice;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115436	117406	.	+	.	"transcript_id=US1-splice;Name=US1-splice;ID=US1-splice;gene_id=US1;ORF_id=US1;"	115436	117406	2	
+KJ717942.1	Liftoff	exon	115437	115591	.	+	.	"transcript_id=US1-splice-2;Name=US1-splice-2;ID=US1-splice-2;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115713	117407	.	+	.	"transcript_id=US1-splice-2;Name=US1-splice-2;ID=US1-splice-2;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115437	117407	.	+	.	"transcript_id=US1-splice-2;Name=US1-splice-2;ID=US1-splice-2;gene_id=US1;ORF_id=US1;"	115437	117407	2	
+KJ717942.1	Liftoff	exon	115437	115638	.	+	.	"transcript_id=US1-splice-3;Name=US1-splice-3;ID=US1-splice-3;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115931	117407	.	+	.	"transcript_id=US1-splice-3;Name=US1-splice-3;ID=US1-splice-3;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115437	117407	.	+	.	"transcript_id=US1-splice-3;Name=US1-splice-3;ID=US1-splice-3;gene_id=US1;ORF_id=US1;"	115437	117407	2	
+KJ717942.1	Liftoff	exon	115437	115621	.	+	.	"transcript_id=US1-splice-4;Name=US1-splice-4;ID=US1-splice-4;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115922	117407	.	+	.	"transcript_id=US1-splice-4;Name=US1-splice-4;ID=US1-splice-4;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115437	117407	.	+	.	"transcript_id=US1-splice-4;Name=US1-splice-4;ID=US1-splice-4;gene_id=US1;ORF_id=US1;"	115437	117407	2	
+KJ717942.1	Liftoff	exon	115437	115632	.	+	.	"transcript_id=US1-splice-5;Name=US1-splice-5;ID=US1-splice-5;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115922	117407	.	+	.	"transcript_id=US1-splice-5;Name=US1-splice-5;ID=US1-splice-5;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115437	117407	.	+	.	"transcript_id=US1-splice-5;Name=US1-splice-5;ID=US1-splice-5;gene_id=US1;ORF_id=US1;"	115437	117407	2	
+KJ717942.1	Liftoff	exon	115437	115765	.	+	.	"transcript_id=US1-splice-6;Name=US1-splice-6;ID=US1-splice-6;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115922	117407	.	+	.	"transcript_id=US1-splice-6;Name=US1-splice-6;ID=US1-splice-6;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115437	117407	.	+	.	"transcript_id=US1-splice-6;Name=US1-splice-6;ID=US1-splice-6;gene_id=US1;ORF_id=US1;"	115437	117407	2	
+KJ717942.1	Liftoff	exon	114455	115590	.	+	.	"transcript_id=US1-splice-L;Name=US1-splice-L;ID=US1-splice-L;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115712	115764	.	+	.	"transcript_id=US1-splice-L;Name=US1-splice-L;ID=US1-splice-L;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115921	117406	.	+	.	"transcript_id=US1-splice-L;Name=US1-splice-L;ID=US1-splice-L;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	114455	117406	.	+	.	"transcript_id=US1-splice-L;Name=US1-splice-L;ID=US1-splice-L;gene_id=US1;ORF_id=US1;"	114455	117406	0	
+KJ717942.1	Liftoff	exon	115284	115590	.	+	.	"transcript_id=US1-splice-L2;Name=US1-splice-L2;ID=US1-splice-L2;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115712	115764	.	+	.	"transcript_id=US1-splice-L2;Name=US1-splice-L2;ID=US1-splice-L2;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	exon	115921	117406	.	+	.	"transcript_id=US1-splice-L2;Name=US1-splice-L2;ID=US1-splice-L2;gene_id=US1;ORF_id=US1;"				
+KJ717942.1	Liftoff	transcript	115284	117406	.	+	.	"transcript_id=US1-splice-L2;Name=US1-splice-L2;ID=US1-splice-L2;gene_id=US1;ORF_id=US1;"	115284	117406	2	
+KJ717942.1	Liftoff	exon	125795	126721	.	+	.	"transcript_id=US2;Name=US2;ID=US2;gene_id=US2;ORF_id=US2;"				
+KJ717942.1	Liftoff	transcript	125795	126721	.	+	.	"transcript_id=US2;Name=US2;ID=US2;gene_id=US2;ORF_id=US2;"	125795	126721	3	
+KJ717942.1	Liftoff	exon	125943	126721	.	+	.	"transcript_id=US2.3;Name=US2.3;ID=US2.3;gene_id=US2;ORF_id=US2.3;"				
+KJ717942.1	Liftoff	transcript	125943	126721	.	+	.	"transcript_id=US2.3;Name=US2.3;ID=US2.3;gene_id=US2;ORF_id=US2.3;"	125943	126721	31	
+KJ717942.1	Liftoff	exon	126000	126721	.	+	.	"transcript_id=US2.3-S;Name=US2.3-S;ID=US2.3-S;gene_id=US2;ORF_id=US2.3;"				
+KJ717942.1	Liftoff	transcript	126000	126721	.	+	.	"transcript_id=US2.3-S;Name=US2.3-S;ID=US2.3-S;gene_id=US2;ORF_id=US2.3;"	126000	126721	11	
+KJ717942.1	Liftoff	exon	126179	126721	.	+	.	"transcript_id=US2.3-S2;Name=US2.3-S2;ID=US2.3-S2;gene_id=US2;ORF_id=US2.3;"				
+KJ717942.1	Liftoff	transcript	126179	126721	.	+	.	"transcript_id=US2.3-S2;Name=US2.3-S2;ID=US2.3-S2;gene_id=US2;ORF_id=US2.3;"	126179	126721	0	
+KJ717942.1	Liftoff	exon	126299	126721	.	+	.	"transcript_id=US2.3-S3;Name=US2.3-S3;ID=US2.3-S3;gene_id=US2;ORF_id=US2.3;"				
+KJ717942.1	Liftoff	transcript	126299	126721	.	+	.	"transcript_id=US2.3-S3;Name=US2.3-S3;ID=US2.3-S3;gene_id=US2;ORF_id=US2.3;"	126299	126721	0	
+KJ717942.1	Liftoff	exon	125795	127019	.	+	.	"transcript_id=US2-AT;Name=US2-AT;ID=US2-AT;gene_id=US2;ORF_id=US2;"				
+KJ717942.1	Liftoff	transcript	125795	127019	.	+	.	"transcript_id=US2-AT;Name=US2-AT;ID=US2-AT;gene_id=US2;ORF_id=US2;"	125795	127019	3	
+KJ717942.1	Liftoff	exon	125675	126721	.	+	.	"transcript_id=US2-L;Name=US2-L;ID=US2-L;gene_id=US2;ORF_id=US2;"				
+KJ717942.1	Liftoff	transcript	125675	126721	.	+	.	"transcript_id=US2-L;Name=US2-L;ID=US2-L;gene_id=US2;ORF_id=US2;"	125675	126721	6	
+KJ717942.1	Liftoff	exon	118336	121045	.	+	.	"transcript_id=US3-4;Name=US3-4;ID=US3-4;gene_id=US3;ORF_id=US3;"				
+KJ717942.1	Liftoff	transcript	118336	121045	.	+	.	"transcript_id=US3-4;Name=US3-4;ID=US3-4;gene_id=US3;ORF_id=US3;"	118336	121045	4	
+KJ717942.1	Liftoff	exon	118176	121045	.	+	.	"transcript_id=US3-L-4;Name=US3-L-4;ID=US3-L-4;gene_id=US3;ORF_id=US3;"				
+KJ717942.1	Liftoff	transcript	118176	121045	.	+	.	"transcript_id=US3-L-4;Name=US3-L-4;ID=US3-L-4;gene_id=US3;ORF_id=US3;"	118176	121045	12	
+KJ717942.1	Liftoff	exon	119431	121045	.	+	.	"transcript_id=US4;Name=US4;ID=US4;gene_id=US4;ORF_id=US4;"				
+KJ717942.1	Liftoff	transcript	119431	121045	.	+	.	"transcript_id=US4;Name=US4;ID=US4;gene_id=US4;ORF_id=US4;"	119431	121045	84	
+KJ717942.1	Liftoff	exon	119569	121045	.	+	.	"transcript_id=US4.2;Name=US4.2;ID=US4.2;gene_id=US4;ORF_id=US4.2;"				
+KJ717942.1	Liftoff	transcript	119569	121045	.	+	.	"transcript_id=US4.2;Name=US4.2;ID=US4.2;gene_id=US4;ORF_id=US4.2;"	119569	121045	64	
+KJ717942.1	Liftoff	exon	119694	121045	.	+	.	"transcript_id=US4.3;Name=US4.3;ID=US4.3;gene_id=US4;ORF_id=US4.3;"				
+KJ717942.1	Liftoff	transcript	119694	121045	.	+	.	"transcript_id=US4.3;Name=US4.3;ID=US4.3;gene_id=US4;ORF_id=US4.3;"	119694	121045	35	
+KJ717942.1	Liftoff	exon	119788	121045	.	+	.	"transcript_id=US4.3-S;Name=US4.3-S;ID=US4.3-S;gene_id=US4;ORF_id=US4.3;"				
+KJ717942.1	Liftoff	transcript	119788	121045	.	+	.	"transcript_id=US4.3-S;Name=US4.3-S;ID=US4.3-S;gene_id=US4;ORF_id=US4.3;"	119788	121045	15	
+KJ717942.1	Liftoff	exon	119911	121045	.	+	.	"transcript_id=US4.5;Name=US4.5;ID=US4.5;gene_id=US4;ORF_id=US4.5;"				
+KJ717942.1	Liftoff	transcript	119911	121045	.	+	.	"transcript_id=US4.5;Name=US4.5;ID=US4.5;gene_id=US4;ORF_id=US4.5;"	119911	121045	39	
+KJ717942.1	Liftoff	exon	119971	121045	.	+	.	"transcript_id=US4.5-S;Name=US4.5-S;ID=US4.5-S;gene_id=US4;ORF_id=US4.5;"				
+KJ717942.1	Liftoff	transcript	119971	121045	.	+	.	"transcript_id=US4.5-S;Name=US4.5-S;ID=US4.5-S;gene_id=US4;ORF_id=US4.5;"	119971	121045	12	
+KJ717942.1	Liftoff	exon	120003	121045	.	+	.	"transcript_id=US4.5-S2;Name=US4.5-S2;ID=US4.5-S2;gene_id=US4;ORF_id=US4.5;"				
+KJ717942.1	Liftoff	transcript	120003	121045	.	+	.	"transcript_id=US4.5-S2;Name=US4.5-S2;ID=US4.5-S2;gene_id=US4;ORF_id=US4.5;"	120003	121045	162	
+KJ717942.1	Liftoff	exon	120067	121045	.	+	.	"transcript_id=US4.6;Name=US4.6;ID=US4.6;gene_id=US4;ORF_id=US4.6;"				
+KJ717942.1	Liftoff	transcript	120067	121045	.	+	.	"transcript_id=US4.6;Name=US4.6;ID=US4.6;gene_id=US4;ORF_id=US4.6;"	120067	121045	60	
+KJ717942.1	Liftoff	exon	120199	121045	.	+	.	"transcript_id=US4.6-S;Name=US4.6-S;ID=US4.6-S;gene_id=US4;ORF_id=US4.6;"				
+KJ717942.1	Liftoff	transcript	120199	121045	.	+	.	"transcript_id=US4.6-S;Name=US4.6-S;ID=US4.6-S;gene_id=US4;ORF_id=US4.6;"	120199	121045	55	
+KJ717942.1	Liftoff	exon	120648	121045	.	+	.	"transcript_id=US4.7;Name=US4.7;ID=US4.7;gene_id=US4;ORF_id=US4.7;"				
+KJ717942.1	Liftoff	transcript	120648	121045	.	+	.	"transcript_id=US4.7;Name=US4.7;ID=US4.7;gene_id=US4;ORF_id=US4.7;"	120648	121045	2	
+KJ717942.1	Liftoff	exon	120823	121045	.	+	.	"transcript_id=US4.7-S;Name=US4.7-S;ID=US4.7-S;gene_id=US4;ORF_id=US4.7;"				
+KJ717942.1	Liftoff	transcript	120823	121045	.	+	.	"transcript_id=US4.7-S;Name=US4.7-S;ID=US4.7-S;gene_id=US4;ORF_id=US4.7;"	120823	121045	10	
+KJ717942.1	Liftoff	exon	119431	123483	.	+	.	"transcript_id=US4-6-7;Name=US4-6-7;ID=US4-6-7;gene_id=US4;ORF_id=US4;"				
+KJ717942.1	Liftoff	transcript	119431	123483	.	+	.	"transcript_id=US4-6-7;Name=US4-6-7;ID=US4-6-7;gene_id=US4;ORF_id=US4;"	119431	123483	84	
+KJ717942.1	Liftoff	exon	119427	120911	.	-	.	"transcript_id=US4-AS1;Name=US4-AS1;ID=US4-AS1;gene_id=US4;ORF_id=US4;"				
+KJ717942.1	Liftoff	transcript	119427	120911	.	-	.	"transcript_id=US4-AS1;Name=US4-AS1;ID=US4-AS1;gene_id=US4;ORF_id=US4;"	120911	119427	5	
+KJ717942.1	Liftoff	exon	119431	121915	.	+	.	"transcript_id=US4-AT;Name=US4-AT;ID=US4-AT;gene_id=US4;ORF_id=US4;"				
+KJ717942.1	Liftoff	transcript	119431	121915	.	+	.	"transcript_id=US4-AT;Name=US4-AT;ID=US4-AT;gene_id=US4;ORF_id=US4;"	119431	121915	84	
+KJ717942.1	Liftoff	exon	119374	121045	.	+	.	"transcript_id=US4-L;Name=US4-L;ID=US4-L;gene_id=US4;ORF_id=US4;"				
+KJ717942.1	Liftoff	transcript	119374	121045	.	+	.	"transcript_id=US4-L;Name=US4-L;ID=US4-L;gene_id=US4;ORF_id=US4;"	119374	121045	18	
+KJ717942.1	Liftoff	exon	121123	122410	.	+	.	"transcript_id=US6;Name=US6;ID=US6;gene_id=US6;ORF_id=US6;"				
+KJ717942.1	Liftoff	transcript	121123	122410	.	+	.	"transcript_id=US6;Name=US6;ID=US6;gene_id=US6;ORF_id=US6;"	121123	122410	8	
+KJ717942.1	Liftoff	exon	121123	123483	.	+	.	"transcript_id=US6-7;Name=US6-7;ID=US6-7;gene_id=US6;ORF_id=US6;"				
+KJ717942.1	Liftoff	transcript	121123	123483	.	+	.	"transcript_id=US6-7;Name=US6-7;ID=US6-7;gene_id=US6;ORF_id=US6;"	121123	123483	8	
+KJ717942.1	Liftoff	exon	121123	126721	.	+	.	"transcript_id=US6-7-8-9-2;Name=US6-7-8-9-2;ID=US6-7-8-9-2;gene_id=US6;ORF_id=US6;"				
+KJ717942.1	Liftoff	transcript	121123	126721	.	+	.	"transcript_id=US6-7-8-9-2;Name=US6-7-8-9-2;ID=US6-7-8-9-2;gene_id=US6;ORF_id=US6;"	121123	126721	8	
+KJ717942.1	Liftoff	exon	122352	123483	.	+	.	"transcript_id=US7;Name=US7;ID=US7;gene_id=US7;ORF_id=US7;"				
+KJ717942.1	Liftoff	transcript	122352	123483	.	+	.	"transcript_id=US7;Name=US7;ID=US7;gene_id=US7;ORF_id=US7;"	122352	123483	2	
+KJ717942.1	Liftoff	exon	123266	123483	.	+	.	"transcript_id=US7.1;Name=US7.1;ID=US7.1;gene_id=US7;ORF_id=US7.1;"				
+KJ717942.1	Liftoff	transcript	123266	123483	.	+	.	"transcript_id=US7.1;Name=US7.1;ID=US7.1;gene_id=US7;ORF_id=US7.1;"	123266	123483	2	
+KJ717942.1	Liftoff	exon	122454	123483	.	+	.	"transcript_id=US7.3;Name=US7.3;ID=US7.3;gene_id=US7;ORF_id=US7.3;"				
+KJ717942.1	Liftoff	transcript	122454	123483	.	+	.	"transcript_id=US7.3;Name=US7.3;ID=US7.3;gene_id=US7;ORF_id=US7.3;"	122454	123483	42	
+KJ717942.1	Liftoff	exon	122826	123483	.	+	.	"transcript_id=US7.3-S;Name=US7.3-S;ID=US7.3-S;gene_id=US7;ORF_id=US7.3;"				
+KJ717942.1	Liftoff	transcript	122826	123483	.	+	.	"transcript_id=US7.3-S;Name=US7.3-S;ID=US7.3-S;gene_id=US7;ORF_id=US7.3;"	122826	123483	2	
+KJ717942.1	Liftoff	exon	123031	123483	.	+	.	"transcript_id=US7.3-S2;Name=US7.3-S2;ID=US7.3-S2;gene_id=US7;ORF_id=US7.3;"				
+KJ717942.1	Liftoff	transcript	123031	123483	.	+	.	"transcript_id=US7.3-S2;Name=US7.3-S2;ID=US7.3-S2;gene_id=US7;ORF_id=US7.3;"	123031	123483	1	
+KJ717942.1	Liftoff	exon	122352	125800	.	+	.	"transcript_id=US7-8-9;Name=US7-8-9;ID=US7-8-9;gene_id=US7;ORF_id=US7;"				
+KJ717942.1	Liftoff	transcript	122352	125800	.	+	.	"transcript_id=US7-8-9;Name=US7-8-9;ID=US7-8-9;gene_id=US7;ORF_id=US7;"	122352	125800	2	
+KJ717942.1	Liftoff	exon	122352	126721	.	+	.	"transcript_id=US7-8-9-2;Name=US7-8-9-2;ID=US7-8-9-2;gene_id=US7;ORF_id=US7;"				
+KJ717942.1	Liftoff	transcript	122352	126721	.	+	.	"transcript_id=US7-8-9-2;Name=US7-8-9-2;ID=US7-8-9-2;gene_id=US7;ORF_id=US7;"	122352	126721	2	
+KJ717942.1	Liftoff	exon	122351	127019	.	+	.	"transcript_id=US7-8-9-2-AT1;Name=US7-8-9-2-AT1;ID=US7-8-9-2-AT1;gene_id=US7;ORF_id=US7;"				
+KJ717942.1	Liftoff	transcript	122351	127019	.	+	.	"transcript_id=US7-8-9-2-AT1;Name=US7-8-9-2-AT1;ID=US7-8-9-2-AT1;gene_id=US7;ORF_id=US7;"	122351	127019	2	
+KJ717942.1	Liftoff	exon	121502	123483	.	+	.	"transcript_id=US7-L;Name=US7-L;ID=US7-L;gene_id=US7;ORF_id=US7;"				
+KJ717942.1	Liftoff	transcript	121502	123483	.	+	.	"transcript_id=US7-L;Name=US7-L;ID=US7-L;gene_id=US7;ORF_id=US7;"	121502	123483	6	
+KJ717942.1	Liftoff	exon	121626	123483	.	+	.	"transcript_id=US7-L2;Name=US7-L2;ID=US7-L2;gene_id=US7;ORF_id=US7;"				
+KJ717942.1	Liftoff	transcript	121626	123483	.	+	.	"transcript_id=US7-L2;Name=US7-L2;ID=US7-L2;gene_id=US7;ORF_id=US7;"	121626	123483	18	
+KJ717942.1	Liftoff	exon	122283	123483	.	+	.	"transcript_id=US7-L3;Name=US7-L3;ID=US7-L3;gene_id=US7;ORF_id=US7;"				
+KJ717942.1	Liftoff	transcript	122283	123483	.	+	.	"transcript_id=US7-L3;Name=US7-L3;ID=US7-L3;gene_id=US7;ORF_id=US7;"	122283	123483	10	
+KJ717942.1	Liftoff	exon	123547	125800	.	+	.	"transcript_id=US8-9;Name=US8-9;ID=US8-9;gene_id=US8;ORF_id=US8;"				
+KJ717942.1	Liftoff	transcript	123547	125800	.	+	.	"transcript_id=US8-9;Name=US8-9;ID=US8-9;gene_id=US8;ORF_id=US8;"	123547	125800	2	
+KJ717942.1	Liftoff	exon	123547	126721	.	+	.	"transcript_id=US8-9-2;Name=US8-9-2;ID=US8-9-2;gene_id=US8;ORF_id=US8;"				
+KJ717942.1	Liftoff	transcript	123547	126721	.	+	.	"transcript_id=US8-9-2;Name=US8-9-2;ID=US8-9-2;gene_id=US8;ORF_id=US8;"	123547	126721	2	
+KJ717942.1	Liftoff	exon	123547	127026	.	+	.	"transcript_id=US8-9-2-AT1;Name=US8-9-2-AT1;ID=US8-9-2-AT1;gene_id=US8;ORF_id=US8;"				
+KJ717942.1	Liftoff	transcript	123547	127026	.	+	.	"transcript_id=US8-9-2-AT1;Name=US8-9-2-AT1;ID=US8-9-2-AT1;gene_id=US8;ORF_id=US8;"	123547	127026	2	
+KJ717942.1	Liftoff	exon	123266	125800	.	+	.	"transcript_id=US8-L-US9;Name=US8-L-US9;ID=US8-L-US9;gene_id=US8;ORF_id=US8;"				
+KJ717942.1	Liftoff	transcript	123266	125800	.	+	.	"transcript_id=US8-L-US9;Name=US8-L-US9;ID=US8-L-US9;gene_id=US8;ORF_id=US8;"	123266	125800	2	
+KJ717942.1	Liftoff	exon	125327	125800	.	+	.	"transcript_id=US9;Name=US9;ID=US9;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	125327	125800	.	+	.	"transcript_id=US9;Name=US9;ID=US9;gene_id=US9;ORF_id=US9;"	125327	125800	53	
+KJ717942.1	Liftoff	exon	125443	125800	.	+	.	"transcript_id=US9.3;Name=US9.3;ID=US9.3;gene_id=US9;ORF_id=US9.3;"				
+KJ717942.1	Liftoff	transcript	125443	125800	.	+	.	"transcript_id=US9.3;Name=US9.3;ID=US9.3;gene_id=US9;ORF_id=US9.3;"	125443	125800	4	
+KJ717942.1	Liftoff	exon	125327	126721	.	+	.	"transcript_id=US9-2;Name=US9-2;ID=US9-2;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	125327	126721	.	+	.	"transcript_id=US9-2;Name=US9-2;ID=US9-2;gene_id=US9;ORF_id=US9;"	125327	126721	53	
+KJ717942.1	Liftoff	exon	125248	125800	.	+	.	"transcript_id=US9-L1;Name=US9-L1;ID=US9-L1;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	125248	125800	.	+	.	"transcript_id=US9-L1;Name=US9-L1;ID=US9-L1;gene_id=US9;ORF_id=US9;"	125248	125800	27	
+KJ717942.1	Liftoff	exon	124854	125800	.	+	.	"transcript_id=US9-L2;Name=US9-L2;ID=US9-L2;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	124854	125800	.	+	.	"transcript_id=US9-L2;Name=US9-L2;ID=US9-L2;gene_id=US9;ORF_id=US9;"	124854	125800	14	
+KJ717942.1	Liftoff	exon	124748	125800	.	+	.	"transcript_id=US9-L3;Name=US9-L3;ID=US9-L3;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	124748	125800	.	+	.	"transcript_id=US9-L3;Name=US9-L3;ID=US9-L3;gene_id=US9;ORF_id=US9;"	124748	125800	2807	
+KJ717942.1	Liftoff	exon	124446	125800	.	+	.	"transcript_id=US9-L4;Name=US9-L4;ID=US9-L4;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	124446	125800	.	+	.	"transcript_id=US9-L4;Name=US9-L4;ID=US9-L4;gene_id=US9;ORF_id=US9;"	124446	125800	13	
+KJ717942.1	Liftoff	exon	124348	125800	.	+	.	"transcript_id=US9-L5;Name=US9-L5;ID=US9-L5;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	124348	125800	.	+	.	"transcript_id=US9-L5;Name=US9-L5;ID=US9-L5;gene_id=US9;ORF_id=US9;"	124348	125800	41	
+KJ717942.1	Liftoff	exon	124128	125800	.	+	.	"transcript_id=US9-L6;Name=US9-L6;ID=US9-L6;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	124128	125800	.	+	.	"transcript_id=US9-L6;Name=US9-L6;ID=US9-L6;gene_id=US9;ORF_id=US9;"	124128	125800	1	
+KJ717942.1	Liftoff	exon	124970	126721	.	+	.	"transcript_id=US9-US2-L;Name=US9-US2-L;ID=US9-US2-L;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	124970	126721	.	+	.	"transcript_id=US9-US2-L;Name=US9-US2-L;ID=US9-US2-L;gene_id=US9;ORF_id=US9;"	124970	126721	11	
+KJ717942.1	Liftoff	exon	124392	126721	.	+	.	"transcript_id=US9-US2-L2;Name=US9-US2-L2;ID=US9-US2-L2;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	124392	126721	.	+	.	"transcript_id=US9-US2-L2;Name=US9-US2-L2;ID=US9-US2-L2;gene_id=US9;ORF_id=US9;"	124392	126721	94	
+KJ717942.1	Liftoff	exon	124155	126721	.	+	.	"transcript_id=US9-US2-L3;Name=US9-US2-L3;ID=US9-US2-L3;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	124155	126721	.	+	.	"transcript_id=US9-US2-L3;Name=US9-US2-L3;ID=US9-US2-L3;gene_id=US9;ORF_id=US9;"	124155	126721	2	
+KJ717942.1	Liftoff	exon	123882	126721	.	+	.	"transcript_id=US9-US2-L4;Name=US9-US2-L4;ID=US9-US2-L4;gene_id=US9;ORF_id=US9;"				
+KJ717942.1	Liftoff	transcript	123882	126721	.	+	.	"transcript_id=US9-US2-L4;Name=US9-US2-L4;ID=US9-US2-L4;gene_id=US9;ORF_id=US9;"	123882	126721	4	
+KJ717942.1	LoRTIA	mRNA	107830	109304	.	+	.	"transcript_id=NOIR1-L;Name=NOIR1-L;ID=NOIR1-L;gene_id=NOIR1;ORF_id=NOIR1;"	107830	109304	2	
+KJ717942.1	LoRTIA	exon	107830	109304	.	+	.	"transcript_id=NOIR1-L;Name=NOIR1-L;ID=NOIR1-L;gene_id=NOIR1;ORF_id=NOIR1;"				
+KJ717942.1	EMBL	gene	1579	2286	.	+	0	"Name=ORF-1;ID=cds-SOF05915.1;gene=ORF-1"				
+KJ717942.1	EMBL	gene	7549	8516	.	+	0	"Name=UL51;ID=cds-SOF05919.1;gene=UL51"				
+KJ717942.1	EMBL	gene	9072	10398	.	+	0	"Name=UL49.5;ID=cds-SOF05921.1;gene=UL49.5"				
+KJ717942.1	EMBL	gene	9606	10415	.	+	0	"Name=UL49;ID=cds-SOF05922.1;gene=UL49"				
+KJ717942.1	EMBL	gene	10389	16236	.	+	0	"Name=UL48;ID=cds-SOF05923.1;gene=UL48"				
+KJ717942.1	EMBL	gene	11752	16236	.	+	0	"Name=UL47;ID=cds-SOF05924.1;gene=UL47"				
+KJ717942.1	EMBL	gene	14020	16236	.	+	0	"Name=UL46;ID=cds-SOF05925.1;gene=UL46"				
+KJ717942.1	EMBL	gene	25603	28866	.	+	0	"Name=UL30;ID=cds-SOF05929.1;gene=UL30"				
+KJ717942.1	EMBL	gene	30985	32664	.	+	0	"Name=UL33;ID=cds-SOF05932.1;gene=UL33"				
+KJ717942.1	EMBL	gene	31328	32684	.	+	0	"Name=UL34;ID=cds-SOF05933.1;gene=UL34"				
+KJ717942.1	EMBL	gene	32275	32684	.	+	0	"Name=UL35;ID=cds-SOF05934.1;gene=UL35"				
+KJ717942.1	EMBL	gene	45270	46528	.	+	0	"Name=UL38;ID=cds-SOF05937.1;gene=UL38"				
+KJ717942.1	EMBL	gene	46696	50138	.	+	0	"Name=UL39;ID=cds-SOF05938.1;gene=UL39"				
+KJ717942.1	EMBL	gene	49026	50138	.	+	0	"Name=UL40;ID=cds-SOF05939.1;gene=UL40"				
+KJ717942.1	EMBL	gene	51683	52956	.	+	0	"Name=UL42;ID=cds-SOF05941.1;gene=UL42"				
+KJ717942.1	EMBL	gene	52954	54127	.	+	0	"Name=UL43;ID=cds-SOF05942.1;gene=UL43"				
+KJ717942.1	EMBL	gene	54143	55686	.	+	0	"Name=UL44;ID=cds-SOF05943.1;gene=UL44"				
+KJ717942.1	EMBL	gene	59672	60768	.	+	0	"Name=UL23;ID=cds-SOF05948.1;gene=UL23"				
+KJ717942.1	EMBL	gene	60720	62855	.	+	0	"Name=UL22;ID=cds-SOF05949.1;gene=UL22"				
+KJ717942.1	EMBL	gene	66282	66819	.	+	0	"Name=UL20;ID=cds-SOF05951.1;gene=UL20"				
+KJ717942.1	EMBL	gene	66813	71025	.	+	0	"Name=UL19;ID=cds-SOF05952.1;gene=UL19"				
+KJ717942.1	EMBL	gene	71004	72035	.	+	0	"Name=UL18;ID=cds-SOF05953.1;gene=UL18"				
+KJ717942.1	EMBL	gene	73232	76146	.	+	0	"Name=UL17;ID=cds-SOF05955.1;gene=UL17"				
+KJ717942.1	EMBL	gene	74874	76146	.	+	0	"Name=UL16;ID=cds-SOF05956.1;gene=UL16"				
+KJ717942.1	EMBL	gene	77135	80470	.	+	0	"Name=UL14;ID=cds-SOF05957.1;gene=UL14"				
+KJ717942.1	EMBL	gene	77442	80470	.	+	0	"Name=UL13;ID=cds-SOF05958.1;gene=UL13"				
+KJ717942.1	EMBL	gene	78492	80470	.	+	0	"Name=UL12;ID=cds-SOF05959.1;gene=UL12"				
+KJ717942.1	EMBL	gene	80254	80470	.	+	0	"Name=UL11;ID=cds-SOF05960.1;gene=UL11"				
+KJ717942.1	EMBL	gene	82053	86691	.	+	0	"Name=UL9;ID=cds-SOF05962.1;gene=UL9"				
+KJ717942.1	EMBL	gene	84492	86691	.	+	0	"Name=UL8;ID=cds-SOF05963.1;gene=UL8"				
+KJ717942.1	EMBL	gene	89405	92106	.	+	0	"Name=UL5;ID=cds-SOF05966.1;gene=UL5"				
+KJ717942.1	EMBL	gene	91927	92606	.	+	0	"Name=UL4;ID=cds-SOF05967.1;gene=UL4"				
+KJ717942.1	EMBL	gene	115407	117405	.	+	0	"Name=US1;ID=cds-SOF05974.1;gene=US1"				
+KJ717942.1	EMBL	gene	118307	121045	.	+	0	"Name=US3;ID=cds-SOF05975.1;gene=US3"				
+KJ717942.1	EMBL	gene	119400	121045	.	+	0	"Name=US4;ID=cds-SOF05976.1;gene=US4"				
+KJ717942.1	EMBL	gene	121093	123479	.	+	0	"Name=US6;ID=cds-SOF05977.1;gene=US6"				
+KJ717942.1	EMBL	gene	122322	123479	.	+	0	"Name=US7;ID=cds-SOF05978.1;gene=US7"				
+KJ717942.1	EMBL	gene	123518	125800	.	+	0	"Name=US8;ID=cds-SOF05979.1;gene=US8"				
+KJ717942.1	EMBL	gene	125297	125800	.	+	0	"Name=US9;ID=cds-SOF05980.1;gene=US9"				
+KJ717942.1	EMBL	gene	125764	126721	.	+	0	"Name=US2;ID=cds-SOF05981.1;gene=US2"				
+KJ717942.1	EMBL	gene	136749	141869	.	+	0	"Name=IE180;ID=cds-SOF05983.1;gene=IE180"				
+KJ717942.1	EMBL	gene	2768	3931	.	-	0	"Name=UL54;ID=cds-SOF05916.1;gene=UL54"				
+KJ717942.1	EMBL	gene	2768	4947	.	-	0	"Name=UL53;ID=cds-SOF05917.1;gene=UL53"				
+KJ717942.1	EMBL	gene	2768	7779	.	-	0	"Name=UL52;ID=cds-SOF05918.1;gene=UL52"				
+KJ717942.1	EMBL	gene	8477	9515	.	-	0	"Name=UL50;ID=cds-SOF05920.1;gene=UL50"				
+KJ717942.1	EMBL	gene	16868	19800	.	-	0	"Name=UL27;ID=cds-SOF05926.1;gene=UL27"				
+KJ717942.1	EMBL	gene	16868	21801	.	-	0	"Name=UL28;ID=cds-SOF05927.1;gene=UL28"				
+KJ717942.1	EMBL	gene	21775	25609	.	-	0	"Name=UL29;ID=cds-SOF05928.1;gene=UL29"				
+KJ717942.1	EMBL	gene	28692	29707	.	-	0	"Name=UL31;ID=cds-SOF05930.1;gene=UL31"				
+KJ717942.1	EMBL	gene	28962	31333	.	-	0	"Name=UL32;ID=cds-SOF05931.1;gene=UL32"				
+KJ717942.1	EMBL	gene	33127	42472	.	-	0	"Name=UL36;ID=cds-SOF05935.1;gene=UL36"				
+KJ717942.1	EMBL	gene	42494	45409	.	-	0	"Name=UL37;ID=cds-SOF05936.1;gene=UL37"				
+KJ717942.1	EMBL	gene	50547	51727	.	-	0	"Name=UL41;ID=cds-SOF05940.1;gene=UL41"				
+KJ717942.1	EMBL	gene	55795	56737	.	-	0	"Name=UL26.5;ID=cds-SOF05945.1;gene=UL26.5"				
+KJ717942.1	EMBL	gene	55795	57493	.	-	0	"Name=UL26;ID=cds-SOF05944.1;gene=UL26"				
+KJ717942.1	EMBL	gene	55795	59116	.	-	0	"Name=UL25;ID=cds-SOF05946.1;gene=UL25"				
+KJ717942.1	EMBL	gene	55795	59825	.	-	0	"Name=UL24;ID=cds-SOF05947.1;gene=UL24"				
+KJ717942.1	EMBL	gene	64643	66287	.	-	0	"Name=UL21;ID=cds-SOF05950.1;gene=UL21"				
+KJ717942.1	EMBL	gene	72051	77374	.	-	0	"Name=UL15;ID=cds-SOF05954.1;gene=UL15"				
+KJ717942.1	EMBL	gene	72051	77374	.	-	0	"Name=UL15;ID=cds-SOF05954.1;gene=UL15"				
+KJ717942.1	EMBL	gene	80906	82389	.	-	0	"Name=UL10;ID=cds-SOF05961.1;gene=UL10"				
+KJ717942.1	EMBL	gene	86697	87737	.	-	0	"Name=UL7;ID=cds-SOF05964.1;gene=UL7"				
+KJ717942.1	EMBL	gene	86697	89471	.	-	0	"Name=UL6;ID=cds-SOF05965.1;gene=UL6"				
+KJ717942.1	EMBL	gene	92618	93532	.	-	0	"Name=UL3.5;ID=cds-SOF05968.1;gene=UL3.5"				
+KJ717942.1	EMBL	gene	92618	94248	.	-	0	"Name=UL3;ID=cds-SOF05969.1;gene=UL3"				
+KJ717942.1	EMBL	gene	92618	95110	.	-	0	"Name=UL2;ID=cds-SOF05970.1;gene=UL2"				
+KJ717942.1	EMBL	gene	92618	95530	.	-	0	"Name=UL1;ID=cds-SOF05971.1;gene=UL1"				
+KJ717942.1	EMBL	gene	96418	97907	.	-	0	"Name=Ep0;ID=cds-SOF05972.1;gene=Ep0"				
+KJ717942.1	EMBL	gene	96418	97907	.	-	0	"Name=Ep0;ID=cds-SOF05972.1;gene=Ep0"				
+KJ717942.1	EMBL	gene	102868	107988	.	-	0	"Name=IE180_2;ID=cds-SOF05973.1_2;gene=IE180_2"				
+KJ717942.1	EMBL	gene	127332	129330	.	-	0	"Name=US1_2;ID=cds-SOF05982.1_2;gene=US1_2"				
