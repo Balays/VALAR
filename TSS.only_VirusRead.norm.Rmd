@@ -106,7 +106,7 @@ gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.s
 
 
 #### !!! Consider adapters!
-adapters <- 'prime3'
+adapters <- 'prime5'
 
 source('Gene.counts.R')
 
@@ -350,7 +350,7 @@ Time-dependent normalized ORF counts (based on TSSs and TES clusters)
 ### ORFs in samples calculated from TRS-B transcripts with and without leaders
 
 max_ncol <- 10
-row_multip <- 6
+row_multip <- 10
 col_multip <- 4
 
 breaks <- na.omit(unique(metafilt$Time)[order(unique(metafilt$Time))])

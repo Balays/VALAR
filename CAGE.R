@@ -1,10 +1,73 @@
 
+##
+### Import clusters
+CAGE_clusters <- fread('all.tagClusters.txt')
+colnames(CAGE_clusters)[2] <- 'seqnames'
+
+CAGE_clusters[,orientation := fifelse(strand == '+', 1, 0)]
+CAGE_clusters[,gene := paste0('CAGE_cluster_', .GRP), by=.(cluster)]
+CAGE_clusters[,strand := factor(strand, levels = c('+', '-', '*'))]
+
+CAGE_clusters[,prime5 := fifelse(strand == '+', start, end)][,prime3 := fifelse(strand == '+', end, start)]
+CAGE_clusters[,TSS.win.start := start]
+CAGE_clusters[,TSS.win.end   := end]
+CAGE_clusters[,TSS.win.size  := abs(TSS.win.end - TSS.win.start) + 1]
+
+### Import counts
+## TSSr Results
+CAGE_counts <- rbind(
+  data.table(readxl::read_xlsx('ALL.samples.TSS.orient.xlsx', 1)),
+  data.table(readxl::read_xlsx('ALL.samples.TSS.orient.xlsx', 2))
+)
+
+colnames(CAGE_counts)[1] <- 'seqnames'
+## melt
+CAGE_counts <- melt(CAGE_counts, 1:3, value.name = 'count', variable.name = 'sample')
+## Exclude unkown samples and sum
+CAGE_counts <- CAGE_counts[!grepl('unknown', sample), ]
+CAGE_counts <- CAGE_counts[!grepl('sum', sample), ]
+## cast
+CAGE_counts <- dcast.data.table(CAGE_counts, ... ~ sample, value.var = 'count')
+##
+CAGE_counts[,start := pos][, end := pos]
+
+### Merge
+CAGE_m <- foverlaps2(CAGE_counts, CAGE_clusters, minoverlap=1)
+
+CAGE_m[,start := pos]
+CAGE_m[,end   := pos]
+
+CAGE_m[,i.start := NULL]
+CAGE_m[,i.end   := NULL]
+CAGE_m[,width_x := NULL]
+CAGE_m[,width_y := NULL]
+CAGE_m[,overlap_size:= NULL]
+ 
+CAGE_m <- melt(CAGE_m, 1:19, value.name = 'count', variable.name = 'sample')
+
+cagefr.clust <- CAGE_m
+cagefr.clust[, score   := as.integer(tags)]
+cagefr.clust[, support := sum(!is.0(count)), by=.(sample, gene)]
+
+cagefr.clust[,width := TSS.win.size]
+cagefr.clust[,TSS.win.size := NULL]
+
+CAGE_m <- dcast.data.table(cagefr.clust, ... ~ sample, value.var = 'count', fill=0)
+
+cagefr.clust[,sample := NULL] [,count := NULL][, pos := NULL]
+cagefr.clust[,start := TSS.win.start]
+cagefr.clust[,end   := TSS.win.end]
+
+cagefr.clust <- unique(cagefr.clust)
+
+
+##
 library(rtracklayer)
 
 
 ## fastq read counts
 pattern <- '*.fastq'
-fastq_dir   <- '../CAGE/fastq'
+fastq_dir   <- 'D:/data/PRV_3cell/CAGE/fastq'
 fastq_files <- list.files(fastq_dir, pattern, full.names = T)
 fastq_seqlengths <- purrr::map(fastq_files, fastq.seqlengths)
 names(fastq_seqlengths) <- gsub(pattern, '', gsub(paste0(fastq_dir, '/'), '', fastq_files))
@@ -12,7 +75,7 @@ fastq_readcounts <- lapply(fastq_seqlengths, length)
 fastq_readcounts <- data.frame(sample = names(fastq_readcounts), read_count = t(as.data.frame(fastq_readcounts)), row.names = NULL)
 fastq_readcounts
 
-CAGEfightR <- fread('../CAGE/Gmail/CAGEPRV1.tsv')[,-1]
+CAGEfightR <- fread('D:/data/PRV_3cell/CAGE/Gmail/CAGEPRV1.tsv')[,-1]
 CAGEfightR[,orientation := fifelse(strand == '+', 1, 0)]
 CAGEfightR[,gene := paste0('CAGE_cluster_', .GRP), by=.(thick.names)]
 CAGEfightR[,strand := factor(strand, levels = c('+', '-', '*'))]
@@ -25,7 +88,7 @@ cagefr.clust[,TSS.win.end   := end]
 
 
 #TR.CAGE <- data.table(as.data.frame(readGFF('../CAGE/Gmail/LT934125.1-2 (1).gff3')))
-TR.CAGE <- fread('../CAGE/Gmail/LT934125.1-2 (1).gff3')
+TR.CAGE <- fread('D:/data/PRV_3cell/CAGE/Gmail/LT934125.1-2 (1).gff3')
 TR.CAGE <- TR.CAGE[,-12]
 colnames(TR.CAGE) <- c('seqnames', 'source', 'type', 'start', 'end', 'score', 'strand', 'phase', 'attributes', 'category', 'gene', 'CAGE')
 TR.CAGE[,CAGE := as.logical(CAGE)]

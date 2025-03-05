@@ -350,7 +350,7 @@ Time-dependent normalized ORF counts (based on TSSs and TES clusters)
 ### ORFs in samples calculated from TRS-B transcripts with and without leaders
 
 max_ncol <- 10
-row_multip <- 6
+row_multip <- 10
 col_multip <- 4
 
 breaks <- na.omit(unique(metafilt$Time)[order(unique(metafilt$Time))])
@@ -778,11 +778,15 @@ ggsave(paste0(fig.dir, '/gene_ratios_sum.jpg'), width = 10, height = 7)
 ```
 
 
+
+
 ```{r}
 ## Export data
 if (writetables) {
   fwrite(orf.sum.perc,       paste0(fig.dir, '/', norm.method, '_', EndType, '_counts.norm.tsv'), sep = '\t')
   fwrite(orf.perc.mean,      paste0(fig.dir, '/', norm.method, '_', EndType, '_abund.mean.tsv'), sep = '\t')
+  fwrite(select.genes.class.cell.lines,      paste0(fig.dir, '/', norm.method, '_', EndType, '_select.genes.class.cell.lines.tsv'), sep = '\t')
+  
   #fwrite(DE_results,         paste0(fig.dir, '/', norm.method, '_', EndType, '_DE_results.tsv'), row.names=T, sep = '\t')
   #fwrite(DE_cluster_results, paste0(fig.dir, '/', norm.method, '_', EndType, '_moanin_DE_results.tsv'), sep = '\t')
 
