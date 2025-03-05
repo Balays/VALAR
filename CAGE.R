@@ -1,4 +1,5 @@
 
+
 ##
 ### Import clusters
 CAGE_clusters <- fread('all.tagClusters.txt')
@@ -42,7 +43,7 @@ CAGE_m[,i.end   := NULL]
 CAGE_m[,width_x := NULL]
 CAGE_m[,width_y := NULL]
 CAGE_m[,overlap_size:= NULL]
- 
+
 CAGE_m <- melt(CAGE_m, 1:19, value.name = 'count', variable.name = 'sample')
 
 cagefr.clust <- CAGE_m
@@ -61,38 +62,13 @@ cagefr.clust[,end   := TSS.win.end]
 cagefr.clust <- unique(cagefr.clust)
 
 
-##
-library(rtracklayer)
 
-
-## fastq read counts
-pattern <- '*.fastq'
-fastq_dir   <- 'D:/data/PRV_3cell/CAGE/fastq'
-fastq_files <- list.files(fastq_dir, pattern, full.names = T)
-fastq_seqlengths <- purrr::map(fastq_files, fastq.seqlengths)
-names(fastq_seqlengths) <- gsub(pattern, '', gsub(paste0(fastq_dir, '/'), '', fastq_files))
-fastq_readcounts <- lapply(fastq_seqlengths, length)
-fastq_readcounts <- data.frame(sample = names(fastq_readcounts), read_count = t(as.data.frame(fastq_readcounts)), row.names = NULL)
-fastq_readcounts
-
-CAGEfightR <- fread('D:/data/PRV_3cell/CAGE/Gmail/CAGEPRV1.tsv')[,-1]
-CAGEfightR[,orientation := fifelse(strand == '+', 1, 0)]
-CAGEfightR[,gene := paste0('CAGE_cluster_', .GRP), by=.(thick.names)]
-CAGEfightR[,strand := factor(strand, levels = c('+', '-', '*'))]
-
-cagefr.clust <- CAGEfightR
-cagefr.clust[,prime5 := fifelse(strand == '+', start, end)][,prime3 := fifelse(strand == '+', end, start)]
-cagefr.clust[,TSS.win.start := start]
-cagefr.clust[,TSS.win.end   := end]
+TR.Ref.data.CAGE
 
 
 
-#TR.CAGE <- data.table(as.data.frame(readGFF('../CAGE/Gmail/LT934125.1-2 (1).gff3')))
-TR.CAGE <- fread('D:/data/PRV_3cell/CAGE/Gmail/LT934125.1-2 (1).gff3')
-TR.CAGE <- TR.CAGE[,-12]
-colnames(TR.CAGE) <- c('seqnames', 'source', 'type', 'start', 'end', 'score', 'strand', 'phase', 'attributes', 'category', 'gene', 'CAGE')
-TR.CAGE[,CAGE := as.logical(CAGE)]
-TR.CAGE[type == 'mRNA', .N, by =.(CAGE)]
+
+
 
 
 ggplot(cagefr.clust) +
@@ -102,10 +78,10 @@ ggplot(cagefr.clust) +
 
 ggplot(cagefr.clust) +
   geom_histogram(aes(width), bins=50)
-  
 
 
-##### Merge TSS clusters with dcDNA reads
+## Merge TSS clusters with dcDNA reads
+#### ####
 
 cols_to_group <- setdiff(colnames(TR.gff.compare.merged.TR.counts.gt), c(metacols, "count", 'rep', 'total', 'contig_size', "average_coverage", "norm_count"))
 TR.gff.compare.uni <- unique(TR.gff.compare.merged.TR.counts.gt[,..cols_to_group])
@@ -126,7 +102,7 @@ DTx <- TR.gff.compare.uni[,.(seqnames, strand, start = TR.prime5.win.start, end 
 DTy <- cagefr.clust[,.(seqnames, strand, start = TSS.win.start, end = TSS.win.end, width, gene, support, score, thick.start, thick.end)]
 
 CAGE.TR.OV <-
-  foverlaps2(DTx=DTx, 
+  foverlaps2(DTx=DTx,
              DTy=DTy,
              by=c('seqnames', 'strand', 'start', 'end'),
              #by.x=c('seqnames', 'strand', '', ''),
@@ -137,24 +113,24 @@ CAGE.TR.OV <-
 
 length(unique(CAGE.TR.OV$transcript_id))
 
-TR.gff.compare.uni <- merge(CAGE.TR.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, CAGE_ID=gene, support, score, thick.start, thick.end, transcript_id)], 
+TR.gff.compare.uni <- merge(CAGE.TR.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, CAGE_ID=gene, support, score, thick.start, thick.end, transcript_id)],
                             by.x=c('seqnames', 'strand', 'transcript_id'),
                             TR.gff.compare.uni, by.y=c('seqnames', 'strand', 'transcript_id'), all=T)
 
 
 
-## Calculate significance 
+## Calculate significance
 calc.CAGE.sig <- 'CAGE' ## OR: 'dcDNA'
 
 if ( calc.CAGE.sig == 'CAGE' ) {
-  
+
   ## -->> FROM CAGE DATA
   data <- unique( cagefr.clust[, .(seqnames, strand, gene, score, support)] )
 } else if ( calc.CAGE.sig == 'dcDNA' ) {
-  
+
   ## -->> FROM dcDNA DATA
   data <- unique( TR.gff.compare.uni[, .(seqnames, strand, transcript_id, score, support)] )
-  
+
 }
 
 
@@ -167,7 +143,7 @@ score_percentiles   <- quantile(data$score,   probs = c(0.5, 0.75), na.rm = TRUE
 data <- data %>%
   mutate(CAGE_significance = case_when(
     support <= support_percentiles[1] & score <= score_percentiles[1] ~ "*",
-    (support > support_percentiles[1] & support <= support_percentiles[2]) | 
+    (support > support_percentiles[1] & support <= support_percentiles[2]) |
       (score > score_percentiles[1] & score <= score_percentiles[2]) ~ "**",
     support > support_percentiles[2] | score > score_percentiles[2] ~ "***",
     TRUE ~ NA_character_
@@ -177,7 +153,7 @@ data[,CAGE_significance := fifelse(support < 3, '*', CAGE_significance)]
 
 ggplot(data) +
   theme_bw() +
-  geom_histogram(aes(score), bins=50) + 
+  geom_histogram(aes(score), bins=50) +
   facet_wrap(~support + CAGE_significance, nrow=2, scales='free')
 
 
@@ -225,17 +201,18 @@ length(unique(TR.gff.compare.uni[class_code == '=', cmp_ref]))
 
 fwrite(TR.gff.compare.uni, paste0(outdir, '/TR.gff.compare.uni.tsv'), sep = '\t')
 
+#### ####
+##
 
-
-##### Merge with reference annotation
+#### Merge TSS clusters with reference annotation
 TR.merged.data <- TR.Ref.data
 
 ## Merge
 DTx <- TR.merged.data[,.(seqnames, strand, start = prime5.TR,     end = prime5.TR,   transcript_id, exon_number)]
-DTy <- cagefr.clust  [,.(seqnames, strand, start = TSS.win.start, end = TSS.win.end, width, gene, support, score, thick.start, thick.end)]
+DTy <- cagefr.clust  [,.(seqnames, strand, start = TSS.win.start, end = TSS.win.end, width, gene, support, score, dominant_tss)]
 
 CAGE.REF.OV <-
-  foverlaps2(DTx=DTx, 
+  foverlaps2(DTx=DTx,
              DTy=DTy,
              by=c('seqnames', 'strand', 'start', 'end'),
              #by.x=c('seqnames', 'strand', '', ''),
@@ -246,9 +223,9 @@ CAGE.REF.OV <-
 
 length(unique(CAGE.REF.OV$transcript_id))
 
-TR.merged.data <- merge(TR.merged.data, 
+TR.merged.data <- merge(TR.merged.data,
                         by.x=c('seqnames', 'strand', 'transcript_id', 'exon_number'),
-                        CAGE.REF.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, CAGE_ID=gene, support, score, thick.start, thick.end, transcript_id, exon_number)], 
+                        CAGE.REF.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, CAGE_ID=gene, support, score, dominant_tss, transcript_id, exon_number)],
                         by.y=c('seqnames', 'strand', 'transcript_id', 'exon_number'), all.x=T)
 
 
@@ -265,7 +242,7 @@ score_percentiles   <- quantile(data$score,   probs = c(0.5, 0.75), na.rm = TRUE
 data <- data %>%
   mutate(CAGE_significance = case_when(
     support <= support_percentiles[1] & score <= score_percentiles[1] ~ "*",
-    (support > support_percentiles[1] & support <= support_percentiles[2]) | 
+    (support > support_percentiles[1] & support <= support_percentiles[2]) |
       (score > score_percentiles[1] & score <= score_percentiles[2]) ~ "**",
     support > support_percentiles[2] | score > score_percentiles[2] ~ "***",
     TRUE ~ NA_character_
@@ -275,8 +252,8 @@ support_data <- data[,.(min=min(score), max=max(score), mean=mean(score)), by=.(
 support_data
 
 # Categorize 'CAGE significance' based on score only
-#data[,CAGE_significance := fifelse(score <= score_percentiles[1], '*', 
-#                                   fifelse(score > score_percentiles[1] & score <= score_percentiles[2], '**', 
+#data[,CAGE_significance := fifelse(score <= score_percentiles[1], '*',
+#                                   fifelse(score > score_percentiles[1] & score <= score_percentiles[2], '**',
 #                                           fifelse()))]
 
 TR.merged.data <- merge(TR.merged.data, data, by=c('seqnames', 'strand', 'start.TR', 'end.TR', 'transcript_id', 'score', 'support'))
@@ -284,6 +261,10 @@ TR.merged.data <- merge(TR.merged.data, data, by=c('seqnames', 'strand', 'start.
 
 
 CAGE.ref.support.freq <- TR.merged.data[, .(ratio=.N/nrow(TR.merged.data)), by = .(CAGE_significance) ][order(CAGE_significance)]
+
+#### Itt jarok
+## signifikanciat jol van kiszamolva ?
+TR.merged.data[, .N, by = .(CAGE_significance) ][order(CAGE_significance)]
 
 
 #### Add CAGE significance (from all TR's read count) to CAGEfighter table
@@ -298,7 +279,7 @@ TR.Ref.data.CAGE        <- TR.merged.data
 
 #### Write out
 fwrite(TR.Ref.data.CAGE,        paste0(outdir, '/TR.Ref.data.CAGE.tsv'),        sep = '\t')
-fwrite(TR.gff.compare.uni.CAGE, paste0(outdir, '/TR.gff.compare.uni.CAGE.tsv'), sep = '\t')    
+fwrite(TR.gff.compare.uni.CAGE, paste0(outdir, '/TR.gff.compare.uni.CAGE.tsv'), sep = '\t')
 fwrite(CAGE.support.freq,       paste0(outdir, '/CAGE.support.freq.tsv'),       sep = '\t')
 fwrite(cagefr.clust,            paste0(outdir, '/CAGE.freq.clust.tsv'),         sep = '\t')
 
