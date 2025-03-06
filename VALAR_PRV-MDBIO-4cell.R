@@ -741,6 +741,8 @@ cols_to_group <- c('sample', 'seqnames', 'TR_ID', 'aln_ID', 'strand', 'TR_start'
 
 aln.uni <- unique(bam.counts[,..cols_to_group])
 
+
+
 #### START FROM HERE
 
 aln.uni[,TR_prime3 := fifelse(strand == '+', TR_end,   TR_start)]
@@ -820,6 +822,8 @@ TR.adapt.count[,valid_tes   := NULL]
 TR.adapt.count <- TR.adapt.count[,.(count=sum(count)), by=.(seqnames, strand, TR_ID, correct_tss, correct_tes, sample)]
 
 TR.adapt.count <- merge(TR.uni, TR.adapt.count, by=c('seqnames', 'strand','TR_ID'))
+TR.adapt.count[,prime5.TR := NULL]
+TR.adapt.count[,prime3.TR := NULL]
 
 fwrite(TR.adapt.count, paste0(outdir, '/TR.adapt.count.tsv'), sep = '\t')
 
