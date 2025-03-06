@@ -1,0 +1,677 @@
+---
+  title: "EHV-1 Genes' transcript ratios"
+author: Balázs Kakuk
+output:
+  html_document:
+  theme: cosmo
+toc: yes
+toc_float:
+  collapsed: false
+---
+
+  ```{css, echo=FALSE}
+body .main-container {
+  max-width: 90% !important;
+  width: 90% !important;
+}
+body {
+  max-width: 90% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+
+```{r include=FALSE}
+## hrbrthemes::ipsum:
+
+knitr::opts_chunk$set(fig.retina=2, echo = FALSE, fig.align = 'center', message = F, warning = F)
+```
+
+```{r ipsum_setup, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE}
+library(prettydoc)
+library(hrbrthemes, quietly = T)
+#library(GenomicFeatures, quietly = T)
+library(DESeq2, quietly = T)
+library(ggpubr, quietly = T)
+#library(misc, quietly = T)
+library(dplyr, quietly = T)
+#library(tidyverse, quietly = T)
+library(ggsci, quietly = T)
+#library(Gviz, quietly = T)
+library(dplyr, quietly = T)
+library(tidyr)
+library(scales)
+#library(plyr)
+library(grid, quietly = T)
+library(gridExtra, quietly = T)
+library(ggpubr, quietly = T)
+library(data.table)
+library(ggh4x)
+library(knitr)
+library(formattable)
+library(ggrepel)
+library(utils)
+
+#library(moanin, quietly = T)
+#library(stageR); library(edgeR) ; library(Biobase)
+#library(limma) ; library(DEXSeq)
+
+dontrun <- T
+source('customclust.R')
+source('mclust.R')
+
+
+###
+viral.ref <- "NC_001491.2.mRNA_corrected.v3.gff3"
+source('_WF.part0.R')
+
+#### Settings ####
+
+## Main
+colorvec <- na.omit(c(
+  colorvec[c(1:5,15,13,10,24,7,26,32,33)],
+  colorvec[-c(1:5,15,13,10,24,7,26,32,33)]))
+
+colorvec <- colorvec[-c(9,13)]
+
+
+colorvec <- colorvec[-c(10,13,17,18)]
+
+colorvec <- colorvec[c(1:2,14,3:length(colorvec))]
+
+
+palette  <- colorvec #pal_npg()(10)
+
+writetables <- T
+```
+
+
+```{r}
+
+## prime5 plots
+EndType <- 'prime.plots'
+
+project_config  <- fread('project_config.txt')
+outdir  <- project_config$outdir
+res.dir <- outdir; try({ dir.create(res.dir) })
+fig.dir <- paste0(res.dir, '/', EndType); try({ dir.create(fig.dir) })## save plots to this directory
+#
+```
+
+```{r, eval=F}
+## Mean coverage from stranded only bamfiles directly
+merged_cov   <- fread(paste0(outdir, '/merged_cov.tsv'), na.strings = '')
+cov.counts   <- merged_cov[,.(count=mean(count)), by=.(seqnames,	strand,	pos, sample)]
+saveRDS(cov.counts, paste0(outdir, '/cov.counts.rds'))
+```
+
+
+```{r}
+cov.counts    <- read_rds(paste0(outdir, '/cov.counts.rds'))
+cov.counts    <- merge(cov.counts, metafilt[,metacols], by='sample')
+cov.counts[,start  := pos]
+cov.counts[,end    := pos]
+
+```
+
+
+```{r}
+##### START PLOTTING FROM HERE
+
+## read back in
+prime5.counts <- fread(paste0(outdir, '/prime5.counts.tsv'), na.strings = '')
+prime3.counts <- fread(paste0(outdir, '/prime3.counts.tsv'), na.strings = '')
+
+
+
+## filter now
+correct.only <- T
+if(correct.only) {
+  prime5.counts <- prime5.counts[correct_tss == T,]
+  prime3.counts <- prime3.counts[correct_tes == T,]
+}
+
+
+### normalize for viral read counts?
+## based on correct adaptered-only
+norm <- F
+if(norm) {
+  colsby <- colnames(prime5.counts)[!colnames(prime5.counts) %in% c('pos', 'start', 'end', 'prime5', 'count')]
+  prime5.counts[, sum_count := sum(count), by=colsby]
+  prime5.counts[, count     := round((count/ sum_count) * 100, 3)]
+  prime5.counts[, .(sum_count = sum(count)), by=colsby]
+  prime5.counts[, sum_count := NULL]
+
+  colsby <- colnames(prime3.counts)[!colnames(prime3.counts) %in% c('pos', 'start', 'end', 'prime3', 'count')]
+  prime3.counts[, sum_count := sum(count), by=colsby]
+  prime3.counts[, count     := round((count/ sum_count) * 100, 3)]
+  prime3.counts[, .(sum_count = sum(count)), by=colsby]
+  prime3.counts[, sum_count := NULL]
+
+}
+
+## check if all the samples have the same library size
+all(round(prime5.counts[,.(sum_count = (sum(count))), by=.(sample)][,sum_count], 0) == 1)
+
+
+##calculate the mean? otherwise, the plot will SUM the counts based on the "group" column
+calc.mean <- F
+##
+if(calc.mean) {
+  prime3.counts <- prime3.counts[,.(count = round(mean(count), 2)), by=.(seqnames, strand, pos, correct_tes, hpi, Time, cell_line, group, endtype)]
+  prime5.counts <- prime5.counts[,.(count = round(mean(count), 2)), by=.(seqnames, strand, pos, correct_tss, hpi, Time, cell_line, group, endtype)]
+
+  #prime5.counts <- unique(prime5.counts[,.(seqnames, strand, pos, correct_tss, count, hpi, Time, cell_line, group, endtype)])
+  #prime3.counts <- unique(prime3.counts[,.(seqnames, strand, pos, correct_tes, count, hpi, Time, cell_line, group, endtype)])
+
+}
+
+##
+prime5.counts[,prime5 := pos][,prime5 := NULL]
+prime3.counts[,prime3 := pos][,prime3 := NULL]
+
+##### plotting settings
+
+##
+plot.all.together <- T
+
+## grouping
+combine.groups <- 'hpi' ## 'sample' ## OR:
+
+## adapter settings
+adapter.setting <- 'v4'
+
+##
+tolower_gene_name <- F
+```
+
+
+## REVIEW
+```{r}
+######## REVIEW
+
+#### Normalized
+file_name_suffix <- 'Mean_correct_norm'
+##
+ylim       <- NULL #c(0, 50) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'Supp Fig S1.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+#ggsave(paste0(fig.dir, '/', 'Figure 1B_REVIEW_ori.tif'), plot = FigY, height = 20, width = 36, limitsize = F, dpi=300)
+Fig1B <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+Fig2B <- Fig2
+
+ggsave(paste0(fig.dir, '/', 'Supp Fig S4.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+
+
+#### ylim 0-500
+file_name_suffix <- 'Mean_correct_ylim500'
+##
+ylim       <- c(0, 500) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'Figure 1.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig1A <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+ggsave(paste0(fig.dir, '/', 'Figure 2.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig2A <- Fig2
+
+
+
+
+#### ylim 0-50
+file_name_suffix <- 'Mean_correct_norm'
+##
+ylim       <- c(0, 50) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 1B_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+#ggsave(paste0(fig.dir, '/', 'Figure 1B_REVIEW_ori.tif'), plot = FigY, height = 20, width = 36, limitsize = F, dpi=300)
+Fig1B <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+Fig2B <- Fig2
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 2B_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+
+#### ylim 0-5000
+file_name_suffix <- 'Mean_correct_ylim500'
+##
+ylim       <- c(0, 5000) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 1A_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig1A <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 2A_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig2A <- Fig2
+```
+
+
+
+
+```{r}
+#
+#### Coverage plots
+
+##
+file_name_suffix <- 'Mean_correct_ylim5000'
+ylim       <- c(-5000, 5000) # c(-1000, 1000)
+
+source('plot_coverage_area_settings.R')
+source('plot_coverage.R')
+
+SFig3A <- Fig3
+
+##
+file_name_suffix <- 'Mean_correct_ylim500'
+ylim       <- c(-500, 500) # c(-1000, 1000)
+
+source('plot_coverage_area_settings.R')
+source('plot_coverage.R')
+
+SFig3B <- Fig3
+
+##
+file_name_suffix <- 'Mean_correct_ylim50'
+ylim       <- c(-50, 50) # c(-1000, 1000)
+
+source('plot_coverage_area_settings.R')
+source('plot_coverage.R')
+
+SFig3C <- Fig3
+
+##
+file_name_suffix <- 'Mean_correct_norm'
+ylim       <- NULL # c(-1000, 1000)
+
+source('plot_coverage_area_settings.R')
+source('plot_coverage.R')
+
+SFig3D <- Fig3
+
+
+
+##### Sup Fig S10
+
+fig.width  <- 55
+fig.height <- 20*4
+
+
+# Function to add a border around a plot
+add_border <- function(plot, color = "black", size = 1.5) {
+  ggdraw() +
+    draw_grob(
+      ggplotGrob(plot),
+      x = 0, y = 0, width = 1, height = 1
+    ) +
+    draw_grob(
+      rectGrob(
+        gp = gpar(col = color, fill = NA, lwd = size)
+      ),
+      x = 0, y = 0, width = 1, height = 1
+    )
+}
+
+# Create individual plots with labels and borders
+SFig3A <- add_border(SFig3A + draw_label("A", x = 0.025, y = 1, hjust = 0.1, vjust = 2, fontface = 'bold', size = 24))
+SFig3B <- add_border(SFig3B + draw_label("B", x = 0.025, y = 1, hjust = 0.1, vjust = 2, fontface = 'bold', size = 24))
+SFig3C <- add_border(SFig3C + draw_label("C", x = 0.025, y = 1, hjust = 0.1, vjust = 2, fontface = 'bold', size = 24))
+SFig3D <- add_border(SFig3D + draw_label("D", x = 0.025, y = 1, hjust = 0.1, vjust = 2, fontface = 'bold', size = 24))
+
+# Combine the plots into a single figure
+SFig3 <- cowplot::plot_grid(SFig3A, SFig3B, SFig3C, SFig3D, ncol = 1)
+
+
+ggsave('Figures/Supp Fig S10.jpg', SFig3, height = fig.height, width = fig.width, limitsize = F)
+
+
+```
+
+```{r}
+install.packages('future.apply')
+
+fig.width  <- 30
+fig.height <- 20*3
+
+SFig3  <- cowplot::plot_grid(SFig3A + draw_label("a", x = 0.025, y = 1, hjust = 0.1, vjust = 1, fontface = 'bold', size = 24),
+                             SFig3B + draw_label("b", x = 0.025, y = 1, hjust = 0.1, vjust = 1, fontface = 'bold', size = 24),
+                             SFig3C + draw_label("c", x = 0.025, y = 1, hjust = 0.1, vjust = 1, fontface = 'bold', size = 24),
+                             ncol=1)
+#ggsave('Figures/Supp Fig 3.small.jpg', SFig3, height = fig.height, width = fig.width, limitsize = F)
+
+```
+
+## CAGE
+```{r}
+
+## prime5 plots
+EndType <- 'prime.plots'
+
+outdir  <- 'CAGE'
+
+#project_config  <- fread('project_config.txt')
+#outdir  <- project_config$outdir
+res.dir <- outdir; try({ dir.create(res.dir) })
+fig.dir <- paste0(res.dir, '/', EndType); try({ dir.create(fig.dir) })## save plots to this directory
+#
+```
+
+```{r, eval=F}
+## Mean coverage from stranded only bamfiles directly
+merged_cov   <- fread(paste0(outdir, '/merged_cov.tsv'), na.strings = '')
+cov.counts   <- merged_cov[,.(count=mean(count)), by=.(seqnames,	strand,	pos, sample)]
+saveRDS(cov.counts, paste0(outdir, '/cov.counts.rds'))
+```
+
+
+```{r}
+cov.counts    <- read_rds(paste0(outdir, '/cov.counts.rds'))
+cov.counts    <- merge(cov.counts, metafilt[,metacols], by='sample')
+cov.counts[,start  := pos]
+cov.counts[,end    := pos]
+
+```
+
+
+```{r}
+##### START PLOTTING FROM HERE
+
+## read back in
+prime5.counts <- fread(paste0(outdir, '/prime5.counts.tsv'), na.strings = '')
+prime3.counts <- fread(paste0(outdir, '/prime3.counts.tsv'), na.strings = '')
+
+
+
+## filter now
+correct.only <- T
+if(correct.only) {
+  prime5.counts <- prime5.counts[correct_tss == T,]
+  prime3.counts <- prime3.counts[correct_tes == T,]
+}
+
+
+### normalize for viral read counts?
+## based on correct adaptered-only
+norm <- F
+if(norm) {
+  colsby <- colnames(prime5.counts)[!colnames(prime5.counts) %in% c('pos', 'start', 'end', 'prime5', 'count')]
+  prime5.counts[, sum_count := sum(count), by=colsby]
+  prime5.counts[, count     := round((count/ sum_count) * 100, 3)]
+  prime5.counts[, .(sum_count = sum(count)), by=colsby]
+  prime5.counts[, sum_count := NULL]
+
+  colsby <- colnames(prime3.counts)[!colnames(prime3.counts) %in% c('pos', 'start', 'end', 'prime3', 'count')]
+  prime3.counts[, sum_count := sum(count), by=colsby]
+  prime3.counts[, count     := round((count/ sum_count) * 100, 3)]
+  prime3.counts[, .(sum_count = sum(count)), by=colsby]
+  prime3.counts[, sum_count := NULL]
+
+}
+
+## check if all the samples have the same library size
+all(round(prime5.counts[,.(sum_count = (sum(count))), by=.(sample)][,sum_count], 0) == 1)
+
+
+##calculate the mean? otherwise, the plot will SUM the counts based on the "group" column
+calc.mean <- F
+##
+if(calc.mean) {
+  prime3.counts <- prime3.counts[,.(count = round(mean(count), 2)), by=.(seqnames, strand, pos, correct_tes, hpi, Time, cell_line, group, endtype)]
+  prime5.counts <- prime5.counts[,.(count = round(mean(count), 2)), by=.(seqnames, strand, pos, correct_tss, hpi, Time, cell_line, group, endtype)]
+
+  #prime5.counts <- unique(prime5.counts[,.(seqnames, strand, pos, correct_tss, count, hpi, Time, cell_line, group, endtype)])
+  #prime3.counts <- unique(prime3.counts[,.(seqnames, strand, pos, correct_tes, count, hpi, Time, cell_line, group, endtype)])
+
+}
+
+##
+prime5.counts[,prime5 := pos][,prime5 := NULL]
+prime3.counts[,prime3 := pos][,prime3 := NULL]
+
+##### plotting settings
+
+##
+plot.all.together <- T
+
+## grouping
+combine.groups <- 'hpi' ## 'sample' ## OR:
+
+## adapter settings
+adapter.setting <- 'v4'
+
+##
+tolower_gene_name <- F
+```
+
+
+## REVIEW
+```{r}
+######## REVIEW
+
+#### Normalized
+file_name_suffix <- 'Mean_correct_norm'
+##
+ylim       <- NULL #c(0, 50) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'Supp Fig S1.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+#ggsave(paste0(fig.dir, '/', 'Figure 1B_REVIEW_ori.tif'), plot = FigY, height = 20, width = 36, limitsize = F, dpi=300)
+Fig1B <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+Fig2B <- Fig2
+
+ggsave(paste0(fig.dir, '/', 'Supp Fig S4.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+
+
+#### ylim 0-500
+file_name_suffix <- 'Mean_correct_ylim500'
+##
+ylim       <- c(0, 500) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'Figure 1.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig1A <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+ggsave(paste0(fig.dir, '/', 'Figure 2.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig2A <- Fig2
+
+
+
+
+#### ylim 0-50
+file_name_suffix <- 'Mean_correct_norm'
+##
+ylim       <- c(0, 50) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 1B_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+#ggsave(paste0(fig.dir, '/', 'Figure 1B_REVIEW_ori.tif'), plot = FigY, height = 20, width = 36, limitsize = F, dpi=300)
+Fig1B <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+Fig2B <- Fig2
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 2B_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+
+#### ylim 0-5000
+file_name_suffix <- 'Mean_correct_ylim500'
+##
+ylim       <- c(0, 5000) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 1A_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig1A <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 2A_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig2A <- Fig2
+```
+
+
+
+
+## ORIGINAL
+```{r}
+######### ORIGINAL
+
+#### 0-5000
+file_name_suffix <- 'Mean_correct_norm'
+##
+ylim       <- c(0, 5000) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 1C_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+#ggsave(paste0(fig.dir, '/', 'Figure 1B_REVIEW_ori.tif'), plot = FigY, height = 20, width = 36, limitsize = F, dpi=300)
+Fig1B <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+Fig2B <- Fig2
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 2C_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+
+#### ylim500
+file_name_suffix <- 'Mean_correct_ylim500'
+##
+ylim       <- c(0, 500) # c(-1000, 1000)
+
+## prime5
+source('plot_prime5_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime5.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 1D_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig1A <- Fig1
+
+
+## prime3
+source('plot_prime3_area_settings.R')
+fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
+source('plot_prime3.R')
+
+ggsave(paste0(fig.dir, '/', 'SuppFig 2D_REVIEW.jpg'), plot = FigY, height = 20, width = 30, limitsize = F, dpi=300)
+
+Fig2A <- Fig2
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

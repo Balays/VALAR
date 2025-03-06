@@ -512,10 +512,12 @@ fwrite(adapt.TR.sp, file.path(outdir, "adapt.TR.sp.tsv"), sep = '\t')
 
 
 ### merge TransFrag count with Reference Transcript annotation for each Transfrag
-all.merged.result_gff.compare      <- merge(all.merged.result_gff.compare,      adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID', all = T)
-best.merged.result_gff.compare     <- merge(best.merged.result_gff.compare,     adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID', all = T)
-TR.gff.compare.merged.TR.counts.gt <- merge(TR.gff.compare.merged.TR.counts.gt, adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID', all = T)
+all.merged.result_gff.compare      <- merge(all.merged.result_gff.compare,      adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID') #, all = T)
+best.merged.result_gff.compare     <- merge(best.merged.result_gff.compare,     adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID') #, all = T)
+TR.gff.compare.merged.TR.counts.gt <- merge(TR.gff.compare.merged.TR.counts.gt, adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID') #, all = T)
 
+# Note: those transfrags, that were not assigned to any Ref-TR by gff-compare, are not listed here !
+# If we want to include those also, we need to change the code!
 
 #### ####
 ##
@@ -601,14 +603,17 @@ source('count.genes.v2.R')
 ## OK
 
 
+######## CAGE
+source('CAGEs.R')
+
+
+
 ##### ITT JÁROK, EDDIG OK
 
 
 ### 3.) Count transcripts and combine with gene (and cluster) counts
 source('count.transcripts.R')
 
-######## PUT THIS INTO PLACE
-source('CAGE_TRs.R')
 
 
 
@@ -732,12 +737,14 @@ bam.counts[,prime5 := fifelse(strand == '+', start, end)]
 bam.counts[,correct_tss := fifelse(grepl('correct', tag.r5) | grepl('correct', tag.l5), T,   F)]
 bam.counts[,correct_tes := fifelse(grepl('correct', tag.r3) | grepl('correct', tag.l3), T,   F)]
 
-bam.counts[,TR_prime3 := fifelse(strand == '+', TR_end,   TR_start)]
-bam.counts[,TR_prime5 := fifelse(strand == '+', TR_start, TR_end)]
-
-cols_to_group <- c('sample', 'seqnames', 'TR_ID', 'aln_ID', 'strand', 'TR_start', 'TR_end', 'TR_prime3', 'TR_prime5', 'correct_tss', 'correct_tes')
+cols_to_group <- c('sample', 'seqnames', 'TR_ID', 'aln_ID', 'strand', 'TR_start', 'TR_end', 'correct_tss', 'correct_tes')
 
 aln.uni <- unique(bam.counts[,..cols_to_group])
+
+#### START FROM HERE
+
+aln.uni[,TR_prime3 := fifelse(strand == '+', TR_end,   TR_start)]
+aln.uni[,TR_prime5 := fifelse(strand == '+', TR_start, TR_end)]
 
 prime5.bam.counts <- aln.uni[,.(count=.N), by=.(seqnames, strand, TR_prime5, correct_tss, sample)]; setnames(prime5.bam.counts, 'TR_prime5', 'pos')
 prime3.bam.counts <- aln.uni[,.(count=.N), by=.(seqnames, strand, TR_prime3, correct_tes, sample)]; setnames(prime3.bam.counts, 'TR_prime3', 'pos')
@@ -757,11 +764,11 @@ fwrite(prime5.counts, paste0(outdir, '/prime5.counts.tsv'))
 
 
 ### Combine
-prime.counts  <- rbind(prime5.counts, prime3.counts)
+prime.counts  <- rbind(prime5.counts, prime3.counts, fill=T)
 fwrite(prime.counts, paste0(outdir, '/prime.counts.tsv'))
 
 
-### Combine w CAGE
+### Combine w CAGE ??
 prime5.counts <-  rbind(prime.counts[endtype == 'prime5'], prime.counts.CAGE[endtype == 'prime5'])
 prime3.counts <-  rbind(prime.counts[endtype == 'prime3'] ) #, prime.counts.CAGE[endtype == 'prime3'])
 prime.counts  <-  rbind(prime.counts, prime.counts.CAGE)
@@ -803,7 +810,7 @@ fwrite(prime3.counts, paste0(outdir, '/prime3.counts.tsv'), sep = '\t')
 fwrite(prime5.counts, paste0(outdir, '/prime5.counts.tsv'), sep = '\t')
 
 ## Ovewrite TR count table?
-valid.prime3.TR <- unique(merge(valid.prime3, TR.uni, by.x=c('seqnames', 'strand', 'pos'), by.y=c('seqnames', 'strand', 'prime3'), all.x=T))
+valid.prime3.TR <- unique(merge(valid.prime3, TR.uni, by.x=c('seqnames', 'strand', 'pos'), by.y=c('seqnames', 'strand', 'prime3.TR'), all.x=T))
 valid.prime3.TR <- valid.prime3.TR[,.(seqnames, strand, TR_ID, valid_tes)]
 TR.adapt.count  <- merge(TR.adapt.count, valid.prime3.TR, by=c('seqnames', 'strand', 'TR_ID'), all.x=T)
 TR.adapt.count[,valid_tes   := fifelse(is.na(valid_tes), F, T)]
@@ -812,10 +819,12 @@ TR.adapt.count[,valid_tes   := NULL]
 
 TR.adapt.count <- TR.adapt.count[,.(count=sum(count)), by=.(seqnames, strand, TR_ID, correct_tss, correct_tes, sample)]
 
+TR.adapt.count <- merge(TR.uni, TR.adapt.count, by=c('seqnames', 'strand','TR_ID'))
+
 fwrite(TR.adapt.count, paste0(outdir, '/TR.adapt.count.tsv'), sep = '\t')
 
 ## include adapter counts
-TR.counts.sp <- dcast(TR.adapt.count, TR_ID + correct_tss + correct_tes ~ sample, value.var = 'count', fill = 0)
+TR.counts.sp <- dcast(TR.adapt.count, TR_ID + TR_start + TR_end + correct_tss + correct_tes ~ sample, value.var = 'count', fill = 0)
 
 
 ## use CAGE to accept 5-prime sites?
@@ -853,6 +862,27 @@ cov.counts[,end    := pos]
 fwrite(prime3.counts, paste0(outdir, '/prime3.counts.tsv'), sep = '\t')
 fwrite(prime5.counts, paste0(outdir, '/prime5.counts.tsv'), sep = '\t')
 fwrite(cov.counts,    paste0(outdir, '/cov.counts.tsv'),    sep = '\t')
+
+
+
+#### PLOTTING
+source('plot_primes.R')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

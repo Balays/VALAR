@@ -99,7 +99,7 @@ adapt.TR.sp <- fread(file.path(outdir, "adapt.TR.sp.tsv"), sep = '\t')
 
 
 ### merge TransFrag count with Reference Transcript annotation for each Transfrag
-all.merged.result_gff.compare      <- merge(all.merged.result_gff.compare,      adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID', all = T)
-best.merged.result_gff.compare     <- merge(best.merged.result_gff.compare,     adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID', all = T)
-TR.gff.compare.merged.TR.counts.gt <- merge(TR.gff.compare.merged.TR.counts.gt, adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID', all = T)
+all.merged.result_gff.compare      <- merge(all.merged.result_gff.compare,      adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID') #, all = T)
+best.merged.result_gff.compare     <- merge(best.merged.result_gff.compare,     adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID') #, all = T)
+TR.gff.compare.merged.TR.counts.gt <- merge(TR.gff.compare.merged.TR.counts.gt, adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID') #, all = T)
 

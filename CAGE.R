@@ -47,8 +47,15 @@ CAGE_m[,overlap_size:= NULL]
 CAGE_m <- melt(CAGE_m, 1:19, value.name = 'count', variable.name = 'sample')
 
 cagefr.clust <- CAGE_m
+
+## Score is the same as tags value
 cagefr.clust[, score   := as.integer(tags)]
-cagefr.clust[, support := sum(!is.0(count)), by=.(sample, gene)]
+
+## Support is the number of samples where any position in a CAGE cluster was non-zero
+cage.support <- cagefr.clust[count > 0, .(support = uniqueN(sample)), by = gene]
+cagefr.clust <- merge(cagefr.clust, cage.support, by='gene')
+cagefr.clust[is.na(support), support := 0]
+#cagefr.clust[, .N, support]
 
 cagefr.clust[,width := TSS.win.size]
 cagefr.clust[,TSS.win.size := NULL]
@@ -62,15 +69,6 @@ cagefr.clust[,end   := TSS.win.end]
 cagefr.clust <- unique(cagefr.clust)
 
 
-
-TR.Ref.data.CAGE
-
-
-
-
-
-
-
 ggplot(cagefr.clust) +
   #geom_histogram(bins=50) +
   geom_col(aes(x=support, y=score)) # + facet_grid(rows = vars(support))
@@ -78,6 +76,8 @@ ggplot(cagefr.clust) +
 
 ggplot(cagefr.clust) +
   geom_histogram(aes(width), bins=50)
+
+
 
 
 ## Merge TSS clusters with dcDNA reads
@@ -99,7 +99,7 @@ TR.gff.compare.uni[,TR.prime3.win.end   := prime3]
 
 ##
 DTx <- TR.gff.compare.uni[,.(seqnames, strand, start = TR.prime5.win.start, end = TR.prime5.win.end, transcript_id)]
-DTy <- cagefr.clust[,.(seqnames, strand, start = TSS.win.start, end = TSS.win.end, width, gene, support, score, thick.start, thick.end)]
+DTy <- cagefr.clust[,.(seqnames, strand, start = TSS.win.start, end = TSS.win.end, width, gene, support, score, dominant_tss)]
 
 CAGE.TR.OV <-
   foverlaps2(DTx=DTx,
@@ -113,7 +113,7 @@ CAGE.TR.OV <-
 
 length(unique(CAGE.TR.OV$transcript_id))
 
-TR.gff.compare.uni <- merge(CAGE.TR.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, CAGE_ID=gene, support, score, thick.start, thick.end, transcript_id)],
+TR.gff.compare.uni <- merge(CAGE.TR.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, CAGE_ID=gene, support, score, dominant_tss, transcript_id)],
                             by.x=c('seqnames', 'strand', 'transcript_id'),
                             TR.gff.compare.uni, by.y=c('seqnames', 'strand', 'transcript_id'), all=T)
 
@@ -169,42 +169,34 @@ CAGE.TR.support.freq <- TR.gff.compare.uni[, .(ratio=.N/nrow(TR.gff.compare.uni)
 cage.fr.dt <- TR.gff.compare.uni[,.N,by=.(CAGE_significance, CAGE_ID)]
 
 
-## ezeket TX-féleséget NEM támaszott alá a CAGE
+## ennyi TransFrag-okat NEM támaszott alá a CAGE
 TR.gff.compare.uni[is.na(CAGE_ID),.N]
 
-## ezeket TX-féleséget támaszott alá a CAGE
+## ennyi TransFrag-okat támaszott alá a CAGE
 TR.gff.compare.uni[!is.na(CAGE_ID),.N]
 
-## ezeket az REF TX-eket ("=") támaszotta alá a CAGE cluster
+## ennyi olyan TransFrag-ot, ami REF TX-el megegyező ("="), támaszott alá a CAGE
 TR.gff.compare.uni[!is.na(CAGE_ID) & class_code == '=', .N]
 
-## ezeket az REF TX-eket ("=") támaszotta alá a CAGE cluster SZŰRÉSSEL (score > 3.5, előfordulás > 1)
-#TR.gff.compare.uni[!is.na(CAGE_ID) & score > 3.5 & support > 1 & class_code == '=', .N]
-
-## ezeket az REF TX-eket ("=") támaszotta alá a CAGE pontosan
-TR.gff.compare.uni[!is.na(CAGE_ID) & thick.start == prime5 & class_code == '=', .N]
-
-## ezeket az REF TX-eket ("=") támaszotta alá a CAGE pontosan SZŰRÉSSEL (score > 3.5, előfordulás > 1)
-#TR.gff.compare.uni[!is.na(CAGE_ID) & thick.start == prime5 & score > 4 & support > 1 & class_code == '=', .N]
-
-## ezeket az REF TX-eket ("=") NEM támaszotta alá a CAGE
-TR.gff.compare.uni[is.na(CAGE_ID) & class_code == '=', .N]
+## ennyi olyan TransFrag-ot, ami REF TX-el megegyező ("="), támaszott alá a CAGE PONTOSAN
+TR.gff.compare.uni[!is.na(CAGE_ID) & dominant_tss == prime5 & class_code == '=', .N]
 
 
-## ezeket az REF-hez hasonló TX-eket ("~") támaszotta alá a CAGE
-TR.gff.compare.uni[!is.na(CAGE_ID) & class_code == '~', .N]
-## ezeket az REF-hez hasonló TX-eket ("~") támaszotta alá a CAGE
-#TR.gff.compare.uni[!is.na(CAGE_ID) & score > 3.6 & support > 1 & class_code == '~', .N]
+## ennyi REF TX-et, támaszott alá a CAGE
+length(unique(TR.gff.compare.uni[class_code == '=' & !is.na(CAGE_ID), cmp_ref]))
 
+## ennyi REF TX-et, támaszott alá a CAGE PONTOSAN
+length(unique(TR.gff.compare.uni[class_code == '=' & !is.na(CAGE_ID) & dominant_tss == prime5, cmp_ref]))
 
-length(unique(TR.gff.compare.uni[class_code == '=', cmp_ref]))
 
 fwrite(TR.gff.compare.uni, paste0(outdir, '/TR.gff.compare.uni.tsv'), sep = '\t')
 
 #### ####
 ##
 
-#### Merge TSS clusters with reference annotation
+
+## Merge TSS clusters with reference annotation
+#### ####
 TR.merged.data <- TR.Ref.data
 
 ## Merge
