@@ -875,13 +875,94 @@ source('plot_primes.R')
 
 
 
+prime5.toclust <- prime5.counts[hpi == '4h' & cell_line == 'PK-15' & correct_tss == T,.(seqnames, strand, position = prime5, count)]
+
+prime5.mclust   <- Mclust_stranded(prime5.toclust, G = 100:1000, plot_results = T)
+
+prime5.hclust   <- TSS_cluster_hclust(prime5.toclust, max_cluster_size = 100, T, T)
+
+## Get the unique clusters
+hclust.res    <- unique(prime5.hclust[,.(cluster, cluster_start, cluster_end, cluster_peak, cluster_width, cluster_total_count)])
+
+## CALCuLATE RATIO OF CLUSTER COUNTS TO ALL CLUSTER COUNTS
+hclust.res    <- hclust.res[, cluster_ratio := cluster_total_count / sum(hclust.res$cluster_total_count), by=cluster]
+
+## Filter clusters for below certain total read counts and ratios
+cluster_min_ratio <- 0.0005
+cluster_min_count <- 0.0005
+
+filter_clusters <- function(hclust_res, cluster_min_ratio = NULL, cluster_min_count = NULL) {
+  # Calculate cluster_ratio if not already present
+  if (!"cluster_ratio" %in% colnames(hclust_res)) {
+    hclust_res[, cluster_ratio := cluster_total_count / sum(cluster_total_count)]
+  }
+  
+  # Start with the full set of clusters
+  filtered_clusters <- copy(hclust_res)
+  
+  # Apply ratio filter if provided
+  if (!is.null(cluster_min_ratio)) {
+    filtered_clusters <- filtered_clusters[cluster_ratio >= cluster_min_ratio]
+  }
+  
+  # Apply count filter if provided
+  if (!is.null(cluster_min_count)) {
+    filtered_clusters <- filtered_clusters[cluster_total_count >= cluster_min_count]
+  }
+  
+  return(filtered_clusters)
+}
+
+# --- Now, to process all replicates grouped by hpi and cell_line ---
+all_clusters <- prime5.counts[correct_tss == TRUE, {
+  # Extract columns needed for clustering
+  dt_to_cluster <- .SD[, .(seqnames, strand, position = pos, count)]
+  
+  # Cluster positions on each strand
+  clustered <- TSS_cluster_hclust(dt_to_cluster, max_cluster_size = 100, use_weights = TRUE)
+  
+  # Get unique clusters per strand (note: the column order is important)
+  unique_clusters <- unique(clustered[, .(
+    seqnames,
+    strand,
+    cluster,            # cluster ID
+    cluster_start,      
+    cluster_end,        
+    cluster_peak,       
+    cluster_width,      
+    cluster_total_count
+  )])
+  
+  # Filter clusters based on thresholds
+  filtered <- filter_clusters(unique_clusters, cluster_min_ratio = 0.0005, cluster_min_count = 0.0005)
+  
+  # Force consistent types across all groups:
+  if (nrow(filtered) > 0) {
+    filtered[, cluster := as.integer(cluster)]
+    filtered[, cluster_start := as.integer(cluster_start)]
+    filtered[, cluster_end := as.integer(cluster_end)]
+    filtered[, cluster_peak := as.integer(cluster_peak)]
+    filtered[, cluster_width := as.integer(cluster_width)]
+    filtered[, cluster_total_count := as.numeric(cluster_total_count)]
+    # Also ensure cluster_ratio (if present) is numeric
+    if ("cluster_ratio" %in% colnames(filtered))
+      filtered[, cluster_ratio := as.numeric(cluster_ratio)]
+  }
+  
+  # Wrap the filtered data.table in a list so it becomes a single list-column entry
+  list(clusters = list(filtered))
+}, by = .(hpi, cell_line)]
+
+# Check the result
+print(all_clusters)
 
 
+ggplot(hclust.res, aes(cluster_width)) + 
+  geom_bar()
 
 
-
-
-
+ggplot(hclust.res, aes(cluster_total_count)) + 
+  geom_bar()
 
 
 

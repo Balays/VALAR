@@ -50,8 +50,8 @@ if(calc.mean) {
 }
 
 ##
-prime5.counts[,prime5 := pos][,prime5 := NULL]
-prime3.counts[,prime3 := pos][,prime3 := NULL]
+#prime5.counts[,prime5 := pos][,prime5 := NULL]
+#prime3.counts[,prime3 := pos][,prime3 := NULL]
 
 ##### plotting settings
 
@@ -70,7 +70,7 @@ tolower_gene_name <- F
 ##### PLOTTING
 
 #### Normalized
-file_name_suffix <- 'Mean_correct_norm'
+file_name_suffix <- 'correct_norm'
 ##
 ylim       <- NULL #c(0, 50) # c(-1000, 1000)
 
@@ -91,7 +91,16 @@ fig.dir <- 'Figures' # '../EHV-1 dynamic article/Review 2024 nov'
 source('plot_prime3.R')
 
 
-######## DONE !
+######## DONE  FOR NOW
+
+
+
+
+
+stop()
+
+
+
 
 
 #Fig2B <- Fig2

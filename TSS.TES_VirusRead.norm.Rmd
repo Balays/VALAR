@@ -1,5 +1,5 @@
 ---
-title: "PRV - 4 cell lines: Transcript (TSS ~ TES) dynamics"
+title: "PRV - 4 cell lines: TES dynamics"
 author: Balázs Kakuk
 output: 
   html_document:
@@ -67,7 +67,7 @@ source('_WF.part0.R')
 
 ## Main
 #save.data <- 'PRV.rebase.RData'
-EndType <- 'TSS.TES'
+EndType <- 'TES'
 
 #project_config  <- fread('project_config.txt')
 #outdir  <- project_config$outdir
@@ -93,11 +93,16 @@ pychopper: no
 mapping version: v6  
 LoRTIA: yes (stranded only output)  
 
-Filtering samples: C6_2h_3 & PC-12_8h_3    
+Filtering samples:  
+- C6_2h_3  
+- PC-12_8h_3  
+- C6_0.5h_1  
+- C6_0.5h_2
+- C6_0.5h_3
 
 Normalization: Viral read count
 
-## Only those reads were counted, where LoRTIA found *5-prime* adapters and *3-prime polyA* sequences !
+## Only those reads were counted, where LoRTIA found *3-prime* polyA sequences !
 
 ```{r, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE, eval=T}
 #### Import TSS counts
@@ -106,7 +111,9 @@ gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.s
 
 
 #### !!! Consider adapters!
-adapters <- 'both'
+       if (EndType == 'TES')  { adapters <- 'prime3' 
+} else if (EndType == 'TSS')    { adapters <- 'prime5' 
+} else if (EndType == 'TSS.TES')  { adapters <- 'both' } ## OR: 'either'}
 
 source('Gene.counts.R')
 
@@ -162,8 +169,11 @@ multip      <- 10000
   ## Viral read count method
   # sum up all the ORF counts
 
-  normBase <- melt(gene.sample_count.sp, variable.name = 'sample', value.name = 'count')
-  normBase <- normBase[,.(norm_base = sum(count)), by=sample]
+  #normBase <- melt(gene.sample_count.sp, variable.name = 'sample', value.name = 'count')
+  #normBase <- normBase[,.(norm_base = sum(count)), by=sample]
+  
+  # After removing counts for the multi-copy genes
+  normBase <- orf.sum[,.(norm_base = sum(read_count)), by=sample]
   
   fig.dir <- paste0(fig.dir, '.norm_LoRTIA')
   
@@ -216,6 +226,8 @@ stopifnot(all(normBase$sample == colnames(orf.counts[-c(1:6)]) ))
 orf.perc <- merge(normBase, orf.sum, by='sample')
 orf.perc[,read_count := read_count / norm_base]
 
+min_read_count <- 10
+#normBase
 
 #### TO-DO: 
 
@@ -227,7 +239,7 @@ orf.perc[,read_count := read_count / norm_base]
 
 ```{r}
 ### Filtering of very-low coverage samples
-samples_to_filt <- c('C6_2h_3', 'PC-12_8h_3')
+samples_to_filt <- c('C6_2h_3', 'PC-12_8h_3', 'C6_0.5h_1', 'C6_0.5h_2')
 
 orf.perc <- orf.perc[!orf.perc$sample %in% samples_to_filt, ]
 metafilt <- metafilt[!metafilt$sample %in% samples_to_filt, ]
@@ -237,50 +249,61 @@ message(paste(samples_to_filt, ' was filtered out!', collapse = '\n') )
 ```
 
 
-# 1. Counts based on TSS only (5` -ends of reads)
+# 1. Counts based on TSS *AND* TES (3 and 5` ends of reads)
 
 ## Statistics of counts {.tabset}
 ```{r, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE}
 
-#### Keep those where the TSS was correct, regardless of TES
+##
 orf.sum.perc <- orf.perc
-orf.sum.perc <- orf.sum.perc[!is.na(gene), ]
 
-orf.sum.perc[,gene_cluster   := gene]
+if (EndType == 'TSS') {
 
+  #### Keep those where the TSS was correct, regardless of TES
+  orf.sum.perc <- orf.sum.perc[!is.na(gene), ]
+  
+  orf.sum.perc[,gene_cluster   := gene]
+  
+} else if (EndType == 'TES') {
+  
+  #### Keep those where the TES was correct, regardless of TSS
+  orf.sum.perc <- orf.sum.perc[!is.na(gene_cluster), ]
+  
+  orf.sum.perc[,gene   := gene_cluster]
+  
+} else if (EndType == 'TSS.TES') {
+  
+  #### Keep those where both the TSS and TES were correct
+  orf.sum.perc <- orf.sum.perc[!is.na(gene_cluster) & !is.na(gene), ]
+  
+  orf.sum.perc[,gene_cluster   := gene]
+  
+}
+
+
+#### Format Kinetic Class
 gene_kin.class <- na.omit(unique(orf.sum.perc[,.(gene, Kinetic_class)]))
 gene_kin.class[,Kinetic_class := paste(Kinetic_class, collapse = '/'), by=.(gene)]
 gene_kin.class <- unique(gene_kin.class[,.(gene, Kinetic_class)])
 
 orf.sum.perc[,Kinetic_class := NULL]
+orf.sum.perc <- merge(orf.sum.perc, gene_kin.class, by='gene', all.x=T)
 
-#### Summarize the counts
-
-## summarise counts on gene cluster
-orf.sum.perc <- orf.sum.perc[,.(read_count=sum(read_count)), by=.(seqnames, strand, gene, norm_base, sample, group, hpi, Time, cell_line)]
-orf.sum.perc <- merge(orf.sum.perc, gene_kin.class, by='gene', allow.cartesian=T, all=T)
-
-### Statistics of gene cluster counts accross samples
-
-## normalized counts
-orf.perc.mean <- 
-  orf.sum.perc %>% group_by(gene, Kinetic_class, hpi, Time, cell_line) %>%
-  dplyr::summarise(mean=mean(read_count), sd=sd(read_count), varcoeff=sd(read_count) / mean(read_count), se=mean_se(read_count))
-orf.perc.mean <- data.table(orf.perc.mean[,1:8], orf.perc.mean$se[])
-
-orf.perc.mean[is.na(Kinetic_class), Kinetic_class := 'unknown']
-orf.perc.mean[,Kinetic_class := factor(Kinetic_class, levels = c('IE', 'IE/E', 'E', 'IE/E/L', 'E/L', 'L', 'unknown'))]
-
-## non-normalized counts
-#orf.mean <- 
-#  orf.sum %>% group_by(gene, hpi, Time, cell_line) %>%
-#  dplyr::summarise(mean=mean(read_count), sd=sd(read_count), varcoeff=sd(read_count) / mean(read_count), se=mean_se(read_count))
-#orf.mean <- data.table(orf.mean[,1:7], orf.mean$se[])
+orf.sum.perc[is.na(Kinetic_class), Kinetic_class := 'unknown']
+orf.sum.perc[,Kinetic_class := factor(Kinetic_class, levels = c('IE', 'IE/E', 'E', 'IE/E/L', 'E/L', 'L', 'unknown'))]
 
 
+#### Summarize the counts on gene
+orf.sum.perc <- orf.sum.perc[,.(read_count=sum(read_count)), by=.(seqnames, strand, gene, norm_base, sample, group, hpi, Time, cell_line, Kinetic_class)]
 
-#### merge back summary with counts
-orf.sum.perc <- merge(orf.sum.perc, orf.perc.mean, by=c('gene', 'Kinetic_class', 'hpi', 'Time', 'cell_line'))
+
+#### Statistics of gene cluster counts across replicates
+orf.perc.mean <- orf.sum.perc[, .(mean=mean(read_count), sd=sd(read_count), varcoeff=sd(read_count) / mean(read_count)), 
+                              by=.(gene, Kinetic_class, hpi, Time, cell_line, group)]
+
+#### Merge back summary with counts
+orf.sum.perc <- merge(orf.sum.perc, orf.perc.mean, 
+                      by=c('gene', 'Kinetic_class', 'hpi', 'Time', 'cell_line', 'group'))
 
 
 ```
@@ -431,18 +454,6 @@ figh     <- nrow(all.class.freq) * row_multip
 ```
 
 
-### Mean and SD with loess function
-```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
-
-ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, all.class.freq, ncol=ncol)
-
-ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh, align = 'v', axis=c('tlrb'))
-
-ggsave(paste0(fig.dir, '/', EndType, '_', norm.method,  '_Literature.Clusters', '_mean.sd.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
-
-ggp
-```
-
 ### Mean and SD with linear connection
 ```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
 
@@ -469,6 +480,18 @@ ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
 
 
 ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Literature.Clusters', '_replicates.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+ggp
+```
+
+### Mean and SD with loess function
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=F}
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, all.class.freq, ncol=ncol)
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh, align = 'v', axis=c('tlrb'))
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method,  '_Literature.Clusters', '_mean.sd.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
 
 ggp
 ```
@@ -778,15 +801,11 @@ ggsave(paste0(fig.dir, '/gene_ratios_sum.jpg'), width = 10, height = 7)
 ```
 
 
-
-
 ```{r}
 ## Export data
 if (writetables) {
   fwrite(orf.sum.perc,       paste0(fig.dir, '/', norm.method, '_', EndType, '_counts.norm.tsv'), sep = '\t')
   fwrite(orf.perc.mean,      paste0(fig.dir, '/', norm.method, '_', EndType, '_abund.mean.tsv'), sep = '\t')
-  fwrite(select.genes.class.cell.lines,      paste0(fig.dir, '/', norm.method, '_', EndType, '_select.genes.class.cell.lines.tsv'), sep = '\t')
-  
   #fwrite(DE_results,         paste0(fig.dir, '/', norm.method, '_', EndType, '_DE_results.tsv'), row.names=T, sep = '\t')
   #fwrite(DE_cluster_results, paste0(fig.dir, '/', norm.method, '_', EndType, '_moanin_DE_results.tsv'), sep = '\t')
 

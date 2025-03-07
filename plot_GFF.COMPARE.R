@@ -108,18 +108,18 @@ ggp <- ggplot(
   theme_bw() + 
   facet_nested_wrap(~as.factor(Time) + cell_line, nrow=1, scales= 'free')
 
-ggsave(paste0(outdir, '/', 'gffcompare.TR.class.sum.cell_lines.stack.jpg'), ggp, width = 18, height = 15)
+ggsave(paste0(outdir, '/', 'gffcompare.TR.class.sum.cell_lines.stack.jpg'), ggp, width = 26, height = 15)
 
 ggp <- ggplot( 
   TR.class.count.sample,
-  aes(x=as.factor(sample), y=sum_count, fill=class_code)) +
+  aes(x=as.factor(rep), y=sum_count, fill=class_code)) +
   geom_col(position = 'stack', color = 'black') +
   #scale_fill_cosmic() +
   #coord_flip() +
   theme_bw() + 
   facet_nested_wrap(~as.factor(Time) + cell_line, nrow=1, scales= 'free')
 
-ggsave(paste0(outdir, '/', 'gffcompare.TR.class.sum.samples.stack.jpg'), ggp, width = 24, height = 15)
+ggsave(paste0(outdir, '/', 'gffcompare.TR.class.sum.samples.stack.jpg'), ggp, width = 30, height = 15)
 
 
 ### summarise NORMALISED read counts of transcript categories
@@ -147,7 +147,7 @@ ggsave(paste0(outdir, '/', 'gffcompare.TR.class.filt.sum.norm.jpg'), ggp, width 
 
 ggp <- ggplot( 
   TR.class.norm.count.sample,
-  aes(x=as.factor(sample), y=sum_count, fill=class_code)) +
+  aes(x=as.factor(rep), y=sum_count, fill=class_code)) +
   geom_col(position = 'stack', color = 'black') +
   #scale_fill_cosmic() +
   #coord_flip() +
@@ -155,7 +155,7 @@ ggp <- ggplot(
   theme(axis.text.x = element_text(angle=90)) +
   facet_nested_wrap(~as.factor(Time) + cell_line, nrow=1, scales= 'free')
 
-ggsave(paste0(outdir, '/', 'gffcompare.TR.class.sum.samples.stack.norm.jpg'), ggp, width = 24, height = 15)
+ggsave(paste0(outdir, '/', 'gffcompare.TR.class.sum.samples.stack.norm.jpg'), ggp, width = 30, height = 15)
 
 
 ## in all of the sample groups
@@ -186,7 +186,7 @@ ggp <- ggplot(
   theme(axis.text.x = element_text(angle=90)) +
   facet_nested_wrap(~as.factor(Time) + cell_line, nrow=1, scales= 'free')
 
-ggsave(paste0(outdir, '/', 'gffcompare.TR.class.sum.cell_lines.stack.norm.jpg'), ggp, width = 18, height = 12)
+ggsave(paste0(outdir, '/', 'gffcompare.TR.class.sum.cell_lines.stack.norm.jpg'), ggp, width = 26, height = 12)
 
 
 

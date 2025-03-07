@@ -6,6 +6,7 @@ library(hrbrthemes, quietly = T)
 library(gggenes)
 library(tidygenomics)
 library(ggh4x)
+library(purrr)
 
 source('_WF.part0.R')
 

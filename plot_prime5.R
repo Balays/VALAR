@@ -30,7 +30,7 @@ if (plot.all.together) {
   ggsave(paste0(fig.dir, '/', virus, '_', prime, '_', '0.5h', '_', file_name_suffix, '.jpg'), plot = FigY, height = fig.height, width = fig.width, limitsize = F)
    
   #### hpi 1
-  samples <- na.omit(unique(metafilt[metafilt$Time == 1 , combine.groups]))
+  samples <- unique(na.omit(metafilt[metafilt$Time == 1 , combine.groups]))
   FigY    <- plotfun.all(samples)
   
   fig.width  <- (visto - visfrom) / fig.w.size

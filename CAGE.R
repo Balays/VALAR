@@ -254,9 +254,15 @@ TR.merged.data <- merge(TR.merged.data, data, by=c('seqnames', 'strand', 'start.
 
 CAGE.ref.support.freq <- TR.merged.data[, .(ratio=.N/nrow(TR.merged.data)), by = .(CAGE_significance) ][order(CAGE_significance)]
 
-#### Itt jarok
-## signifikanciat jol van kiszamolva ?
+
 TR.merged.data[, .N, by = .(CAGE_significance) ][order(CAGE_significance)]
+
+
+ggplot(TR.merged.data, aes(CAGE_significance)) +
+  geom_bar(aes(fill=CAGE_significance), color='black') + 
+  theme_ipsum() +
+  labs(title = 'CAGE support of Reference Transcripts',
+       y = 'Number of Refernce Transcripts')
 
 
 #### Add CAGE significance (from all TR's read count) to CAGEfighter table

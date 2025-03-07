@@ -76,8 +76,8 @@ TR.counts <- fread(paste0(outdir, '/TR.counts.tsv'), na.strings = '')
 TR.gff <- data.table(as.data.frame(rtracklayer::import.gff2(config$TR.reads.gfffile)))
 TR.EX  <- fread(paste0(outdir, '/TR.EX.tsv'))
 
-
-TR.adapt.count <- fread(paste0(outdir, '/TR.adapt.count.tsv'), na.strings = '')
+## Adapter counts per TransFrag
+TR.adapt.count <- aln.uni[,.(count=.N), by=.(seqnames, strand, TR_ID, TR_start, TR_end, correct_tss, correct_tes, sample)]
 
 TR.counts.sp <- dcast(TR.adapt.count, TR_ID + correct_tss + correct_tes ~ sample, value.var = 'count', fill=0)
 ##
