@@ -873,6 +873,11 @@ fwrite(cov.counts,    paste0(outdir, '/cov.counts.tsv'),    sep = '\t')
 source('plot_primes.R')
 
 
+#### 
+cluster_min_ratio <- 0.0005
+cluster_min_count <- 5
+
+source('hclust.R')
 
 
 prime5.toclust <- prime5.counts[hpi == '4h' & cell_line == 'PK-15' & correct_tss == T,.(seqnames, strand, position = prime5, count)]
@@ -889,7 +894,8 @@ hclust.res    <- hclust.res[, cluster_ratio := cluster_total_count / sum(hclust.
 
 ## Filter clusters for below certain total read counts and ratios
 cluster_min_ratio <- 0.0005
-cluster_min_count <- 0.0005
+cluster_min_count <- 5
+
 
 filter_clusters <- function(hclust_res, cluster_min_ratio = NULL, cluster_min_count = NULL) {
   # Calculate cluster_ratio if not already present

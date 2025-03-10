@@ -72,9 +72,122 @@ all_clusters <- prime5.counts[correct_tss == TRUE, {
                                           cluster_total_count)])
   
   # Filter clusters using your filtering function (assumed to be defined)
-  filtered <- filter_clusters(unique_clusters, cluster_min_ratio = 0.0005, cluster_min_count = 0.0005)
+  filtered <- filter_clusters(unique_clusters, cluster_min_ratio = cluster_min_ratio, cluster_min_count = cluster_min_count)
   
   # Wrap the filtered result in a list so that each group's result is a single list-column entry
   list(clusters = list(filtered))
 }, by = .(hpi, cell_line)]
 
+
+
+
+# Flatten the clusters list column into one data.table
+all_clusters_long <- all_clusters[, {
+  # Each group’s clusters data.table is stored as the first element of the list
+  dt <- clusters[[1]]
+  # It is useful to carry over the grouping variables to know the origin of each cluster
+  dt[, .(seqnames, strand, cluster, cluster_start, cluster_end, cluster_peak, cluster_width, cluster_total_count
+         ,hpi, cell_line
+         )]
+}, by = .(hpi, cell_line)]
+
+# Check the combined data.table
+print(all_clusters_long)
+
+cn <- c(which(duplicated(colnames(all_clusters_long))))
+setDF(all_clusters_long)
+
+all_clusters_long <- data.table(all_clusters_long[,-cn ]) # [,hpi.1]
+
+# Order the clusters
+setorder(all_clusters_long, seqnames, strand, cluster_start)
+
+# For each contig and strand, assign a meta_cluster ID by merging overlapping intervals.
+all_clusters_long[, meta_cluster := {
+  meta = integer(.N)
+  current_meta = 1L
+  current_end = cluster_end[1]
+  meta[1] = current_meta
+  if (.N > 1) {
+    for (i in 2:.N) {
+      # If this cluster overlaps with the previous meta-cluster (its start is <= current_end)
+      if (cluster_start[i] <= current_end) {
+        meta[i] = current_meta
+        # Update the current meta-cluster end if needed
+        current_end = max(current_end, cluster_end[i])
+      } else {
+        current_meta = current_meta + 1L
+        meta[i] = current_meta
+        current_end = cluster_end[i]
+      }
+    }
+  }
+  meta
+}, by = .(seqnames, strand)]
+
+
+fwrite(all_clusters_long, paste0(outdir, '/all_clusters_long.tsv'), sep='\t')
+
+
+meta_summary <- all_clusters_long[, .(
+  meta_cluster_start = min(cluster_start),
+  meta_cluster_end   = max(cluster_end),
+  consensus_peak     = mean(cluster_peak),  # or weighted average if desired
+  peak_shift         = max(cluster_peak) - min(cluster_peak),
+  width_range        = max(cluster_width) - min(cluster_width),
+  sample_count       = .N,
+  hpi_samples        = paste(unique(hpi), collapse = ", "),
+  cell_lines         = paste(unique(cell_line), collapse = ", "),
+  total_read_count   = sum(cluster_total_count)
+), by = .(seqnames, strand, meta_cluster)]
+
+print(meta_summary)
+
+
+
+library(ggplot2)
+library(data.table)
+
+# --- Plot 1: Cluster Peak Positions across Meta Clusters ---
+p1 <- ggplot(all_clusters_long, aes(x = factor(meta_cluster), y = cluster_peak, color = hpi, shape = cell_line)) +
+  geom_jitter(width = 0.2, height = 0, size = 2, alpha = 0.7) +
+  stat_summary(fun = mean, geom = "point", shape = 4, size = 3, color = "black") +
+  labs(title = "Cluster Peak Positions across Meta Clusters",
+       x = "Meta Cluster",
+       y = "Peak Position (bp)") +
+  theme_minimal()
+print(p1)
+
+# --- Plot 2: Cluster Widths across Meta Clusters ---
+p2 <- ggplot(all_clusters_long, aes(x = factor(meta_cluster), y = cluster_width, color = hpi, shape = cell_line)) +
+  geom_jitter(width = 0.2, height = 0, size = 2, alpha = 0.7) +
+  stat_summary(fun = mean, geom = "point", shape = 4, size = 3, color = "black") +
+  labs(title = "Cluster Widths across Meta Clusters",
+       x = "Meta Cluster",
+       y = "Cluster Width (bp)") +
+  theme_minimal()
+print(p2)
+
+# --- Plot 3: Meta Cluster Peak Range with Error Bars ---
+# Compute the summary for each meta_cluster
+meta_peaks <- all_clusters_long[, .(
+  min_peak = min(cluster_peak),
+  max_peak = max(cluster_peak),
+  mean_peak = mean(cluster_peak)
+), by = meta_cluster]
+
+p3 <- ggplot() +
+  # Error bars showing the min and max peak for each meta_cluster
+  geom_errorbar(data = meta_peaks, aes(x = factor(meta_cluster), ymin = min_peak, ymax = max_peak),
+                width = 0.2, color = "gray50") +
+  # Jittered individual peak points, colored by hpi and shaped by cell_line
+  geom_point(data = all_clusters_long, aes(x = factor(meta_cluster), y = cluster_peak, color = hpi, shape = cell_line),
+             position = position_jitter(width = 0.2), size = 2, alpha = 0.7) +
+  # Mean peak point for each meta_cluster
+  geom_point(data = meta_peaks, aes(x = factor(meta_cluster), y = mean_peak),
+             color = "black", size = 3) +
+  labs(title = "Meta Cluster Peak Range",
+       x = "Meta Cluster",
+       y = "Cluster Peak (bp)") +
+  theme_minimal()
+print(p3)
