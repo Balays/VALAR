@@ -880,6 +880,12 @@ cluster_min_count <- 5
 source('hclust.R')
 
 
+
+
+
+
+
+
 prime5.toclust <- prime5.counts[hpi == '4h' & cell_line == 'PK-15' & correct_tss == T,.(seqnames, strand, position = prime5, count)]
 
 prime5.mclust   <- Mclust_stranded(prime5.toclust, G = 100:1000, plot_results = T)
@@ -896,28 +902,6 @@ hclust.res    <- hclust.res[, cluster_ratio := cluster_total_count / sum(hclust.
 cluster_min_ratio <- 0.0005
 cluster_min_count <- 5
 
-
-filter_clusters <- function(hclust_res, cluster_min_ratio = NULL, cluster_min_count = NULL) {
-  # Calculate cluster_ratio if not already present
-  if (!"cluster_ratio" %in% colnames(hclust_res)) {
-    hclust_res[, cluster_ratio := cluster_total_count / sum(cluster_total_count)]
-  }
-  
-  # Start with the full set of clusters
-  filtered_clusters <- copy(hclust_res)
-  
-  # Apply ratio filter if provided
-  if (!is.null(cluster_min_ratio)) {
-    filtered_clusters <- filtered_clusters[cluster_ratio >= cluster_min_ratio]
-  }
-  
-  # Apply count filter if provided
-  if (!is.null(cluster_min_count)) {
-    filtered_clusters <- filtered_clusters[cluster_total_count >= cluster_min_count]
-  }
-  
-  return(filtered_clusters)
-}
 
 # --- Now, to process all replicates grouped by hpi and cell_line ---
 all_clusters <- prime5.counts[correct_tss == TRUE, {

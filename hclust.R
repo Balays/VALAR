@@ -58,6 +58,30 @@ TSS_cluster_hclust <- function(DT, max_cluster_size = 100, use_weights = TRUE, p
 
 
 
+filter_clusters <- function(hclust_res, cluster_min_ratio = NULL, cluster_min_count = NULL) {
+  # Calculate cluster_ratio if not already present
+  if (!"cluster_ratio" %in% colnames(hclust_res)) {
+    hclust_res[, cluster_ratio := cluster_total_count / sum(cluster_total_count)]
+  }
+  
+  # Start with the full set of clusters
+  filtered_clusters <- copy(hclust_res)
+  
+  # Apply ratio filter if provided
+  if (!is.null(cluster_min_ratio)) {
+    filtered_clusters <- filtered_clusters[cluster_ratio >= cluster_min_ratio]
+  }
+  
+  # Apply count filter if provided
+  if (!is.null(cluster_min_count)) {
+    filtered_clusters <- filtered_clusters[cluster_total_count >= cluster_min_count]
+  }
+  
+  return(filtered_clusters)
+}
+
+
+
 all_clusters <- prime5.counts[correct_tss == TRUE, {
   # Subset the necessary columns and rename 'pos' to 'position'
   dt_to_cluster <- .SD[, .(seqnames, strand, position = pos, count)]
@@ -65,45 +89,46 @@ all_clusters <- prime5.counts[correct_tss == TRUE, {
   # Apply the hierarchical clustering function
   clustered <- TSS_cluster_hclust(dt_to_cluster, max_cluster_size = 100, use_weights = TRUE)
   
-  # Get unique clusters per strand
-  unique_clusters <- unique(clustered[, .(seqnames, strand, cluster, 
+}, by = .(hpi, cell_line)]
+
+# Get unique clusters per strand
+unique_clusters <- unique(all_clusters[, .(seqnames, strand, cluster, 
                                           cluster_start, cluster_end, 
                                           cluster_peak, cluster_width, 
                                           cluster_total_count)])
+
+
+
+# Filter clusters using your filtering function (assumed to be defined)
+filtered_clusters <- all_clusters_long[, {
+  # Subset the necessary columns and rename 'pos' to 'position'
+  dt_to_cluster <- .SD[, .(seqnames, strand, 
+                           cluster, cluster_start, cluster_end, cluster_peak, cluster_width, cluster_total_count)]
   
-  # Filter clusters using your filtering function (assumed to be defined)
-  filtered <- filter_clusters(unique_clusters, cluster_min_ratio = cluster_min_ratio, cluster_min_count = cluster_min_count)
+  ## Filter
+  filtered<- filter_clusters(dt_to_cluster, cluster_min_ratio = cluster_min_ratio, cluster_min_count = cluster_min_count)
   
-  # Wrap the filtered result in a list so that each group's result is a single list-column entry
-  list(clusters = list(filtered))
-}, by = .(hpi, cell_line)]
+ }, by = .(hpi, cell_line)]
+
+
+
+# Get unique clusters per strand
+unique_filt_clusters <- unique(filtered_clusters[, .(seqnames, strand, cluster, 
+                                                cluster_start, cluster_end, 
+                                                cluster_peak, cluster_width, 
+                                                cluster_total_count, cluster_ratio)])
 
 
 
 
-# Flatten the clusters list column into one data.table
-all_clusters_long <- all_clusters[, {
-  # Each group’s clusters data.table is stored as the first element of the list
-  dt <- clusters[[1]]
-  # It is useful to carry over the grouping variables to know the origin of each cluster
-  dt[, .(seqnames, strand, cluster, cluster_start, cluster_end, cluster_peak, cluster_width, cluster_total_count
-         ,hpi, cell_line
-         )]
-}, by = .(hpi, cell_line)]
-
-# Check the combined data.table
-print(all_clusters_long)
-
-cn <- c(which(duplicated(colnames(all_clusters_long))))
-setDF(all_clusters_long)
-
-all_clusters_long <- data.table(all_clusters_long[,-cn ]) # [,hpi.1]
+#### Meta Clusters
 
 # Order the clusters
-setorder(all_clusters_long, seqnames, strand, cluster_start)
+setorder(filtered_clusters, seqnames, strand, cluster_start)
+
 
 # For each contig and strand, assign a meta_cluster ID by merging overlapping intervals.
-all_clusters_long[, meta_cluster := {
+filtered_clusters[, meta_cluster := {
   meta = integer(.N)
   current_meta = 1L
   current_end = cluster_end[1]
@@ -126,14 +151,18 @@ all_clusters_long[, meta_cluster := {
 }, by = .(seqnames, strand)]
 
 
-fwrite(all_clusters_long, paste0(outdir, '/all_clusters_long.tsv'), sep='\t')
+fwrite(filtered_clusters, paste0(outdir, '/filtered_clusters.tsv'), sep='\t')
 
+filtered_clusters <- fread(paste0(outdir, '/filtered_clusters.tsv'), na.strings = '')
 
-meta_summary <- all_clusters_long[, .(
+meta_summary <- filtered_clusters[, .(
   meta_cluster_start = min(cluster_start),
   meta_cluster_end   = max(cluster_end),
   consensus_peak     = mean(cluster_peak),  # or weighted average if desired
   peak_shift         = max(cluster_peak) - min(cluster_peak),
+  min_peak = min(cluster_peak),
+  max_peak = max(cluster_peak),
+  mean_peak = mean(cluster_peak),
   width_range        = max(cluster_width) - min(cluster_width),
   sample_count       = .N,
   hpi_samples        = paste(unique(hpi), collapse = ", "),
@@ -141,12 +170,36 @@ meta_summary <- all_clusters_long[, .(
   total_read_count   = sum(cluster_total_count)
 ), by = .(seqnames, strand, meta_cluster)]
 
-print(meta_summary)
+filtered_clusters <- merge(filtered_clusters, meta_summary, by=c('seqnames', 'strand', 'meta_cluster'))
+
+
+meta_summary
+
+ggplot(meta_summary) +
+  geom_histogram(aes(width_range), binwidth =  1)
+
+ggplot(filtered_clusters) +
+  geom_histogram(aes(width_range), binwidth =  1)
 
 
 
-library(ggplot2)
-library(data.table)
+
+
+
+
+
+# Compute the summary for each meta_cluster
+meta_peaks <- all_clusters_long[, .(
+  min_peak = min(cluster_peak),
+  max_peak = max(cluster_peak),
+  mean_peak = mean(cluster_peak)
+), by = meta_cluster]
+
+#all_clusters_long <- merge(all_clusters_long, meta_peaks, by=c('seqnames', 'strand', 'meta_cluster'))
+
+
+
+### Plottin clusters
 
 # --- Plot 1: Cluster Peak Positions across Meta Clusters ---
 p1 <- ggplot(all_clusters_long, aes(x = factor(meta_cluster), y = cluster_peak, color = hpi, shape = cell_line)) +
@@ -168,13 +221,8 @@ p2 <- ggplot(all_clusters_long, aes(x = factor(meta_cluster), y = cluster_width,
   theme_minimal()
 print(p2)
 
+
 # --- Plot 3: Meta Cluster Peak Range with Error Bars ---
-# Compute the summary for each meta_cluster
-meta_peaks <- all_clusters_long[, .(
-  min_peak = min(cluster_peak),
-  max_peak = max(cluster_peak),
-  mean_peak = mean(cluster_peak)
-), by = meta_cluster]
 
 p3 <- ggplot() +
   # Error bars showing the min and max peak for each meta_cluster
@@ -191,3 +239,23 @@ p3 <- ggplot() +
        y = "Cluster Peak (bp)") +
   theme_minimal()
 print(p3)
+
+
+
+
+p4 <- ggplot(all_clusters_long[hpi == '4h'], 
+             aes(x = consensus_peak, y = log10(total_read_count), color = hpi, shape = cell_line)) +
+    # Error bars showing the min and max peak for each meta_cluster
+  geom_errorbar(aes(x = factor(meta_cluster), xmin = meta_cluster_start, xmax = meta_cluster_end),
+                width = 0.2, color = "gray50") +
+  
+  #geom_jitter(width = 0.2, height = 0, size = 2, alpha = 0.7) +
+  #stat_summary(fun = mean, geom = "point", shape = 4, size = 3, color = "black") +
+  labs(title = "Cluster Widths across Meta Clusters",
+       x = "Meta Cluster",
+       y = "log10 meta cluster read count") +
+  theme_minimal() +
+  facet_nested(rows=vars(cell_line, hpi, strand), scales='free_y')
+
+p4
+
