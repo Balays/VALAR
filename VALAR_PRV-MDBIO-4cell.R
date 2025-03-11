@@ -607,7 +607,10 @@ source('count.genes.v2.R')
 source('CAGEs.R')
 
 
-
+## write out compressed results
+fwrite(TR.gene.ov.counts, paste0(outdir, '/TR.gene.ov.counts.tsv.gz'), sep = '\t')
+fwrite(TR.gff.compare.merged.TR.counts.gt, paste0(outdir, '/TR.gff.compare.merged.TR.counts.gt.tsv.gz'), sep = '\t')
+fwrite(best.merged.result_gff.compare, paste0(outdir, '/best.merged.result_gff.compare.tsv.gz'), sep = '\t')
 ##### ITT JÁROK, EDDIG OK
 
 
