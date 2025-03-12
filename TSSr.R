@@ -1,48 +1,90 @@
 library(TSSr)
+library(BSgenome.PRV.MdBio.1.0)
+library(data.table)
+
+prime5.counts <- fread(paste0(outdir, '/prime5.counts.tsv'), na.strings = '')
+
+prime5.counts[, sample := gsub('-', '_', sample)]
+
+prime5.counts <- prime5.counts[!grepl('C6_0.5h', sample),]
 
 TssData <- dcast.data.table(prime5.counts[correct_tss == T], 
                             seqnames + pos + strand ~ sample, 
-                            value.var = 'count')
+                            value.var = 'count', fill = 0)
+
 colnames(TssData)[1] <- 'chr'
 
-TssData <- TSSr::createTSSobj(TssData)
-# TssData <- clusterTSS(TssData, ...)
+colSums(TssData[,-c(1:3)])
+
+fwrite(TssData, paste0(outdir, '/TssData.txt'), sep='\t')
 
 
-library(fitdistrplus)
-result_list <- list()
+sampleLabels  <- data.table(sampleLabels=colnames(TssData)[-c(1:3)])
+sampleLabels[, sampleLabelsMerged := gsub('_[1-3]$', '', sampleLabels)]
+sampleLabels[, mergeIndex         := .GRP, by=sampleLabelsMerged]
 
-for (cl in unique(clusters$cluster_id)) {
-  region_data <- dt[clusters$cluster_id == cl]
-  # Expand positions by coverage
-  # This step might be big if coverage is large, but let's show the idea:
-  pos_vec <- rep(region_data$position, times=region_data$count)
   
-  # Optionally shift to a reference, e.g. subtract min(pos_vec) to make it 0-based if you want gamma
-  # Or center around the cluster peak or median:
-  peak_pos <- median(pos_vec)   # or region_data$peak
-  dist_vec <- pos_vec - peak_pos
-  
-  # If you want to fit a skew-normal (sn package) directly:
-  # library(sn)
-  # sn_fit <- selm(dist_vec ~ 1, family="SN")
-  # param_est <- coef(sn_fit)
-  
-  # If you want gamma with only non-negative data, ensure dist_vec >= 0
-  dist_vec_gamma <- dist_vec[dist_vec >= 0]
-  if (length(dist_vec_gamma) > 5) {
-    gamma_fit <- fitdist(dist_vec_gamma, "gamma")
-  } else {
-    gamma_fit <- NULL
-  }
-  
-  # Evaluate goodness-of-fit or store results
-  result_list[[cl]] <- list(
-    cluster_id = cl,
-    peak_pos = peak_pos,
-    gamma_fit = gamma_fit
-  )
-}
 
-# Then parse the 'gamma_fit' object to get shape, rate, etc.
+#set parameters
+refSource <- "refgenome/Refgenome/LT934125.1-2.gff3"
+organismName <- "PRV"
+directory_path <- paste0(outdir, "/TSSr/")
 
+
+#create TSSr object
+myTSSr <- new("TSSr", genomeName = "BSgenome.PRV.MdBio.1.0",
+              inputFiles = paste0(outdir, '/TssData.txt'),
+              inputFilesType = 'TSStable',
+              sampleLabels = sampleLabels$sampleLabels,
+              sampleLabelsMerged = unique(sampleLabels$sampleLabelsMerged),
+              mergeIndex = sampleLabels$mergeIndex,
+              refSource = refSource,
+              organismName = organismName
+)
+
+
+getTSS(myTSSr)#, sequencingQualityThreshold = 10, mappingQualityThreshold = 20)
+
+# export raw data
+exportTSStable(myTSSr, data = "raw", merged = "FALSE")
+
+#create correlation plot
+#ggp <- plotCorrelation(myTSSr, samples = "all")
+# PCA
+plotTssPCA(myTSSr, TSS.threshold=1)
+
+# Merge replicates
+TSSr::mergeSamples(myTSSr)
+
+# export merged data
+exportTSStable(myTSSr, data = "raw", merged = "FALSE")
+
+TSS.raw.dt  <- as.data.table(myTSSr@TSSprocessedMatrix)
+
+
+#myTSSr@librarySizes
+# Filter and normalize counts
+filterTSS(myTSSr, method = "poisson", normalization = T, pVal =0.01, tpmLow = 0.1)
+
+exportTSStable(myTSSr, data = "processed") 
+
+TSS.dt <- myTSSr@TSSprocessedMatrix
+
+# Cluster into TSS Clusters
+clusterTSS(myTSSr, method = "peakclu",peakDistance=100,extensionDistance=30
+           ,localThreshold = 0.02, clusterThreshold = 1
+           ,useMultiCore=FALSE, numCores=NULL)
+
+
+# Extract clusters
+tagClusters <- rbindlist(myTSSr@tagClusters, idcol = 'group', use.names = T)
+
+fwrite(tagClusters, 'all.tagClusters.txt', sep='\t')
+
+#exportTSStoBedgraph(myTSSr, data = "processed", format = "bedGraph") 
+#exportTSStoBedgraph(myTSSr, data = "processed", format = "BigWig")
+
+#exportClustersTable(myTSSr, data = "tagClusters")
+#exportClustersToBed(myTSSr, data = "tagClusters") 
+
+tagClusters <- fread('all.tagClusters.txt')

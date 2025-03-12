@@ -1,0 +1,16 @@
+Package: BSgenome.PRV.MdBio.1.0
+Title: Full genome sequences for Suid alphaherpesvirus 1
+Description:Suid herpesvirus 1, strain MdBio isolated from encephalitic swine
+Version: 1.0.0
+organism: Suid alphaherpesvirus 1
+common_name: PRV
+provider: MDBIO
+organism_biocview: Suid_alphaherpesvirus_1
+release_date: 2017-05-22
+genome: LT934125.1
+organism_biocview: Suid_alphaherpesvirus_1
+BSgenomeObjname: PRV
+seqs_srcdir: C:\GitHub\VALAR\refgenome\Refgenome
+seqfile_name: LT934125.1.fasta
+circ_seqs: character(0)
+

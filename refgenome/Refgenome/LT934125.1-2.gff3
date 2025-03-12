@@ -1,0 +1,1234 @@
+LT934125.1	Liftoff	mRNA	227	2273	.	+	.	"Name=ORF-1L2;ID=ORF-1L2;S.TR.ID=ORF-1L2;transferred_from=KJ717942.1;coverage=0.946;sequence_ID=0.925"	Long	ORF-1		0
+LT934125.1	Liftoff	exon	227	2273	.	+	.	"Name=ORF-1L2;ID=ORF-1L2;S.TR.ID=ORF-1L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	ORF-1		
+LT934125.1	Liftoff	mRNA	419	2273	.	+	.	"Name=ORF-1L1;ID=ORF-1L1;S.TR.ID=ORF-1L1;transferred_from=KJ717942.1;coverage=0.942;sequence_ID=0.936"	Long	ORF-1		0
+LT934125.1	Liftoff	exon	419	2273	.	+	.	"Name=ORF-1L1;ID=ORF-1L1;S.TR.ID=ORF-1L1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	ORF-1		
+LT934125.1	Liftoff	mRNA	779	2273	.	+	.	"Name=ORF-1L1-S;ID=ORF-1L1-S;S.TR.ID=ORF-1L1-S;transferred_from=KJ717942.1;coverage=0.935;sequence_ID=0.933"	Short	ORF-1		1
+LT934125.1	Liftoff	exon	779	2273	.	+	.	"Name=ORF-1L1-S;ID=ORF-1L1-S;S.TR.ID=ORF-1L1-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	ORF-1		
+LT934125.1	Liftoff	mRNA	990	2273	.	+	.	"Name=ORF-1M2;ID=ORF-1M2;S.TR.ID=ORF-1M2;transferred_from=KJ717942.1;coverage=0.991;sequence_ID=0.988"	Canonic	ORF-1		1
+LT934125.1	Liftoff	exon	990	2273	.	+	.	"Name=ORF-1M2;ID=ORF-1M2;S.TR.ID=ORF-1M2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	ORF-1		
+LT934125.1	Liftoff	mRNA	1335	2273	.	+	.	"Name=ORF-1M1;ID=ORF-1M1;S.TR.ID=ORF-1M1;transferred_from=KJ717942.1;coverage=0.991;sequence_ID=0.988"	Canonic	ORF-1		1
+LT934125.1	Liftoff	exon	1335	2273	.	+	.	"Name=ORF-1M1;ID=ORF-1M1;S.TR.ID=ORF-1M1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	ORF-1		
+LT934125.1	Liftoff	mRNA	1496	2273	.	+	.	"Name=ORF-1M1-S;ID=ORF-1M1-S;S.TR.ID=ORF-1M1-S;transferred_from=KJ717942.1;coverage=0.991;sequence_ID=0.987"	Short	ORF-1		0
+LT934125.1	Liftoff	exon	1496	2273	.	+	.	"Name=ORF-1M1-S;ID=ORF-1M1-S;S.TR.ID=ORF-1M1-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	ORF-1		
+LT934125.1	Liftoff	mRNA	1600	2273	.	+	.	"Name=ORF-1;ID=ORF-1;S.TR.ID=ORF-1;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.991"	Canonic	ORF-1		1
+LT934125.1	Liftoff	exon	1600	2273	.	+	.	"Name=ORF-1;ID=ORF-1;S.TR.ID=ORF-1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	ORF-1		
+LT934125.1	Liftoff	mRNA	1725	2273	.	+	.	"Name=ORF-1.5;ID=ORF-1.5;S.TR.ID=ORF-1.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	ORF-1	ORF1.5	1
+LT934125.1	Liftoff	exon	1725	2273	.	+	.	"Name=ORF-1.5;ID=ORF-1.5;S.TR.ID=ORF-1.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	ORF-1	ORF1.5	
+LT934125.1	Liftoff	mRNA	1806	2273	.	+	.	"Name=ORF-1.5-S;ID=ORF-1.5-S;S.TR.ID=ORF-1.5-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Putative	ORF-1	ORF1.5	1
+LT934125.1	Liftoff	exon	1806	2273	.	+	.	"Name=ORF-1.5-S;ID=ORF-1.5-S;S.TR.ID=ORF-1.5-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	ORF-1	ORF1.5	
+LT934125.1	Liftoff	mRNA	2778	3141	.	-	.	"Name=UL54.3-S2;ID=UL54.3-S2;S.TR.ID=UL54.3-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL54	UL54.3	0
+LT934125.1	Liftoff	exon	2778	3141	.	-	.	"Name=UL54.3-S2;ID=UL54.3-S2;S.TR.ID=UL54.3-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL54	UL54.3	
+LT934125.1	Liftoff	mRNA	2778	3172	.	-	.	"Name=UL54.3-S;ID=UL54.3-S;S.TR.ID=UL54.3-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL54	UL54.3	1
+LT934125.1	Liftoff	exon	2778	3172	.	-	.	"Name=UL54.3-S;ID=UL54.3-S;S.TR.ID=UL54.3-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL54	UL54.3	
+LT934125.1	Liftoff	mRNA	2778	3281	.	-	.	"Name=UL54.3;ID=UL54.3;S.TR.ID=UL54.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL54	UL54.3	1
+LT934125.1	Liftoff	exon	2778	3281	.	-	.	"Name=UL54.3;ID=UL54.3;S.TR.ID=UL54.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL54	UL54.4	
+LT934125.1	Liftoff	mRNA	2778	3351	.	-	.	"Name=UL54.4;ID=UL54.4;S.TR.ID=UL54.4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL54	UL54.4	1
+LT934125.1	Liftoff	exon	2778	3351	.	-	.	"Name=UL54.4;ID=UL54.4;S.TR.ID=UL54.4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL54	UL54.4	
+LT934125.1	Liftoff	mRNA	2778	3429	.	-	.	"Name=UL54.5-S2;ID=UL54.5-S2;S.TR.ID=UL54.5-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL54	UL54.5	0
+LT934125.1	Liftoff	exon	2778	3429	.	-	.	"Name=UL54.5-S2;ID=UL54.5-S2;S.TR.ID=UL54.5-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL54	UL54.5	
+LT934125.1	Liftoff	mRNA	2778	3640	.	-	.	"Name=UL54.5-S;ID=UL54.5-S;S.TR.ID=UL54.5-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL54	UL54.5	1
+LT934125.1	Liftoff	exon	2778	3640	.	-	.	"Name=UL54.5-S;ID=UL54.5-S;S.TR.ID=UL54.5-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL54	UL54.5	
+LT934125.1	Liftoff	mRNA	2778	3753	.	-	.	"Name=UL54.5;ID=UL54.5;S.TR.ID=UL54.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL54	UL54.5	0
+LT934125.1	Liftoff	exon	2778	3753	.	-	.	"Name=UL54.5;ID=UL54.5;S.TR.ID=UL54.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL54	UL54.5	
+LT934125.1	Liftoff	mRNA	2778	3910	.	-	.	"Name=UL54;ID=UL54;S.TR.ID=UL54;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Canonic	UL54		1
+LT934125.1	Liftoff	exon	2778	3910	.	-	.	"Name=UL54;ID=UL54;S.TR.ID=UL54_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL54		
+LT934125.1	Liftoff	mRNA	2778	4687	.	-	.	"Name=UL54-L;ID=UL54-L;S.TR.ID=UL54-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Long	UL54		1
+LT934125.1	Liftoff	exon	2778	4687	.	-	.	"Name=UL54-L;ID=UL54-L;S.TR.ID=UL54-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL54		
+LT934125.1	Liftoff	mRNA	2778	4925	.	-	.	"Name=UL53-54;ID=UL53-54;S.TR.ID=UL53-54;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL53-54	UL53	1
+LT934125.1	Liftoff	exon	2778	4925	.	-	.	"Name=UL53-54;ID=UL53-54;S.TR.ID=UL53-54_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL53-54	UL53	
+LT934125.1	Liftoff	mRNA	2778	5969	.	+	.	"Name=UL53L-54;ID=UL53L-54;S.TR.ID=UL53L-54;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Policistronic	UL53-54	UL53	0
+LT934125.1	Liftoff	exon	2778	5969	.	+	.	"Name=UL53L-54;ID=UL53L-54;S.TR.ID=UL53L-54_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL53-54	UL53	
+LT934125.1	Liftoff	mRNA	2778	7758	.	-	.	"Name=UL52-53-54;ID=UL52-53-54;S.TR.ID=UL52-53-54;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL52-53-54	UL52	1
+LT934125.1	Liftoff	exon	2778	7758	.	-	.	"Name=UL52-53-54;ID=UL52-53-54;S.TR.ID=UL52-53-54_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL52-53-54	UL52	
+LT934125.1	Liftoff	mRNA	4648	8526	.	-	.	"Name=UL51-52;ID=UL51-52;S.TR.ID=UL51-52;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL51-52	UL51	0
+LT934125.1	Liftoff	exon	4648	8526	.	-	.	"Name=UL51-52;ID=UL51-52;S.TR.ID=UL51-52_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL51-52	UL51	
+LT934125.1	Liftoff	mRNA	7475	10426	.	+	.	"Name=UL51L-50-49.5-49;ID=UL51L-50-49.5-49;S.TR.ID=UL51L-50-49.5-49;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Policistronic	UL51-50-49.5-49	UL51	0
+LT934125.1	Liftoff	exon	7475	10426	.	+	.	"Name=UL51L-50-49.5-49;ID=UL51L-50-49.5-49;S.TR.ID=UL51L-50-49.5-49_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL51-50-49.5-49	UL51	
+LT934125.1	Liftoff	mRNA	7588	8523	.	+	.	"Name=UL51;ID=UL51;S.TR.ID=UL51;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL51		1
+LT934125.1	Liftoff	exon	7588	8523	.	+	.	"Name=UL51;ID=UL51;S.TR.ID=UL51_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL51		
+LT934125.1	Liftoff	mRNA	7588	10426	.	+	.	"Name=UL51-50-49.5-49;ID=UL51-50-49.5-49;S.TR.ID=UL51-50-49.5-49;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Policistronic	UL51-50-49.5-49	UL51	1
+LT934125.1	Liftoff	exon	7588	10426	.	+	.	"Name=UL51-50-49.5-49;ID=UL51-50-49.5-49;S.TR.ID=UL51-50-49.5-49_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL51-50-49.5-49	UL51	
+LT934125.1	Liftoff	mRNA	7811	8523	.	+	.	"Name=UL51.5;ID=UL51.5;S.TR.ID=UL51.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL51	UL51.5	1
+LT934125.1	Liftoff	exon	7811	8523	.	+	.	"Name=UL51.5;ID=UL51.5;S.TR.ID=UL51.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL51	UL51.5	
+LT934125.1	Liftoff	mRNA	8352	10426	.	+	.	"Name=UL50-49.5-49-L;ID=UL50-49.5-49-L;S.TR.ID=UL50-49.5-49-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Policistronic	UL50-49.5-49	UL50	0
+LT934125.1	Liftoff	exon	8352	10426	.	+	.	"Name=UL50-49.5-49-L;ID=UL50-49.5-49-L;S.TR.ID=UL50-49.5-49-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL50-49.5-49	UL50	
+LT934125.1	Liftoff	mRNA	8487	8997	.	-	.	"Name=UL50.1-S;ID=UL50.1-S;S.TR.ID=UL50.1-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL50	UL50.1	1
+LT934125.1	Liftoff	exon	8487	8997	.	-	.	"Name=UL50.1-S;ID=UL50.1-S;S.TR.ID=UL50.1-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL50	UL50.1	
+LT934125.1	Liftoff	mRNA	8487	9058	.	-	.	"Name=UL50.1;ID=UL50.1;S.TR.ID=UL50.1;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL50	UL50.1	1
+LT934125.1	Liftoff	exon	8487	9058	.	-	.	"Name=UL50.1;ID=UL50.1;S.TR.ID=UL50.1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL50	UL50.1	
+LT934125.1	Liftoff	mRNA	8487	9214	.	-	.	"Name=UL50S;ID=UL50S;S.TR.ID=UL50S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Short	UL50		1
+LT934125.1	Liftoff	exon	8487	9214	.	-	.	"Name=UL50S;ID=UL50S;S.TR.ID=UL50S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL50		
+LT934125.1	Liftoff	mRNA	8487	9494	.	-	.	"Name=UL50;ID=UL50;S.TR.ID=UL50;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Canonic	UL50		1
+LT934125.1	Liftoff	exon	8487	9494	.	-	.	"Name=UL50;ID=UL50;S.TR.ID=UL50_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL50		
+LT934125.1	Liftoff	mRNA	8487	9590	.	-	.	"Name=UL50L;ID=UL50L;S.TR.ID=UL50L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Long	UL50		1
+LT934125.1	Liftoff	exon	8487	9590	.	-	.	"Name=UL50L;ID=UL50L;S.TR.ID=UL50L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL50		
+LT934125.1	Liftoff	mRNA	8487	9752	.	-	.	"Name=UL50-L3;ID=UL50-L3;S.TR.ID=UL50-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Long	UL50		0
+LT934125.1	Liftoff	exon	8487	9752	.	-	.	"Name=UL50-L3;ID=UL50-L3;S.TR.ID=UL50-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL50		
+LT934125.1	Liftoff	mRNA	8487	9800	.	-	.	"Name=UL50-L4;ID=UL50-L4;S.TR.ID=UL50-L4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Long	UL50		1
+LT934125.1	Liftoff	exon	8487	9800	.	-	.	"Name=UL50-L4;ID=UL50-L4;S.TR.ID=UL50-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL50		
+LT934125.1	Liftoff	mRNA	8597	10426	.	+	.	"Name=UL50-49.5-49;ID=UL50-49.5-49;S.TR.ID=UL50-49.5-49;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Policistronic	UL50-49.5-49	UL50	0
+LT934125.1	Liftoff	exon	8597	10426	.	+	.	"Name=UL50-49.5-49;ID=UL50-49.5-49;S.TR.ID=UL50-49.5-49_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL50-49.5-49	UL50	
+LT934125.1	Liftoff	mRNA	8899	10426	.	+	.	"Name=UL49.5L-49;ID=UL49.5L-49;S.TR.ID=UL49.5L-49;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Long	Ul49.5-49	UL49.5	1
+LT934125.1	Liftoff	exon	8899	10426	.	+	.	"Name=UL49.5L-49;ID=UL49.5L-49;S.TR.ID=UL49.5L-49_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	Ul49.5-49	UL49.5	
+LT934125.1	Liftoff	mRNA	9113	16224	.	+	.	"Name=UL49.5-49-48-47-46;ID=UL49.5-49-48-47-46;S.TR.ID=UL49.5-49-48-47-46;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.991"	Policistronic	UL49.5-49-48-47-46	UL49.5	1
+LT934125.1	Liftoff	exon	9113	16224	.	+	.	"Name=UL49.5-49-48-47-46;ID=UL49.5-49-48-47-46;S.TR.ID=UL49.5-49-48-47-46_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL49.5-49-48-47-46	UL49.5	
+LT934125.1	Liftoff	mRNA	9208	10426	.	+	.	"Name=UL49.5-49;ID=UL49.5-49;S.TR.ID=UL49.5-49;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Long	UL49.5-49	UL49.5	1
+LT934125.1	Liftoff	exon	9208	10426	.	+	.	"Name=UL49.5-49;ID=UL49.5-49;S.TR.ID=UL49.5-49_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL49.5-49	UL49.5	
+LT934125.1	Liftoff	mRNA	9270	10426	.	+	.	"Name=UL49.5-S-49;ID=UL49.5-S-49;S.TR.ID=UL49.5-S-49;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Short	UL49.5-49	UL49.5	1
+LT934125.1	Liftoff	exon	9270	10426	.	+	.	"Name=UL49.5-S-49;ID=UL49.5-S-49;S.TR.ID=UL49.5-S-49_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL49.5-49	UL49.5	
+LT934125.1	Liftoff	mRNA	9338	10426	.	+	.	"Name=UL49-L3;ID=UL49-L3;S.TR.ID=UL49-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.990"	Long	UL49		1
+LT934125.1	Liftoff	exon	9338	10426	.	+	.	"Name=UL49-L3;ID=UL49-L3;S.TR.ID=UL49-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL49		
+LT934125.1	Liftoff	mRNA	9412	10426	.	+	.	"Name=UL49-L2;ID=UL49-L2;S.TR.ID=UL49-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Long	UL49		1
+LT934125.1	Liftoff	exon	9412	10426	.	+	.	"Name=UL49-L2;ID=UL49-L2;S.TR.ID=UL49-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL49		
+LT934125.1	Liftoff	mRNA	9548	10426	.	+	.	"Name=UL49-L;ID=UL49-L;S.TR.ID=UL49-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Long	UL49		1
+LT934125.1	Liftoff	exon	9548	10426	.	+	.	"Name=UL49-L;ID=UL49-L;S.TR.ID=UL49-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL49		
+LT934125.1	Liftoff	mRNA	9646	10426	.	+	.	"Name=UL49;ID=UL49;S.TR.ID=UL49;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Canonic	UL49		1
+LT934125.1	Liftoff	exon	9646	10426	.	+	.	"Name=UL49;ID=UL49;S.TR.ID=UL49_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL49		
+LT934125.1	Liftoff	mRNA	9699	10426	.	+	.	"Name=UL49.1;ID=UL49.1;S.TR.ID=UL49.1;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.988"	Putative	UL49	UL49.1	1
+LT934125.1	Liftoff	exon	9699	10426	.	+	.	"Name=UL49.1;ID=UL49.1;S.TR.ID=UL49.1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL49	UL49.1	
+LT934125.1	Liftoff	mRNA	9930	10426	.	+	.	"Name=UL49.1-S;ID=UL49.1-S;S.TR.ID=UL49.1-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Putative	UL49	UL49.1	1
+LT934125.1	Liftoff	exon	9930	10426	.	+	.	"Name=UL49.1-S;ID=UL49.1-S;S.TR.ID=UL49.1-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL49	UL49.1	
+LT934125.1	Liftoff	mRNA	10075	10426	.	+	.	"Name=UL49.1-S2;ID=UL49.1-S2;S.TR.ID=UL49.1-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL49	UL49.1	1
+LT934125.1	Liftoff	exon	10075	10426	.	+	.	"Name=UL49.1-S2;ID=UL49.1-S2;S.TR.ID=UL49.1-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL49	UL49.1	
+LT934125.1	Liftoff	mRNA	10105	10426	.	+	.	"Name=UL49.1-S3;ID=UL49.1-S3;S.TR.ID=UL49.1-S3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL49	UL49.1	1
+LT934125.1	Liftoff	exon	10105	10426	.	+	.	"Name=UL49.1-S3;ID=UL49.1-S3;S.TR.ID=UL49.1-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL49	UL49.1	
+LT934125.1	Liftoff	mRNA	10135	10426	.	+	.	"Name=UL49.1-S4;ID=UL49.1-S4;S.TR.ID=UL49.1-S4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL49	UL49.1	1
+LT934125.1	Liftoff	exon	10135	10426	.	+	.	"Name=UL49.1-S4;ID=UL49.1-S4;S.TR.ID=UL49.1-S4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL49	UL49.1	
+LT934125.1	Liftoff	mRNA	10159	10426	.	+	.	"Name=UL49.1-S5;ID=UL49.1-S5;S.TR.ID=UL49.1-S5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL49	UL49.1	1
+LT934125.1	Liftoff	exon	10159	10426	.	+	.	"Name=UL49.1-S5;ID=UL49.1-S5;S.TR.ID=UL49.1-S5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL49	UL49.1	
+LT934125.1	Liftoff	mRNA	10252	10426	.	+	.	"Name=UL49.1-S6;ID=UL49.1-S6;S.TR.ID=UL49.1-S6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL49	UL49.1	0
+LT934125.1	Liftoff	exon	10252	10426	.	+	.	"Name=UL49.1-S6;ID=UL49.1-S6;S.TR.ID=UL49.1-S6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL49	UL49.1	
+LT934125.1	Liftoff	mRNA	10431	12084	.	+	.	"Name=UL48-L-AT;ID=UL48-L-AT;S.TR.ID=UL48-L-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Long	UL48		1
+LT934125.1	Liftoff	exon	10431	12084	.	+	.	"Name=UL48-L-AT;ID=UL48-L-AT;S.TR.ID=UL48-L-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL48		
+LT934125.1	Liftoff	mRNA	10431	16224	.	+	.	"Name=UL48-47-46;ID=UL48-47-46;S.TR.ID=UL48-47-46;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.991"	Policistronic	UL48-47-46	UL48	1
+LT934125.1	Liftoff	exon	10431	16224	.	+	.	"Name=UL48-47-46;ID=UL48-47-46;S.TR.ID=UL48-47-46_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL48-47-46	UL48	
+LT934125.1	Liftoff	mRNA	10467	11912	.	+	.	"Name=UL48;ID=UL48;S.TR.ID=UL48;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Canonic	UL48		0
+LT934125.1	Liftoff	exon	10467	11912	.	+	.	"Name=UL48;ID=UL48;S.TR.ID=UL48_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL48		
+LT934125.1	Liftoff	mRNA	11793	12084	.	+	.	"Name=nc-UL47;ID=nc-UL47;S.TR.ID=nc-UL47;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Non coding	UL47		1
+LT934125.1	Liftoff	exon	11793	12084	.	+	.	"Name=nc-UL47;ID=nc-UL47;S.TR.ID=nc-UL47_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL47		
+LT934125.1	Liftoff	mRNA	11793	16224	.	+	.	"Name=UL47-46;ID=UL47-46;S.TR.ID=UL47-46;transferred_from=KJ717942.1;coverage=0.993;sequence_ID=0.989"	Policistronic	UL47-46	UL47	1
+LT934125.1	Liftoff	exon	11793	16224	.	+	.	"Name=UL47-46;ID=UL47-46;S.TR.ID=UL47-46_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL47-46	UL47	
+LT934125.1	Liftoff	mRNA	12406	16224	.	+	.	"Name=UL46-L9;ID=UL46-L9;S.TR.ID=UL46-L9;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.992"	Long	UL46		0
+LT934125.1	Liftoff	exon	12406	16224	.	+	.	"Name=UL46-L9;ID=UL46-L9;S.TR.ID=UL46-L9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	12812	16224	.	+	.	"Name=UL46-L8;ID=UL46-L8;S.TR.ID=UL46-L8;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.996"	Long	UL46		1
+LT934125.1	Liftoff	exon	12812	16224	.	+	.	"Name=UL46-L8;ID=UL46-L8;S.TR.ID=UL46-L8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	13166	14176	.	+	.	"Name=UL47.3;ID=UL47.3;S.TR.ID=UL47.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL47	UL47.3	0
+LT934125.1	Liftoff	exon	13166	14176	.	+	.	"Name=UL47.3;ID=UL47.3;S.TR.ID=UL47.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL47	UL47.3	
+LT934125.1	Liftoff	mRNA	13177	16224	.	+	.	"Name=UL46-L7;ID=UL46-L7;S.TR.ID=UL46-L7;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.996"	Long	UL46		0
+LT934125.1	Liftoff	exon	13177	16224	.	+	.	"Name=UL46-L7;ID=UL46-L7;S.TR.ID=UL46-L7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	13521	16224	.	+	.	"Name=UL46-L6;ID=UL46-L6;S.TR.ID=UL46-L6;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.995"	Long	UL46		1
+LT934125.1	Liftoff	exon	13521	16224	.	+	.	"Name=UL46-L6;ID=UL46-L6;S.TR.ID=UL46-L6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	13539	16224	.	+	.	"Name=UL46-L5;ID=UL46-L5;S.TR.ID=UL46-L5;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.995"	Long	UL46		1
+LT934125.1	Liftoff	exon	13539	16224	.	+	.	"Name=UL46-L5;ID=UL46-L5;S.TR.ID=UL46-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	13569	16224	.	+	.	"Name=UL46-L4;ID=UL46-L4;S.TR.ID=UL46-L4;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.995"	Long	UL46		0
+LT934125.1	Liftoff	exon	13569	16224	.	+	.	"Name=UL46-L4;ID=UL46-L4;S.TR.ID=UL46-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	13746	16224	.	+	.	"Name=UL46-L3;ID=UL46-L3;S.TR.ID=UL46-L3;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.995"	Long	UL46		0
+LT934125.1	Liftoff	exon	13746	16224	.	+	.	"Name=UL46-L3;ID=UL46-L3;S.TR.ID=UL46-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	13793	16224	.	+	.	"Name=UL46-L2;ID=UL46-L2;S.TR.ID=UL46-L2;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.995"	Long	UL46		1
+LT934125.1	Liftoff	exon	13793	16224	.	+	.	"Name=UL46-L2;ID=UL46-L2;S.TR.ID=UL46-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	13944	16224	.	+	.	"Name=UL46-L;ID=UL46-L;S.TR.ID=UL46-L;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.995"	Long	UL46		0
+LT934125.1	Liftoff	exon	13944	16224	.	+	.	"Name=UL46-L;ID=UL46-L;S.TR.ID=UL46-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL46		
+LT934125.1	Liftoff	mRNA	14048	16224	.	+	.	"Name=UL46;ID=UL46;S.TR.ID=UL46;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.995"	Canonic	UL46		1
+LT934125.1	Liftoff	exon	14048	16224	.	+	.	"Name=UL46;ID=UL46;S.TR.ID=UL46_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL46		
+LT934125.1	Liftoff	mRNA	14307	16224	.	+	.	"Name=UL46.10;ID=UL46.10;S.TR.ID=UL46.10;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.995"	Putative	UL46	UL46.10	0
+LT934125.1	Liftoff	exon	14307	16224	.	+	.	"Name=UL46.10;ID=UL46.10;S.TR.ID=UL46.10_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.10	
+LT934125.1	Liftoff	mRNA	14439	16224	.	+	.	"Name=UL46.10-S;ID=UL46.10-S;S.TR.ID=UL46.10-S;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.994"	Putative	UL46	UL46.10	1
+LT934125.1	Liftoff	exon	14439	16224	.	+	.	"Name=UL46.10-S;ID=UL46.10-S;S.TR.ID=UL46.10-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.10	
+LT934125.1	Liftoff	mRNA	14560	16224	.	+	.	"Name=UL46.9;ID=UL46.9;S.TR.ID=UL46.9;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.994"	Putative	UL46	UL46.9	1
+LT934125.1	Liftoff	exon	14560	16224	.	+	.	"Name=UL46.9;ID=UL46.9;S.TR.ID=UL46.9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.9	
+LT934125.1	Liftoff	mRNA	14724	16224	.	+	.	"Name=UL46.6;ID=UL46.6;S.TR.ID=UL46.6;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.994"	Putative	UL46	UL46.6	0
+LT934125.1	Liftoff	exon	14724	16224	.	+	.	"Name=UL46.6;ID=UL46.6;S.TR.ID=UL46.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.6	
+LT934125.1	Liftoff	mRNA	14782	16224	.	+	.	"Name=UL46.6-S;ID=UL46.6-S;S.TR.ID=UL46.6-S;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.993"	Putative	UL46	UL46.6	0
+LT934125.1	Liftoff	exon	14782	16224	.	+	.	"Name=UL46.6-S;ID=UL46.6-S;S.TR.ID=UL46.6-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.6	
+LT934125.1	Liftoff	mRNA	14818	16224	.	+	.	"Name=UL46.5;ID=UL46.5;S.TR.ID=UL46.5;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.993"	Putative	UL46	UL46.5	1
+LT934125.1	Liftoff	exon	14818	16224	.	+	.	"Name=UL46.5;ID=UL46.5;S.TR.ID=UL46.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.5	
+LT934125.1	Liftoff	mRNA	14930	16224	.	+	.	"Name=UL46.5-S2;ID=UL46.5-S2;S.TR.ID=UL46.5-S2;transferred_from=KJ717942.1;coverage=0.994;sequence_ID=0.993"	Putative	UL46	UL46.5	0
+LT934125.1	Liftoff	exon	14930	16224	.	+	.	"Name=UL46.5-S2;ID=UL46.5-S2;S.TR.ID=UL46.5-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.5	
+LT934125.1	Liftoff	mRNA	15028	16224	.	+	.	"Name=UL46.5-S3;ID=UL46.5-S3;S.TR.ID=UL46.5-S3;transferred_from=KJ717942.1;coverage=0.994;sequence_ID=0.993"	Putative	UL46	UL46.5	1
+LT934125.1	Liftoff	exon	15028	16224	.	+	.	"Name=UL46.5-S3;ID=UL46.5-S3;S.TR.ID=UL46.5-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.5	
+LT934125.1	Liftoff	mRNA	15249	16224	.	+	.	"Name=UL46.2;ID=UL46.2;S.TR.ID=UL46.2;transferred_from=KJ717942.1;coverage=0.992;sequence_ID=0.991"	Putative	UL46	UL46.2	1
+LT934125.1	Liftoff	exon	15249	16224	.	+	.	"Name=UL46.2;ID=UL46.2;S.TR.ID=UL46.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.2	
+LT934125.1	Liftoff	mRNA	15597	16224	.	+	.	"Name=UL46.1;ID=UL46.1;S.TR.ID=UL46.1;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.998"	Putative	UL46	UL46.1	1
+LT934125.1	Liftoff	exon	15597	16224	.	+	.	"Name=UL46.1;ID=UL46.1;S.TR.ID=UL46.1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.1	
+LT934125.1	Liftoff	mRNA	15646	16224	.	+	.	"Name=UL46.1-S2;ID=UL46.1-S2;S.TR.ID=UL46.1-S2;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.998"	Putative	UL46	UL46.1	1
+LT934125.1	Liftoff	exon	15646	16224	.	+	.	"Name=UL46.1-S2;ID=UL46.1-S2;S.TR.ID=UL46.1-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.1	
+LT934125.1	Liftoff	mRNA	15750	16224	.	+	.	"Name=UL46.1-S3;ID=UL46.1-S3;S.TR.ID=UL46.1-S3;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.997"	Putative	UL46	UL46.1	1
+LT934125.1	Liftoff	exon	15750	16224	.	+	.	"Name=UL46.1-S3;ID=UL46.1-S3;S.TR.ID=UL46.1-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.1	
+LT934125.1	Liftoff	mRNA	15787	16224	.	+	.	"Name=UL46.1-S4;ID=UL46.1-S4;S.TR.ID=UL46.1-S4;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.997"	Putative	UL46	UL46.1	1
+LT934125.1	Liftoff	exon	15787	16224	.	+	.	"Name=UL46.1-S4;ID=UL46.1-S4;S.TR.ID=UL46.1-S4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL46	UL46.1	
+LT934125.1	Liftoff	mRNA	15883	16224	.	+	.	"Name=nc-UL46;ID=nc-UL46;S.TR.ID=nc-UL46;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.997"	Non coding	UL46		1
+LT934125.1	Liftoff	exon	15883	16224	.	+	.	"Name=nc-UL46;ID=nc-UL46;S.TR.ID=nc-UL46_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL46		
+LT934125.1	Liftoff	mRNA	16014	16224	.	+	.	"Name=nc-UL46-S;ID=nc-UL46-S;S.TR.ID=nc-UL46-S;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.995"	Short	UL46		0
+LT934125.1	Liftoff	exon	16014	16224	.	+	.	"Name=nc-UL46-S;ID=nc-UL46-S;S.TR.ID=nc-UL46-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL46		
+LT934125.1	Liftoff	mRNA	16259	19473	.	-	.	"Name=UL27-AT1;ID=UL27-AT1;S.TR.ID=UL27-AT1;transferred_from=KJ717942.1;coverage=0.907;sequence_ID=0.904"	AT variant	UL27		1
+LT934125.1	Liftoff	exon	16259	19473	.	-	.	"Name=UL27-AT1;ID=UL27-AT1;S.TR.ID=UL27-AT1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	UL27		
+LT934125.1	Liftoff	mRNA	16582	25312	.	-	.	"Name=UL29-28-27;ID=UL29-28-27;S.TR.ID=UL29-28-27;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.992"	Policistronic	UL9		1
+LT934125.1	Liftoff	exon	16582	25312	.	-	.	"Name=UL29-28-27;ID=UL29-28-27;S.TR.ID=UL29-28-27_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL9-28-27	UL9	
+LT934125.1	Liftoff	mRNA	16583	16878	.	-	.	"Name=UL27.2;ID=UL27.2;S.TR.ID=UL27.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL27	UL27.2	1
+LT934125.1	Liftoff	exon	16583	16878	.	-	.	"Name=UL27.2;ID=UL27.2;S.TR.ID=UL27.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.2	
+LT934125.1	Liftoff	mRNA	16583	16928	.	-	.	"Name=UL27.3-L;ID=UL27.3-L;S.TR.ID=UL27.3-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL27	UL27.3	1
+LT934125.1	Liftoff	exon	16583	16928	.	-	.	"Name=UL27.3-L;ID=UL27.3-L;S.TR.ID=UL27.3-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.3	
+LT934125.1	Liftoff	mRNA	16583	16970	.	-	.	"Name=UL27.3;ID=UL27.3;S.TR.ID=UL27.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL27	UL27.3	1
+LT934125.1	Liftoff	exon	16583	16970	.	-	.	"Name=UL27.3;ID=UL27.3;S.TR.ID=UL27.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.3	
+LT934125.1	Liftoff	mRNA	16583	17024	.	-	.	"Name=UL27.4-S4;ID=UL27.4-S4;S.TR.ID=UL27.4-S4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL27	UL27.4	1
+LT934125.1	Liftoff	exon	16583	17024	.	-	.	"Name=UL27.4-S4;ID=UL27.4-S4;S.TR.ID=UL27.4-S4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.4	
+LT934125.1	Liftoff	mRNA	16583	17059	.	-	.	"Name=UL27.4-S3;ID=UL27.4-S3;S.TR.ID=UL27.4-S3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL27	UL27.4	1
+LT934125.1	Liftoff	exon	16583	17059	.	-	.	"Name=UL27.4-S3;ID=UL27.4-S3;S.TR.ID=UL27.4-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.4	
+LT934125.1	Liftoff	mRNA	16583	17132	.	-	.	"Name=UL27.4-S2;ID=UL27.4-S2;S.TR.ID=UL27.4-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.4	1
+LT934125.1	Liftoff	exon	16583	17132	.	-	.	"Name=UL27.4-S2;ID=UL27.4-S2;S.TR.ID=UL27.4-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.4	
+LT934125.1	Liftoff	mRNA	16583	17159	.	-	.	"Name=UL27.4-S;ID=UL27.4-S;S.TR.ID=UL27.4-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.4	1
+LT934125.1	Liftoff	exon	16583	17159	.	-	.	"Name=UL27.4-S;ID=UL27.4-S;S.TR.ID=UL27.4-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.4	
+LT934125.1	Liftoff	mRNA	16583	17223	.	-	.	"Name=UL27.4;ID=UL27.4;S.TR.ID=UL27.4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.4	1
+LT934125.1	Liftoff	exon	16583	17223	.	-	.	"Name=UL27.4;ID=UL27.4;S.TR.ID=UL27.4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.4	
+LT934125.1	Liftoff	mRNA	16583	17341	.	-	.	"Name=UL27.5-S3;ID=UL27.5-S3;S.TR.ID=UL27.5-S3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.5	1
+LT934125.1	Liftoff	exon	16583	17341	.	-	.	"Name=UL27.5-S3;ID=UL27.5-S3;S.TR.ID=UL27.5-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.5	
+LT934125.1	Liftoff	mRNA	16583	17363	.	-	.	"Name=UL27.5-S2;ID=UL27.5-S2;S.TR.ID=UL27.5-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.5	1
+LT934125.1	Liftoff	exon	16583	17363	.	-	.	"Name=UL27.5-S2;ID=UL27.5-S2;S.TR.ID=UL27.5-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.5	
+LT934125.1	Liftoff	mRNA	16583	17407	.	-	.	"Name=UL27.5-S;ID=UL27.5-S;S.TR.ID=UL27.5-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.5	0
+LT934125.1	Liftoff	exon	16583	17407	.	-	.	"Name=UL27.5-S;ID=UL27.5-S;S.TR.ID=UL27.5-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.5	
+LT934125.1	Liftoff	mRNA	16583	17497	.	-	.	"Name=UL27.5;ID=UL27.5;S.TR.ID=UL27.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.5	0
+LT934125.1	Liftoff	exon	16583	17497	.	-	.	"Name=UL27.5;ID=UL27.5;S.TR.ID=UL27.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.5	
+LT934125.1	Liftoff	mRNA	16583	17530	.	-	.	"Name=UL27.6-S;ID=UL27.6-S;S.TR.ID=UL27.6-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.6	1
+LT934125.1	Liftoff	exon	16583	17530	.	-	.	"Name=UL27.6-S;ID=UL27.6-S;S.TR.ID=UL27.6-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.6	
+LT934125.1	Liftoff	mRNA	16583	17568	.	-	.	"Name=UL27.6;ID=UL27.6;S.TR.ID=UL27.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.6	1
+LT934125.1	Liftoff	exon	16583	17568	.	-	.	"Name=UL27.6;ID=UL27.6;S.TR.ID=UL27.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.6	
+LT934125.1	Liftoff	mRNA	16583	17599	.	-	.	"Name=UL27.8;ID=UL27.8;S.TR.ID=UL27.8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Putative	UL27	UL27.8	1
+LT934125.1	Liftoff	exon	16583	17599	.	-	.	"Name=UL27.8;ID=UL27.8;S.TR.ID=UL27.8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.8	
+LT934125.1	Liftoff	mRNA	16583	17636	.	-	.	"Name=UL27.9;ID=UL27.9;S.TR.ID=UL27.9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Putative	UL27	UL27.9	1
+LT934125.1	Liftoff	exon	16583	17636	.	-	.	"Name=UL27.9;ID=UL27.9;S.TR.ID=UL27.9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.9	
+LT934125.1	Liftoff	mRNA	16583	17670	.	-	.	"Name=UL27.10-S;ID=UL27.10-S;S.TR.ID=UL27.10-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Putative	UL27	UL27.10	1
+LT934125.1	Liftoff	exon	16583	17670	.	-	.	"Name=UL27.10-S;ID=UL27.10-S;S.TR.ID=UL27.10-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.10	
+LT934125.1	Liftoff	mRNA	16583	17723	.	-	.	"Name=UL27.10;ID=UL27.10;S.TR.ID=UL27.10;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.10	0
+LT934125.1	Liftoff	exon	16583	17723	.	-	.	"Name=UL27.10;ID=UL27.10;S.TR.ID=UL27.10_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.10	
+LT934125.1	Liftoff	mRNA	16583	17751	.	-	.	"Name=UL27.11-S7;ID=UL27.11-S7;S.TR.ID=UL27.11-S7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.11	1
+LT934125.1	Liftoff	exon	16583	17751	.	-	.	"Name=UL27.11-S7;ID=UL27.11-S7;S.TR.ID=UL27.11-S7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.11	
+LT934125.1	Liftoff	mRNA	16583	17792	.	-	.	"Name=UL27.11-S6;ID=UL27.11-S6;S.TR.ID=UL27.11-S6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL27	UL27.11	1
+LT934125.1	Liftoff	exon	16583	17792	.	-	.	"Name=UL27.11-S6;ID=UL27.11-S6;S.TR.ID=UL27.11-S6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.11	
+LT934125.1	Liftoff	mRNA	16583	17871	.	-	.	"Name=UL27.11-S5;ID=UL27.11-S5;S.TR.ID=UL27.11-S5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL27	UL27.11	1
+LT934125.1	Liftoff	exon	16583	17871	.	-	.	"Name=UL27.11-S5;ID=UL27.11-S5;S.TR.ID=UL27.11-S5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.11	
+LT934125.1	Liftoff	mRNA	16583	17900	.	-	.	"Name=UL27.11-S4;ID=UL27.11-S4;S.TR.ID=UL27.11-S4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL27	UL27.11	1
+LT934125.1	Liftoff	exon	16583	17900	.	-	.	"Name=UL27.11-S4;ID=UL27.11-S4;S.TR.ID=UL27.11-S4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.11	
+LT934125.1	Liftoff	mRNA	16583	17951	.	-	.	"Name=UL27.5-L;ID=UL27.5-L;S.TR.ID=UL27.5-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL27	UL27.5	1
+LT934125.1	Liftoff	exon	16583	17951	.	-	.	"Name=UL27.5-L;ID=UL27.5-L;S.TR.ID=UL27.5-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.5	
+LT934125.1	Liftoff	mRNA	16583	17981	.	-	.	"Name=UL27.11-S3;ID=UL27.11-S3;S.TR.ID=UL27.11-S3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL27	UL27.11	1
+LT934125.1	Liftoff	exon	16583	17981	.	-	.	"Name=UL27.11-S3;ID=UL27.11-S3;S.TR.ID=UL27.11-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.11	
+LT934125.1	Liftoff	mRNA	16583	18086	.	-	.	"Name=UL27.11-S2;ID=UL27.11-S2;S.TR.ID=UL27.11-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL27	UL27.11	0
+LT934125.1	Liftoff	exon	16583	18086	.	-	.	"Name=UL27.11-S2;ID=UL27.11-S2;S.TR.ID=UL27.11-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.11	
+LT934125.1	Liftoff	mRNA	16583	18107	.	-	.	"Name=UL27.11-S;ID=UL27.11-S;S.TR.ID=UL27.11-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL27	UL27.11	1
+LT934125.1	Liftoff	exon	16583	18107	.	-	.	"Name=UL27.11-S;ID=UL27.11-S;S.TR.ID=UL27.11-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.11	
+LT934125.1	Liftoff	mRNA	16583	18161	.	-	.	"Name=UL27.11;ID=UL27.11;S.TR.ID=UL27.11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL27	UL27.11	0
+LT934125.1	Liftoff	exon	16583	18161	.	-	.	"Name=UL27.11;ID=UL27.11;S.TR.ID=UL27.11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.11	
+LT934125.1	Liftoff	mRNA	16583	18270	.	-	.	"Name=UL27.13;ID=UL27.13;S.TR.ID=UL27.13;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL27	UL27.13	1
+LT934125.1	Liftoff	exon	16583	18270	.	-	.	"Name=UL27.13;ID=UL27.13;S.TR.ID=UL27.13_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.13	
+LT934125.1	Liftoff	mRNA	16583	18464	.	-	.	"Name=UL27.14-S;ID=UL27.14-S;S.TR.ID=UL27.14-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL27	UL27.14	1
+LT934125.1	Liftoff	exon	16583	18464	.	-	.	"Name=UL27.14-S;ID=UL27.14-S;S.TR.ID=UL27.14-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.14	
+LT934125.1	Liftoff	mRNA	16583	18523	.	-	.	"Name=UL27.14;ID=UL27.14;S.TR.ID=UL27.14;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL27	UL27.14	0
+LT934125.1	Liftoff	exon	16583	18523	.	-	.	"Name=UL27.14;ID=UL27.14;S.TR.ID=UL27.14_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL27	UL27.14	
+LT934125.1	Liftoff	mRNA	16583	19473	.	-	.	"Name=UL27;ID=UL27;S.TR.ID=UL27;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.992"	Canonic	UL27		1
+LT934125.1	Liftoff	exon	16583	19473	.	-	.	"Name=UL27;ID=UL27;S.TR.ID=UL27_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL27		
+LT934125.1	Liftoff	mRNA	16583	21635	.	-	.	"Name=UL28L-27;ID=UL28L-27;S.TR.ID=UL28L-27;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.994"	Policistronic	UL28-27	UL28	1
+LT934125.1	Liftoff	exon	16583	21635	.	-	.	"Name=UL28L-27;ID=UL28L-27;S.TR.ID=UL28L-27_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL28-27	UL28	
+LT934125.1	Liftoff	mRNA	18583	21472	.	-	.	"Name=UL28;ID=UL28;S.TR.ID=UL28;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.994"	Canonic	UL8		1
+LT934125.1	Liftoff	exon	18583	21472	.	-	.	"Name=UL28;ID=UL28;S.TR.ID=UL28_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL8		
+LT934125.1	Liftoff	mRNA	21477	21941	.	-	.	"Name=TRL29.2;ID=TRL29.2;S.TR.ID=TRL29.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Putative	UL29	UL29.2	1
+LT934125.1	Liftoff	exon	21477	21941	.	-	.	"Name=TRL29.2;ID=TRL29.2;S.TR.ID=TRL29.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL29	UL29.2	
+LT934125.1	Liftoff	mRNA	21477	22441	.	-	.	"Name=UL29.2;ID=UL29.2;S.TR.ID=UL29.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL29	UL29.2	0
+LT934125.1	Liftoff	exon	21477	22441	.	-	.	"Name=UL29.2;ID=UL29.2;S.TR.ID=UL29.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL29	UL29.2	
+LT934125.1	Liftoff	mRNA	21477	23258	.	-	.	"Name=UL29.11;ID=UL29.11;S.TR.ID=UL29.11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL29	UL29.11	0
+LT934125.1	Liftoff	exon	21477	23258	.	-	.	"Name=UL29.11;ID=UL29.11;S.TR.ID=UL29.11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL29	UL29.11	
+LT934125.1	Liftoff	mRNA	21477	23660	.	-	.	"Name=UL29.14;ID=UL29.14;S.TR.ID=UL29.14;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL29	UL29.14	0
+LT934125.1	Liftoff	exon	21477	23660	.	-	.	"Name=UL29.14;ID=UL29.14;S.TR.ID=UL29.14_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL29	UL29.14	
+LT934125.1	Liftoff	mRNA	21477	25313	.	-	.	"Name=UL29;ID=UL29;S.TR.ID=UL29;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.988"	Canonic	UL29		1
+LT934125.1	Liftoff	exon	21477	25313	.	-	.	"Name=UL29;ID=UL29;S.TR.ID=UL29_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL29		
+LT934125.1	Liftoff	mRNA	25420	28632	.	+	.	"Name=UL30;ID=UL30;S.TR.ID=UL30;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL30		1
+LT934125.1	Liftoff	exon	25420	28632	.	+	.	"Name=UL30;ID=UL30;S.TR.ID=UL30_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL30		
+LT934125.1	Liftoff	mRNA	28429	28794	.	-	.	"Name=UL31.3-S;ID=UL31.3-S;S.TR.ID=UL31.3-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL31	UL31.3	1
+LT934125.1	Liftoff	exon	28429	28794	.	-	.	"Name=UL31.3-S;ID=UL31.3-S;S.TR.ID=UL31.3-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL31	UL31.3	
+LT934125.1	Liftoff	mRNA	28429	29046	.	-	.	"Name=UL31.3;ID=UL31.3;S.TR.ID=UL31.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL31	UL31.3	1
+LT934125.1	Liftoff	exon	28429	29046	.	-	.	"Name=UL31.3;ID=UL31.3;S.TR.ID=UL31.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL31	UL31.3	
+LT934125.1	Liftoff	mRNA	28429	29086	.	-	.	"Name=UL31.2;ID=UL31.2;S.TR.ID=UL31.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL31	UL31.2	1
+LT934125.1	Liftoff	exon	28429	29086	.	-	.	"Name=UL31.2;ID=UL31.2;S.TR.ID=UL31.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL31	UL31.2	
+LT934125.1	Liftoff	mRNA	28429	29154	.	-	.	"Name=UL31-L;ID=UL31-L;S.TR.ID=UL31-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	UL31		1
+LT934125.1	Liftoff	exon	28429	29154	.	-	.	"Name=UL31-L;ID=UL31-L;S.TR.ID=UL31-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL31		
+LT934125.1	Liftoff	mRNA	28429	29414	.	-	.	"Name=UL31;ID=UL31;S.TR.ID=UL31;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Canonic	UL31		1
+LT934125.1	Liftoff	exon	28429	29414	.	-	.	"Name=UL31;ID=UL31;S.TR.ID=UL31_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL31		
+LT934125.1	Liftoff	mRNA	28429	29507	.	-	.	"Name=UL31.5;ID=UL31.5;S.TR.ID=UL31.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL31	UL31.5	1
+LT934125.1	Liftoff	exon	28429	29507	.	-	.	"Name=UL31.5;ID=UL31.5;S.TR.ID=UL31.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL31	UL31.5	
+LT934125.1	Liftoff	mRNA	28429	30877	.	-	.	"Name=UL32-S-31;ID=UL32-S-31;S.TR.ID=UL32-S-31;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Short	UL32-31	UL32	1
+LT934125.1	Liftoff	exon	28429	30877	.	-	.	"Name=UL32-S-31;ID=UL32-S-31;S.TR.ID=UL32-S-31_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL32-31	UL32	
+LT934125.1	Liftoff	mRNA	28429	31043	.	-	.	"Name=UL32-31;ID=UL32-31;S.TR.ID=UL32-31;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Policistronic	UL32-31	UL32	1
+LT934125.1	Liftoff	exon	28429	31043	.	-	.	"Name=UL32-31;ID=UL32-31;S.TR.ID=UL32-31_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL32-31	UL32	
+LT934125.1	Liftoff	mRNA	28636	32415	.	+	.	"Name=UL32-33-34-35;ID=UL32-33-34-35;S.TR.ID=UL32-33-34-35;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.995"	Policistronic	UL32-33-34-35	UL32	1
+LT934125.1	Liftoff	exon	28636	32415	.	+	.	"Name=UL32-33-34-35;ID=UL32-33-34-35;S.TR.ID=UL32-33-34-35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL32-33-34-35	UL32	
+LT934125.1	Liftoff	mRNA	29338	32415	.	+	.	"Name=UL33L3-34-35;ID=UL33L3-34-35;S.TR.ID=UL33L3-34-35;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Policistronic	UL33-34-35	UL33	1
+LT934125.1	Liftoff	exon	29338	32415	.	+	.	"Name=UL33L3-34-35;ID=UL33L3-34-35;S.TR.ID=UL33L3-34-35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL33-34-35	UL33	
+LT934125.1	Liftoff	mRNA	29468	32415	.	+	.	"Name=UL33-L2-34-35;ID=UL33-L2-34-35;S.TR.ID=UL33-L2-34-35;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.993"	Policistronic	UL33-34-35	UL33	0
+LT934125.1	Liftoff	exon	29468	32415	.	+	.	"Name=UL33-L2-34-35;ID=UL33-L2-34-35;S.TR.ID=UL33-L2-34-35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL33-34-35	UL33	
+LT934125.1	Liftoff	mRNA	30240	31198	.	+	.	"Name=UL33;ID=UL33;S.TR.ID=UL33;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Canonic	UL33		1
+LT934125.1	Liftoff	exon	30240	31198	.	+	.	"Name=UL33;ID=UL33;S.TR.ID=UL33_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL33		
+LT934125.1	Liftoff	mRNA	30298	32415	.	+	.	"Name=UL33-34-35;ID=UL33-34-35;S.TR.ID=UL33-34-35;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.992"	Policistronic	UL33-34-35	UL33	0
+LT934125.1	Liftoff	exon	30298	32415	.	+	.	"Name=UL33-34-35;ID=UL33-34-35;S.TR.ID=UL33-34-35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL33-34-35	UL33	
+LT934125.1	Liftoff	mRNA	30932	32415	.	+	.	"Name=UL34L2-35;ID=UL34L2-35;S.TR.ID=UL34L2-35;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.991"	Policistronic	UL34-35	UL34	1
+LT934125.1	Liftoff	exon	30932	32415	.	+	.	"Name=UL34L2-35;ID=UL34L2-35;S.TR.ID=UL34L2-35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL34-35	UL34	
+LT934125.1	Liftoff	mRNA	31042	32415	.	-	.	"Name=UL34L-35;ID=UL34L-35;S.TR.ID=UL34L-35;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.991"	Policistronic	UL34-35	UL34	0
+LT934125.1	Liftoff	exon	31042	32415	.	-	.	"Name=UL34L-35;ID=UL34L-35;S.TR.ID=UL34L-35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL34-35	UL34	
+LT934125.1	Liftoff	mRNA	31098	32415	.	+	.	"Name=UL34-35;ID=UL34-35;S.TR.ID=UL34-35;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.990"	Policistronic	UL34-35	UL34	1
+LT934125.1	Liftoff	exon	31098	32415	.	+	.	"Name=UL34-35;ID=UL34-35;S.TR.ID=UL34-35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL34-35	UL34	
+LT934125.1	Liftoff	mRNA	31349	32415	.	+	.	"Name=UL35-L6;ID=UL35-L6;S.TR.ID=UL35-L6;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.992"	Long	UL35		1
+LT934125.1	Liftoff	exon	31349	32415	.	+	.	"Name=UL35-L6;ID=UL35-L6;S.TR.ID=UL35-L6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL35		
+LT934125.1	Liftoff	mRNA	31410	32415	.	+	.	"Name=UL35-L5;ID=UL35-L5;S.TR.ID=UL35-L5;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.992"	Long	UL35		1
+LT934125.1	Liftoff	exon	31410	32415	.	+	.	"Name=UL35-L5;ID=UL35-L5;S.TR.ID=UL35-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL35		
+LT934125.1	Liftoff	mRNA	31474	32415	.	+	.	"Name=UL35-L4;ID=UL35-L4;S.TR.ID=UL35-L4;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.991"	Long	UL35		1
+LT934125.1	Liftoff	exon	31474	32415	.	+	.	"Name=UL35-L4;ID=UL35-L4;S.TR.ID=UL35-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL35		
+LT934125.1	Liftoff	mRNA	31690	32415	.	+	.	"Name=UL35-L3;ID=UL35-L3;S.TR.ID=UL35-L3;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.989"	Long	UL35		1
+LT934125.1	Liftoff	exon	31690	32415	.	+	.	"Name=UL35-L3;ID=UL35-L3;S.TR.ID=UL35-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL35		
+LT934125.1	Liftoff	mRNA	31847	32415	.	+	.	"Name=UL35-L2;ID=UL35-L2;S.TR.ID=UL35-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL35		1
+LT934125.1	Liftoff	exon	31847	32415	.	+	.	"Name=UL35-L2;ID=UL35-L2;S.TR.ID=UL35-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL35		
+LT934125.1	Liftoff	mRNA	31930	32415	.	+	.	"Name=UL35-L;ID=UL35-L;S.TR.ID=UL35-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Long	UL35		0
+LT934125.1	Liftoff	exon	31930	32415	.	+	.	"Name=UL35-L;ID=UL35-L;S.TR.ID=UL35-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL35		
+LT934125.1	Liftoff	mRNA	32037	32709	.	+	.	"Name=UL35-AT;ID=UL35-AT;S.TR.ID=UL35-AT;transferred_from=KJ717942.1;coverage=0.793;sequence_ID=0.788"	AT variant	UL35		1
+LT934125.1	Liftoff	exon	32037	32709	.	+	.	"Name=UL35-AT;ID=UL35-AT;S.TR.ID=UL35-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	UL35		
+LT934125.1	Liftoff	mRNA	32038	32415	.	+	.	"Name=UL35;ID=UL35;S.TR.ID=UL35;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Canonic	UL35		1
+LT934125.1	Liftoff	exon	32038	32415	.	+	.	"Name=UL35;ID=UL35;S.TR.ID=UL35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL35		
+LT934125.1	Liftoff	mRNA	32092	32415	.	+	.	"Name=UL35.2;ID=UL35.2;S.TR.ID=UL35.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL35	UL35.2	1
+LT934125.1	Liftoff	exon	32092	32415	.	+	.	"Name=UL35.2;ID=UL35.2;S.TR.ID=UL35.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL35	UL35.2	
+LT934125.1	Liftoff	mRNA	32163	32415	.	+	.	"Name=TRL35;ID=TRL35;S.TR.ID=TRL35;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Non coding	UL35		1
+LT934125.1	Liftoff	exon	32163	32415	.	+	.	"Name=TRL35;ID=TRL35;S.TR.ID=TRL35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL35		
+LT934125.1	Liftoff	mRNA	32686	32842	.	+	.	"Name=nc-UL36;ID=nc-UL36;S.TR.ID=nc-UL36;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Non coding	UL36		0
+LT934125.1	Liftoff	exon	32686	32842	.	+	.	"Name=nc-UL36;ID=nc-UL36;S.TR.ID=nc-UL36_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL36		
+LT934125.1	Liftoff	mRNA	32686	32935	.	-	.	"Name=UL36.40-S2;ID=UL36.40-S2;S.TR.ID=UL36.40-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL36	UL36.40	0
+LT934125.1	Liftoff	exon	32686	32935	.	-	.	"Name=UL36.40-S2;ID=UL36.40-S2;S.TR.ID=UL36.40-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL36	UL36.40	
+LT934125.1	Liftoff	mRNA	32686	33035	.	-	.	"Name=UL36.40-S;ID=UL36.40-S;S.TR.ID=UL36.40-S;transferred_from=KJ717942.1;coverage=0.966;sequence_ID=0.961"	Putative	UL36	UL36.40	0
+LT934125.1	Liftoff	exon	32686	33035	.	-	.	"Name=UL36.40-S;ID=UL36.40-S;S.TR.ID=UL36.40-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL36	UL36.40	
+LT934125.1	Liftoff	mRNA	32686	33215	.	-	.	"Name=UL36.40;ID=UL36.40;S.TR.ID=UL36.40;transferred_from=KJ717942.1;coverage=0.977;sequence_ID=0.974"	Putative	UL36	UL36.40	0
+LT934125.1	Liftoff	exon	32686	33215	.	-	.	"Name=UL36.40;ID=UL36.40;S.TR.ID=UL36.40_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL36	UL36.40	
+LT934125.1	Liftoff	mRNA	32686	33242	.	-	.	"Name=UL36.38-S;ID=UL36.38-S;S.TR.ID=UL36.38-S;transferred_from=KJ717942.1;coverage=0.978;sequence_ID=0.973"	Putative	UL36	UL36.38	0
+LT934125.1	Liftoff	exon	32686	33242	.	-	.	"Name=UL36.38-S;ID=UL36.38-S;S.TR.ID=UL36.38-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL36	UL36.38	
+LT934125.1	Liftoff	mRNA	32686	33356	.	-	.	"Name=UL36.38;ID=UL36.38;S.TR.ID=UL36.38;transferred_from=KJ717942.1;coverage=0.982;sequence_ID=0.975"	Putative	UL36	UL36.38	1
+LT934125.1	Liftoff	exon	32686	33356	.	-	.	"Name=UL36.38;ID=UL36.38;S.TR.ID=UL36.38_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL36	UL36.38	
+LT934125.1	Liftoff	mRNA	32686	34330	.	-	.	"Name=UL36.43-S;ID=UL36.43-S;S.TR.ID=UL36.43-S;transferred_from=KJ717942.1;coverage=0.980;sequence_ID=0.965"	Putative	UL36	UL36.43	1
+LT934125.1	Liftoff	exon	32686	34330	.	-	.	"Name=UL36.43-S;ID=UL36.43-S;S.TR.ID=UL36.43-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL36	UL36.43	
+LT934125.1	Liftoff	mRNA	32686	34474	.	-	.	"Name=UL36.5;ID=UL36.5;S.TR.ID=UL36.5;transferred_from=KJ717942.1;coverage=0.981;sequence_ID=0.967"	Canonic	UL36	UL36.5	1
+LT934125.1	Liftoff	exon	32686	34474	.	-	.	"Name=UL36.5;ID=UL36.5;S.TR.ID=UL36.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL36	UL36.5	
+LT934125.1	Liftoff	mRNA	32686	34532	.	-	.	"Name=UL36.43;ID=UL36.43;S.TR.ID=UL36.43;transferred_from=KJ717942.1;coverage=0.982;sequence_ID=0.968"	Putative	UL36	UL36.43	0
+LT934125.1	Liftoff	exon	32686	34532	.	-	.	"Name=UL36.43;ID=UL36.43;S.TR.ID=UL36.43_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL36	UL36.43	
+LT934125.1	Liftoff	mRNA	32686	41995	.	-	.	"Name=UL36-UL36.5;ID=UL36-UL36.5;S.TR.ID=UL36-UL36.5;transferred_from=KJ717942.1;coverage=0.991;sequence_ID=0.986"	Policistronic	UL36	UL36	1
+LT934125.1	Liftoff	exon	32686	41995	.	-	.	"Name=UL36-UL36.5;ID=UL36-UL36.5;S.TR.ID=UL36-UL36.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL36	UL36	
+LT934125.1	Liftoff	mRNA	32686	44889	.	-	.	"Name=UL37-36;ID=UL37-36;S.TR.ID=UL37-36;transferred_from=KJ717942.1;coverage=0.993;sequence_ID=0.989"	Policistronic	UL37-36	UL37	1
+LT934125.1	Liftoff	exon	32686	44889	.	-	.	"Name=UL37-36;ID=UL37-36;S.TR.ID=UL37-36_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL37-36	UL37	
+LT934125.1	Liftoff	mRNA	39430	46038	.	+	.	"Name=UL37-38;ID=UL37-38;S.TR.ID=UL37-38;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL37-38	UL37	0
+LT934125.1	Liftoff	exon	39430	46038	.	+	.	"Name=UL37-38;ID=UL37-38;S.TR.ID=UL37-38_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL37-38	UL37	
+LT934125.1	Liftoff	mRNA	42005	43351	.	-	.	"Name=UL37.5;ID=UL37.5;S.TR.ID=UL37.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL37	UL37.5	1
+LT934125.1	Liftoff	exon	42005	43351	.	-	.	"Name=UL37.5;ID=UL37.5;S.TR.ID=UL37.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL37	UL37.5	
+LT934125.1	Liftoff	mRNA	42005	43473	.	-	.	"Name=UL37.5-S2;ID=UL37.5-S2;S.TR.ID=UL37.5-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL37	UL37.5	0
+LT934125.1	Liftoff	exon	42005	43473	.	-	.	"Name=UL37.5-S2;ID=UL37.5-S2;S.TR.ID=UL37.5-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL37	UL37.5	
+LT934125.1	Liftoff	mRNA	42005	43545	.	-	.	"Name=UL37.6-S2;ID=UL37.6-S2;S.TR.ID=UL37.6-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL37	UL37.6	0
+LT934125.1	Liftoff	exon	42005	43545	.	-	.	"Name=UL37.6-S2;ID=UL37.6-S2;S.TR.ID=UL37.6-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL37	UL37.6	
+LT934125.1	Liftoff	mRNA	42005	43628	.	-	.	"Name=UL37.6-S;ID=UL37.6-S;S.TR.ID=UL37.6-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL37	UL37.6	0
+LT934125.1	Liftoff	exon	42005	43628	.	-	.	"Name=UL37.6-S;ID=UL37.6-S;S.TR.ID=UL37.6-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL37	UL37.6	
+LT934125.1	Liftoff	mRNA	42005	44067	.	-	.	"Name=UL37.6;ID=UL37.6;S.TR.ID=UL37.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Putative	UL37	UL37.6	0
+LT934125.1	Liftoff	exon	42005	44067	.	-	.	"Name=UL37.6;ID=UL37.6;S.TR.ID=UL37.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL37	UL37.6	
+LT934125.1	Liftoff	mRNA	42005	44889	.	-	.	"Name=UL37;ID=UL37;S.TR.ID=UL37;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL37		1
+LT934125.1	Liftoff	exon	42005	44889	.	-	.	"Name=UL37;ID=UL37;S.TR.ID=UL37_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL37		
+LT934125.1	Liftoff	mRNA	44812	46038	.	+	.	"Name=UL38;ID=UL38;S.TR.ID=UL38;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL38		1
+LT934125.1	Liftoff	exon	44812	46038	.	+	.	"Name=UL38;ID=UL38;S.TR.ID=UL38_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL38		
+LT934125.1	Liftoff	mRNA	44812	49647	.	+	.	"Name=UL38-39-40;ID=UL38-39-40;S.TR.ID=UL38-39-40;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Policistronic	UL38-39-40	UL38	1
+LT934125.1	Liftoff	exon	44812	49647	.	+	.	"Name=UL38-39-40;ID=UL38-39-40;S.TR.ID=UL38-39-40_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL38-39-40	UL38	
+LT934125.1	Liftoff	mRNA	44946	46038	.	+	.	"Name=UL38.3;ID=UL38.3;S.TR.ID=UL38.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Putative	UL38	UL38.3	1
+LT934125.1	Liftoff	exon	44946	46038	.	+	.	"Name=UL38.3;ID=UL38.3;S.TR.ID=UL38.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL38	UL38.3	
+LT934125.1	Liftoff	mRNA	45302	46038	.	+	.	"Name=UL38.4;ID=UL38.4;S.TR.ID=UL38.4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL38	UL38.4	1
+LT934125.1	Liftoff	exon	45302	46038	.	+	.	"Name=UL38.4;ID=UL38.4;S.TR.ID=UL38.4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL38	UL38.4	
+LT934125.1	Liftoff	mRNA	45415	46038	.	+	.	"Name=UL38.5;ID=UL38.5;S.TR.ID=UL38.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL38	UL38.5	1
+LT934125.1	Liftoff	exon	45415	46038	.	+	.	"Name=UL38.5;ID=UL38.5;S.TR.ID=UL38.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL38	UL38.5	
+LT934125.1	Liftoff	mRNA	45445	46038	.	+	.	"Name=UL38.6;ID=UL38.6;S.TR.ID=UL38.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL38	UL38.6	1
+LT934125.1	Liftoff	exon	45445	46038	.	+	.	"Name=UL38.6;ID=UL38.6;S.TR.ID=UL38.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL38	UL38.6	
+LT934125.1	Liftoff	mRNA	45525	46038	.	+	.	"Name=UL38.6-S;ID=UL38.6-S;S.TR.ID=UL38.6-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL38	UL38.6	1
+LT934125.1	Liftoff	exon	45525	46038	.	+	.	"Name=UL38.6-S;ID=UL38.6-S;S.TR.ID=UL38.6-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL38	UL38.6	
+LT934125.1	Liftoff	mRNA	45911	49647	.	+	.	"Name=UL39L-40;ID=UL39L-40;S.TR.ID=UL39L-40;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Policistronic	UL39-40	UL39	1
+LT934125.1	Liftoff	exon	45911	49647	.	+	.	"Name=UL39L-40;ID=UL39L-40;S.TR.ID=UL39L-40_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL39-40	UL39	
+LT934125.1	Liftoff	mRNA	46026	49647	.	+	.	"Name=UL39-40-L;ID=UL39-40-L;S.TR.ID=UL39-40-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Policistronic	UL39-40	UL39	1
+LT934125.1	Liftoff	exon	46026	49647	.	+	.	"Name=UL39-40-L;ID=UL39-40-L;S.TR.ID=UL39-40-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL39-40	UL39	
+LT934125.1	Liftoff	mRNA	46233	49647	.	+	.	"Name=UL39-40;ID=UL39-40;S.TR.ID=UL39-40;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Policistronic	UL39-40	UL39	1
+LT934125.1	Liftoff	exon	46233	49647	.	+	.	"Name=UL39-40;ID=UL39-40;S.TR.ID=UL39-40_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL39-40	UL39	
+LT934125.1	Liftoff	mRNA	46489	49647	.	+	.	"Name=UL40-L23;ID=UL40-L23;S.TR.ID=UL40-L23;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		1
+LT934125.1	Liftoff	exon	46489	49647	.	+	.	"Name=UL40-L23;ID=UL40-L23;S.TR.ID=UL40-L23_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	46717	49647	.	+	.	"Name=UL40-L22;ID=UL40-L22;S.TR.ID=UL40-L22;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		1
+LT934125.1	Liftoff	exon	46717	49647	.	+	.	"Name=UL40-L22;ID=UL40-L22;S.TR.ID=UL40-L22_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	46754	49647	.	-	.	"Name=UL40-L21;ID=UL40-L21;S.TR.ID=UL40-L21;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	46754	49647	.	-	.	"Name=UL40-L21;ID=UL40-L21;S.TR.ID=UL40-L21_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47168	49647	.	-	.	"Name=UL40-L20;ID=UL40-L20;S.TR.ID=UL40-L20;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47168	49647	.	-	.	"Name=UL40-L20;ID=UL40-L20;S.TR.ID=UL40-L20_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47188	49647	.	-	.	"Name=UL40-L19;ID=UL40-L19;S.TR.ID=UL40-L19;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47188	49647	.	-	.	"Name=UL40-L19;ID=UL40-L19;S.TR.ID=UL40-L19_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47203	49647	.	-	.	"Name=UL40-L18;ID=UL40-L18;S.TR.ID=UL40-L18;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47203	49647	.	-	.	"Name=UL40-L18;ID=UL40-L18;S.TR.ID=UL40-L18_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47288	49647	.	-	.	"Name=UL40-L17;ID=UL40-L17;S.TR.ID=UL40-L17;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47288	49647	.	-	.	"Name=UL40-L17;ID=UL40-L17;S.TR.ID=UL40-L17_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47315	49647	.	-	.	"Name=UL40-L16;ID=UL40-L16;S.TR.ID=UL40-L16;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47315	49647	.	-	.	"Name=UL40-L16;ID=UL40-L16;S.TR.ID=UL40-L16_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47411	49647	.	-	.	"Name=UL40-L15;ID=UL40-L15;S.TR.ID=UL40-L15;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47411	49647	.	-	.	"Name=UL40-L15;ID=UL40-L15;S.TR.ID=UL40-L15_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47486	49647	.	-	.	"Name=UL40-L14;ID=UL40-L14;S.TR.ID=UL40-L14;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47486	49647	.	-	.	"Name=UL40-L14;ID=UL40-L14;S.TR.ID=UL40-L14_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47521	49647	.	+	.	"Name=UL40-L13;ID=UL40-L13;S.TR.ID=UL40-L13;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47521	49647	.	+	.	"Name=UL40-L13;ID=UL40-L13;S.TR.ID=UL40-L13_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47567	49647	.	+	.	"Name=UL40-L12;ID=UL40-L12;S.TR.ID=UL40-L12;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		1
+LT934125.1	Liftoff	exon	47567	49647	.	+	.	"Name=UL40-L12;ID=UL40-L12;S.TR.ID=UL40-L12_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47628	49647	.	-	.	"Name=UL40-L11;ID=UL40-L11;S.TR.ID=UL40-L11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		0
+LT934125.1	Liftoff	exon	47628	49647	.	-	.	"Name=UL40-L11;ID=UL40-L11;S.TR.ID=UL40-L11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47642	49647	.	+	.	"Name=UL40-L10;ID=UL40-L10;S.TR.ID=UL40-L10;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL40		1
+LT934125.1	Liftoff	exon	47642	49647	.	+	.	"Name=UL40-L10;ID=UL40-L10;S.TR.ID=UL40-L10_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47655	49647	.	+	.	"Name=UL40-L9;ID=UL40-L9;S.TR.ID=UL40-L9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		1
+LT934125.1	Liftoff	exon	47655	49647	.	+	.	"Name=UL40-L9;ID=UL40-L9;S.TR.ID=UL40-L9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47699	49647	.	+	.	"Name=UL40-L8;ID=UL40-L8;S.TR.ID=UL40-L8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		1
+LT934125.1	Liftoff	exon	47699	49647	.	+	.	"Name=UL40-L8;ID=UL40-L8;S.TR.ID=UL40-L8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47785	49647	.	+	.	"Name=UL40-L7;ID=UL40-L7;S.TR.ID=UL40-L7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		1
+LT934125.1	Liftoff	exon	47785	49647	.	+	.	"Name=UL40-L7;ID=UL40-L7;S.TR.ID=UL40-L7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47872	49647	.	+	.	"Name=UL40-L6;ID=UL40-L6;S.TR.ID=UL40-L6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		1
+LT934125.1	Liftoff	exon	47872	49647	.	+	.	"Name=UL40-L6;ID=UL40-L6;S.TR.ID=UL40-L6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	47933	49647	.	+	.	"Name=UL40-L5;ID=UL40-L5;S.TR.ID=UL40-L5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		0
+LT934125.1	Liftoff	exon	47933	49647	.	+	.	"Name=UL40-L5;ID=UL40-L5;S.TR.ID=UL40-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	48069	49647	.	-	.	"Name=UL40-L4;ID=UL40-L4;S.TR.ID=UL40-L4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		0
+LT934125.1	Liftoff	exon	48069	49647	.	-	.	"Name=UL40-L4;ID=UL40-L4;S.TR.ID=UL40-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	48294	49647	.	+	.	"Name=UL40-L3;ID=UL40-L3;S.TR.ID=UL40-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		1
+LT934125.1	Liftoff	exon	48294	49647	.	+	.	"Name=UL40-L3;ID=UL40-L3;S.TR.ID=UL40-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	48412	49647	.	-	.	"Name=UL40-L2;ID=UL40-L2;S.TR.ID=UL40-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		0
+LT934125.1	Liftoff	exon	48412	49647	.	-	.	"Name=UL40-L2;ID=UL40-L2;S.TR.ID=UL40-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	48455	49647	.	+	.	"Name=UL40-L1;ID=UL40-L1;S.TR.ID=UL40-L1;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL40		0
+LT934125.1	Liftoff	exon	48455	49647	.	+	.	"Name=UL40-L1;ID=UL40-L1;S.TR.ID=UL40-L1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL40		
+LT934125.1	Liftoff	mRNA	48505	49647	.	+	.	"Name=UL40-S;ID=UL40-S;S.TR.ID=UL40-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Short	UL40		1
+LT934125.1	Liftoff	exon	48505	49647	.	+	.	"Name=UL40-S;ID=UL40-S;S.TR.ID=UL40-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL40		
+LT934125.1	Liftoff	mRNA	48567	49647	.	+	.	"Name=UL40;ID=UL40;S.TR.ID=UL40;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL40		1
+LT934125.1	Liftoff	exon	48567	49647	.	+	.	"Name=UL40;ID=UL40;S.TR.ID=UL40_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL40		
+LT934125.1	Liftoff	mRNA	48691	49647	.	+	.	"Name=UL40.2;ID=UL40.2;S.TR.ID=UL40.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL40	UL40.2	1
+LT934125.1	Liftoff	exon	48691	49647	.	+	.	"Name=UL40.2;ID=UL40.2;S.TR.ID=UL40.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL40	UL40.2	
+LT934125.1	Liftoff	mRNA	48726	49647	.	+	.	"Name=UL40.3;ID=UL40.3;S.TR.ID=UL40.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL40	UL40.3	1
+LT934125.1	Liftoff	exon	48726	49647	.	+	.	"Name=UL40.3;ID=UL40.3;S.TR.ID=UL40.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL40	UL40.3	
+LT934125.1	Liftoff	mRNA	48803	49647	.	+	.	"Name=UL40.3-S;ID=UL40.3-S;S.TR.ID=UL40.3-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL40	UL40.3	1
+LT934125.1	Liftoff	exon	48803	49647	.	+	.	"Name=UL40.3-S;ID=UL40.3-S;S.TR.ID=UL40.3-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL40	UL40.3	
+LT934125.1	Liftoff	mRNA	48931	49647	.	+	.	"Name=UL40.3-S2;ID=UL40.3-S2;S.TR.ID=UL40.3-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL40	UL40.3	1
+LT934125.1	Liftoff	exon	48931	49647	.	+	.	"Name=UL40.3-S2;ID=UL40.3-S2;S.TR.ID=UL40.3-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL40	UL40.3	
+LT934125.1	Liftoff	mRNA	48957	49647	.	+	.	"Name=UL40.3-S3;ID=UL40.3-S3;S.TR.ID=UL40.3-S3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL40	UL40.3	1
+LT934125.1	Liftoff	exon	48957	49647	.	+	.	"Name=UL40.3-S3;ID=UL40.3-S3;S.TR.ID=UL40.3-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL40	UL40.3	
+LT934125.1	Liftoff	mRNA	49115	49647	.	+	.	"Name=TRL40;ID=TRL40;S.TR.ID=TRL40;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Non coding	UL40		1
+LT934125.1	Liftoff	exon	49115	49647	.	+	.	"Name=TRL40;ID=TRL40;S.TR.ID=TRL40_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL40		
+LT934125.1	Liftoff	mRNA	49196	49647	.	+	.	"Name=UL40.6;ID=UL40.6;S.TR.ID=UL40.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL40	UL40.6	1
+LT934125.1	Liftoff	exon	49196	49647	.	+	.	"Name=UL40.6;ID=UL40.6;S.TR.ID=UL40.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL40	UL40.6	
+LT934125.1	Liftoff	mRNA	49263	49647	.	+	.	"Name=UL40.6-S;ID=UL40.6-S;S.TR.ID=UL40.6-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL40	UL40.6	1
+LT934125.1	Liftoff	exon	49263	49647	.	+	.	"Name=UL40.6-S;ID=UL40.6-S;S.TR.ID=UL40.6-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL40	UL40.6	
+LT934125.1	Liftoff	mRNA	49894	52434	.	+	.	"Name=UL41-42;ID=UL41-42;S.TR.ID=UL41-42;transferred_from=KJ717942.1;coverage=0.990;sequence_ID=0.979"	Policistronic	UL41-42	UL41	1
+LT934125.1	Liftoff	exon	49894	52434	.	+	.	"Name=UL41-42;ID=UL41-42;S.TR.ID=UL41-42_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL41-42	UL41	
+LT934125.1	Liftoff	mRNA	50027	54882	.	-	.	"Name=UL44-43-42-41;ID=UL44-43-42-41;S.TR.ID=UL44-43-42-41;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.989"	Policistronic	UL44-43-42-41	UL44	0
+LT934125.1	Liftoff	exon	50027	54882	.	-	.	"Name=UL44-43-42-41;ID=UL44-43-42-41;S.TR.ID=UL44-43-42-41_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL44-43-42-41	UL44	
+LT934125.1	Liftoff	mRNA	50041	50592	.	-	.	"Name=UL41.11;ID=UL41.11;S.TR.ID=UL41.11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL41	UL41.11	1
+LT934125.1	Liftoff	exon	50041	50592	.	-	.	"Name=UL41.11;ID=UL41.11;S.TR.ID=UL41.11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL41	UL41.11	
+LT934125.1	Liftoff	mRNA	50041	50641	.	-	.	"Name=UL41.9;ID=UL41.9;S.TR.ID=UL41.9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL41	UL41.9	1
+LT934125.1	Liftoff	exon	50041	50641	.	-	.	"Name=UL41.9;ID=UL41.9;S.TR.ID=UL41.9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL41	UL41.9	
+LT934125.1	Liftoff	mRNA	50041	50820	.	-	.	"Name=UL41.7;ID=UL41.7;S.TR.ID=UL41.7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL41	UL41.7	1
+LT934125.1	Liftoff	exon	50041	50820	.	-	.	"Name=UL41.7;ID=UL41.7;S.TR.ID=UL41.7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL41	UL41.7	
+LT934125.1	Liftoff	mRNA	50041	50986	.	-	.	"Name=UL41.4;ID=UL41.4;S.TR.ID=UL41.4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL41	UL41.4	1
+LT934125.1	Liftoff	exon	50041	50986	.	-	.	"Name=UL41.4;ID=UL41.4;S.TR.ID=UL41.4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL41	UL41.4	
+LT934125.1	Liftoff	mRNA	50041	51094	.	-	.	"Name=UL41.2;ID=UL41.2;S.TR.ID=UL41.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Putative	UL41	UL41.2	1
+LT934125.1	Liftoff	exon	50041	51094	.	-	.	"Name=UL41.2;ID=UL41.2;S.TR.ID=UL41.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL41	UL41.2	
+LT934125.1	Liftoff	mRNA	50041	51147	.	-	.	"Name=UL41;ID=UL41;S.TR.ID=UL41;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Canonic	UL41		1
+LT934125.1	Liftoff	exon	50041	51147	.	-	.	"Name=UL41;ID=UL41;S.TR.ID=UL41_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL41		
+LT934125.1	Liftoff	mRNA	50133	53594	.	+	.	"Name=UL42-43-L;ID=UL42-43-L;S.TR.ID=UL42-43-L;transferred_from=KJ717942.1;coverage=0.994;sequence_ID=0.989"	Policistronic	UL42-43	UL42	1
+LT934125.1	Liftoff	exon	50133	53594	.	+	.	"Name=UL42-43-L;ID=UL42-43-L;S.TR.ID=UL42-43-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL42-43	UL42	
+LT934125.1	Liftoff	mRNA	51148	52437	.	+	.	"Name=UL42-L1;ID=UL42-L1;S.TR.ID=UL42-L1;transferred_from=KJ717942.1;coverage=0.986;sequence_ID=0.973"	Long	UL42		1
+LT934125.1	Liftoff	exon	51148	52437	.	+	.	"Name=UL42-L1;ID=UL42-L1;S.TR.ID=UL42-L1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL42		
+LT934125.1	Liftoff	mRNA	51148	53594	.	+	.	"Name=UL42L-43;ID=UL42L-43;S.TR.ID=UL42L-43;transferred_from=KJ717942.1;coverage=0.992;sequence_ID=0.985"	Policistronic	UL42-43	UL42	1
+LT934125.1	Liftoff	exon	51148	53594	.	+	.	"Name=UL42L-43;ID=UL42L-43;S.TR.ID=UL42L-43_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL42-43	UL42	
+LT934125.1	Liftoff	mRNA	51148	55161	.	+	.	"Name=UL42L-43-44;ID=UL42L-43-44;S.TR.ID=UL42L-43-44;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.987"	Policistronic	UL42-43-44	UL42	1
+LT934125.1	Liftoff	exon	51148	55161	.	+	.	"Name=UL42L-43-44;ID=UL42L-43-44;S.TR.ID=UL42L-43-44_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL42-43-44	UL42	
+LT934125.1	Liftoff	mRNA	51235	52437	.	+	.	"Name=UL42;ID=UL42;S.TR.ID=UL42;transferred_from=KJ717942.1;coverage=0.985;sequence_ID=0.971"	Canonic	UL42		1
+LT934125.1	Liftoff	exon	51235	52437	.	+	.	"Name=UL42;ID=UL42;S.TR.ID=UL42_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL42		
+LT934125.1	Liftoff	mRNA	51235	55161	.	+	.	"Name=UL42-43-44;ID=UL42-43-44;S.TR.ID=UL42-43-44;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.987"	Policistronic	UL42-43-44	UL42	1
+LT934125.1	Liftoff	exon	51235	55161	.	+	.	"Name=UL42-43-44;ID=UL42-43-44;S.TR.ID=UL42-43-44_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL42-43-44	UL42	
+LT934125.1	Liftoff	mRNA	51495	52437	.	+	.	"Name=UL42.3;ID=UL42.3;S.TR.ID=UL42.3;transferred_from=KJ717942.1;coverage=0.981;sequence_ID=0.964"	Putative	UL42	UL42.3	1
+LT934125.1	Liftoff	exon	51495	52437	.	+	.	"Name=UL42.3;ID=UL42.3;S.TR.ID=UL42.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL42	UL42.3	
+LT934125.1	Liftoff	mRNA	51495	53594	.	+	.	"Name=UL43-L3;ID=UL43-L3;S.TR.ID=UL43-L3;transferred_from=KJ717942.1;coverage=0.991;sequence_ID=0.983"	Long	UL43		1
+LT934125.1	Liftoff	exon	51495	53594	.	+	.	"Name=UL43-L3;ID=UL43-L3;S.TR.ID=UL43-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL43		
+LT934125.1	Liftoff	mRNA	52121	52437	.	+	.	"Name=UL42.5;ID=UL42.5;S.TR.ID=UL42.5;transferred_from=KJ717942.1;coverage=0.945;sequence_ID=0.899"	Putative	UL42	UL42.5	1
+LT934125.1	Liftoff	exon	52121	52437	.	+	.	"Name=UL42.5;ID=UL42.5;S.TR.ID=UL42.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL42	UL42.5	
+LT934125.1	Liftoff	mRNA	52121	53594	.	+	.	"Name=UL43-L2;ID=UL43-L2;S.TR.ID=UL43-L2;transferred_from=KJ717942.1;coverage=0.987;sequence_ID=0.977"	Long	UL43		1
+LT934125.1	Liftoff	exon	52121	53594	.	+	.	"Name=UL43-L2;ID=UL43-L2;S.TR.ID=UL43-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL43		
+LT934125.1	Liftoff	mRNA	52306	52437	.	+	.	"Name=UL42.5-S;ID=UL42.5-S;S.TR.ID=UL42.5-S;transferred_from=KJ717942.1;coverage=0.846;sequence_ID=0.839"	Putative	UL42	UL42.5	1
+LT934125.1	Liftoff	exon	52306	52437	.	+	.	"Name=UL42.5-S;ID=UL42.5-S;S.TR.ID=UL42.5-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL42	UL42.5	
+LT934125.1	Liftoff	mRNA	52306	53594	.	-	.	"Name=UL43-L;ID=UL43-L;S.TR.ID=UL43-L;transferred_from=KJ717942.1;coverage=0.981;sequence_ID=0.980"	Long	UL43		1
+LT934125.1	Liftoff	exon	52306	53594	.	-	.	"Name=UL43-L;ID=UL43-L;S.TR.ID=UL43-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL43		
+LT934125.1	Liftoff	mRNA	52444	53594	.	+	.	"Name=UL43;ID=UL43;S.TR.ID=UL43;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Canonic	UL43		1
+LT934125.1	Liftoff	exon	52444	53594	.	+	.	"Name=UL43;ID=UL43;S.TR.ID=UL43_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL43		
+LT934125.1	Liftoff	mRNA	52460	53594	.	+	.	"Name=UL43-S;ID=UL43-S;S.TR.ID=UL43-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Short	UL43		1
+LT934125.1	Liftoff	exon	52460	53594	.	+	.	"Name=UL43-S;ID=UL43-S;S.TR.ID=UL43-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL43		
+LT934125.1	Liftoff	mRNA	52460	55161	.	+	.	"Name=UL43-44;ID=UL43-44;S.TR.ID=UL43-44;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Policistronic	UL43-44	UL43	1
+LT934125.1	Liftoff	exon	52460	55161	.	+	.	"Name=UL43-44;ID=UL43-44;S.TR.ID=UL43-44_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL43-44	UL43	
+LT934125.1	Liftoff	mRNA	52649	53594	.	+	.	"Name=UL43.6;ID=UL43.6;S.TR.ID=UL43.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL43	UL43.6	1
+LT934125.1	Liftoff	exon	52649	53594	.	+	.	"Name=UL43.6;ID=UL43.6;S.TR.ID=UL43.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL43	UL43.6	
+LT934125.1	Liftoff	mRNA	52649	55161	.	+	.	"Name=UL44-L6;ID=UL44-L6;S.TR.ID=UL44-L6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	UL44		1
+LT934125.1	Liftoff	exon	52649	55161	.	+	.	"Name=UL44-L6;ID=UL44-L6;S.TR.ID=UL44-L6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL44		
+LT934125.1	Liftoff	mRNA	52789	53594	.	+	.	"Name=UL43.9;ID=UL43.9;S.TR.ID=UL43.9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL43	UL43.9	1
+LT934125.1	Liftoff	exon	52789	53594	.	+	.	"Name=UL43.9;ID=UL43.9;S.TR.ID=UL43.9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL43	UL43.9	
+LT934125.1	Liftoff	mRNA	52789	55161	.	+	.	"Name=UL44-L5;ID=UL44-L5;S.TR.ID=UL44-L5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL44		1
+LT934125.1	Liftoff	exon	52789	55161	.	+	.	"Name=UL44-L5;ID=UL44-L5;S.TR.ID=UL44-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL44		
+LT934125.1	Liftoff	mRNA	52806	53594	.	+	.	"Name=UL43.9-S;ID=UL43.9-S;S.TR.ID=UL43.9-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL43	UL43.9	0
+LT934125.1	Liftoff	exon	52806	53594	.	+	.	"Name=UL43.9-S;ID=UL43.9-S;S.TR.ID=UL43.9-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL43	UL43.9	
+LT934125.1	Liftoff	mRNA	52806	55161	.	-	.	"Name=UL44-L4;ID=UL44-L4;S.TR.ID=UL44-L4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL44		1
+LT934125.1	Liftoff	exon	52806	55161	.	-	.	"Name=UL44-L4;ID=UL44-L4;S.TR.ID=UL44-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL44		
+LT934125.1	Liftoff	mRNA	53421	53594	.	+	.	"Name=UL43.13;ID=UL43.13;S.TR.ID=UL43.13;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL43	UL43.13	1
+LT934125.1	Liftoff	exon	53421	53594	.	+	.	"Name=UL43.13;ID=UL43.13;S.TR.ID=UL43.13_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL43	UL43.13	
+LT934125.1	Liftoff	mRNA	53421	55161	.	+	.	"Name=UL44-L3;ID=UL44-L3;S.TR.ID=UL44-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Long	UL44		1
+LT934125.1	Liftoff	exon	53421	55161	.	+	.	"Name=UL44-L3;ID=UL44-L3;S.TR.ID=UL44-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL44		
+LT934125.1	Liftoff	mRNA	53648	55161	.	+	.	"Name=UL44;ID=UL44;S.TR.ID=UL44;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.990"	Canonic	UL44		1
+LT934125.1	Liftoff	exon	53648	55161	.	+	.	"Name=UL44;ID=UL44;S.TR.ID=UL44_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL44		
+LT934125.1	Liftoff	mRNA	53648	55271	.	+	.	"Name=UL44-AT;ID=UL44-AT;S.TR.ID=UL44-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.988"	AT variant	UL44		1
+LT934125.1	Liftoff	exon	53648	55271	.	+	.	"Name=UL44-AT;ID=UL44-AT;S.TR.ID=UL44-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	UL44		
+LT934125.1	Liftoff	mRNA	53736	55161	.	+	.	"Name=UL44.4;ID=UL44.4;S.TR.ID=UL44.4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.990"	Putative	UL44	UL44.4	0
+LT934125.1	Liftoff	exon	53736	55161	.	+	.	"Name=UL44.4;ID=UL44.4;S.TR.ID=UL44.4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	53863	55161	.	+	.	"Name=UL44.4-S;ID=UL44.4-S;S.TR.ID=UL44.4-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	53863	55161	.	+	.	"Name=UL44.4-S;ID=UL44.4-S;S.TR.ID=UL44.4-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	53910	55161	.	+	.	"Name=UL44.4-S2;ID=UL44.4-S2;S.TR.ID=UL44.4-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	53910	55161	.	+	.	"Name=UL44.4-S2;ID=UL44.4-S2;S.TR.ID=UL44.4-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	53910	55271	.	+	.	"Name=UL44.4-S2-AT;ID=UL44.4-S2-AT;S.TR.ID=UL44.4-S2-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.988"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	53910	55271	.	+	.	"Name=UL44.4-S2-AT;ID=UL44.4-S2-AT;S.TR.ID=UL44.4-S2-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	53934	55161	.	+	.	"Name=UL44.4-S3;ID=UL44.4-S3;S.TR.ID=UL44.4-S3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	53934	55161	.	+	.	"Name=UL44.4-S3;ID=UL44.4-S3;S.TR.ID=UL44.4-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	53971	55161	.	+	.	"Name=UL44.4-S4;ID=UL44.4-S4;S.TR.ID=UL44.4-S4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	53971	55161	.	+	.	"Name=UL44.4-S4;ID=UL44.4-S4;S.TR.ID=UL44.4-S4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	53996	55161	.	+	.	"Name=UL44.4-S5;ID=UL44.4-S5;S.TR.ID=UL44.4-S5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	53996	55161	.	+	.	"Name=UL44.4-S5;ID=UL44.4-S5;S.TR.ID=UL44.4-S5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	53996	55271	.	+	.	"Name=UL44.4-S5-AT;ID=UL44.4-S5-AT;S.TR.ID=UL44.4-S5-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	53996	55271	.	+	.	"Name=UL44.4-S5-AT;ID=UL44.4-S5-AT;S.TR.ID=UL44.4-S5-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54053	55161	.	+	.	"Name=UL44.4-S6;ID=UL44.4-S6;S.TR.ID=UL44.4-S6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54053	55161	.	+	.	"Name=UL44.4-S6;ID=UL44.4-S6;S.TR.ID=UL44.4-S6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54165	55161	.	+	.	"Name=UL44.4-S7;ID=UL44.4-S7;S.TR.ID=UL44.4-S7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Putative	UL44	UL44.4	0
+LT934125.1	Liftoff	exon	54165	55161	.	+	.	"Name=UL44.4-S7;ID=UL44.4-S7;S.TR.ID=UL44.4-S7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54209	55161	.	+	.	"Name=UL44.4-S8;ID=UL44.4-S8;S.TR.ID=UL44.4-S8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL44	UL44.4	0
+LT934125.1	Liftoff	exon	54209	55161	.	+	.	"Name=UL44.4-S8;ID=UL44.4-S8;S.TR.ID=UL44.4-S8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54245	55161	.	+	.	"Name=UL44.4-S9;ID=UL44.4-S9;S.TR.ID=UL44.4-S9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54245	55161	.	+	.	"Name=UL44.4-S9;ID=UL44.4-S9;S.TR.ID=UL44.4-S9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54245	55271	.	+	.	"Name=UL44.4-S9-AT;ID=UL44.4-S9-AT;S.TR.ID=UL44.4-S9-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54245	55271	.	+	.	"Name=UL44.4-S9-AT;ID=UL44.4-S9-AT;S.TR.ID=UL44.4-S9-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54290	55161	.	+	.	"Name=UL44.4-S10;ID=UL44.4-S10;S.TR.ID=UL44.4-S10;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54290	55161	.	+	.	"Name=UL44.4-S10;ID=UL44.4-S10;S.TR.ID=UL44.4-S10_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54306	55161	.	+	.	"Name=UL44.4-S11;ID=UL44.4-S11;S.TR.ID=UL44.4-S11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54306	55161	.	+	.	"Name=UL44.4-S11;ID=UL44.4-S11;S.TR.ID=UL44.4-S11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54337	55161	.	+	.	"Name=UL44.4-S12;ID=UL44.4-S12;S.TR.ID=UL44.4-S12;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54337	55161	.	+	.	"Name=UL44.4-S12;ID=UL44.4-S12;S.TR.ID=UL44.4-S12_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54366	55161	.	+	.	"Name=UL44.4-S13;ID=UL44.4-S13;S.TR.ID=UL44.4-S13;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54366	55161	.	+	.	"Name=UL44.4-S13;ID=UL44.4-S13;S.TR.ID=UL44.4-S13_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54421	55161	.	+	.	"Name=UL44.4-S14;ID=UL44.4-S14;S.TR.ID=UL44.4-S14;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54421	55161	.	+	.	"Name=UL44.4-S14;ID=UL44.4-S14;S.TR.ID=UL44.4-S14_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54454	55161	.	+	.	"Name=UL44.4-S15;ID=UL44.4-S15;S.TR.ID=UL44.4-S15;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54454	55161	.	+	.	"Name=UL44.4-S15;ID=UL44.4-S15;S.TR.ID=UL44.4-S15_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54475	55161	.	+	.	"Name=UL44.4-S16;ID=UL44.4-S16;S.TR.ID=UL44.4-S16;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54475	55161	.	+	.	"Name=UL44.4-S16;ID=UL44.4-S16;S.TR.ID=UL44.4-S16_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54497	55161	.	+	.	"Name=UL44.4-S17;ID=UL44.4-S17;S.TR.ID=UL44.4-S17;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54497	55161	.	+	.	"Name=UL44.4-S17;ID=UL44.4-S17;S.TR.ID=UL44.4-S17_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54519	55161	.	+	.	"Name=UL44.4-S18;ID=UL44.4-S18;S.TR.ID=UL44.4-S18;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	0
+LT934125.1	Liftoff	exon	54519	55161	.	+	.	"Name=UL44.4-S18;ID=UL44.4-S18;S.TR.ID=UL44.4-S18_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54561	55161	.	+	.	"Name=UL44.4-S19;ID=UL44.4-S19;S.TR.ID=UL44.4-S19;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54561	55161	.	+	.	"Name=UL44.4-S19;ID=UL44.4-S19;S.TR.ID=UL44.4-S19_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54723	55161	.	+	.	"Name=UL44.4-S20;ID=UL44.4-S20;S.TR.ID=UL44.4-S20;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54723	55161	.	+	.	"Name=UL44.4-S20;ID=UL44.4-S20;S.TR.ID=UL44.4-S20_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54834	55161	.	+	.	"Name=UL44.4-S21;ID=UL44.4-S21;S.TR.ID=UL44.4-S21;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL44	UL44.4	1
+LT934125.1	Liftoff	exon	54834	55161	.	+	.	"Name=UL44.4-S21;ID=UL44.4-S21;S.TR.ID=UL44.4-S21_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54901	55161	.	+	.	"Name=UL44.4-S22;ID=UL44.4-S22;S.TR.ID=UL44.4-S22;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL44	UL44.4	0
+LT934125.1	Liftoff	exon	54901	55161	.	+	.	"Name=UL44.4-S22;ID=UL44.4-S22;S.TR.ID=UL44.4-S22_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	54960	55161	.	+	.	"Name=UL44.4-S23;ID=UL44.4-S23;S.TR.ID=UL44.4-S23;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Putative	UL44	UL44.4	0
+LT934125.1	Liftoff	exon	54960	55161	.	+	.	"Name=UL44.4-S23;ID=UL44.4-S23;S.TR.ID=UL44.4-S23_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL44	UL44.4	
+LT934125.1	Liftoff	mRNA	55270	55679	.	-	.	"Name=UL26.9-S;ID=UL26.9-S;S.TR.ID=UL26.9-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.972"	Putative	UL26	UL26.9	1
+LT934125.1	Liftoff	exon	55270	55679	.	-	.	"Name=UL26.9-S;ID=UL26.9-S;S.TR.ID=UL26.9-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL26	UL26.9	
+LT934125.1	Liftoff	mRNA	55270	55733	.	-	.	"Name=UL26.9;ID=UL26.9;S.TR.ID=UL26.9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.975"	Putative	UL26	UL26.9	1
+LT934125.1	Liftoff	exon	55270	55733	.	-	.	"Name=UL26.9;ID=UL26.9;S.TR.ID=UL26.9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL26	UL26.9	
+LT934125.1	Liftoff	mRNA	55270	55807	.	-	.	"Name=UL26.8;ID=UL26.8;S.TR.ID=UL26.8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.979"	Putative	UL26	UL26.8	1
+LT934125.1	Liftoff	exon	55270	55807	.	-	.	"Name=UL26.8;ID=UL26.8;S.TR.ID=UL26.8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL26	UL26.8	
+LT934125.1	Liftoff	mRNA	55270	56188	.	-	.	"Name=UL26.6;ID=UL26.6;S.TR.ID=UL26.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.986"	Canonic	UL26	UL26.6	1
+LT934125.1	Liftoff	exon	55270	56188	.	-	.	"Name=UL26.6;ID=UL26.6;S.TR.ID=UL26.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL26	UL26.6	
+LT934125.1	Liftoff	mRNA	55270	56946	.	-	.	"Name=UL26-26.5;ID=UL26-26.5;S.TR.ID=UL26-26.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Policistronic	UL26-26.5	UL26	1
+LT934125.1	Liftoff	exon	55270	56946	.	-	.	"Name=UL26-26.5;ID=UL26-26.5;S.TR.ID=UL26-26.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL26-26.5	UL26	
+LT934125.1	Liftoff	mRNA	55270	57535	.	-	.	"Name=UL26-26.5-L;ID=UL26-26.5-L;S.TR.ID=UL26-26.5-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Policistronic	UL26-26.5	UL26	1
+LT934125.1	Liftoff	exon	55270	57535	.	-	.	"Name=UL26-26.5-L;ID=UL26-26.5-L;S.TR.ID=UL26-26.5-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL26-26.5	UL26	
+LT934125.1	Liftoff	mRNA	55270	58570	.	-	.	"Name=UL25-26-26.5;ID=UL25-26-26.5;S.TR.ID=UL25-26-26.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Policistronic	UL25-26-26.5	UL25	1
+LT934125.1	Liftoff	exon	55270	58570	.	-	.	"Name=UL25-26-26.5;ID=UL25-26-26.5;S.TR.ID=UL25-26-26.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL25-26-26.5	UL25	
+LT934125.1	Liftoff	mRNA	55270	59016	.	-	.	"Name=UL25L-26-26.5;ID=UL25L-26-26.5;S.TR.ID=UL25L-26-26.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Policistronic	UL25-26-26.5	UL25	1
+LT934125.1	Liftoff	exon	55270	59016	.	-	.	"Name=UL25L-26-26.5;ID=UL25L-26-26.5;S.TR.ID=UL25L-26-26.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL25-26-26.5	UL25	
+LT934125.1	Liftoff	mRNA	55270	59277	.	-	.	"Name=UL24-25-26-26.5;ID=UL24-25-26-26.5;S.TR.ID=UL24-25-26-26.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Policistronic	UL24-25-26-26.5	UL24	1
+LT934125.1	Liftoff	exon	55270	59277	.	-	.	"Name=UL24-25-26-26.5;ID=UL24-25-26-26.5;S.TR.ID=UL24-25-26-26.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL24-25-26-26.5	UL24	
+LT934125.1	Liftoff	mRNA	55270	63420	.	-	.	"Name=CTO-UL22-UL23-UL24-UL25-26;ID=CTO-UL22-UL23-UL24-UL25-26;S.TR.ID=CTO-UL22-UL23-UL24-UL25-26;transferred_from=KJ717942.1;coverage=0.991;sequence_ID=0.974"	Policistronic	CTO-UL2-UL3-UL4-UL5-26	CTO	1
+LT934125.1	Liftoff	exon	55270	63420	.	-	.	"Name=CTO-UL22-UL23-UL24-UL25-26;ID=CTO-UL22-UL23-UL24-UL25-26;S.TR.ID=CTO-UL22-UL23-UL24-UL25-26_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	CTO-UL2-UL3-UL4-UL5-26	CTO	
+LT934125.1	Liftoff	mRNA	55310	56946	.	-	.	"Name=UL26-26.5-AT;ID=UL26-26.5-AT;S.TR.ID=UL26-26.5-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Policistronic	UL26-26.5-AT	UL26	1
+LT934125.1	Liftoff	exon	55310	56946	.	-	.	"Name=UL26-26.5-AT;ID=UL26-26.5-AT;S.TR.ID=UL26-26.5-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL26-26.5-AT	UL26	
+LT934125.1	Liftoff	mRNA	55704	58556	.	-	.	"Name=UL25;ID=UL25;S.TR.ID=UL25;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Canonic	UL25		0
+LT934125.1	Liftoff	exon	55704	58556	.	-	.	"Name=UL25;ID=UL25;S.TR.ID=UL25_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL25		
+LT934125.1	Liftoff	mRNA	55896	60251	.	+	.	"Name=UL25-24-23;ID=UL25-24-23;S.TR.ID=UL25-24-23;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Policistronic	UL25-24-23	UL25	0
+LT934125.1	Liftoff	exon	55896	60251	.	+	.	"Name=UL25-24-23;ID=UL25-24-23;S.TR.ID=UL25-24-23_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL25-24-23	UL25	
+LT934125.1	Liftoff	mRNA	56317	56946	.	-	.	"Name=nc-UL26;ID=nc-UL26;S.TR.ID=nc-UL26;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Non coding	UL26		1
+LT934125.1	Liftoff	exon	56317	56946	.	-	.	"Name=nc-UL26;ID=nc-UL26;S.TR.ID=nc-UL26_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL26		
+LT934125.1	Liftoff	mRNA	56317	58570	.	-	.	"Name=UL25-AT;ID=UL25-AT;S.TR.ID=UL25-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	AT variant	UL25		1
+LT934125.1	Liftoff	exon	56317	58570	.	-	.	"Name=UL25-AT;ID=UL25-AT;S.TR.ID=UL25-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	UL25		
+LT934125.1	Liftoff	mRNA	58002	60251	.	+	.	"Name=UL23-L4;ID=UL23-L4;S.TR.ID=UL23-L4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Long	UL34		1
+LT934125.1	Liftoff	exon	58002	60251	.	+	.	"Name=UL23-L4;ID=UL23-L4;S.TR.ID=UL23-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL34		
+LT934125.1	Liftoff	mRNA	58478	60251	.	+	.	"Name=UL23-L3;ID=UL23-L3;S.TR.ID=UL23-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	UL33		0
+LT934125.1	Liftoff	exon	58478	60251	.	+	.	"Name=UL23-L3;ID=UL23-L3;S.TR.ID=UL23-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL33		
+LT934125.1	Liftoff	mRNA	58625	60251	.	+	.	"Name=UL23-L2;ID=UL23-L2;S.TR.ID=UL23-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Long	UL32		1
+LT934125.1	Liftoff	exon	58625	60251	.	+	.	"Name=UL23-L2;ID=UL23-L2;S.TR.ID=UL23-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL32		
+LT934125.1	Liftoff	mRNA	58625	62340	.	+	.	"Name=UL23L-22;ID=UL23L-22;S.TR.ID=UL23L-22;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.995"	Policistronic	UL23-22	UL23	1
+LT934125.1	Liftoff	exon	58625	62340	.	+	.	"Name=UL23L-22;ID=UL23L-22;S.TR.ID=UL23L-22_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL23-22	UL23	
+LT934125.1	Liftoff	mRNA	59044	60251	.	+	.	"Name=UL23-L1;ID=UL23-L1;S.TR.ID=UL23-L1;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Long	UL31		1
+LT934125.1	Liftoff	exon	59044	60251	.	+	.	"Name=UL23-L1;ID=UL23-L1;S.TR.ID=UL23-L1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL31		
+LT934125.1	Liftoff	mRNA	59068	60251	.	+	.	"Name=UL23;ID=UL23;S.TR.ID=UL23;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Canonic	UL23		1
+LT934125.1	Liftoff	exon	59068	60251	.	+	.	"Name=UL23;ID=UL23;S.TR.ID=UL23_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL23		
+LT934125.1	Liftoff	mRNA	59068	62340	.	+	.	"Name=UL23-22;ID=UL23-22;S.TR.ID=UL23-22;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.996"	Policistronic	UL23-22	UL23	1
+LT934125.1	Liftoff	exon	59068	62340	.	+	.	"Name=UL23-22;ID=UL23-22;S.TR.ID=UL23-22_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL23-22	UL23	
+LT934125.1	Liftoff	mRNA	59069	60354	.	+	.	"Name=UL23-AT;ID=UL23-AT;S.TR.ID=UL23-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	AT variant	UL23		1
+LT934125.1	Liftoff	exon	59069	60354	.	+	.	"Name=UL23-AT;ID=UL23-AT;S.TR.ID=UL23-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	UL23		
+LT934125.1	Liftoff	mRNA	59287	60251	.	+	.	"Name=UL23.4;ID=UL23.4;S.TR.ID=UL23.4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL23	UL23.4	1
+LT934125.1	Liftoff	exon	59287	60251	.	+	.	"Name=UL23.4;ID=UL23.4;S.TR.ID=UL23.4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL23	UL23.4	
+LT934125.1	Liftoff	mRNA	59412	60251	.	+	.	"Name=UL23.4-S;ID=UL23.4-S;S.TR.ID=UL23.4-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL23	UL23.4	1
+LT934125.1	Liftoff	exon	59412	60251	.	+	.	"Name=UL23.4-S;ID=UL23.4-S;S.TR.ID=UL23.4-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL23	UL23.4	
+LT934125.1	Liftoff	mRNA	59793	60251	.	+	.	"Name=UL23.6;ID=UL23.6;S.TR.ID=UL23.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Putative	UL23	UL23.6	1
+LT934125.1	Liftoff	exon	59793	60251	.	+	.	"Name=UL23.6;ID=UL23.6;S.TR.ID=UL23.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL23	UL23.6	
+LT934125.1	Liftoff	mRNA	59793	62340	.	+	.	"Name=UL22-L;ID=UL22-L;S.TR.ID=UL22-L;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.995"	Long	UL22		1
+LT934125.1	Liftoff	exon	59793	62340	.	+	.	"Name=UL22-L;ID=UL22-L;S.TR.ID=UL22-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL22		
+LT934125.1	Liftoff	mRNA	60234	62340	.	+	.	"Name=UL22;ID=UL22;S.TR.ID=UL22;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.996"	Canonic	UL22		1
+LT934125.1	Liftoff	exon	60234	62340	.	+	.	"Name=UL22;ID=UL22;S.TR.ID=UL22_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL22		
+LT934125.1	Liftoff	mRNA	60235	63051	.	+	.	"Name=UL22-AT;ID=UL22-AT;S.TR.ID=UL22-AT;transferred_from=KJ717942.1;coverage=0.970;sequence_ID=0.952"	AT variant	UL22		1
+LT934125.1	Liftoff	exon	60235	63051	.	+	.	"Name=UL22-AT;ID=UL22-AT;S.TR.ID=UL22-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	UL22		
+LT934125.1	Liftoff	mRNA	61078	62340	.	+	.	"Name=UL22.5;ID=UL22.5;S.TR.ID=UL22.5;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Putative	UL22	UL22.5	1
+LT934125.1	Liftoff	exon	61078	62340	.	+	.	"Name=UL22.5;ID=UL22.5;S.TR.ID=UL22.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL22	UL22.5	
+LT934125.1	Liftoff	mRNA	61621	62340	.	+	.	"Name=UL22.8;ID=UL22.8;S.TR.ID=UL22.8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL22	UL22.8	0
+LT934125.1	Liftoff	exon	61621	62340	.	+	.	"Name=UL22.8;ID=UL22.8;S.TR.ID=UL22.8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL22	UL22.8	
+LT934125.1	Liftoff	mRNA	62000	62340	.	+	.	"Name=UL22.11;ID=UL22.11;S.TR.ID=UL22.11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL22	UL22.11	0
+LT934125.1	Liftoff	exon	62000	62340	.	+	.	"Name=UL22.11;ID=UL22.11;S.TR.ID=UL22.11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL22	UL22.11	
+LT934125.1	Liftoff	mRNA	62144	62340	.	+	.	"Name=UL22.13;ID=UL22.13;S.TR.ID=UL22.13;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL22	UL22.13	0
+LT934125.1	Liftoff	exon	62144	62340	.	+	.	"Name=UL22.13;ID=UL22.13;S.TR.ID=UL22.13_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL22	UL22.13	
+LT934125.1	Liftoff	mRNA	62344	63420	.	-	.	"Name=CTO-AT2;ID=CTO-AT2;S.TR.ID=CTO-AT2;transferred_from=KJ717942.1;coverage=0.936;sequence_ID=0.833"	Non coding	CTO		1
+LT934125.1	Liftoff	exon	62344	63420	.	-	.	"Name=CTO-AT2;ID=CTO-AT2;S.TR.ID=CTO-AT2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	CTO		
+LT934125.1	Liftoff	mRNA	62617	63420	.	-	.	"Name=CTO-AT;ID=CTO-AT;S.TR.ID=CTO-AT;transferred_from=KJ717942.1;coverage=0.926;sequence_ID=0.796"	Non coding	CTO		1
+LT934125.1	Liftoff	exon	62617	63420	.	-	.	"Name=CTO-AT;ID=CTO-AT;S.TR.ID=CTO-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	CTO		
+LT934125.1	Liftoff	mRNA	63161	65821	.	-	.	"Name=CTO-L2;ID=CTO-L2;S.TR.ID=CTO-L2;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.990"	Non coding	CTO		0
+LT934125.1	Liftoff	exon	63161	65821	.	-	.	"Name=CTO-L2;ID=CTO-L2;S.TR.ID=CTO-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	CTO		
+LT934125.1	Liftoff	mRNA	63164	63420	.	-	.	"Name=CTO-S;ID=CTO-S;S.TR.ID=CTO-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.984"	Non coding	CTO		1
+LT934125.1	Liftoff	exon	63164	63420	.	-	.	"Name=CTO-S;ID=CTO-S;S.TR.ID=CTO-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	CTO		
+LT934125.1	Liftoff	mRNA	63164	64127	.	-	.	"Name=CTO-M;ID=CTO-M;S.TR.ID=CTO-M;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.979"	Non coding	CTO		1
+LT934125.1	Liftoff	exon	63164	64127	.	-	.	"Name=CTO-M;ID=CTO-M;S.TR.ID=CTO-M_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	CTO		
+LT934125.1	Liftoff	mRNA	63164	64624	.	-	.	"Name=CTO-M-L;ID=CTO-M-L;S.TR.ID=CTO-M-L;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.986"	Non coding	CTO		1
+LT934125.1	Liftoff	exon	63164	64624	.	-	.	"Name=CTO-M-L;ID=CTO-M-L;S.TR.ID=CTO-M-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	CTO		
+LT934125.1	Liftoff	mRNA	63164	65752	.	-	.	"Name=CTO-L;ID=CTO-L;S.TR.ID=CTO-L;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.991"	Non coding	CTO		1
+LT934125.1	Liftoff	exon	63164	65752	.	-	.	"Name=CTO-L;ID=CTO-L;S.TR.ID=CTO-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	CTO		
+LT934125.1	Liftoff	mRNA	63175	63420	.	+	.	"Name=nc-CTO-S;ID=nc-CTO-S;S.TR.ID=nc-CTO-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.983"	Antisense	CTO		0
+LT934125.1	Liftoff	exon	63175	63420	.	+	.	"Name=nc-CTO-S;ID=nc-CTO-S;S.TR.ID=nc-CTO-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Antisense	CTO		
+LT934125.1	Liftoff	mRNA	63850	65656	.	+	.	"Name=UL21-as;ID=UL21-as;S.TR.ID=UL21-as;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.992"	Antisense	UL21		0
+LT934125.1	Liftoff	exon	63850	65656	.	+	.	"Name=UL21-as;ID=UL21-as;S.TR.ID=UL21-as_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Antisense	UL21		
+LT934125.1	Liftoff	mRNA	64133	64624	.	-	.	"Name=UL21.5;ID=UL21.5;S.TR.ID=UL21.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL21	UL21.5	1
+LT934125.1	Liftoff	exon	64133	64624	.	-	.	"Name=UL21.5;ID=UL21.5;S.TR.ID=UL21.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL22	UL21.5	
+LT934125.1	Liftoff	mRNA	64133	65582	.	-	.	"Name=UL21.2-S;ID=UL21.2-S;S.TR.ID=UL21.2-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL23	UL21.2	0
+LT934125.1	Liftoff	exon	64133	65582	.	-	.	"Name=UL21.2-S;ID=UL21.2-S;S.TR.ID=UL21.2-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL24	UL21.2	
+LT934125.1	Liftoff	mRNA	64133	65657	.	-	.	"Name=UL21.2;ID=UL21.2;S.TR.ID=UL21.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL25	UL21.2	1
+LT934125.1	Liftoff	exon	64133	65657	.	-	.	"Name=UL21.2;ID=UL21.2;S.TR.ID=UL21.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL26	UL21.2	
+LT934125.1	Liftoff	mRNA	64133	65752	.	-	.	"Name=UL21;ID=UL21;S.TR.ID=UL21;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL27		1
+LT934125.1	Liftoff	exon	64133	65752	.	-	.	"Name=UL21;ID=UL21;S.TR.ID=UL21_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL28		
+LT934125.1	Liftoff	mRNA	64133	65880	.	-	.	"Name=UL21-L;ID=UL21-L;S.TR.ID=UL21-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	UL29		1
+LT934125.1	Liftoff	exon	64133	65880	.	-	.	"Name=UL21-L;ID=UL21-L;S.TR.ID=UL21-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL30		
+LT934125.1	Liftoff	mRNA	64138	66283	.	-	.	"Name=UL21-L2;ID=UL21-L2;S.TR.ID=UL21-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL31		1
+LT934125.1	Liftoff	exon	64138	66283	.	-	.	"Name=UL21-L2;ID=UL21-L2;S.TR.ID=UL21-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL32		
+LT934125.1	Liftoff	mRNA	64173	66924	.	-	.	"Name=UL20-21-C;ID=UL20-21-C;S.TR.ID=UL20-21-C;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Policistronic	UL20-21	UL20	0
+LT934125.1	Liftoff	exon	64173	66924	.	-	.	"Name=UL20-21-C;ID=UL20-21-C;S.TR.ID=UL20-21-C_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL20-21	UL20	
+LT934125.1	Liftoff	mRNA	64532	65752	.	-	.	"Name=UL21-AT2;ID=UL21-AT2;S.TR.ID=UL21-AT2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	AT variant	UL21		1
+LT934125.1	Liftoff	exon	64532	65752	.	-	.	"Name=UL21-AT2;ID=UL21-AT2;S.TR.ID=UL21-AT2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	UL21		
+LT934125.1	Liftoff	mRNA	65805	70521	.	+	.	"Name=UL20-19;ID=UL20-19;S.TR.ID=UL20-19;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Policistronic	UL20-19	UL20	1
+LT934125.1	Liftoff	exon	65805	70521	.	+	.	"Name=UL20-19;ID=UL20-19;S.TR.ID=UL20-19_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL20-19	UL20	
+LT934125.1	Liftoff	mRNA	65806	66392	.	+	.	"Name=UL20;ID=UL20;S.TR.ID=UL20;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Canonic	UL20		1
+LT934125.1	Liftoff	exon	65806	66392	.	+	.	"Name=UL20;ID=UL20;S.TR.ID=UL20_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL20		
+LT934125.1	Liftoff	mRNA	66338	70521	.	+	.	"Name=UL19;ID=UL19;S.TR.ID=UL19;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL19		1
+LT934125.1	Liftoff	exon	66338	70521	.	+	.	"Name=UL19;ID=UL19;S.TR.ID=UL19_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL19		
+LT934125.1	Liftoff	mRNA	66338	71544	.	+	.	"Name=UL19-18;ID=UL19-18;S.TR.ID=UL19-18;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL19-18	UL19	1
+LT934125.1	Liftoff	exon	66338	71544	.	+	.	"Name=UL19-18;ID=UL19-18;S.TR.ID=UL19-18_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL19-18	UL19	
+LT934125.1	Liftoff	mRNA	66753	71544	.	+	.	"Name=UL18-L17;ID=UL18-L17;S.TR.ID=UL18-L17;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	UL18-17	UL18	0
+LT934125.1	Liftoff	exon	66753	71544	.	+	.	"Name=UL18-L17;ID=UL18-L17;S.TR.ID=UL18-L17_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18-17	UL18	
+LT934125.1	Liftoff	mRNA	66797	70521	.	+	.	"Name=UL19.9;ID=UL19.9;S.TR.ID=UL19.9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL19	UL19.9	1
+LT934125.1	Liftoff	exon	66797	70521	.	+	.	"Name=UL19.9;ID=UL19.9;S.TR.ID=UL19.9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.9	
+LT934125.1	Liftoff	mRNA	66959	70521	.	+	.	"Name=UL19.11;ID=UL19.11;S.TR.ID=UL19.11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL19	UL19.11	0
+LT934125.1	Liftoff	exon	66959	70521	.	+	.	"Name=UL19.11;ID=UL19.11;S.TR.ID=UL19.11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.11	
+LT934125.1	Liftoff	mRNA	67406	70521	.	+	.	"Name=UL19.12;ID=UL19.12;S.TR.ID=UL19.12;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.12	0
+LT934125.1	Liftoff	exon	67406	70521	.	+	.	"Name=UL19.12;ID=UL19.12;S.TR.ID=UL19.12_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.12	
+LT934125.1	Liftoff	mRNA	67505	70521	.	+	.	"Name=UL19.12-S;ID=UL19.12-S;S.TR.ID=UL19.12-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.12	1
+LT934125.1	Liftoff	exon	67505	70521	.	+	.	"Name=UL19.12-S;ID=UL19.12-S;S.TR.ID=UL19.12-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.12	
+LT934125.1	Liftoff	mRNA	67731	70521	.	+	.	"Name=UL19.16;ID=UL19.16;S.TR.ID=UL19.16;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.16	1
+LT934125.1	Liftoff	exon	67731	70521	.	+	.	"Name=UL19.16;ID=UL19.16;S.TR.ID=UL19.16_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.16	
+LT934125.1	Liftoff	mRNA	68001	70521	.	+	.	"Name=UL19.18;ID=UL19.18;S.TR.ID=UL19.18;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.18	0
+LT934125.1	Liftoff	exon	68001	70521	.	+	.	"Name=UL19.18;ID=UL19.18;S.TR.ID=UL19.18_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.18	
+LT934125.1	Liftoff	mRNA	68058	70521	.	+	.	"Name=UL19.19;ID=UL19.19;S.TR.ID=UL19.19;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.19	0
+LT934125.1	Liftoff	exon	68058	70521	.	+	.	"Name=UL19.19;ID=UL19.19;S.TR.ID=UL19.19_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.19	
+LT934125.1	Liftoff	mRNA	68121	70521	.	+	.	"Name=UL19.19-S;ID=UL19.19-S;S.TR.ID=UL19.19-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.19	1
+LT934125.1	Liftoff	exon	68121	70521	.	+	.	"Name=UL19.19-S;ID=UL19.19-S;S.TR.ID=UL19.19-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.19	
+LT934125.1	Liftoff	mRNA	68267	70521	.	+	.	"Name=UL19.20;ID=UL19.20;S.TR.ID=UL19.20;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.20	1
+LT934125.1	Liftoff	exon	68267	70521	.	+	.	"Name=UL19.20;ID=UL19.20;S.TR.ID=UL19.20_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.20	
+LT934125.1	Liftoff	mRNA	68357	70521	.	+	.	"Name=UL19.22;ID=UL19.22;S.TR.ID=UL19.22;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.22	1
+LT934125.1	Liftoff	exon	68357	70521	.	+	.	"Name=UL19.22;ID=UL19.22;S.TR.ID=UL19.22_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.22	
+LT934125.1	Liftoff	mRNA	68457	70521	.	+	.	"Name=UL19.24-S;ID=UL19.24-S;S.TR.ID=UL19.24-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL19	UL19.24	1
+LT934125.1	Liftoff	exon	68457	70521	.	+	.	"Name=UL19.24-S;ID=UL19.24-S;S.TR.ID=UL19.24-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.24	
+LT934125.1	Liftoff	mRNA	68536	70521	.	+	.	"Name=UL19.24-S2;ID=UL19.24-S2;S.TR.ID=UL19.24-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL19	UL19.24	1
+LT934125.1	Liftoff	exon	68536	70521	.	+	.	"Name=UL19.24-S2;ID=UL19.24-S2;S.TR.ID=UL19.24-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.24	
+LT934125.1	Liftoff	mRNA	68626	71544	.	+	.	"Name=UL18-L16;ID=UL18-L16;S.TR.ID=UL18-L16;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Long	UL18-16	UL18	0
+LT934125.1	Liftoff	exon	68626	71544	.	+	.	"Name=UL18-L16;ID=UL18-L16;S.TR.ID=UL18-L16_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18-16	UL18	
+LT934125.1	Liftoff	mRNA	68667	70521	.	+	.	"Name=UL19.25;ID=UL19.25;S.TR.ID=UL19.25;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL19	UL19.25	1
+LT934125.1	Liftoff	exon	68667	70521	.	+	.	"Name=UL19.25;ID=UL19.25;S.TR.ID=UL19.25_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL20	UL19.25	
+LT934125.1	Liftoff	mRNA	68667	71544	.	+	.	"Name=UL18-L15;ID=UL18-L15;S.TR.ID=UL18-L15;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Long	UL18-15	UL18	1
+LT934125.1	Liftoff	exon	68667	71544	.	+	.	"Name=UL18-L15;ID=UL18-L15;S.TR.ID=UL18-L15_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18-15	UL18	
+LT934125.1	Liftoff	mRNA	68783	70521	.	+	.	"Name=UL19.25-S;ID=UL19.25-S;S.TR.ID=UL19.25-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL19	UL19.25	1
+LT934125.1	Liftoff	exon	68783	70521	.	+	.	"Name=UL19.25-S;ID=UL19.25-S;S.TR.ID=UL19.25-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL20	UL19.25	
+LT934125.1	Liftoff	mRNA	68873	71544	.	+	.	"Name=UL18-L14;ID=UL18-L14;S.TR.ID=UL18-L14;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Long	UL18-14	UL18	1
+LT934125.1	Liftoff	exon	68873	71544	.	+	.	"Name=UL18-L14;ID=UL18-L14;S.TR.ID=UL18-L14_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18-14	UL18	
+LT934125.1	Liftoff	mRNA	68910	70521	.	+	.	"Name=UL19.27;ID=UL19.27;S.TR.ID=UL19.27;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	UL19	UL19.27	0
+LT934125.1	Liftoff	exon	68910	70521	.	+	.	"Name=UL19.27;ID=UL19.27;S.TR.ID=UL19.27_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL20	UL19.27	
+LT934125.1	Liftoff	mRNA	69032	70521	.	+	.	"Name=UL19.29;ID=UL19.29;S.TR.ID=UL19.29;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Putative	UL21	UL19.29	0
+LT934125.1	Liftoff	exon	69032	70521	.	+	.	"Name=UL19.29;ID=UL19.29;S.TR.ID=UL19.29_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL22	UL19.29	
+LT934125.1	Liftoff	mRNA	69182	70521	.	+	.	"Name=UL19.30;ID=UL19.30;S.TR.ID=UL19.30;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Putative	UL23	UL19.30	1
+LT934125.1	Liftoff	exon	69182	70521	.	+	.	"Name=UL19.30;ID=UL19.30;S.TR.ID=UL19.30_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL24	UL19.30	
+LT934125.1	Liftoff	mRNA	69244	71544	.	+	.	"Name=UL18-L13;ID=UL18-L13;S.TR.ID=UL18-L13;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Long	UL18-13	UL18	1
+LT934125.1	Liftoff	exon	69244	71544	.	+	.	"Name=UL18-L13;ID=UL18-L13;S.TR.ID=UL18-L13_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18-13	UL18	
+LT934125.1	Liftoff	mRNA	69259	70521	.	+	.	"Name=UL19.31;ID=UL19.31;S.TR.ID=UL19.31;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Putative	UL19	UL19.31	0
+LT934125.1	Liftoff	exon	69259	70521	.	+	.	"Name=UL19.31;ID=UL19.31;S.TR.ID=UL19.31_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.31	
+LT934125.1	Liftoff	mRNA	69311	70521	.	+	.	"Name=UL19.31-S;ID=UL19.31-S;S.TR.ID=UL19.31-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Putative	UL19	UL19.31	1
+LT934125.1	Liftoff	exon	69311	70521	.	+	.	"Name=UL19.31-S;ID=UL19.31-S;S.TR.ID=UL19.31-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.31	
+LT934125.1	Liftoff	mRNA	69393	70521	.	+	.	"Name=UL19.32;ID=UL19.32;S.TR.ID=UL19.32;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL19	UL19.32	1
+LT934125.1	Liftoff	exon	69393	70521	.	+	.	"Name=UL19.32;ID=UL19.32;S.TR.ID=UL19.32_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.32	
+LT934125.1	Liftoff	mRNA	69488	70521	.	+	.	"Name=UL19.33;ID=UL19.33;S.TR.ID=UL19.33;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Putative	UL19	UL19.33	0
+LT934125.1	Liftoff	exon	69488	70521	.	+	.	"Name=UL19.33;ID=UL19.33;S.TR.ID=UL19.33_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.33	
+LT934125.1	Liftoff	mRNA	69488	71544	.	+	.	"Name=UL18-L12;ID=UL18-L12;S.TR.ID=UL18-L12;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	UL18-12	UL18	0
+LT934125.1	Liftoff	exon	69488	71544	.	+	.	"Name=UL18-L12;ID=UL18-L12;S.TR.ID=UL18-L12_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18-12	UL18	
+LT934125.1	Liftoff	mRNA	69530	71544	.	+	.	"Name=UL18-L11;ID=UL18-L11;S.TR.ID=UL18-L11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	UL18-11	UL18	1
+LT934125.1	Liftoff	exon	69530	71544	.	+	.	"Name=UL18-L11;ID=UL18-L11;S.TR.ID=UL18-L11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18-11	UL18	
+LT934125.1	Liftoff	mRNA	69555	70521	.	+	.	"Name=UL19.35;ID=UL19.35;S.TR.ID=UL19.35;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Putative	UL19	UL19.35	1
+LT934125.1	Liftoff	exon	69555	70521	.	+	.	"Name=UL19.35;ID=UL19.35;S.TR.ID=UL19.35_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.35	
+LT934125.1	Liftoff	mRNA	69555	71544	.	+	.	"Name=UL18-L10;ID=UL18-L10;S.TR.ID=UL18-L10;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	UL18-10	UL18	1
+LT934125.1	Liftoff	exon	69555	71544	.	+	.	"Name=UL18-L10;ID=UL18-L10;S.TR.ID=UL18-L10_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18-10	UL18	
+LT934125.1	Liftoff	mRNA	69611	71544	.	+	.	"Name=UL18-L9;ID=UL18-L9;S.TR.ID=UL18-L9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	UL18		1
+LT934125.1	Liftoff	exon	69611	71544	.	+	.	"Name=UL18-L9;ID=UL18-L9;S.TR.ID=UL18-L9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	69671	70521	.	+	.	"Name=UL19.35-S;ID=UL19.35-S;S.TR.ID=UL19.35-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Putative	UL19	UL19.35	1
+LT934125.1	Liftoff	exon	69671	70521	.	+	.	"Name=UL19.35-S;ID=UL19.35-S;S.TR.ID=UL19.35-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.35	
+LT934125.1	Liftoff	mRNA	69671	71544	.	+	.	"Name=UL18-L8;ID=UL18-L8;S.TR.ID=UL18-L8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	UL18		1
+LT934125.1	Liftoff	exon	69671	71544	.	+	.	"Name=UL18-L8;ID=UL18-L8;S.TR.ID=UL18-L8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	69713	71544	.	+	.	"Name=UL18-L7;ID=UL18-L7;S.TR.ID=UL18-L7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL18		0
+LT934125.1	Liftoff	exon	69713	71544	.	+	.	"Name=UL18-L7;ID=UL18-L7;S.TR.ID=UL18-L7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	69765	70521	.	+	.	"Name=UL19.37;ID=UL19.37;S.TR.ID=UL19.37;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Putative	UL19	UL19.37	1
+LT934125.1	Liftoff	exon	69765	70521	.	+	.	"Name=UL19.37;ID=UL19.37;S.TR.ID=UL19.37_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.37	
+LT934125.1	Liftoff	mRNA	69765	71544	.	+	.	"Name=UL18-L6;ID=UL18-L6;S.TR.ID=UL18-L6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL18		1
+LT934125.1	Liftoff	exon	69765	71544	.	+	.	"Name=UL18-L6;ID=UL18-L6;S.TR.ID=UL18-L6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	69821	70521	.	+	.	"Name=UL19.38;ID=UL19.38;S.TR.ID=UL19.38;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Putative	UL19	UL19.38	1
+LT934125.1	Liftoff	exon	69821	70521	.	+	.	"Name=UL19.38;ID=UL19.38;S.TR.ID=UL19.38_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.38	
+LT934125.1	Liftoff	mRNA	69947	70521	.	+	.	"Name=UL19.38-S;ID=UL19.38-S;S.TR.ID=UL19.38-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Putative	UL19	UL19.38	1
+LT934125.1	Liftoff	exon	69947	70521	.	+	.	"Name=UL19.38-S;ID=UL19.38-S;S.TR.ID=UL19.38-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL19	UL19.38	
+LT934125.1	Liftoff	mRNA	69947	71544	.	+	.	"Name=UL18-L5;ID=UL18-L5;S.TR.ID=UL18-L5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL18		1
+LT934125.1	Liftoff	exon	69947	71544	.	+	.	"Name=UL18-L5;ID=UL18-L5;S.TR.ID=UL18-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	70012	71544	.	+	.	"Name=UL18-L4;ID=UL18-L4;S.TR.ID=UL18-L4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL18		0
+LT934125.1	Liftoff	exon	70012	71544	.	+	.	"Name=UL18-L4;ID=UL18-L4;S.TR.ID=UL18-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	70090	71544	.	+	.	"Name=UL18-L3;ID=UL18-L3;S.TR.ID=UL18-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL18		1
+LT934125.1	Liftoff	exon	70090	71544	.	+	.	"Name=UL18-L3;ID=UL18-L3;S.TR.ID=UL18-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	70132	70521	.	+	.	"Name=nc-UL19;ID=nc-UL19;S.TR.ID=nc-UL19;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.987"	Non coding	UL19		1
+LT934125.1	Liftoff	exon	70132	70521	.	+	.	"Name=nc-UL19;ID=nc-UL19;S.TR.ID=nc-UL19_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL19		
+LT934125.1	Liftoff	mRNA	70132	71544	.	+	.	"Name=UL18-L2;ID=UL18-L2;S.TR.ID=UL18-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Long	UL18		1
+LT934125.1	Liftoff	exon	70132	71544	.	+	.	"Name=UL18-L2;ID=UL18-L2;S.TR.ID=UL18-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	70311	70521	.	+	.	"Name=nc-UL19-S;ID=nc-UL19-S;S.TR.ID=nc-UL19-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.985"	Short	UL19		0
+LT934125.1	Liftoff	exon	70311	70521	.	+	.	"Name=nc-UL19-S;ID=nc-UL19-S;S.TR.ID=nc-UL19-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL19		
+LT934125.1	Liftoff	mRNA	70311	71544	.	+	.	"Name=UL18-L;ID=UL18-L;S.TR.ID=UL18-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL18		0
+LT934125.1	Liftoff	exon	70311	71544	.	+	.	"Name=UL18-L;ID=UL18-L;S.TR.ID=UL18-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL18		
+LT934125.1	Liftoff	mRNA	70529	71518	.	+	.	"Name=UL18-AT;ID=UL18-AT;S.TR.ID=UL18-AT;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	AT variant	UL18		1
+LT934125.1	Liftoff	exon	70529	71518	.	+	.	"Name=UL18-AT;ID=UL18-AT;S.TR.ID=UL18-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	UL18		
+LT934125.1	Liftoff	mRNA	70529	71544	.	+	.	"Name=UL18;ID=UL18;S.TR.ID=UL18;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Canonic	UL18		1
+LT934125.1	Liftoff	exon	70529	71544	.	+	.	"Name=UL18;ID=UL18;S.TR.ID=UL18_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL18		
+LT934125.1	Liftoff	mRNA	70529	75645	.	+	.	"Name=UL18-17-16;ID=UL18-17-16;S.TR.ID=UL18-17-16;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.996"	Policistronic	UL18-17-16	UL18	1
+LT934125.1	Liftoff	exon	70529	75645	.	+	.	"Name=UL18-17-16;ID=UL18-17-16;S.TR.ID=UL18-17-16_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL18-17-16	UL18	
+LT934125.1	Liftoff	mRNA	71035	71544	.	+	.	"Name=UL18.5;ID=UL18.5;S.TR.ID=UL18.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.990"	Putative	UL18	UL18.5	1
+LT934125.1	Liftoff	exon	71035	71544	.	+	.	"Name=UL18.5;ID=UL18.5;S.TR.ID=UL18.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL18	UL18.5	
+LT934125.1	Liftoff	exon	71548	72782	.	-	.	"Name=UL15-splice;ID=UL15-splice;S.TR.ID=UL15-splice_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL15		
+LT934125.1	Liftoff	exon	71548	72782	.	-	.	"Name=UL15-splice-L;ID=UL15-splice-L;S.TR.ID=UL15-splice-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL15		
+LT934125.1	Liftoff	mRNA	71548	76859	.	-	.	"Name=UL15-splice;ID=UL15-splice;S.TR.ID=UL15-splice;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.988"	Splice	UL15		1
+LT934125.1	Liftoff	mRNA	71548	77984	.	-	.	"Name=UL15-splice-L;ID=UL15-splice-L;S.TR.ID=UL15-splice-L;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.991"	Long	UL15		1
+LT934125.1	Liftoff	mRNA	71549	71882	.	-	.	"Name=FORF15-S2;ID=FORF15-S2;S.TR.ID=FORF15-S2;transferred_from=KJ717942.1;coverage=0.994;sequence_ID=0.982"	Short	UL15		1
+LT934125.1	Liftoff	exon	71549	71882	.	-	.	"Name=FORF15-S2;ID=FORF15-S2;S.TR.ID=FORF15-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL15		
+LT934125.1	Liftoff	mRNA	71549	72713	.	-	.	"Name=FORF15-S;ID=FORF15-S;S.TR.ID=FORF15-S;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Short	UL15		0
+LT934125.1	Liftoff	exon	71549	72713	.	-	.	"Name=FORF15-S;ID=FORF15-S;S.TR.ID=FORF15-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL15		
+LT934125.1	Liftoff	mRNA	71549	73108	.	-	.	"Name=FORF15;ID=FORF15;S.TR.ID=FORF15;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Canonic	UL15		1
+LT934125.1	Liftoff	exon	71549	73108	.	-	.	"Name=FORF15;ID=FORF15;S.TR.ID=FORF15_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL15		
+LT934125.1	Liftoff	mRNA	71549	73139	.	-	.	"Name=FORF15-L2;ID=FORF15-L2;S.TR.ID=FORF15-L2;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Long	UL15		1
+LT934125.1	Liftoff	exon	71549	73139	.	-	.	"Name=FORF15-L2;ID=FORF15-L2;S.TR.ID=FORF15-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL15		
+LT934125.1	Liftoff	mRNA	71549	74345	.	-	.	"Name=FORF15-L;ID=FORF15-L;S.TR.ID=FORF15-L;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.995"	Long	UL15		1
+LT934125.1	Liftoff	exon	71549	74345	.	-	.	"Name=FORF15-L;ID=FORF15-L;S.TR.ID=FORF15-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL15		
+LT934125.1	Liftoff	mRNA	71549	76860	.	-	.	"Name=UL15;ID=UL15;S.TR.ID=UL15;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.993"	Canonic	UL15		1
+LT934125.1	Liftoff	exon	71549	76860	.	-	.	"Name=UL15;ID=UL15;S.TR.ID=UL15_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL15		
+LT934125.1	Liftoff	mRNA	71549	77985	.	-	.	"Name=15E1-16-17;ID=15E1-16-17;S.TR.ID=15E1-16-17;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Policistronic	UL15E1-16-17	UL15	1
+LT934125.1	Liftoff	exon	71549	77985	.	-	.	"Name=15E1-16-17;ID=15E1-16-17;S.TR.ID=15E1-16-17_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL15E1-16-17	UL15	
+LT934125.1	Liftoff	mRNA	72652	75645	.	+	.	"Name=UL17L-16;ID=UL17L-16;S.TR.ID=UL17L-16;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	U17L-16	UL17	1
+LT934125.1	Liftoff	exon	72652	75645	.	+	.	"Name=UL17L-16;ID=UL17L-16;S.TR.ID=UL17L-16_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	U17L-16	UL17	
+LT934125.1	Liftoff	mRNA	72759	75645	.	+	.	"Name=UL17-16;ID=UL17-16;S.TR.ID=UL17-16;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	U17-16	UL17	1
+LT934125.1	Liftoff	exon	72759	75645	.	+	.	"Name=UL17-16;ID=UL17-16;S.TR.ID=UL17-16_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	U17-16	UL17	
+LT934125.1	Liftoff	mRNA	74327	75645	.	+	.	"Name=UL16-L;ID=UL16-L;S.TR.ID=UL16-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Long	UL16		0
+LT934125.1	Liftoff	exon	74327	75645	.	+	.	"Name=UL16-L;ID=UL16-L;S.TR.ID=UL16-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL16		
+LT934125.1	Liftoff	mRNA	74400	75645	.	+	.	"Name=UL16;ID=UL16;S.TR.ID=UL16;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Canonic	UL16		1
+LT934125.1	Liftoff	exon	74400	75645	.	+	.	"Name=UL16;ID=UL16;S.TR.ID=UL16_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL16		
+LT934125.1	Liftoff	mRNA	74413	75324	.	-	.	"Name=UL16-AS;ID=UL16-AS;S.TR.ID=UL16-AS;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Antisense	UL16		0
+LT934125.1	Liftoff	exon	74413	75324	.	-	.	"Name=UL16-AS;ID=UL16-AS;S.TR.ID=UL16-AS_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Antisense	UL16		
+LT934125.1	Liftoff	mRNA	75139	75645	.	+	.	"Name=UL16.2;ID=UL16.2;S.TR.ID=UL16.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL16	UL16.2	1
+LT934125.1	Liftoff	exon	75139	75645	.	+	.	"Name=UL16.2;ID=UL16.2;S.TR.ID=UL16.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL16	UL16.2	
+LT934125.1	Liftoff	mRNA	75154	75645	.	+	.	"Name=UL16.2-S;ID=UL16.2-S;S.TR.ID=UL16.2-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL16	UL16.2	1
+LT934125.1	Liftoff	exon	75154	75645	.	+	.	"Name=UL16.2-S;ID=UL16.2-S;S.TR.ID=UL16.2-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL16	UL16.2	
+LT934125.1	Liftoff	mRNA	75311	75645	.	+	.	"Name=UL16.2-S2;ID=UL16.2-S2;S.TR.ID=UL16.2-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL16	UL16.2	1
+LT934125.1	Liftoff	exon	75311	75645	.	+	.	"Name=UL16.2-S2;ID=UL16.2-S2;S.TR.ID=UL16.2-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL16	UL16.2	
+LT934125.1	Liftoff	exon	75658	77984	.	-	.	"Name=UL15-splice-L;ID=UL15-splice-L;S.TR.ID=UL15-splice-L_2;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL15		
+LT934125.1	Liftoff	exon	75662	76859	.	-	.	"Name=UL15-splice;ID=UL15-splice;S.TR.ID=UL15-splice_2;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Splice	UL15		
+LT934125.1	Liftoff	mRNA	75675	79955	.	+	.	"Name=UL14L-13-12;ID=UL14L-13-12;S.TR.ID=UL14L-13-12;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.990"	Policistronic	UL4-13-12	UL4	0
+LT934125.1	Liftoff	exon	75675	79955	.	+	.	"Name=UL14L-13-12;ID=UL14L-13-12;S.TR.ID=UL14L-13-12_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL4-13-12	UL4	
+LT934125.1	Liftoff	mRNA	76683	79996	.	+	.	"Name=UL14-13-12-11;ID=UL14-13-12-11;S.TR.ID=UL14-13-12-11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Policistronic	UL4-13-12-11	UL4	1
+LT934125.1	Liftoff	exon	76683	79996	.	+	.	"Name=UL14-13-12-11;ID=UL14-13-12-11;S.TR.ID=UL14-13-12-11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL4-13-12-11	UL4	
+LT934125.1	Liftoff	mRNA	76990	79996	.	+	.	"Name=UL13-12-11;ID=UL13-12-11;S.TR.ID=UL13-12-11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Policistronic	UL3-12-11	UL3	1
+LT934125.1	Liftoff	exon	76990	79996	.	+	.	"Name=UL13-12-11;ID=UL13-12-11;S.TR.ID=UL13-12-11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL3-12-11	UL3	
+LT934125.1	Liftoff	mRNA	78035	79996	.	+	.	"Name=UL12-11;ID=UL12-11;S.TR.ID=UL12-11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Policistronic	UL12-11	UL12	1
+LT934125.1	Liftoff	exon	78035	79996	.	+	.	"Name=UL12-11;ID=UL12-11;S.TR.ID=UL12-11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL12-11	UL12	
+LT934125.1	Liftoff	mRNA	78278	79996	.	+	.	"Name=UL12S-11;ID=UL12S-11;S.TR.ID=UL12S-11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.990"	Short	UL12-11	UL12	0
+LT934125.1	Liftoff	exon	78278	79996	.	+	.	"Name=UL12S-11;ID=UL12S-11;S.TR.ID=UL12S-11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL12-11	UL12	
+LT934125.1	Liftoff	mRNA	78329	79996	.	+	.	"Name=UL12S2-11;ID=UL12S2-11;S.TR.ID=UL12S2-11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Short	UL12-11	UL12	0
+LT934125.1	Liftoff	exon	78329	79996	.	+	.	"Name=UL12S2-11;ID=UL12S2-11;S.TR.ID=UL12S2-11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL12-11	UL12	
+LT934125.1	Liftoff	mRNA	78825	79996	.	+	.	"Name=UL-11-L6;ID=UL-11-L6;S.TR.ID=UL-11-L6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.987"	Long	UL11		1
+LT934125.1	Liftoff	exon	78825	79996	.	+	.	"Name=UL-11-L6;ID=UL-11-L6;S.TR.ID=UL-11-L6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL11		
+LT934125.1	Liftoff	mRNA	78969	79996	.	+	.	"Name=UL-11-L5;ID=UL-11-L5;S.TR.ID=UL-11-L5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Long	UL11		0
+LT934125.1	Liftoff	exon	78969	79996	.	+	.	"Name=UL-11-L5;ID=UL-11-L5;S.TR.ID=UL-11-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL11		
+LT934125.1	Liftoff	mRNA	79024	79996	.	+	.	"Name=UL-11-L4;ID=UL-11-L4;S.TR.ID=UL-11-L4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Long	UL11		0
+LT934125.1	Liftoff	exon	79024	79996	.	+	.	"Name=UL-11-L4;ID=UL-11-L4;S.TR.ID=UL-11-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL11		
+LT934125.1	Liftoff	mRNA	79062	79996	.	+	.	"Name=UL-11-L3;ID=UL-11-L3;S.TR.ID=UL-11-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.992"	Long	UL11		1
+LT934125.1	Liftoff	exon	79062	79996	.	+	.	"Name=UL-11-L3;ID=UL-11-L3;S.TR.ID=UL-11-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL11		
+LT934125.1	Liftoff	mRNA	79143	79996	.	+	.	"Name=UL-11-L7;ID=UL-11-L7;S.TR.ID=UL-11-L7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Long	UL11		1
+LT934125.1	Liftoff	exon	79143	79996	.	+	.	"Name=UL-11-L7;ID=UL-11-L7;S.TR.ID=UL-11-L7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL11		
+LT934125.1	Liftoff	mRNA	79315	79996	.	+	.	"Name=UL-11-L2;ID=UL-11-L2;S.TR.ID=UL-11-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Long	UL11		0
+LT934125.1	Liftoff	exon	79315	79996	.	+	.	"Name=UL-11-L2;ID=UL-11-L2;S.TR.ID=UL-11-L2;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL11		
+LT934125.1	Liftoff	mRNA	79444	79996	.	+	.	"Name=UL11;ID=UL11;S.TR.ID=UL11;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.987"	Canonic	UL11		1
+LT934125.1	Liftoff	exon	79444	79996	.	+	.	"Name=UL11;ID=UL11;S.TR.ID=UL11_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL11		
+LT934125.1	Liftoff	mRNA	79517	79996	.	+	.	"Name=UL-11-S;ID=UL-11-S;S.TR.ID=UL-11-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.985"	Short	UL11		1
+LT934125.1	Liftoff	exon	79517	79996	.	+	.	"Name=UL-11-S;ID=UL-11-S;S.TR.ID=UL-11-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL11		
+LT934125.1	Liftoff	mRNA	79789	79996	.	+	.	"Name=UL11.5;ID=UL11.5;S.TR.ID=UL11.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.971"	Putative	UL11	UL11.5	1
+LT934125.1	Liftoff	exon	79789	79996	.	+	.	"Name=UL11.5;ID=UL11.5;S.TR.ID=UL11.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL11	UL11.5	
+LT934125.1	Liftoff	mRNA	80352	80491	.	-	.	"Name=nc-UL10;ID=nc-UL10;S.TR.ID=nc-UL10;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Non coding	UL10		0
+LT934125.1	Liftoff	exon	80352	80491	.	-	.	"Name=nc-UL10;ID=nc-UL10;S.TR.ID=nc-UL10_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL10		
+LT934125.1	Liftoff	mRNA	80352	80835	.	-	.	"Name=UL10.4;ID=UL10.4;S.TR.ID=UL10.4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL10	UL10.4	1
+LT934125.1	Liftoff	exon	80352	80835	.	-	.	"Name=UL10.4;ID=UL10.4;S.TR.ID=UL10.4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL10	UL10.4	
+LT934125.1	Liftoff	mRNA	80352	81051	.	-	.	"Name=UL10.5;ID=UL10.5;S.TR.ID=UL10.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Putative	UL10	UL10.5	0
+LT934125.1	Liftoff	exon	80352	81051	.	-	.	"Name=UL10.5;ID=UL10.5;S.TR.ID=UL10.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL10	UL10.5	
+LT934125.1	Liftoff	mRNA	80352	81314	.	-	.	"Name=UL10.6;ID=UL10.6;S.TR.ID=UL10.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL10	UL10.6	0
+LT934125.1	Liftoff	exon	80352	81314	.	-	.	"Name=UL10.6;ID=UL10.6;S.TR.ID=UL10.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL10	UL10.6	
+LT934125.1	Liftoff	mRNA	80352	81429	.	-	.	"Name=UL10.7;ID=UL10.7;S.TR.ID=UL10.7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Putative	UL10	UL10.7	1
+LT934125.1	Liftoff	exon	80352	81429	.	-	.	"Name=UL10.7;ID=UL10.7;S.TR.ID=UL10.7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL10	UL10.7	
+LT934125.1	Liftoff	mRNA	80352	81551	.	-	.	"Name=UL10-S;ID=UL10-S;S.TR.ID=UL10-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.999"	Short	UL10		1
+LT934125.1	Liftoff	exon	80352	81551	.	-	.	"Name=UL10-S;ID=UL10-S;S.TR.ID=UL10-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	UL10		
+LT934125.1	Liftoff	mRNA	80352	81804	.	-	.	"Name=UL10;ID=UL10;S.TR.ID=UL10;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL10		1
+LT934125.1	Liftoff	exon	80352	81804	.	-	.	"Name=UL10;ID=UL10;S.TR.ID=UL10_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL10		
+LT934125.1	Liftoff	mRNA	80352	81840	.	-	.	"Name=UL10-L1;ID=UL10-L1;S.TR.ID=UL10-L1;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL10		1
+LT934125.1	Liftoff	exon	80352	81840	.	-	.	"Name=UL10-L1;ID=UL10-L1;S.TR.ID=UL10-L1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL10		
+LT934125.1	Liftoff	mRNA	80352	81897	.	-	.	"Name=UL10-L3;ID=UL10-L3;S.TR.ID=UL10-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL10		1
+LT934125.1	Liftoff	exon	80352	81897	.	-	.	"Name=UL10-L3;ID=UL10-L3;S.TR.ID=UL10-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL10		
+LT934125.1	Liftoff	mRNA	80352	82026	.	-	.	"Name=UL10-L4;ID=UL10-L4;S.TR.ID=UL10-L4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL10		1
+LT934125.1	Liftoff	exon	80352	82026	.	-	.	"Name=UL10-L4;ID=UL10-L4;S.TR.ID=UL10-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL10		
+LT934125.1	Liftoff	mRNA	80352	83205	.	-	.	"Name=UL10-L8;ID=UL10-L8;S.TR.ID=UL10-L8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	UL10		1
+LT934125.1	Liftoff	exon	80352	83205	.	-	.	"Name=UL10-L8;ID=UL10-L8;S.TR.ID=UL10-L8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL10		
+LT934125.1	Liftoff	mRNA	80352	83780	.	-	.	"Name=UL10-L7;ID=UL10-L7;S.TR.ID=UL10-L7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Long	UL10		0
+LT934125.1	Liftoff	exon	80352	83780	.	-	.	"Name=UL10-L7;ID=UL10-L7;S.TR.ID=UL10-L7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL10		
+LT934125.1	Liftoff	mRNA	81082	86167	.	+	.	"Name=UL9L-8;ID=UL9L-8;S.TR.ID=UL9L-8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Policistronic	UL9-8	UL9	1
+LT934125.1	Liftoff	exon	81082	86167	.	+	.	"Name=UL9L-8;ID=UL9L-8;S.TR.ID=UL9L-8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL9-8	UL9	
+LT934125.1	Liftoff	mRNA	82509	86167	.	+	.	"Name=UL8-L2;ID=UL8-L2;S.TR.ID=UL8-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	UL8		1
+LT934125.1	Liftoff	exon	82509	86167	.	+	.	"Name=UL8-L2;ID=UL8-L2;S.TR.ID=UL8-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL8		
+LT934125.1	Liftoff	mRNA	83792	86167	.	+	.	"Name=UL8-L;ID=UL8-L;S.TR.ID=UL8-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Long	UL8		1
+LT934125.1	Liftoff	exon	83792	86167	.	+	.	"Name=UL8-L;ID=UL8-L;S.TR.ID=UL8-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL8		
+LT934125.1	Liftoff	mRNA	83975	86167	.	+	.	"Name=UL8;ID=UL8;S.TR.ID=UL8;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Canonic	UL8		1
+LT934125.1	Liftoff	exon	83975	86167	.	+	.	"Name=UL8;ID=UL8;S.TR.ID=UL8_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL8		
+LT934125.1	Liftoff	mRNA	85104	86167	.	+	.	"Name=UL8.5;ID=UL8.5;S.TR.ID=UL8.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Putative	UL8	UL8.5	1
+LT934125.1	Liftoff	exon	85104	86167	.	+	.	"Name=UL8.5;ID=UL8.5;S.TR.ID=UL8.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL8	UL8.5	
+LT934125.1	Liftoff	mRNA	85607	86167	.	+	.	"Name=UL8.5-S;ID=UL8.5-S;S.TR.ID=UL8.5-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Putative	UL8	UL8.5	1
+LT934125.1	Liftoff	exon	85607	86167	.	+	.	"Name=UL8.5-S;ID=UL8.5-S;S.TR.ID=UL8.5-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL8	UL8.5	
+LT934125.1	Liftoff	mRNA	85676	86167	.	+	.	"Name=UL8.5-S2;ID=UL8.5-S2;S.TR.ID=UL8.5-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.989"	Putative	UL8	UL8.5	1
+LT934125.1	Liftoff	exon	85676	86167	.	+	.	"Name=UL8.5-S2;ID=UL8.5-S2;S.TR.ID=UL8.5-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL8	UL8.5	
+LT934125.1	Liftoff	mRNA	86133	86928	.	-	.	"Name=UL7.5;ID=UL7.5;S.TR.ID=UL7.5;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.992"	Putative	UL7	UL7.5	1
+LT934125.1	Liftoff	exon	86133	86928	.	-	.	"Name=UL7.5;ID=UL7.5;S.TR.ID=UL7.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL7	UL7.5	
+LT934125.1	Liftoff	mRNA	86133	87161	.	-	.	"Name=UL7;ID=UL7;S.TR.ID=UL7;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.994"	Canonic	UL7		1
+LT934125.1	Liftoff	exon	86133	87161	.	-	.	"Name=UL7;ID=UL7;S.TR.ID=UL7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL7		
+LT934125.1	Liftoff	mRNA	86133	87250	.	-	.	"Name=UL7-L2;ID=UL7-L2;S.TR.ID=UL7-L2;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.994"	Long	UL7		1
+LT934125.1	Liftoff	exon	86133	87250	.	-	.	"Name=UL7-L2;ID=UL7-L2;S.TR.ID=UL7-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL7		
+LT934125.1	Liftoff	mRNA	86133	87447	.	-	.	"Name=UL7-L3;ID=UL7-L3;S.TR.ID=UL7-L3;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.995"	Long	UL7		1
+LT934125.1	Liftoff	exon	86133	87447	.	-	.	"Name=UL7-L3;ID=UL7-L3;S.TR.ID=UL7-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL7		
+LT934125.1	Liftoff	mRNA	86133	87864	.	-	.	"Name=UL7-L4;ID=UL7-L4;S.TR.ID=UL7-L4;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.996"	Long	UL7		1
+LT934125.1	Liftoff	exon	86133	87864	.	-	.	"Name=UL7-L4;ID=UL7-L4;S.TR.ID=UL7-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL7		
+LT934125.1	Liftoff	mRNA	86133	89079	.	-	.	"Name=UL6-7;ID=UL6-7;S.TR.ID=UL6-7;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.996"	Policistronic	UL6-7	UL6	1
+LT934125.1	Liftoff	exon	86133	89079	.	-	.	"Name=UL6-7;ID=UL6-7;S.TR.ID=UL6-7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL6-7	UL6	
+LT934125.1	Liftoff	mRNA	86133	90875	.	-	.	"Name=UL6L-7;ID=UL6L-7;S.TR.ID=UL6L-7;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.997"	Policistronic	UL6-7	UL6	0
+LT934125.1	Liftoff	exon	86133	90875	.	-	.	"Name=UL6L-7;ID=UL6L-7;S.TR.ID=UL6L-7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL6-7	UL6	
+LT934125.1	Liftoff	mRNA	88155	92059	.	+	.	"Name=UL5L2-4;ID=UL5L2-4;S.TR.ID=UL5L2-4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL5-4	UL5	1
+LT934125.1	Liftoff	exon	88155	92059	.	+	.	"Name=UL5L2-4;ID=UL5L2-4;S.TR.ID=UL5L2-4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL5-4	UL5	
+LT934125.1	Liftoff	mRNA	88883	91559	.	+	.	"Name=UL5;ID=UL5;S.TR.ID=UL5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Canonic	UL5		1
+LT934125.1	Liftoff	exon	88883	91559	.	+	.	"Name=UL5;ID=UL5;S.TR.ID=UL5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL5		
+LT934125.1	Liftoff	mRNA	88885	92058	.	+	.	"Name=UL5-4;ID=UL5-4;S.TR.ID=UL5-4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL5-4	UL5	1
+LT934125.1	Liftoff	exon	88885	92058	.	+	.	"Name=UL5-4;ID=UL5-4;S.TR.ID=UL5-4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL5-4	UL5	
+LT934125.1	Liftoff	mRNA	89133	91559	.	+	.	"Name=UL5.3;ID=UL5.3;S.TR.ID=UL5.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL5	UL5.3	1
+LT934125.1	Liftoff	exon	89133	91559	.	+	.	"Name=UL5.3;ID=UL5.3;S.TR.ID=UL5.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL5	UL5.3	
+LT934125.1	Liftoff	mRNA	89133	92059	.	+	.	"Name=UL5-4-M;ID=UL5-4-M;S.TR.ID=UL5-4-M;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL5-4	UL5	1
+LT934125.1	Liftoff	exon	89133	92059	.	+	.	"Name=UL5-4-M;ID=UL5-4-M;S.TR.ID=UL5-4-M_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL5-4	UL5	
+LT934125.1	Liftoff	mRNA	89883	91559	.	+	.	"Name=UL5.5;ID=UL5.5;S.TR.ID=UL5.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	UL5	UL5.5	1
+LT934125.1	Liftoff	exon	89883	91559	.	+	.	"Name=UL5.5;ID=UL5.5;S.TR.ID=UL5.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL5	UL5.5	
+LT934125.1	Liftoff	mRNA	89883	92059	.	+	.	"Name=UL4-L5;ID=UL4-L5;S.TR.ID=UL4-L5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	UL4		1
+LT934125.1	Liftoff	exon	89883	92059	.	+	.	"Name=UL4-L5;ID=UL4-L5;S.TR.ID=UL4-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL4		
+LT934125.1	Liftoff	mRNA	90249	91559	.	+	.	"Name=UL5.6;ID=UL5.6;S.TR.ID=UL5.6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Putative	Ul5	Ul5.6	1
+LT934125.1	Liftoff	exon	90249	91559	.	+	.	"Name=UL5.6;ID=UL5.6;S.TR.ID=UL5.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	Ul5	Ul5.6	
+LT934125.1	Liftoff	mRNA	90249	92059	.	+	.	"Name=UL4-L4;ID=UL4-L4;S.TR.ID=UL4-L4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	UL4		1
+LT934125.1	Liftoff	exon	90249	92059	.	+	.	"Name=UL4-L4;ID=UL4-L4;S.TR.ID=UL4-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL4		
+LT934125.1	Liftoff	mRNA	90381	92055	.	+	.	"Name=UL-5-4-S;ID=UL-5-4-S;S.TR.ID=UL-5-4-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL5-4	UL5	1
+LT934125.1	Liftoff	exon	90381	92055	.	+	.	"Name=UL-5-4-S;ID=UL-5-4-S;S.TR.ID=UL-5-4-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL5-4	UL5	
+LT934125.1	Liftoff	mRNA	90381	92059	.	+	.	"Name=UL5-4-S;ID=UL5-4-S;S.TR.ID=UL5-4-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Policistronic	UL5-4	UL5	1
+LT934125.1	Liftoff	exon	90381	92059	.	+	.	"Name=UL5-4-S;ID=UL5-4-S;S.TR.ID=UL5-4-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL5-4	UL5	
+LT934125.1	Liftoff	mRNA	90932	92059	.	+	.	"Name=UL4-L3;ID=UL4-L3;S.TR.ID=UL4-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL4		0
+LT934125.1	Liftoff	exon	90932	92059	.	+	.	"Name=UL4-L3;ID=UL4-L3;S.TR.ID=UL4-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL4		
+LT934125.1	Liftoff	mRNA	91154	92059	.	+	.	"Name=UL4-L2;ID=UL4-L2;S.TR.ID=UL4-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL4		0
+LT934125.1	Liftoff	exon	91154	92059	.	+	.	"Name=UL4-L2;ID=UL4-L2;S.TR.ID=UL4-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL4		
+LT934125.1	Liftoff	mRNA	91360	92059	.	+	.	"Name=UL4-L;ID=UL4-L;S.TR.ID=UL4-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	UL4		1
+LT934125.1	Liftoff	exon	91360	92059	.	+	.	"Name=UL4-L;ID=UL4-L;S.TR.ID=UL4-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL4		
+LT934125.1	Liftoff	mRNA	91409	92059	.	+	.	"Name=UL4;ID=UL4;S.TR.ID=UL4;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Canonic	UL4		1
+LT934125.1	Liftoff	exon	91409	92059	.	+	.	"Name=UL4;ID=UL4;S.TR.ID=UL4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL4		
+LT934125.1	Liftoff	mRNA	91548	92059	.	+	.	"Name=UL4.2;ID=UL4.2;S.TR.ID=UL4.2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	UL4	UL4.2	1
+LT934125.1	Liftoff	exon	91548	92059	.	+	.	"Name=UL4.2;ID=UL4.2;S.TR.ID=UL4.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	UL4	UL4.2	
+LT934125.1	Liftoff	mRNA	92069	92622	.	-	.	"Name=nc-UL3.5;ID=nc-UL3.5;S.TR.ID=nc-UL3.5;transferred_from=KJ717942.1;coverage=0.961;sequence_ID=0.939"	Non coding	UL3.5	UL3.5	1
+LT934125.1	Liftoff	exon	92069	92622	.	-	.	"Name=nc-UL3.5;ID=nc-UL3.5;S.TR.ID=nc-UL3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL3.5	UL3.5	
+LT934125.1	Liftoff	mRNA	92069	92933	.	-	.	"Name=UL3.5;ID=UL3.5;S.TR.ID=UL3.5;transferred_from=KJ717942.1;coverage=0.975;sequence_ID=0.960"	Canonic	UL3.5	UL3.5	1
+LT934125.1	Liftoff	exon	92069	92933	.	-	.	"Name=UL3.5;ID=UL3.5;S.TR.ID=UL3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL3.5	UL3.5	
+LT934125.1	Liftoff	mRNA	92069	93265	.	-	.	"Name=UL3.5-L;ID=UL3.5-L;S.TR.ID=UL3.5-L;transferred_from=KJ717942.1;coverage=0.981;sequence_ID=0.967"	Long	UL3.5	UL3.5	1
+LT934125.1	Liftoff	exon	92069	93265	.	-	.	"Name=UL3.5-L;ID=UL3.5-L;S.TR.ID=UL3.5-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	UL3.5	UL3.5	
+LT934125.1	Liftoff	mRNA	92069	93654	.	-	.	"Name=UL3-3.5;ID=UL3-3.5;S.TR.ID=UL3-3.5;transferred_from=KJ717942.1;coverage=0.986;sequence_ID=0.975"	Policistronic	UL3-3.5	UL3-3.5	1
+LT934125.1	Liftoff	exon	92069	93654	.	-	.	"Name=UL3-3.5;ID=UL3-3.5;S.TR.ID=UL3-3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL3-3.5	UL3-3.5	
+LT934125.1	Liftoff	mRNA	92069	93980	.	-	.	"Name=UL3L-3.5;ID=UL3L-3.5;S.TR.ID=UL3L-3.5;transferred_from=KJ717942.1;coverage=0.988;sequence_ID=0.978"	Policistronic	UL3-3.5	UL3L-3.5	0
+LT934125.1	Liftoff	exon	92069	93980	.	-	.	"Name=UL3L-3.5;ID=UL3L-3.5;S.TR.ID=UL3L-3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL3-3.5	UL3L-3.5	
+LT934125.1	Liftoff	mRNA	92069	94108	.	-	.	"Name=UL3L2-3.5;ID=UL3L2-3.5;S.TR.ID=UL3L2-3.5;transferred_from=KJ717942.1;coverage=0.989;sequence_ID=0.980"	Policistronic	UL3-3.5	UL3L2-3.5	1
+LT934125.1	Liftoff	exon	92069	94108	.	-	.	"Name=UL3L2-3.5;ID=UL3L2-3.5;S.TR.ID=UL3L2-3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL3-3.5	UL3L2-3.5	
+LT934125.1	Liftoff	mRNA	92069	94526	.	-	.	"Name=UL2-3-3.5;ID=UL2-3-3.5;S.TR.ID=UL2-3-3.5;transferred_from=KJ717942.1;coverage=0.991;sequence_ID=0.978"	Policistronic	UL-3-3.5	UL2-3-3.5	1
+LT934125.1	Liftoff	exon	92069	94526	.	-	.	"Name=UL2-3-3.5;ID=UL2-3-3.5;S.TR.ID=UL2-3-3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL-3-3.5	UL2-3-3.5	
+LT934125.1	Liftoff	mRNA	92069	94947	.	-	.	"Name=UL1-2-3-3.5;ID=UL1-2-3-3.5;S.TR.ID=UL1-2-3-3.5;transferred_from=KJ717942.1;coverage=0.992;sequence_ID=0.979"	Policistronic	UL-2-3-3.5	UL1-2-3-3.5	1
+LT934125.1	Liftoff	exon	92069	94947	.	-	.	"Name=UL1-2-3-3.5;ID=UL1-2-3-3.5;S.TR.ID=UL1-2-3-3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL-2-3-3.5	UL1-2-3-3.5	
+LT934125.1	Liftoff	mRNA	92069	95471	.	-	.	"Name=UL1L2-2-3-3.5;ID=UL1L2-2-3-3.5;S.TR.ID=UL1L2-2-3-3.5;transferred_from=KJ717942.1;coverage=0.991;sequence_ID=0.969"	Policistronic	UL-2-3-3.5	UL1L2-2-3-3.5	0
+LT934125.1	Liftoff	exon	92069	95471	.	-	.	"Name=UL1L2-2-3-3.5;ID=UL1L2-2-3-3.5;S.TR.ID=UL1L2-2-3-3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL-2-3-3.5	UL1L2-2-3-3.5	
+LT934125.1	Liftoff	mRNA	92069	95694	.	+	.	"Name=UL1L-2-3-3.5;ID=UL1L-2-3-3.5;S.TR.ID=UL1L-2-3-3.5;transferred_from=KJ717942.1;coverage=0.992;sequence_ID=0.970"	Policistronic	UL-2-3-3.5	UL1L-2-3-3.5	0
+LT934125.1	Liftoff	exon	92069	95694	.	+	.	"Name=UL1L-2-3-3.5;ID=UL1L-2-3-3.5;S.TR.ID=UL1L-2-3-3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	UL-2-3-3.5	UL1L-2-3-3.5	
+LT934125.1	Liftoff	mRNA	92071	92422	.	-	.	"Name=TRL3.5;ID=TRL3.5;S.TR.ID=TRL3.5;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.974"	Non coding	UL3	UL3.5	1
+LT934125.1	Liftoff	exon	92071	92422	.	-	.	"Name=TRL3.5;ID=TRL3.5;S.TR.ID=TRL3.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL3	UL3.5	
+LT934125.1	Liftoff	mRNA	92445	93654	.	-	.	"Name=UL3;ID=UL3;S.TR.ID=UL3;transferred_from=KJ717942.1;coverage=0.989;sequence_ID=0.983"	Canonic	UL3		1
+LT934125.1	Liftoff	exon	92445	93654	.	-	.	"Name=UL3;ID=UL3;S.TR.ID=UL3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL3		
+LT934125.1	Liftoff	mRNA	93229	94526	.	-	.	"Name=UL2;ID=UL2;S.TR.ID=UL2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.988"	Canonic	UL2		1
+LT934125.1	Liftoff	exon	93229	94526	.	-	.	"Name=UL2;ID=UL2;S.TR.ID=UL2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	UL2		
+LT934125.1	Liftoff	mRNA	116715	116962	.	+	.	"Name=TRS1-S-2;ID=TRS1-S-2;S.TR.ID=TRS1-S-2;transferred_from=KJ717942.1;coverage=0.968;sequence_ID=0.949"	Non coding	UL1		1
+LT934125.1	Liftoff	exon	116715	116962	.	+	.	"Name=TRS1-S-2;ID=TRS1-S-2;S.TR.ID=TRS1-S-2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	UL1		
+LT934125.1	Liftoff	mRNA	117607	120477	.	+	.	"Name=US3-L-4;ID=US3-L-4;S.TR.ID=US3-L-4;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.992"	Policistronic	US3-4	US3	1
+LT934125.1	Liftoff	exon	117607	120477	.	+	.	"Name=US3-L-4;ID=US3-L-4;S.TR.ID=US3-L-4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US3-4	US3	
+LT934125.1	Liftoff	mRNA	117769	120477	.	+	.	"Name=US3-4;ID=US3-4;S.TR.ID=US3-4;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.995"	Policistronic	US3-4	US3	1
+LT934125.1	Liftoff	exon	117769	120477	.	+	.	"Name=US3-4;ID=US3-4;S.TR.ID=US3-4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US3-4	US3	
+LT934125.1	Liftoff	mRNA	118807	120477	.	+	.	"Name=US4-L;ID=US4-L;S.TR.ID=US4-L;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.995"	Long	US4		0
+LT934125.1	Liftoff	exon	118807	120477	.	+	.	"Name=US4-L;ID=US4-L;S.TR.ID=US4-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US4		
+LT934125.1	Liftoff	mRNA	118860	120344	.	-	.	"Name=US4-AS1;ID=US4-AS1;S.TR.ID=US4-AS1;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Antisense	US4		1
+LT934125.1	Liftoff	exon	118860	120344	.	-	.	"Name=US4-AS1;ID=US4-AS1;S.TR.ID=US4-AS1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Antisense	US4		
+LT934125.1	Liftoff	mRNA	118864	120477	.	+	.	"Name=US4;ID=US4;S.TR.ID=US4;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.995"	Canonic	US4		1
+LT934125.1	Liftoff	exon	118864	120477	.	+	.	"Name=US4;ID=US4;S.TR.ID=US4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	US4		
+LT934125.1	Liftoff	mRNA	118864	121347	.	+	.	"Name=US4-AT;ID=US4-AT;S.TR.ID=US4-AT;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.995"	AT variant	US4		1
+LT934125.1	Liftoff	exon	118864	121347	.	+	.	"Name=US4-AT;ID=US4-AT;S.TR.ID=US4-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	US4		
+LT934125.1	Liftoff	mRNA	118864	122915	.	+	.	"Name=US4-6-7;ID=US4-6-7;S.TR.ID=US4-6-7;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.996"	Policistronic	US4		1
+LT934125.1	Liftoff	exon	118864	122915	.	+	.	"Name=US4-6-7;ID=US4-6-7;S.TR.ID=US4-6-7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US4		
+LT934125.1	Liftoff	mRNA	119002	120477	.	+	.	"Name=US4.2;ID=US4.2;S.TR.ID=US4.2;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Putative	US4	US4.2	1
+LT934125.1	Liftoff	exon	119002	120477	.	+	.	"Name=US4.2;ID=US4.2;S.TR.ID=US4.2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.2	
+LT934125.1	Liftoff	mRNA	119127	120477	.	+	.	"Name=US4.3;ID=US4.3;S.TR.ID=US4.3;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Putative	US4	US4.2	0
+LT934125.1	Liftoff	exon	119127	120477	.	+	.	"Name=US4.3;ID=US4.3;S.TR.ID=US4.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.3	
+LT934125.1	Liftoff	mRNA	119221	120477	.	+	.	"Name=US4.3-S;ID=US4.3-S;S.TR.ID=US4.3-S;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Putative	US4	US4.3	1
+LT934125.1	Liftoff	exon	119221	120477	.	+	.	"Name=US4.3-S;ID=US4.3-S;S.TR.ID=US4.3-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.3	
+LT934125.1	Liftoff	mRNA	119344	120477	.	+	.	"Name=US4.5;ID=US4.5;S.TR.ID=US4.5;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Putative	US4	US4.5	1
+LT934125.1	Liftoff	exon	119344	120477	.	+	.	"Name=US4.5;ID=US4.5;S.TR.ID=US4.5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.5	
+LT934125.1	Liftoff	mRNA	119404	120477	.	+	.	"Name=US4.5-S;ID=US4.5-S;S.TR.ID=US4.5-S;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Putative	US4	US4.5	1
+LT934125.1	Liftoff	exon	119404	120477	.	+	.	"Name=US4.5-S;ID=US4.5-S;S.TR.ID=US4.5-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.5	
+LT934125.1	Liftoff	mRNA	119436	120477	.	+	.	"Name=US4.5-S2;ID=US4.5-S2;S.TR.ID=US4.5-S2;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Putative	US4	US4.5	1
+LT934125.1	Liftoff	exon	119436	120477	.	+	.	"Name=US4.5-S2;ID=US4.5-S2;S.TR.ID=US4.5-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.5	
+LT934125.1	Liftoff	mRNA	119500	120477	.	+	.	"Name=US4.6;ID=US4.6;S.TR.ID=US4.6;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Putative	US4	US4.6	1
+LT934125.1	Liftoff	exon	119500	120477	.	+	.	"Name=US4.6;ID=US4.6;S.TR.ID=US4.6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.6	
+LT934125.1	Liftoff	mRNA	119632	120477	.	+	.	"Name=US4.6-S;ID=US4.6-S;S.TR.ID=US4.6-S;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Putative	US4	US4.6	1
+LT934125.1	Liftoff	exon	119632	120477	.	+	.	"Name=US4.6-S;ID=US4.6-S;S.TR.ID=US4.6-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.6	
+LT934125.1	Liftoff	mRNA	120081	120477	.	+	.	"Name=US4.7;ID=US4.7;S.TR.ID=US4.7;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.997"	Putative	US4	US4.7	1
+LT934125.1	Liftoff	exon	120081	120477	.	+	.	"Name=US4.7;ID=US4.7;S.TR.ID=US4.7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.7	
+LT934125.1	Liftoff	mRNA	120256	120477	.	+	.	"Name=US4.7-S;ID=US4.7-S;S.TR.ID=US4.7-S;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.995"	Putative	US4	US4.7	1
+LT934125.1	Liftoff	exon	120256	120477	.	+	.	"Name=US4.7-S;ID=US4.7-S;S.TR.ID=US4.7-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US4	US4.7	
+LT934125.1	Liftoff	mRNA	120555	121842	.	+	.	"Name=US6;ID=US6;S.TR.ID=US6;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=1.0"	Canonic	US6		1
+LT934125.1	Liftoff	exon	120555	121842	.	+	.	"Name=US6;ID=US6;S.TR.ID=US6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	US6		
+LT934125.1	Liftoff	mRNA	120555	122915	.	+	.	"Name=US6-7;ID=US6-7;S.TR.ID=US6-7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Policistronic	US6-7	US6	1
+LT934125.1	Liftoff	exon	120555	122915	.	+	.	"Name=US6-7;ID=US6-7;S.TR.ID=US6-7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US6-7	US6	
+LT934125.1	Liftoff	mRNA	120555	126151	.	+	.	"Name=US6-7-8-9-2;ID=US6-7-8-9-2;S.TR.ID=US6-7-8-9-2;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.996"	Policistronic	US6-7-8-9-2	US6	1
+LT934125.1	Liftoff	exon	120555	126151	.	+	.	"Name=US6-7-8-9-2;ID=US6-7-8-9-2;S.TR.ID=US6-7-8-9-2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US6-7-8-9-2	US6	
+LT934125.1	Liftoff	mRNA	120934	122915	.	+	.	"Name=US7-L;ID=US7-L;S.TR.ID=US7-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	US7		1
+LT934125.1	Liftoff	exon	120934	122915	.	+	.	"Name=US7-L;ID=US7-L;S.TR.ID=US7-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US7		
+LT934125.1	Liftoff	mRNA	121058	122915	.	+	.	"Name=US7-L2;ID=US7-L2;S.TR.ID=US7-L2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Long	US7		0
+LT934125.1	Liftoff	exon	121058	122915	.	+	.	"Name=US7-L2;ID=US7-L2;S.TR.ID=US7-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US7		
+LT934125.1	Liftoff	mRNA	121715	122915	.	+	.	"Name=US7-L3;ID=US7-L3;S.TR.ID=US7-L3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	US7		1
+LT934125.1	Liftoff	exon	121715	122915	.	+	.	"Name=US7-L3;ID=US7-L3;S.TR.ID=US7-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US7		
+LT934125.1	Liftoff	mRNA	121783	126191	.	+	.	"Name=US7-8-9-2-AT1;ID=US7-8-9-2-AT1;S.TR.ID=US7-8-9-2-AT1;transferred_from=KJ717942.1;coverage=0.944;sequence_ID=0.940"	Policistronic	US7-8-9-2	US7	1
+LT934125.1	Liftoff	exon	121783	126191	.	+	.	"Name=US7-8-9-2-AT1;ID=US7-8-9-2-AT1;S.TR.ID=US7-8-9-2-AT1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US7-8-9-2	US7	
+LT934125.1	Liftoff	mRNA	121784	122915	.	+	.	"Name=US7;ID=US7;S.TR.ID=US7;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Canonic	US7		1
+LT934125.1	Liftoff	exon	121784	122915	.	+	.	"Name=US7;ID=US7;S.TR.ID=US7_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	US7		
+LT934125.1	Liftoff	mRNA	121784	125230	.	+	.	"Name=US7-8-9;ID=US7-8-9;S.TR.ID=US7-8-9;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Policistronic	US7-8-9	US7	1
+LT934125.1	Liftoff	exon	121784	125230	.	+	.	"Name=US7-8-9;ID=US7-8-9;S.TR.ID=US7-8-9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US7-8-9	US7	
+LT934125.1	Liftoff	mRNA	121784	126151	.	+	.	"Name=US7-8-9-2;ID=US7-8-9-2;S.TR.ID=US7-8-9-2;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.995"	Policistronic	US7-8-9-2	US7	1
+LT934125.1	Liftoff	exon	121784	126151	.	+	.	"Name=US7-8-9-2;ID=US7-8-9-2;S.TR.ID=US7-8-9-2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US7-8-9-2	US7	
+LT934125.1	Liftoff	mRNA	121886	122915	.	+	.	"Name=US7.3;ID=US7.3;S.TR.ID=US7.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	US7	US7.3	1
+LT934125.1	Liftoff	exon	121886	122915	.	+	.	"Name=US7.3;ID=US7.3;S.TR.ID=US7.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US7	US7.3	
+LT934125.1	Liftoff	mRNA	122258	122915	.	+	.	"Name=US7.3-S;ID=US7.3-S;S.TR.ID=US7.3-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Putative	US7	US7.3	1
+LT934125.1	Liftoff	exon	122258	122915	.	+	.	"Name=US7.3-S;ID=US7.3-S;S.TR.ID=US7.3-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US7	US7.3	
+LT934125.1	Liftoff	mRNA	122463	122915	.	+	.	"Name=US7.3-S2;ID=US7.3-S2;S.TR.ID=US7.3-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Putative	US7	US7.3	1
+LT934125.1	Liftoff	exon	122463	122915	.	+	.	"Name=US7.3-S2;ID=US7.3-S2;S.TR.ID=US7.3-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US7	US7.3	
+LT934125.1	Liftoff	mRNA	122698	122915	.	+	.	"Name=US7.1;ID=US7.1;S.TR.ID=US7.1;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.995"	Putative	US7	US7.1	0
+LT934125.1	Liftoff	exon	122698	122915	.	+	.	"Name=US7.1;ID=US7.1;S.TR.ID=US7.1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US7	US7.1	
+LT934125.1	Liftoff	mRNA	122698	125230	.	+	.	"Name=US8-L-US9;ID=US8-L-US9;S.TR.ID=US8-L-US9;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.993"	Policistronic	US8-US9	US8	0
+LT934125.1	Liftoff	exon	122698	125230	.	+	.	"Name=US8-L-US9;ID=US8-L-US9;S.TR.ID=US8-L-US9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US8-US9	US8	
+LT934125.1	Liftoff	mRNA	122979	125230	.	+	.	"Name=US8-9;ID=US8-9;S.TR.ID=US8-9;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.992"	Policistronic	US8-9	US8	1
+LT934125.1	Liftoff	exon	122979	125230	.	+	.	"Name=US8-9;ID=US8-9;S.TR.ID=US8-9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US8-9	US8	
+LT934125.1	Liftoff	mRNA	122979	126151	.	+	.	"Name=US8-9-2;ID=US8-9-2;S.TR.ID=US8-9-2;transferred_from=KJ717942.1;coverage=0.999;sequence_ID=0.994"	Policistronic	US8-9-2	US8	1
+LT934125.1	Liftoff	exon	122979	126151	.	+	.	"Name=US8-9-2;ID=US8-9-2;S.TR.ID=US8-9-2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US8-9-2	US8	
+LT934125.1	Liftoff	mRNA	122979	126191	.	+	.	"Name=US8-9-2-AT1;ID=US8-9-2-AT1;S.TR.ID=US8-9-2-AT1;transferred_from=KJ717942.1;coverage=0.922;sequence_ID=0.918"	Policistronic	US8-9-2	US8	1
+LT934125.1	Liftoff	exon	122979	126191	.	+	.	"Name=US8-9-2-AT1;ID=US8-9-2-AT1;S.TR.ID=US8-9-2-AT1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US8-9-2	US8	
+LT934125.1	Liftoff	mRNA	123314	126151	.	+	.	"Name=US9-US2-L4;ID=US9-US2-L4;S.TR.ID=US9-US2-L4;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.995"	Policistronic	US9-US2	US9	0
+LT934125.1	Liftoff	exon	123314	126151	.	+	.	"Name=US9-US2-L4;ID=US9-US2-L4;S.TR.ID=US9-US2-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US9-US2	US9	
+LT934125.1	Liftoff	mRNA	123314	126151	.	+	.	"Name=US9-US2-L5;ID=US9-US2-L5;S.TR.ID=US9-US2-L5;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.995"	Policistronic	US9-US2	US9	0
+LT934125.1	Liftoff	exon	123314	126151	.	+	.	"Name=US9-US2-L5;ID=US9-US2-L5;S.TR.ID=US9-US2-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US9-US2	US9	
+LT934125.1	Liftoff	mRNA	123560	125230	.	+	.	"Name=US9-L6;ID=US9-L6;S.TR.ID=US9-L6;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.993"	Long	US9		0
+LT934125.1	Liftoff	exon	123560	125230	.	+	.	"Name=US9-L6;ID=US9-L6;S.TR.ID=US9-L6_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US9		
+LT934125.1	Liftoff	mRNA	123587	126151	.	+	.	"Name=US9-US2-L3;ID=US9-US2-L3;S.TR.ID=US9-US2-L3;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Policistronic	US9-US2	US9	0
+LT934125.1	Liftoff	exon	123587	126151	.	+	.	"Name=US9-US2-L3;ID=US9-US2-L3;S.TR.ID=US9-US2-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US9-US2	US9	
+LT934125.1	Liftoff	mRNA	123780	125230	.	+	.	"Name=US9-L5;ID=US9-L5;S.TR.ID=US9-L5;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.992"	Long	US9		0
+LT934125.1	Liftoff	exon	123780	125230	.	+	.	"Name=US9-L5;ID=US9-L5;S.TR.ID=US9-L5_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US9		
+LT934125.1	Liftoff	mRNA	123824	126151	.	+	.	"Name=US9-US2-L2;ID=US9-US2-L2;S.TR.ID=US9-US2-L2;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Policistronic	US9-US2	US9	1
+LT934125.1	Liftoff	exon	123824	126151	.	+	.	"Name=US9-US2-L2;ID=US9-US2-L2;S.TR.ID=US9-US2-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US9-US2	US9	
+LT934125.1	Liftoff	mRNA	123878	125230	.	+	.	"Name=US9-L4;ID=US9-L4;S.TR.ID=US9-L4;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.992"	Long	US9		0
+LT934125.1	Liftoff	exon	123878	125230	.	+	.	"Name=US9-L4;ID=US9-L4;S.TR.ID=US9-L4_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US9		
+LT934125.1	Liftoff	mRNA	124180	125230	.	+	.	"Name=US9-L3;ID=US9-L3;S.TR.ID=US9-L3;transferred_from=KJ717942.1;coverage=0.997;sequence_ID=0.991"	Long	US9		1
+LT934125.1	Liftoff	exon	124180	125230	.	+	.	"Name=US9-L3;ID=US9-L3;S.TR.ID=US9-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US9		
+LT934125.1	Liftoff	mRNA	124286	125230	.	+	.	"Name=US9-L2;ID=US9-L2;S.TR.ID=US9-L2;transferred_from=KJ717942.1;coverage=0.996;sequence_ID=0.990"	Long	US9		1
+LT934125.1	Liftoff	exon	124286	125230	.	+	.	"Name=US9-L2;ID=US9-L2;S.TR.ID=US9-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US9		
+LT934125.1	Liftoff	mRNA	124402	126151	.	+	.	"Name=US9-US2-L;ID=US9-US2-L;S.TR.ID=US9-US2-L;transferred_from=KJ717942.1;coverage=0.998;sequence_ID=0.994"	Policistronic	US9-US2	US9	1
+LT934125.1	Liftoff	exon	124402	126151	.	+	.	"Name=US9-US2-L;ID=US9-US2-L;S.TR.ID=US9-US2-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US9-US2	US9	
+LT934125.1	Liftoff	mRNA	124677	125230	.	+	.	"Name=US9-L1;ID=US9-L1;S.TR.ID=US9-L1;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.994"	Long	US9		1
+LT934125.1	Liftoff	exon	124677	125230	.	+	.	"Name=US9-L1;ID=US9-L1;S.TR.ID=US9-L1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US9		
+LT934125.1	Liftoff	mRNA	124756	125230	.	+	.	"Name=US9;ID=US9;S.TR.ID=US9;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.993"	Canonic	US9		1
+LT934125.1	Liftoff	exon	124756	125230	.	+	.	"Name=US9;ID=US9;S.TR.ID=US9_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	US9		
+LT934125.1	Liftoff	mRNA	124756	126151	.	+	.	"Name=US9-2;ID=US9-2;S.TR.ID=US9-2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.996"	Policistronic	US9-2	US9	1
+LT934125.1	Liftoff	exon	124756	126151	.	+	.	"Name=US9-2;ID=US9-2;S.TR.ID=US9-2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Policistronic	US9-2	US9	
+LT934125.1	Liftoff	mRNA	124872	125230	.	+	.	"Name=US9.3;ID=US9.3;S.TR.ID=US9.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.991"	Putative	US9	US9.3	0
+LT934125.1	Liftoff	exon	124872	125230	.	+	.	"Name=US9.3;ID=US9.3;S.TR.ID=US9.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US9	US9.3	
+LT934125.1	Liftoff	mRNA	125105	126151	.	+	.	"Name=US2-L;ID=US2-L;S.TR.ID=US2-L;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Long	US2		1
+LT934125.1	Liftoff	exon	125105	126151	.	+	.	"Name=US2-L;ID=US2-L;S.TR.ID=US2-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Long	US2		
+LT934125.1	Liftoff	mRNA	125225	126151	.	+	.	"Name=US2;ID=US2;S.TR.ID=US2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Canonic	US2		1
+LT934125.1	Liftoff	exon	125225	126151	.	+	.	"Name=US2;ID=US2;S.TR.ID=US2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Canonic	US2		
+LT934125.1	Liftoff	mRNA	125225	126191	.	+	.	"Name=US2-AT;ID=US2-AT;S.TR.ID=US2-AT;transferred_from=KJ717942.1;coverage=0.789;sequence_ID=0.786"	AT variant	US2		1
+LT934125.1	Liftoff	exon	125225	126191	.	+	.	"Name=US2-AT;ID=US2-AT;S.TR.ID=US2-AT_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	US2		
+LT934125.1	Liftoff	mRNA	125225	126191	.	+	.	"Name=US2-AT2;ID=US2-AT2;S.TR.ID=US2-AT2;transferred_from=KJ717942.1;coverage=0.946;sequence_ID=0.943"	AT variant	US2		1
+LT934125.1	Liftoff	exon	125225	126191	.	+	.	"Name=US2-AT2;ID=US2-AT2;S.TR.ID=US2-AT2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	AT variant	US2		
+LT934125.1	Liftoff	mRNA	125373	126151	.	+	.	"Name=US2.3;ID=US2.3;S.TR.ID=US2.3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	US2	US2.3	1
+LT934125.1	Liftoff	exon	125373	126151	.	+	.	"Name=US2.3;ID=US2.3;S.TR.ID=US2.3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US2	US2.3	
+LT934125.1	Liftoff	mRNA	125430	126151	.	+	.	"Name=US2.3-S;ID=US2.3-S;S.TR.ID=US2.3-S;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	US2	US2.3	1
+LT934125.1	Liftoff	exon	125430	126151	.	+	.	"Name=US2.3-S;ID=US2.3-S;S.TR.ID=US2.3-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US2	US2.3	
+LT934125.1	Liftoff	mRNA	125609	126151	.	+	.	"Name=US2.3-S2;ID=US2.3-S2;S.TR.ID=US2.3-S2;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.998"	Putative	US2	US2.3	1
+LT934125.1	Liftoff	exon	125609	126151	.	+	.	"Name=US2.3-S2;ID=US2.3-S2;S.TR.ID=US2.3-S2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US2	US2.3	
+LT934125.1	Liftoff	mRNA	125729	126151	.	+	.	"Name=US2.3-S3;ID=US2.3-S3;S.TR.ID=US2.3-S3;transferred_from=KJ717942.1;coverage=1.0;sequence_ID=0.997"	Putative	US2	US2.3	1
+LT934125.1	Liftoff	exon	125729	126151	.	+	.	"Name=US2.3-S3;ID=US2.3-S3;S.TR.ID=US2.3-S3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Putative	US2	US2.3	
+LT934125.1	Liftoff	mRNA	126753	127002	.	-	.	"Name=TRS1-S;ID=TRS1-S;S.TR.ID=TRS1-S;transferred_from=KJ717942.1;coverage=0.972;sequence_ID=0.949"	Non coding	US1		1
+LT934125.1	Liftoff	exon	126753	127002	.	-	.	"Name=TRS1-S;ID=TRS1-S;S.TR.ID=TRS1-S_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	126753	127083	.	-	.	"Name=TRS1;ID=TRS1;S.TR.ID=TRS1;transferred_from=KJ717942.1;coverage=0.979;sequence_ID=0.934"	Non coding	US1		1
+LT934125.1	Liftoff	exon	126753	127083	.	-	.	"Name=TRS1;ID=TRS1;S.TR.ID=TRS1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	126753	127117	.	-	.	"Name=TRS1-L;ID=TRS1-L;S.TR.ID=TRS1-L;transferred_from=KJ717942.1;coverage=0.980;sequence_ID=0.928"	Non coding	US1		1
+LT934125.1	Liftoff	exon	126753	127117	.	-	.	"Name=TRS1-L;ID=TRS1-L;S.TR.ID=TRS1-L_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	126753	127165	.	-	.	"Name=TRS1-L2;ID=TRS1-L2;S.TR.ID=TRS1-L2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.937"	Non coding	US1		1
+LT934125.1	Liftoff	exon	126753	127165	.	-	.	"Name=TRS1-L2;ID=TRS1-L2;S.TR.ID=TRS1-L2_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	126753	127176	.	-	.	"Name=TRS1-L3;ID=TRS1-L3;S.TR.ID=TRS1-L3;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		1
+LT934125.1	Liftoff	exon	126753	127176	.	-	.	"Name=TRS1-L3;ID=TRS1-L3;S.TR.ID=TRS1-L3_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	127089	128705	.	-	.	"Name=NCS1;ID=NCS1;S.TR.ID=NCS1;transferred_from=KJ717942.1;coverage=0.981;sequence_ID=0.949"	Non coding	US1		1
+LT934125.1	Liftoff	exon	127089	128705	.	-	.	"Name=NCS1;ID=NCS1;S.TR.ID=NCS1_1;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	136348	141356	.	+	.	"Name=IE180-S-2;ID=IE180-S-2;S.TR.ID=IE180-S-2;transferred_from=KJ717942.1;coverage=0.995;sequence_ID=0.964"	Short	IE180		1
+LT934125.1	Liftoff	exon	136348	141356	.	+	.	"Name=IE180-S-2;ID=IE180-S-2;S.TR.ID=IE180-S-2;transferred_from=KJ717942.1;coverage=NA;sequence_ID=NA"	Short	IE180		
+LT934125.1	Liftoff	mRNA	95889	97361	.	-	.	"ID=EP0-sp1;transcript_id=EP0-sp1"	Splice	EP0		1
+LT934125.1	Liftoff	exon	95889	96851	.	-	.	"ID=id1;Parent=EP0-sp1;transcript_id=EP0-sp1"	Splice	EP0		
+LT934125.1	Liftoff	exon	96990	97361	.	-	.	"ID=id2;Parent=EP0-sp1;transcript_id=EP0-sp1"	Splice	EP0		
+LT934125.1	Liftoff	mRNA	95889	97337	.	-	.	"ID=EP0.5-sp1;transcript_id=EP0.5-sp1"	Putative	EP0	EP0.5	1
+LT934125.1	Liftoff	exon	95889	96851	.	-	.	"ID=id6;Parent=EP0.5-sp1;transcript_id=EP0.5-sp1"	Splice	EP0		
+LT934125.1	Liftoff	exon	96990	97337	.	-	.	"ID=id5;Parent=EP0.5-sp1;transcript_id=EP0.5-sp1"	Splice	EP0		
+LT934125.1	Liftoff	mRNA	95889	97337	.	-	.	"ID=EP0.5-sp2;transcript_id=EP0.5-sp2"	Putative	EP0	EP0.5	1
+LT934125.1	Liftoff	exon	95889	96851	.	-	.	"ID=id6;Parent=EP0.5-sp2;transcript_id=EP0.5-sp2"	Splice	EP0		
+LT934125.1	Liftoff	exon	96942	97337	.	-	.	"ID=id5;Parent=EP0.5-sp2;transcript_id=EP0.5-sp2"	Splice	EP0		
+LT934125.1	Liftoff	mRNA	95889	97126	.	-	.	"ID=EP0.5-S2-sp1;transcript_id=EP0.5-S2-sp1"	Putative	EP0	EP0.5	1
+LT934125.1	Liftoff	exon	95889	96851	.	-	.	"ID=id6;Parent=EP0.5-S2-sp1;transcript_id=EP0.5-S2-sp1"	Splice	EP0		
+LT934125.1	Liftoff	exon	96990	97126	.	-	.	"ID=id5;Parent=EP0.5-S2-sp1;transcript_id=EP0.5-S2-sp1"	Splice	EP0		
+LT934125.1	Liftoff	mRNA	95889	97361	.	-	.	"ID=EP0-sp2;transcript_id=EP0-sp2"	Splice	EP0		1
+LT934125.1	Liftoff	exon	95889	96851	.	-	.	"ID=id6;Parent=EP0-sp2;transcript_id=EP0-sp2"	Splice	EP0		
+LT934125.1	Liftoff	exon	96942	97361	.	-	.	"ID=id5;Parent=EP0-sp2;transcript_id=EP0-sp2"	Splice	EP0		
+LT934125.1	Liftoff	mRNA	95889	97174	.	-	.	"ID=EP0.5-S-sp1;transcript_id=EP0.5-S-sp1"	Putative	EP0	EP0.5	1
+LT934125.1	Liftoff	exon	95889	96851	.	-	.	"ID=id6;Parent=EP0.5-S-sp1;transcript_id=EP0.5-S-sp1"	Splice	EP0		
+LT934125.1	Liftoff	exon	96990	97174	.	-	.	"ID=id5;Parent=EP0.5-S-sp1;transcript_id=EP0.5-S-sp1"	Splice	EP0		
+LT934125.1	Liftoff	mRNA	117248	118409	.	-	.	"ID=AZURE-S-L-splice;transcript_id=AZURE-S-L-splice"	Non coding	AZURE		0
+LT934125.1	Liftoff	exon	117248	117361	.	-	.	"ID=id6;Parent=AZURE-S-L-splice;transcript_id=AZURE-S-L-splice"	Splice	AZURE		
+LT934125.1	Liftoff	exon	117773	118409	.	-	.	"ID=id5;Parent=AZURE-S-L-splice;transcript_id=AZURE-S-L-splice"	Splice	AZURE		
+LT934125.1	Liftoff	mRNA	107482	108829	.	+	.	"ID=NOIR-1M-splice;transcript_id=NOIR-1M-splice"	Non coding	NOIR-1		1
+LT934125.1	Liftoff	exon	107482	107615	.	+	.	"ID=id6;Parent=NOIR-1M-splice;transcript_id=NOIR-1M-splice"	Splice	NOIR-1		
+LT934125.1	Liftoff	exon	108460	108829	.	+	.	"ID=id5;Parent=NOIR-1M-splice;transcript_id=NOIR-1M-splice"	Splice	NOIR-1		
+LT934125.1	Liftoff	mRNA	96800	97006	.	-	.	"Name=nc-EP0;ID=nc-EP0;S.TR.ID=nc-EP0;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	EP0		1
+LT934125.1	Liftoff	exon	96800	97006	.	-	.	"Name=nc-EP0;ID=nc-EP0;S.TR.ID=nc-EP0;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	EP0		
+LT934125.1	Liftoff	mRNA	117251	119190	.	-	.	"Name=AZURE-L;ID=AZURE-L;S.TR.ID=AZURE-L;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		1
+LT934125.1	Liftoff	exon	117251	119190	.	-	.	"Name=AZURE-L;ID=AZURE-L;S.TR.ID=AZURE-L;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		
+LT934125.1	Liftoff	mRNA	117251	119611	.	-	.	"Name=AZURE-L2;ID=AZURE-L2;S.TR.ID=AZURE-L2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		1
+LT934125.1	Liftoff	exon	117251	119611	.	-	.	"Name=AZURE-L2;ID=AZURE-L2;S.TR.ID=AZURE-L2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		
+LT934125.1	Liftoff	mRNA	117251	118739	.	-	.	"Name=AZURE-M;ID=AZURE-M;S.TR.ID=AZURE-M;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		1
+LT934125.1	Liftoff	exon	117251	118739	.	-	.	"Name=AZURE-M;ID=AZURE-M;S.TR.ID=AZURE-M;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		
+LT934125.1	Liftoff	mRNA	117251	118349	.	-	.	"Name=AZURE-S;ID=AZURE-S;S.TR.ID=AZURE-S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		0
+LT934125.1	Liftoff	exon	117251	118349	.	-	.	"Name=AZURE-S;ID=AZURE-S;S.TR.ID=AZURE-S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		
+LT934125.1	Liftoff	mRNA	117249	118401	.	-	.	"Name=AZURE-S-L;ID=AZURE-S-L;S.TR.ID=AZURE-S-L;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		0
+LT934125.1	Liftoff	exon	117249	118401	.	-	.	"Name=AZURE-S-L;ID=AZURE-S-L;S.TR.ID=AZURE-S-L;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	AZURE		
+LT934125.1	Liftoff	mRNA	100549	102393	.	+	.	"Name=ELIE-1;ID=ELIE-1;S.TR.ID=ELIE-1;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	ELIE		0
+LT934125.1	Liftoff	exon	100549	102393	.	+	.	"Name=ELIE-1;ID=ELIE-1;S.TR.ID=ELIE-1;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	ELIE		
+LT934125.1	Liftoff	mRNA	101661	102393	.	+	.	"Name=ELIE-2;ID=ELIE-2;S.TR.ID=ELIE-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	ELIE		1
+LT934125.1	Liftoff	exon	101661	102393	.	+	.	"Name=ELIE-2;ID=ELIE-2;S.TR.ID=ELIE-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	ELIE		
+LT934125.1	Liftoff	mRNA	101291	102383	.	+	.	"Name=ELIE-2-L;ID=ELIE-2-L;S.TR.ID=ELIE-2-L;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	ELIE		1
+LT934125.1	Liftoff	exon	101291	102383	.	+	.	"Name=ELIE-2-L;ID=ELIE-2-L;S.TR.ID=ELIE-2-L;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	ELIE		
+LT934125.1	Liftoff	mRNA	95890	97362	.	-	.	"Name=EP0;ID=EP0;S.TR.ID=EP0;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	EP0		1
+LT934125.1	Liftoff	exon	95890	97362	.	-	.	"Name=EP0;ID=EP0;S.TR.ID=EP0;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	EP0		
+LT934125.1	Liftoff	mRNA	95890	97537	.	-	.	"Name=EP0-L2;ID=EP0-L2;S.TR.ID=EP0-L2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Long	EP0		0
+LT934125.1	Liftoff	exon	95890	97537	.	-	.	"Name=EP0-L2;ID=EP0-L2;S.TR.ID=EP0-L2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Long	EP0		
+LT934125.1	Liftoff	mRNA	95890	96866	.	-	.	"Name=EP0.4;ID=EP0.4;S.TR.ID=EP0.4;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Putative	EP0	Ep0.4	0
+LT934125.1	Liftoff	exon	95890	96866	.	-	.	"Name=EP0.4;ID=EP0.4;S.TR.ID=EP0.4;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Putative	EP0	EP0.4	
+LT934125.1	Liftoff	mRNA	95890	97338	.	-	.	"Name=EP0.5;ID=EP0.5;S.TR.ID=EP0.5;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Putative	EP0	EP0.5	1
+LT934125.1	Liftoff	exon	95890	97338	.	-	.	"Name=EP0.5;ID=EP0.5;S.TR.ID=EP0.5;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Putative	EP0	EP0.5	
+LT934125.1	Liftoff	mRNA	95890	97175	.	-	.	"Name=EP0.5-S;ID=EP0.5-S;S.TR.ID=EP0.5-S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Putative	EP0	EP0.5	1
+LT934125.1	Liftoff	exon	95890	97175	.	-	.	"Name=EP0.5-S;ID=EP0.5-S;S.TR.ID=EP0.5-S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Putative	EP0	EP0.5	
+LT934125.1	Liftoff	mRNA	95890	96629	.	-	.	"Name=EP0.10;ID=EP0.10;S.TR.ID=EP0.10;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Putative	EP0	EP0.10	1
+LT934125.1	Liftoff	exon	95890	96629	.	-	.	"Name=EP0.10;ID=EP0.10;S.TR.ID=EP0.10;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Putative	EP0	EP0.10	
+LT934125.1	Liftoff	mRNA	63176	63421	.	+	.	"Name=nc-CTO-S;ID=nc-CTO-S;S.TR.ID=nc-CTO-S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	CTO		0
+LT934125.1	Liftoff	exon	63176	63421	.	+	.	"Name=nc-CTO-S;ID=nc-CTO-S;S.TR.ID=nc-CTO-S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	CTO		
+LT934125.1	Liftoff	mRNA	95890	96090	.	-	.	"Name=nc-EP0-2;ID=nc-EP0-2;S.TR.ID=nc-EP0-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	EP0		1
+LT934125.1	Liftoff	exon	95890	96090	.	-	.	"Name=nc-EP0-2;ID=nc-EP0-2;S.TR.ID=nc-EP0-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	EP0		
+LT934125.1	Liftoff	mRNA	107483	108830	.	+	.	"Name=NOIR-1M;ID=NOIR-1M;S.TR.ID=NOIR-1M;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		1
+LT934125.1	Liftoff	exon	107483	108830	.	+	.	"Name=NOIR-1M;ID=NOIR-1M;S.TR.ID=NOIR-1M;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-2		
+LT934125.1	Liftoff	mRNA	107615	108830	.	+	.	"Name=NOIR-1S;ID=NOIR-1S;S.TR.ID=NOIR-1S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-3		1
+LT934125.1	Liftoff	exon	107615	108830	.	+	.	"Name=NOIR-1S;ID=NOIR-1S;S.TR.ID=NOIR-1S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-4		
+LT934125.1	Liftoff	mRNA	107819	108830	.	+	.	"Name=NOIR-1S2;ID=NOIR-1S2;S.TR.ID=NOIR-1S2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-5		0
+LT934125.1	Liftoff	exon	107819	108830	.	+	.	"Name=NOIR-1S2;ID=NOIR-1S2;S.TR.ID=NOIR-1S2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-6		
+LT934125.1	Liftoff	mRNA	108030	108830	.	+	.	"Name=NOIR-1S3;ID=NOIR-1S3;S.TR.ID=NOIR-1S3;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-7		0
+LT934125.1	Liftoff	exon	108030	108830	.	+	.	"Name=NOIR-1S3;ID=NOIR-1S3;S.TR.ID=NOIR-1S3;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-8		
+LT934125.1	Liftoff	mRNA	108228	108830	.	+	.	"Name=NOIR-1S4;ID=NOIR-1S4;S.TR.ID=NOIR-1S4;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-9		1
+LT934125.1	Liftoff	exon	108228	108830	.	+	.	"Name=NOIR-1S4;ID=NOIR-1S4;S.TR.ID=NOIR-1S4;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-10		
+LT934125.1	Liftoff	mRNA	110204	111104	.	-	.	"Name=NOIR-2;ID=NOIR-2;S.TR.ID=NOIR-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-11		1
+LT934125.1	Liftoff	exon	110204	111104	.	-	.	"Name=NOIR-2;ID=NOIR-2;S.TR.ID=NOIR-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-12		
+LT934125.1	Liftoff	mRNA	107309	108830	.	+	.	"Name=NOIR1-L3;ID=NOIR1-L3;S.TR.ID=NOIR1-L3;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-13		1
+LT934125.1	Liftoff	exon	107309	108830	.	+	.	"Name=NOIR1-L3;ID=NOIR1-L3;S.TR.ID=NOIR1-L3;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-14		
+LT934125.1	Liftoff	mRNA	112884	116962	.	+	.	"Name=PTO-US1-nonsp2;ID=PTO-US1-nonsp2;S.TR.ID=PTO-US1-nonsp2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	PTO-US1		1
+LT934125.1	Liftoff	exon	112884	116962	.	+	.	"Name=PTO-US1-nonsp2;ID=PTO-US1-nonsp2;S.TR.ID=PTO-US1-nonsp2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	PTO-US1		
+LT934125.1	Liftoff	mRNA	102362	107370	.	-	.	"Name=IE180-S;ID=IE180-S;S.TR.ID=IE180-S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Short	IE180		1
+LT934125.1	Liftoff	exon	102362	107370	.	-	.	"Name=IE180-S;ID=IE180-S;S.TR.ID=IE180-S;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Short	IE180		
+LT934125.1	Liftoff	mRNA	102362	107560	.	-	.	"Name=IE180;ID=IE180;S.TR.ID=IE180;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	IE180		1
+LT934125.1	Liftoff	exon	102362	107560	.	-	.	"Name=IE180;ID=IE180;S.TR.ID=IE180;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	IE180		
+LT934125.1	Liftoff	mRNA	114985	116962	.	+	.	"Name=US1;ID=US1;S.TR.ID=US1;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	US1		1
+LT934125.1	Liftoff	exon	114985	116962	.	+	.	"Name=US1;ID=US1;S.TR.ID=US1;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	US1		
+LT934125.1	Liftoff	mRNA	136158	141356	.	+	.	"Name=IE180-2;ID=IE180-2;S.TR.ID=IE180-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	IE180		1
+LT934125.1	Liftoff	exon	136158	141356	.	+	.	"Name=IE180-2;ID=IE180-2;S.TR.ID=IE180-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	IE180		
+LT934125.1	Liftoff	mRNA	112883	116961	.	+	.	"ID=PTO-US1-sp;transcript_id=PTO-US1-sp"	Splice	PTO-US1		1
+LT934125.1	Liftoff	exon	112883	115138	.	+	.	"ID=id5;Parent=PTO-US1-sp;transcript_id=PTO-US1-sp"	Splice	PTO-US1		
+LT934125.1	Liftoff	exon	115256	115308	.	+	.	"ID=id6;Parent=PTO-US1-sp;transcript_id=PTO-US1-sp"	Splice	PTO-US1		
+LT934125.1	Liftoff	exon	115464	116961	.	+	.	"ID=id7;Parent=PTO-US1-sp;transcript_id=PTO-US1-sp"	Splice	PTO-US1		
+LT934125.1	Liftoff	mRNA	114001	116961	.	+	.	"ID=US1-splice-L;transcript_id=US1-splice-L"	Splice	US1		1
+LT934125.1	Liftoff	exon	114001	115138	.	+	.	"ID=id5;Parent=US1-splice-L;transcript_id=US1-splice-L"	Splice	US1		
+LT934125.1	Liftoff	exon	115256	115308	.	+	.	"ID=id6;Parent=US1-splice-L;transcript_id=US1-splice-L"	Splice	US1		
+LT934125.1	Liftoff	exon	115464	116961	.	+	.	"ID=id7;Parent=US1-splice-L;transcript_id=US1-splice-L"	Splice	US1		
+LT934125.1	Liftoff	mRNA	114832	116961	.	+	.	"ID=US1-splice-L2;transcript_id=US1-splice-L2"	Splice	US1		1
+LT934125.1	Liftoff	exon	114832	115138	.	+	.	"ID=id5;Parent=US1-splice-L2;transcript_id=US1-splice-L2"	Splice	US1		
+LT934125.1	Liftoff	exon	115256	115308	.	+	.	"ID=id6;Parent=US1-splice-L2;transcript_id=US1-splice-L2"	Splice	US1		
+LT934125.1	Liftoff	exon	115464	116961	.	+	.	"ID=id7;Parent=US1-splice-L2;transcript_id=US1-splice-L2"	Splice	US1		
+LT934125.1	Liftoff	mRNA	114984	116961	.	+	.	"ID=US1-splice;transcript_id=US1-splice"	Splice	US1		1
+LT934125.1	Liftoff	exon	114984	115138	.	+	.	"ID=id5;Parent=US1-splice;transcript_id=US1-splice"	Splice	US1		
+LT934125.1	Liftoff	exon	115256	115308	.	+	.	"ID=id6;Parent=US1-splice;transcript_id=US1-splice"	Splice	US1		
+LT934125.1	Liftoff	exon	115464	116961	.	+	.	"ID=id7;Parent=US1-splice;transcript_id=US1-splice"	Splice	US1		
+LT934125.1	Liftoff	mRNA	114985	116962	.	+	.	"ID=US1-splice-2;transcript_id=US1-splice-2"	Splice	US1		1
+LT934125.1	Liftoff	exon	114985	115139	.	+	.	"ID=id6;Parent=US1-splice-2;transcript_id=US1-splice-2"	Splice	US1		
+LT934125.1	Liftoff	exon	115257	116962	.	+	.	"ID=id5;Parent=US1-splice-2;transcript_id=US1-splice-2"	Splice	US1		
+LT934125.1	Liftoff	mRNA	114985	116962	.	+	.	"ID=US1-splice-5;transcript_id=US1-splice-5"	Splice	US1		1
+LT934125.1	Liftoff	exon	114985	115180	.	+	.	"ID=id6;Parent=US1-splice-5;transcript_id=US1-splice-5"	Splice	US1		
+LT934125.1	Liftoff	exon	115465	116962	.	+	.	"ID=id5;Parent=US1-splice-5;transcript_id=US1-splice-5"	Splice	US1		
+LT934125.1	Liftoff	mRNA	114985	116962	.	+	.	"ID=US1-splice-6;transcript_id=US1-splice-6"	Splice	US1		1
+LT934125.1	Liftoff	exon	114985	115309	.	+	.	"ID=id6;Parent=US1-splice-6;transcript_id=US1-splice-6"	Splice	US1		
+LT934125.1	Liftoff	exon	115465	116962	.	+	.	"ID=id5;Parent=US1-splice-6;transcript_id=US1-splice-6"	Splice	US1		
+LT934125.1	Liftoff	mRNA	114985	116962	.	+	.	"ID=US1-splice-3;transcript_id=US1-splice-3"	Splice	US1		1
+LT934125.1	Liftoff	exon	114985	115186	.	+	.	"ID=id6;Parent=US1-splice-3;transcript_id=US1-splice-3"	Splice	US1		
+LT934125.1	Liftoff	exon	115474	116962	.	+	.	"ID=id5;Parent=US1-splice-3;transcript_id=US1-splice-3"	Splice	US1		
+LT934125.1	Liftoff	mRNA	114985	116962	.	+	.	"ID=US1-splice-4;transcript_id=US1-splice-4"	Splice	US1		1
+LT934125.1	Liftoff	exon	114985	115169	.	+	.	"ID=id6;Parent=US1-splice-4;transcript_id=US1-splice-4"	Splice	US1		
+LT934125.1	Liftoff	exon	115465	116962	.	+	.	"ID=id5;Parent=US1-splice-4;transcript_id=US1-splice-4"	Splice	US1		
+LT934125.1	Liftoff	mRNA	126752	128731	.	-	.	"ID=US1-splice-2-2;transcript_id=US1-splice-2-2"	Splice	US1		1
+LT934125.1	Liftoff	exon	128147	128731	.	-	.	"ID=id6;Parent=US1-splice-2-2;transcript_id=US1-splice-2-2"	Splice	US1		
+LT934125.1	Liftoff	exon	126752	127972	.	-	.	"ID=id5;Parent=US1-splice-2-2;transcript_id=US1-splice-2-2"	Splice	US1		
+LT934125.1	Liftoff	mRNA	126752	129714	.	-	.	"ID=US1-splice-L2-2;transcript_id=US1-splice-L2-2"	Splice	US1		0
+LT934125.1	Liftoff	exon	128321	129714	.	-	.	"ID=id5;Parent=US1-splice-L2-2;transcript_id=US1-splice-L2-2"	Splice	US1		
+LT934125.1	Liftoff	exon	128147	128198	.	-	.	"ID=id6;Parent=US1-splice-L2-2;transcript_id=US1-splice-L2-2"	Splice	US1		
+LT934125.1	Liftoff	exon	126752	127952	.	-	.	"ID=id7;Parent=US1-splice-L2-2;transcript_id=US1-splice-L2-2"	Splice	US1		
+LT934125.1	Liftoff	mRNA	126752	128731	.	-	.	"ID=US1-splice-3-2;transcript_id=US1-splice-3-2"	Splice	US1		1
+LT934125.1	Liftoff	exon	128279	128731	.	-	.	"ID=id6;Parent=US1-splice-3-2;transcript_id=US1-splice-3-2"	Splice	US1		
+LT934125.1	Liftoff	exon	126752	127972	.	-	.	"ID=id5;Parent=US1-splice-3-2;transcript_id=US1-splice-3-2"	Splice	US1		
+LT934125.1	Liftoff	mRNA	126752	128731	.	-	.	"ID=US1-splice-6-2;transcript_id=US1-splice-6-2"	Splice	US1		1
+LT934125.1	Liftoff	exon	128290	128731	.	-	.	"ID=id6;Parent=US1-splice-6-2;transcript_id=US1-splice-6-2"	Splice	US1		
+LT934125.1	Liftoff	exon	126752	127972	.	-	.	"ID=id5;Parent=US1-splice-6-2;transcript_id=US1-splice-6-2"	Splice	US1		
+LT934125.1	Liftoff	mRNA	126752	128731	.	-	.	"ID=US1-splice-4-2;transcript_id=US1-splice-4-2"	Splice	US1		1
+LT934125.1	Liftoff	exon	128273	128731	.	-	.	"ID=id6;Parent=US1-splice-4-2;transcript_id=US1-splice-4-2"	Splice	US1		
+LT934125.1	Liftoff	exon	126752	127973	.	-	.	"ID=id5;Parent=US1-splice-4-2;transcript_id=US1-splice-4-2"	Splice	US1		
+LT934125.1	Liftoff	mRNA	126752	130830	.	-	.	"ID=PTO-US1-2-sp;transcript_id=PTO-US1-2-sp"	Splice	PTO-US1		1
+LT934125.1	Liftoff	exon	128321	130830	.	-	.	"ID=id5;Parent=PTO-US1-2-sp;transcript_id=PTO-US1-2-sp"	Splice	PTO-US1		
+LT934125.1	Liftoff	exon	128147	128198	.	-	.	"ID=id6;Parent=PTO-US1-2-sp;transcript_id=PTO-US1-2-sp"	Splice	PTO-US1		
+LT934125.1	Liftoff	exon	126752	127972	.	-	.	"ID=id7;Parent=PTO-US1-2-sp;transcript_id=PTO-US1-2-sp"	Splice	PTO-US1		
+LT934125.1	Liftoff	mRNA	126752	128731	.	-	.	"ID=US1-splice-5-2;transcript_id=US1-splice-5-2"	Splice	US1		1
+LT934125.1	Liftoff	exon	128321	128731	.	-	.	"ID=id6;Parent=US1-splice-5-2;transcript_id=US1-splice-5-2"	Splice	US1		
+LT934125.1	Liftoff	exon	126752	128198	.	-	.	"ID=id5;Parent=US1-splice-5-2;transcript_id=US1-splice-5-2"	Splice	US1		
+LT934125.1	Liftoff	mRNA	126752	128731	.	-	.	"ID=US1-splice(2);transcript_id=US1-splice(2)"	Splice	US1		1
+LT934125.1	Liftoff	exon	128577	128731	.	-	.	"ID=id6;Parent=US1-splice(2);transcript_id=US1-splice(2)"	Splice	US1		
+LT934125.1	Liftoff	exon	128407	128459	.	-	.	"ID=id5;Parent=US1-splice(2);transcript_id=US1-splice(2)"	Splice	US1		
+LT934125.1	Liftoff	exon	126752	128251	.	-	.	"ID=id7;Parent=US1-splice(2);transcript_id=US1-splice(2)"	Splice	US1		
+LT934125.1	Liftoff	mRNA	126753	130831	.	-	.	"Name=PTO-US1-nonsp;ID=PTO-US1-nonsp;S.TR.ID=PTO-US1-nonsp;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	PTO-US1		1
+LT934125.1	Liftoff	exon	126753	130831	.	-	.	"Name=PTO-US1-nonsp;ID=PTO-US1-nonsp;S.TR.ID=PTO-US1-nonsp;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Canonic	PTO-US1		
+LT934125.1	Liftoff	mRNA	126753	128732	.	-	.	"Name=US1-2;ID=US1-2;S.TR.ID=US1-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Policistronic	US1-2		1
+LT934125.1	Liftoff	exon	126753	128732	.	-	.	"Name=US1-2;ID=US1-2;S.TR.ID=US1-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Policistronic	US1-2		
+LT934125.1	Liftoff	mRNA	71548	77984	.	-	.	"ID=UL15-splice-L;transcript_id=UL15-splice-L"	Splice	UL15		1
+LT934125.1	Liftoff	exon	71548	72782	.	-	.	"ID=id6;Parent=UL15-splice-L;transcript_id=UL15-splice-L"	Splice	UL15		
+LT934125.1	Liftoff	exon	75658	77984	.	-	.	"ID=id5;Parent=UL15-splice-L;transcript_id=UL15-splice-L"	Splice	UL15		
+LT934125.1	Liftoff	mRNA	134888	136409	.	-	.	"Name=NOIR-1L3-2;ID=NOIR-1L3-2;S.TR.ID=NOIR-1L3-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		1
+LT934125.1	Liftoff	exon	134888	136409	.	-	.	"Name=NOIR-1L3-2;ID=NOIR-1L3-2;S.TR.ID=NOIR-1L3-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		
+LT934125.1	Liftoff	mRNA	134888	136285	.	-	.	"Name=NOIR-1L-2;ID=NOIR-1L-2;S.TR.ID=NOIR-1L-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		1
+LT934125.1	Liftoff	exon	134888	136285	.	-	.	"Name=NOIR-1L-2;ID=NOIR-1L-2;S.TR.ID=NOIR-1L-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		
+LT934125.1	Liftoff	mRNA	134888	136235	.	-	.	"Name=NOIR-1M-2;ID=NOIR-1M-2;S.TR.ID=NOIR-1M-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		1
+LT934125.1	Liftoff	exon	134888	136235	.	-	.	"Name=NOIR-1M-2;ID=NOIR-1M-2;S.TR.ID=NOIR-1M-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		
+LT934125.1	Liftoff	mRNA	134888	135619	.	-	.	"Name=NOIR-1S4-2;ID=NOIR-1S4-2;S.TR.ID=NOIR-1S4-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		1
+LT934125.1	Liftoff	exon	134888	135619	.	-	.	"Name=NOIR-1S4-2;ID=NOIR-1S4-2;S.TR.ID=NOIR-1S4-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		
+LT934125.1	Liftoff	mRNA	134888	135899	.	-	.	"Name=NOIR-1S3-2;ID=NOIR-1S3-2;S.TR.ID=NOIR-1S3-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		0
+LT934125.1	Liftoff	exon	134888	135899	.	-	.	"Name=NOIR-1S3-2;ID=NOIR-1S3-2;S.TR.ID=NOIR-1S3-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		
+LT934125.1	Liftoff	mRNA	134888	136103	.	-	.	"Name=NOIR-1S2-2;ID=NOIR-1S2-2;S.TR.ID=NOIR-1S2-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		1
+LT934125.1	Liftoff	exon	134888	136103	.	-	.	"Name=NOIR-1S2-2;ID=NOIR-1S2-2;S.TR.ID=NOIR-1S2-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		
+LT934125.1	Liftoff	mRNA	134888	136131	.	-	.	"Name=NOIR-1S-2;ID=NOIR-1S-2;S.TR.ID=NOIR-1S-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		0
+LT934125.1	Liftoff	exon	134888	136131	.	-	.	"Name=NOIR-1S-2;ID=NOIR-1S-2;S.TR.ID=NOIR-1S-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-1		
+LT934125.1	Liftoff	mRNA	134894	136248	.	-	.	"ID=NOIR-1M-splice-2;transcript_id=NOIR-1M-splice-2"	Non coding	NOIR-1		1
+LT934125.1	Liftoff	exon	135752	136248	.	-	.	"ID=id6;Parent=NOIR-1M-splice-2;transcript_id=NOIR-1M-splice-2"	Splice	NOIR-1		
+LT934125.1	Liftoff	exon	134894	135256	.	-	.	"ID=id5;Parent=NOIR-1M-splice-2;transcript_id=NOIR-1M-splice-2"	Splice	NOIR-1		
+LT934125.1	Liftoff	mRNA	132614	133513	.	+	.	"Name=NOIR-2-2;ID=NOIR-2-2;S.TR.ID=NOIR-2-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-2		1
+LT934125.1	Liftoff	exon	132614	133513	.	+	.	"Name=NOIR-2-2;ID=NOIR-2-2;S.TR.ID=NOIR-2-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-2		
+LT934125.1	Liftoff	mRNA	132614	133513	.	+	.	"Name=NOIR-2-2;ID=NOIR-2-2;S.TR.ID=NOIR-2-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-2		1
+LT934125.1	Liftoff	exon	132614	133513	.	+	.	"Name=NOIR-2-2;ID=NOIR-2-2;S.TR.ID=NOIR-2-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	NOIR-2		
+LT934125.1	Liftoff	mRNA	116541	116962	.	+	.	"Name=TRS1-L3-2;ID=TRS1-L3-2;S.TR.ID=TRS1-L3-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		1
+LT934125.1	Liftoff	exon	116541	116962	.	+	.	"Name=TRS1-L3-2;ID=TRS1-L3-2;S.TR.ID=TRS1-L3-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	116552	116962	.	+	.	"Name=TRS1-L2-2;ID=TRS1-L2-2;S.TR.ID=TRS1-L2-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		1
+LT934125.1	Liftoff	exon	116552	116962	.	+	.	"Name=TRS1-L2-2;ID=TRS1-L2-2;S.TR.ID=TRS1-L2-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	116600	116962	.	+	.	"Name=TRS1-L-2;ID=TRS1-L-2;S.TR.ID=TRS1-L-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		1
+LT934125.1	Liftoff	exon	116600	116962	.	+	.	"Name=TRS1-L-2;ID=TRS1-L-2;S.TR.ID=TRS1-L-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	116628	116962	.	+	.	"Name=TRS1-2;ID=TRS1-2;S.TR.ID=TRS1-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		1
+LT934125.1	Liftoff	exon	116628	116962	.	+	.	"Name=TRS1-2;ID=TRS1-2;S.TR.ID=TRS1-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	116715	116962	.	+	.	"Name=TRS1-S-2;ID=TRS1-S-2;S.TR.ID=TRS1-S-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		1
+LT934125.1	Liftoff	exon	116715	116962	.	+	.	"Name=TRS1-S-2;ID=TRS1-S-2;S.TR.ID=TRS1-S-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	115012	116628	.	+	.	"Name=NCS1-2;ID=NCS1-2;S.TR.ID=NCS1-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		1
+LT934125.1	Liftoff	exon	115012	116628	.	+	.	"Name=NCS1-2;ID=NCS1-2;S.TR.ID=NCS1-2;transferred_from=KJ717942.1;coverage=0.983;sequence_ID=0.938"	Non coding	US1		
+LT934125.1	Liftoff	mRNA	126752	128883	.	-	.	"ID=US1-splice-L2-2-2;transcript_id=US1-splice-L2-2-2"	Splice	US1		1
+LT934125.1	Liftoff	exon	128577	128883	.	-	.	"ID=id6;Parent=US1-splice-L2-2-2;transcript_id=US1-splice-L2-2-2"	Splice	US1		
+LT934125.1	Liftoff	exon	128407	128459	.	-	.	"ID=id5;Parent=US1-splice-L2-2-2;transcript_id=US1-splice-L2-2-2"	Splice	US1		
+LT934125.1	Liftoff	exon	126752	128251	.	-	.	"ID=id7;Parent=US1-splice-L2-2-2;transcript_id=US1-splice-L2-2-2"	Splice	US1		

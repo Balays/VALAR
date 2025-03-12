@@ -1,0 +1,10 @@
+import(GenomeInfoDb)
+import(BSgenome)
+
+### Don't export BSgenome.PRV.MdBio.1.0 or PRV (the new and
+### old names of the BSgenome object defined in this package): the object
+### is created and its 2 names are dynamically exported at load time (refer
+### to R/zzz.R for the details).
+#export(BSgenome.PRV.MdBio.1.0)
+#export(PRV)
+

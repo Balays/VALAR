@@ -20,7 +20,12 @@ bamfiles <- list.files(bamdir, pattern, recursive = T, full.names = T)
 ### Project name and output directory
 outdir  <- 'PRV-MDBIO-4cell'; try({ dir.create(outdir) })
 
-### Config file creation
+#### ####
+##
+
+##
+#### Config file creation ####
+
 config <- list(
   
   ## input bamfiles
@@ -100,6 +105,7 @@ saveRDS(config, file = paste0(outdir, '_config.rds'))
 
 #### Load configuration file
 config <- readRDS(paste0(outdir, '_config.rds'))
+
 
 ##
 #### WF Part 0. ####

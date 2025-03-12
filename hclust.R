@@ -185,9 +185,6 @@ ggplot(filtered_clusters) +
 
 
 
-
-
-
 # Compute the summary for each meta_cluster
 meta_peaks <- all_clusters_long[, .(
   min_peak = min(cluster_peak),
