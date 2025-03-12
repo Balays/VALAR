@@ -1,72 +1,11 @@
 
 
-##
-### Import clusters
-CAGE_clusters <- fread('CAGE.all.tagClusters.txt')
-colnames(CAGE_clusters)[2] <- 'seqnames'
 
-CAGE_clusters[,orientation := fifelse(strand == '+', 1, 0)]
-CAGE_clusters[,gene := paste0('CAGE_cluster_', .GRP), by=.(cluster)]
-CAGE_clusters[,strand := factor(strand, levels = c('+', '-', '*'))]
+### TSSr Results from dcDNA reads (combined clusters)
+TSSr_clusters <- fread('TSSr.dcDNA.all.ConsClusters.txt')
 
-CAGE_clusters[,prime5 := fifelse(strand == '+', start, end)][,prime3 := fifelse(strand == '+', end, start)]
-CAGE_clusters[,TSS.win.start := start]
-CAGE_clusters[,TSS.win.end   := end]
-CAGE_clusters[,TSS.win.size  := abs(TSS.win.end - TSS.win.start) + 1]
 
-### Import counts
-## TSSr Results
-CAGE_counts <- rbind(
-  data.table(readxl::read_xlsx('ALL.samples.TSS.orient.xlsx', 1)),
-  data.table(readxl::read_xlsx('ALL.samples.TSS.orient.xlsx', 2))
-)
-
-colnames(CAGE_counts)[1] <- 'seqnames'
-## melt
-CAGE_counts <- melt(CAGE_counts, 1:3, value.name = 'count', variable.name = 'sample')
-## Exclude unkown samples and sum
-CAGE_counts <- CAGE_counts[!grepl('unknown', sample), ]
-CAGE_counts <- CAGE_counts[!grepl('sum', sample), ]
-## cast
-CAGE_counts <- dcast.data.table(CAGE_counts, ... ~ sample, value.var = 'count')
-##
-CAGE_counts[,start := pos][, end := pos]
-
-### Merge
-CAGE_m <- foverlaps2(CAGE_counts, CAGE_clusters, minoverlap=1)
-
-CAGE_m[,start := pos]
-CAGE_m[,end   := pos]
-
-CAGE_m[,i.start := NULL]
-CAGE_m[,i.end   := NULL]
-CAGE_m[,width_x := NULL]
-CAGE_m[,width_y := NULL]
-CAGE_m[,overlap_size:= NULL]
-
-CAGE_m <- melt(CAGE_m, 1:19, value.name = 'count', variable.name = 'sample')
-
-cagefr.clust <- CAGE_m
-
-## Score is the same as tags value
-cagefr.clust[, score   := as.integer(tags)]
-
-## Support is the number of samples where any position in a CAGE cluster was non-zero
-cage.support <- cagefr.clust[count > 0, .(support = uniqueN(sample)), by = gene]
-cagefr.clust <- merge(cagefr.clust, cage.support, by='gene')
-cagefr.clust[is.na(support), support := 0]
-#cagefr.clust[, .N, support]
-
-cagefr.clust[,width := TSS.win.size]
-cagefr.clust[,TSS.win.size := NULL]
-
-CAGE_m <- dcast.data.table(cagefr.clust, ... ~ sample, value.var = 'count', fill=0)
-
-cagefr.clust[,sample := NULL] [,count := NULL][, pos := NULL]
-cagefr.clust[,start := TSS.win.start]
-cagefr.clust[,end   := TSS.win.end]
-
-cagefr.clust <- unique(cagefr.clust)
+#tagClusters_sp <- dcast.data.table(tagClusters, ... ~ group, value.var = )
 
 
 ggplot(cagefr.clust) +
