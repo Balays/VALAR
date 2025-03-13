@@ -4,9 +4,14 @@ library(data.table)
 
 prime5.counts <- fread(paste0(outdir, '/prime5.counts.tsv'), na.strings = '')
 
-prime5.counts[, sample := gsub('-', '_', sample)]
+prime5.counts[, sample    := gsub('-', '_', sample)]
+prime5.counts[, cell_line := gsub('-', '_', cell_line)]
+prime5.counts[, group     := paste(cell_line, hpi, sep='_')]
 
+## filter out C6 0.5 h samples
 prime5.counts <- prime5.counts[!grepl('C6_0.5h', sample),]
+
+
 
 TssData <- dcast.data.table(prime5.counts[correct_tss == T], 
                             seqnames + pos + strand ~ sample, 
@@ -28,7 +33,7 @@ sampleLabels[, mergeIndex         := .GRP, by=sampleLabelsMerged]
 #set parameters
 refSource <- "refgenome/Refgenome/LT934125.1-2.gff3"
 organismName <- "PRV"
-directory_path <- paste0(outdir, "/TSSr/")
+directory_path <- paste0(outdir, "/TSSr"); dir.create(directory_path)
 
 
 #create TSSr object
@@ -61,6 +66,8 @@ exportTSStable(myTSSr, data = "raw", merged = "FALSE")
 
 TSS.raw.dt  <- as.data.table(myTSSr@TSSprocessedMatrix)
 
+fwrite(TSS.raw.dt, 'TSS.raw.dt.txt', sep='\t')
+
 
 #myTSSr@librarySizes
 # Filter and normalize counts
@@ -70,6 +77,9 @@ exportTSStable(myTSSr, data = "processed")
 
 TSS.dt <- myTSSr@TSSprocessedMatrix
 
+fwrite(TSS.dt, 'TSS.processed.dt.txt', sep='\t')
+
+
 # Cluster into TSS Clusters
 clusterTSS(myTSSr, method = "peakclu",peakDistance=100,extensionDistance=30
            ,localThreshold = 0.02, clusterThreshold = 1
@@ -78,11 +88,16 @@ clusterTSS(myTSSr, method = "peakclu",peakDistance=100,extensionDistance=30
 
 # Extract clusters
 tagClusters <- rbindlist(myTSSr@tagClusters, idcol = 'group', use.names = T)
+tagClusters[, cluster_width := end - start +1]
+# 
+tagClusters  <- merge(tagClusters, unique(prime5.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
+tagClusters  <- tagClusters[!grepl('dRNA', group), ]
+
 fwrite(tagClusters, 'TSSr.dcDNA.all.tagClusters.txt', sep='\t')
 
 
 # Consensus clusters
-consensusCluster(myTSSr)
+consensusCluster(myTSSr, dis = 25)
 
 # Extract Consensus clusters
 ConsClusters <- rbindlist(myTSSr@consensusClusters, idcol = 'group', use.names = T)
@@ -104,16 +119,21 @@ ConsClusters <- fread('TSSr.dcDNA.all.ConsClusters.txt')
 
 
 
+
 ##### 
 ConsClusters <- ConsClusters[!grepl('dRNA', group), ]
 
 #### Meta Clusters
-filtered_clusters <- ConsClusters[,.(hpi = unlist(stri_extract_first_regex('C6_12h', '[0-9]*h')),
-                                     cell_line = gsub('_[0-9]*h', '', group),
+filtered_clusters <- ConsClusters[,.(cluster, group, 
+                                     #hpi = unlist(stri_extract_last_regex(group, '[0-9\\.]*h')),
+                                     #cell_line = stri_replace_first_regex(group, '_.*h', ''),
                                      cluster_start = start, cluster_end = end, seqnames = chr, strand,
                                      cluster_width = end - start + 1,
                                      cluster_peak = dominant_tss,
                                      cluster_total_count = tags )]
+
+# 
+filtered_clusters <- merge(filtered_clusters, unique(prime5.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
 
 # Order the clusters
 setorder(filtered_clusters, seqnames, strand, cluster_start)
@@ -150,12 +170,12 @@ filtered_clusters <- fread(paste0(outdir, '/TSSr.filtered_clusters.tsv'), na.str
 meta_summary <- filtered_clusters[, .(
   meta_cluster_start = min(cluster_start),
   meta_cluster_end   = max(cluster_end),
+  meta_cluster_width = max(cluster_end) - min(cluster_start) +1,
   consensus_peak     = mean(cluster_peak),  # or weighted average if desired
-  peak_shift         = max(cluster_peak) - min(cluster_peak),
   min_peak = min(cluster_peak),
   max_peak = max(cluster_peak),
   mean_peak = mean(cluster_peak),
-  width_range        = max(cluster_width) - min(cluster_width),
+  #width_range        = max(cluster_width) - min(cluster_width),
   sample_count       = .N,
   hpi_samples        = paste(unique(hpi), collapse = ", "),
   cell_lines         = paste(unique(cell_line), collapse = ", "),
@@ -164,11 +184,57 @@ meta_summary <- filtered_clusters[, .(
 
 filtered_clusters <- merge(filtered_clusters, meta_summary, by=c('seqnames', 'strand', 'meta_cluster'))
 
+filtered_clusters[, peak_shift := consensus_peak - cluster_peak, by = .(seqnames, strand, hpi, cell_line, cluster)]
 
-meta_summary
+
+### Cluster and Meta-cluster widths
+
+ggplot(filtered_clusters) +
+  geom_boxplot(aes(cell_line, cluster_width)) +
+  facet_nested(cols=vars(hpi)) +
+  theme_minimal()
+
 
 ggplot(meta_summary) +
-  geom_histogram(aes(width_range), binwidth =  1)
+  geom_boxplot(aes(strand, meta_cluster_width))
+
+
+## histogram
+ggplot(tagClusters) +
+  geom_histogram(aes(cluster_width, fill=cell_line), binwidth =  10) +
+  xlim(c(0,1000))  +
+  facet_nested(rows=vars(hpi)) +
+  theme_minimal() +
+  theme(legend.position = 'bottom')
+
+
+cowplot::plot_grid(
+  ggplot(filtered_clusters) +
+    geom_histogram(aes(cluster_width, fill=cell_line), binwidth =  10) +
+    xlim(c(0,1000))  +
+    facet_nested(rows=vars(hpi)) +
+    theme_minimal() +
+    theme(legend.position = 'bottom')
+  ,
+  ggplot(meta_summary) +
+    geom_histogram(aes(meta_cluster_width), binwidth =  10) +
+    xlim(c(0,1000))  +
+    facet_nested(rows=vars(seqnames)) +
+    theme_minimal()
+  ,
+  ncol = 1, rel_heights = c(3,1), axis = 'tblr')
+
+# the cluster and meta_cluster widths do not differ too much.
+# so, the cluster refinement - parametric distribution fitting - will be carried out on the meta-clusters.
+
+
+### Peak shifts
+ggplot(filtered_clusters) +
+  geom_boxplot(aes(cell_line, peak_shift)) +
+  geom_point(aes(cell_line, peak_shift)) + 
+  facet_nested(cols=vars(hpi)) +
+  theme_minimal()
+
 
 ggplot(meta_summary) +
   geom_bar(aes(peak_shift))

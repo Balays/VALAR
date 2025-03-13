@@ -1,44 +1,96 @@
+
 library(data.table)
 library(fitdistrplus)
 library(sn)  # For skew-normal fitting
+library(ggplot2)
+library(pracma)  # For peak detection
+library(BiocParallel)  # For parallel processing
 
 # Convert TSSr processed matrix to data.table
-TSS.dt <- as.data.table(myTSSr@TSSprocessedMatrix)
-TSS.dt <- TSS.raw.dt
-tagClusters <- as.data.table(tagClusters)
+#TSS.dt <- as.data.table(myTSSr@TSSprocessedMatrix)
 
-# List to store refined TSS annotations
-result_list <- list()
+## use the raw counts instead of TPM normalization - we'll carry out the fitting on each sample group so no normalization is neccessary
+TSS.dt <- fread('TSS.raw.dt.txt', na.strings='')
 
-# Iterate over each sample separately
-for (sample in colnames(TSS.dt)[-(1:3)]) {  # Skip first 3 columns (chr, pos, strand)
+
+## Consensus Clusters from TSSr
+filtered_clusters <- fread(paste0(outdir, '/TSSr.filtered_clusters.tsv'), na.strings = '')
+
+
+# Define parallel processing parameters
+bp_param <- MulticoreParam(workers = parallel::detectCores() - 1)  # Use all but one core
+
+# Function to process a single cluster
+process_cluster <- function(sample, cl) {
+  message(paste("Processing cluster", cl, "in sample", sample))
   
-  # Subset data for this sample
-  sample_data <- TSS.dt[, .(chr, pos, strand, count = get(sample))]
-  sample_data <- sample_data[count > 0]  # Remove zero-count positions
+  cluster_data <- filtered_clusters[group == sample & cluster == cl]
   
-  # Iterate over each cluster in this sample
-  for (cl in tagClusters[group == sample]$cluster) {
+  region_data <- TSS.dt[chr == cluster_data$seqnames & 
+                        strand == cluster_data$strand & 
+                        pos >= cluster_data$cluster_start  & 
+                        pos <= cluster_data$cluster_end , 
+                        .(chr, pos, strand, count = get(sample))]
+  
+  if (nrow(region_data) == 0) {
+    message(paste("Skipping empty cluster", cl, "in sample", sample))
+    return(NULL)
+  }
+  
+  # Expand positions based on read counts
+  pos_vec <- tryCatch({
+    unlist(lapply(1:nrow(region_data), function(i) rep(region_data$pos[i], times = as.integer(round(region_data$count[i])))))
+  }, error = function(e) {
+    message(paste("Error in expanding positions for cluster", cl, "in sample", sample, "-", e$message))
+    return(NULL)
+  })
+  
+  if (is.null(pos_vec) || length(pos_vec) < 5) {
+    message(paste("Skipping small cluster", cl, "in sample", sample))
+    return(NULL)
+  }
+  
+  # Detect peaks using Kernel Density Estimation (KDE)
+  peaks <- tryCatch({
+    density_data <- density(pos_vec, bw = "nrd0")
+    findpeaks(density_data$y, nups = 1, ndowns = 1, npeaks = Inf, sortstr = TRUE)
+  }, error = function(e) {
+    message(paste("Error in peak detection for cluster", cl, "in sample", sample, "-", e$message))
+    return(NULL)
+  })
+  
+  if (is.null(peaks) || nrow(peaks) == 0) {
+    message(paste("No peaks found in cluster", cl, "in sample", sample))
+    return(NULL)
+  }
+  
+  # Process each peak separately
+  peak_results <- lapply(1:nrow(peaks), function(peak_idx) {
+    peak_pos <- tryCatch({
+      density_data$x[peaks[peak_idx, 2]]  # Peak location
+    }, error = function(e) {
+      message(paste("Error extracting peak position for cluster", cl, "in sample", sample, "-", e$message))
+      return(NA)
+    })
     
-    # Extract cluster region
-    cluster_data <- tagClusters[group == sample & cluster == cl]
+    if (is.na(peak_pos)) return(NULL)
     
-    # Extract positions within cluster boundaries
-    region_data <- sample_data[chr == cluster_data$chr & 
-                                 strand == cluster_data$strand & 
-                                 pos >= cluster_data$start & 
-                                 pos <= cluster_data$end]
+    # Define local window around the peak (e.g., ±30 nt)
+    window_start <- max(cluster_data$start, round(peak_pos - 30))
+    window_end <- min(cluster_data$end, round(peak_pos + 30))
     
-    if (nrow(region_data) == 0) next  # Skip empty clusters
+    # Subset data within this window
+    sub_region_data <- region_data[pos >= window_start & pos <= window_end]
+    sub_pos_vec <- tryCatch({
+      unlist(lapply(1:nrow(sub_region_data), function(i) rep(sub_region_data$pos[i], times = as.integer(round(sub_region_data$count[i])))))
+    }, error = function(e) {
+      message(paste("Error in expanding sub-region data for cluster", cl, "in sample", sample, "-", e$message))
+      return(NULL)
+    })
     
-    # Expand positions based on read counts
-    pos_vec <- unlist(lapply(1:nrow(region_data), function(i) rep(region_data$pos[i], times = as.integer(round(region_data$count[i])))))
+    if (is.null(sub_pos_vec) || length(sub_pos_vec) < 5) return(NULL)  # Skip small peak regions
     
-    if (length(pos_vec) < 5) next  # Skip clusters with insufficient data
-    
-    # Reference point: use dominant_tss as 0, measure distances
-    peak_pos <- cluster_data$dominant_tss
-    dist_vec <- pos_vec - peak_pos  # Negative = upstream, Positive = downstream
+    dist_vec <- sub_pos_vec - peak_pos  # Normalize distances around peak
     
     # Initialize fit variables
     gamma_fit <- NULL
@@ -46,39 +98,46 @@ for (sample in colnames(TSS.dt)[-(1:3)]) {  # Skip first 3 columns (chr, pos, st
     sn_fit <- NULL
     sn_TSS <- NA
     
-    # Fit gamma distribution (for right-skewed TSS peaks)
-    if (length(dist_vec[dist_vec >= 0]) > 5) {  # Ensure enough data for fitting
+    # Shift distribution for Gamma fitting
+    shift_val <- abs(min(dist_vec)) + 1
+    dist_vec_shifted <- dist_vec + shift_val
+    
+    # Fit gamma distribution
+    if (length(dist_vec_shifted) > 5) {
       tryCatch({
-        gamma_fit <- fitdist(dist_vec[dist_vec >= 0], "gamma")
+        gamma_fit <- fitdist(dist_vec_shifted, "gamma")
         gamma_mode <- (gamma_fit$estimate["shape"] - 1) / gamma_fit$estimate["rate"]
-        gamma_TSS <- round(peak_pos + gamma_mode)  # Convert back to genomic position
+        gamma_TSS <- round(peak_pos + (gamma_mode - shift_val))
       }, error = function(e) {
+        message(paste("Error in Gamma fitting for cluster", cl, "in sample", sample, "-", e$message))
         gamma_fit <- NULL
         gamma_TSS <- NA
       })
     }
     
-    # Fit skew-normal (for flexible peak fitting)
+    # Fit skew-normal distribution
     if (length(dist_vec) > 5) {
       tryCatch({
-        sn_fit <- selm(dist_vec ~ 1, family = "SN")  # Skew-normal fit
-        sn_params <- coef(sn_fit)  # Extract parameters
-        sn_mode <- sn_params[1]  # Location parameter (approximate mode)
+        sn_fit <- selm(dist_vec ~ 1, family = "SN")
+        sn_params <- coef(sn_fit)
+        sn_mode <- sn_params[1]
         sn_TSS <- round(peak_pos + sn_mode)
       }, error = function(e) {
+        message(paste("Error in Skew-Normal fitting for cluster", cl, "in sample", sample, "-", e$message))
         sn_fit <- NULL
         sn_TSS <- NA
       })
     }
     
-    # Store results as a named list
-    result_list[[paste0(sample, "_", cl)]] <- data.table(
+    # Return results as a data.table
+    return(data.table(
       sample = sample,
       cluster_id = cl,
-      chr = cluster_data$chr,
+      peak_id = peak_idx,
+      chr = cluster_data$seqnames,
       strand = cluster_data$strand,
-      cluster_start = cluster_data$start,
-      cluster_end = cluster_data$end,
+      cluster_start = window_start,
+      cluster_end = window_end,
       peak_pos = peak_pos,
       gamma_TSS = gamma_TSS,
       gamma_shape = if (!is.null(gamma_fit)) gamma_fit$estimate["shape"] else NA,
@@ -87,18 +146,40 @@ for (sample in colnames(TSS.dt)[-(1:3)]) {  # Skip first 3 columns (chr, pos, st
       sn_location = if (!is.null(sn_fit)) sn_params[1] else NA,
       sn_scale = if (!is.null(sn_fit)) sn_params[2] else NA,
       sn_skew = if (!is.null(sn_fit)) sn_params[3] else NA
-    )
-  }
+    ))
+  })
+  
+  return(rbindlist(peak_results, fill = TRUE))
 }
+
+# Prepare cluster information for parallel processing
+cluster_info_list <- filtered_clusters[, .(group, cluster)]
+
+# Run parallel processing with progress tracking
+message("Starting parallel processing...")
+result_list <- bplapply(seq_len(nrow(cluster_info_list)), function(i) {
+  process_cluster(cluster_info_list$group[i], cluster_info_list$cluster[i])
+}, BPPARAM = bp_param)
+message("Parallel processing completed.")
 
 # Convert list of data.tables to a single data.table safely
 TSS_results <- rbindlist(result_list, fill = TRUE)
 
-
-TSS_results[,cluster_width := cluster_end - cluster_start + 1]
-
 # Save refined TSS annotations
 fwrite(TSS_results, "TSS_refined_annotations.tsv", sep = "\t")
+
+# Print results
+message("TSS annotation refinement completed.")
+print(TSS_results)
+
+
+
+
+
+
+stop()
+
+TSS_results[,cluster_width := cluster_end - cluster_start + 1]
 
 TSS_results <- fread( "TSS_refined_annotations.tsv", sep = "\t")
 

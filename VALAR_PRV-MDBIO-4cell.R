@@ -20,108 +20,120 @@ bamfiles <- list.files(bamdir, pattern, recursive = T, full.names = T)
 ### Project name and output directory
 outdir  <- 'PRV-MDBIO-4cell'; try({ dir.create(outdir) })
 
+### Load config or make new?
+load.config <- F
+
+### Load Previous Results or Carry out Analysis?
+load.results <- T
+
+### All other settings ar in the config (file)
+
 #### ####
 ##
 
 ##
 #### Config file creation ####
 
-config <- list(
-  
-  ## input bamfiles
-  bamdir = bamdir,
-  pattern = pattern,
-  bamfiles = bamfiles,
-  
-  ## filter bamfiles for virus ?
-  bam_filt_outdir = paste0(bamdir, "_filtered"),
-  filter_bams = FALSE,
-  
-  ## results output - project folder
-  outdir = outdir,
-  
-  ## Neccessary packages and functions
-  misc_dir = 'C:/GitHub/Rlyeh/R',
-  minitax_dir = 'C:/GitHub/minitax/R',
-  
-  ## Metadata
-  metadata_from_bamfiles = T,
-  metadata_file = 'PRV-MDBIO-4cell_metadata.tsv',
-  metacols = c('sample', 'rep', 'hpi', 'Time', 'libtype', 'group', 'cell_line', 'sample_name'),
-  
-  ## Genome and annotation
-  genome = 'LT934125.1',
-  fasta_ref = 'refgenome/LT934125.1.fasta',
-  virus = 'PRV-MDBIO',
-  gff_file = 'refgenome/LT934125.1.gff3',
-  create.ann.from.gff = T,
-  feature.df.file = "refgenome/LT934125.1_feature.df.tsv",
-  ## reference transcripts
-  viral.ref.gff = "refgenome/LT934125.1_Torma_et_al_corrected.gff3",
-  
-  ## Other settings
-  nproc = 48,
-  
-  write.all = TRUE,
-  save.images = TRUE,
-  
-  rename_host_contigs = FALSE,
-  fix.viral.contigs = TRUE,
-  multiCellLines <- F,
-  
-  make.plots = TRUE,
-  
-  ## CAGE ?
-  include.cage = T,
-  
-  ## Coverage analysis settings
-  window_size = 50,
-  window_step = 50,
-  
-  ## Alignment analysis settings
-  is.lortia = TRUE,
-  rm.gaps.in.aln = TRUE,
-  
-  ## Coverage and alignment Analysis settings
-  flag  = scanBamFlag(isSupplementaryAlignment=FALSE),
-  param = ScanBamParam(what=scanBamWhat(), flag=scanBamFlag(isSupplementaryAlignment=FALSE)),
-  
-  ## GFF-compare settings
-  TR.reads.gfffile = paste0(outdir, '/TR.reads.gff2'),
-  
-  thresh.eq.prime5 = 10,
-  thresh.eq.prime3 = 10,
-  thresh.eq.junc   = 2
-  
-  
-)
+if (!load.config) {
+  config <- list(
+    
+    ## input bamfiles
+    bamdir = bamdir,
+    pattern = pattern,
+    bamfiles = bamfiles,
+    
+    ## filter bamfiles for virus ?
+    bam_filt_outdir = paste0(bamdir, "_filtered"),
+    filter_bams = FALSE,
+    
+    ## results output - project folder
+    outdir = outdir,
+    
+    ## Neccessary packages and functions
+    misc_dir = 'C:/GitHub/Rlyeh/R',
+    minitax_dir = 'C:/GitHub/minitax/R',
+    
+    ## Metadata
+    metadata_from_bamfiles = T,
+    metadata_file = 'PRV-MDBIO-4cell_metadata.tsv',
+    metacols = c('sample', 'rep', 'hpi', 'Time', 'libtype', 'group', 'cell_line', 'sample_name'),
+    
+    ## Genome and annotation
+    genome = 'LT934125.1',
+    fasta_ref = 'refgenome/LT934125.1.fasta',
+    virus = 'PRV-MDBIO',
+    gff_file = 'refgenome/LT934125.1.gff3',
+    create.ann.from.gff = T,
+    feature.df.file = "refgenome/LT934125.1_feature.df.tsv",
+    ## reference transcripts
+    viral.ref.gff = "refgenome/LT934125.1_Torma_et_al_corrected.gff3",
+    
+    ## Other settings
+    nproc = 48,
+    
+    write.all = TRUE,
+    save.images = TRUE,
+    
+    rename_host_contigs = FALSE,
+    fix.viral.contigs = TRUE,
+    multiCellLines <- F,
+    
+    make.plots = TRUE,
+    
+    ## CAGE ?
+    include.cage = T,
+    
+    ## Coverage analysis settings
+    window_size = 50,
+    window_step = 50,
+    
+    ## Alignment analysis settings
+    is.lortia = TRUE,
+    rm.gaps.in.aln = TRUE,
+    
+    ## Coverage and alignment Analysis settings
+    flag  = scanBamFlag(isSupplementaryAlignment=FALSE),
+    param = ScanBamParam(what=scanBamWhat(), flag=scanBamFlag(isSupplementaryAlignment=FALSE)),
+    
+    ## GFF-compare settings
+    TR.reads.gfffile = paste0(outdir, '/TR.reads.gff2'),
+    
+    thresh.eq.prime5 = 10,
+    thresh.eq.prime3 = 10,
+    thresh.eq.junc   = 2
+    
+    
+  )
 
-saveRDS(config, file = paste0(outdir, '_config.rds'))
-
-#### ####
-##
-
-###### START WORKFLOW ! #######
+  saveRDS(config, file = paste0(outdir, '_config.rds'))
+  
+}
 
 #### Load configuration file
 config <- readRDS(paste0(outdir, '_config.rds'))
 
 
+#### ####
+##
+
+
 ##
 #### WF Part 0. ####
 
-##
-### Packages, functions, settings, metadata and annotation
+
+## Packages, functions, settings, metadata and annotation
+
+###
 source('_WF.part0.R')
 
 
 
-### Reference Transcripts
+## Reference Transcripts
 
-## Import and Format 
+### Import and Format 
 source('import.ref.TRs.R')
 
-## Export
+### Export
 export.gff2(as.data.frame(viral.ref), "refgenome/LT934125.1_Torma_et_al_corrected_w_CDS.genes.gff2")
 export.gff3(as.data.frame(viral.ref), "refgenome/LT934125.1_Torma_et_al_corrected_w_CDS.genes.gff3")
 
@@ -129,9 +141,17 @@ fwrite(TR.Ref.data, paste0(outdir, '/TR.Ref.data.tsv'), sep = '\t')
 TR.Ref.data <- fread(paste0(outdir, '/TR.Ref.data.tsv'))
 
 
+## Load Previous Results
+### 
+if(load.results) { source('_Load_Results.R') }
 
 #### ####
 ##
+
+
+
+###### START WORKFLOW ! #######
+
 
 
 ##

@@ -7,7 +7,7 @@ library(BSgenome)
 
 
 # Create BSgenome from seed file
-setwd("refgenome/Refgenome/")
+#setwd("refgenome/Refgenome/")
 #seed_file <- "D:/Armin/MPOX/refgenome/MPXV_MDBIO4.txt"
 forgeBSgenomeDataPkg("refgenome/Refgenome/BSgenome.PRV-seed.txt", replace = T)
 
@@ -22,6 +22,13 @@ pkg_dir <- "refgenome/Refgenome/BSgenome.PRV.MdBio.1.0"
 devtools::check(pkg_dir)
 devtools::build(pkg_dir)
 devtools::install(pkg_dir)
+
+
+
+
+
+
+stop()
 
 
 #load BSgenome package
