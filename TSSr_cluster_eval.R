@@ -20,6 +20,12 @@ filtered_clusters <- fread(paste0(outdir, '/TSSr.filtered_clusters.tsv'), na.str
 # Define parallel processing parameters
 bp_param <- MulticoreParam(workers = parallel::detectCores() - 1)  # Use all but one core
 
+# Define parallel processing parameters
+bp_param <- MulticoreParam(workers = parallel::detectCores() - 1)  # Use all but one core
+
+# Option to enable or disable KDE-based peak detection
+use_KDE <- FALSE  # Set to FALSE to disable KDE peak separation
+
 # Function to process a single cluster
 process_cluster <- function(sample, cl) {
   message(paste("Processing cluster", cl, "in sample", sample))
@@ -27,12 +33,11 @@ process_cluster <- function(sample, cl) {
   cluster_data <- filtered_clusters[group == sample & cluster == cl]
   
   region_data <- TSS.dt[chr == cluster_data$seqnames & 
-                        strand == cluster_data$strand & 
-                        pos >= cluster_data$cluster_start  & 
-                        pos <= cluster_data$cluster_end , 
-                        .(chr, pos, strand, count = get(sample))]
+                          strand == cluster_data$strand & 
+                          pos >= cluster_data$cluster_start & 
+                          pos <= cluster_data$cluster_end, .(chr, pos, strand, count = get(sample))]
   
-  if (nrow(region_data) == 0) {
+  if (nrow(region_data) <= 1) {
     message(paste("Skipping empty cluster", cl, "in sample", sample))
     return(NULL)
   }
@@ -50,24 +55,28 @@ process_cluster <- function(sample, cl) {
     return(NULL)
   }
   
-  # Detect peaks using Kernel Density Estimation (KDE)
-  peaks <- tryCatch({
-    density_data <- density(pos_vec, bw = "nrd0")
-    findpeaks(density_data$y, nups = 1, ndowns = 1, npeaks = Inf, sortstr = TRUE)
-  }, error = function(e) {
-    message(paste("Error in peak detection for cluster", cl, "in sample", sample, "-", e$message))
-    return(NULL)
-  })
+  # Detect peaks using Kernel Density Estimation (KDE) if enabled
+  peaks <- NULL
+  if (use_KDE) {
+    peaks <- tryCatch({
+      density_data <- density(pos_vec, bw = "nrd0")
+      findpeaks(density_data$y, nups = 1, ndowns = 1, npeaks = Inf, sortstr = TRUE)
+    }, error = function(e) {
+      message(paste("Error in peak detection for cluster", cl, "in sample", sample, "-", e$message))
+      return(NULL)
+    })
+  }
   
-  if (is.null(peaks) || nrow(peaks) == 0) {
-    message(paste("No peaks found in cluster", cl, "in sample", sample))
-    return(NULL)
+  # If KDE is disabled or no peaks are found, use the dominant position as a single peak
+  if (!use_KDE || is.null(peaks) || nrow(peaks) == 0) {
+    peaks <- matrix(nrow = 1, ncol = 2)
+    peaks[1, 2] <- which.max(tabulate(match(pos_vec, unique(pos_vec))))  # Most frequent position
   }
   
   # Process each peak separately
   peak_results <- lapply(1:nrow(peaks), function(peak_idx) {
     peak_pos <- tryCatch({
-      density_data$x[peaks[peak_idx, 2]]  # Peak location
+      if (use_KDE) density_data$x[peaks[peak_idx, 2]] else unique(pos_vec)[peaks[peak_idx, 2]]
     }, error = function(e) {
       message(paste("Error extracting peak position for cluster", cl, "in sample", sample, "-", e$message))
       return(NA)
@@ -155,7 +164,7 @@ process_cluster <- function(sample, cl) {
 # Prepare cluster information for parallel processing
 cluster_info_list <- filtered_clusters[, .(group, cluster)]
 
-# Run parallel processing with progress tracking
+# Run parallel processing
 message("Starting parallel processing...")
 result_list <- bplapply(seq_len(nrow(cluster_info_list)), function(i) {
   process_cluster(cluster_info_list$group[i], cluster_info_list$cluster[i])
@@ -180,8 +189,10 @@ print(TSS_results)
 stop()
 
 TSS_results <- fread( "TSS_refined_annotations.tsv", sep = "\t")
-
 TSS_results[,cluster_width := cluster_end - cluster_start + 1]
+
+TSS_results[, .N, by = .(peak_id)]
+
 
 
 TSS_results_comb <- merge(TSS_results, tagClusters, 
