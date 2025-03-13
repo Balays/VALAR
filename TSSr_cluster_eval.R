@@ -179,9 +179,9 @@ print(TSS_results)
 
 stop()
 
-TSS_results[,cluster_width := cluster_end - cluster_start + 1]
-
 TSS_results <- fread( "TSS_refined_annotations.tsv", sep = "\t")
+
+TSS_results[,cluster_width := cluster_end - cluster_start + 1]
 
 
 TSS_results_comb <- merge(TSS_results, tagClusters, 
