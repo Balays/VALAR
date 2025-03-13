@@ -1,20 +1,22 @@
 
 
 
+
+### dcDNA TransFrags Results
+TR.gff.compare.merged.TR.counts.gt <- fread(paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.tsv"), na.strings = '')
+
+
 ### TSSr Results from dcDNA reads (combined clusters)
-TSSr_clusters <- fread('TSSr.dcDNA.all.ConsClusters.txt')
+TSSr_clusters_uni <- fread('TSSr.dcDNA.uni.Cluster.Results.txt')
+TSSr_clusters_uni[, gene := paste0('TC_', cluster)]
 
-
-#tagClusters_sp <- dcast.data.table(tagClusters, ... ~ group, value.var = )
-
-
-ggplot(cagefr.clust) +
+ggplot(TSSr_clusters_uni) +
   #geom_histogram(bins=50) +
   geom_col(aes(x=support, y=score)) # + facet_grid(rows = vars(support))
 
 
-ggplot(cagefr.clust) +
-  geom_histogram(aes(width), bins=50)
+ggplot(TSSr_clusters_uni) +
+  geom_histogram(aes(TC.width), bins=50)
 
 
 
@@ -34,25 +36,34 @@ TR.gff.compare.uni[,TR.prime5.win.end   := prime5]
 TR.gff.compare.uni[,TR.prime3.win.start := prime3]
 TR.gff.compare.uni[,TR.prime3.win.end   := prime3]
 
-
+## window for overlaps
+# +/- 10 bp
+ov.win <- 10
+# approx 1% increase in transfrag count per increase in window
 
 ##
 DTx <- TR.gff.compare.uni[,.(seqnames, strand, start = TR.prime5.win.start, end = TR.prime5.win.end, transcript_id)]
-DTy <- cagefr.clust[,.(seqnames, strand, start = TSS.win.start, end = TSS.win.end, width, gene, support, score, dominant_tss)]
+DTy <- TSSr_clusters_uni[, .(seqnames, strand, start = TC.start - ov.win, end = TC.end + ov.win, width = TC.width, gene, support, score, consensus_peak)]
 
-CAGE.TR.OV <-
+
+dcDNA.TSS.TF.OV <-
   foverlaps2(DTx=DTx,
              DTy=DTy,
              by=c('seqnames', 'strand', 'start', 'end'),
              #by.x=c('seqnames', 'strand', '', ''),
              #by.y=c('seqnames', 'strand', '',	''),
-             type=c('within'), minoverlap = 1
+             type=c('within'), minoverlap = 1,
   )
 
 
-length(unique(CAGE.TR.OV$transcript_id))
+length(unique(dcDNA.TSS.TF.OV$transcript_id))
+length(unique(dcDNA.TSS.TF.OV$transcript_id)) / length(unique(TR.gff.compare.uni$transcript_id))
 
-TR.gff.compare.uni <- merge(CAGE.TR.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, CAGE_ID=gene, support, score, dominant_tss, transcript_id)],
+
+# 90% percent of dcDNA TransFrags were supported by TSSr Clusters from the dcDNA reads (+/- 10 bp)
+
+
+TR.gff.compare.uni <- merge(dcDNA.TSS.TF.OV[,.(seqnames, strand, TC.start=start, TC.end=end, TC_ID=gene, support, score, consensus_peak, transcript_id)],
                             by.x=c('seqnames', 'strand', 'transcript_id'),
                             TR.gff.compare.uni, by.y=c('seqnames', 'strand', 'transcript_id'), all=T)
 
@@ -138,11 +149,15 @@ fwrite(TR.gff.compare.uni, paste0(outdir, '/TR.gff.compare.uni.tsv'), sep = '\t'
 #### ####
 TR.merged.data <- TR.Ref.data
 
-## Merge
-DTx <- TR.merged.data[,.(seqnames, strand, start = prime5.TR,     end = prime5.TR,   transcript_id, exon_number)]
-DTy <- cagefr.clust  [,.(seqnames, strand, start = TSS.win.start, end = TSS.win.end, width, gene, support, score, dominant_tss)]
+## window for overlaps
+# +/- 10 bp
+ov.win <- 10
+# approx 1% increase in transfrag count per increase in window
 
-CAGE.REF.OV <-
+DTx <- TR.merged.data[,.(seqnames, strand, start = prime5.TR,     end = prime5.TR,   transcript_id, exon_number)]
+DTy <- TSSr_clusters_uni[, .(seqnames, strand, start = TC.start - ov.win, end = TC.end + ov.win, width = TC.width, gene, support, score, consensus_peak)]
+
+dcDNA.TSS.REF.OV <-
   foverlaps2(DTx=DTx,
              DTy=DTy,
              by=c('seqnames', 'strand', 'start', 'end'),
@@ -151,12 +166,28 @@ CAGE.REF.OV <-
              type=c('within'), minoverlap = 1
   )
 
+length(unique(dcDNA.TSS.REF.OV$transcript_id))
+length(unique(dcDNA.TSS.REF.OV$transcript_id)) / length(unique(TR.merged.data$transcript_id))
 
-length(unique(CAGE.REF.OV$transcript_id))
+# 90% percent of Reference Transcripts were supported by TSSr Clusters from the dcDNA reads (+/- 10 bp)
+
+
+
+
+
+#### ITT JAROK :
+
+## To-DO:
+
+# have to check wether the CAGE also better with new clustering parameters !
+# Assign Cluster 3-primes
+
+
+
 
 TR.merged.data <- merge(TR.merged.data,
                         by.x=c('seqnames', 'strand', 'transcript_id', 'exon_number'),
-                        CAGE.REF.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, CAGE_ID=gene, support, score, dominant_tss, transcript_id, exon_number)],
+                        CAGE.REF.OV[,.(seqnames, strand, CAGE.cluster.start=start, CAGE.cluster.end=end, TC_ID=gene, support, score, dominant_tss, transcript_id, exon_number)],
                         by.y=c('seqnames', 'strand', 'transcript_id', 'exon_number'), all.x=T)
 
 

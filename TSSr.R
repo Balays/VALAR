@@ -10,7 +10,8 @@ prime5.counts[, group     := paste(cell_line, hpi, sep='_')]
 
 ## filter out C6 0.5 h samples
 prime5.counts <- prime5.counts[!grepl('C6_0.5h', sample),]
-
+## and dRNA
+prime5.counts <- prime5.counts[!grepl('dRNA', sample),]
 
 
 TssData <- dcast.data.table(prime5.counts[correct_tss == T], 
@@ -21,7 +22,7 @@ colnames(TssData)[1] <- 'chr'
 
 colSums(TssData[,-c(1:3)])
 
-fwrite(TssData, paste0(outdir, '/TssData.txt'), sep='\t')
+fwrite(TssData, paste0(outdir, '/TssData.dcDNA.txt'), sep='\t')
 
 
 sampleLabels  <- data.table(sampleLabels=colnames(TssData)[-c(1:3)])
@@ -38,7 +39,7 @@ directory_path <- paste0(outdir, "/TSSr"); dir.create(directory_path)
 
 #create TSSr object
 myTSSr <- new("TSSr", genomeName = "BSgenome.PRV.MdBio.1.0",
-              inputFiles = paste0(outdir, '/TssData.txt'),
+              inputFiles = paste0(outdir, '/TssData.dcDNA.txt'),
               inputFilesType = 'TSStable',
               sampleLabels = sampleLabels$sampleLabels,
               sampleLabelsMerged = unique(sampleLabels$sampleLabelsMerged),
@@ -66,7 +67,7 @@ exportTSStable(myTSSr, data = "raw", merged = "FALSE")
 
 TSS.raw.dt  <- as.data.table(myTSSr@TSSprocessedMatrix)
 
-fwrite(TSS.raw.dt, 'TSS.raw.dt.txt', sep='\t')
+fwrite(TSS.raw.dt, 'TSS.dcDNA.raw.dt.txt', sep='\t')
 
 
 #myTSSr@librarySizes
@@ -77,51 +78,130 @@ exportTSStable(myTSSr, data = "processed")
 
 TSS.dt <- myTSSr@TSSprocessedMatrix
 
-fwrite(TSS.dt, 'TSS.processed.dt.txt', sep='\t')
+fwrite(TSS.dt, 'TSS.dcDNA.processed.dt.txt', sep='\t')
 
 
-# Cluster into TSS Clusters
-clusterTSS(myTSSr, method = "peakclu",peakDistance=100,extensionDistance=30
-           ,localThreshold = 0.02, clusterThreshold = 1
-           ,useMultiCore=FALSE, numCores=NULL)
-
+# Viral-Specific TSS Clustering
+clusterTSS(myTSSr, method = "peakclu", 
+           peakDistance = 40,      # Reduce to enforce closer peaks
+           extensionDistance = 10, # Smaller extensions per cluster
+           localThreshold = 0.05,  # Higher threshold for dominant signals
+           clusterThreshold = 2   # Require stronger clusters
+           #, useMultiCore = TRUE
+           #, numCores = 14  # Enable parallelization
+)
 
 # Extract clusters
 tagClusters <- rbindlist(myTSSr@tagClusters, idcol = 'group', use.names = T)
 tagClusters[, cluster_width := end - start +1]
 # 
 tagClusters  <- merge(tagClusters, unique(prime5.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
-tagClusters  <- tagClusters[!grepl('dRNA', group), ]
+
 
 fwrite(tagClusters, 'TSSr.dcDNA.all.tagClusters.txt', sep='\t')
 
+#### -->> CHECK THE CLUSTERS ! 
 
-# Consensus clusters
+
+# Consensus clusters (Core Promoters)
 consensusCluster(myTSSr, dis = 25)
 
-# Extract Consensus clusters
 ConsClusters <- rbindlist(myTSSr@consensusClusters, idcol = 'group', use.names = T)
+ConsClusters[, cluster_width := end - start +1]
+# 
+ConsClusters  <- merge(ConsClusters, unique(prime5.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
+
 fwrite(ConsClusters, 'TSSr.dcDNA.all.ConsClusters.txt', sep='\t')
 
 
-#exportTSStoBedgraph(myTSSr, data = "processed", format = "bedGraph") 
-#exportTSStoBedgraph(myTSSr, data = "processed", format = "BigWig")
+# Cluster Shape of Consensus Clusters 
+shapeCluster(myTSSr,clusters = "consensusClusters", method = "PSS",useMultiCore= FALSE, numCores = NULL)
 
-#exportClustersTable(myTSSr, data = "tagClusters")
-#exportClustersToBed(myTSSr, data = "tagClusters") 
+ClusterShapes <- rbindlist(myTSSr@clusterShape, idcol = 'group', use.names = T)
 
-#exportClustersTable(myTSSr, data = "consensusClusters")
+ClusterShapes[, cluster_width := end - start +1]
+# 
+ClusterShapes  <- merge(ClusterShapes, unique(prime5.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
+
+fwrite(ClusterShapes, 'TSSr.dcDNA.all.ClusterShapes.txt', sep='\t')
 
 
-tagClusters <- fread('TSSr.dcDNA.all.tagClusters.txt')
+# Read back
+tagClusters   <- fread('TSSr.dcDNA.all.tagClusters.txt')
 
-ConsClusters <- fread('TSSr.dcDNA.all.ConsClusters.txt')
+ConsClusters  <- fread('TSSr.dcDNA.all.ConsClusters.txt')
 
+ClusterShapes <- fread('TSSr.dcDNA.all.ClusterShapes.txt')
+
+
+
+### Combine Clusters Across Samples
+
+TSSr_clusters <- copy(ClusterShapes)
+
+# TC Summaries
+TC_summary <- TSSr_clusters[, .(
+  TC.start = min(start), 
+  TC.end   = max(end),   
+  consensus_peak   = mean(dominant_tss),  # or weighted average if desired
+  min_peak    = min(dominant_tss),
+  max_peak    = max(dominant_tss),
+  mean_shape  = min(shape.score),
+  min_shape   = min(shape.score),
+  max_shape   = max(shape.score),
+  support     = uniqueN(group), # support is the number of sample (groups) in which the cluster was found
+  score       = sum(tags), # score is the sum of the tags of the cluster in all the groups
+  hpi_samples        = paste(unique(hpi), collapse = ", "),
+  cell_lines         = paste(unique(cell_line), collapse = ", ")
+), by = .(cluster)]
+
+TSSr_clusters <- merge(TSSr_clusters, TC_summary, by=c('cluster'))
+
+# Peak shifts
+TSSr_clusters[, peak_shift := consensus_peak - dominant_tss, by = .(chr , strand, hpi, cell_line, cluster)]
+TSSr_clusters[, TC.width   := max_peak - min_peak,  by = .(cluster)]
+
+
+# unique clusters
+TSSr_clusters_uni <- unique(TSSr_clusters[,.(seqnames = chr, strand, cluster, TC.start, TC.end, TC.width, support, score, 
+                                             mean_shape, min_shape, max_shape,
+                                             consensus_peak, min_peak, max_peak, 
+                                             hpi_samples, cell_lines)])
+
+#
+fwrite(TSSr_clusters, 'TSSr.dcDNA.all.Cluster.Results.txt', sep='\t')
+
+#
+fwrite(TSSr_clusters_uni, 'TSSr.dcDNA.uni.Cluster.Results.txt', sep='\t')
+
+
+
+### Peak shifts
+ggplot(TSSr_clusters) +
+  geom_boxplot(aes(cell_line, peak_shift)) +
+  geom_point(aes(cell_line, peak_shift)) + 
+  facet_nested(cols=vars(hpi)) +
+  theme_minimal()
+
+
+
+
+###TSSr Results from dcDNA reads (combined clusters)
+TSSr_clusters <- fread('TSSr.dcDNA.all.ConsClusters.txt')
+
+
+stop()
+
+# Core promoter shifts
+shiftPromoter(myTSSr,comparePairs=list(c("control","treat")), pval = 0.01)
+
+# Analysis of enhancers
+callEnhancer(myTSSr, flanking = 250)
 
 
 
 ##### 
-ConsClusters <- ConsClusters[!grepl('dRNA', group), ]
+#ConsClusters <- ConsClusters[!grepl('dRNA', group), ]
 
 #### Meta Clusters
 filtered_clusters <- ConsClusters[,.(cluster, group, 
