@@ -1,0 +1,7 @@
+sample	cell_line	hpi	Time	bamfiles	libtype	group	sample_name
+AGTG	PK-15	4h	4	AGTG_mappedAligned.out.bam	CAGE	PK-15_CAGE_4h	PK-15_CAGE_4h
+ACCG	PK-15	12h	12	ACCG_mappedAligned.out.bam	CAGE	PK-15_CAGE_12h	PK-15_CAGE_12h
+GCGG	PC-12	4h	4	GCGG_mappedAligned.out.bam	CAGE	PC-12_CAGE_4h	PC-12_CAGE_4h
+ATGG	PC-12	12h	12	ATGG_mappedAligned.out.bam	CAGE	PC-12_CAGE_12h	PC-12_CAGE_12h
+TACG	C6	4h	4	TACG_mappedAligned.out.bam	CAGE	C6_CAGE_4h	C6_CAGE_4h
+GCTG	C6	12h	12	GCTG_mappedAligned.out.bam	CAGE	C6_CAGE_12h	C6_CAGE_12h

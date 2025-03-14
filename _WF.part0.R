@@ -18,7 +18,6 @@ library(future.apply)
 library(purrr)
 library(BiocParallel)
 library(ggh4x)
-library(hrbrthemes)
 
 ### Own functions
 misc.dir <- config$misc_dir

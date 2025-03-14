@@ -19,7 +19,7 @@ saveRDS(bam.cov, cov.outfile)
 bam.cov         <- readRDS(cov.outfile)
 
 #### Fix sample names
-bam.cov[sample == 'MPOX_dRNA_inf_pass', sample := 'MPOX_inf_dRNA_pass_ON563414.3']
+#bam.cov[sample == 'MPOX_dRNA_inf_pass', sample := 'MPOX_inf_dRNA_pass_ON563414.3']
 
 
 #### Filter host 
@@ -27,8 +27,8 @@ bam.cov <- bam.cov[seqnames == genome,]
 
 
 ##### Analyse coverages
-bam.cov[,.(sum_count = sum(count)), by=sample]
-mapped.cov      <- merge(bam.cov, data.table(metafilt[,metacols]), by='sample', all=F)
+#bam.cov[,.(sum_count = sum(count)), by=sample]
+mapped.cov      <- merge(bam.cov, data.table(metafilt[,config$metacols]), by='sample', all=F)
 #mapped.cov[,sample:=combine.groups]
 
 

@@ -141,8 +141,8 @@ fwrite(TR.Ref.data, paste0(outdir, '/TR.Ref.data.tsv'), sep = '\t')
 TR.Ref.data <- fread(paste0(outdir, '/TR.Ref.data.tsv'))
 
 
-## Load Previous Results
-### 
+
+### Load Previous Results
 if(load.results) { source('_Load_Results.R') }
 
 #### ####
@@ -166,12 +166,17 @@ source('_WF.part1.R')
 ### Import coverages
 source('_WF.part2.R')
 
+
 ##
 ### CAGE Analysis
 if (config$include.cage) {
+  
   outdir  <- 'CAGE'; try({ dir.create(outdir) })
   
-  config <- source('CAGE_config.R')
+  ##config
+  source('CAGE_config.R')
+  
+  config <- CAGE_config
   
   is.lortia <- FALSE
   flag  <- scanBamFlag(isSupplementaryAlignment=FALSE)
@@ -186,6 +191,61 @@ if (config$include.cage) {
   ##
   ### Import CAGE coverages
   source('_WF.part2.R')
+  
+  ##
+  ### CAGE aligments
+  bam.filt <- bam.all [!is.na(seqnames)]
+  bam.filt <- bam.filt[seqnames == genome]
+  
+  rm('bam.all')
+  
+  fwrite(bam.filt, paste0(outdir, '/bam.filt.tsv'), sep='\t')
+  
+  bam.filt <- fread(paste0(outdir, '/bam.filt.tsv'), na.strings = '')
+  
+  
+  ##
+  ### CAGE TransFrags
+  source('makeTRs.R')
+  TR.uni[, TR_start := min(start), by =.(TR_ID)][, TR_end := max(end), by= .(TR_ID)]
+  TR.uni[,prime5.TR := fifelse(strand == '+', TR_start, TR_end)][,prime3.TR := fifelse(strand == '-', TR_start, TR_end)]
+  EX.uni <- TR.uni
+  TR.uni <- unique(TR.uni[,.(seqnames, TR_start, TR_end, strand, TR_ID, prime5.TR, prime3.TR)])
+  TR.data <- EX.uni
+  #
+  TR.data <- dcast(TR.data, seqnames + strand + TR_ID + TR_start + TR_end + exon_combination ~ exon_rank, value.var = 'exon_ID')
+  TR.data <- merge(TR.data, TR.counts, by='TR_ID', all=T)
+  #
+  CAGE.TR.data <- TR.data
+  fwrite(CAGE.TR.data, 'CAGE/TR.data.tsv', sep='\t')
+  
+  ##
+  ### prime5 and prime3 counts from TransFrag data
+  CAGE.TR.data <- fread('CAGE/TR.data.tsv')
+  CAGE.TR.data <- merge(CAGE.TR.data, meta_cage, by='sample')
+  setnames(CAGE.TR.data, new=c('start', 'end'), old=c('TR_start', 'TR_end'),skip_absent=TRUE)
+  
+  CAGE.TR.data[,prime3 := ifelse(strand == '+', end,   start)]
+  CAGE.TR.data[,prime5 := ifelse(strand == '+', start, end)]
+  
+  cols_to_group <- c(config$metacols, 'seqnames', 'strand', 'prime5')
+  prime5.counts <- CAGE.TR.data[count>0, .(count=sum(count)), by=cols_to_group][order(seqnames, strand, prime5)]
+  setnames(prime5.counts, 'prime5', 'pos')
+  prime5.counts[,endtype := 'prime5']
+  
+  cols_to_group <- c(config$metacols, 'seqnames', 'strand', 'prime3')
+  prime3.counts <- CAGE.TR.data[count>0, .(count=sum(count)), by=cols_to_group][order(seqnames, strand, prime3)]
+  setnames(prime3.counts, 'prime3', 'pos')
+  prime3.counts[,endtype := 'prime3']
+  
+  prime.counts  <- rbind(prime5.counts, prime3.counts, fill=T)
+  prime.counts.CAGE <- prime.counts
+  #prime.counts.CAGE$group <- paste0('CAGE_', prime.counts.CAGE$cell_line, '_', prime.counts.CAGE$hpi)
+  
+  fwrite(prime.counts.CAGE, paste0(outdir, '/prime.counts.CAGE.tsv'))
+  
+  ## END CAGE WF
+  
   
   
   #### Load MAIN configuration file again
@@ -735,11 +795,12 @@ prime3.counts <- CAGE.TR.data[count>0, .(count=sum(count)), by=cols_to_group][or
 setnames(prime3.counts, 'prime3', 'pos')
 prime3.counts[,endtype := 'prime3']
 
-prime.counts  <- rbind(prime5.counts, prime3.counts)
+prime.counts  <- rbind(prime5.counts, prime3.counts, fill=T)
 prime.counts.CAGE <- prime.counts
 #prime.counts.CAGE$group <- paste0('CAGE_', prime.counts.CAGE$cell_line, '_', prime.counts.CAGE$hpi)
 
 fwrite(prime.counts.CAGE, paste0(outdir, '/prime.counts.CAGE.tsv'))
+
 
 ### Read end counts from read-transcripts
 TR.gff.compare.merged.TR.counts.gt <- fread(paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.tsv"))
