@@ -1,3 +1,4 @@
+
 library(TSSr)
 library(BSgenome.PRV.MdBio.1.0)
 library(data.table)
@@ -35,10 +36,10 @@ sampleLabels[, mergeIndex         := .GRP, by=sampleLabelsMerged]
   
 
 #set parameters
-refSource <- "refgenome/Refgenome/LT934125.1-2.gff3"
+refSource <- "refgenome/LT934125.1.CDS.gff3"
 organismName <- "PRV"
 directory_path <- paste0(outdir, "/TSSr"); dir.create(directory_path)
-
+#myTSSr@refSource <- refSource
 
 #create TSSr object
 myTSSr <- new("TSSr", genomeName = "BSgenome.PRV.MdBio.1.0",
@@ -47,7 +48,8 @@ myTSSr <- new("TSSr", genomeName = "BSgenome.PRV.MdBio.1.0",
               sampleLabels = sampleLabels$sampleLabels,
               sampleLabelsMerged = unique(sampleLabels$sampleLabelsMerged),
               mergeIndex = sampleLabels$mergeIndex,
-              refSource = refSource,
+              #refSource = refSource,
+              refTable = setDT(viral.CDS), 
               organismName = organismName
 )
 
@@ -134,21 +136,87 @@ ClusterShapes  <- merge(ClusterShapes, unique(prime5.counts[,.(group, hpi, cell_
 fwrite(ClusterShapes, paste0(outdir, '/TSSr.dcDNA.all.ClusterShapes.txt'), sep='\t')
 
 
+####
+genes.dt <- data.table(viral.CDS)[,.(start = min(start), end = max(end)), by=.(seqnames, strand, gene, gene_id, Name)]
+genes.dt[,width := end - start + 1]
+myTSSr@refTable <- data.table(genes.dt)
+
+
+# Annotation (Assigning TCs to genes)
+annotateCluster(  myTSSr
+                  , clusters = "consensusClusters"
+                  , filterCluster = TRUE
+                  , filterClusterThreshold = 0.02
+                  , annotationType = "genes"
+                  , upstream=250
+                  , upstreamOverlap = 100
+                  , downstream = 0)
+
+
+assignedClusters <- rbindlist(myTSSr@assignedClusters, idcol = 'group', use.names = T)
+assignedClusters[, cluster_width := end - start +1]
+# 
+assignedClusters  <- merge(assignedClusters, unique(prime5.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
+
+# get the dominant TC per gene (highest tag)
+assignedClusters[,  dominant_TC := max(tags), by=.(gene, group)]
+assignedClusters[,  dominant_TC := fifelse(dominant_TC == tags,  cluster, 0)]
+
+## still there are more TC for some genes, so we need to check the distance of the TC to gene and select the closer one
+CDS.dt <- data.table(viral.CDS)[,.(CDS_start = min(start), CDS_end = max(end)), by=.(seqnames, strand, gene)]
+## consider spliced CDSs!
+CDS.dt[, CDS_prime5 := fifelse(strand == '+', CDS_start, CDS_end)]
+CDS.dt[, CDS_prime3 := fifelse(strand == '-', CDS_start, CDS_end)]
+
+
+assignedClusters$gene %in% CDS.dt$gene
+
+
+dup(CDS.dt$gene)
+assignedClusters <- merge(assignedClusters, CDS.dt, by.x=c('chr', 'strand', 'gene'), by.y=c('seqnames', 'strand', 'gene'), all.x = T)
+
+assignedClusters[,  TSS_CDS_dist := CDS_prime5 - dominant_tss]
+
+ggplot(assignedClusters, aes(TSS_CDS_dist)) + geom_histogram() + facet_grid(cols=vars(strand))
+## how can distance be greater than 250?
+
+
+assignedClusters[,  closest_TC  := min(abs(TSS_CDS_dist)), by=.(gene, group)]
+assignedClusters[,  closest_TC  := fifelse(closest_TC == abs(TSS_CDS_dist),  cluster, 0)]
+
+##
+fwrite(assignedClusters, paste0(outdir, '/TSSr.dcDNA.all.assignedClusters.txt'), sep='\t')
+
+
+## select closest and most dominant cluster for each gene
+assignedClusters  <- assignedClusters[ closest_TC  == cluster]
+
+assignedClusters  <- assignedClusters[ dominant_TC > 0]
+
+##
+fwrite(assignedClusters, paste0(outdir, '/TSSr.dcDNA.best.assignedClusters.txt'), sep='\t')
+
+##
+assignedClusters.sp <- dcast(assignedClusters[dominant_TC > 0], gene ~ group, value.var = 'dominant_tss')
+
+
+#####
+
 #
 saveRDS(myTSSr, paste0(outdir, '/TSSr.dcDNA.rds'))
 
 # Read back
 myTSSr <- readRDS(paste0(outdir, '/TSSr.dcDNA.rds'))
 
-TSS.raw.dt    <- fread(paste0(outdir, '/TSSr.CAGE.raw.txt'))
+TSS.raw.dt    <- fread(paste0(outdir, '/TSSr.dcDNA.raw.txt'))
 
-TSS.dt        <- fread(paste0(outdir, '/TSSr.CAGE.processed.txt'))
+TSS.dt        <- fread(paste0(outdir, '/TSSr.dcDNA.processed.txt'))
 
-tagClusters   <- fread(paste0(outdir, '/TSSr.CAGE.all.tagClusters.txt'))
+tagClusters   <- fread(paste0(outdir, '/TSSr.dcDNA.all.tagClusters.txt'))
 
-ConsClusters  <- fread(paste0(outdir, '/TSSr.CAGE.all.ConsClusters.txt'))
+ConsClusters  <- fread(paste0(outdir, '/TSSr.dcDNA.all.ConsClusters.txt'))
 
-ClusterShapes <- fread(paste0(outdir, '/TSSr.CAGE.all.ClusterShapes.txt'))
+ClusterShapes <- fread(paste0(outdir, '/TSSr.dcDNA.all.ClusterShapes.txt'))
 
 
 
@@ -200,12 +268,89 @@ ggplot(TSSr_clusters) +
   facet_nested(cols=vars(hpi)) +
   theme_minimal()
 
+genes.dt <- data.table(viral.CDS)[,.(start = min(start), end = max(end)), by=.(seqnames, strand, gene, gene_id, Name)]
+genes.dt[,width := end - start + 1]
 
+myTSSr@refTable <- data.table(genes.dt)
+
+# Annotation (Assigning TCs to genes)
+annotateCluster(  myTSSr
+                , clusters = "consensusClusters"
+                , filterCluster = TRUE
+                , filterClusterThreshold = 0.02
+                , annotationType = "genes"
+                , upstream=250
+                , upstreamOverlap = 100
+                , downstream = 0)
+
+
+assignedClusters <- rbindlist(myTSSr@assignedClusters, idcol = 'group', use.names = T)
+assignedClusters[, cluster_width := end - start +1]
+# 
+assignedClusters  <- merge(assignedClusters, unique(prime5.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
+
+# get the dominant TC per gene (highest tag)
+assignedClusters[,  dominant_TC := max(tags), by=.(gene, group)]
+assignedClusters[,  dominant_TC := fifelse(dominant_TC == tags,  cluster, 0)]
+
+## still there are more TC for some genes, so we need to check the distance of the TC to gene and select the closer one
+CDS.dt <- data.table(viral.CDS)[,.(CDS_start = min(start), CDS_end = max(end)), by=.(seqnames, strand, gene)]
+
+## consider spliced CDSs!
+CDS.dt[, CDS_prime5 := fifelse(strand == '+', CDS_start, CDS_end)]
+CDS.dt[, CDS_prime3 := fifelse(strand == '-', CDS_start, CDS_end)]
+
+dup(CDS.dt$gene)
+assignedClusters <- merge(assignedClusters, CDS.dt, by.x=c('chr', 'strand', 'gene'), by.y=c('seqnames', 'strand', 'gene'), all.x = T)
+
+assignedClusters[,  TSS_CDS_dist := CDS_prime5 - dominant_tss]
+
+ggplot(assignedClusters, aes(TSS_CDS_dist)) + geom_histogram() + facet_grid(cols=vars(strand))
+## OK!
+
+assignedClusters[,  closest_TC  := min(abs(TSS_CDS_dist)), by=.(gene, group)]
+assignedClusters[,  closest_TC  := fifelse(closest_TC == abs(TSS_CDS_dist),  cluster, 0)]
+
+##
+fwrite(assignedClusters, paste0(outdir, '/TSSr.dcDNA.all.assignedClusters.txt'), sep='\t')
+
+
+## select closest and most dominant cluster for each gene
+assignedClusters  <- assignedClusters[ closest_TC  == cluster]
+
+assignedClusters  <- assignedClusters[ dominant_TC > 0]
+
+##
+fwrite(assignedClusters, paste0(outdir, '/TSSr.dcDNA.best.assignedClusters.txt'), sep='\t')
+
+##
+assignedClusters.sp <- dcast(assignedClusters[dominant_TC > 0], gene ~ group, value.var = 'dominant_tss')
+
+
+
+## shifts from mean dominant_TSS
+assignedClusters[, mean_dominant_TSS     := round(mean(dominant_tss), 0), by=.(gene)]
+
+assignedClusters[, dominant_TSS_shift := mean_dominant_TSS - dominant_tss, by = .(cell_line, hpi, group, Time, gene)]
+assignedClusters[, mean_shift_TSS     := mean(abs(dominant_TSS_shift)), by=.(gene)]
+assignedClusters[, sd_shift_TSS       := sd(abs(dominant_TSS_shift)),   by=.(gene)]
+assignedClusters[, varcoeff_shif_TSS  := sd_shift_TSS / mean_shift_TSS,   by=.(gene)]
+
+
+ggplot(assignedClusters, aes(gene, dominant_TSS_shift)) + 
+  geom_point(aes(color = cell_line)) + 
+  coord_flip() +
+  facet_grid(cols=vars(Time))
 
 
 
 
 stop()
+
+
+
+
+
 
 # Core promoter shifts
 shiftPromoter(myTSSr,comparePairs=list(c("control","treat")), pval = 0.01)

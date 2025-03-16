@@ -13,8 +13,44 @@ viral.ref[type=='exon', exon_number := 1:.N, by = .(transcript_id)]
 viral.mrna <- viral.ref[,.(seqnames, source, type, phase, score, strand, start, end, transcript_id)]
 
 ## add CDS annotation as gene (because transcripts are annotated as genes in this one)
-viral.CDS <- feature.df
+viral.CDS <- data.table(feature.df)
+
 viral.CDS$type <- 'gene'
+
+## 
+viral.CDS[, phase   := 0 ]
+viral.CDS[, Name    := gene]
+viral.CDS[, ID      := gene]
+viral.CDS[, gene_id := gene]
+viral.CDS[, GeneID  := gene]
+export.gff3(viral.CDS, 'refgenome/LT934125.1.CDS.genes.gff3')
+
+
+viral.CDS.genes <- copy(viral.CDS)
+viral.CDS.genes[, type    := 'CDS' ]
+viral.CDS.genes <- rbind(viral.CDS.genes, viral.CDS)
+
+export.gff3(viral.CDS.genes, 'refgenome/LT934125.1.CDS.and.genes.gff3')
+
+library(txdbmaker)
+txdb <- makeTxDbFromGFF('refgenome/LT934125.1.CDS.and.genes.gff3', 'PRV', organism = 'PRV', format = "auto")
+ref  <- setDT(as.data.frame(genes(txdb)))
+  
+
+## TESTING GFF3
+gffFile <- system.file("extdata", "GFF3_files", "a.gff3", package="txdbmaker")
+gff     <- setDT(as.data.frame(import.gff3(gffFile)))
+gff     <- gff[,.(seqnames, strand, start, end, source, phase, score, Name, ID)]
+export.gff3(as.data.frame(gff), 'refgenome/test.gff3')
+ 
+txdb <- makeTxDbFromGFF('refgenome/test.gff3',
+                        dataSource="partial gtf file for Tomatoes for testing",
+                        organism="Solanum lycopersicum")
+ref  <- setDT(as.data.frame(genes(txdb)))
+
+
+
+
 viral.ref <- data.table(rbind(viral.mrna, viral.CDS, fill=TRUE))
 
 ### Annotated transcripts reference

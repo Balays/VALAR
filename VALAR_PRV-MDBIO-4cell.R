@@ -6,27 +6,29 @@ library(stringi)
 ##
 #### Before Starting ####
 
-### Path for bamfiles
-bamdir  <- "D:/data/PRV_3cell/rebasecall/mapped_v6_virus" 
-if (.Platform$OS.type!="windows") {
-  bamdir <- paste0('/mnt/', gsub(':', '/', tolower(gsub('/.*', '', bamdir))),
-                        stri_replace_first_regex(bamdir, '.*:/', ''))
-}
-
-
-pattern  <- '_stranded_only.bam$' ## this will be subtracted from the filename and supplied as a sample column 
-bamfiles <- list.files(bamdir, pattern, recursive = T, full.names = T)
-
 ### Project name and output directory
 outdir  <- 'PRV-MDBIO-4cell'; try({ dir.create(outdir) })
 
 ### Load config or make new?
-load.config <- F
+load.config <- T
 
 ### Load Previous Results or Carry out Analysis?
 load.results <- T
 
-### All other settings ar in the config (file)
+if(!load.config) {
+  
+  ### Path for bamfiles
+  bamdir  <- "D:/data/PRV_3cell/rebasecall/mapped_v6_virus" 
+  if (.Platform$OS.type!="windows") {
+    bamdir <- paste0('/mnt/', gsub(':', '/', tolower(gsub('/.*', '', bamdir))),
+                          stri_replace_first_regex(bamdir, '.*:/', ''))
+  }
+  
+  
+  pattern  <- '_stranded_only.bam$' ## this will be subtracted from the filename and supplied as a sample column 
+  bamfiles <- list.files(bamdir, pattern, recursive = T, full.names = T)
+  
+}
 
 #### ####
 ##
@@ -110,8 +112,12 @@ if (!load.config) {
 }
 
 #### Load configuration file
-config <- readRDS(paste0(outdir, '_config.rds'))
+config   <- readRDS(paste0(outdir, '_config.rds'))
 
+## input bamfiles
+bamdir   <- config$bamdir
+pattern  <- config$pattern
+bamfiles <- config$bamfiles
 
 #### ####
 ##
@@ -253,25 +259,6 @@ if (config$include.cage) {
   
   
 }
-
-
-##
-### Load back
-try({
-  
-  bam.all <- fread(paste0(outdir, '/bam.all.tsv'), na.strings = '')
-  
-  mapped.cov       <- fread(paste0(outdir, '/mapped.cov.tsv'), na.strings = '')
-  merged_cov       <- fread(paste0(outdir, '/merged_cov.tsv'), na.strings = '')
-  
-  win.cov.sum      <- fread(paste0(outdir, '/win.cov.sum.tsv'), na.strings = '')
-  win.cov.hpi.sum  <- fread(paste0(outdir, '/win.cov.hpi.sum.tsv'), na.strings = '')
-  
-  norm_cov_summary <- fread(paste0(outdir, '/norm.cov.summary.tsv'), na.strings = '')
-  
-  readcounts       <- fread(paste0(outdir, '/readcounts.tsv'), na.strings = '', header = T)
-  
-})
 
 ### remove
 rm(list = c('bam.all.list', 'bam.cov.list', 'mapped.cov', 'merged_cov', 'norm.cov'))

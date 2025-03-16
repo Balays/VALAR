@@ -1,7 +1,7 @@
 
 
 
-## Merge dcDNA TSSr Clustering results and CAGE TSSr clustering results with TransFrags
+## Merge dcDNA TSSr Clustering results and CAGE TSSr clustering results with TransFrags and Reference Transcripts
 
 
 #
@@ -11,6 +11,7 @@ dcDNA_TSSr_clusters <- fread(paste0(config$outdir,      '/TSSr.dcDNA.all.Cluster
 
 
 outdir <- config$outdir
+
 
 #### dcDNA TSSr
 TR.Ref.data.dcDNA        <- fread(paste0(outdir, '/TR.Ref.data.dcDNA.tsv'),        na.strings = '')

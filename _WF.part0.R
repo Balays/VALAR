@@ -152,6 +152,8 @@ if (config$create.ann.from.gff) {
   
   write.table(feature.df, config$feature.df.file, sep = '\t', row.names = F, quote = F)
   
+   
+  
 } else {
   feature.df <- read.delim(config$feature.df.file)
   feature.colname <- 'ID'
