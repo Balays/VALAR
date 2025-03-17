@@ -28,30 +28,23 @@ export.gff3(viral.CDS, 'refgenome/LT934125.1.CDS.genes.gff3')
 
 viral.CDS.genes <- copy(viral.CDS)
 viral.CDS.genes[, type    := 'CDS' ]
-viral.CDS.genes <- rbind(viral.CDS.genes, viral.CDS)
+#viral.CDS.genes <- rbind(viral.CDS.genes, viral.CDS)
 
-export.gff3(viral.CDS.genes, 'refgenome/LT934125.1.CDS.and.genes.gff3')
+export.gff3(viral.CDS.genes, 'refgenome/LT934125.1.CDS.gff3')
 
-library(txdbmaker)
-txdb <- makeTxDbFromGFF('refgenome/LT934125.1.CDS.and.genes.gff3', 'PRV', organism = 'PRV', format = "auto")
-ref  <- setDT(as.data.frame(genes(txdb)))
-  
-
-## TESTING GFF3
-gffFile <- system.file("extdata", "GFF3_files", "a.gff3", package="txdbmaker")
-gff     <- setDT(as.data.frame(import.gff3(gffFile)))
-gff     <- gff[,.(seqnames, strand, start, end, source, phase, score, Name, ID)]
-export.gff3(as.data.frame(gff), 'refgenome/test.gff3')
- 
-txdb <- makeTxDbFromGFF('refgenome/test.gff3',
-                        dataSource="partial gtf file for Tomatoes for testing",
-                        organism="Solanum lycopersicum")
-ref  <- setDT(as.data.frame(genes(txdb)))
-
-
+#library(txdbmaker)
+#txdb <- makeTxDbFromGFF('refgenome/LT934125.1.CDS.and.genes.gff3', 'PRV', organism = 'PRV', format = "auto")
+#ref  <- setDT(as.data.frame(genes(txdb)))
+### Parent column is missing probably  
 
 
 viral.ref <- data.table(rbind(viral.mrna, viral.CDS, fill=TRUE))
+
+
+## Genes (considering multi-exon CDSs)
+genes.dt <- data.table(viral.CDS)[,.(start = min(start), end = max(end)), by=.(seqnames, strand, gene, gene_id, Name)]
+genes.dt[,width := end - start + 1]
+
 
 ### Annotated transcripts reference
 TR.ref <- viral.mrna

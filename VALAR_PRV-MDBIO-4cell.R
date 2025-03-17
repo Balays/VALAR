@@ -133,13 +133,12 @@ bamfiles <- config$bamfiles
 source('_WF.part0.R')
 
 
-
 ## Reference Transcripts
 
 ### Import and Format 
 source('import.ref.TRs.R')
 
-### Export
+### Export mRNAS and genes (CDSs)
 export.gff2(as.data.frame(viral.ref), "refgenome/LT934125.1_Torma_et_al_corrected_w_CDS.genes.gff2")
 export.gff3(as.data.frame(viral.ref), "refgenome/LT934125.1_Torma_et_al_corrected_w_CDS.genes.gff3")
 
