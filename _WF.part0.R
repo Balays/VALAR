@@ -43,6 +43,12 @@ nproc <- config$nproc
 
 #### ####
 
+#### Fonts
+library(extrafont)
+font_import('Fonts', T, F)         # May take a while
+loadfonts(device="win")
+
+
 ##### Metadata ####
 metadata_file <- config$metadata_file
 metadata_from_bamfiles <- config$metadata_from_bamfiles

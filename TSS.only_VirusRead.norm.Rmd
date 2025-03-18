@@ -25,7 +25,7 @@ output:
 ```{r include=FALSE}
 ## hrbrthemes::ipsum:
 
-knitr::opts_chunk$set(fig.retina=2, echo = FALSE, fig.align = 'center', message = F, warning = F)
+knitr::opts_chunk$set(fig.retina=2, echo = FALSE, fig.align = 'center', message = T, warning = F)
 ```
 
 ```{r ipsum_setup, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE, include=FALSE}
@@ -43,7 +43,7 @@ library(dplyr, quietly = T)
 library(tidyr)
 library(scales)
 #library(plyr)
-library(moanin, quietly = T)
+#library(moanin, quietly = T)
 library(grid, quietly = T)
 library(gridExtra, quietly = T) 
 library(ggpubr, quietly = T)
@@ -75,14 +75,33 @@ res.dir <- outdir; try({ dir.create(res.dir) })
 fig.dir <- paste0(res.dir, '/', EndType, '_abund'); # try({ dir.create(fig.dir) })## save plots to this directory
 
 ## Miscallenaous
-palette <- pal_npg()(10)
+## Colors
+colorvec <- na.omit(c(
+  colorvec[c(1:5,15,13,10,24,7,26,32,33)],
+  colorvec[-c(1:5,15,13,10,24,7,26,32,33)]))
 
-writetables <- T
+colorvec <- colorvec[-c(9,13)]
+
+
+colorvec <- colorvec[-c(10,13,17,18)]
+
+colorvec <- colorvec[c(1:2,14,3:length(colorvec))]
+
+palette <- colorvec  #pal_npg()(10)
+
+##
+writetables <- F
+load.prev   <- T
+
 
 
 ## Filter metadata for those samples that had at least 1 viral read
 readcounts <- fread(paste0(outdir, '/readcounts.tsv'), header = T)
 metafilt   <- metafilt[metafilt$sample %in% readcounts$sample, ]
+
+
+#### Normalization method
+norm.method <- 'viral_read.count'
 
 ```
 
@@ -97,14 +116,18 @@ Filtering samples:
 - C6_2h_3  
 - PC-12_8h_3  
 - C6_0.5h_1  
-- C6_0.5h_2
-- C6_0.5h_3
+- C6_0.5h_2  
+- C6_0.5h_3  
+- PC-12_0.5h_3  
+- PK-15_2h3
 
 Normalization: Viral read count
 
 ## Only those reads were counted, where LoRTIA found *5-prime* adapter sequences !
 
-```{r, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE, eval=T}
+
+
+```{r, eval=F}
 #### Import TSS counts
 
 gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
@@ -151,9 +174,7 @@ setDT(orf.sum)
 
 
 
-#### Normalization method
-norm.method <- 'viral_read.count'
-multip      <- 10000
+#### Normalization 
 
  if (norm.method == 'average_genome') {
   
@@ -238,10 +259,41 @@ min_read_count <- 10
 
 
 ```{r}
-### Filtering of very-low coverage samples
-samples_to_filt <- c('C6_2h_3', 'PC-12_8h_3', 'C6_0.5h_1', 'C6_0.5h_2')
 
-orf.perc <- orf.perc[!orf.perc$sample %in% samples_to_filt, ]
+## Load previous results ?
+
+if (load.prev) {
+  
+  fig.dir <- paste0(fig.dir, '.norm_LoRTIA')
+
+  orf.sum.perc  <- fread( paste0(fig.dir, '/', norm.method, '_', EndType, '_counts.norm.tsv') )
+  orf.sum.perc[, mean     := NULL]
+  orf.sum.perc[, varcoeff := NULL]
+  orf.sum.perc[, sd       := NULL]
+  orf.sum.perc[, cluster  := NULL]
+  #orf.perc.mean <- fread( paste0(fig.dir, '/', norm.method, '_', EndType, '_abund.mean.tsv')  )
+  #setnames(orf.sum.perc, c('mean.y', 'sd.y', 'varcoeff.y'), c('mean', 'sd', 'varcoeff'))
+  metafilt   <- metafilt[metafilt$sample %in% orf.sum.perc$sample, ]
+  
+}
+```
+
+
+```{r, eval=T, message=T}
+### Filtering of very-low coverage samples
+samples_to_filt <- c('C6_2h_3', 'PC-12_8h_3', 'C6_0.5h_1', 'C6_0.5h_2', 'PC-12_0.5h_3', 'PK-15_2h3',
+                     grep('dRNA', metafilt$sample, value = T))
+
+if (load.prev) {
+  
+  orf.sum.perc  <- orf.sum.perc[!orf.sum.perc$sample %in% samples_to_filt, ]
+  
+} else {
+  
+  orf.perc      <- orf.perc[!orf.perc$sample %in% samples_to_filt, ]
+
+}
+
 metafilt <- metafilt[!metafilt$sample %in% samples_to_filt, ]
 
 message(paste(samples_to_filt, ' was filtered out!', collapse = '\n') )
@@ -252,7 +304,7 @@ message(paste(samples_to_filt, ' was filtered out!', collapse = '\n') )
 # 1. Counts based on TSS only (5` -ends of reads)
 
 ## Statistics of counts {.tabset}
-```{r, message=FALSE, warning=FALSE, cache=FALSE, echo=FALSE}
+```{r, eval = F}
 
 ##
 orf.sum.perc <- orf.perc
@@ -308,6 +360,77 @@ orf.sum.perc <- merge(orf.sum.perc, orf.perc.mean,
 
 ```
 
+
+
+```{r}
+
+
+orf.sum.sp     <- dcast.data.table(orf.sum.perc, gene~sample, value.var = 'read_count')
+
+orf.sum.sp.mat <- as.matrix(data.frame(orf.sum.sp[,-1], row.names = orf.sum.sp$gene))
+colnames(orf.sum.sp.mat) <- colnames(orf.sum.sp)[-1]
+
+colData <- data.frame(metafilt, row.names = metafilt$sample)
+
+
+orf.sum.sp.mat <- orf.sum.sp.mat[, rownames(colData)]
+
+colnames(orf.sum.sp.mat)[which(!colnames(orf.sum.sp.mat) %in% rownames(colData))]
+  
+
+if (norm.method == 'VST') {  
+  deseq <- DESeqDataSetFromMatrix(orf.sum.sp.mat, colData = colData, ~ hpi)
+  deseq <- estimateSizeFactors(deseq, type =  "poscounts")
+  deseq <- DESeq(deseq)
+  results(deseq)
+  
+  vsd      <- varianceStabilizingTransformation(deseq)
+  vsd_mat  <- assay(vsd)[,metafilt$sample]
+  vsd_data <- data.table(gene = rownames(vsd_mat), vsd_mat)
+
+  vsd_melt <- melt.data.table(vsd_data, 
+      id.vars = 'gene',
+      value.name = 'norm_read_count', 
+      variable.name = 'sample')
+  #vsd_melt <- merge(vsd_melt, metafilt, by='sample')
+
+  orf.sum.percx <- merge(orf.sum.perc, 
+                        vsd_melt,
+                        by=c('gene', 'sample'))
+  if(nrow(orf.sum.percx) == nrow(orf.sum.perc)) {
+    orf.sum.perc <- orf.sum.percx
+    rm(orf.sum.percx)
+  } else { stop() }
+  
+  orf.sum.sp.mat <- vsd_mat
+  
+}
+```
+
+
+```{r, eval=T}
+
+
+### Statistics of gene cluster counts accross samples
+orf.perc.mean <- 
+  orf.sum.perc[,.(mean=mean(read_count), sd=sd(read_count), varcoeff=sd(read_count) / mean(read_count)), 
+               by=.(gene, Kinetic_class, hpi, Time, cell_line, group)]
+
+
+#### merge back summary with counts
+orf.sum.perc <- merge(orf.sum.perc, orf.perc.mean, by=c('gene', 'Kinetic_class', 'hpi', 'Time', 'cell_line', 'group'))
+
+
+### spreaded means
+orf.perc.mean.sp  <- dcast.data.table(orf.perc.mean, gene~group, value.var = 'mean')
+
+orf.perc.mean.mat <- as.matrix(data.frame(orf.perc.mean.sp[,-1], row.names = orf.perc.mean.sp$gene))
+
+
+
+```
+
+
 ### Difference from mean
 ```{r, fig.width = 9, fig.height = 6, eval=F}
 
@@ -342,7 +465,7 @@ ggplot(
 
 
 ### Varcoeff
-```{r, fig.width = 20, fig.height = 8}
+```{r, fig.width = 20, fig.height = 8, eval=F}
 
 ggplot(
   orf.sum.perc[],
@@ -365,9 +488,334 @@ orf.perc.sum[,norm.method := norm.method]
 ```
 
 
+## Clustering of PK-15 Samples
+
+```{r}
+method.hclust = "complete"
+method.dist   = "uncentered"
+```
+
+```{r}
+countData <- orf.sum.sp.mat[, metafilt$sample[metafilt$cell_line == 'PK-15'] ]
+
+source('pvclust.samples.R')
+
+```
+
+## Clustering of genes into de-novo clusters using hierarchial clustering based on PK-15
+
+### Cluster memberships
+
+```{r}
+method.hclust = "complete"
+method.dist   = "correlation"
+```
+
+```{r, fig.width=16, fig.height=10}
+countData <- orf.sum.sp.mat[, metafilt$sample[metafilt$cell_line == 'PK-15'] ]
+
+
+keep <- apply(countData, 1, function(x) var(x) > 0)
+
+message('Filtering genes with very low counts:\n', paste(names(keep[keep == F]), collapse = '\n'))
+
+countData <- countData[keep, ]
+
+## use pvclust for statistical support
+source('pvclust.R')
+
+## use simple h-clustering
+#source('hcluster.R')
+
+```
+
+### Optimal number of clusters
+```{r, fig.width=16, fig.height=10}
+
+source('hclust.wss.R')
+
+```
+
+
+### Find the optimal number of clusters to cut the tree at and calculate {.tabset}
+```{r}
+sil_width_thresh   <- 0
+scaled_dist_thresh <- 20
+```
+
+#### Clustering statistics: Cluster number: 5
+```{r, fig.height=12, fig.width=12}
+
+cluster_num <- 5
+
+source('pvclust.cut.R')
+
+source('cluster.eval.R')
+
+ggclust_stats
+```
+
+```{r, fig.height=12, fig.width=12, echo=FALSE}
+
+unclustered <- unique(sil_df[sil_width < sil_width_thresh | scaled_dist >= scaled_dist_thresh, gene])
+message('Unclustered Genes, based on a Silhouette threshold of ', sil_width_thresh, ' and a Scaled Distance of ',scaled_dist_thresh, ': \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+
+unclustered <- unique(merged_stats[au < 0.95, gene])
+message('Unclustered Genes, based on AU threshold of 0.95: \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+```
+
+#### Clustering statistics: Cluster number: 6
+
+```{r, fig.height=12, fig.width=12}
+
+cluster_num <- 6
+
+source('pvclust.cut.R')
+
+source('cluster.eval.R')
+
+ggclust_stats
+```
+
+```{r, fig.height=12, fig.width=12, echo=FALSE}
+
+unclustered <- unique(sil_df[sil_width < sil_width_thresh | scaled_dist >= scaled_dist_thresh, gene])
+message('Unclustered Genes, based on a Silhouette threshold of ', sil_width_thresh, ' and a Scaled Distance of ',scaled_dist_thresh, ': \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+
+unclustered <- unique(merged_stats[au < 0.95, gene])
+message('Unclustered Genes, based on AU threshold of 0.95: \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+```
+
+
+#### Clustering statistics: Cluster number: 7
+```{r, fig.height=12, fig.width=12}
+
+cluster_num <- 7
+
+source('pvclust.cut.R')
+
+source('cluster.eval.R')
+
+ggclust_stats
+```
+
+```{r, fig.height=12, fig.width=12, echo=FALSE}
+
+unclustered <- unique(sil_df[sil_width < sil_width_thresh | scaled_dist >= scaled_dist_thresh, gene])
+message('Unclustered Genes, based on a Silhouette threshold of ', sil_width_thresh, ' and a Scaled Distance of ',scaled_dist_thresh, ': \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+
+unclustered <- unique(merged_stats[au < 0.95, gene])
+message('Unclustered Genes, based on AU threshold of 0.95: \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+```
+
+
+#### Clustering statistics: Cluster number: 10
+```{r, fig.height=12, fig.width=12}
+
+cluster_num <- 10
+
+source('pvclust.cut.R')
+
+source('cluster.eval.R')
+
+ggclust_stats
+```
+
+```{r, fig.height=12, fig.width=12, echo=FALSE}
+
+unclustered <- unique(sil_df[sil_width < sil_width_thresh | scaled_dist >= scaled_dist_thresh, gene])
+message('Unclustered Genes, based on a Silhouette threshold of ', sil_width_thresh, ' and a Scaled Distance of ',scaled_dist_thresh, ': \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+
+unclustered <- unique(merged_stats[au < 0.95, gene])
+message('Unclustered Genes, based on AU threshold of 0.95: \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+```
+
+
+#### Clustering statistics: Cluster number: 12
+```{r, fig.height=12, fig.width=12}
+cluster_num <- 12
+
+source('pvclust.cut.R')
+
+source('cluster.eval.R')
+
+ggclust_stats
+```
+
+```{r, fig.height=12, fig.width=12, echo=FALSE}
+
+unclustered <- unique(sil_df[sil_width < sil_width_thresh | scaled_dist >= scaled_dist_thresh, gene])
+message('Unclustered Genes, based on a Silhouette threshold of ', sil_width_thresh, ' and a Scaled Distance of ',scaled_dist_thresh, ': \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+
+unclustered <- unique(merged_stats[au < 0.95, gene])
+message('Unclustered Genes, based on AU threshold of 0.95: \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+```
+
+
+
+### Selected number of clusters: 7
+```{r, fig.height=12, fig.width=12}
+
+cluster_num <- 7
+
+source('pvclust.cut.R')
+
+source('cluster.eval.R')
+
+ggclust_stats
+```
+
+```{r, fig.height=12, fig.width=12, echo=FALSE}
+
+unclustered <- unique(sil_df[sil_width < sil_width_thresh | scaled_dist >= scaled_dist_thresh, gene])
+message('Unclustered Genes, based on a Silhouette threshold of ', sil_width_thresh, ' and a Scaled Distance of ',scaled_dist_thresh, ': \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+
+unclustered <- unique(merged_stats[au < 0.95, gene])
+message('Unclustered Genes, based on AU threshold of 0.95: \n',
+        paste(unclustered, collapse = '\n') )
+#length(unclustered)
+```
+
+
+
+### Remove genes from clusters ?
+```{r, message = T, eval=T}
+## Remove based on cluster significance
+cluster_dt[, cluster := paste0('cluster_', cluster)]
+
+unclustered <- unique(merged_stats[au < 0.95, gene])
+unclustered
+length(unclustered)
+
+
+rm.unclustered <- F
+
+if (rm.unclustered) {
+  
+  message('The following genes were removed from their corresponding clusters 
+           as their silhouette widths were lower than 0.1 and their distance from the group centroid was higher than 0.5: \n', 
+          paste(unclustered, collapse = '\n'))
+  cluster_dt[gene %in% unclustered, cluster := 'unclustered'] 
+  
+} else {
+  
+  message('No genes were removed from their corresponding clusters.')
+  
+}
+#
+merged_stats[,.N,cluster][order(N, decreasing = T)]
+
+```
+
+```{r, message = T, eval=F}
+### Remove based on silhouettes --> Select one option!
+cluster_dt[, cluster := paste0('cluster_', cluster)]
+
+unclustered <- unique(sil_df[sil_width < sil_width_thresh | scaled_dist >= scaled_dist_thresh, gene])
+unclustered
+length(unclustered)
+
+
+rm.unclustered <- T
+
+if (rm.unclustered) {
+  
+  message('The following genes were removed from their corresponding clusters 
+           as their silhouette widths were lower than ', sil_width_thresh, ' and their scaled distance from the group centroid was higher than ', scaled_dist_thresh, ': \n', 
+          paste(unclustered, collapse = '\n'))
+  cluster_dt[gene %in% unclustered, cluster := 'unclustered'] 
+  
+} else {
+  
+  message('No genes were removed from their corresponding clusters.')
+  
+}
+#
+```
+
+
+### Merge cluster stats
+```{r}
+
+all_merged_stats <- merge(merged_stats, sil_df, by=c('gene', 'cluster'), all=T)
+
+```
+
+
+### Assigning genes to clusters
+```{r}
+## Factorize
+cluster_dt[,gene := factor(gene, levels = ORFs)]
+
+## Add cluster info to counts
+orf.perc.mean  <- merge(orf.perc.mean, cluster_dt, by='gene', all.x=T)
+orf.sum.perc   <- merge(orf.sum.perc,  cluster_dt, by='gene', all.x=T)
+
+# LAbels frequency
+cluster.freq    <- data.table(cluster_dt)[,.N, by=.(cluster) ][order(cluster)]
+
+
+### Summarise based on literature kinetic class
+kin.class.sum   <- orf.sum.perc[,.(sum_read_count=sum(read_count), mean_read_count=mean(read_count), sd_read_count=sd(read_count)), 
+                              by=.(Kinetic_class, hpi, Time, cell_line, seqnames, norm_base, sample, group)]
+
+
+### Summarise based on de-novo kinetic clusters
+cluster.sum <- orf.sum.perc[,.(sum_read_count=sum(read_count), mean_read_count=mean(read_count), sd_read_count=sd(read_count)), 
+                              by=.(cluster, hpi, Time, cell_line, seqnames, norm_base, sample, group)]
+
+cluster.sum.hpi  <- orf.sum.perc[,.(sum_read_count=sum(read_count), mean_read_count=mean(read_count), sd_read_count=sd(read_count)), 
+                              by=.(cluster, hpi, Time, seqnames)]
+
+cluster.sum.hpi.cast <- dcast(cluster.sum.hpi, cluster ~ hpi, value.var = 'mean_read_count')
+
+cluster_dt    <- unique(orf.perc.mean[ , .(gene, Kinetic_class, cluster  )])
+class.dt      <- cluster_dt[   , .N, by=.(Kinetic_class, cluster )][order(cluster)]
+
+
+cluster_dt    <- merge(cluster_dt, all_merged_stats[,.(gene, au, si, gene_to_centroid_dist, sil_width)], by='gene', all.x=T)
+```
+
+
+### Summarize and melt
+```{r}
+
+orf.sum.perc.cast  <- dcast(orf.sum.perc, gene + Kinetic_class + cluster ~ sample, value.var = 'read_count')
+
+
+orf.perc.mean.cast <- dcast(orf.perc.mean, gene + Kinetic_class + cluster ~ group, value.var = 'mean')
+orf.perc.mean.melt <- melt.data.table(orf.perc.mean.cast, id.vars = c('gene', 'Kinetic_class', 'cluster'), variable.name = 'group', value.name = 'mean')
+
+```
+
+
+
 
 ## ORF kinetics, according to literature-based kinetic classes {.tabset}
 Time-dependent normalized ORF counts (based on TSSs and TES clusters)
+
 
 ```{r}
 ### ORFs in samples calculated from TRS-B transcripts with and without leaders
@@ -381,10 +829,17 @@ labels <- c('', '1', '', '2', '', '4', '6', '8', '12')
 
 
 plotfun <- function(DT, 
-                    geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, colour = cell_line)),
-                    geom2 = geom_smooth(aes(x=Time, y=mean, color=cell_line)),
+                    geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, color = cell_line)),
+                    geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)),
+                    #geom2 = geom_smooth(aes(x=Time, y=mean, color=cell_line)),
+                    #geom3 = geom_point(aes(x=Time, y = mean, fill=cell_line), shape = 21, size = 3, colour = 'black'),
+                    geom3 = NULL,
                     ncol = 10, title = NULL, #"Normalized ORF counts", 
-                    strip.backgr = pal_d3()(10)[2]) {
+                    strip.backgr = pal_d3()(10)[2],
+                    kincolor = strip.backgr,
+                    legendpos = 'right',
+                    ...
+                    ) {
   
   if (nrow(DT) == 0) { 
     ggp <- NULL } else {   # try({ 
@@ -410,13 +865,28 @@ plotfun <- function(DT,
                      ) + 
       geom1 +
       geom2 + 
+      geom3 +
+      
       scale_color_manual(values = palette) +
-      scale_y_continuous(labels = scales::percent_format()) +
-      scale_x_continuous(breaks = breaks, labels=labels) +
+      scale_fill_manual(values = palette) +
+      scale_y_continuous(labels = scales::percent_format(), name = 'Mean abundance %') +
+      scale_x_continuous(breaks = breaks, labels=labels, minor_breaks = NULL, name = 'Hours past infection') +
+      
       theme_ipsum() +
       theme(plot.margin = unit(c(1,1,1,1), 'mm')) +
       facet_wrap(~ Kinetic_class + gene, scales = 'free_y', ncol = ncol) +
-      theme(strip.background = element_rect(fill = alpha(strip.backgr, 0.4)))
+      theme(plot.margin = unit(c(1,5,1,1), 'mm'),
+            legend.position = legendpos,
+            legend.text  = element_text(size=13),
+            axis.text.x  = element_text(face='bold', size=14),
+            axis.text.y  = element_text(face='bold', size=14),
+            #axis.title.x = element_text(size=13),
+            #axis.title.y = element_text(size=13),
+            panel.spacing = unit(2, 'mm'),
+            strip.text = element_text(face='bold', size=16),
+            strip.background = element_rect(fill = alpha(strip.backgr, 0.4)),
+            ...
+            )
       # + ggtitle(title)
   
   if (gene_N < ncol) { 
@@ -454,18 +924,18 @@ figh     <- nrow(all.class.freq) * row_multip
 ```
 
 
-
 ### Mean and SD with linear connection
 ```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
 
 ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, all.class.freq, ncol=ncol, 
-                  geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, colour = cell_line)),
-                  geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)))
+                  geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, color = cell_line)),
+                  geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)),
+                  geom3 = NULL)
 
 ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
 
 
-ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Literature.Clusters', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Kinetic.Classes', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
 
 ggp
 ```
@@ -474,16 +944,18 @@ ggp
 ```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
 
 ggp <- purrr::map(seq_along(relh), mapfun, orf.sum.perc, all.class.freq, ncol=ncol, 
-                  geom1 = geom_point( aes(x=Time, y=read_count, color=cell_line)),
-                  geom2 = geom_smooth(aes(x=Time, y=read_count, color=cell_line)) )
+                  geom1 = geom_point( aes(x=Time, y=read_count, fill=cell_line), shape = 21, color='black'),
+                  geom2 = geom_smooth(aes(x=Time, y=read_count, color=cell_line)),
+                  geom3 = NULL)
 
 ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
 
 
-ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Literature.Clusters', '_replicates.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Kinetic.Classes', '_replicates.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
 
 ggp
 ```
+
 
 ### Mean and SD with loess function
 ```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=F}
@@ -492,43 +964,270 @@ ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, all.class.freq, ncol=n
 
 ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh, align = 'v', axis=c('tlrb'))
 
-ggsave(paste0(fig.dir, '/', EndType, '_', norm.method,  '_Literature.Clusters', '_mean.sd.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method,  '_Kinetic.Classes', '_mean.sd.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
 
 ggp
 ```
 
 
 
-## Combine Kinetic classes
+## ORF kinetics, according to de-novo kinetic classes {.tabset}
+
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+denovo_clusters  <- unique(cluster_dt[,.(gene, cluster)])
+cluster.freq     <- denovo_clusters[,.N, by=.(cluster) ][order(cluster)]
+
+```
+
+
+
+### Figure 5 REVIEW - Mean and SD with linear connection
+
+```{r}
+## Scatter and line plots
+ncol     <- ifelse(max(cluster.freq$N) < max_ncol, max(cluster.freq$N), max_ncol)
+relh     <- ceiling(cluster.freq$N / ncol)  #c(6,1,1,1,2)
+
+plot.axis.title.y <- c(6)
+plot.axis.title.x <- c(12)
+
+
+mapfun <- function(i, DT, label.freq, palette = colorvec, ...) {
+  kin_class <- label.freq[i, cluster]
+  strip.background <- palette[i]
+  
+  
+  if(i %in% plot.axis.title.y) {
+    
+    if(i %in% plot.axis.title.x) {
+    
+      plotfun(DT[cluster   == kin_class],  
+              strip.backgr = strip.background, 
+              kincolor     = strip.background,
+              axis.title.y = element_text(size=13),
+              axis.title.x = element_text(size=13),
+              ...)
+      } else {
+        plotfun(DT[cluster   == kin_class],  
+              strip.backgr = strip.background, 
+              kincolor     = strip.background,
+              axis.title.y = element_text(size=13),
+              axis.title.x = element_blank(),
+              ...)
+      }
+  } else {
+    
+    if(i %in% plot.axis.title.x) {
+    
+      plotfun(DT[cluster   == kin_class],  
+              strip.backgr = strip.background, 
+              kincolor     = strip.background,
+              axis.title.y = element_blank(),
+              axis.title.x = element_text(size=13),
+              ...)
+      } else {
+        plotfun(DT[cluster   == kin_class],  
+              strip.backgr = strip.background, 
+              kincolor     = strip.background,
+              axis.title.y = element_blank(),
+              axis.title.x = element_blank(),
+              ...)
+      }
+  }
+  
+}
+
+
+figw     <- ncol * col_multip
+figh     <- 36 ##nrow(cluster.freq) * row_multip
+```
+
+
+```{r}
+
+# plot with only the legend
+ggl_legend <- ggplot(cluster.freq, aes(x = 1, y = 1, fill = cluster)) +
+  geom_point(shape=21, size=5) +  
+  scale_fill_manual(values = palette) +
+  theme_void() +  # Remove all other plot components
+  theme(
+    legend.position = 'none',
+    strip.text.x = element_text(size = 10)  
+  ) + facet_wrap(~cluster)
+
+
+```
+
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- cowplot::plot_grid(
+
+  cowplot::plot_grid(
+    mapfun(1, orf.perc.mean, cluster.freq, palette = palette, legendpos='right', ncol=7),
+    nrow = 1, rel_widths = c(1), align = 'vh', axis=c('tblr')
+  ),
+  
+  cowplot::plot_grid(
+    mapfun(2, orf.perc.mean, cluster.freq, palette = palette, legendpos='right', ncol=4),
+    NULL, 
+    mapfun(3, orf.perc.mean, cluster.freq, palette = palette, legendpos='right', ncol=2),
+    nrow = 1, rel_widths = c(4, 1, 2), align = 'vh', axis=c('tblr')
+  ),
+  
+  cowplot::plot_grid(
+    mapfun(4, orf.perc.mean, cluster.freq, palette = palette, legendpos='right', ncol=7),
+    nrow = 1, rel_widths = c(1), align = 'vh', axis=c('tblr')
+  ),
+  
+  cowplot::plot_grid(
+    mapfun(5,  orf.perc.mean, cluster.freq, palette = palette, legendpos='right', ncol=7),
+    nrow = 1, rel_widths = c(1), align = 'vh', axis=c('tblr')
+  ),
+  
+  cowplot::plot_grid(
+    mapfun(6, orf.perc.mean, cluster.freq, palette = palette, legendpos='right', ncol=7),
+    nrow = 1, rel_widths = c(1), align = 'vh', axis=c('tblr')
+  ),
+  
+  cowplot::plot_grid(
+    mapfun(7, orf.perc.mean, cluster.freq, palette = palette, legendpos='right', ncol=3),
+    NULL,
+    ggl_legend, ## Heres the color coding ~ aka legend
+    nrow = 1, rel_widths = c(3, 3, 1), align = 'vh', axis=c('tblr')
+  ),
+  
+  rel_heights = c(4,1,2,2,2,1), ncol = 1, align = 'vh', axis=c('tblr')
+
+)
+
+ggsave('Figures/Supp Fig S2.jpg',  ggp, width = figw*0.8, height = figh, limitsize = F)
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_DeNovo.Clusters', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+
+ggp
+
+```
+
+
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=F}
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, cluster.freq, palette = palette, ncol=ncol)
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh, align = 'v', axis=c('tblr'))
+
+
+ggsave('Figures/Supp Figure S2 TSS Kinetics DeNovo Clusters REVIEW.jpg',  ggp, width = figw*0.8, height = figh, limitsize = F)
+
+ggp
+```
+
+
+
+
+```{r}
+# 
+
+
+mapfun <- function(i, DT, cluster.freq, palette = NULL, ...) {
+  clustertoplot <- cluster.freq[i, cluster]
+  strip.background <- palette[i]
+  plotfun(DT[cluster == clustertoplot],  strip.backgr = strip.background, ...)
+}
+
+
+ncol     <- ifelse(max(cluster.freq$N) < max_ncol, max(cluster.freq$N), max_ncol)
+relh     <- ceiling(cluster.freq$N / ncol)  #c(6,1,1,1,2)
+
+figw     <- ncol * col_multip
+figh     <- nrow(all.class.freq) * row_multip
+
+```
+
+
+### Mean and SD with linear connection
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, cluster.freq, palette, ncol=ncol, 
+                  geom1 = geom_pointrange(aes(ymin = mean-sd, ymax = mean+sd, color = cell_line)),
+                  geom2 = geom_line(aes(x=Time, y=mean, color=cell_line)),
+                  geom3 = NULL)
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_deNovo.Clusters', '_mean.sd.linear.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+ggp
+```
+
+### Each replicate with loess
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.sum.perc, cluster.freq, palette, ncol=ncol, 
+                  geom1 = geom_point( aes(x=Time, y=read_count, fill=cell_line), shape = 21, color='black'),
+                  geom2 = geom_smooth(aes(x=Time, y=read_count, color=cell_line)),
+                  geom3 = NULL)
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh)
+
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_deNovo.Clusters', '_replicates.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+ggp
+```
+
+
+### Mean and SD with loess function
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=F}
+
+ggp <- purrr::map(seq_along(relh), mapfun, orf.perc.mean, cluster.freq, palette, ncol=ncol)
+
+ggp <- cowplot::plot_grid(plotlist = ggp, ncol = 1, rel_heights = relh, align = 'v', axis=c('tlrb'))
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method,  '_deNovo.Clusters', '_mean.sd.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+ggp
+```
+
+
+
+
+## Combine Classes and Clusters
+```{r}
+figw <- 16
+figh <- 8
+ncol <- 4
+```
 
 sum up all the (normalized) gene counts for each kinetic class in each sample (replicate)
 then take the mean and SD of the sums for each hpi and cell line
 
+
+### Literature Kinetic Classes {.tabset}
+
 ```{r}
 ### Summarise based on literature kinetic class for each sample
-kin.class.sum  <- orf.sum.perc[,.(sum_read_count=sum(read_count)),  
+kin.class.sum   <- orf.sum.perc[,.(sum_read_count=sum(read_count)),  
                                by=.(seqnames, Kinetic_class, hpi, Time, cell_line, group, sample, norm_base)]
 
 ### take the mean for each hpi and cell line (without sample)
-kin.class.sum  <- kin.class.sum[, .(mean_read_count=mean(sum_read_count), sd_read_count=sd(sum_read_count)),
-                                by=.(seqnames, Kinetic_class, hpi, Time, cell_line, group, norm_base)]
+kin.class.sum[, `:=`(
+  mean_read_count = mean(sum_read_count), sd_read_count   = sd(sum_read_count) ), 
+  by = .(seqnames, Kinetic_class, hpi, Time, cell_line)]
                                 
 
 ```
 
-```{r}
-figw <- 16
-figh <- 8
-ncol <- 10
-```
 
-
-### Literature clusters
+#### Sum and Loess with Confidence
 ```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
 
 ggp <- 
       ggplot(kin.class.sum,
-             aes(Time, mean_read_count, color = cell_line)
+             aes(Time, sum_read_count, color = cell_line)
                      #, add = 'loess'
                      ) + 
       geom_point() +
@@ -548,7 +1247,160 @@ ggp <-
 
 ggp
 
-ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.Literature.Clusters.', '_points.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.Literature.Classes.', '_points.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+#### Mean and SD with Linear connection
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- 
+      ggplot(kin.class.sum,
+             aes(Time, mean_read_count, color = cell_line)
+                     #, add = 'loess'
+                     ) + 
+      geom_line() + 
+      geom_pointrange(aes(ymin = mean_read_count - sd_read_count, ymax = mean_read_count + sd_read_count, fill = cell_line), shape = 21, color = 'black' ) +
+      scale_color_manual(values = palette[]) +
+      scale_fill_manual(values = palette[]) +
+      theme_ipsum() +
+      theme(plot.margin = unit(c(10,1,1,1), 'mm')) +
+      scale_y_continuous(labels = scales::percent_format()) +
+      scale_x_continuous(breaks = breaks, labels=labels) +
+      #theme(strip.background.y = element_rect(fill = alpha(strip.backgr, 0.4))) +
+      # theme(strip.text.y = element_blank()) +
+      #ggtitle(title) +
+      # facet_nested(rows=vars(norm.method), cols=vars(labels), scales = "free_y") ## cols=vars(norm.method)
+      facet_wrap(~ Kinetic_class, scales = 'free_y', ncol = ncol)
+
+
+ggp
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.Literature.Classes.', '_means.sd.line.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+
+### deNovo clusters {.tabset}
+```{r}
+### Summarise based on literature kinetic class for each sample
+denovo.clust.sum  <- orf.sum.perc[,.(sum_read_count=sum(read_count)),  
+                               by=.(seqnames, cluster, hpi, Time, cell_line, group, sample, norm_base)]
+
+### take the mean for each hpi and cell line (without sample)
+denovo.clust.sum[, `:=`(
+  mean_read_count = mean(sum_read_count), sd_read_count   = sd(sum_read_count) ), 
+  by = .(seqnames, cluster, hpi, Time, cell_line)]
+                                               
+
+```
+
+#### Sum and Loess with Confidence
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- 
+      ggplot(denovo.clust.sum,
+             aes(Time, sum_read_count, color = cell_line)
+                     #, add = 'loess'
+                     ) + 
+      geom_point() +
+      geom_smooth() + 
+      scale_color_manual(values = palette[]) +
+      #scale_y_continuous(labels = scales::percent_format()) +
+      theme_ipsum() +
+      theme(plot.margin = unit(c(10,1,1,1), 'mm')) +
+      scale_y_continuous(labels = scales::percent_format()) +
+      scale_x_continuous(breaks = breaks, labels=labels) +
+      #theme(strip.background.y = element_rect(fill = alpha(strip.backgr, 0.4))) +
+      # theme(strip.text.y = element_blank()) +
+      #ggtitle(title) +
+      # facet_nested(rows=vars(norm.method), cols=vars(labels), scales = "free_y") ## cols=vars(norm.method)
+      facet_wrap(~ cluster, scales = 'free_y', ncol = 4)
+
+
+ggp
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.DeNovo.Clusters.', '_points.loess.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+#### Mean and SD with Linear connection
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+
+ggp <- 
+      ggplot(denovo.clust.sum,
+             aes(Time, mean_read_count, color = cell_line)
+                     #, add = 'loess'
+                     ) + 
+      geom_line() + 
+      geom_pointrange(aes(ymin = mean_read_count - sd_read_count, ymax = mean_read_count + sd_read_count, fill = cell_line), shape = 21, color = 'black' ) +
+      scale_color_manual(values = palette[]) +
+      scale_fill_manual(values = palette[]) +
+      theme_ipsum() +
+      theme(plot.margin = unit(c(10,1,1,1), 'mm')) +
+      scale_y_continuous(labels = scales::percent_format()) +
+      scale_x_continuous(breaks = breaks, labels=labels) +
+      #theme(strip.background.y = element_rect(fill = alpha(strip.backgr, 0.4))) +
+      # theme(strip.text.y = element_blank()) +
+      #ggtitle(title) +
+      # facet_nested(rows=vars(norm.method), cols=vars(labels), scales = "free_y") ## cols=vars(norm.method)
+      facet_wrap(~ cluster, scales = 'free_y', ncol = ncol)
+
+
+ggp
+
+ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.DeNovo.Clusters.', '_means.sd.line.jpg'), ggp, width = figw, height = figh, limitsize = F)
+
+```
+
+## Compare literature and de novo kinetic classes
+
+*NA shows the number of genes where the clustering did not yield an unambiguous result.*
+  
+```{r, fig.show='hold',  fig.width = 9, fig.height = 16, eval=T}
+ggplot(cluster_dt,
+       aes(x=Kinetic_class, y=gene, fill=as.factor(cluster))) +
+  geom_tile() +
+  # coord_flip() +
+  scale_fill_manual(values = palette) +
+  #scale_y_discrete(breaks=NULL) +
+  theme_ipsum() +
+  theme(panel.grid.major  = element_blank(),
+        axis.text.y = element_text(face='italic')) # + facet_wrap(~cluster, ncol = 10)
+
+
+ggplot(cluster_dt,
+       aes(x=cluster, y=gene, fill=as.factor(Kinetic_class))) +
+  geom_tile() +
+  # coord_flip() +
+  scale_fill_manual(values = my_pal) +
+  #scale_y_discrete(breaks=NULL) +
+  theme_ipsum() +
+  theme(panel.grid.major  = element_blank(),
+        axis.text.y = element_text(face='italic')) # + facet_wrap(~cluster, ncol = 10)
+
+
+```
+
+
+```{r, fig.show='hold',  fig.width = 15, fig.height = 6, eval=T}
+ggplot(class.dt,
+       aes(x=Kinetic_class, y=N, fill=as.factor(cluster))) +
+  geom_col(position = 'dodge') +
+  scale_fill_manual(values = palette) +
+  #scale_y_continuous(labels = scales::percent_format()) +
+  theme_ipsum() +
+  facet_wrap(~cluster, nrow = 1)
+
+
+ggplot(class.dt,
+       aes(x=as.factor(cluster), y=N, fill=Kinetic_class)) +
+  geom_col(position = 'stack') +
+  scale_fill_manual(values = my_pal) +
+  #scale_y_continuous(labels = scales::percent_format()) +
+  theme_ipsum() 
+  #+facet_nested_wrap(~cluster, nrow = 1)
+
 
 ```
 
