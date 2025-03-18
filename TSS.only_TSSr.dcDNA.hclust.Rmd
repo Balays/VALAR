@@ -129,23 +129,36 @@ Normalization: Viral read count
 
 
 ```{r, eval=T}
-#### Import TSS counts
+#### Import TSS counts from TSSr clustering results
 
-gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
+ggene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
+kin_classes          <- unique(gene.sample_count.sp[, .(gene, Kinetic_class)])
 
 
-#### !!! Consider adapters!
-       if (EndType == 'TES')  { adapters <- 'prime3' 
-} else if (EndType == 'TSS')    { adapters <- 'prime5' 
-} else if (EndType == 'TSS.TES')  { adapters <- 'both' } ## OR: 'either'}
+### Cluster Tags of dominant Clusters for each Gene from TSSr output
+##
+assignedClusters <- fread(paste0(outdir, '/TSSr.dcDNA.best.assignedClusters.txt'))
+#assignedClusters$Kinetic_class <- NA
+assignedClusters$gene_cluster  <- NA
+assignedClusters[, seqnames := chr]
+assignedClusters[, gene := str_to_upper(gene)]
+assignedClusters <- merge(kin_classes, assignedClusters, by='gene', all.y=T)
+#
+assignedClusters.sp <- dcast(assignedClusters, seqnames + strand + gene + gene_cluster + Kinetic_class ~ group, value.var = 'tags', fill=0)
 
-source('Gene.counts.R')
+metacols <- c('hpi', 'Time', 'cell_line', 'group')
+metafilt <- unique(assignedClusters[, ..metacols]) #$sample <- [,metacols]
+metafilt[, sample := group]
 
-#gene.sample_count    <- TR.ref.sum[,.(count=sum(read_count)), by=.(seqnames, strand, gene_cluster, gene, Kinetic_class, sample)]
-#gene.sample_count.sp <- dcast(gene.sample_count, seqnames + strand + gene_cluster + gene + Kinetic_class ~ sample)
-####
+metacols <- c('sample', 'hpi', 'Time', 'cell_line', 'group')
 
-orf.sum <- gene.sample_count.sp
+setDF(metafilt)
+
+##
+orf.sum <- assignedClusters.sp
+
+
+
 
 ## Filter out multi-copied genes
 orf.sum <- orf.sum[!gene %in% c('IE180_2', 'US1_2', 'NOIR2', 'NOIR2-2'),]
@@ -1410,13 +1423,10 @@ ggsave(paste0(fig.dir, '/', EndType, '_', norm.method, '_Combined.DeNovo.Cluster
 
 ```
 
-
-
-## Compare literature and de novo kinetic classes {.tabset}
+## Compare literature and de novo kinetic classes
 
 *NA shows the number of genes where the clustering did not yield an unambiguous result.*
   
-### each gene 1
 ```{r, fig.show='hold',  fig.width = 9, fig.height = 16, eval=T}
 ggplot(cluster_dt,
        aes(x=Kinetic_class, y=gene, fill=as.factor(cluster))) +
@@ -1425,13 +1435,10 @@ ggplot(cluster_dt,
   scale_fill_manual(values = palette) +
   #scale_y_discrete(breaks=NULL) +
   theme_ipsum() +
-  theme(legend.position = 'bottom',
-        panel.grid.major  = element_blank(),
+  theme(panel.grid.major  = element_blank(),
         axis.text.y = element_text(face='italic')) # + facet_wrap(~cluster, ncol = 10)
-```
 
-### each gene 2
-```{r, fig.show='hold',  fig.width = 9, fig.height = 16, eval=T}
+
 ggplot(cluster_dt,
        aes(x=cluster, y=gene, fill=as.factor(Kinetic_class))) +
   geom_tile() +
@@ -1439,15 +1446,14 @@ ggplot(cluster_dt,
   scale_fill_manual(values = my_pal) +
   #scale_y_discrete(breaks=NULL) +
   theme_ipsum() +
-  theme(legend.position = 'bottom',
-        panel.grid.major  = element_blank(),
+  theme(panel.grid.major  = element_blank(),
         axis.text.y = element_text(face='italic')) # + facet_wrap(~cluster, ncol = 10)
 
 
 ```
 
-### summary
-```{r, fig.show='hold',  fig.width = 18, fig.height = 6, eval=T}
+
+```{r, fig.show='hold',  fig.width = 15, fig.height = 6, eval=T}
 ggplot(class.dt,
        aes(x=Kinetic_class, y=N, fill=as.factor(cluster))) +
   geom_col(position = 'dodge') +
@@ -1455,10 +1461,8 @@ ggplot(class.dt,
   #scale_y_continuous(labels = scales::percent_format()) +
   theme_ipsum() +
   facet_wrap(~cluster, nrow = 1)
-```
 
 
-```{r, fig.show='hold',  fig.width = 18, fig.height = 6, eval=T}
 ggplot(class.dt,
        aes(x=as.factor(cluster), y=N, fill=Kinetic_class)) +
   geom_col(position = 'stack') +
