@@ -6,7 +6,7 @@ seqs.to.keep <- genome
 
 ## GFF-COMPARE RESULTS TRANSCRIPT-LEVEL DISTANCES
 TR.gff.compare.merged.TR <- best.merged.result_gff.compare
-try({setnames(TR.gff.compare.merged.TR, old = c('distance_prime5.tr', 'distance_prime3.tr'), new = c('distance_prime5', 'distance_prime3'))})
+try({setnames(TR.gff.compare.merged.TR, old = c('distance_prime5.tr', 'distance_prime3.tr'), new = c('distance_prime5', 'distance_prime3'), skip_absent=TRUE)})
 TR.gff.compare.merged.TR$transcript_id <- as.character(TR.gff.compare.merged.TR$transcript_id)
 ##
 
@@ -73,7 +73,3 @@ best.gff.compare.TR.class.freq.sp <- dcast(best.gff.compare.TR.class.freq,
 
 
 
-#### Write out
-fwrite(TR.gff.compare.merged.TR.counts.gt, paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.tsv"), sep = '\t')
-fwrite(best.gff.compare.ref.TR.class.freq, paste0(outdir, "/best.gff.compare.ref.TR.class.freq.tsv"), sep = '\t')
-fwrite(TR.gff.compare.merged.TR, paste0(outdir, "/TR.gff.compare.merged.TR.tsv"), sep = '\t')

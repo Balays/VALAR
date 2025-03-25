@@ -334,10 +334,4 @@ fwrite(TR.gene.ov.counts,      paste0(outdir, '/TR.gene.ov.counts.tsv'), sep = '
 
 
 
-#### !!! Consider adapters!
-adapters <- 'any'
-source('Gene.counts.R')
-fwrite(gene.sample_count.sp, paste0(res.dir, '/gene.sample.count.sp.tsv'), sep = '\t')
-gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
-
 

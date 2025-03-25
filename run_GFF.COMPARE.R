@@ -29,39 +29,39 @@ source('gff_compare_functions.R')
 
 if (.Platform$OS.type=="windows") { NULL } else {safeBPParam(nproc)}
 
+###
+#ref_mRNAs <- unique(viral.mrna[,transcript_id])
+#
+#out_dir <-paste0(outdir, '/gffcompare_iterative')
+try({ dir.create(out_dir) })
 
 #
-
 ### Round 1.)
 ## run the function on all transcripts simultaneously
 
-run_gff_compare(ref_mRNA = 'ALL_TRs', viral.mrna, query_gff = config$TR.reads.gfffile,
-                out_dir = paste0(outdir, '/gffcompare_iterative'), 
+run_gff_compare(ref_mRNA = 'ALL_TRs', viral.mrna, query_gff = query_gff,
+                out_dir = out_dir, 
                 iterative = F
 )
-## this is ti check the annotation
+## this is to check the annotation
 
 
 ### Round 2.)
 ## if everything OK,
 ## run the function on each transcript individually
-ref_mRNAs <- unique(viral.mrna[,transcript_id])
 
 all.merged.result_gff.compare.list <- bplapply(ref_mRNAs[],
                                                run_gff_compare,
-                                               viral.mrna, query_gff = TR.reads.gfffile,
-                                               out_dir = paste0(outdir, '/gffcompare_iterative')
+                                               viral.mrna, query_gff = query_gff,
+                                               out_dir = out_dir
 )
 
 
-all.merged.result_gff.compare <- rbindlist(all.merged.result_gff.compare.list)
+#all.merged.result_gff.compare <- rbindlist(all.merged.result_gff.compare.list)
 
 
 ### Round 3.)
-ref_mRNAs <- unique(viral.mrna[,transcript_id])
-## check the output files
 
-out_dir <-paste0(outdir, '/gffcompare_iterative')
 files <- data.table(filename=list.files(out_dir, '*.annotated.gtf'))
 files[,transcript_id := gsub('.gffcompare.annotated.gtf', '', filename)]
 files$size <- unlist(purrr::map(files$filename, function(x) as.integer(file.size(paste0(out_dir, '/', x)) / 1024)))
@@ -84,8 +84,8 @@ ref_mRNAs <- c(ref_mRNAs, files[size == 0,transcript_id])
 if (length(ref_mRNAs) > 0) {
   all.merged.result_gff.compare.list <- bplapply(ref_mRNAs[],
                                                  run_gff_compare,
-                                                 viral.mrna, query_gff = config$TR.reads.gfffile,
-                                                 out_dir = paste0(outdir, '/gffcompare_iterative')
+                                                 viral.mrna, query_gff = query_gff,
+                                                 out_dir = out_dir
   )
 }
 
@@ -115,6 +115,11 @@ if(length(tr.miss) > 0) {
   message('Reference Transcripts without an output: \n', paste(tr.miss, collapse = '\n'))
   
   ## Start again on tr.miss !!!
+  all.merged.result_gff.compare.list <- bplapply(tr.miss[],
+                                                 run_gff_compare,
+                                                 viral.mrna, query_gff = query_gff,
+                                                 out_dir = out_dir
+  )
   
 }
 
@@ -124,7 +129,7 @@ if(length(tr.miss) > 0) {
 ## Testing:
 #all.merged.result_gff.compare.list <- merge_gff_compare(ref_mRNA = ref_mRNAs[1],
 #                                                        viral.mrna,
-#                                                        out_dir = paste0(outdir, '/gffcompare_iterative')
+#                                                        out_dir = out_dir
 #)
 
 
@@ -132,60 +137,84 @@ if(length(tr.miss) > 0) {
 all.merged.result_gff.compare.list <- bplapply(ref_mRNAs[],
                                                merge_gff_compare,
                                                viral.mrna,
-                                               out_dir = paste0(outdir, '/gffcompare_iterative')
+                                               out_dir = out_dir
 )
 
 gc()
 
 saveRDS(all.merged.result_gff.compare.list, paste0(outdir, '/all.merged.result_gff.compare.list.rds'))
 
-## check for the outputs- was there any errors?
+## check for the outputs - were there any errors?
 res.class <- unlist(lapply(lapply(all.merged.result_gff.compare.list, class), paste, collapse='::'))
 nrows     <- unlist(lapply(all.merged.result_gff.compare.list, nrow))
 ncols     <- unlist(lapply(all.merged.result_gff.compare.list, ncol))
 
+colnames  <- lapply(all.merged.result_gff.compare.list, colnames)
+
+
+
 tr.miss   <- ref_mRNAs[!grepl('data.frame', res.class) | nrows == 0 | ncols != 40 ]
-match(tr.miss, ref_mRNAs)
+
+# match(tr.miss, ref_mRNAs)
 
 ## run both functions again on erroneous outputs
 if(length(tr.miss) != 0) {
+  
+  message('The following Reference Transcripts have a problem in their output: \n', 
+        paste(tr.miss, collapse = '\n'))
+
   ##
+  message('Running both functions again on these erroneous outputs... \n')
+  
   all.merged.result_gff.compare.list2 <- bplapply(tr.miss,
                                                  run_gff_compare,
-                                                 viral.mrna, query_gff = config$TR.reads.gfffile,
-                                                 out_dir = paste0(outdir, '/gffcompare_iterative')
+                                                 viral.mrna, query_gff = query_gff,
+                                                 out_dir = out_dir
   )
   
   all.merged.result_gff.compare.list2 <- bplapply(tr.miss[],
                                                  merge_gff_compare,
                                                  viral.mrna,
-                                                 out_dir = paste0(outdir, '/gffcompare_iterative')
+                                                 out_dir = out_dir
   )
   
+  ## filter out the corrected results from all the results
+  all.merged.result_gff.compare.list <- all.merged.result_gff.compare.list[ -match(tr.miss, ref_mRNAs) ]
+  
+  ## put back the corrected
+  all.merged.result_gff.compare.list <- c(all.merged.result_gff.compare.list, all.merged.result_gff.compare.list2)
+
 }
 
-## filter out the corrected results from all the results
-all.merged.result_gff.compare.list <- all.merged.result_gff.compare.list[ -match(tr.miss, ref_mRNAs) ]
-
-## put back the corrected
-all.merged.result_gff.compare.list <- c(all.merged.result_gff.compare.list, all.merged.result_gff.compare.list2)
 
 # Check length
 stopifnot(length(ref_mRNAs) == length(all.merged.result_gff.compare.list))
 
 # Reorder
-tr.names       <- sapply(all.merged.result_gff.compare.list, function(x) unique(x[,'cmp_ref']))
+tr.names       <- sapply(all.merged.result_gff.compare.list, function(x) try({ unique(x[,'cmp_ref']) }))
 tr.names.index <- match(ref_mRNAs, tr.names)
 all.merged.result_gff.compare.list3 <- all.merged.result_gff.compare.list[tr.names.index]
 
-# Check names
+
+# Check names again, finally
 tr.names        <- unlist(sapply(all.merged.result_gff.compare.list3, function(x) unique(x[,'cmp_ref'])))
 names(tr.names) <- NULL
-stopifnot(all.equal(tr.names, ref_mRNAs))
+
+tr.miss   <- ref_mRNAs[ !ref_mRNAs %in% tr.names ]
+
+if(length(tr.miss) > 0) {
+  
+  ##
+  message('The following Reference Transcripts have a problem in their output: \n
+           that could not be fixed: \n', 
+          paste(tr.miss, collapse = '\n'))
+  
+  
+}
 ##
 
 ## make DT
-all.merged.result_gff.compare <- rbindlist(all.merged.result_gff.compare.list3)
+all.merged.result_gff.compare <- rbindlist(all.merged.result_gff.compare.list3, fill=T)
 
 ## done
 
@@ -210,16 +239,16 @@ all.merged.result_gff.compare[min_dist_junc == abs(abs_junc_distance.tr), best_j
 gc()
 
 #### write out
-fwrite(all.merged.result_gff.compare, paste0(outdir, "/all.merged.result_gff.compare.tsv"), sep='\t')
+fwrite(all.merged.result_gff.compare, paste0(outdir, "/", all.gff.compare.outfile), sep='\t')
 
 
 
 ## Move all files into gff-compre results directory
 file.rename(list.files(outdir, '*.refmap', full.names = T), 
-            gsub(paste0(outdir, '/'), paste0(outdir, '/gffcompare_iterative/'), list.files(outdir, '*.refmap', full.names = T)) ) 
+            gsub(paste0(outdir, '/'), paste0(out_dir, '/'), list.files(outdir, '*.refmap', full.names = T)) ) 
 
 file.rename(list.files(outdir, '*.tmap',  full.names = T),
-            gsub(paste0(outdir, '/'), paste0(outdir, '/gffcompare_iterative/'), list.files(outdir, '*.tmap', full.names = T)) )
+            gsub(paste0(outdir, '/'), paste0(out_dir, '/'), list.files(outdir, '*.tmap', full.names = T)) )
 
 
 

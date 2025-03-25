@@ -53,6 +53,9 @@ run_gff_compare <- function(ref_mRNA,
   ## remove the unnecessary "*.tracking" file
   file.remove(list.files(out_dir, "*.tracking", full.names=T))
   
+  ## remove the unnecessary "*.tracking" file
+  file.remove(list.files(out_dir, "*.tracking", full.names=T))
+  
 }
 
 
@@ -102,7 +105,7 @@ merge_gff_compare <- function(ref_mRNA, viral.mrna,
         #DTy  <- DT.tr[, !c("type", "phase", 'source', ), with = FALSE]
         DTy  <- DT.tr[, .(seqnames, strand, start.transcript, end.transcript, transcript_id)]
         
-        ### Merge reference transcripts with read.tr-s
+        ### Merge Reference Transcripts with TransFrags
         DTxy <- merge(DTx, DTy,
                       by.x = c('seqnames','cmp_ref'),
                       by.y = c('seqnames','transcript_id'),
@@ -112,7 +115,7 @@ merge_gff_compare <- function(ref_mRNA, viral.mrna,
         
         stopifnot(length(unique(DTxy[,transcript_id])) == nrow(DTxy[,]))
         
-        ### merge READ exons and transcripts
+        ### merge TransFrag exons and transcripts
         DT.ex <- result_gff.compare[type == 'exon', .(seqnames, strand, start, end, transcript_id)]
         ## Add prime5 and prime3 columns
         DT.ex[, prime5 := ifelse(strand == '+', start, end)]
@@ -126,7 +129,7 @@ merge_gff_compare <- function(ref_mRNA, viral.mrna,
         DT.ex[, exon_count := max(exon_number), by = .(transcript_id)]
         
         
-        ## merge
+        ### Merge TransFrags with Ref Transcripts
         DTxy  <- merge(DT.ex, DTxy, 
                        by=c('seqnames', 'strand', 'transcript_id'),
                        suffixes=c('', '.transcript'))
@@ -207,6 +210,7 @@ merge_gff_compare <- function(ref_mRNA, viral.mrna,
         ###
         
         
+        message(result_file, ' processed!')
         ### write comparison output
         fwrite(merged.result_gff.compare, paste0(output_file, '.result.tsv'), sep='\t')
         

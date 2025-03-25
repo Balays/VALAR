@@ -112,6 +112,4 @@ best.merged.result_gff.compare.EX <- merge(best.merged.result_gff.compare.EX,
 stopifnot(nrow(best.merged.result_gff.compare) == length(unique(best.merged.result_gff.compare$transcript_id)))
 ## OK
 
-#### Write out
-fwrite(best.merged.result_gff.compare,     paste0(outdir, "/best.merged.result_gff.compare.tsv"),     sep = '\t')
 

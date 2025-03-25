@@ -36,7 +36,7 @@ CAGE_config <- list(
   filter_bams = FALSE,
   
   ## results output - project folder
-  outdir = outdir,
+  outdir = 'CAGE', #outdir,
   
   ## Neccessary packages and functions
   misc_dir = 'C:/GitHub/Rlyeh/R',
@@ -89,7 +89,34 @@ CAGE_config <- list(
   
   thresh.eq.prime5 = 10,
   thresh.eq.prime3 = 10,
-  thresh.eq.junc   = 2
+  thresh.eq.junc   = 2,
+  
+  
+  ## TSSr Parameters
+  ### CAGE - TSS
+  #### Filtering and Normalizing
+  method = "poisson", 
+  normalization = T, 
+  pVal =0.01, 
+  tpmLow = 0.1,
+  #### Clustering
+  peakDistance = 40,      # Reduce to enforce closer peaks
+  extensionDistance = 10, # Smaller extensions per cluster
+  localThreshold = 0.05,  # Higher threshold for dominant signals
+  clusterThreshold = 2,   # Require stronger clusters
+  #### Consenus Clusters
+  dis = 25,
+  #### Annotation
+  filterCluster = TRUE, 
+  filterClusterThreshold = 0.02, 
+  annotationType = "genes", 
+  upstream=250, 
+  upstreamOverlap = 100, 
+  downstream = 0,
+  #### Analysis of enhancers
+  flanking = 200, 
+  dis2gene = 500
+  
   
 )
 

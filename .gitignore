@@ -2,15 +2,23 @@
 **/fastq
 
 **/gffcompare_iterative
+**/gffcompare_iterative_NovTX
 
 ## Other large files
 **/bam.all.tsv
 **/bam.filt.tsv
 **/all.merged.result_gff.compare.tsv
+**/aln.uni.tsv
+
+**/bam.all.tsv.gz
+**/bam.filt.tsv.gz
+**/all.merged.result_gff.compare.tsv.gz
+**/aln.uni.tsv.gz
+
+**/cov.counts.tsv.gz
 **/merged_cov.tsv
 **/mapped.cov.tsv
 **/all.merged.result_gff.compare.list.rds
-**/aln.uni.tsv
 **/TR.gff.compare.merged.TR.counts.gt.tsv
 **/TR.gene.ov.counts.tsv
 **/TR.reads.gff2

@@ -1,9 +1,10 @@
-library(BSgenomeForge)
-library(TSSr)
 library(devtools)
 library(BiocManager)
+library(BSgenomeForge)
 library(GenomeInfoDb)
-library(BSgenome)
+#library(BSgenome)
+library(TSSr)
+
 
 
 # Create BSgenome from seed file

@@ -131,7 +131,7 @@ Normalization: Viral read count
 ```{r, eval=T}
 #### Import TSS counts
 
-gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
+#gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
 
 
 #### !!! Consider adapters!
@@ -172,6 +172,8 @@ orf.counts     <- as.data.frame(orf.sum)
 
 orf.sum        <- merge(gather(orf.sum, sample, read_count, -c(1:6)), metafilt[,metacols], by='sample')
 setDT(orf.sum)
+
+orf.sum[,.(sum = sum(read_count)), .(hpi, cell_line)]
 ```
 
 
@@ -243,8 +245,8 @@ setDT(orf.sum)
 try({ dir.create(fig.dir) })
 
 ##
-normBase <- normBase[order(normBase$sample, colnames(orf.counts[-c(1:6)])), ]
-stopifnot(all(normBase$sample == colnames(orf.counts[-c(1:6)]) ))
+#normBase <- normBase[order(normBase$sample, colnames(orf.counts[-c(1:6)])), ]
+#stopifnot(all(normBase$sample == colnames(orf.counts[-c(1:6)]) ))
 
 orf.perc <- merge(normBase, orf.sum, by='sample')
 #orf.perc[, read_count := read_count / norm_base]

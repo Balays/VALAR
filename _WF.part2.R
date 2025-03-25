@@ -16,8 +16,8 @@ if(config$make.plots) {
 #### write outputs ####
 if (config$write.all) {
   
-  fwrite(mapped.cov, paste0(outdir, '/mapped.cov.tsv'), sep = '\t')
-  fwrite(merged_cov, paste0(outdir, '/merged_cov.tsv'), sep = '\t')
+  fwrite(mapped.cov, paste0(outdir, '/mapped.cov.tsv.gz'), sep = '\t')
+  fwrite(merged_cov, paste0(outdir, '/merged_cov.tsv.gz'), sep = '\t')
   
 }
 

@@ -38,7 +38,7 @@ export.gff3(viral.CDS.genes, 'refgenome/LT934125.1.CDS.gff3')
 ### Parent column is missing probably  
 
 
-viral.ref <- data.table(rbind(viral.mrna, viral.CDS, fill=TRUE))
+viral.ref <- data.table(rbind(viral.ref, viral.CDS, fill=TRUE))
 
 
 ## Genes (considering multi-exon CDSs)

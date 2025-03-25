@@ -49,8 +49,8 @@ TR.Ref.data <- fread(paste0(outdir, '/TR.Ref.data.tsv'))
 
 #bam.all <- fread(paste0(outdir, '/bam.all.tsv'), na.strings = '')
 
-mapped.cov       <- fread(paste0(outdir, '/mapped.cov.tsv'), na.strings = '')
-merged_cov       <- fread(paste0(outdir, '/merged_cov.tsv'), na.strings = '')
+mapped.cov       <- fread(paste0(outdir, '/mapped.cov.tsv.gz'), na.strings = '')
+merged_cov       <- fread(paste0(outdir, '/merged_cov.tsv.gz'), na.strings = '')
 
 win.cov.sum      <- fread(paste0(outdir, '/win.cov.sum.tsv'), na.strings = '')
 win.cov.hpi.sum  <- fread(paste0(outdir, '/win.cov.hpi.sum.tsv'), na.strings = '')
@@ -60,17 +60,17 @@ norm_cov_summary <- fread(paste0(outdir, '/norm.cov.summary.tsv'), na.strings = 
 readcounts       <- fread(paste0(outdir, '/readcounts.tsv'), na.strings = '', header = T)
 
 
-bam.filt <- fread(paste0(outdir, '/bam.filt.tsv'), na.strings = '')
+bam.filt <- fread(paste0(outdir, '/bam.filt.tsv.gz'), na.strings = '')
 
 
 
 ### TransFrags
 
-aln.uni   <- fread(paste0(outdir, '/aln.uni.tsv'),  na.strings = '')
-TR.uni    <- fread(paste0(outdir, '/TR.uni.tsv'),  na.strings = '')
-EX.uni    <- fread(paste0(outdir, '/EX.uni.tsv'),  na.strings = '')
-TR.data   <- fread(paste0(outdir, '/TR.data.tsv'), na.strings = '')
-TR.counts <- fread(paste0(outdir, '/TR.counts.tsv'), na.strings = '')
+aln.uni   <- fread(paste0(outdir, '/aln.uni.tsv.gz'),  na.strings = '')
+TR.uni    <- fread(paste0(outdir, '/TR.uni.tsv.gz'),  na.strings = '')
+EX.uni    <- fread(paste0(outdir, '/EX.uni.tsv.gz'),  na.strings = '')
+TR.data   <- fread(paste0(outdir, '/TR.data.tsv.gz'), na.strings = '')
+TR.counts <- fread(paste0(outdir, '/TR.counts.tsv.gz'), na.strings = '')
 
 
 TR.gff <- data.table(as.data.frame(rtracklayer::import.gff2(config$TR.reads.gfffile)))
@@ -85,7 +85,7 @@ TR.counts.sp <- dcast(TR.adapt.count, TR_ID + correct_tss + correct_tes ~ sample
 
 ### GFF-compare
 ## all results
-all.merged.result_gff.compare  <- fread(paste0(outdir, "/all.merged.result_gff.compare.tsv"), na.strings = '')
+all.merged.result_gff.compare  <- fread(paste0(outdir, "/all.merged.result_gff.compare.tsv.gz"), na.strings = '')
 
 ## best hits results
 best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.compare.tsv"), na.strings = '')

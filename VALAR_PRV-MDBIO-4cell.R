@@ -10,10 +10,10 @@ library(stringi)
 outdir  <- 'PRV-MDBIO-4cell'; try({ dir.create(outdir) })
 
 ### Load config or make new?
-load.config <- T
+load.config <- F
 
 ### Load Previous Results or Carry out Analysis?
-load.results <- T
+load.results <- F
 
 if(!load.config) {
   
@@ -100,10 +100,51 @@ if (!load.config) {
     ## GFF-compare settings
     TR.reads.gfffile = paste0(outdir, '/TR.reads.gff2'),
     
+    compare.transfrags.to = 'canonic.TX',
     thresh.eq.prime5 = 10,
     thresh.eq.prime3 = 10,
-    thresh.eq.junc   = 2
+    thresh.eq.junc   = 2,
     
+    ## TSSr Parameters
+    ### dcDNA - TSS
+    #### Filtering and Normalizing
+    method = "poisson", 
+    normalization = T, 
+    pVal =0.01, 
+    tpmLow = 0.1,
+    #### Clustering
+    peakDistance = 40,      # Reduce to enforce closer peaks
+    extensionDistance = 10, # Smaller extensions per cluster
+    localThreshold = 0.05,  # Higher threshold for dominant signals
+    clusterThreshold = 2,   # Require stronger clusters
+    #### Consenus Clusters
+    dis = 25,
+    #### Annotation
+    filterCluster = TRUE, 
+    filterClusterThreshold = 0.02, 
+    annotationType = "genes", 
+    upstream=250, 
+    upstreamOverlap = 100, 
+    downstream = 0,
+    #### Analysis of enhancers
+    flanking = 200, 
+    dis2gene = 500,
+    
+    ### dcDNA - TES
+    #### Clustering
+    peakDistance = 40,      # Reduce to enforce closer peaks
+    extensionDistance = 10, # Smaller extensions per cluster
+    localThreshold = 0.05,  # Higher threshold for dominant signals
+    clusterThreshold = 2,   # Require stronger clusters
+    #### Annotation
+    filterCluster = TRUE, 
+    filterClusterThreshold = 0.02, 
+    annotationType = "genes", 
+    upstream=250, 
+    upstreamOverlap = 100, 
+    downstream = 0
+ 
+       
     
   )
 
@@ -176,6 +217,8 @@ source('_WF.part2.R')
 ### CAGE Analysis
 if (config$include.cage) {
   
+  main.outdir <- outdir
+  
   outdir  <- 'CAGE'; try({ dir.create(outdir) })
   
   ##config
@@ -197,6 +240,7 @@ if (config$include.cage) {
   ### Import CAGE coverages
   source('_WF.part2.R')
   
+  readcounts.CAGE <- readcounts
   ##
   ### CAGE aligments
   bam.filt <- bam.all [!is.na(seqnames)]
@@ -254,19 +298,30 @@ if (config$include.cage) {
   
   
   #### Load MAIN configuration file again
+  
+  outdir <- main.outdir
+  
   config <- readRDS(paste0(outdir, '_config.rds'))
   
+  ## input bamfiles
+  bamdir   <- config$bamdir
+  pattern  <- config$pattern
+  bamfiles <- config$bamfiles
+  outdir   <- config$outdir
+  
+  ###
+  readcounts <- fread(paste0(config$outdir, '/readcounts.tsv'), sep = '\t')
   
 }
 
 ### remove
-rm(list = c('bam.all.list', 'bam.cov.list', 'mapped.cov', 'merged_cov', 'norm.cov'))
+rm(list = c('bam.all.list', 'bam.cov.list')) #, 'mapped.cov', 'merged_cov', 'norm.cov'))
 
 #### ####
 ##
 
 ### Combine w CAGE
-if(include.cage) {
+if(config$include.cage) {
   readcounts       <- rbind(readcounts, readcounts.CAGE)
   #bam.filt         <- rbind(bam.filt,   bam.filt.cage)
 }
@@ -274,7 +329,7 @@ if(include.cage) {
 
 ### SAVE / LOAD IMAGE
 gc()
-if(save.images) {
+if(config$save.images) {
   save.image(paste0(outdir, '.P1.RData'))
   load(paste0(outdir, '.P1.RData'))
 }
@@ -285,10 +340,10 @@ if(config$is.lortia) {
   bam.all[,correct_tes := fifelse(grepl('correct', tag.l3) | grepl('correct', tag.r3), T, F)]
   bam.all[,correct_tss := fifelse(grepl('correct', tag.l5) | grepl('correct', tag.r5), T, F)]
 }
-fwrite(bam.all, paste0(outdir, '/bam.all.tsv'), sep='\t')
+fwrite(bam.all, paste0(outdir, '/bam.all.tsv.gz'), sep='\t')
 
 
-bam.all <- fread(paste0(outdir, '/bam.all.tsv'))
+#bam.all <- fread(paste0(outdir, '/bam.all.tsv.gz'))
 ## filter out reads with supplementary alignments, or
 ## these were filtered out previously?
 # bam.filt[qname]
@@ -298,14 +353,14 @@ bam.filt <- bam.filt[seqnames == genome]
 
 #rm('bam.all')
 
-fwrite(bam.filt, paste0(outdir, '/bam.filt.tsv'), sep='\t')
+fwrite(bam.filt, paste0(outdir, '/bam.filt.tsv.gz'), sep='\t')
 
-bam.filt <- fread(paste0(outdir, '/bam.filt.tsv'), na.strings = '')
+#bam.filt <- fread(paste0(outdir, '/bam.filt.tsv.gz'), na.strings = '')
 
 
 
 ##
-#### WF Part 2. Adapter Checking ####
+#### WF Part 2. Adapter Checking -->> Optional ####
 
 ## check LoRTIA tags
 source('LoRTIA_all.bam_barplot_v2.R')
@@ -394,6 +449,9 @@ fwrite(bam.filt, file.path(outdir, 'bam.filt.tsv'), sep = '\t')
 bam.filt <- fread(file.path(outdir, 'bam.filt.tsv'), na.strings = '')
 
 
+
+
+
 ##
 #### WF Part 3. Read clustering into TransFrags ####
 
@@ -415,18 +473,18 @@ TR.data <- merge(TR.data, TR.counts, by='TR_ID', all=T)
 aln.uni      <- unique(bam.TR[,.(seqnames, strand, aln_ID, TR_ID, TR_start, TR_end, correct_tss, correct_tes, sample)])
 
 ## write out
-fwrite(aln.uni,   paste0(outdir, '/aln.uni.tsv'),  sep='\t')
-fwrite(EX.uni,    paste0(outdir, '/EX.uni.tsv'),  sep='\t')
-fwrite(TR.uni,    paste0(outdir, '/TR.uni.tsv'),  sep='\t')
-fwrite(TR.data,   paste0(outdir, '/TR.data.tsv'), sep='\t')
-fwrite(TR.counts, paste0(outdir, '/TR.counts.tsv'), sep='\t')
+fwrite(aln.uni,   paste0(outdir, '/aln.uni.tsv.gz'),  sep='\t')
+fwrite(EX.uni,    paste0(outdir, '/EX.uni.tsv.gz'),  sep='\t')
+fwrite(TR.uni,    paste0(outdir, '/TR.uni.tsv.gz'),  sep='\t')
+fwrite(TR.data,   paste0(outdir, '/TR.data.tsv.gz'), sep='\t')
+fwrite(TR.counts, paste0(outdir, '/TR.counts.tsv.gz'), sep='\t')
 
 ## load back
-aln.uni   <- fread(paste0(outdir, '/aln.uni.tsv'),  na.strings = '')
-TR.uni    <- fread(paste0(outdir, '/TR.uni.tsv'),  na.strings = '')
-EX.uni    <- fread(paste0(outdir, '/EX.uni.tsv'),  na.strings = '')
-TR.data   <- fread(paste0(outdir, '/TR.data.tsv'), na.strings = '')
-TR.counts <- fread(paste0(outdir, '/TR.counts.tsv'), na.strings = '')
+aln.uni   <- fread(paste0(outdir, '/aln.uni.tsv.gz'),  na.strings = '')
+TR.uni    <- fread(paste0(outdir, '/TR.uni.tsv.gz'),  na.strings = '')
+EX.uni    <- fread(paste0(outdir, '/EX.uni.tsv.gz'),  na.strings = '')
+TR.data   <- fread(paste0(outdir, '/TR.data.tsv.gz'), na.strings = '')
+TR.counts <- fread(paste0(outdir, '/TR.counts.tsv.gz'), na.strings = '')
 
 
 ### Export Transfrags
@@ -542,45 +600,100 @@ if(save.images) {
 
 
 
+
 ##
-#### WF part 4. Ref Transcript count analysis ####
+#### WF part 4. Reference Transcript Analysis ####
 
 ### Run GFF-compare on each ref TR separately,
-## import results and calculate distances
+# Compare every TransFrag to Every Reference TX Iteratively
+# then calculate distances
+###
+ref_mRNAs <- unique(viral.mrna[,transcript_id])
+#
+out_dir <-paste0(outdir, '/gffcompare_iterative')
+#
+all.gff.compare.outfile <- "all.merged.result_gff.compare.tsv.gz"
+#
+query_gff <- config$TR.reads.gfffile
+#
 source('run_GFF.COMPARE.R')
 
-### Analyse GFF-compare results
+
 ## read in GFF-compare results
-all.merged.result_gff.compare  <- fread(paste0(outdir, "/all.merged.result_gff.compare.tsv"), na.strings = '')
+all.merged.result_gff.compare  <- fread(paste0(outdir, "/", all.gff.compare.outfile), na.strings = '')
 
-# Update the results as transcript IDs in the reference annotation was changed
-#source('update_TR.ref.IDs.R')
 
-## find the closest ref-TR for each query
+## Which classification result to use?
+config$compare.transfrags.to <- 'canonic'
+
+if (config$compare.transfrags.to == 'canonic.TX') {
+  
+  
+  ### 4.A Compare TransFrags to Canonical Transcripts (one for each gene)
+  all.merged.result_gff.compare.canonic  <- merge(all.merged.result_gff.compare,
+                                                  viral.ref[type == 'transcript' &
+                                                              is.canonic == 'canonic', 
+                                                            .(seqnames, strand, transcript_id)],
+                                                  by.x = c('seqnames', 'strand', 'cmp_ref'), 
+                                                  by.y = c('seqnames', 'strand', 'transcript_id') )
+  
+  all.merged.result_gff.compare <- all.merged.result_gff.compare.canonic
+  
+  
+} else if (config$compare.transfrags.to == 'closest.Ref') {
+  
+  
+  ### 4.B Classify TransFrags Compared to Closest Reference Transcripts (can be more than one for each gene)
+  all.merged.result_gff.compare <- all.merged.result_gff.compare
+  
+}
+
+
+### Analyse GFF-compare results:
+## find the closest (canonic or all) ref-TR for each query,
 ## categorise non-equal matches
 thresh.eq.prime5 <- config$thresh.eq.prime5
 thresh.eq.prime3 <- config$thresh.eq.prime3
 thresh.eq.junc   <- config$thresh.eq.junc
 
 source('analyse_GFF.COMPARE.R')
-## import results
-best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.compare.tsv"), na.strings = '')
+#### Write out
+fwrite(best.merged.result_gff.compare,     paste0(outdir, "/best.merged.result_gff.compare.tsv.gz"),     sep = '\t')
+
+## Import results back
+best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.compare.tsv.gz"), na.strings = '')
+TR.counts <- fread(paste0(outdir, "/TR.counts.tsv.gz"), na.strings = '')
 #best.merged.result_gff.compare[,transcript_id := as.integer(transcript_id) ]
 
-### Summarise results
+
+### Summarise results based on TransFrag class and metadata factors
 source('summarise_GFF.COMPARE.R')
+## Write out
+fwrite(TR.gff.compare.merged.TR.counts.gt, paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.tsv.gz"), sep = '\t')
+fwrite(best.gff.compare.ref.TR.class.freq, paste0(outdir, "/best.gff.compare.ref.TR.class.freq.tsv.gz"), sep = '\t')
+fwrite(TR.gff.compare.merged.TR, paste0(outdir, "/TR.gff.compare.merged.TR.tsv.gz"), sep = '\t')
 
-TR.gff.compare.merged.TR.counts.gt <- fread(paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.tsv"), na.strings = '')
 
-### include LoRTIA adapter info to Transcripts
-adapt.TR <- aln.uni[,.N,by=.(TR_ID, correct_tss, correct_tes)]
+## Import results back
+TR.gff.compare.merged.TR.counts.gt <- fread(paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.tsv.gz"), na.strings = '')
+
+
+### Plot GFF-compare results
+source('plot_GFF.COMPARE.R')
+
+
+
+aln.uni <- fread(file.path(outdir, "aln.uni.tsv.gz"), sep = '\t')
+
+### include LoRTIA adapter info to Transcripts sample-wise
+adapt.TR <- aln.uni[,.N, by=.(TR_ID, correct_tss, correct_tes, sample)]
 adapt.TR[,correct_tss := paste0('correct_tss::', as.character(correct_tss))]
 adapt.TR[,correct_tes := paste0('correct_tes::', as.character(correct_tes))]
 adapt.TR[,adapter := paste0(correct_tes, ';', correct_tss)]
-adapt.TR.sp <- dcast(adapt.TR, TR_ID ~ adapter, value.var = 'N', fill=0)
+adapt.TR.sp <- dcast(adapt.TR, TR_ID + sample ~ adapter, value.var = 'N', fill=0)
 
 
-fwrite(adapt.TR.sp, file.path(outdir, "adapt.TR.sp.tsv"), sep = '\t')
+fwrite(adapt.TR.sp, file.path(outdir, "adapt.TR.sp.tsv.gz"), sep = '\t')
 
 
 ### merge TransFrag count with Reference Transcript annotation for each Transfrag
@@ -594,7 +707,7 @@ TR.gff.compare.merged.TR.counts.gt <- merge(TR.gff.compare.merged.TR.counts.gt, 
 #### ####
 ##
 
-### remove
+### remove unnecceassry
 rm(list=c('all.merged.result_gff.compare', 'TR.gff.compare.merged.TR', 'TR.gff.compare.merged.TR.counts'))
 gc()
 
@@ -606,9 +719,73 @@ if(save.images) {
 
 
 
+##
+#### WF part 5.  3`- and 5`- End Counting and Plotting ####
+
+## prime5 and prime3 counts from TR-table, considering adapters
+
+prime.counts  <- merge(TR.adapt.count, metafilt, by='sample')
+prime.counts[,start  := TR_start]
+prime.counts[,end    := TR_end  ]
+prime.counts[,prime5 := fifelse(strand == '+', start, end)]
+prime.counts[,prime3 := fifelse(strand == '+', end,   start)  ]
+
+prime3.counts <- prime.counts[,.(count=sum(count)), by=.(seqnames,	strand,	correct_tes, prime3, sample, hpi, Time,	cell_line,	group)]
+prime3.counts[, endtype := 'prime3'][, pos := prime3]
+prime3.counts[,start  := pos]
+prime3.counts[,end    := pos]
+
+
+prime5.counts <- prime.counts[,.(count=sum(count)), by=.(seqnames,	strand,	correct_tss, prime5, sample, hpi, Time,	cell_line,	group)]
+prime5.counts[, endtype := 'prime5'][, pos := prime5]
+prime5.counts[,start  := pos]
+prime5.counts[,end    := pos]
+
+## Mean coverage from stranded only bamfiles directly
+cov.counts <- merged_cov[,.(count=mean(count)), by=.(seqnames,	strand,	pos, sample, hpi, Time,	cell_line,	group)]
+cov.counts[,start  := pos]
+cov.counts[,end    := pos]
+
+
+## write
+fwrite(prime3.counts, paste0(outdir, '/prime3.counts.tsv.gz'), sep = '\t')
+fwrite(prime5.counts, paste0(outdir, '/prime5.counts.tsv.gz'), sep = '\t')
+fwrite(cov.counts,    paste0(outdir, '/cov.counts.tsv.gz'),    sep = '\t')
+
+#### ####
+##
+
+
 
 ##
-#### WF part 4. Count genes and Transcripts ####
+#### WF part 6.: 3`- and 5`- End Clustering and Analysis Using TSSr ####
+
+## Run TSSr to Cluster TSS based on CAGE data
+source('TSSr.TSS.CAGE.R')
+source('TSSr.TSS.CAGE.TX.eval.R')
+
+
+source('TSSr.TSS.dcDNA.R')
+source('TSSr.TSS.dcDNA.TX.eval.R')
+
+
+## Run TSSr to Cluster TES based on dcDNA data
+source('TSSr.TES.dcDNA.R')
+source('TSSr.TES.dcDNA.TX.eval.R')
+
+
+## Run TSSr to Cluster TES based on dRNA data
+source('TSSr.TES.dRNA.R')
+source('TSSr.TES.dRNA.TX.eval.R')
+
+
+#### ####
+##
+
+
+
+##
+#### WF part 6. Count genes and Transcripts ####
 
 #source('_WF.part0.R')
 
@@ -672,18 +849,22 @@ gene.clusters.all <- unique(gene.clusters.all[,.(seqnames, TSS.canonic, TES.cano
 
 
 source('count.genes.v2.R')
+
+#### !!! Consider adapters!
+adapters <- 'any'
+source('Gene.counts.R')
+fwrite(gene.sample_count.sp, paste0(res.dir,  '/gene.sample.count.sp.tsv'), sep = '\t')
+gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
+
+## write out compressed results
+fwrite(TR.gene.ov.counts, paste0(outdir,                  '/TR.gene.ov.counts.tsv.gz'), sep = '\t')
+fwrite(TR.gff.compare.merged.TR.counts.gt, paste0(outdir, '/TR.gff.compare.merged.TR.counts.gt.tsv.gz'), sep = '\t')
+fwrite(best.merged.result_gff.compare, paste0(outdir,     '/best.merged.result_gff.compare.tsv.gz'),     sep = '\t')
+##### ITT JÁROK, EDDIG OK
+
 ## OK
 
 
-######## CAGE
-source('CAGEs.R')
-
-
-## write out compressed results
-fwrite(TR.gene.ov.counts, paste0(outdir, '/TR.gene.ov.counts.tsv.gz'), sep = '\t')
-fwrite(TR.gff.compare.merged.TR.counts.gt, paste0(outdir, '/TR.gff.compare.merged.TR.counts.gt.tsv.gz'), sep = '\t')
-fwrite(best.merged.result_gff.compare, paste0(outdir, '/best.merged.result_gff.compare.tsv.gz'), sep = '\t')
-##### ITT JÁROK, EDDIG OK
 
 
 ### 3.) Count transcripts and combine with gene (and cluster) counts

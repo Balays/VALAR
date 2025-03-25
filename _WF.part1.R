@@ -98,7 +98,7 @@ print(readcounts)
 fwrite(readcounts, paste0(outdir, '/readcounts.tsv'), sep = '\t')
 
 if (config$write.all) {
-  fwrite(bam.all,    paste0(config$outdir, '/bam.all.tsv'), sep = '\t')
+  fwrite(bam.all,    paste0(config$outdir, '/bam.all.tsv.gz'), sep = '\t')
 }
 
 #### ####

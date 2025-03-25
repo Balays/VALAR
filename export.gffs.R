@@ -52,7 +52,7 @@ TR.EX  <- merge(DT.ex, DT.tr,
 ##
 fwrite(TR.EX, paste0(outdir, '/TR.EX.tsv'))
 ##
-rtracklayer::export.gff2(TR.gff, TR.reads.gfffile)
+rtracklayer::export.gff2(TR.gff, config$TR.reads.gfffile)
 
 
 ## only for multiple cell lines
@@ -64,7 +64,7 @@ if (multiCellLines) {
   trs.PK15 <- unique(TR.counts[grepl('PK-15', sample) & count > 1,TR_ID])
   
   
-  rtracklayer::export.gff2(TR.gff, TR.reads.gfffile )
+  rtracklayer::export.gff2(TR.gff, config$TR.reads.gfffile )
   
   
   TR.gff.PC12 <- TR.gff[transcript_id %in% trs.PC12,]
@@ -77,3 +77,4 @@ if (multiCellLines) {
   rtracklayer::export.gff2(TR.gff.PK15,  paste0(outdir, '/PK15.TR.reads.gff2'))
   
 }
+

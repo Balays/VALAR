@@ -14,7 +14,7 @@ prime3.counts[, group     := paste(cell_line, hpi, sep='_')]
 
 ## filter out C6 0.5 h samples
 prime3.counts <- prime3.counts[!grepl('C6_0.5h', sample),]
-## and dRNA
+## but not dRNA, right?
 prime3.counts <- prime3.counts[!grepl('dRNA', sample),]
 
 ## Filtering of very-low coverage samples
@@ -146,7 +146,7 @@ ClusterShapes[, cluster_width := end - start +1]
 # 
 ClusterShapes  <- merge(ClusterShapes, unique(prime3.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
 
-fwrite(ClusterShapes, paste0(outdir, '/TES.TSSr.dcDNA.all.ClusterShapes.txt'), sep='\t')
+fwrite(ClusterShapes, paste0(outdir, '/TSSr.TES.dcDNA.all.ClusterShapes.txt'), sep='\t')
 
 
 ####
@@ -200,29 +200,31 @@ assignedClusters  <- assignedClusters[ closest_TC  == cluster]
 
 assignedClusters  <- assignedClusters[ dominant_TC > 0]
 
+setnames(assignedClusters, colnames(assignedClusters), gsub('tss', 'tes', colnames(assignedClusters)) )
+
 ##
-assignedClusters.sp <- dcast(assignedClusters[dominant_TC > 0], gene ~ group, value.var = 'dominant_tss')
+assignedClusters.sp <- dcast(assignedClusters[dominant_TC > 0], gene ~ group, value.var = 'dominant_tes')
 
 
 
-## Gene-wise TSS shifts from mean dominant_TSS
-assignedClusters[, gene_mean_dominant_TSS  := round(mean(dominant_tss), 0), by=.(gene)]
+## Gene-wise TES shifts from mean dominant_TES
+assignedClusters[, gene_mean_dominant_TES  := round(mean(dominant_tes), 0), by=.(gene)]
 
-assignedClusters[, gene_dominant_TSS_shift := gene_mean_dominant_TSS - dominant_tss, by = .(cell_line, hpi, group, Time, gene)]
-assignedClusters[, gene_mean_shift_TSS     := mean(abs(gene_dominant_TSS_shift)), by=.(gene)]
-assignedClusters[, gene_sd_shift_TSS       := sd(abs(gene_dominant_TSS_shift)),   by=.(gene)]
-assignedClusters[, gene_varcoeff_shif_TSS  := gene_sd_shift_TSS / gene_mean_shift_TSS,   by=.(gene)]
+assignedClusters[, gene_dominant_TES_shift := gene_mean_dominant_TES - dominant_tes, by = .(cell_line, hpi, group, Time, gene)]
+assignedClusters[, gene_mean_shift_TES     := mean(abs(gene_dominant_TES_shift)), by=.(gene)]
+assignedClusters[, gene_sd_shift_TES       := sd(abs(gene_dominant_TES_shift)),   by=.(gene)]
+assignedClusters[, gene_varcoeff_shif_TES  := gene_sd_shift_TES / gene_mean_shift_TES,   by=.(gene)]
 
-gene_TSS_shifts_Sum <- unique(assignedClusters[, .(chr, strand, gene, gene_mean_shift_TSS, gene_sd_shift_TSS, gene_varcoeff_shif_TSS)])
-gene_TSS_shifts_Sum <- gene_TSS_shifts_Sum[order(gene_mean_shift_TSS, decreasing = T)]
-topShifts   <- gene_TSS_shifts_Sum[1:20, gene]
+gene_TES_shifts_Sum <- unique(assignedClusters[, .(chr, strand, gene, gene_mean_shift_TES, gene_sd_shift_TES, gene_varcoeff_shif_TES)])
+gene_TES_shifts_Sum <- gene_TES_shifts_Sum[order(gene_mean_shift_TES, decreasing = T)]
+topShifts   <- gene_TES_shifts_Sum[1:20, gene]
 topShifts   <- topShifts[!topShifts %in% c('US1_2', 'IE180_2')]
 
 
 ## Plot Gene-Wise Shifts
 ggplot(assignedClusters[gene %in% topShifts
                       & Time %in% c(1,2,4,6,8,12)  ], 
-       aes(Time, gene_dominant_TSS_shift)) + 
+       aes(Time, gene_dominant_TES_shift)) + 
   geom_line(aes(color = cell_line, group = cell_line)) + 
   geom_point(aes(color = cell_line)) + 
   #coord_flip() +
@@ -231,7 +233,7 @@ ggplot(assignedClusters[gene %in% topShifts
 
 
 ##
-fwrite(assignedClusters, paste0(outdir, '/TSSr.dcDNA.best.assignedClusters.txt'), sep='\t')
+fwrite(assignedClusters, paste0(outdir, '/TSSr.TES.dcDNA.best.assignedClusters.txt'), sep='\t')
 
 
 # Analysis of enhancers
@@ -252,32 +254,32 @@ enhancers.dt <- rbindlist(myTSSr@enhancers, idcol = 'group', use.names = T)
 #enhancers.dt[, cluster_width := end - start +1]
 
 # 
-enhancers.dt  <- merge(enhancers.dt, unique(prime5.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
+enhancers.dt  <- merge(enhancers.dt, unique(prime3.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
 
 
-fwrite(enhancers.dt, paste0(outdir, '/TSSr.dcDNA.enhancers.txt'), sep='\t')
+fwrite(enhancers.dt, paste0(outdir, '/TSSr.TES.dcDNA.enhancers.txt'), sep='\t')
 
 
 ##### END ANALYSIS
 
 #
-saveRDS(myTSSr, paste0(outdir, '/TSSr.dcDNA.rds'))
+saveRDS(myTSSr, paste0(outdir, '/TSSr.TES.dcDNA.rds'))
 
 # Read back
-myTSSr <- readRDS(paste0(outdir, '/TSSr.dcDNA.rds'))
+myTSSr <- readRDS(paste0(outdir, '/TSSr.TES.dcDNA.rds'))
 
-TSS.raw.dt    <- fread(paste0(outdir, '/TSSr.dcDNA.raw.txt'))
+TSS.raw.dt    <- fread(paste0(outdir, '/TSSr.TES.dcDNA.raw.txt'))
 
-TSS.dt        <- fread(paste0(outdir, '/TSSr.dcDNA.processed.txt'))
+TSS.dt        <- fread(paste0(outdir, '/TSSr.TES.dcDNA.processed.txt'))
 
-tagClusters   <- fread(paste0(outdir, '/TSSr.dcDNA.all.tagClusters.txt'))
+tagClusters   <- fread(paste0(outdir, '/TSSr.TES.dcDNA.all.tagClusters.txt'))
 
-ConsClusters  <- fread(paste0(outdir, '/TSSr.dcDNA.all.ConsClusters.txt'))
+ConsClusters  <- fread(paste0(outdir, '/TSSr.TES.dcDNA.all.ConsClusters.txt'))
 
-ClusterShapes <- fread(paste0(outdir, '/TSSr.dcDNA.all.ClusterShapes.txt'))
+ClusterShapes <- fread(paste0(outdir, '/TSSr.TES.dcDNA.all.ClusterShapes.txt'))
 
 ##
-assignedClusters <- fread(paste0(outdir, '/TSSr.dcDNA.best.assignedClusters.txt'))
+assignedClusters <- fread(paste0(outdir, '/TSSr.TES.dcDNA.best.assignedClusters.txt'))
 
 
 ### Combine Clusters Across Samples
@@ -288,7 +290,7 @@ TSSr_clusters <- copy(ClusterShapes)
 TC_summary <- TSSr_clusters[, .(
   TC.start = min(start), 
   TC.end   = max(end),   
-  consensus_peak   = mean(dominant_tss),  # or weighted average if desired
+  consensus_peak   = round(mean(dominant_tss),0),  # or weighted average if desired
   min_peak    = min(dominant_tss),
   max_peak    = max(dominant_tss),
   mean_shape  = min(shape.score),
@@ -318,10 +320,10 @@ TSSr_clusters_uni <- unique(TSSr_clusters[,.(seqnames = chr, strand, cluster, TC
                                              hpi_samples, cell_lines)])
 
 #
-fwrite(TSSr_clusters, paste0(outdir, '/TSSr.dcDNA.all.Cluster.Results.txt'), sep='\t')
+fwrite(TSSr_clusters, paste0(outdir, '/TSSr.TES.dcDNA.all.Cluster.Results.txt'), sep='\t')
 
 #
-fwrite(TSSr_clusters_uni, paste0(outdir, '/TSSr.dcDNA.uni.Cluster.Results.txt'), sep='\t')
+fwrite(TSSr_clusters_uni, paste0(outdir, '/TSSr.TES.dcDNA.uni.Cluster.Results.txt'), sep='\t')
 
 
 
