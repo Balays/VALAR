@@ -5,7 +5,7 @@
 
 #TR.gff.compare.merged.TR.counts.gt.NovTX <- fread(paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.NovTX.tsv.gz"), na.strings = '')
 
-
+TransFrags.TSSr.filt.counts.gt <- fread(paste0(outdir, "/TransFrags.TSSr.filt.counts.gt.tsv.gz"), na.strings = '')
 
 #### 
 ##
@@ -14,14 +14,6 @@
 ### Run GFF-compare on each ref TR separately,
 # Compare every TransFrag to Every Reference TX Iteratively
 # then calculate distances
-###
-ref_mRNAs <- unique(viral.mrna[,transcript_id])
-#
-out_dir <-paste0(outdir, '/gffcompare_iterative_NovTX')
-#
-all.gff.compare.outfile <- "NovTXs.merged.result_gff.compare.tsv.gz"
-#
-query_gff <- paste0(outdir, '/NOV.TXs.gff2')
 #
 source('run_GFF.COMPARE.R')
 
@@ -32,7 +24,7 @@ all.merged.result_gff.compare.NovTX  <- fread(paste0(outdir, "/", all.gff.compar
 
 
 ## Which classification result to use?
-config$compare.transfrags.to <- 'closest.Ref'
+
 
 if (config$compare.transfrags.to == 'canonic.TX') {
   
@@ -77,7 +69,7 @@ best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.
 
 
 ### Summarise results based on TransFrag class and metadata factors
-TR.counts[,.(sample, transcript_id=as.character(TR_ID), count)]
+#TR.counts[,.(sample, transcript_id=as.character(TR_ID), count)]
 TR.counts <- TransFrags.TSSr.filt.counts.gt[, .(count = sum(count)), by=.(NOV_TX_ID, sample)]
 setnames(TR.counts, 'NOV_TX_ID', 'TR_ID')
 source('summarise_GFF.COMPARE.R')

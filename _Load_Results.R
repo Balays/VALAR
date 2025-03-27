@@ -47,7 +47,7 @@ TR.Ref.data <- fread(paste0(outdir, '/TR.Ref.data.tsv'))
 ##
 
 
-#bam.all <- fread(paste0(outdir, '/bam.all.tsv'), na.strings = '')
+bam.all <- fread(paste0(outdir, '/bam.all.tsv.gz'), na.strings = '')
 
 mapped.cov       <- fread(paste0(outdir, '/mapped.cov.tsv.gz'), na.strings = '')
 merged_cov       <- fread(paste0(outdir, '/merged_cov.tsv.gz'), na.strings = '')

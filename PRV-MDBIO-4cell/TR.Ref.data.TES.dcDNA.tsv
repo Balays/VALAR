@@ -1,4 +1,4 @@
-dcDNA_TC_ID	seqnames	strand	transcript_id	exon_number	start.TR	end.TR	start.exon	end.exon	start	end	prime5.TR	prime5.ex	prime3.TR	prime3.ex	last_exon	source	TC.start	TC.end	support	score	consensus_peak	dcDNA_TC_significance
+dcDNA.TES_TC_ID	seqnames	strand	transcript_id	exon_number	start.TR	end.TR	start.exon	end.exon	start	end	prime5.TR	prime5.ex	prime3.TR	prime3.ex	last_exon	source	TC.start	TC.end	support	score	consensus_peak	dcDNA.TES_TC_significance
 	LT934125.1	+	UL14L-13-12	1	75675	79955	75675	79955	75675	79955	75675	75675	79955	79955	TRUE	NAGATA						
 	LT934125.1	+	UL1L-2-3-3.5	1	92069	95694	92069	95694	92069	95694	92069	92069	95694	95694	TRUE	NAGATA						
 	LT934125.1	+	UL20	1	65806	66392	65806	66392	65806	66392	65806	65806	66392	66392	TRUE	NAGATA						

@@ -1,4 +1,4 @@
-chr	strand	gene	group	cluster	start	end	dominant_tss	tags	tags.dominant_tss	q_0.1	q_0.9	interquantile_width	inCoding	cluster_width	hpi	cell_line	Time	dominant_TC	CDS_start	CDS_end	CDS_prime5	CDS_prime3	TSS_CDS_dist	closest_TC
+chr	strand	gene	group	cluster	start	end	dominant_tes	tags	tags.dominant_tes	q_0.1	q_0.9	interquantile_width	inCoding	cluster_width	hpi	cell_line	Time	dominant_TC	CDS_start	CDS_end	CDS_prime5	CDS_prime3	TSS_CDS_dist	closest_TC
 LT934125.1	+	NOIR	C6_dRNA	62	107989	107989	107989	129.082225	129.082225	107989	107989	1	NOIR	1	dRNA	C6	dRNA	0	107483	108830	107483	108830	841	0
 LT934125.1	+	NOIR	C6_dRNA	63	108031	108031	108031	129.082225	129.082225	108031	108031	1	NOIR	1	dRNA	C6	dRNA	0	107483	108830	107483	108830	799	0
 LT934125.1	+	NOIR	C6_dRNA	64	108071	108071	108071	258.164451	258.164451	108071	108071	1	NOIR	1	dRNA	C6	dRNA	64	107483	108830	107483	108830	759	0

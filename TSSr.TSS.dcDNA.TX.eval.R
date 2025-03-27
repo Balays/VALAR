@@ -78,7 +78,7 @@ length(unique(dcDNA.TSS.TF.OV$transcript_id)) / length(unique(TR.gff.compare.uni
 # 90% percent of dcDNA TransFrags were supported by TSSr Clusters from the dcDNA reads (+/- 10 bp)
 
 
-TR.gff.compare.uni <- merge(dcDNA.TSS.TF.OV[,.(seqnames, strand, TC.start=start, TC.end=end, dcDNA_TC_ID=gene, support, score, consensus_peak, transcript_id)],
+TR.gff.compare.uni <- merge(dcDNA.TSS.TF.OV[,.(seqnames, strand, TC.start=start, TC.end=end, dcDNA.TSS_TC_ID=gene, support, score, consensus_peak, transcript_id)],
                             by.x=c('seqnames', 'strand', 'transcript_id'),
                             TR.gff.compare.uni, by.y=c('seqnames', 'strand', 'transcript_id'), all.y=T)
 
@@ -86,7 +86,7 @@ TR.gff.compare.uni <- merge(dcDNA.TSS.TF.OV[,.(seqnames, strand, TC.start=start,
 
 ## Calculate significance
 ## -->> FROM dcDNA DATA
-data <- unique( TSSr_clusters_uni[, .(seqnames, strand, dcDNA_TC_ID=gene, score, support)] )
+data <- unique( TSSr_clusters_uni[, .(seqnames, strand, dcDNA.TSS_TC_ID=gene, score, support)] )
 
 
 
@@ -96,7 +96,7 @@ support_percentiles <- quantile(data$support, probs = c(0.5, 0.75), na.rm = TRUE
 score_percentiles   <- quantile(data$score,   probs = c(0.5, 0.75), na.rm = TRUE) #+ 10
 
 # Categorize 'dcDNA significance' based on the calculated thresholds
-data[,dcDNA_TC_significance := fifelse(support <= support_percentiles[1] | score <= score_percentiles[1], "*",
+data[,dcDNA.TSS_TC_significance := fifelse(support <= support_percentiles[1] | score <= score_percentiles[1], "*",
                            fifelse(support >  support_percentiles[1] & support < support_percentiles[2] | 
                                      score >  score_percentiles[1]   & score <  score_percentiles[2], "**",
                            fifelse(support >= support_percentiles[2] | score >= score_percentiles[2], "***",
@@ -106,39 +106,39 @@ data[,dcDNA_TC_significance := fifelse(support <= support_percentiles[1] | score
 ggplot(data) +
   theme_bw() +
   geom_histogram(aes(score), bins=50) +
-  facet_wrap(~support + dcDNA_TC_significance, nrow=3, scales='free')
+  facet_wrap(~support + dcDNA.TSS_TC_significance, nrow=3, scales='free')
 
 
-support_data <- data[,.(min=min(score), max=max(score), mean=mean(score)), by=.(dcDNA_TC_significance, support)]
+support_data <- data[,.(min=min(score), max=max(score), mean=mean(score)), by=.(dcDNA.TSS_TC_significance, support)]
 support_data
 
 ## add dcDNA_significanxe to transcript table
-TR.gff.compare.uni <- merge(TR.gff.compare.uni, data[,.(dcDNA_TC_ID, dcDNA_TC_significance)], by='dcDNA_TC_ID', all.x=T)
+TR.gff.compare.uni <- merge(TR.gff.compare.uni, data[,.(dcDNA.TSS_TC_ID, dcDNA.TSS_TC_significance)], by='dcDNA.TSS_TC_ID', all.x=T)
 
-dcDNA.TR.support.freq <- TR.gff.compare.uni[, .(ratio=.N/nrow(TR.gff.compare.uni)), by = .(dcDNA_TC_significance) ][order(dcDNA_TC_significance)]
+dcDNA.TR.support.freq <- TR.gff.compare.uni[, .(ratio=.N/nrow(TR.gff.compare.uni)), by = .(dcDNA.TSS_TC_significance) ][order(dcDNA.TSS_TC_significance)]
 
 
-dcDNA.fr.dt <- TR.gff.compare.uni[,.N,by=.(dcDNA_TC_significance, dcDNA_TC_ID)]
+dcDNA.fr.dt <- TR.gff.compare.uni[,.N,by=.(dcDNA.TSS_TC_significance, dcDNA.TSS_TC_ID)]
 
 
 ## ennyi TransFrag-okat NEM támaszott alá a dcDNA
-TR.gff.compare.uni[is.na(dcDNA_TC_ID),.N]
+TR.gff.compare.uni[is.na(dcDNA.TSS_TC_ID),.N]
 
 ## ennyi TransFrag-okat támaszott alá a dcDNA
-TR.gff.compare.uni[!is.na(dcDNA_TC_ID),.N]
+TR.gff.compare.uni[!is.na(dcDNA.TSS_TC_ID),.N]
 
 ## ennyi olyan TransFrag-ot, ami REF TX-el megegyező ("="), támaszott alá a dcDNA
-TR.gff.compare.uni[!is.na(dcDNA_TC_ID) & class_code == '=', .N]
+TR.gff.compare.uni[!is.na(dcDNA.TSS_TC_ID) & class_code == '=', .N]
 
 ## ennyi olyan TransFrag-ot, ami REF TX-el megegyező ("="), támaszott alá a dcDNA PONTOSAN
-TR.gff.compare.uni[!is.na(dcDNA_TC_ID) & consensus_peak == prime5 & class_code == '=', .N]
+TR.gff.compare.uni[!is.na(dcDNA.TSS_TC_ID) & consensus_peak == prime5 & class_code == '=', .N]
 
 
 ## ennyi REF TX-et, támaszott alá a dcDNA
-length(unique(TR.gff.compare.uni[class_code == '=' & !is.na(dcDNA_TC_ID), cmp_ref]))
+length(unique(TR.gff.compare.uni[class_code == '=' & !is.na(dcDNA.TSS_TC_ID), cmp_ref]))
 
 ## ennyi REF TX-et, támaszott alá a dcDNA PONTOSAN
-length(unique(TR.gff.compare.uni[class_code == '=' & !is.na(dcDNA_TC_ID) & consensus_peak == prime5, cmp_ref]))
+length(unique(TR.gff.compare.uni[class_code == '=' & !is.na(dcDNA.TSS_TC_ID) & consensus_peak == prime5, cmp_ref]))
 
 
 #### ####
@@ -187,14 +187,14 @@ length(unique(dcDNA.TSS.REF.OV$transcript_id)) / length(unique(TR.merged.data$tr
 
 TR.merged.data <- merge(TR.merged.data,
                         by.x=c('seqnames', 'strand', 'transcript_id', 'exon_number'),
-                        dcDNA.TSS.REF.OV[,.(seqnames, strand, TC.start=start, TC.end=end, dcDNA_TC_ID=gene, support, score, consensus_peak, transcript_id, exon_number)],
+                        dcDNA.TSS.REF.OV[,.(seqnames, strand, TC.start=start, TC.end=end, dcDNA.TSS_TC_ID=gene, support, score, consensus_peak, transcript_id, exon_number)],
                         by.y=c('seqnames', 'strand', 'transcript_id', 'exon_number'), all.x=T)
 
 
 
 ### Calculate significance
 ## -->> FROM dcDNA DATA
-data <- unique( TSSr_clusters_uni[, .(seqnames, strand, dcDNA_TC_ID=gene, score, support)] )
+data <- unique( TSSr_clusters_uni[, .(seqnames, strand, dcDNA.TSS_TC_ID=gene, score, support)] )
 
 
 # Calculate the 50th and 75th percentiles for 'support' and 'score'
@@ -203,7 +203,7 @@ support_percentiles <- quantile(data$support, probs = c(0.5, 0.75), na.rm = TRUE
 score_percentiles   <- quantile(data$score,   probs = c(0.5, 0.75), na.rm = TRUE) #+ 10
 
 # Categorize 'dcDNA significance' based on the calculated thresholds
-data[,dcDNA_TC_significance := fifelse(support <= support_percentiles[1] | score <= score_percentiles[1], "*",
+data[,dcDNA.TSS_TC_significance := fifelse(support <= support_percentiles[1] | score <= score_percentiles[1], "*",
                                       fifelse(support >  support_percentiles[1] & support < support_percentiles[2] | 
                                                 score >  score_percentiles[1]   & score <  score_percentiles[2], "**",
                                               fifelse(support >= support_percentiles[2] | score >= score_percentiles[2], "***",
@@ -213,28 +213,28 @@ data[,dcDNA_TC_significance := fifelse(support <= support_percentiles[1] | score
 ggplot(data) +
   theme_bw() +
   geom_histogram(aes(score), bins=50) +
-  facet_wrap(~support + dcDNA_TC_significance, nrow=3, scales='free')
+  facet_wrap(~support + dcDNA.TSS_TC_significance, nrow=3, scales='free')
 
 
-support_data <- data[,.(min=min(score), max=max(score), mean=mean(score)), by=.(dcDNA_TC_significance, support)]
+support_data <- data[,.(min=min(score), max=max(score), mean=mean(score)), by=.(dcDNA.TSS_TC_significance, support)]
 support_data
 
 
 ## add dcDNA_significanxe to transcript table
-TR.merged.data <- merge(TR.merged.data, data[,.(dcDNA_TC_ID, dcDNA_TC_significance)], by='dcDNA_TC_ID', all.x=T)
+TR.merged.data <- merge(TR.merged.data, data[,.(dcDNA.TSS_TC_ID, dcDNA.TSS_TC_significance)], by='dcDNA.TSS_TC_ID', all.x=T)
 
 
-dcDNA.fr.dt <- TR.merged.data[,.N,by=.(dcDNA_TC_significance, dcDNA_TC_ID)]
+dcDNA.fr.dt <- TR.merged.data[,.N,by=.(dcDNA.TSS_TC_significance, dcDNA.TSS_TC_ID)]
 
 
-dcDNA.ref.support.freq <- TR.merged.data[, .(ratio=.N/nrow(TR.merged.data)), by = .(dcDNA_TC_significance) ][order(dcDNA_TC_significance)]
+dcDNA.ref.support.freq <- TR.merged.data[, .(ratio=.N/nrow(TR.merged.data)), by = .(dcDNA.TSS_TC_significance) ][order(dcDNA.TSS_TC_significance)]
 
 
-TR.merged.data[, .N, by = .(dcDNA_TC_significance) ][order(dcDNA_TC_significance)]
+TR.merged.data[, .N, by = .(dcDNA.TSS_TC_significance) ][order(dcDNA.TSS_TC_significance)]
 
 
-ggplot(TR.merged.data, aes(dcDNA_TC_significance)) +
-  geom_bar(aes(fill=dcDNA_TC_significance), color='black') + 
+ggplot(TR.merged.data, aes(dcDNA.TSS_TC_significance)) +
+  geom_bar(aes(fill=dcDNA.TSS_TC_significance), color='black') + 
   theme_bw() +
   labs(title = 'dcDNA support of Reference Transcripts',
        y = 'Number of Refernce Transcripts')
@@ -246,8 +246,8 @@ ggplot(TR.merged.data, aes(dcDNA_TC_significance)) +
 
 
 #### Add dcDNA significance (from all TR's read count) TSSr Table
-dcDNA.sig            <- unique(TR.gff.compare.uni[,.(seqnames, strand, dcDNA_TC_ID, dcDNA_TC_significance)])
-TSSr_clusters_uni   <- merge(TSSr_clusters_uni, dcDNA.sig, by.x=c('seqnames', 'strand', 'gene'), by.y=c('seqnames', 'strand', 'dcDNA_TC_ID'), all.x=T)
+dcDNA.sig            <- unique(TR.gff.compare.uni[,.(seqnames, strand, dcDNA.TSS_TC_ID, dcDNA.TSS_TC_significance)])
+TSSr_clusters_uni   <- merge(TSSr_clusters_uni, dcDNA.sig, by.x=c('seqnames', 'strand', 'gene'), by.y=c('seqnames', 'strand', 'dcDNA.TSS_TC_ID'), all.x=T)
 
 #### Finalize tables
 dcDNA.support.freq       <- rbind(dcDNA.TR.support.freq[,source := 'Kakuk_et_al'], dcDNA.ref.support.freq[,source := 'Torma_et_al'])

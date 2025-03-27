@@ -1,4 +1,4 @@
-seqnames	strand	gene	cluster	TC.start	TC.end	TC.width	support	score	mean_shape	min_shape	max_shape	consensus_peak	min_peak	max_peak	hpi_samples	cell_lines	dcDNA_TC_significance
+seqnames	strand	gene	cluster	TC.start	TC.end	TC.width	support	score	mean_shape	min_shape	max_shape	consensus_peak	min_peak	max_peak	hpi_samples	cell_lines	dcDNA.TES_TC_significance
 LT934125.1	+	TC_1	1	1789	1789	0	1	54.540496	0	0	0	1789	1789	1789	6h	C6	*
 LT934125.1	+	TC_10	10	11996	12012	12	9	565.806258	0	0	8.67836846429158	12001	11996	12008	12h, 6h, 4h, 8h	C6, PC_12, PK_15	**
 LT934125.1	+	TC_100	100	115391	115410	19	2	63.649237	0	0	0	115400	115391	115410	12h, 4h	C6, PC_12	*

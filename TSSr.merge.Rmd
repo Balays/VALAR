@@ -177,7 +177,8 @@ CAGE_TSSr_clusters      <- fread(paste0(config$outdir,  '/TSSr.TSS.CAGE.all.Clus
 dcDNA_TSSr_TSS_clusters <- fread(paste0(config$outdir,  '/TSSr.TSS.dcDNA.all.Cluster.Results.txt'))
 #
 dcDNA_TSSr_TES_clusters <- fread(paste0(config$outdir,  '/TSSr.TES.dcDNA.all.Cluster.Results.txt'))
-
+#
+dRNA_TSSr_TES_clusters  <- fread(paste0(config$outdir,  '/TSSr.TES.dRNA.all.Cluster.Results.txt'))
 
 outdir <- config$outdir
 
@@ -277,6 +278,14 @@ ggplot(TSS.dcDNA_TSSr_clusters_uni) +
   theme(legend.position = 'bottom')
 
 
+## histogram
+ggplot(TSS.dcDNA_TSSr_clusters_uni) +
+  geom_bar(aes(TC.width)) +
+  xlim(c(0,50))  +
+  #facet_nested(rows=vars(hpi)) +
+  theme_minimal() +
+  theme(legend.position = 'bottom')
+
 ```
 
 ### dcDNA TES
@@ -293,6 +302,14 @@ ggplot(TES.dcDNA_TSSr_clusters_uni) +
   theme(legend.position = 'bottom')
 
 
+## histogram
+ggplot(TES.dcDNA_TSSr_clusters_uni) +
+  geom_bar(aes(TC.width)) +
+  xlim(c(0,50))  +
+  #facet_nested(rows=vars(hpi)) +
+  theme_minimal() +
+  theme(legend.position = 'bottom')
+
 ```
 
 ### CAGE
@@ -308,6 +325,13 @@ ggplot(CAGE_TSSr_clusters_uni) +
   theme_minimal() +
   theme(legend.position = 'bottom')
 
+## histogram
+ggplot(CAGE_TSSr_clusters_uni) +
+  geom_bar(aes(TC.width), binwidth =  10) +
+  xlim(c(0,50))  +
+  #facet_nested(rows=vars(hpi)) +
+  theme_minimal() +
+  theme(legend.position = 'bottom')
 
 ```
 
@@ -317,7 +341,7 @@ ggplot(CAGE_TSSr_clusters_uni) +
 ```
 
 
-### Plot top20 Gene-Wise Shifts
+### Plot top20 Gene-Wise Shifts TSS
 ```{r, fig.width=12, fig.height=12}
 gene_TSS_shifts_Sum <- unique(TSS.dcDNA_assignedClusters[,
                                 .(chr, strand, gene, gene_mean_shift_TSS, gene_sd_shift_TSS, gene_varcoeff_shif_TSS)])
@@ -399,9 +423,9 @@ ggVennDiagram::ggVennDiagram(list(
   #REF_TR = TR.Ref.data$transcript_id,
   
   CAGE_TSS_supported   = TR.Ref.data.CAGE[      !is.na(CAGE_TC_ID),  transcript_id],
-  dcDNA_TSS_supported  = TR.Ref.data.TSS.dcDNA[ !is.na(dcDNA_TC_ID), transcript_id],
-  dcDNA.TES_supported  = TR.Ref.data.TES.dcDNA[ !is.na(dcDNA_TC_ID), transcript_id],
-  dRNA.TES_supported   = TR.Ref.data.TES.dRNA [ !is.na(dRNA_TC_ID),  transcript_id]
+  dcDNA_TSS_supported  = TR.Ref.data.TSS.dcDNA[ !is.na(dcDNA.TSS_TC_ID), transcript_id],
+  dcDNA.TES_supported  = TR.Ref.data.TES.dcDNA[ !is.na(dcDNA.TES_TC_ID), transcript_id],
+  dRNA.TES_supported   = TR.Ref.data.TES.dRNA [ !is.na(dRNA.TES_TC_ID),  transcript_id]
   
   ))
 ```
@@ -409,6 +433,7 @@ ggVennDiagram::ggVennDiagram(list(
 
 ## TransFrags
 ```{r}
+
 ### TransFrags
 #TR.Ref.data.TSSr.comb <- copy(TR.Ref.data.CAGE)
 cnames <- c('TC.start', 'TC.end', 'support', 'score', 'consensus_peak')
@@ -432,19 +457,36 @@ TransFrags.TSSr.TES.comb <- merge( TR.gff.compare.uni.TES.dcDNA,
                                    by=colnames(TR.gff.compare.uni.TES.dcDNA)[c(2:4,10:27)])
 
 
-
-
 ggVennDiagram::ggVennDiagram(list(
   #TransFrag           = TR.gff.compare.uni$transcript_id,
 
-  CAGE_TSS_supported   = TR.gff.compare.uni.CAGE[      !is.na(CAGE_TC_ID),  transcript_id],
-  dcDNA_TSS_supported  = TR.gff.compare.uni.TSS.dcDNA[ !is.na(dcDNA_TC_ID), transcript_id],
-  dcDNA.TES_supported  = TR.gff.compare.uni.TES.dcDNA[ !is.na(dcDNA_TC_ID), transcript_id],
-  dRNA.TES_supported   = TR.gff.compare.uni.TES.dRNA [ !is.na(dRNA_TC_ID),  transcript_id]
+  CAGE_TSS_supported   = TR.gff.compare.uni.CAGE[      !is.na(CAGE_TC_ID),      transcript_id],
+  dcDNA_TSS_supported  = TR.gff.compare.uni.TSS.dcDNA[ !is.na(dcDNA.TSS_TC_ID), transcript_id],
+  dcDNA.TES_supported  = TR.gff.compare.uni.TES.dcDNA[ !is.na(dcDNA.TES_TC_ID), transcript_id],
+  dRNA.TES_supported   = TR.gff.compare.uni.TES.dRNA [ !is.na(dRNA.TES_TC_ID),  transcript_id]
 
 ))
 ```
 
+
+```{r}
+
+## Merge TSS and TES
+
+stopifnot(all.equal(colnames(TransFrags.TSSr.TSS.comb)[1:21], colnames(TransFrags.TSSr.TES.comb)[1:21])) 
+
+
+colnames(TransFrags.TSSr.TES.comb)[-c(1:21)]
+colnames(TransFrags.TSSr.TSS.comb)[-c(1:21)]
+
+
+
+TransFrags.TSSr.comb <- merge(TransFrags.TSSr.TES.comb, 
+                              TransFrags.TSSr.TSS.comb,
+                              by = colnames(TransFrags.TSSr.TES.comb)[1:21] )
+
+
+```
 
 ```{r}
 ### Non-spliced Transfrags ONly !!!
@@ -456,7 +498,7 @@ TransFrags.TSSr.comb <- TransFrags.TSSr.comb[transcript_id %in% non.spliced.TFs,
 
 
 ## Validate TESs of TransFrags
-```{r, eval = F}
+```{r, eval = T}
 ### Validate TESs
 #TransFrags.TSSr.comb[, TES   := prime3] # TransFrags.TSSr.comb[, TES   := NULL]
 
@@ -520,104 +562,185 @@ ggvf
 ### TransFrags that are not equal to Reference TX
 ```{r}
 ggVennDiagram::ggVennDiagram(list(
-  TransFrag = TransFrags.TSSr.comb$transcript_id,
-  CAGE_TC_supported   = TransFrags.TSSr.comb[!is.na(CAGE_TC_ID)   & class_code != '=',  transcript_id],
-  dcDNA_TC_supported  = TransFrags.TSSr.comb[!is.na(dcDNA_TC_ID)  & class_code != '=',  transcript_id]
+  
+  CAGE_TSS_supported   = TransFrags.TSSr.comb[ !is.na(CAGE_TC_ID)      & class_code != '=' ,  transcript_id],
+  dcDNA_TSS_supported  = TransFrags.TSSr.comb[ !is.na(dcDNA.TSS_TC_ID) & class_code != '=' ,  transcript_id],
+  dcDNA.TES_supported  = TransFrags.TSSr.comb[ !is.na(dcDNA.TES_TC_ID) & class_code != '=' ,  transcript_id],
+  dRNA.TES_supported   = TransFrags.TSSr.comb[ !is.na(dRNA.TES_TC_ID)  & class_code != '=' ,  transcript_id]
+  
 ))
 ```
 
 ### TransFrags that are have at least '**' 
 ```{r}
 ggVennDiagram::ggVennDiagram(list(
-  TransFrag = TransFrags.TSSr.comb$transcript_id,
-  CAGE_TC_supported   = TransFrags.TSSr.comb[!is.na(CAGE_TC_ID)   
-                                             & class_code != '=' 
-                                           # & CAGE_TC_significance  != '*'
-                                             ,  transcript_id],
-  dcDNA_TC_supported  = TransFrags.TSSr.comb[!is.na(dcDNA_TC_ID)  
-                                             & class_code != '=' 
-                                           # & dcDNA_TC_significance != '*'
-                                             ,  transcript_id]
+  
+  CAGE_TSS_supported   = TransFrags.TSSr.comb[ !is.na(CAGE_TC_ID)      & class_code != '=' & CAGE_TC_significance       != '*' ,  transcript_id],
+  dcDNA_TSS_supported  = TransFrags.TSSr.comb[ !is.na(dcDNA.TSS_TC_ID) & class_code != '=' & dcDNA.TSS_TC_significance  != '*' ,  transcript_id],
+  dcDNA.TES_supported  = TransFrags.TSSr.comb[ !is.na(dcDNA.TES_TC_ID) & class_code != '=' & dcDNA.TES_TC_significance  != '*' ,  transcript_id],
+  dRNA.TES_supported   = TransFrags.TSSr.comb[ !is.na(dRNA.TES_TC_ID)  & class_code != '=' & dRNA.TES_TC_significance   != '*' ,  transcript_id]
+  
 ))
 ```
 
 ### TransFrags that share 3-prime with previous annotation -->> significant drop
 ```{r}
 ggVennDiagram::ggVennDiagram(list(
-  TransFrag = TransFrags.TSSr.comb$transcript_id,
-  CAGE_TC_supported   = TransFrags.TSSr.comb[!is.na(CAGE_TC_ID)   
-                                             & class_code != '=' 
-                                             & CAGE_TC_significance  != '*' 
-                                             & valid_tes == T
-                                             ,  transcript_id],
   
-  dcDNA_TC_supported  = TransFrags.TSSr.comb[!is.na(dcDNA_TC_ID)  
-                                             & class_code != '=' 
-                                             & dcDNA_TC_significance != '*' 
-                                             & valid_tes == T
-                                             ,  transcript_id]
+  CAGE_TSS_supported   = TransFrags.TSSr.comb[ !is.na(CAGE_TC_ID)      & class_code != '=' & CAGE_TC_significance       != '*' & valid_tes == T,  transcript_id],
+  dcDNA_TSS_supported  = TransFrags.TSSr.comb[ !is.na(dcDNA.TSS_TC_ID) & class_code != '=' & dcDNA.TSS_TC_significance  != '*' & valid_tes == T,  transcript_id],
+  dcDNA.TES_supported  = TransFrags.TSSr.comb[ !is.na(dcDNA.TES_TC_ID) & class_code != '=' & dcDNA.TES_TC_significance  != '*' & valid_tes == T,  transcript_id],
+  dRNA.TES_supported   = TransFrags.TSSr.comb[ !is.na(dRNA.TES_TC_ID)  & class_code != '=' & dRNA.TES_TC_significance   != '*' & valid_tes == T,  transcript_id]
+
 ))
 ```
 
+### Filtering of TransFrags
 
-```{r}
-TransFrags.TSSr.filt <-  TransFrags.TSSr.comb[  (!is.na(CAGE_TC_ID)  & CAGE_TC_significance   %in% c('**', '***'))
-                                              | (!is.na(dcDNA_TC_ID) & dcDNA_TC_significance  %in% c('**', '***'))
-                                              #& class_code != '='  & valid_tes == T
-                                              ,  ]
+*No filtering the TransFrags now, rather we will filter the final Transcripts*
 
-TransFrags.TSSr.filt[,.N, by=.(CAGE_TC_significance, dcDNA_TC_significance)]
+```{r, eval=T}
 
-TransFrags.TSSr.filt <-  TransFrags.TSSr.filt[class_code != '='  & valid_tes == T, ]
+filter.TFRs <- F
 
-TransFrags.TSSr.filt[,.N, by=.(CAGE_TC_significance, dcDNA_TC_significance, valid_tes)]
+if(filter.TFRs) {
+  TransFrags.TSSr.filt <-  TransFrags.TSSr.comb[  (!is.na(CAGE_TC_ID)  & CAGE_TC_significance   %in% c('**', '***'))
+                                                | (!is.na(dcDNA_TC_ID) & dcDNA_TC_significance  %in% c('**', '***'))
+                                                #& class_code != '='  & valid_tes == T
+                                                ,  ]
+  
+  TransFrags.TSSr.filt[, .N, by = .(CAGE_TC_significance, dcDNA_TC_significance)]
+  
+  TransFrags.TSSr.filt <-  TransFrags.TSSr.filt[class_code != '='  & valid_tes == T, ]
+  
+  TransFrags.TSSr.filt[, .N, by = .(CAGE_TC_significance, dcDNA_TC_significance, valid_tes)]
+  
+} else {
+  
+  TransFrags.TSSr.filt <- TransFrags.TSSr.comb
+  
+}
+
+
 ```
 
+```{r, eval=F}
+TransFrags.TSSr.filt.counts.gt[,.N,.(group,hpi,cell_line)]
+dRNA_TSSr_TES_clusters[,.N,.(group,cell_line)]
+```
 
 ## Merge TransFrags with TSSr group-wise cluster results (for the peaks)
 ```{r}
 ### Merge TransFrags with TSSr group-wise cluster results (for the peaks)
 TransFrags.TSSr.filt.counts.gt <- merge(TR.gff.compare.merged.TR.counts.gt[,.(seqnames, strand, transcript_id, sample, rep, group, cell_line, hpi, Time, count, norm_count)], 
                                         TransFrags.TSSr.filt,
-                                        by= c('seqnames', 'strand', 'transcript_id'),
+                                        by = c('seqnames', 'strand', 'transcript_id'),
                                         all.y = T)
 
 TransFrags.TSSr.filt.counts.gt[, cell_line := gsub('-', '_', cell_line)]
+TransFrags.TSSr.filt.counts.gt[, group     := gsub('-', '_', group)]
 
-## Merge with dcDNA clusters
+### Columns to rename
+cnames <- c('cluster.start', 'cluster.end', 'dominant_tss', 'tags', 'tags.dominant_tss',  'q_0.1', 'q_0.9', 'interquantile_width', 'shape.score', 'cluster_width')
+
+
+
+### Merge with dcDNA TSS clusters
 TransFrags.TSSr.filt.counts.gt  <- merge(TransFrags.TSSr.filt.counts.gt, 
-                                         dcDNA_TSSr_clusters[,.(cluster, seqnames = chr, strand, cell_line, hpi, 
-                                                                cluster.start = start, cluster.end = end, dcDNA_TC_ID = paste0('TC_', cluster),
-                                                                dominant_tss, tags, tags.dominant_tss,  q_0.1, q_0.9, interquantile_width, shape.score, cluster_width)],
+                                         dcDNA_TSSr_TSS_clusters[,.(seqnames = chr, strand, cell_line, hpi, 
+                                                                  cluster.start = start, cluster.end = end, dcDNA.TSS_TC_ID = paste0('TC_', cluster),
+                                                                  dominant_tss, tags, tags.dominant_tss,  q_0.1, q_0.9, interquantile_width, shape.score, cluster_width)],
                                          #by.y = c('seqnames', 'strand', 'cluster', 'group'),
-                                         by = c('seqnames', 'strand', 'dcDNA_TC_ID', 'cell_line', 'hpi'),
+                                         by = c('seqnames', 'strand', 'dcDNA.TSS_TC_ID', 'cell_line', 'hpi'),
                                          all.x = T )
 
-# Caluclate distance of TransFrags to peak of TC                      
+# Calculate distance of TransFrags to peak of TC                      
 TransFrags.TSSr.filt.counts.gt[, TSS_dcDNA_distance := dominant_tss - prime5, by= transcript_id]
 
-# Reanme columns
-cnames <- c('cluster.start', 'cluster.end', 'dominant_tss', 'tags', 'tags.dominant_tss',  'q_0.1', 'q_0.9', 'interquantile_width', 'shape.score', 'cluster_width')
-setnames(TransFrags.TSSr.filt.counts.gt,  cnames, paste0('dcDNA_', cnames))
+# Rename columns
+setnames(TransFrags.TSSr.filt.counts.gt,  cnames, paste0('dcDNA.TSS_', cnames))
 
 
-## Merge with CAGE clusters
+### Merge with CAGE clusters
 TransFrags.TSSr.filt.counts.gt  <- merge(TransFrags.TSSr.filt.counts.gt, 
-                                         CAGE_TSSr_clusters[,.(cluster, seqnames = chr, strand, cell_line, hpi, 
+                                         CAGE_TSSr_clusters[,.(seqnames = chr, strand, cell_line, hpi, 
                                                                 cluster.start = start, cluster.end = end, CAGE_TC_ID = paste0('TC_', cluster),
                                                                 dominant_tss, tags, tags.dominant_tss,  q_0.1, q_0.9, interquantile_width, shape.score, cluster_width)],
                                          #by.y = c('seqnames', 'strand', 'cluster', 'group'),
                                          by = c('seqnames', 'strand', 'CAGE_TC_ID', 'cell_line', 'hpi'),
                                          all.x = T )
 
-# Caluclate distance of TransFrags to peak of TC                      
+# Calculate distance of TransFrags to peak of TC                      
 TransFrags.TSSr.filt.counts.gt[, TSS_CAGE_distance := dominant_tss - prime5, by= transcript_id]
 
-# Reanme columns
+# Rename columns
 setnames(TransFrags.TSSr.filt.counts.gt,  cnames, paste0('CAGE_', cnames))
+
+
+
+### Merge with dcDNA TES clusters
+TransFrags.TSSr.filt.counts.gt  <- merge(TransFrags.TSSr.filt.counts.gt, 
+                                         dcDNA_TSSr_TES_clusters[,.(seqnames = chr, strand, cell_line, hpi, 
+                                                                  cluster.start = start, cluster.end = end, dcDNA.TES_TC_ID = paste0('TC_', cluster),
+                                                                  dominant_tes, tags, tags.dominant_tes,  q_0.1, q_0.9, interquantile_width, shape.score, cluster_width)],
+                                         #by.y = c('seqnames', 'strand', 'cluster', 'group'),
+                                         by = c('seqnames', 'strand', 'dcDNA.TES_TC_ID', 'cell_line', 'hpi'),
+                                         all.x = T )
+
+# Caluclate distance of TransFrags to peak of TC                      
+TransFrags.TSSr.filt.counts.gt[, TES_dcDNA_distance := dominant_tes - prime3, by= transcript_id]
+
+# Rename columns
+cnames <- c('cluster.start', 'cluster.end', 'dominant_tes', 'tags', 'tags.dominant_tes',  'q_0.1', 'q_0.9', 'interquantile_width', 'shape.score', 'cluster_width')
+setnames(TransFrags.TSSr.filt.counts.gt,  cnames, paste0('dcDNA.TES_', cnames))
+
+
+## Merge with dRNA TES clusters
+TransFrags.TSSr.filt.counts.gt  <- merge(TransFrags.TSSr.filt.counts.gt, 
+                                         dRNA_TSSr_TES_clusters[,.(seqnames = chr, strand, group,
+                                                                  cluster.start = start, cluster.end = end, dRNA.TES_TC_ID = paste0('TC_', cluster),
+                                                                  dominant_tes, tags, tags.dominant_tes,  q_0.1, q_0.9, interquantile_width, shape.score, cluster_width)],
+                                         #by.y = c('seqnames', 'strand', 'cluster', 'group'),
+                                         by = c('seqnames', 'strand', 'dRNA.TES_TC_ID', 'group'),
+                                         all.x = T )
+
+# Caluclate distance of TransFrags to peak of TC                      
+TransFrags.TSSr.filt.counts.gt[, TES_dRNA_distance := dominant_tes - prime3, by= transcript_id]
+
+# Rename columns
+cnames <- c('cluster.start', 'cluster.end', 'dominant_tes', 'tags', 'tags.dominant_tes',  'q_0.1', 'q_0.9', 'interquantile_width', 'shape.score', 'cluster_width')
+setnames(TransFrags.TSSr.filt.counts.gt,  cnames, paste0('dRNA.TES_', cnames))
+
 ```
 
-### Distance to dcDNA cluster's dominant TSS (peak)
+
+```{r}
+# These distances are from the group-wise clusters
+
+# Calculate the distance from consensus peak also
+TransFrags.TSSr.filt.counts.gt[,   
+     CAGE.TSS_consensus_peak_dist := CAGE.TSS_consensus_peak  - prime5
+][, dcDNA.TSS_consensus_peak_dist := dcDNA.TSS_consensus_peak - prime5
+][, dcDNA.TES_consensus_peak_dist := dcDNA.TES_consensus_peak - prime3
+][,  dRNA.TES_consensus_peak_dist := dRNA.TES_consensus_peak  - prime3
+  ]
+
+
+```
+
+
+### Distribution of Transfrags in the sample groups
+```{r, fig.width= 12, fig.height=16}
+ggplot(TransFrags.TSSr.filt.counts.gt) + 
+  geom_col(aes(group, count, fill = cell_line)) +
+  facet_grid(rows=vars(as.factor(Time)), scales = 'free') +
+  coord_flip()
+  
+```
+
+
+
+### Distance to dcDNA TSS cluster's group dominant TSS (peak)
 ```{r}
 # Check distances
 TransFrags.TSSr.filt.counts.gt[, .N, TSS_dcDNA_distance]
@@ -625,6 +748,17 @@ ggplot(TransFrags.TSSr.filt.counts.gt, aes(TSS_dcDNA_distance) ) + geom_histogra
   geom_vline(xintercept = c(-10, 10), color='red') +
   geom_vline(xintercept = c(-25, 25))
 ```
+
+### Distance to dcDNA TSS cluster's consensus TSS peak
+```{r}
+TransFrags.TSSr.filt.counts.gt[, .N, dcDNA.TSS_consensus_peak_dist]
+ggplot(TransFrags.TSSr.filt.counts.gt, aes(dcDNA.TSS_consensus_peak_dist) ) + geom_histogram(bins=100) + 
+  geom_vline(xintercept = c(-10, 10), color='red') +
+  geom_vline(xintercept = c(-25, 25))
+
+```
+
+
 
 ### Distance to CAGE cluster's dominant TSS (peak)
 ```{r}
@@ -634,38 +768,207 @@ ggplot(TransFrags.TSSr.filt.counts.gt, aes(TSS_CAGE_distance) ) + geom_histogram
   geom_vline(xintercept = c(-25, 25))
 ```
 
+### Distance to CAGE TSS cluster's consensus TSS peak
+```{r}
+TransFrags.TSSr.filt.counts.gt[, .N, CAGE.TSS_consensus_peak_dist]
+ggplot(TransFrags.TSSr.filt.counts.gt, aes(CAGE.TSS_consensus_peak_dist) ) + geom_histogram(bins=100) + 
+  geom_vline(xintercept = c(-10, 10), color='red') +
+  geom_vline(xintercept = c(-25, 25))
+
+```
+
+
+### Distance to dcDNA TES cluster's group dominant TES (peak)
+```{r}
+# Check distances
+TransFrags.TSSr.filt.counts.gt[, .N, TES_dcDNA_distance]
+ggplot(TransFrags.TSSr.filt.counts.gt, aes(TES_dcDNA_distance) ) + geom_histogram(bins=100) + 
+  geom_vline(xintercept = c(-10, 10), color='red') +
+  geom_vline(xintercept = c(-25, 25))
+```
+
+### Distance to dcDNA TES cluster's consensus TES peak
+```{r}
+TransFrags.TSSr.filt.counts.gt[, .N, dcDNA.TES_consensus_peak_dist]
+ggplot(TransFrags.TSSr.filt.counts.gt, aes(dcDNA.TES_consensus_peak_dist) ) + geom_histogram(bins=100) + 
+  geom_vline(xintercept = c(-10, 10), color='red') +
+  geom_vline(xintercept = c(-25, 25))
+
+```
+
+
+### Distance to dRNA TES cluster's group dominant TES (peak)
+```{r}
+# Check distances
+TransFrags.TSSr.filt.counts.gt[, .N, TES_dRNA_distance]
+ggplot(TransFrags.TSSr.filt.counts.gt, aes(TES_dRNA_distance) ) + geom_histogram(bins=100) + 
+  geom_vline(xintercept = c(-10, 10), color='red') +
+  geom_vline(xintercept = c(-25, 25))
+```
+
+### Distance to dRNA TES cluster's consensus TES peak
+```{r}
+TransFrags.TSSr.filt.counts.gt[, .N, dRNA.TES_consensus_peak_dist]
+ggplot(TransFrags.TSSr.filt.counts.gt, aes(dRNA.TES_consensus_peak_dist) ) + geom_histogram(bins=100) + 
+  geom_vline(xintercept = c(-10, 10), color='red') +
+  geom_vline(xintercept = c(-25, 25))
+
+```
+
+
+
 
 
 ## TransFrags that share 5-primes with CAGE or dcDNA TSS cluster peak in the respective sample group with a +/- 10 bp wobble
 ```{r}
 ## TransFrags that share 5-primes with CAGE or dcDNA TSS cluster peak in the respective sample group with a +/- 10 bp wobble
 ggVennDiagram::ggVennDiagram(list(
-  TransFrag           = unique(TransFrags.TSSr.filt.counts.gt$transcript_id),
-  CAGE_TC_supported   = unique(TransFrags.TSSr.filt.counts.gt[abs(TSS_CAGE_distance)  <= 10,   transcript_id]),
-  dcDNA_TC_supported  = unique(TransFrags.TSSr.filt.counts.gt[abs(TSS_dcDNA_distance) <= 10,  transcript_id])
+  
+  CAGE_TSS_supported   = unique(TransFrags.TSSr.filt.counts.gt[abs(TSS_CAGE_distance)  <= 10 | abs(CAGE.TSS_consensus_peak_dist)  <= 10,  transcript_id]),
+  dcDNA_TSS_supported  = unique(TransFrags.TSSr.filt.counts.gt[abs(TSS_dcDNA_distance) <= 10 | abs(dcDNA.TSS_consensus_peak_dist) <= 10,  transcript_id]),
+  dcDNA_TES_supported  = unique(TransFrags.TSSr.filt.counts.gt[abs(TES_dcDNA_distance) <= 10 | abs(dcDNA.TES_consensus_peak_dist) <= 10,  transcript_id]),
+  dRNA_TES_supported   = unique(TransFrags.TSSr.filt.counts.gt[abs(TES_dRNA_distance)  <= 10 | abs(dRNA.TES_consensus_peak_dist)  <= 10,  transcript_id])
+  
 ))
 ```
 
 
+```{r, eval=T}
+peak.TSS.dist.thresh <- 10
+peak.TES.dist.thresh <- 10
 
-```{r}
-TransFrags.TSSr.filt.counts.gt <- TransFrags.TSSr.filt.counts.gt[abs(TSS_CAGE_distance) <= 10 | abs(TSS_dcDNA_distance) <= 10, ]
-TransFrags.TSSr.filt.counts.gt[is.na(TSS_CAGE_distance) & is.na(TSS_dcDNA_distance)]
+
+gg <- ggVennDiagram::Venn(list(
+  
+  CAGE_TSS_supported   = unique(TransFrags.TSSr.filt.counts.gt[!is.na(TSS_CAGE_distance)  & abs(TSS_CAGE_distance)   <= peak.TSS.dist.thresh,  transcript_id]),
+  dcDNA_TSS_supported  = unique(TransFrags.TSSr.filt.counts.gt[!is.na(TSS_dcDNA_distance) & abs(TSS_dcDNA_distance)  <= peak.TSS.dist.thresh,  transcript_id]),
+  dcDNA_TES_supported  = unique(TransFrags.TSSr.filt.counts.gt[!is.na(TES_dcDNA_distance) & abs(TES_dcDNA_distance)  <= peak.TES.dist.thresh,  transcript_id]),
+  dRNA_TES_supported   = unique(TransFrags.TSSr.filt.counts.gt[!is.na(TES_dRNA_distance)  & abs(TES_dRNA_distance)   <= peak.TES.dist.thresh,  transcript_id])
+  
+))
+
+
+transfrags.to.keep <- unique(c(
+  ggVennDiagram::overlap(gg, c(1,3)), ## CAGE  TSS and dcDNA TES
+  ggVennDiagram::overlap(gg, c(1,4)), ## CAGE  TSS and dRNA  TES
+  ggVennDiagram::overlap(gg, c(2,3)), ## dcDNA TSS and dcDNA TES
+  ggVennDiagram::overlap(gg, c(2,4))  ## dcDNA TSS and dRNA  TES
+))
+
+#TransFrags.TSSr.filt.counts.gt <- TransFrags.TSSr.filt.counts.gt[  ( abs(TSS_CAGE_distance)  <= 10 | abs(TSS_dcDNA_distance) <= 10 )
+#                                                                 & ( abs(TES_dcDNA_distance) <= 10 | abs(TES_dRNA_distance)  <= 10 )
+#                                                                   , ]
+
+TransFrags.TSSr.filt.counts.gt <- TransFrags.TSSr.filt.counts.gt[transcript_id %in% transfrags.to.keep, ]
+
 ```
 
-*TThe TSS here will thus be the peak of the dcDNA-based TC -- or, if thats missing, that of the CAGE-based TC,*  
+
+
+```{r, eval=F}
+peak.TSS.dist.thresh <- 10
+peak.TES.dist.thresh <- 10
+
+
+transfrags.to.keep <- unique(TransFrags.TSSr.filt.counts.gt[ 
+  ( (!is.na(TSS_CAGE_distance)  & abs(TSS_CAGE_distance)  <= peak.TSS.dist.thresh) | 
+    (!is.na(TSS_dcDNA_distance) & abs(TSS_dcDNA_distance) <= peak.TSS.dist.thresh) ) &
+  ( (!is.na(TES_dcDNA_distance) & abs(TES_dcDNA_distance) <= peak.TES.dist.thresh) | 
+    (!is.na(TES_dRNA_distance)  & abs(TES_dRNA_distance)  <= peak.TES.dist.thresh) )
+, transcript_id])
+
+
+
+TransFrags.TSSr.filt.counts.gt <- TransFrags.TSSr.filt.counts.gt[transcript_id %in% transfrags.to.keep, ]
+
+```
+
+
+```{r}
+ggplot(TransFrags.TSSr.filt.counts.gt) + 
+  geom_col(aes(group, count, fill = cell_line)) +
+  facet_grid(rows=vars(as.factor(Time)), #cols=vars(passes_filter), 
+             scales = 'free') +
+  coord_flip()
+
+```
+
+
+```{r, eval = F}
+TSS.dRNA  <- unique(TransFrags.TSSr.filt.counts.gt[grep('_dRNA', group), .(seqnames, strand, prime5)])
+
+TSS.dcDNA <- unique(TransFrags.TSSr.filt.counts.gt[grep('_dRNA', group, invert = T), .(seqnames, strand, prime5)])
+
+TSS.ov <- foverlaps2( 
+  TSS.dcDNA[,.(seqnames, strand, start = prime5 - 10, end = prime5 + 10)],
+  TSS.dRNA[ ,.(seqnames, strand, start = prime5, end = prime5)],
+  minoverlap = 1)
+
+
+TransFrags.TSSr.filt.counts.gt[group == 'PK_15_dRNA']
+```
+
+
+```{r, eval = F}
+
+TransFrags.TSSr.filt.counts.gt[is.na(TSS_CAGE_distance) & is.na(TSS_dcDNA_distance) & grep('dRNA', group, invert = T),
+                               .(strand, transcript_id, group,
+                                 TSS_CAGE_distance, TSS_dcDNA_distance, TES_dcDNA_distance, TES_dRNA_distance)]
+
+
+TransFrags.TSSr.filt.counts.gt[transcript_id == 183746, ]
+```
+
+
+
+*The TSS here will thus be the Group-Wise DOMINANT peak of the dcDNA-based TC -- or, if thats missing, that of the Group-Wise DOMINANT CAGE peak,*  
 *considering the +/- 10 bp wobble*
 
-*Filtering for read count : >= 5*  
-*Filtering for group prevalence : >= 2*  
 
 ```{r, eval = T}
 # The TSS here will thus be the peak of the TC (either in the CAGE ir dcDNA - which is closer)
 
-TransFrags.TSSr.filt.counts.gt[, TSS := fifelse(is.na(TSS_dcDNA_distance), CAGE_consensus_peak, 
-                                          fifelse(is.na(TSS_CAGE_distance),  dcDNA_consensus_peak,
-                                            fifelse(abs(TSS_dcDNA_distance) < abs(TSS_CAGE_distance), dcDNA_consensus_peak, CAGE_consensus_peak
+TransFrags.TSSr.filt.counts.gt[, TSS := fifelse(is.na(TSS_dcDNA_distance), CAGE_dominant_tss, 
+                                          fifelse(is.na(TSS_CAGE_distance),  dcDNA.TSS_dominant_tss,
+                                            fifelse(abs(TSS_dcDNA_distance) < abs(TSS_CAGE_distance), dcDNA.TSS_dominant_tss, CAGE_dominant_tss   
                                                     ))), by=transcript_id]
+
+## thos yielded TX with TSS closer than 10
+```
+
+
+```{r, eval = T}
+# The TES here will thus be the peak of the TC (either in the dRNA ir dcDNA - which is closer)
+
+TransFrags.TSSr.filt.counts.gt[, TES := fifelse(is.na(TES_dcDNA_distance), dRNA.TES_dominant_tes, 
+                                          fifelse(is.na(TES_dRNA_distance),  dcDNA.TES_dominant_tes,
+                                            fifelse(abs(TES_dcDNA_distance) < abs(TES_dRNA_distance), dcDNA.TES_dominant_tes, dRNA.TES_dominant_tes
+                                                    ))), by=transcript_id]
+
+## thos yielded TX with TSS closer than 10
+```
+
+
+*There are many TransFrags that had no TSS or TES in the given sample group*
+
+```{r}
+TransFrags.TSSr.filt.counts.gt[is.na(TSS), .N, ]
+TransFrags.TSSr.filt.counts.gt[is.na(TES), .N, ]
+```
+
+
+*The TSS here will thus be the CONSENSUS peak of the dcDNA-based TC -- or, if thats missing, that of the CAGE-based CONSENSUS peak,*  
+*considering the +/- 10 bp wobble*
+
+
+```{r, eval = T}
+# The TSS here will thus be the peak of the TC (either in the CAGE ir dcDNA - which is closer)
+
+TransFrags.TSSr.filt.counts.gt[, TSS := fifelse(is.na(TSS), 
+                                          fifelse(is.na(dcDNA.TSS_consensus_peak_dist), CAGE.TSS_consensus_peak, 
+                                            fifelse(is.na(CAGE.TSS_consensus_peak_dist),  dcDNA.TSS_consensus_peak,
+                                              fifelse(abs(dcDNA.TSS_consensus_peak_dist) < abs(CAGE.TSS_consensus_peak_dist), dcDNA.TSS_consensus_peak, CAGE.TSS_consensus_peak
+                                                      ))), TSS), by=transcript_id]
 
 ## thos yielded TX with TSS closer than 10
 ```
@@ -679,6 +982,28 @@ TransFrags.TSSr.filt.counts.gt[, TSS := fifelse(is.na(TSS_dcDNA_distance), CAGE_
 TransFrags.TSSr.filt.counts.gt[,.N, by=.(TSS, TSS_dcDNA_distance, TSS_CAGE_distance)]
 
 
+```
+
+
+```{r, eval = T}
+# The TES here will thus be the peak of the TC (either in the dRNA ir dcDNA - which is closer)
+
+TransFrags.TSSr.filt.counts.gt[, TES := fifelse(is.na(TES),
+                                          fifelse(is.na(dcDNA.TES_consensus_peak_dist), dRNA.TES_consensus_peak, 
+                                            fifelse(is.na(dRNA.TES_consensus_peak_dist),  dcDNA.TES_consensus_peak,
+                                              fifelse(abs(dcDNA.TES_consensus_peak_dist) < abs(dRNA.TES_consensus_peak_dist), dcDNA.TES_consensus_peak, dRNA.TES_consensus_peak
+                                                      ))), TES), by=transcript_id]
+
+## thos yielded TX with TSS closer than 10
+```
+
+
+```{r}
+TransFrags.TSSr.filt.counts.gt[is.na(TSS), .N, ]
+TransFrags.TSSr.filt.counts.gt[is.na(TES), .N, ]
+
+
+#TransFrags.TSSr.filt.counts.gt[is.na(dcDNA.TSS_consensus_peak) & is.na(CAGE.TSS_consensus_peak) & is.na(dcDNA.TSS_dominant_tss) & is.na(CAGE_dominant_tss ), ]
 ```
 
 
@@ -704,7 +1029,7 @@ TransFrags.TSSr.filt.group.counts <- TransFrags.TSSr.filt.group.counts[,.(sum_co
 
 
 ```{r}
-### Still, we nneed to de-replicate the TSSs
+### Still, we need to de-replicate the TSSs
 
 TSS.uni <- unique(TransFrags.TSSr.filt.counts.gt[,.(seqnames, strand, TSS)])
 
@@ -770,7 +1095,7 @@ TSS.uni[, start := TSS][, end := TSS]
 TSS.uni[, grp := cumsum(c(TRUE, diff(TSS) >= valid.TSS.win)), by = .(seqnames, strand)]
 # Now create a new column with the merged TSS value for each group
 TSS.uni[, mergedTSS := round(mean(TSS), 0), by = .(seqnames, strand, grp)]
-
+length(unique(TSS.uni[, mergedTSS]))
 
 TransFrags.TSSr.filt.counts.gt <- merge(TransFrags.TSSr.filt.counts.gt, TSS.uni[,.(seqnames, strand, TSS, mergedTSS)], by=c('seqnames', 'strand', 'TSS') )
 
@@ -791,20 +1116,47 @@ TransFrags.TSSr.filt.counts.gt[, NOV_TX_ID := paste0('NOV_TX_', .GRP), by = .(se
 
 ### Finally, summarise the Nov TXs
 
-TransFrags.TSSr.filt.group.counts <- TransFrags.TSSr.filt.counts.gt[,.(sum_count = sum(count)), by=.(seqnames, strand, TSS, TES, NOV_TX_ID, group, cell_line, hpi, Time)]
+TransFrags.TSSr.filt.group.counts <- TransFrags.TSSr.filt.counts.gt[,.(count = sum(count)), by=.(seqnames, strand, TSS, TES, NOV_TX_ID, group, cell_line, hpi, Time)]
+
+TransFrags.TSSr.filt.group.counts[, prevalence := uniqueN(group), by = NOV_TX_ID]
+TransFrags.TSSr.filt.group.counts[, sum_count  := sum(count),     by = NOV_TX_ID]
+```
+
+
+```{r}
+
+### Prevalence Distribution
+
+ggplot(TransFrags.TSSr.filt.group.counts) +
+  geom_bar(aes(prevalence))
 
 ```
+
+*Filtering for read count : >= 5*  
+*Filtering for group prevalence : >= 2*  
 
 
 ```{r}
 ## Filter for read_count ?
 novTX.readcount.filt  <- 5
-TransFrags.TSSr.filt.group.counts <- TransFrags.TSSr.filt.group.counts[ sum_count >= novTX.readcount.filt, ]
+
 
 ## Filter for prevalence?
 novTX.prevalence.filt <- 2
-TransFrags.TSSr.filt.group.counts[, prevalence := uniqueN(group), by = NOV_TX_ID]
-TransFrags.TSSr.filt.group.counts <- TransFrags.TSSr.filt.group.counts[ prevalence  >= novTX.prevalence.filt, ]
+
+##
+message('Keeping ', length(unique(TransFrags.TSSr.filt.group.counts[ prevalence >= novTX.prevalence.filt & sum_count >= novTX.readcount.filt, NOV_TX_ID])), 
+        ' out of ', length(unique(TransFrags.TSSr.filt.group.counts[ , NOV_TX_ID])),
+        ' Novel Transcripts (', 
+        round((length(unique(TransFrags.TSSr.filt.group.counts[ prevalence >= novTX.prevalence.filt & sum_count >= novTX.readcount.filt, NOV_TX_ID])) / 
+                 length(unique(TransFrags.TSSr.filt.group.counts[ , NOV_TX_ID]))) * 100, 0),
+        '%)' )
+```
+
+
+```{r}
+TransFrags.TSSr.filt.group.counts <- TransFrags.TSSr.filt.group.counts[ prevalence  >= novTX.prevalence.filt
+                                                                      & sum_count   >= novTX.readcount.filt, ]
 
 ```
 
@@ -825,10 +1177,22 @@ NOV.TXs.uni    <- TransFrags.TSSr.filt.group.counts[,.(sum_count = sum(sum_count
 
 NOV.TXs.counts <- TransFrags.TSSr.filt.group.counts[,.(sum_count = sum(sum_count)), by = .(seqnames, strand, TSS, TES, NOV_TX_ID, group, hpi, Time, cell_line) ] 
 
-NOV.TXs.uni.sp <- dcast(TransFrags.TSSr.filt.group.counts, seqnames + strand + TSS + TES + NOV_TX_ID ~ group, value.var = 'sum_count', fill=0)
+NOV.TXs.uni.sp <- dcast(TransFrags.TSSr.filt.group.counts, seqnames + strand + TSS + TES + NOV_TX_ID ~ group, value.var = 'count', fill=0)
 
 ```
 
+
+```{r}
+
+ggplot(TransFrags.TSSr.filt.counts.gt) + 
+  geom_col(aes(group, count, fill = cell_line)) +
+  facet_grid(rows=vars(as.factor(Time)), 
+             #cols=vars(passes_filter), 
+             scales = 'free') +
+  coord_flip()
+
+
+```
 
 
 ```{r}
@@ -893,7 +1257,7 @@ ggplot(NOV.TXs.counts, aes(as.factor(Time), sum_count)) +
 ```{r}
 fwrite(NOV.TXs.uni.sp, paste0(outdir, "/NOV.TXs.uni.sp.tsv"), sep = '\t')
 
-
+fwrite(TransFrags.TSSr.filt.counts.gt, paste0(outdir, "/TransFrags.TSSr.filt.counts.gt.tsv.gz"), sep = '\t')
 ```
 
 
@@ -925,10 +1289,28 @@ rtracklayer::export.gff3(NOV.TXs.gff, paste0(outdir, '/NOV.TXs.gff2'))
 
 ### Use Gff-compare to compare Novel TXs to ALL REFERENCE Transcripts and select the CLOSEST REFERENCE
 ```{r}
-#source('NovTX.gffcompare.R')
+###
+ref_mRNAs <- unique(viral.mrna[,transcript_id])
+#
+out_dir <-paste0(outdir, '/gffcompare_iterative_NovTX')
+#
+all.gff.compare.outfile <- "NovTXs.merged.result_gff.compare.tsv.gz"
+#
+query_gff <- paste0(outdir, '/NOV.TXs.gff2')
+#
+config$compare.transfrags.to <- 'closest.Ref'
 
+
+source('NovTX.gffcompare.R')
+```
+
+
+```{r}
 ## Import results back
 best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.compare.NovTX.tsv.gz"), na.strings = '')
+
+
+best.merged.result_gff.compare[,.N,class_code]
 
 
 NOV.TXs.gff <- merge(NOV.TXs.gff, unique(best.merged.result_gff.compare[,.(seqnames, strand, cmp_ref, transcript_id, class_code)]),
@@ -937,13 +1319,32 @@ NOV.TXs.gff <- merge(NOV.TXs.gff, unique(best.merged.result_gff.compare[,.(seqna
 NOV.NOV.TXs.gff <- NOV.TXs.gff[class_code != '=' , ]
 
 
-rtracklayer::export.gff3(NOV.NOV.TXs.gff, paste0(outdir, '/NOV.NOV.TXs.gff3'))
-rtracklayer::export.gff3(NOV.NOV.TXs.gff, paste0(outdir, '/NOV.NOV.TXs.gff2'))
+rtracklayer::export.gff3(NOV.NOV.TXs.gff, paste0(outdir, '/NOV.NOV.TXs.v2.gff3'))
+rtracklayer::export.gff3(NOV.NOV.TXs.gff, paste0(outdir, '/NOV.NOV.TXs.v2.gff2'))
 
+
+NOV.NOV.TXs.uni.sp <- NOV.TXs.uni.sp[NOV_TX_ID %in% NOV.NOV.TXs.gff$NOV_TX_ID, ]
+
+fwrite(NOV.NOV.TXs.uni.sp, paste0(outdir, "/NOV.NOV.TXs.uni.sp.tsv"), sep = '\t')
 ```
 
 ```{r}
 
+### Run comparing finction again, this time only on the canonical transcripts
+
+###
+ref_mRNAs <- unique(viral.mrna[,transcript_id])
+#
+out_dir <-paste0(outdir, '/gffcompare_iterative_Nov.NovTX')
+#
+all.gff.compare.outfile <- "Nov.NovTXs.merged.result_gff.compare.tsv.gz"
+#
+query_gff <- paste0(outdir, '/NOV.NOV.TXs.v2.gff2')
+#
+config$compare.transfrags.to <- 'canonic.TX'
+
+
+source('NovTX.gffcompare.R')
 ```
 
 ```{r bib, include=FALSE}

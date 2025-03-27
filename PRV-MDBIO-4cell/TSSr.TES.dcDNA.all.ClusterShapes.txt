@@ -1,4 +1,4 @@
-group	cluster	chr	start	end	strand	dominant_tss	tags	tags.dominant_tss	q_0.1	q_0.9	interquantile_width	shape.score	cluster_width	hpi	cell_line	Time
+group	cluster	chr	start	end	strand	dominant_tes	tags	tags.dominant_tes	q_0.1	q_0.9	interquantile_width	shape.score	cluster_width	hpi	cell_line	Time
 C6_12h	2	LT934125.1	2266	2275	+	2273	10806.072632	7453.219542	2272	2275	4	1.92633728032844	10	12h	C6	12
 C6_12h	4	LT934125.1	8518	8526	+	8523	1760.430491	1083.52914	8519	8526	8	4.88686440197069	9	12h	C6	12
 C6_12h	9	LT934125.1	10412	10431	+	10426	40816.177455	29678.958838	10425	10430	6	1.94104132218837	20	12h	C6	12

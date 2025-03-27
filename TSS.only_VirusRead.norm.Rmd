@@ -131,7 +131,7 @@ Normalization: Viral read count
 ```{r, eval=T}
 #### Import TSS counts
 
-#gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
+gene.sample_count.sp <- fread(paste0(res.dir, '/gene.sample.count.sp.tsv'), na.strings = '')
 
 
 #### !!! Consider adapters!

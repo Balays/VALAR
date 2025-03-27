@@ -1,4 +1,4 @@
-group	cluster	chr	start	end	strand	dominant_tss	tags	tags.dominant_tss	q_0.1	q_0.9	interquantile_width	cluster_width	hpi	cell_line	Time
+group	cluster	chr	start	end	strand	dominant_tes	tags	tags.dominant_tes	q_0.1	q_0.9	interquantile_width	cluster_width	hpi	cell_line	Time
 C6_dRNA	1	LT934125.1	2266	2275	+	2273	17297.018201	11617.400284	2273	2275	3	10	dRNA	C6	dRNA
 C6_dRNA	2	LT934125.1	8519	8526	+	8519	1807.151155	1032.657803	8519	8523	5	8	dRNA	C6	dRNA
 C6_dRNA	3	LT934125.1	10418	10431	+	10426	52149.219053	42726.2166	10426	10429	4	14	dRNA	C6	dRNA

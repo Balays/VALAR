@@ -3,6 +3,12 @@ library(data.table)
 library(Rsamtools)
 library(stringi)
 
+
+
+#readcounts <- fread('D:/data/PRV_3cell/rebasecall/read_count.fastq.txt')
+
+
+
 ##
 #### Before Starting ####
 
@@ -29,6 +35,17 @@ if(!load.config) {
   bamfiles <- list.files(bamdir, pattern, recursive = T, full.names = T)
   
 }
+
+#### dRNA ####
+
+# use the out_sorted bamfile, rather than the stranded only!
+pattern       <- '.*dRNA.*_out_sorted.bam$' ## this will be subtracted from the filename and supplied as a sample column 
+bamfiles_dRNA <- list.files(bamdir, pattern, recursive = T, full.names = T)
+bamfiles <- c(bamfiles_dRNA)
+
+bamfiles <- grep('dRNA', bamfiles, value = T, invert = T)
+bamfiles <- c(bamfiles, bamfiles_dRNA)
+pattern  <- '.bam$'
 
 #### ####
 ##
@@ -340,6 +357,7 @@ if(config$is.lortia) {
   bam.all[,correct_tes := fifelse(grepl('correct', tag.l3) | grepl('correct', tag.r3), T, F)]
   bam.all[,correct_tss := fifelse(grepl('correct', tag.l5) | grepl('correct', tag.r5), T, F)]
 }
+
 fwrite(bam.all, paste0(outdir, '/bam.all.tsv.gz'), sep='\t')
 
 

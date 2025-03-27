@@ -1,4 +1,4 @@
-group	enhancer	cluster.m	cluster.p	chr	dominant_tss.m	dominant_tss.p	tags.m	tags.p	D	hpi	cell_line	Time
+group	enhancer	cluster.m	cluster.p	chr	dominant_tes.m	dominant_tes.p	tags.m	tags.p	D	hpi	cell_line	Time
 NRK_2h	1	237	59	LT934125.1	75637	75669	816.993464	816.993464	0	2h	NRK	2
 NRK_2h	2	249	84	LT934125.1	102361	102390	5718.954248	816.993464	-0.75	2h	NRK	2
 NRK_2h	3	283	131	LT934125.1	122907	122915	2450.980392	8169.93464	0.538461538461539	2h	NRK	2

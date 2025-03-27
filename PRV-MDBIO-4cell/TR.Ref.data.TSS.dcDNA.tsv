@@ -1,4 +1,4 @@
-dcDNA_TC_ID	seqnames	strand	transcript_id	exon_number	start.TR	end.TR	start.exon	end.exon	start	end	prime5.TR	prime5.ex	prime3.TR	prime3.ex	last_exon	source	TC.start	TC.end	support	score	consensus_peak	dcDNA_TC_significance
+dcDNA.TSS_TC_ID	seqnames	strand	transcript_id	exon_number	start.TR	end.TR	start.exon	end.exon	start	end	prime5.TR	prime5.ex	prime3.TR	prime3.ex	last_exon	source	TC.start	TC.end	support	score	consensus_peak	dcDNA.TSS_TC_significance
 	LT934125.1	+	ELIE-1	1	100549	102393	100549	102393	100549	102393	100549	100549	102393	102393	TRUE	NAGATA						
 	LT934125.1	+	ELIE-2	1	101661	102393	101661	102393	101661	102393	101661	101661	102393	102393	TRUE	NAGATA						
 	LT934125.1	+	NOIR-1S3	1	108030	108830	108030	108830	108030	108830	108030	108030	108830	108830	TRUE	NAGATA						

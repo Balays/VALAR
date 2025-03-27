@@ -1,0 +1,39 @@
+tag.l3	tag.l5	tag.r3	tag.r5	Count	combined
+missing	missing	correct	missing	222544	missing, missing, correct, missing
+correct	missing	missing	missing	138352	correct, missing, missing, missing
+missing	missing	potential template switching	missing	54048	missing, missing, potential template switching, missing
+missing	missing	out of place	missing	44616	missing, missing, out of place, missing
+potential template switching	missing	missing	missing	28541	potential template switching, missing, missing, missing
+out of place	missing	missing	missing	16401	out of place, missing, missing, missing
+no softclip	no softclip	correct	missing	1377	no softclip, no softclip, correct, missing
+correct	missing	no softclip	no softclip	559	correct, missing, no softclip, no softclip
+no softclip	no softclip	potential template switching	missing	172	no softclip, no softclip, potential template switching, missing
+no softclip	no softclip	out of place	missing	144	no softclip, no softclip, out of place, missing
+potential template switching	missing	no softclip	no softclip	129	potential template switching, missing, no softclip, no softclip
+missing	potential template switching	missing	missing	99	missing, potential template switching, missing, missing
+missing	correct	missing	missing	87	missing, correct, missing, missing
+missing	missing	missing	potential template switching	87	missing, missing, missing, potential template switching
+out of place	missing	no softclip	no softclip	74	out of place, missing, no softclip, no softclip
+missing	out of place	correct	missing	71	missing, out of place, correct, missing
+missing	out of place	missing	missing	70	missing, out of place, missing, missing
+missing	missing	missing	correct	67	missing, missing, missing, correct
+missing	potential template switching	correct	missing	63	missing, potential template switching, correct, missing
+false exon	missing	missing	missing	52	false exon, missing, missing, missing
+missing	correct	correct	missing	48	missing, correct, correct, missing
+missing	missing	missing	out of place	44	missing, missing, missing, out of place
+correct	missing	missing	potential template switching	30	correct, missing, missing, potential template switching
+missing	potential template switching	out of place	missing	27	missing, potential template switching, out of place, missing
+missing	potential template switching	potential template switching	missing	18	missing, potential template switching, potential template switching, missing
+missing	correct	out of place	missing	14	missing, correct, out of place, missing
+potential template switching	missing	missing	potential template switching	13	potential template switching, missing, missing, potential template switching
+potential template switching	missing	missing	correct	11	potential template switching, missing, missing, correct
+correct	missing	missing	correct	10	correct, missing, missing, correct
+missing	out of place	potential template switching	missing	10	missing, out of place, potential template switching, missing
+correct	missing	missing	out of place	9	correct, missing, missing, out of place
+missing	correct	potential template switching	missing	7	missing, correct, potential template switching, missing
+missing	false exon	missing	missing	5	missing, false exon, missing, missing
+out of place	missing	missing	correct	3	out of place, missing, missing, correct
+missing	out of place	out of place	missing	3	missing, out of place, out of place, missing
+potential template switching	missing	missing	out of place	3	potential template switching, missing, missing, out of place
+missing	missing	false exon	missing	2	missing, missing, false exon, missing
+out of place	missing	missing	potential template switching	1	out of place, missing, missing, potential template switching

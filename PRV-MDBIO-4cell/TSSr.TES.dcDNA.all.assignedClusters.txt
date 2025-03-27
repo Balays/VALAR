@@ -1,4 +1,4 @@
-chr	strand	gene	group	cluster	start	end	dominant_tss	tags	tags.dominant_tss	q_0.1	q_0.9	interquantile_width	inCoding	cluster_width	hpi	cell_line	Time	dominant_TC	CDS_start	CDS_end	CDS_prime5	CDS_prime3	TSS_CDS_dist	closest_TC
+chr	strand	gene	group	cluster	start	end	dominant_tes	tags	tags.dominant_tes	q_0.1	q_0.9	interquantile_width	inCoding	cluster_width	hpi	cell_line	Time	dominant_TC	CDS_start	CDS_end	CDS_prime5	CDS_prime3	TSS_CDS_dist	closest_TC
 LT934125.1	+	ELIE	C6_6h	83	101312	101312	101312	54.540496	54.540496	101312	101312	1	ELIE	1	6h	C6	6	83	100549	102393	100549	102393	1081	83
 LT934125.1	+	NOIR	C6_12h	87	107986	107989	107989	53.567733	38.958351	107986	107989	4	NOIR	4	12h	C6	12	0	107483	108830	107483	108830	841	0
 LT934125.1	+	NOIR	C6_12h	88	108067	108079	108071	82.786497	58.437527	108067	108079	13	NOIR	13	12h	C6	12	88	107483	108830	107483	108830	759	0
