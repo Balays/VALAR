@@ -59,11 +59,11 @@ all.merged.result_gff.compare <- all.merged.result_gff.compare.NovTX
 source('analyse_GFF.COMPARE.R')
 
 #### Write out
-fwrite(best.merged.result_gff.compare,     paste0(outdir, "/best.merged.result_gff.compare.NovTX.tsv.gz"),     sep = '\t')
+fwrite(best.merged.result_gff.compare,   paste0(outdir, "/", best.merged.result_gff.compare.outfile),     sep = '\t')
 
 
 ## Import results back
-best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.compare.NovTX.tsv.gz"), na.strings = '')
+best.merged.result_gff.compare <- fread( paste0(outdir, "/", best.merged.result_gff.compare.outfile), na.strings = '')
 #TR.counts <- fread(paste0(outdir, "/TR.counts.tsv.gz"), na.strings = '')
 #best.merged.result_gff.compare[,transcript_id := as.integer(transcript_id) ]
 
@@ -73,14 +73,17 @@ best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.
 TR.counts <- TransFrags.TSSr.filt.counts.gt[, .(count = sum(count)), by=.(NOV_TX_ID, sample)]
 setnames(TR.counts, 'NOV_TX_ID', 'TR_ID')
 source('summarise_GFF.COMPARE.R')
+
 ## Write out
-fwrite(TR.gff.compare.merged.TR.counts.gt, paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.NovTX.tsv.gz"), sep = '\t')
-fwrite(best.gff.compare.ref.TR.class.freq, paste0(outdir, "/best.gff.compare.ref.TR.class.freq.NovTX.tsv.gz"), sep = '\t')
-fwrite(TR.gff.compare.merged.TR, paste0(outdir, "/TR.gff.compare.merged.TR.NovTX.tsv.gz"), sep = '\t')
+
+fwrite(TR.gff.compare.merged.TR.counts.gt, paste0(outdir, "/", TR.gff.compare.merged.TR.counts.gt.outfile), sep = '\t')
+
+fwrite(best.gff.compare.ref.TR.class.freq, paste0(outdir, "/Freq.", best.merged.result_gff.compare.outfile), sep = '\t')
+fwrite(TR.gff.compare.merged.TR, paste0(outdir, "/Uni.", TR.gff.compare.merged.TR.counts.gt.outfile), sep = '\t')
 
 
 ## Import results back
-TR.gff.compare.merged.TR.counts.gt <- fread(paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.NovTX.tsv.gz"), na.strings = '')
+TR.gff.compare.merged.TR.counts.gt <- fread( paste0(outdir, "/", TR.gff.compare.merged.TR.counts.gt.outfile), na.strings = '')
 
 
 ### Plot GFF-compare results

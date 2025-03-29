@@ -1288,7 +1288,9 @@ rtracklayer::export.gff3(NOV.TXs.gff, paste0(outdir, '/NOV.TXs.gff2'))
 
 
 ### Use Gff-compare to compare Novel TXs to ALL REFERENCE Transcripts and select the CLOSEST REFERENCE
-```{r}
+```{r, eval=F}
+## RUN THIS CHUNK IN LINUX
+
 ###
 ref_mRNAs <- unique(viral.mrna[,transcript_id])
 #
@@ -1296,12 +1298,16 @@ out_dir <-paste0(outdir, '/gffcompare_iterative_NovTX')
 #
 all.gff.compare.outfile <- "NovTXs.merged.result_gff.compare.tsv.gz"
 #
+best.merged.result_gff.compare.outfile <- "best.merged.result_gff.compare.NovTX.tsv.gz"
+#
+TR.gff.compare.merged.TR.counts.gt.outfile <- "TR.gff.compare.merged.TR.counts.gt.NovTX.tsv.gz"
+#
 query_gff <- paste0(outdir, '/NOV.TXs.gff2')
 #
 config$compare.transfrags.to <- 'closest.Ref'
 
+#source('NovTX.gffcompare.R') 
 
-source('NovTX.gffcompare.R')
 ```
 
 
@@ -1328,23 +1334,62 @@ NOV.NOV.TXs.uni.sp <- NOV.TXs.uni.sp[NOV_TX_ID %in% NOV.NOV.TXs.gff$NOV_TX_ID, ]
 fwrite(NOV.NOV.TXs.uni.sp, paste0(outdir, "/NOV.NOV.TXs.uni.sp.tsv"), sep = '\t')
 ```
 
-```{r}
+```{r, eval=F}
+## RUN THIS CHUNK IN LINUX
 
-### Run comparing finction again, this time only on the canonical transcripts
+### Run comparing function again, this time only on the canonical transcripts
 
 ###
-ref_mRNAs <- unique(viral.mrna[,transcript_id])
+ref_mRNAs <- unique(viral.mrna[transcript_id %in% viral.ref[is.canonic == 'canonic', transcript_id], transcript_id])
 #
 out_dir <-paste0(outdir, '/gffcompare_iterative_Nov.NovTX')
 #
 all.gff.compare.outfile <- "Nov.NovTXs.merged.result_gff.compare.tsv.gz"
+#
+best.merged.result_gff.compare.outfile <- "best.merged.result_gff.compare.Nov.NovTX.tsv.gz"
+#
+TR.gff.compare.merged.TR.counts.gt.outfile <- "TR.gff.compare.merged.TR.counts.gt.Nov.NovTX.tsv.gz"
 #
 query_gff <- paste0(outdir, '/NOV.NOV.TXs.v2.gff2')
 #
 config$compare.transfrags.to <- 'canonic.TX'
 
 
-source('NovTX.gffcompare.R')
+#source('NovTX.gffcompare.R')
+
+
+```
+
+```{r}
+## Import results back
+best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.compare.Nov.NovTX.tsv.gz"), na.strings = '')
+
+
+best.merged.result_gff.compare[,.N,class_code]
+
+
+NOV.NOV.NOV.TXs.gff <- merge(NOV.NOV.TXs.gff, 
+                         unique(best.merged.result_gff.compare[,.(seqnames, strand, cmp_ref, transcript_id, class_code)]),
+                     by.x = c('seqnames', 'strand', 'NOV_TX_ID'), 
+                     by.y = c('seqnames', 'strand', 'transcript_id'), all.x = T )
+
+# NOV.NOV.NOV.TXs.gff <- NOV.NOV.NOV.TXs.gff[class_code != '=' , ]
+
+setnames(NOV.NOV.NOV.TXs.gff,
+         c('cmp_ref.x', 'class_code.x', 'cmp_ref.y', 'class_code.y'),  
+         c('closest_reference', 'closest_reference.class', 'closest_canonical', 'closest_canonical.class') )
+
+
+rtracklayer::export.gff3(NOV.NOV.NOV.TXs.gff, paste0(outdir, '/NOV.NOV.NOV.TXs.v2.gff3'))
+rtracklayer::export.gff3(NOV.NOV.NOV.TXs.gff, paste0(outdir, '/NOV.NOV.NOV.TXs.v2.gff2'))
+
+
+NOV.NOV.NOV.TXs.uni.sp <- NOV.NOV.TXs.uni.sp[NOV_TX_ID %in% NOV.NOV.NOV.TXs.gff$NOV_TX_ID, ]
+
+
+fwrite(NOV.NOV.NOV.TXs.uni.sp, paste0(outdir, "/NOV.NOV.NOV.TXs.uni.sp.tsv"), sep = '\t')
+
+
 ```
 
 ```{r bib, include=FALSE}

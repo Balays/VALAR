@@ -1,6 +1,6 @@
 ##gff-version 3
 ##source-version rtracklayer 1.66.0
-##date 2025-03-27
+##date 2025-03-28
 LT934125.1	Kakuk_et_al_2025	transcript	1241	2273	341	+	0	NOV_TX_ID=NOV_TX_10;TSS=1241;TES=2273;sum_count=341;ID=NOV_TX_10;Name=NOV_TX_10;cmp_ref=ORF-1M1;class_code=5`-long
 LT934125.1	Kakuk_et_al_2025	transcript	9113	10426	225478	+	0	NOV_TX_ID=NOV_TX_100;TSS=9113;TES=10426;sum_count=225478;ID=NOV_TX_100;Name=NOV_TX_100;cmp_ref=UL49.5-49;class_code=5`-long
 LT934125.1	Kakuk_et_al_2025	transcript	54397	55161	1840	+	0	NOV_TX_ID=NOV_TX_1000;TSS=54397;TES=55161;sum_count=1840;ID=NOV_TX_1000;Name=NOV_TX_1000;cmp_ref=UL44.4-S14;class_code=5`-long

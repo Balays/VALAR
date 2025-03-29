@@ -39,13 +39,15 @@ if(!load.config) {
 #### dRNA ####
 
 # use the out_sorted bamfile, rather than the stranded only!
-pattern       <- '.*dRNA.*_out_sorted.bam$' ## this will be subtracted from the filename and supplied as a sample column 
-bamfiles_dRNA <- list.files(bamdir, pattern, recursive = T, full.names = T)
-bamfiles <- c(bamfiles_dRNA)
+#pattern       <- '.*dRNA.*.bam$' # '.*dRNA.*_out_sorted.bam$' ## this will be subtracted from the filename and supplied as a sample column 
+#bamfiles_dRNA <- list.files(bamdir, pattern, recursive = T, full.names = T)
+#bamfiles <- c(bamfiles_dRNA)
+#pattern  <- '.bam$'
+
 
 bamfiles <- grep('dRNA', bamfiles, value = T, invert = T)
-bamfiles <- c(bamfiles, bamfiles_dRNA)
-pattern  <- '.bam$'
+#bamfiles <- c(bamfiles, bamfiles_dRNA)
+#pattern  <- '.bam$'
 
 #### ####
 ##
@@ -361,7 +363,7 @@ if(config$is.lortia) {
 fwrite(bam.all, paste0(outdir, '/bam.all.tsv.gz'), sep='\t')
 
 
-#bam.all <- fread(paste0(outdir, '/bam.all.tsv.gz'))
+# bam.all.comb <- fread(paste0(outdir, '/bam.all.tsv.gz'))
 ## filter out reads with supplementary alignments, or
 ## these were filtered out previously?
 # bam.filt[qname]
