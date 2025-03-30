@@ -195,16 +195,25 @@ CDS.dt[, CDS_prime3 := fifelse(strand == '-', CDS_start, CDS_end)]
 dup(CDS.dt$gene)
 assignedClusters <- merge(assignedClusters, CDS.dt, by.x=c('chr', 'strand', 'gene'), by.y=c('seqnames', 'strand', 'gene'), all.x = T)
 
-assignedClusters[,  TSS_CDS_dist := CDS_prime3 - dominant_tes]
+
+assignedClusters <- merged_best
+setnames(assignedClusters, 'seqnames', 'chr' )
+setnames(assignedClusters, colnames(assignedClusters), gsub('tss', 'tes', colnames(assignedClusters)) )
+# get the dominant TC per gene (highest tag)
+assignedClusters[,  dominant_TC := max(tags), by=.(gene, group)]
+assignedClusters[,  dominant_TC := fifelse(dominant_TC == tags,  cluster, 0)]
+
+
+assignedClusters[,  TES_CDS_dist := CDS_prime3 - dominant_tes]
 
 # this on a positve strand should be negative values, on the negative strand it should be a positive value!
 
-ggplot(assignedClusters, aes(TSS_CDS_dist)) + geom_histogram() + facet_grid(cols=vars(strand))
+ggplot(assignedClusters, aes(TES_CDS_dist)) + geom_histogram() + facet_grid(cols=vars(strand))
 ## check! filter?
 
 
-assignedClusters[,  closest_TC  := min(abs(TSS_CDS_dist)), by=.(gene, group)]
-assignedClusters[,  closest_TC  := fifelse(closest_TC == abs(TSS_CDS_dist),  cluster, 0)]
+assignedClusters[,  closest_TC  := min(abs(TES_CDS_dist)), by=.(gene, group)]
+assignedClusters[,  closest_TC  := fifelse(closest_TC == abs(TES_CDS_dist),  cluster, 0)]
 
 ##
 fwrite(assignedClusters, paste0(outdir, '/TSSr.TES.dcDNA.all.assignedClusters.txt'), sep='\t')

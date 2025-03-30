@@ -33,6 +33,11 @@ CDS_UTR[, `:=`(
 
 ### 2. Prepare the TES clusters (ConsClusters)
 
+ConsClusters <- rbindlist(myTSSr@consensusClusters, idcol = 'group', use.names = T)
+ConsClusters[, cluster_width := end - start +1]
+# 
+ConsClusters  <- merge(ConsClusters, unique(prime3.counts[,.(group, hpi, cell_line, Time)]), by='group', all.x=T)
+
 ConsClusters <- as.data.table(ConsClusters)
 # Rename chromosome column if needed
 if("chr" %in% names(ConsClusters)) {
@@ -58,21 +63,28 @@ mergedResult <- foverlaps2(
 
 setnames(mergedResult, c('start' , 'end'), c('3-UTR_start', '3-UTR-end'))
 setnames(mergedResult, c('i.start' , 'i.end'), c('start', 'end'))
+setnames(mergedResult, c('width_x' , 'width_y', 'overlap_size'), c('3-UTR-width', 'width', 'TES_UTR_ov_width'))
+mergedResult[, width := NULL]
+
+# Merge back those TES clusters that did not overlap with a 3-UTR of a gene
+
+mergedResult <- merge(mergedResult, 
+                      ConsClusters, #[, .(seqnames, strand, group, , 
+                      by =  colnames(ConsClusters), #c('seqnames', 'strand', 'gene', 'cluster', 'group' ),
+                      all = T
+                      )
+
+# (Optional) For each gene and group, keep only the cluster with the highest 'tags' -->> canonic TES
+merged_best <- mergedResult[, .SD[which.max(tags)], by = .(cluster, gene, group)]
 
 
+# 
 
-# (Optional) For each gene and group, keep only the cluster with the highest 'tags'
-merged_best <- mergedResult[, .SD[which.max(tags)], by = .(gene, group)]
 
 ### 4. Second foverlaps2: use original cluster coordinates to assign the inCoding CDS
 
 # Build a CDS intervals table using the coding region boundaries from CDS.dt
 CDS_intervals <- CDS.dt[, .(seqnames, strand, gene, start = CDS_start, end = CDS_end)]
-
-# Merge back the original cluster coordinates (from ConsClusters) into merged_best using cluster_id
-merged_best <- merge(merged_best,
-                     ConsClusters[, .(cluster_id, orig_start, orig_end)],
-                     by = "cluster_id", all.x = TRUE)
 
 # Use the original TES cluster positions (orig_start/orig_end) as the query interval
 coding_overlaps <- foverlaps2(
@@ -84,16 +96,22 @@ coding_overlaps <- foverlaps2(
   maxgap = 0
 )
 
+setnames(coding_overlaps, c('start' , 'end'), c('CDS_Overlap_start', 'CDS_Overlap_end'))
+setnames(coding_overlaps, c('i.start' , 'i.end'), c('start', 'end'))
+setnames(coding_overlaps, c('gene', 'i.gene', 'overlap_size'), c('CDS_Overlap', 'gene', 'CDS_UTR_ov_width'))
+
+coding_overlaps <- unique(coding_overlaps[,.(seqnames, strand, gene, cluster, start, end, CDS_Overlap, group, group, hpi, Time, cell_line, CDS_UTR_ov_width )])
+
 # If multiple CDS overlap a cluster, choose the one with the maximum overlap
-coding_overlaps <- coding_overlaps[, .SD[which.max(overlap_size)], by = cluster_id]
+coding_overlaps <- coding_overlaps[, .SD[which.max(CDS_UTR_ov_width)], by = .(seqnames, strand, gene, cluster, start, end, group, hpi, Time, cell_line)]
+
+coding_overlaps[,inCoding := CDS_Overlap]
+coding_overlaps[,CDS_Overlap := NULL]
 
 # Merge the inCoding annotation (the CDS 'gene' from CDS_intervals) back into merged_best
-merged_best <- merge(
-  merged_best,
-  coding_overlaps[, .(cluster_id, inCoding = gene)],
-  by = "cluster_id",
-  all.x = TRUE
-)
+merged_best <- merge(merged_best, 
+                     coding_overlaps,
+                     by =  c('seqnames', 'strand',  'gene', 'cluster', 'start', 'end', 'group',  'hpi', 'Time', 'cell_line' ),
+                     all = T)
 
 
-# Final merged_best now has an 'inCoding' column indicating the CDS coding region overlapping the TES cluster.
