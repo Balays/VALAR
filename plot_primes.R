@@ -2,9 +2,10 @@
 #cov.counts    <- fread(paste0(outdir, '/cov.counts.tsv'),    na.strings = '')
 
 ## read back in
-prime5.counts <- fread(paste0(outdir, '/prime5.counts.tsv'), na.strings = '')
-prime3.counts <- fread(paste0(outdir, '/prime3.counts.tsv'), na.strings = '')
-
+prime5.counts <- fread(paste0(outdir, '/prime5.counts.tsv.gz'), na.strings = '')
+prime5.counts[,prime5 := NULL]
+prime3.counts <- fread(paste0(outdir, '/prime3.counts.tsv.gz'), na.strings = '')
+prime3.counts[,prime3 := NULL]
 
 
 ## filter now

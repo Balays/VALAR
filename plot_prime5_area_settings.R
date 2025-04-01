@@ -185,6 +185,11 @@ if (combine.groups != F) {
 ## sum coverages!! IMPORTANT !!!
 sum.counts <- T
 if (sum.counts) {
+  ## reformat to data table !
+  
+}
+
+if (sum.counts) {
   plot.sum <- plot.data %>% group_by(across(any_of(c('strand', 'hpi', correct_prime, prime)))) %>%
     summarise(count=sum(count)) %>%
     #summarise(count=n()) %>%
@@ -198,6 +203,7 @@ if (sum.counts) {
 } else {
   plot.sum <- plot.data
 }
+
 
 # from : source('CAGE.R')
 cagefr.clust            <- NULL

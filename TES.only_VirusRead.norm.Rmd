@@ -1679,6 +1679,24 @@ ggsave(paste0(fig.dir, '/gene_ratios_mean.jpg'), width = 10, height = 7)
 ```
 
 
+### Log10 Means with SD and linear connection
+```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}
+ggmean <- ggplot(plot_data) + 
+  #geom_point(aes(Time, ratio, color=cell_line)) +
+  geom_line(aes(Time, log10(mean), color=cell_line, group=cell_line)) +
+  geom_pointrange(aes(Time, log10(mean), color=cell_line, group=cell_line, ymin=log10(mean)-log10(sd), ymax=log10(mean)+log10(sd))) +
+  scale_color_manual(values = palette[]) +
+  #scale_y_continuous(name='ratio', transform = 'log10') +
+  scale_x_continuous(breaks = breaks, labels=labels) +
+  theme_ipsum() +
+  #facet_nested(rows = vars(norm.method), cols=vars(Time))
+  facet_wrap(~gene_pair, scales = 'free', ncol=3)
+
+
+ggmean
+ggsave(paste0(fig.dir, '/log10.gene_ratios_mean.jpg'), width = 10, height = 7)
+```
+
 
 ### Reps with loess and confidence
 ```{r, fig.show='hold',  fig.width = figw, fig.height = figh, eval=T}

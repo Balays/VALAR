@@ -6,7 +6,7 @@ library(data.table)
 outdir <- config$outdir
 
 
-prime3.counts <- fread(paste0(outdir, '/prime3.counts.tsv'), na.strings = '')
+prime3.counts <- fread(paste0(outdir, '/prime3.counts.tsv.gz'), na.strings = '')
 
 prime3.counts[, sample    := gsub('-', '_', sample)]
 prime3.counts[, cell_line := gsub('-', '_', cell_line)]
@@ -196,8 +196,16 @@ dup(CDS.dt$gene)
 assignedClusters <- merge(assignedClusters, CDS.dt, by.x=c('chr', 'strand', 'gene'), by.y=c('seqnames', 'strand', 'gene'), all.x = T)
 
 
+#### Rather than using TSSr's Assignemnet, we use our own
+
+extension <- 1000 ## Maximum upstream extension from TES to stop of CDS to assign it
+source('Assign.TESs.R')
 assignedClusters <- merged_best
 setnames(assignedClusters, 'seqnames', 'chr' )
+
+####
+
+
 setnames(assignedClusters, colnames(assignedClusters), gsub('tss', 'tes', colnames(assignedClusters)) )
 # get the dominant TC per gene (highest tag)
 assignedClusters[,  dominant_TC := max(tags), by=.(gene, group)]

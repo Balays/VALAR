@@ -1,5 +1,5 @@
 ---
-title: "PRV - 4 cell lines: TSS dynamics"
+title: "PRV - 4 cell lines: Merge TransFrags into Transcripts using TSSs and TESs"
 author: Balázs Kakuk
 output: 
   html_document:
@@ -354,7 +354,8 @@ ggplot(TSS.dcDNA_assignedClusters[gene %in% topShifts
                       & Time %in% c(1,2,4,6,8,12)  ], 
        aes(Time, gene_dominant_TSS_shift)) + 
   geom_line(aes(color = cell_line, group = cell_line)) + 
-  geom_point(aes(color = cell_line)) + 
+  geom_point(aes(fill = cell_line), shape = 21) + 
+  scale_fill_npg() +
   #coord_flip() +
   facet_nested_wrap(~gene, ncol=4) +
   theme_minimal()
@@ -376,7 +377,8 @@ ggplot(TES.dcDNA_assignedClusters[gene %in% topShifts
                       & Time %in% c(1,2,4,6,8,12)  ], 
        aes(Time, gene_dominant_TES_shift)) + 
   geom_line(aes(color = cell_line, group = cell_line)) + 
-  geom_point(aes(color = cell_line)) + 
+  geom_point(aes(fill = cell_line), shape = 21) + 
+  scale_fill_npg() +
   #coord_flip() +
   facet_nested_wrap(~gene, ncol=4) +
   theme_minimal()
@@ -1276,9 +1278,11 @@ NOV.TXs.gff[,phase  := 0]
 NOV.TXs.gff[,ID     := NOV_TX_ID]
 NOV.TXs.gff[,Name   := NOV_TX_ID]
 
+GRanges(NOV.TXs.gff)
+NOV.TXs.gff[start > end, ]
 
 rtracklayer::export.gff3(NOV.TXs.gff, paste0(outdir, '/NOV.TXs.gff3'))
-rtracklayer::export.gff3(NOV.TXs.gff, paste0(outdir, '/NOV.TXs.gff2'))
+rtracklayer::export.gff2(NOV.TXs.gff, paste0(outdir, '/NOV.TXs.gff2'))
 ```
 
 ### Include Gene from Reference Transcripts
@@ -1391,6 +1395,9 @@ fwrite(NOV.NOV.NOV.TXs.uni.sp, paste0(outdir, "/NOV.NOV.NOV.TXs.uni.sp.tsv"), se
 
 
 ```
+
+
+
 
 ```{r bib, include=FALSE}
 # KEEP THIS AT THE END OF THE DOCUMENT TO GENERATE A LOCAL bib FILE FOR PKGS USED

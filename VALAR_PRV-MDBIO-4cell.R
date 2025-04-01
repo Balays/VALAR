@@ -45,7 +45,7 @@ if(!load.config) {
 #pattern  <- '.bam$'
 
 
-bamfiles <- grep('dRNA', bamfiles, value = T, invert = T)
+#bamfiles <- grep('dRNA', bamfiles, value = T, invert = T)
 #bamfiles <- c(bamfiles, bamfiles_dRNA)
 #pattern  <- '.bam$'
 

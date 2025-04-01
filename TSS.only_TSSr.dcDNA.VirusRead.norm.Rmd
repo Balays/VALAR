@@ -154,7 +154,7 @@ kin_classes          <- unique(gene.sample_count.sp[, .(gene, Kinetic_class)])
 
 ### Cluster Tags of dominant Clusters for each Gene from TSSr output
 ##
-assignedClusters <- fread(paste0(outdir, '/TSSr.dcDNA.best.assignedClusters.txt'))
+assignedClusters <- fread(paste0(outdir, '/TSSr.TSS.dcDNA.best.assignedClusters.txt'))
 #assignedClusters$Kinetic_class <- NA
 assignedClusters$gene_cluster  <- NA
 assignedClusters[, seqnames := chr]
@@ -259,8 +259,8 @@ setDT(orf.sum)
 } else if (norm.method == 'WO') {
   
   ## NO normalization of counts
-
-  normBase <- fread('../rebasecall/read_count.txt')
+  #normBase <- fread('../rebasecall/read_count.txt')
+  normBase <- data.table(sample = unique(orf.sum$sample))
   normBase[ , norm_base := 1]
   normBase <- normBase[,.(sample, norm_base)]
   
@@ -1690,7 +1690,8 @@ ab.merged.gt[,sum  := sum (ratio),   by=.(hpi, Time, cell_line, group, norm.meth
 
 
 
-plot_data <- ab.merged.gt[norm.method == 'viral_read.count'
+plot_data <- ab.merged.gt[
+                 # norm.method == 'viral_read.count'
                  # norm.method == 'host_read.count' 
                  , ]
 ```

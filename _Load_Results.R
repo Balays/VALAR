@@ -49,12 +49,12 @@ TR.Ref.data <- fread(paste0(outdir, '/TR.Ref.data.tsv'))
 
 bam.all  <- fread(paste0(outdir, '/bam.all.tsv.gz'), na.strings = '')
 
-bam.cDNA <- fread(paste0(outdir, '/bam.all.cDNA.tsv.gz'), na.strings = '')
+#bam.cDNA <- fread(paste0(outdir, '/bam.all.cDNA.tsv.gz'), na.strings = '')
 
-bam.dRNA <- fread(paste0(outdir, '/bam.all.dRNA.tsv.gz'), na.strings = '')
+#bam.dRNA <- fread(paste0(outdir, '/bam.all.dRNA.tsv.gz'), na.strings = '')
 
 bam.all[,.N,sample]
-bam.dRNA[,.N,sample]
+#bam.dRNA[,.N,sample]
 
 mapped.cov       <- fread(paste0(outdir, '/mapped.cov.tsv.gz'), na.strings = '')
 merged_cov       <- fread(paste0(outdir, '/merged_cov.tsv.gz'), na.strings = '')

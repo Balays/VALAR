@@ -23,7 +23,7 @@ foverlaps2 <- function(DTx, DTy,
 ### 1. Prepare CDS UTR intervals with corrected boundaries
 
 # Assume an extension of 1000 bp (adjust as needed)
-extension <- 1000
+extension <- extension
 # Make a copy of CDS.dt for the UTR definitions
 CDS_UTR <- copy(CDS.dt)
 CDS_UTR[, `:=`(
