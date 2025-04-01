@@ -76,6 +76,15 @@ ggVennDiagram::ggVennDiagram(list(
   C6   = unique(introns.dRNA[count > 0 & sample == 'C6_dRNA',    intron_id])
 ))
 
+introns.PK15  <- introns.dRNA[count > 0 & sample == 'PK-15_dRNA', ][, type := 'PK-15_dRNA']
+introns.PC12  <- introns.dRNA[count > 0 & sample == 'PC-12_dRNA', ][, type := 'PC-12_dRNA']
+introns.C6    <- introns.dRNA[count > 0 & sample == 'C6_dRNA'   , ][, type := 'C6_dRNA']
+
+intron.gff <- rbind(introns.PK15, introns.PC12, introns.C6)
+
+rtracklayer::export.gff3(intron.gff, paste0(outdir, '/introns.gff3'))
+
+
 ## 'Qualified Introns'
 ggVennDiagram::ggVennDiagram(list(
   PK15 = unique(introns.dRNA[count > 0 & sample == 'PK-15_dRNA' & is_qualified == T,  intron_id]),
@@ -84,15 +93,13 @@ ggVennDiagram::ggVennDiagram(list(
 ))
 
 
+introns.PK15  <- introns.dRNA[count > 0 & sample == 'PK-15_dRNA' & is_qualified == T, ][, type := 'PK-15_dRNA']
+introns.PC12  <- introns.dRNA[count > 0 & sample == 'PC-12_dRNA' & is_qualified == T, ][, type := 'PC-12_dRNA']
+introns.C6    <- introns.dRNA[count > 0 & sample == 'C6_dRNA'    & is_qualified == T, ][, type := 'C6_dRNA']
 
-introns.PK15  <- introns.dRNA[sample == 'PK-15_dRNA', ]
-introns.PC12  <- introns.dRNA[sample == 'PC-12_dRNA', ]
-introns.C6    <- introns.dRNA[sample == 'C6_dRNA', ]
+intron.gff <- rbind(introns.PK15, introns.PC12, introns.C6)
 
-
-intron.gff <- copy(introns.dRNA)
-
-introns.gff[, type ]
+rtracklayer::export.gff3(intron.gff, paste0(outdir, '/introns.qualified.gff3'))
 
 
 ##
