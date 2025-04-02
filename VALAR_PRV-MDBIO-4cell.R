@@ -363,7 +363,12 @@ if(config$is.lortia) {
 fwrite(bam.all, paste0(outdir, '/bam.all.tsv.gz'), sep='\t')
 
 
-# bam.all.comb <- fread(paste0(outdir, '/bam.all.tsv.gz'))
+## add dRNA alignments
+# 
+# bam.all <- rbind(bam.all, bam.all.drna)
+
+
+# bam.all <- fread(paste0(outdir, '/bam.all.tsv.gz'))
 ## filter out reads with supplementary alignments, or
 ## these were filtered out previously?
 # bam.filt[qname]
@@ -375,7 +380,7 @@ bam.filt <- bam.filt[seqnames == genome]
 
 fwrite(bam.filt, paste0(outdir, '/bam.filt.tsv.gz'), sep='\t')
 
-#bam.filt <- fread(paste0(outdir, '/bam.filt.tsv.gz'), na.strings = '')
+# bam.filt <- fread(paste0(outdir, '/bam.filt.tsv.gz'), na.strings = '')
 
 
 
@@ -507,16 +512,49 @@ TR.data   <- fread(paste0(outdir, '/TR.data.tsv.gz'), na.strings = '')
 TR.counts <- fread(paste0(outdir, '/TR.counts.tsv.gz'), na.strings = '')
 
 
+
+### compare transfrags with previous collection
+EX.uni.dRNA <- fread(paste0('PRV-MDBIO-4cell_dRNA', '/EX.uni.tsv.gz'),  na.strings = '')
+
+
+EX.uni.dRNA
+
+
 ### Export Transfrags
 source('export.gffs.R')
 
 TR.gff <- data.table(as.data.frame(rtracklayer::import.gff2(config$TR.reads.gfffile)))
-TR.EX  <- fread(paste0(outdir, '/TR.EX.tsv'))
+#TR.EX  <- fread(paste0(outdir, '/TR.EX.tsv'))
+TR.gff.ori <- TR.gff
+TR.gff <- data.table(as.data.frame(rtracklayer::import.gff2("PRV-MDBIO-4cell_dRNA/TR.reads.gff2")))
 
+### compare transfrags with previous collection
+
+#TR.gff.ori <- data.table(as.data.frame(rtracklayer::import.gff2("PRV-MDBIO-4cell/TR.reads.gff2")))
+TR.gff.ori[,ori := T]
+TR.gff.nov <- merge(TR.gff.ori[type == 'exon', c('seqnames', 'strand', 'start', 'end', 'exon_number', 'ori')], 
+                    TR.gff[type == 'exon', c('seqnames', 'strand', 'start', 'end', 'exon_number', 'transcript_id')], 
+                    by=c('seqnames', 'strand', 'start', 'end', 'exon_number'), 
+                    all.y=T)
+
+TR.gff.nov <- TR.gff.nov[is.na(ori)]
+
+TR.gff.nov <- TR.gff[transcript_id %in% TR.gff.nov$transcript_id]
+
+TR.gff.nov[,transcript_id := 
+             as.character(
+               as.integer(transcript_id) +
+                 max(as.integer(TR.gff.ori$transcript_id))
+             )]
+
+length(unique(TR.gff.nov[,transcript_id]))
+
+rtracklayer::export.gff2(TR.gff.nov, config$TR.reads.gfffile)
 
 ## CAGE
 #CAGE.TR.data <- TR.data
 #
+
 
 
 ### Remove
@@ -537,92 +575,8 @@ if(save.images) {
 
 
 
-
 ##
-#### WF Part 3. Validate 3-primes based on reference transcripts TES
-valid.TES.win <- 10
-validate_TES  <- T
-
-if (validate_TES) {
-
-  TR.ref[,transcript_prime3 := fifelse(strand == '+', transcript_end, transcript_start)]
-  TR.ref[,transcript_prime5 := fifelse(strand == '-', transcript_end, transcript_start)]
-
-  valid.prime3 <- unique(TR.ref[,.(seqnames, transcript_start, transcript_end, transcript_prime3, transcript_prime5, strand)])
-  valid.prime3 <- valid.prime3[,.(seqnames, strand, start = transcript_prime3 - valid.TES.win, end = transcript_prime3 + valid.TES.win)]
-  valid.prime3 <- unique(valid.prime3)
-  valid.prime3[,valid_tes := T]
-
-  aln.uni[,TR_prime3 := fifelse(strand == '+', TR_end, TR_start )]
-  aln.uni[,TR_prime5 := fifelse(strand == '-', TR_end, TR_start )]
-  aln.uni[,start := TR_prime3]
-  aln.uni[,end   := TR_prime3]
-
-  prime3.TR.ov <- foverlaps2(aln.uni, valid.prime3, by.x=c('seqnames', 'strand', 'start', 'end'), by.y=c('seqnames', 'strand', 'start', 'end'), minoverlap = 1)
-  prime3.TR.ov <- prime3.TR.ov[,.(seqnames, strand, TR_start, TR_end, TR_prime3, TR_prime5, correct_tss, correct_tes, aln_ID, TR_ID, start, end, sample)]
-  prime3.TR.ov <- merge(prime3.TR.ov, valid.prime3, by=c('seqnames', 'strand', 'start', 'end'), all.x=T)
-
-  prime3.TR.ov[, start  := NULL]
-  prime3.TR.ov[, end    := NULL]
-  aln.uni[, start       := NULL]
-  aln.uni[, end         := NULL]
-
-
-  prime3.TR.ov <- merge(prime3.TR.ov, aln.uni, by=colnames(aln.uni), all=T)
-  prime3.TR.ov[,valid_tes := fifelse(is.na(valid_tes), F, T)]
-
-  prime3.valid.corr.freq <- prime3.TR.ov[,.N, by=.(sample, correct_tes, valid_tes)]
-
-  ggvf <- ggplot(prime3.valid.corr.freq) +
-    geom_col(aes(x=sample, y=N, fill=correct_tes), color='black') +
-    coord_flip() +
-    facet_wrap(~valid_tes, nrow=1) +
-    theme_bw() +
-    ggtitle('3-prime end result, according to ref mRNA TES')
-
-  ggsave(file.path(outdir, 'Ref_mRNA_TES_validation.jpg'), ggvf, height = 12, width = 9)
-
-  prime3.TR.ov[, correct_tes := fifelse(valid_tes == T | correct_tes == T, T, F)]
-  prime3.TR.ov[, valid_tes   := NULL]
-
-  keyby <- colnames(prime3.TR.ov)
-  prime3.TR.ov <- unique(prime3.TR.ov[,]) ##.(), by=.()]
-
-  if(nrow(aln.uni) == nrow(prime3.TR.ov)) {
-    aln.uni      <- prime3.TR.ov
-  } else { stop() }
-
-}
-
-TR.adapt.count <- aln.uni[,.(count=.N), by=.(seqnames, strand, TR_ID, TR_start, TR_end, correct_tss, correct_tes, sample)]
-fwrite(TR.adapt.count, paste0(outdir, '/TR.adapt.count.tsv'), sep = '\t')
-
-TR.adapt.count <- fread(paste0(outdir, '/TR.adapt.count.tsv'), na.strings = '')
-
-TR.counts.sp <- dcast(TR.adapt.count, TR_ID + correct_tss + correct_tes ~ sample, value.var = 'count', fill=0)
-##
-
-#orf5 <- bam.TR[TR_end >= 46795 & TR_end <= 46995 & grepl('12h', sample) & strand == '-',]
-
-
-### whats thiS?
-#TR.data2 <- prime3.TR.ov[,.(count=.N), by=.(TR_ID, sample, correct_tss, correct_tes)]
-
-#### ####
-##
-
-
-### SAVE / LOAD IMAGE
-if(save.images) {
-  save.image(paste0(outdir, '.P2.RData'))
-  load(paste0(outdir, '.P2.RData'))
-}
-
-
-
-
-##
-#### WF part 4. Reference Transcript Analysis ####
+#### WF part 3. Reference Transcript Analysis ####
 
 ### Run GFF-compare on each ref TR separately,
 # Compare every TransFrag to Every Reference TX Iteratively
@@ -701,6 +655,100 @@ TR.gff.compare.merged.TR.counts.gt <- fread(paste0(outdir, "/TR.gff.compare.merg
 ### Plot GFF-compare results
 source('plot_GFF.COMPARE.R')
 
+#### ####
+##
+
+
+### SAVE / LOAD IMAGE
+if(save.images) {
+  save.image(paste0(outdir, '.P3.RData'))
+  load(paste0(outdir, '.P3.RData'))
+}
+
+
+
+
+
+
+
+##
+#### WF Part 4. Validate 3-primes based on reference transcripts TES
+valid.TES.win <- 10
+validate_TES  <- T
+
+if (validate_TES) {
+  
+  TR.ref[,transcript_prime3 := fifelse(strand == '+', transcript_end, transcript_start)]
+  TR.ref[,transcript_prime5 := fifelse(strand == '-', transcript_end, transcript_start)]
+  
+  valid.prime3 <- unique(TR.ref[,.(seqnames, transcript_start, transcript_end, transcript_prime3, transcript_prime5, strand)])
+  valid.prime3 <- valid.prime3[,.(seqnames, strand, start = transcript_prime3 - valid.TES.win, end = transcript_prime3 + valid.TES.win)]
+  valid.prime3 <- unique(valid.prime3)
+  valid.prime3[,valid_tes := T]
+  
+  aln.uni[,TR_prime3 := fifelse(strand == '+', TR_end, TR_start )]
+  aln.uni[,TR_prime5 := fifelse(strand == '-', TR_end, TR_start )]
+  aln.uni[,start := TR_prime3]
+  aln.uni[,end   := TR_prime3]
+  
+  prime3.TR.ov <- foverlaps2(aln.uni, valid.prime3, by.x=c('seqnames', 'strand', 'start', 'end'), by.y=c('seqnames', 'strand', 'start', 'end'), minoverlap = 1)
+  prime3.TR.ov <- prime3.TR.ov[,.(seqnames, strand, TR_start, TR_end, TR_prime3, TR_prime5, correct_tss, correct_tes, aln_ID, TR_ID, start, end, sample)]
+  prime3.TR.ov <- merge(prime3.TR.ov, valid.prime3, by=c('seqnames', 'strand', 'start', 'end'), all.x=T)
+  
+  prime3.TR.ov[, start  := NULL]
+  prime3.TR.ov[, end    := NULL]
+  aln.uni[, start       := NULL]
+  aln.uni[, end         := NULL]
+  
+  
+  prime3.TR.ov <- merge(prime3.TR.ov, aln.uni, by=colnames(aln.uni), all=T)
+  prime3.TR.ov[,valid_tes := fifelse(is.na(valid_tes), F, T)]
+  
+  prime3.valid.corr.freq <- prime3.TR.ov[,.N, by=.(sample, correct_tes, valid_tes)]
+  
+  ggvf <- ggplot(prime3.valid.corr.freq) +
+    geom_col(aes(x=sample, y=N, fill=correct_tes), color='black') +
+    coord_flip() +
+    facet_wrap(~valid_tes, nrow=1) +
+    theme_bw() +
+    ggtitle('3-prime end result, according to ref mRNA TES')
+  
+  ggsave(file.path(outdir, 'Ref_mRNA_TES_validation.jpg'), ggvf, height = 12, width = 9)
+  
+  prime3.TR.ov[, correct_tes := fifelse(valid_tes == T | correct_tes == T, T, F)]
+  prime3.TR.ov[, valid_tes   := NULL]
+  
+  keyby <- colnames(prime3.TR.ov)
+  prime3.TR.ov <- unique(prime3.TR.ov[,]) ##.(), by=.()]
+  
+  if(nrow(aln.uni) == nrow(prime3.TR.ov)) {
+    aln.uni      <- prime3.TR.ov
+  } else { stop() }
+  
+} else {
+  
+  aln.uni[,TR_prime3 := fifelse(strand == '+', TR_end, TR_start )]
+  aln.uni[,TR_prime5 := fifelse(strand == '-', TR_end, TR_start )]
+  aln.uni[,start := TR_prime3]
+  aln.uni[,end   := TR_prime3]
+  
+}
+
+
+TR.adapt.count <- aln.uni[,.(count=.N), by=.(seqnames, strand, TR_ID, TR_start, TR_end, correct_tss, correct_tes, sample)]
+fwrite(TR.adapt.count, paste0(outdir, '/TR.adapt.count.tsv'), sep = '\t')
+
+TR.adapt.count <- fread(paste0(outdir, '/TR.adapt.count.tsv'), na.strings = '')
+
+TR.counts.sp <- dcast(TR.adapt.count, TR_ID + correct_tss + correct_tes ~ sample, value.var = 'count', fill=0)
+##
+
+#orf5 <- bam.TR[TR_end >= 46795 & TR_end <= 46995 & grepl('12h', sample) & strand == '-',]
+
+
+### whats thiS?
+#TR.data2 <- prime3.TR.ov[,.(count=.N), by=.(TR_ID, sample, correct_tss, correct_tes)]
+
 
 
 aln.uni <- fread(file.path(outdir, "aln.uni.tsv.gz"), sep = '\t')
@@ -714,7 +762,7 @@ adapt.TR.sp <- dcast(adapt.TR, TR_ID + sample ~ adapter, value.var = 'N', fill=0
 
 
 fwrite(adapt.TR.sp, file.path(outdir, "adapt.TR.sp.tsv.gz"), sep = '\t')
-
+adapt.TR.sp <- fread(file.path(outdir, "adapt.TR.sp.tsv.gz"), sep = '\t')
 
 ### merge TransFrag count with Reference Transcript annotation for each Transfrag
 all.merged.result_gff.compare      <- merge(all.merged.result_gff.compare,      adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID') #, all = T)
@@ -731,11 +779,13 @@ TR.gff.compare.merged.TR.counts.gt <- merge(TR.gff.compare.merged.TR.counts.gt, 
 rm(list=c('all.merged.result_gff.compare', 'TR.gff.compare.merged.TR', 'TR.gff.compare.merged.TR.counts'))
 gc()
 
+
 ### SAVE / LOAD IMAGE
 if(save.images) {
-  save.image(paste0(outdir, '.P3.RData'))
-  load(paste0(outdir, '.P3.RData'))
+  save.image(paste0(outdir, '.P4.RData'))
+  load(paste0(outdir, '.P4.RData'))
 }
+
 
 
 

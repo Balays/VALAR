@@ -51,55 +51,6 @@ pattern  <- '.bam$'
 #### ####
 ##
 
-introns.PK15  <- fread(paste0(outdir, '/PK-15_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'PK-15_dRNA']
-introns.PC12  <- fread(paste0(outdir, '/PC-12_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'PC-12_dRNA']
-introns.C6    <- fread(paste0(outdir, '/C6_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'C6_dRNA']
-
-introns.dRNA  <- rbind(introns.PK15, introns.PC12, introns.C6)
-introns.dRNA[, seqnames := contig]
-introns.dRNA[, start := as.integer(gsub('\\(', '', gsub(',.*', '', pos)))]
-introns.dRNA[, end   := as.integer(gsub('\\)', '', gsub('.*, ', '', pos)))]
-
-introns.uni   <- unique(introns.dRNA[,.(seqnames, start, end, strand)])     ##  leftseq, rightseq, left2, right2
-introns.uni[,intron_id := paste0('intron_', .GRP), by=.(seqnames, start, end, strand)]
-dup(introns.uni$intron_id)
-
-introns.dRNA <- merge(introns.dRNA, introns.uni, by=c('seqnames', 'strand', 'start', 'end'))
-
-
-introns.uni.sp <- dcast(introns.dRNA, seqnames + start + end + strand + intron_id ~ sample, value.var = 'count', fill = 0)
-
-## 'All Introns'
-ggVennDiagram::ggVennDiagram(list(
-  PK15 = unique(introns.dRNA[count > 0 & sample == 'PK-15_dRNA', intron_id]),
-  PC12 = unique(introns.dRNA[count > 0 & sample == 'PC-12_dRNA', intron_id]),
-  C6   = unique(introns.dRNA[count > 0 & sample == 'C6_dRNA',    intron_id])
-))
-
-introns.PK15  <- introns.dRNA[count > 0 & sample == 'PK-15_dRNA', ][, type := 'PK-15_dRNA']
-introns.PC12  <- introns.dRNA[count > 0 & sample == 'PC-12_dRNA', ][, type := 'PC-12_dRNA']
-introns.C6    <- introns.dRNA[count > 0 & sample == 'C6_dRNA'   , ][, type := 'C6_dRNA']
-
-intron.gff <- rbind(introns.PK15, introns.PC12, introns.C6)
-
-rtracklayer::export.gff3(intron.gff, paste0(outdir, '/introns.gff3'))
-
-
-## 'Qualified Introns'
-ggVennDiagram::ggVennDiagram(list(
-  PK15 = unique(introns.dRNA[count > 0 & sample == 'PK-15_dRNA' & is_qualified == T,  intron_id]),
-  PC12 = unique(introns.dRNA[count > 0 & sample == 'PC-12_dRNA' & is_qualified == T,  intron_id]),
-  C6   = unique(introns.dRNA[count > 0 & sample == 'C6_dRNA'    & is_qualified == T,  intron_id])
-))
-
-
-introns.PK15  <- introns.dRNA[count > 0 & sample == 'PK-15_dRNA' & is_qualified == T, ][, type := 'PK-15_dRNA']
-introns.PC12  <- introns.dRNA[count > 0 & sample == 'PC-12_dRNA' & is_qualified == T, ][, type := 'PC-12_dRNA']
-introns.C6    <- introns.dRNA[count > 0 & sample == 'C6_dRNA'    & is_qualified == T, ][, type := 'C6_dRNA']
-
-intron.gff <- rbind(introns.PK15, introns.PC12, introns.C6)
-
-rtracklayer::export.gff3(intron.gff, paste0(outdir, '/introns.qualified.gff3'))
 
 
 ##
@@ -280,6 +231,107 @@ source('_WF.part1.R')
 ##
 ### Import coverages
 source('_WF.part2.R')
+
+
+##### ITT JÁROK! Bele kell tenni az összes polyA-s transfrag-et a downstream workflow-ba!
+bam.all  <- fread(paste0(outdir, '/bam.all.tsv.gz'), na.strings = '')
+
+source('polyA_tails.R')
+source('polyA_compare.R')
+
+polya.dt <- fread(file.path(outdir, 'polyA_dt.tsv.gz'))
+
+paste(
+  '  0>  ', nrow(polya.dt[dorado_polya_length == 0]),
+  '; 10> ', nrow(polya.dt[dorado_polya_length >= 10]),
+  '; 15> ', nrow(polya.dt[dorado_polya_length >= 15]),
+  '; 20> ', nrow(polya.dt[dorado_polya_length >= 20]),
+  '; 50> ', nrow(polya.dt[dorado_polya_length >= 50]),
+  '; 100> ', nrow(polya.dt[dorado_polya_length >= 100]),
+  '; 200> ', nrow(polya.dt[dorado_polya_length >= 200])
+)
+
+# A dorado minden read-hez rendelet polyA-t !
+# míg a LoRTIA a softclip alapján csak 40-50%-hoz
+
+bam.all  <- bam.all[ grepl('_out_sorted', sample)]
+bam.all[, sample := gsub('_out_sorted', '', sample)]
+
+
+metadata$sample <- gsub('_out_sorted', '', metadata$sample)
+metafilt$sample <- gsub('_out_sorted', '', metafilt$sample)
+
+#### IMPORTANT !!! #####
+## Elfogadjuk azokat a read-eket, amelyeknek legalább 20-s polyA-ja van a dorado szerint
+
+bam.all <- bam.all[ qname %in% unique(polya.dt[dorado_polya_length >= 20, qname]), ]
+
+## add correct tags
+if(config$is.lortia) {
+  bam.all[,correct_tes := T]
+  bam.all[,correct_tss := fifelse(grepl('correct', tag.l5) | grepl('correct', tag.r5), T, F)]
+}
+
+
+## ezekkel felülirom a bam.all-t
+fwrite(bam.all, paste0(outdir, '/bam.all.tsv.gz'), sep = '\t')
+
+
+
+
+##
+### Intron Analysis
+introns.PK15  <- fread(paste0(outdir, '/PK-15_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'PK-15_dRNA']
+introns.PC12  <- fread(paste0(outdir, '/PC-12_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'PC-12_dRNA']
+introns.C6    <- fread(paste0(outdir, '/C6_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'C6_dRNA']
+
+introns.dRNA  <- rbind(introns.PK15, introns.PC12, introns.C6)
+introns.dRNA[, seqnames := contig]
+introns.dRNA[, start := as.integer(gsub('\\(', '', gsub(',.*', '', pos)))]
+introns.dRNA[, end   := as.integer(gsub('\\)', '', gsub('.*, ', '', pos)))]
+
+introns.uni   <- unique(introns.dRNA[,.(seqnames, start, end, strand)])     ##  leftseq, rightseq, left2, right2
+introns.uni[,intron_id := paste0('intron_', .GRP), by=.(seqnames, start, end, strand)]
+dup(introns.uni$intron_id)
+
+introns.dRNA <- merge(introns.dRNA, introns.uni, by=c('seqnames', 'strand', 'start', 'end'))
+
+
+introns.uni.sp <- dcast(introns.dRNA, seqnames + start + end + strand + intron_id ~ sample, value.var = 'count', fill = 0)
+
+## 'All Introns'
+ggVennDiagram::ggVennDiagram(list(
+  PK15 = unique(introns.dRNA[count > 0 & sample == 'PK-15_dRNA', intron_id]),
+  PC12 = unique(introns.dRNA[count > 0 & sample == 'PC-12_dRNA', intron_id]),
+  C6   = unique(introns.dRNA[count > 0 & sample == 'C6_dRNA',    intron_id])
+))
+
+introns.PK15  <- introns.dRNA[count > 0 & sample == 'PK-15_dRNA', ][, type := 'PK-15_dRNA']
+introns.PC12  <- introns.dRNA[count > 0 & sample == 'PC-12_dRNA', ][, type := 'PC-12_dRNA']
+introns.C6    <- introns.dRNA[count > 0 & sample == 'C6_dRNA'   , ][, type := 'C6_dRNA']
+
+intron.gff <- rbind(introns.PK15, introns.PC12, introns.C6)
+
+rtracklayer::export.gff3(intron.gff, paste0(outdir, '/introns.gff3'))
+
+
+## 'Qualified Introns'
+ggVennDiagram::ggVennDiagram(list(
+  PK15 = unique(introns.dRNA[count > 0 & sample == 'PK-15_dRNA' & is_qualified == T,  intron_id]),
+  PC12 = unique(introns.dRNA[count > 0 & sample == 'PC-12_dRNA' & is_qualified == T,  intron_id]),
+  C6   = unique(introns.dRNA[count > 0 & sample == 'C6_dRNA'    & is_qualified == T,  intron_id])
+))
+
+
+introns.PK15  <- introns.dRNA[count > 0 & sample == 'PK-15_dRNA' & is_qualified == T, ][, type := 'PK-15_dRNA']
+introns.PC12  <- introns.dRNA[count > 0 & sample == 'PC-12_dRNA' & is_qualified == T, ][, type := 'PC-12_dRNA']
+introns.C6    <- introns.dRNA[count > 0 & sample == 'C6_dRNA'    & is_qualified == T, ][, type := 'C6_dRNA']
+
+intron.gff <- rbind(introns.PK15, introns.PC12, introns.C6)
+
+rtracklayer::export.gff3(intron.gff, paste0(outdir, '/introns.qualified.gff3'))
+
+
 
 
 ##
@@ -564,6 +616,30 @@ TR.gff <- data.table(as.data.frame(rtracklayer::import.gff2(config$TR.reads.gfff
 TR.EX  <- fread(paste0(outdir, '/TR.EX.tsv'))
 
 
+
+### compare transfrags with previous collection
+
+TR.gff.ori <- data.table(as.data.frame(rtracklayer::import.gff2("PRV-MDBIO-4cell/TR.reads.gff2")))
+TR.gff.ori[,ori := T]
+TR.gff.nov <- merge(TR.gff.ori[type == 'exon', c('seqnames', 'strand', 'start', 'end', 'exon_number', 'ori')], 
+                    TR.gff[type == 'exon', c('seqnames', 'strand', 'start', 'end', 'exon_number', 'transcript_id')], 
+                    by=c('seqnames', 'strand', 'start', 'end', 'exon_number'), 
+                    all.y=T)
+
+TR.gff.nov <- TR.gff.nov[is.na(ori)]
+
+TR.gff.nov <- TR.gff[transcript_id %in% TR.gff.nov$transcript_id]
+
+TR.gff.nov[,transcript_id := 
+             as.character(
+               as.integer(transcript_id) +
+               max(as.integer(TR.gff.ori$transcript_id))
+           )]
+
+length(unique(TR.gff.nov[,transcript_id]))
+
+rtracklayer::export.gff2(TR.gff.nov, config$TR.reads.gfffile)
+
 ## CAGE
 #CAGE.TR.data <- TR.data
 #
@@ -642,6 +718,13 @@ if (validate_TES) {
     aln.uni      <- prime3.TR.ov
   } else { stop() }
 
+} else {
+  
+  aln.uni[,TR_prime3 := fifelse(strand == '+', TR_end, TR_start )]
+  aln.uni[,TR_prime5 := fifelse(strand == '-', TR_end, TR_start )]
+  aln.uni[,start := TR_prime3]
+  aln.uni[,end   := TR_prime3]
+  
 }
 
 TR.adapt.count <- aln.uni[,.(count=.N), by=.(seqnames, strand, TR_ID, TR_start, TR_end, correct_tss, correct_tes, sample)]
@@ -732,12 +815,22 @@ fwrite(best.merged.result_gff.compare,     paste0(outdir, "/best.merged.result_g
 
 ## Import results back
 best.merged.result_gff.compare <- fread(paste0(outdir, "/best.merged.result_gff.compare.tsv.gz"), na.strings = '')
-TR.counts <- fread(paste0(outdir, "/TR.counts.tsv.gz"), na.strings = '')
 #best.merged.result_gff.compare[,transcript_id := as.integer(transcript_id) ]
 
+## TransFrag counts in the samples
+TR.counts <- fread(paste0(outdir, "/TR.counts.tsv.gz"), na.strings = '')
+
+## new TransFrags
+TR.counts[,TR_ID := 
+             as.character(
+               as.integer(TR_ID) +
+                 max(as.integer(TR.gff.ori$transcript_id))
+             )]
 
 ### Summarise results based on TransFrag class and metadata factors
 source('summarise_GFF.COMPARE.R')
+
+
 ## Write out
 fwrite(TR.gff.compare.merged.TR.counts.gt, paste0(outdir, "/TR.gff.compare.merged.TR.counts.gt.tsv.gz"), sep = '\t')
 fwrite(best.gff.compare.ref.TR.class.freq, paste0(outdir, "/best.gff.compare.ref.TR.class.freq.tsv.gz"), sep = '\t')

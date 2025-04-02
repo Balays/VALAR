@@ -1,1 +1,0 @@
-group	enhancer	cluster.m	cluster.p	chr	dominant_tes.m	dominant_tes.p	tags.m	tags.p	D	hpi	cell_line	Time
