@@ -26,6 +26,7 @@ ggplot(TSSr_clusters_uni) +
 #### ####
 
 cols_to_group <- setdiff(colnames(TR.gff.compare.merged.TR.counts.gt), c(metacols, "count", 'rep', 'total', 'contig_size', "average_coverage", "norm_count"))
+#cols_to_group <- c('seqnames', 'strand', 'start', 'end', 'transcript_id')
 TR.gff.compare.uni <- unique(TR.gff.compare.merged.TR.counts.gt[,..cols_to_group])
 dup(TR.gff.compare.uni$transcript_id)
 

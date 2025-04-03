@@ -235,6 +235,7 @@ source('_WF.part2.R')
 
 ##### ITT JÁROK! Bele kell tenni az összes polyA-s transfrag-et a downstream workflow-ba!
 bam.all  <- fread(paste0(outdir, '/bam.all.tsv.gz'), na.strings = '')
+bam.all.drna <- bam.all
 
 source('polyA_tails.R')
 source('polyA_compare.R')
@@ -254,8 +255,8 @@ paste(
 # A dorado minden read-hez rendelet polyA-t !
 # míg a LoRTIA a softclip alapján csak 40-50%-hoz
 
-bam.all  <- bam.all[ grepl('_out_sorted', sample)]
-bam.all[, sample := gsub('_out_sorted', '', sample)]
+bam.all.drna  <- bam.all.drna[ grepl('_out_sorted', sample)]
+bam.all.drna[, sample := gsub('_out_sorted', '', sample)]
 
 
 metadata$sample <- gsub('_out_sorted', '', metadata$sample)
@@ -264,23 +265,27 @@ metafilt$sample <- gsub('_out_sorted', '', metafilt$sample)
 #### IMPORTANT !!! #####
 ## Elfogadjuk azokat a read-eket, amelyeknek legalább 20-s polyA-ja van a dorado szerint
 
-bam.all <- bam.all[ qname %in% unique(polya.dt[dorado_polya_length >= 20, qname]), ]
+bam.all.drna <- bam.all.drna[ qname %in% unique(polya.dt[dorado_polya_length >= 20, qname]), ]
 
 ## add correct tags
 if(config$is.lortia) {
-  bam.all[,correct_tes := T]
-  bam.all[,correct_tss := fifelse(grepl('correct', tag.l5) | grepl('correct', tag.r5), T, F)]
+  bam.all.drna[,correct_tes := T]
+  bam.all.drna[,correct_tss := fifelse(grepl('correct', tag.l5) | grepl('correct', tag.r5), T, F)]
 }
 
 
 ## ezekkel felülirom a bam.all-t
-fwrite(bam.all, paste0(outdir, '/bam.all.tsv.gz'), sep = '\t')
+fwrite(bam.all.drna, paste0(outdir, '/bam.all.dRNA.tsv.gz'), sep = '\t')
 
 
 
 
-##
-### Intron Analysis
+### Intron Analysis from dcDNA
+intron.files  <- list.files(bamdir, '.*intron.tsv', full.names = T, recursive = T)
+
+
+
+### Intron Analysis from dRNA
 introns.PK15  <- fread(paste0(outdir, '/PK-15_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'PK-15_dRNA']
 introns.PC12  <- fread(paste0(outdir, '/PC-12_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'PC-12_dRNA']
 introns.C6    <- fread(paste0(outdir, '/C6_dRNA_LT934125.1_sorted_intron.tsv'))[,sample := 'C6_dRNA']

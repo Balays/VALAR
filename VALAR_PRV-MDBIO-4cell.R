@@ -364,9 +364,10 @@ fwrite(bam.all, paste0(outdir, '/bam.all.tsv.gz'), sep='\t')
 
 
 ## add dRNA alignments
-# 
-# bam.all <- rbind(bam.all, bam.all.drna)
+# bam.all.drna <- fread(paste0('PRV-MDBIO-4cell_dRNA', '/bam.all.tsv.gz'))
+# bam.all.drna <- fread(paste0(outdir, '/bam.all.dRNA.tsv.gz'))
 
+# bam.all <- rbind(bam.all, bam.all.drna)
 
 # bam.all <- fread(paste0(outdir, '/bam.all.tsv.gz'))
 ## filter out reads with supplementary alignments, or
@@ -514,21 +515,21 @@ TR.counts <- fread(paste0(outdir, '/TR.counts.tsv.gz'), na.strings = '')
 
 
 ### compare transfrags with previous collection
-EX.uni.dRNA <- fread(paste0('PRV-MDBIO-4cell_dRNA', '/EX.uni.tsv.gz'),  na.strings = '')
+#EX.uni.dRNA <- fread(paste0('PRV-MDBIO-4cell_dRNA', '/EX.uni.tsv.gz'),  na.strings = '')
 
-
-EX.uni.dRNA
 
 
 ### Export Transfrags
 source('export.gffs.R')
 
 TR.gff <- data.table(as.data.frame(rtracklayer::import.gff2(config$TR.reads.gfffile)))
-#TR.EX  <- fread(paste0(outdir, '/TR.EX.tsv'))
+TR.EX  <- fread(paste0(outdir, '/TR.EX.tsv'))
+
+
+
+### compare transfrags with previous collection -->> omit
 TR.gff.ori <- TR.gff
 TR.gff <- data.table(as.data.frame(rtracklayer::import.gff2("PRV-MDBIO-4cell_dRNA/TR.reads.gff2")))
-
-### compare transfrags with previous collection
 
 #TR.gff.ori <- data.table(as.data.frame(rtracklayer::import.gff2("PRV-MDBIO-4cell/TR.reads.gff2")))
 TR.gff.ori[,ori := T]
@@ -550,6 +551,9 @@ TR.gff.nov[,transcript_id :=
 length(unique(TR.gff.nov[,transcript_id]))
 
 rtracklayer::export.gff2(TR.gff.nov, config$TR.reads.gfffile)
+
+###
+
 
 ## CAGE
 #CAGE.TR.data <- TR.data
@@ -576,7 +580,7 @@ if(save.images) {
 
 
 ##
-#### WF part 3. Reference Transcript Analysis ####
+#### WF part 3. Reference Transcript Analysis #### -->> optional
 
 ### Run GFF-compare on each ref TR separately,
 # Compare every TransFrag to Every Reference TX Iteratively
@@ -674,9 +678,12 @@ if(save.images) {
 ##
 #### WF Part 4. Validate 3-primes based on reference transcripts TES
 valid.TES.win <- 10
-validate_TES  <- T
+validate_TES  <- F
 
-if (validate_TES) {
+aln.uni <- fread(file.path(outdir, "aln.uni.tsv.gz"), sep = '\t')
+
+
+if(validate_TES) {
   
   TR.ref[,transcript_prime3 := fifelse(strand == '+', transcript_end, transcript_start)]
   TR.ref[,transcript_prime5 := fifelse(strand == '-', transcript_end, transcript_start)]
@@ -743,15 +750,6 @@ TR.adapt.count <- fread(paste0(outdir, '/TR.adapt.count.tsv'), na.strings = '')
 TR.counts.sp <- dcast(TR.adapt.count, TR_ID + correct_tss + correct_tes ~ sample, value.var = 'count', fill=0)
 ##
 
-#orf5 <- bam.TR[TR_end >= 46795 & TR_end <= 46995 & grepl('12h', sample) & strand == '-',]
-
-
-### whats thiS?
-#TR.data2 <- prime3.TR.ov[,.(count=.N), by=.(TR_ID, sample, correct_tss, correct_tes)]
-
-
-
-aln.uni <- fread(file.path(outdir, "aln.uni.tsv.gz"), sep = '\t')
 
 ### include LoRTIA adapter info to Transcripts sample-wise
 adapt.TR <- aln.uni[,.N, by=.(TR_ID, correct_tss, correct_tes, sample)]
@@ -763,6 +761,7 @@ adapt.TR.sp <- dcast(adapt.TR, TR_ID + sample ~ adapter, value.var = 'N', fill=0
 
 fwrite(adapt.TR.sp, file.path(outdir, "adapt.TR.sp.tsv.gz"), sep = '\t')
 adapt.TR.sp <- fread(file.path(outdir, "adapt.TR.sp.tsv.gz"), sep = '\t')
+
 
 ### merge TransFrag count with Reference Transcript annotation for each Transfrag
 all.merged.result_gff.compare      <- merge(all.merged.result_gff.compare,      adapt.TR.sp, by.x='transcript_id',  by.y='TR_ID') #, all = T)
@@ -811,16 +810,23 @@ prime5.counts[, endtype := 'prime5'][, pos := prime5]
 prime5.counts[,start  := pos]
 prime5.counts[,end    := pos]
 
+## write
+fwrite(prime3.counts, paste0(outdir, '/prime3.counts.tsv.gz'), sep = '\t')
+fwrite(prime5.counts, paste0(outdir, '/prime5.counts.tsv.gz'), sep = '\t')
+
+
 ## Mean coverage from stranded only bamfiles directly
 cov.counts <- merged_cov[,.(count=mean(count)), by=.(seqnames,	strand,	pos, sample, hpi, Time,	cell_line,	group)]
 cov.counts[,start  := pos]
 cov.counts[,end    := pos]
 
-
 ## write
-fwrite(prime3.counts, paste0(outdir, '/prime3.counts.tsv.gz'), sep = '\t')
-fwrite(prime5.counts, paste0(outdir, '/prime5.counts.tsv.gz'), sep = '\t')
 fwrite(cov.counts,    paste0(outdir, '/cov.counts.tsv.gz'),    sep = '\t')
+
+
+#### Plotting
+source('plot_primes.R')
+
 
 #### ####
 ##
@@ -829,6 +835,9 @@ fwrite(cov.counts,    paste0(outdir, '/cov.counts.tsv.gz'),    sep = '\t')
 
 ##
 #### WF part 6.: 3`- and 5`- End Clustering and Analysis Using TSSr ####
+
+## Ehhez egyelőre szükséges a gff-compare eredménye. Ahhoz hogy ez ne legyen így, át kell írni sokminent, 
+## köztük a TR annotáló részt is, mert itt a "=" találatok kiszűrűsűvel kezdjük
 
 ## Run TSSr to Cluster TSS based on CAGE data
 source('TSSr.TSS.CAGE.R')
@@ -1172,6 +1181,7 @@ prime.counts[,end    := TR_end  ]
 prime.counts[,prime5 := fifelse(strand == '+', start, end)]
 prime.counts[,prime3 := fifelse(strand == '+', end,   start)  ]
 
+
 prime3.counts <- prime.counts[,.(count=sum(count)), by=.(seqnames,	strand,	correct_tes, prime3, sample, hpi, Time,	cell_line,	group)]
 prime3.counts[, endtype := 'prime3'][, pos := prime3]
 prime3.counts[,start  := pos]
@@ -1183,15 +1193,17 @@ prime5.counts[, endtype := 'prime5'][, pos := prime5]
 prime5.counts[,start  := pos]
 prime5.counts[,end    := pos]
 
+## write
+fwrite(prime3.counts, paste0(outdir, '/prime3.counts.tsv.gz'), sep = '\t')
+fwrite(prime5.counts, paste0(outdir, '/prime5.counts.tsv.gz'), sep = '\t')
+
+
 ## Mean coverage from stranded only bamfiles directly
 cov.counts <- merged_cov[,.(count=mean(count)), by=.(seqnames,	strand,	pos, sample, hpi, Time,	cell_line,	group)]
 cov.counts[,start  := pos]
 cov.counts[,end    := pos]
 
-
 ## write
-fwrite(prime3.counts, paste0(outdir, '/prime3.counts.tsv'), sep = '\t')
-fwrite(prime5.counts, paste0(outdir, '/prime5.counts.tsv'), sep = '\t')
 fwrite(cov.counts,    paste0(outdir, '/cov.counts.tsv'),    sep = '\t')
 
 

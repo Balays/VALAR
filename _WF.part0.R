@@ -80,6 +80,9 @@ if(metadata_from_bamfiles) {
   bamfiles_df[, sample_name := paste(na.omit(c(group, rep)), collapse = '_'), by=.(sample)]
   
   metadata <- as.data.frame(bamfiles_df)
+  
+  fwrite(metadata, metadata_file, sep = '\t')
+  
 } else {
   metadata <- fread(metadata_file)
   setDF(metadata)

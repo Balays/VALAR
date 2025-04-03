@@ -119,6 +119,20 @@ if (plot.all.together) {
   
   #ggsave(paste0(fig.dir, '/', virus, '_', prime, '_', '48h', '_', file_name_suffix, '.jpg'), plot = FigY, height = fig.height, width = fig.width, limitsize = F)
   
+  
+  #### dRNA
+  samples <- na.omit(unique(metafilt[metafilt$libtype == 'dRNA' , combine.groups]))
+  if( length(samples) > 0) {
+    
+    FigY    <- plotfun.all(samples)
+    
+    fig.width  <- (visto - visfrom) / fig.w.size
+    fig.height <- fig.width * (fig.h2w.ratio * (length(unique(samples))))  # max(length(unique(samples))*3 + 3, 12)
+    
+    ggsave(paste0(fig.dir, '/', virus, '_', prime, '_', 'dRNA', '_', file_name_suffix, '.jpg'), plot = FigY, height = fig.height, width = fig.width, limitsize = F)
+    
+  }  
+  
 }
 
 ### Ezeket kell allitgatni:
